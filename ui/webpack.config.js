@@ -11,7 +11,6 @@ module.exports = {
     vendor: [
       'jquery',
       'angular',
-      'angular-ui-router',
       'lodash'
     ],
     main:__dirname + '/src/entries/index.js',
