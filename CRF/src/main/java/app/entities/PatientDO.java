@@ -1,4 +1,4 @@
-package entities;
+package app.entities;
 
 import java.util.Date;
 
@@ -8,6 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * æ‚£è€…ä¸€èˆ¬èµ„æ–™
+ * 
+ * @author JR
+ *
+ */
 @Entity
 @Table(name = "patient")
 public class PatientDO {
@@ -15,21 +21,22 @@ public class PatientDO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;// ĞÕÃû
-    private String gender;// ĞÔ±ğ
-    private int age;// ÄêÁä
-    private float height;// Éí¸ß
-    private float weight;// ÌåÖØ
-    private boolean smoke;// ÊÇ·ñ³éÑÌ
-    private boolean drink;// ÊÇ·ñÒû¾Æ
-    private boolean familyHistory;// ÊÇ·ñÓĞ¼Ò×å²¡Ê·
-    private Date hepatitisDiagnosisTime;// ¸ÎÑ×È·ÕïÊ±¼ä
-    private Date cirrhosisDiagnosisTime;// ¸ÎÓ²»¯È·ÕïÊ±¼ä
-    private String westernMedicineDiagnosis;// Î÷Ò½Õï¶Ï
-    private String chineseMedicineDiagnosis;// ÖĞÒ½Õï¶Ï
-    private String westernMedicineTreatment;// Î÷Ò½ÖÎÁÆ
-    private String chineseMedicineTreatment;// ÖĞÒ½ÖÎÁÆ
-    private boolean complete;// ÊÇ·ñÍê³É
+    private String identifier;//ç¼–å·
+    private String name;// å§“å
+    private String gender;// æ€§åˆ«
+    private int age;// å¹´é¾„
+    private float height;// èº«é«˜
+    private float weight;// ä½“é‡
+    private boolean smoke;// æ˜¯å¦å¸çƒŸ
+    private boolean drink;// æ˜¯å¦é¥®é…’
+    private boolean familyHistory;// æ˜¯å¦æœ‰å®¶æ—ç—…å²
+    private Date hepatitisDiagnosisTime;// è‚ç‚ç¡®è¯Šæ—¶é—´
+    private Date cirrhosisDiagnosisTime;// è‚ç¡¬åŒ–ç¡®è¯Šæ—¶é—´
+    private String westernMedicineDiagnosis;// è¥¿åŒ»è¯Šæ–­
+    private String chineseMedicineDiagnosis;// ä¸­åŒ»è¾¨è¯
+    private String westernMedicineTreatment;// è¥¿åŒ»æ²»ç–—
+    private String chineseMedicineTreatment;// ä¸­åŒ»æ²»ç–—
+    private boolean complete;// æ˜¯å¦å®Œæˆ
 
     public int getId() {
         return id;
@@ -37,6 +44,14 @@ public class PatientDO {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public String getName() {

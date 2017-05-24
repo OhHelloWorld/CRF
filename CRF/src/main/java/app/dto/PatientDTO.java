@@ -1,14 +1,15 @@
-package dto;
+package app.dto;
 
 import java.util.Date;
 
 
 /**
- * @author Administrator »¼ÕßÒ»°ã×ÊÁÏDTO
+ * @author Administrator ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DTO
  */
 public class PatientDTO {
 
     private int id;
+    private String identifier;
     private String name;
     private String gender;
     private int age;
@@ -31,6 +32,14 @@ public class PatientDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public String getName() {

@@ -1,71 +1,113 @@
-package dto;
+package app.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
- * @author Administrator ���������DTO
+ * 理化检查结果
+ * 
+ * @author JR
+ *
  */
-public class PhysicalChemicalInspectionDTO {
+@Entity
+@Table(name = "physical_chemical_inspection")
+public class PhysicalChemicalInspectionDO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int patientId;
-    private float totalBileAcid;
-    private float liverFunctionAlbumin;
-    private float liverFunctionGlobulin;
-    private float liverFunctionALT;
-    private float liverFunctionAST;
-    private float liverFunctionGGT;
-    private float liverFunctionALP;
-    private float liverFunctionTotalCholesterol;
-    private float liverFunctionTotalBilirubin;
-    private float liverFunctionDirectBilirubin;
-    private float liverFunctionRglobulin;
-    private float renalFunctionBUN;
-    private float renalFunctionCr;
-    private float clottingPT;
-    private float clottingINR;
-    private float bloodRoutineRBC;
-    private float bloodRoutineHb;
-    private float bloodRoutineWBC;
-    private float bloodRoutineNeutrophils;
-    private float bloodRoutineLymphocytes;
-    private float bloodRoutineEosinophils;
-    private float bloodRoutinePlatelets;
-    private String liverDiseaseAutoantibodiesAMA;
-    private String liverDiseaseAutoantibodiesAMAM2;
-    private String liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody;
-    private String liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies;
-    private String liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;
-    private String liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;
-    private String liverDiseaseAutoantibodiesOther;
-    private String ANAHomogeneous;
-    private String ANAParticle;
-    private String ANAPeripheral;
-    private String ANANucleolus;
-    private String ANANucleolusEnhancement;
-    private String ANANuclear;
-    private String ANACentromere;
-    private String ANAOther;
-    private float humoralImmunityIgG;
-    private float humoralImmunityIgA;
-    private float humoralImmunityIgM;
-    private float humoralImmunityImmuneComplexf;
-    private float humoralImmunityComplementC3;
-    private float humoralImmunityComplementC4;
-    private float humoralImmunityIgE;
-    private float humoralImmunityKlightChain;
-    private float humoralImmunityNlightChain;
-    private float cellularImmunityCD3;
-    private float cellularImmunityCD4;
-    private float cellularImmunityCD8;
-    private float cellularImmunityCD56;
-    private float cellularImmunityCD2;
-    private float cellularImmunityCD4CD8;
-    private String rheumaticImmuneRelatedAntibodies;
-    private int CTMRI;
-    private float liverHardnessFibroscan;
-    private float liverHardnessFibrotest;
-    private String liverPuncturePathology;
-    private boolean complete;
+    private int patientId;// 患者Id
+    private float totalBileAcid;// 总胆汁酸
+    private float liverFunctionAlbumin;// 肝功能-白蛋白
+    private float liverFunctionGlobulin;// 肝功能-球蛋白
+    @Column(name = "liver_function_ALT")
+    private float liverFunctionALT;// 肝功能-ALT
+    @Column(name = "liver_function_AST")
+    private float liverFunctionAST;// 肝功能-AST
+    @Column(name = "liver_function_GGT")
+    private float liverFunctionGGT;// 肝功能-GGT
+    @Column(name = "liver_function_ALP")
+    private float liverFunctionALP;// 肝功能--ALP
+    private float liverFunctionTotalCholesterol;// 肝功能-总胆固醇
+    private float liverFunctionTotalBilirubin;// 肝功能-总胆红素
+    private float liverFunctionDirectBilirubin;// 肝功能-直接胆红素
+    @Column(name = "liver_function_Rglobulin")
+    private float liverFunctionRglobulin;// 肝功能-γ球蛋白
+    @Column(name = "renal_function_BUN")
+    private float renalFunctionBUN;// 肾功能-BUN
+    @Column(name = "renal_function_Cr")
+    private float renalFunctionCr;// 肾功能-Cr
+    @Column(name = "clotting_PT")
+    private float clottingPT;// 凝血-PT
+    @Column(name = "clotting_INR")
+    private float clottingINR;// 凝血-INR
+    @Column(name = "blood_routine_RBC")
+    private float bloodRoutineRBC;// 血常规-RBC
+    @Column(name = "blood_routine_Hb")
+    private float bloodRoutineHb;// 血常规-Hb
+    @Column(name = "blood_routine_WBC")
+    private float bloodRoutineWBC;// 血常规-WBC
+    private float bloodRoutineNeutrophils;// 血常规-中性粒细胞
+    private float bloodRoutineLymphocytes;// 血常规-淋巴细胞
+    private float bloodRoutineEosinophils;// 血常规-嗜酸性粒细胞
+    private float bloodRoutinePlatelets;// 血常规-血小板
+    @Column(name = "liver_disease_autoantibodies_AMA")
+    private String liverDiseaseAutoantibodiesAMA;// 肝病自身抗体-AMA
+    @Column(name = "liver_disease_autoantibodies_AMA_M2")
+    private String liverDiseaseAutoantibodiesAMAM2;// 肝病自身抗体-AMA-M2
+    private String liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody;// 肝病自身抗体-抗平滑肌抗体
+    private String liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies;// 肝病自身抗体-肝肾微粒体抗体
+    private String liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;// 肝病自身抗体-肝细胞溶质抗原
+    private String liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;// 肝病自身抗体-可溶性肝-胰抗原
+    private String liverDiseaseAutoantibodiesOther;// 肝病自身抗体-其他
+    private String ANAHomogeneous;// ANA-均质型
+    private String ANAParticle;// ANA-颗粒型
+    private String ANAPeripheral;// ANA-周边型
+    private String ANANucleolus;// ANA-核仁型
+    private String ANANucleolusEnhancement;// ANA-核仁增强型
+    private String ANANuclear;// ANA-核点型
+    private String ANACentromere;// ANA-着丝点型
+    private String ANAOther;// ANA-其他
+    @Column(name = "humoral_immunity_IgG")
+    private float humoralImmunityIgG;// 体液免疫-IgG
+    @Column(name = "humoral_immunity_IgA")
+    private float humoralImmunityIgA;// 体液免疫-IgA
+    @Column(name = "humoral_immunity_IgM")
+    private float humoralImmunityIgM;// 体液免疫-IgM
+    private float humoralImmunityImmuneComplexf;// 体液免疫-免疫复合物
+    private float humoralImmunityComplementC3;// 体液免疫-补体C3
+    private float humoralImmunityComplementC4;// 体液免疫-补体C4
+    @Column(name = "humoral_immunity_IgE")
+    private float humoralImmunityIgE;// 体液免疫-IgE
+    @Column(name = "humoral_immunity_Klight_chain")
+    private float humoralImmunityKlightChain;// 体液免疫-k轻链
+    @Column(name = "humoral_immunity_Nlight_chain")
+    private float humoralImmunityNlightChain;// 体液免疫-入轻链
+    @Column(name = "cellular_immunity_CD3")
+    private float cellularImmunityCD3;// 细胞免疫-CD3
+    @Column(name = "cellular_immunity_CD4")
+    private float cellularImmunityCD4;// 细胞免疫-CD4+
+    @Column(name = "cellular_immunity_CD8")
+    private float cellularImmunityCD8;// 细胞免疫-CD8+
+    @Column(name = "cellular_immunity_CD56")
+    private float cellularImmunityCD56;// 细胞免疫-CD56+16(NK)
+    @Column(name = "cellular_immunity_CD2")
+    private float cellularImmunityCD2;// 细胞免疫-CD2
+    @Column(name = "cellular_immunity_CD4_CD8")
+    private float cellularImmunityCD4CD8;// 细胞免疫-CD4/CD8
+    private String rheumaticImmuneRelatedAntibodies;// 风湿免疫相关抗体
+    @Column(name = "CT_MRI")
+    private int CTMRI;// 腹部超声CT/MRI
+    @Column(name = "liver_hardness_Fibroscan")
+    private float liverHardnessFibroscan;// 肝脏硬度检查值-Fibroscan值
+    @Column(name = "liver_hardness_Fibrotest")
+    private float liverHardnessFibrotest;// 肝脏硬度检查值-Fibrotest值
+    private String liverPuncturePathology;// 肝穿刺病理检查
+    private boolean complete;// 是否完成
 
     public int getId() {
         return id;

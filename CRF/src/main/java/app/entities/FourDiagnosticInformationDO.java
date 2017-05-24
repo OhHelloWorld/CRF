@@ -1,51 +1,64 @@
-package dto;
+package app.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 /**
- * @author Administrator ������Ϣ�ɼ�������DTO
+ * 四诊信息采集量化数据
+ * 
+ * @author JR
+ *
  */
-public class FourDiagnosticInformationDTO {
+@Entity
+@Table(name = "four_diagnostic_information")
+public class FourDiagnosticInformationDO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int patientId;
-    private int fatigue;
-    private int skinItching;
-    private int twoEyesDry;
-    private int blurredVision;
-    private int depression;
-    private int irritability;
-    private int insomnia;
-    private int easyWakeUp;
-    private int tinnitus;
-    private int dryMouth;
-    private int mouthPain;
-    private int badBreath;
-    private int nausea;
-    private int belching;
-    private int abdominalDistention;
-    private int flankPainStinging;
-    private int flankPainSwell;
-    private int flankPainDull;
-    private int flankPainDiscomfort;
-    private int anorexia;
-    private int aphrodisiacCold;
-    private int limb;
-    private int backacheFootSoft;
-    private int handFootFanHot;
-    private int urineYellow;
-    private int constipation;
-    private int looseStools;
-    private int perspiration;
-    private int nightSweats;
-    private int lowerExtremityEdema;
-    private int faceDull;
-    private int eyeYellow;
-    private int bodyYellow;
-    private int spiderNevus;
-    private int liverPalm;
-    private int abdominalVeins;
-    private int yellowTumor;
-    private boolean complete;
+    private int patientId;// 患者Id
+    private int fatigue;// 乏力
+    private int skinItching;// 皮肤瘙痒
+    private int twoEyesDry;// 两目干涩
+    private int blurredVision;// 视物模糊
+    private int depression;// 抑郁
+    private int irritability;// 烦躁易怒
+    private int insomnia;// 失眠
+    private int easyWakeUp;// 易醒
+    private int tinnitus;// 耳鸣
+    private int dryMouth;// 口干
+    private int mouthPain;// 口苦
+    private int badBreath;// 口臭
+    private int nausea;// 恶心
+    private int belching;// 嗳气
+    private int abdominalDistention;// 脘腹胀满
+    private int flankPainStinging;// 胁肋痛-刺痛
+    private int flankPainSwell;// 胁肋痛-胀痛ʹ
+    private int flankPainDull;// 胁肋痛-隐痛
+    private int flankPainDiscomfort;// 胁肋痛-不适
+    private int anorexia;// 纳差
+    private int aphrodisiacCold;// 畏寒肢冷
+    private int limb;// 肢体困重
+    private int backacheFootSoft;// 腰痠脚软
+    private int handFootFanHot;// 手足烦热
+    private int urineYellow;// 尿黄
+    private int constipation;// 便秘
+    private int looseStools;// 便溏
+    private int perspiration;// 自汗
+    private int nightSweats;// 盗汗
+    private int lowerExtremityEdema;// 下肢水肿
+    private int faceDull;// 面晦暗
+    private int eyeYellow;// 目黄
+    private int bodyYellow;// 身黄
+    private int spiderNevus;// 蜘蛛痣数量
+    private int liverPalm;// 肝掌
+    private int abdominalVeins;// 腹壁脉络曲张
+    private int yellowTumor;// 黄色瘤
+    private boolean complete;// 是否完成
 
     public int getId() {
         return id;

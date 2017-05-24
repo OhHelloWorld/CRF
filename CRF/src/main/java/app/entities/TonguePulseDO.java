@@ -1,27 +1,39 @@
-package dto;
+package app.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
- * @author Administrator ������۲��DTO
+ * 舌脉象数据
+ * 
+ * @author JR
+ *
  */
-public class TonguePulseDTO {
+@Entity
+@Table(name = "tongue_pulse")
+public class TonguePulseDO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int patientId;
-    private String tongue;
-    private String tonguePart;
-    private String tonguePartialDescription;
-    private String tongueBody;
-    private String mossy;
-    private String mossyPart;
-    private String mossyPartialDescription;
-    private String tongueColor;
-    private String tongueColorPart;
-    private String tongueColorPartialDescription;
-    private String sublingualVaricoseVeins;
-    private String leftPulse;
-    private String rightPulse;
-    private boolean complete;
+    private int patientId;// 患者Id
+    private String tongue;// 舌质
+    private String tonguePart;// 舌质部位
+    private String tonguePartialDescription;// 舌质部位局部说明
+    private String tongueBody;// 舌体
+    private String mossy;// 苔质
+    private String mossyPart;// 苔质部位
+    private String mossyPartialDescription;// 苔质部位局部说明
+    private String tongueColor;// 舌苔色
+    private String tongueColorPart;// 舌苔色部位
+    private String tongueColorPartialDescription;// 舌苔色部位局部说明
+    private String sublingualVaricoseVeins;// 舌下静脉曲张
+    private String leftPulse;// 左脉象
+    private String rightPulse;// 右脉象
+    private boolean complete;// 是否完成
 
     public int getId() {
         return id;

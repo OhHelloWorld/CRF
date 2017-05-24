@@ -1,17 +1,11 @@
-package entities;
+package app.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "tongue_pulse")
-public class TonguePulseDO {
+/**
+ * @author Administrator ������۲��DTO
+ */
+public class TonguePulseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int patientId;
     private String tongue;

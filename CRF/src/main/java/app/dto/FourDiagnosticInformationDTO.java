@@ -1,61 +1,51 @@
-package entities;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package app.dto;
 
 
 /**
- * @author Administrator »¼ÕßÒ»°ã×ÊÁÏEntity
+ * @author Administrator ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DTO
  */
-@Entity
-@Table(name = "four_diagnostic_information")
-public class FourDiagnosticInformationDO {
+public class FourDiagnosticInformationDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int patientId;// »¼ÕßId
-    private int fatigue;// ·¦Á¦
-    private int skinItching;// Æ¤·ôğşÑ÷
-    private int twoEyesDry;// Á½Ä¿¸ÉÉ¬
-    private int blurredVision;// ÊÓÎïÄ£ºı
-    private int depression;// ÒÖÓô
-    private int irritability;// ·³ÔêÒ×Å­
-    private int insomnia;// Ê§Ãß
-    private int easyWakeUp;// Ò×ĞÑ
-    private int tinnitus;// ¶úÃù
-    private int dryMouth;// ¿Ú¸É
-    private int mouthPain;// ¿Ú¿à
-    private int badBreath;// ¿Ú³ô
-    private int nausea;// ¶ñĞÄ
-    private int belching;// àÈÆø
-    private int abdominalDistention;// ëä¸¹ÕÍÂú
-    private int flankPainStinging;// Ğ²ÀßÍ´-´ÌÍ´
-    private int flankPainSwell;// Ğ²ÀßÍ´-ÕÍÍ´
-    private int flankPainDull;// Ğ²ÀßÍ´-ÒşÍ´
-    private int flankPainDiscomfort;// Ğ²ÀßÍ´-²»ÊÊ
-    private int anorexia;// ÄÉ²î
-    private int aphrodisiacCold;// Î·º®Ö«Àä
-    private int limb;// Ö«ÌåÀ§ÖØ
-    private int backacheFootSoft;// Ñü¯iÍÈÈí
-    private int handFootFanHot;// ÊÖ×ã·³ÈÈ
-    private int urineYellow;// Äò»Æ
-    private int constipation;// ±ãÃØ
-    private int looseStools;// ±ãäç
-    private int perspiration;// ×Ôº¹
-    private int nightSweats;// µÁº¹
-    private int lowerExtremityEdema;// ÏÂÖ«Ë®Ö×
-    private int faceDull;// Ãæ»Ş°µ
-    private int eyeYellow;// Ä¿»Æ
-    private int bodyYellow;// Éí»Æ
-    private int spiderNevus;// Ö©ÖëğëÊıÁ¿
-    private int liverPalm;// ¸ÎÕÆ
-    private int abdominalVeins;// ¸¹±ÚÂöÂçÇúÕÅ
-    private int yellowTumor;// »ÆÉ«Áö
-    private boolean complete;// ÊÇ·ñÍê³É
+    private int patientId;
+    private int fatigue;
+    private int skinItching;
+    private int twoEyesDry;
+    private int blurredVision;
+    private int depression;
+    private int irritability;
+    private int insomnia;
+    private int easyWakeUp;
+    private int tinnitus;
+    private int dryMouth;
+    private int mouthPain;
+    private int badBreath;
+    private int nausea;
+    private int belching;
+    private int abdominalDistention;
+    private int flankPainStinging;
+    private int flankPainSwell;
+    private int flankPainDull;
+    private int flankPainDiscomfort;
+    private int anorexia;
+    private int aphrodisiacCold;
+    private int limb;
+    private int backacheFootSoft;
+    private int handFootFanHot;
+    private int urineYellow;
+    private int constipation;
+    private int looseStools;
+    private int perspiration;
+    private int nightSweats;
+    private int lowerExtremityEdema;
+    private int faceDull;
+    private int eyeYellow;
+    private int bodyYellow;
+    private int spiderNevus;
+    private int liverPalm;
+    private int abdominalVeins;
+    private int yellowTumor;
+    private boolean complete;
 
     public int getId() {
         return id;
