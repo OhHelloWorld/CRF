@@ -1,5 +1,8 @@
 package app.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,9 +29,29 @@ public class PatientServiceImpl implements PatientService {
         return convertToPatientDTO(patientRepo.getPatientInformationById(id));
     }
 
-    /**
-     * ��patientDTOת��ΪpatientDO
-     */
+    public boolean getCompleteById(int id) {
+        try {
+            return patientRepo.getCompleteById(id);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public List<PatientDTO> getAllPatient() {
+        List<PatientDTO> patientDTOs = new ArrayList<>();
+        Iterable<PatientDO> patientDOs = patientRepo.findAll();
+        for (PatientDO patientDO : patientDOs) {
+            patientDTOs.add(convertToPatientDTO(patientDO));
+        }
+        return patientDTOs;
+    }
+
+    public void editPatient(PatientDTO patientDTO) {
+        PatientDO patientDO = patientRepo.findOne(patientDTO.getId());
+        editToPatientDO(patientDO, patientDTO);
+        patientRepo.save(patientDO);
+    }
+
     private PatientDO convertToPatientDO(PatientDTO patientDTO) {
         PatientDO patientDO = new PatientDO();
         patientDO.setIdentifier(patientDTO.getIdentifier());
@@ -50,12 +73,6 @@ public class PatientServiceImpl implements PatientService {
         return patientDO;
     }
 
-    /**
-     * ��patientDOת��ΪpatientDTO
-     * 
-     * @param patientDO
-     * @return
-     */
     private PatientDTO convertToPatientDTO(PatientDO patientDO) {
         PatientDTO patientDTO = new PatientDTO();
         patientDTO.setIdentifier(patientDO.getIdentifier());
@@ -76,5 +93,26 @@ public class PatientServiceImpl implements PatientService {
         patientDTO.setWesternMedicineDiagnosis(patientDO.getWesternMedicineDiagnosis());
         patientDTO.setWesternMedicineTreatment(patientDO.getWesternMedicineTreatment());
         return patientDTO;
+    }
+
+    private PatientDO editToPatientDO(PatientDO patientDO, PatientDTO patientDTO) {
+        patientDO.setIdentifier(patientDTO.getIdentifier());
+        patientDO.setId(patientDTO.getId());
+        patientDO.setAge(patientDTO.getAge());
+        patientDO.setChineseMedicineDiagnosis(patientDTO.getChineseMedicineDiagnosis());
+        patientDO.setChineseMedicineTreatment(patientDTO.getChineseMedicineTreatment());
+        patientDO.setCirrhosisDiagnosisTime(patientDTO.getCirrhosisDiagnosisTime());
+        patientDO.setComplete(patientDTO.isComplete());
+        patientDO.setDrink(patientDTO.isDrink());
+        patientDO.setFamilyHistory(patientDTO.isFamilyHistory());
+        patientDO.setGender(patientDTO.getGender());
+        patientDO.setHeight(patientDTO.getHeight());
+        patientDO.setHepatitisDiagnosisTime(patientDTO.getHepatitisDiagnosisTime());
+        patientDO.setName(patientDTO.getName());
+        patientDO.setSmoke(patientDTO.isSmoke());
+        patientDO.setWeight(patientDTO.getWeight());
+        patientDO.setWesternMedicineDiagnosis(patientDTO.getWesternMedicineDiagnosis());
+        patientDO.setWesternMedicineTreatment(patientDTO.getWesternMedicineTreatment());
+        return patientDO;
     }
 }

@@ -22,6 +22,14 @@ public class TonguePulseImpl implements TonguePulseService {
         return convertToTonguePulseDTO(tonguePulseRepo.getTonguePulseByPatientId(patientId));
     }
 
+    public boolean getCompleteByPatientId(int patientId) {
+        try {
+            return tonguePulseRepo.getCompleteByPatientId(patientId);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     private TonguePulseDO convertToTonguePulseDO(TonguePulseDTO tonguePulseDTO) {
         TonguePulseDO tonguePulseDO = new TonguePulseDO();
         tonguePulseDO.setComplete(tonguePulseDTO.isComplete());

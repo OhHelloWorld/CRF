@@ -1,6 +1,8 @@
 package app.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +40,27 @@ public class PatientController {
     @GetMapping(path = "/{id}")
     public PatientDTO getPatientGeneralInformation(@PathVariable int id) {
         return patientService.getPatientGeneralInformation(id);
+    }
+
+    /**
+     * 得到患者的一般资料的填写状态
+     * 
+     * @param id
+     * @return
+     */
+    @GetMapping(path = "/complete/{id}")
+    public boolean getCompleteById(@PathVariable int id) {
+        return patientService.getCompleteById(id);
+    }
+
+    /**
+     * 得到所有患者的一般资料
+     * 
+     * @return
+     */
+    @GetMapping(path = "")
+    public List<PatientDTO> getAllPatient() {
+        return patientService.getAllPatient();
     }
 
 }

@@ -17,4 +17,12 @@ public interface TonguePulseService {
      * @param patientId
      */
     public TonguePulseDTO getTonguePulseByPatientId(int patientId);
+
+    /**
+     * 得到患者舌脉象数据填写情况
+     * 
+     * @param patientId
+     * @return
+     */
+    public boolean getCompleteByPatientId(int patientId);
 }

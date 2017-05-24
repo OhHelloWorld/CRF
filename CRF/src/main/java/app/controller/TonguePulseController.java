@@ -38,4 +38,15 @@ public class TonguePulseController {
     public TonguePulseDTO getTonguePulseByPatientId(@PathVariable int patientId) {
         return tonguePulseService.getTonguePulseByPatientId(patientId);
     }
+
+    /**
+     * 得到患者舌脉象观察数据完成情况
+     * 
+     * @param patientId
+     * @return
+     */
+    @GetMapping(path = "/complete/{patientId}")
+    public boolean getCompleteByPatientId(@PathVariable int patientId) {
+        return tonguePulseService.getCompleteByPatientId(patientId);
+    }
 }

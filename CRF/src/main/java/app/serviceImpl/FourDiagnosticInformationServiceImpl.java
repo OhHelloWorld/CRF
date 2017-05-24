@@ -24,6 +24,14 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
         return convertToFourDiagnosticInfoDTO(fRepo.findFourDiagnosticInfoByPatientId(patientId));
     }
 
+    public boolean getCompleteByPatientId(int patientId) {
+        try {
+            return fRepo.getCompleteByPatientId(patientId);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     private FourDiagnosticInformationDO convertToFourdiagnosticinformationDTO(
             FourDiagnosticInformationDTO fDto) {
         FourDiagnosticInformationDO fDo = new FourDiagnosticInformationDO();

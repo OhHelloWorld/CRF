@@ -18,4 +18,12 @@ public interface PhysicalChemicalInspectionService {
      * @return
      */
     public PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId);
+
+    /**
+     * 得到患者理化测量数据填写情况
+     * 
+     * @param patientId
+     * @return
+     */
+    public boolean getCompleteByPatientId(int patientId);
 }

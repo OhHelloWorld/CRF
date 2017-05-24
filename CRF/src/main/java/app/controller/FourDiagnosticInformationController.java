@@ -29,7 +29,7 @@ public class FourDiagnosticInformationController {
     }
 
     /**
-     * 根据患者Id查找四诊信息采集量化数据
+     * 查找四诊信息采集量化数据
      * 
      * @param patientId
      * @return
@@ -37,5 +37,16 @@ public class FourDiagnosticInformationController {
     @GetMapping(path = "/{patientId}")
     public FourDiagnosticInformationDTO getFourDiagnosticInfo(@PathVariable int patientId) {
         return fourDiagnosticInformationService.getFourDiagnosticInfoByPatientId(patientId);
+    }
+
+    /**
+     * 根据患者Id查找四诊信息采集量化数据完成情况
+     * 
+     * @param patientId
+     * @return
+     */
+    @GetMapping(path = "/complete/{patientId}")
+    public boolean getCompleteById(@PathVariable int patientId) {
+        return fourDiagnosticInformationService.getCompleteByPatientId(patientId);
     }
 }

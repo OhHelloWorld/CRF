@@ -40,4 +40,15 @@ public class PhysicalChemicalInspectionController {
     public PhysicalChemicalInspectionDTO getPhysicalByPatientId(@PathVariable int patientId) {
         return physicalChemicalInspectionService.getPhysicalByPatientId(patientId);
     }
+
+    /**
+     * 得到患者的理化检查完成情况
+     * 
+     * @param patientId
+     * @return
+     */
+    @GetMapping(path = "/complete/{patientId}")
+    public boolean getCompleteByPatientId(@PathVariable int patientId) {
+        return physicalChemicalInspectionService.getCompleteByPatientId(patientId);
+    }
 }

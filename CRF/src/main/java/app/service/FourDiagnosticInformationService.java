@@ -18,4 +18,13 @@ public interface FourDiagnosticInformationService {
      * @return
      */
     public FourDiagnosticInformationDTO getFourDiagnosticInfoByPatientId(int patientId);
+
+    /**
+     * 获得四诊信息采集里量化数据完成情况
+     * 
+     * @param patientId
+     * @return
+     */
+    public boolean getCompleteByPatientId(int patientId);
+
 }

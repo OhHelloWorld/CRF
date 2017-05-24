@@ -1,12 +1,14 @@
 package app.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import app.dto.PhysicalChemicalInspectionDTO;
 import app.entities.PhysicalChemicalInspectionDO;
 import app.repo.PhysicalChemicalInspectionRepo;
 import app.service.PhysicalChemicalInspectionService;
 
+@Service
 public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalInspectionService {
 
     @Autowired
@@ -18,6 +20,14 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     public PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId) {
         return convertToPhysicalDTO(pRepo.getPhysicalByPatientId(patientId));
+    }
+
+    public boolean getCompleteByPatientId(int patientId) {
+        try {
+            return pRepo.getCompleteByPatientId(patientId);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     private PhysicalChemicalInspectionDO convertToPhysicalChemicalInspectionDO(
