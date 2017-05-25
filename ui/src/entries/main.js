@@ -8,11 +8,12 @@ import '../lib/css/css/skins/skin-blue.min.css';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import '../modules/home.js';
-var main = angular.module('main', [uiRouter, 'home']);
+import '../modules/patientInfo.js';
+var main = angular.module('main', [uiRouter, 'home', 'patientInfo']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.when('', '/');
+  $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
     url: '/patientInfo',
