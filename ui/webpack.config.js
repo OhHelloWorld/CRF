@@ -13,14 +13,15 @@ module.exports = {
       'angular',
       'lodash'
     ],
-    main:__dirname + '/src/entries/index.js',
+    main: __dirname + '/src/entries/index.js',
+    starter: __dirname + '/src/entries/start.js'
   },
   output: {
     path: __dirname + '/dist',
     filename: '[name].bundle.js'
   },
 
-//split code
+  //split code
   module: {
     loaders: [{
       test: /\.js$/,
@@ -35,6 +36,15 @@ module.exports = {
         use: 'css-loader',
         fallback: 'style-loader'
       }),
+    }, {
+      test: /\.(png)|(gif)|(jpg)$/,
+      loader: 'url-loader?limit=50000'
+    }, {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: 'url-loader?limit=10000&mimetype=application/font-woff'
+    }, {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: 'file-loader'
     }]
   },
 
@@ -44,6 +54,11 @@ module.exports = {
       chunks: ['vendor', 'index'],
       filename: __dirname + '/dist/index.html',
       template: './src/entries/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'starter'],
+      filename: __dirname + '/dist/starter.html',
+      template: './src/entries/starter.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
