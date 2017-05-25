@@ -15,14 +15,13 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
   $urlRouterProvider.when('', '/noStep');
 
   $stateProvider.state('firstStep', {
-      url: '/firstStep',
-      template: require('../templates/firstStep.html'),
-      controller: 'firstStepController'
-    })
+    url: '/firstStep',
+    template: require('../templates/firstStep.html'),
+    controller: 'firstStepController'
+  })
     .state('noStep', {
       url: '/noStep',
-      template: require('../templates/noStep.html'),
-      controller: 'noStepController'
+      template: require('../templates/noStep.html')
     });
 }]);
 

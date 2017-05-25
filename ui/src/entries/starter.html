@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>自身免疫性肝病临床信息记录</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Font Awesome -->
@@ -47,7 +47,7 @@ desired effect
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">CRF表</span>
+      <span class="logo-lg">自身免疫性肝病信息</span>
     </a>
 
     <!-- Header Navbar -->
@@ -72,7 +72,7 @@ desired effect
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <input type="text" name="q" class="form-control" placeholder="查询">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -83,12 +83,13 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
+        <li class="header"><span class="h3">数据采集项</span></li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#noStep"><i class="fa fa-link"></i><span>患者一般资料</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i><span>四诊信息采集量化表</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i><span>舌脉象观察表</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i><span>理化检查结果</span></a></li>
+        <li><a ui-sref="noStep"><i class="fa fa-link"></i><span class="h4">首页</span></a></li>
+        <li><a ui-sref="noStep"><i class="fa fa-link"></i><span class="h4">患者资料</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i><span class="h4">四诊信息采集</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i><span class="h4">舌脉象观察</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i><span class="h4">理化检查</span></a></li>
 
         <!-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

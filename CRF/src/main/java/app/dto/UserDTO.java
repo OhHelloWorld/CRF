@@ -6,7 +6,6 @@ public class UserDTO {
     private String realName;
     private String userName;
     private String password;
-    private String salt;
 
     public int getId() {
         return id;
@@ -39,14 +38,5 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
 
 }
