@@ -1,6 +1,8 @@
 package app.serviceImpl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +56,7 @@ public class PatientServiceImpl implements PatientService {
 
     private PatientDO convertToPatientDO(PatientDTO patientDTO) {
         PatientDO patientDO = new PatientDO();
-        patientDO.setIdentifier(patientDTO.getIdentifier());
+        patientDO.setIdentifier(new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date()));
         patientDO.setAge(patientDTO.getAge());
         patientDO.setChineseMedicineDiagnosis(patientDTO.getChineseMedicineDiagnosis());
         patientDO.setChineseMedicineTreatment(patientDTO.getChineseMedicineTreatment());
