@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../lib/css/css/AdminLTE.min.css';
@@ -9,11 +9,11 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import '../modules/home.js';
 import '../modules/fourDiagnostic.js';
-var main = angular.module('main', [uiRouter, 'home','fourDiagnostic']);
+var main = angular.module('main', [uiRouter, 'home','fourDiagnostic','patientInfo']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.when('', '/');
+  $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
       url: '/patientInfo',
