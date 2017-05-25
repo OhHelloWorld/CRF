@@ -14,7 +14,7 @@ module.exports = {
       'lodash'
     ],
     main: __dirname + '/src/entries/index.js',
-    starter: __dirname + '/src/entries/start.js'
+    start: __dirname + '/src/entries/main.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -56,9 +56,9 @@ module.exports = {
       template: './src/entries/index.html'
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'starter'],
-      filename: __dirname + '/dist/starter.html',
-      template: './src/entries/starter.html'
+      chunks: ['vendor', 'start'],
+      filename: __dirname + '/dist/main.html',
+      template: './src/entries/main.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
