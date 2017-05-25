@@ -7,21 +7,20 @@ import '../lib/css/css/skins/skin-blue.min.css';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import '../modules/noStep.js';
-var main = angular.module('main', [uiRouter, 'noStep']);
+import '../modules/home.js';
+var main = angular.module('main', [uiRouter, 'home']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.when('', '/noStep');
+  $urlRouterProvider.when('', '/');
 
-  $stateProvider.state('firstStep', {
-    url: '/firstStep',
-    template: require('../templates/firstStep.html'),
-    controller: 'firstStepController'
+  $stateProvider.state('patientInfo', {
+    url: '/patientInfo',
+    template: require('../templates/patientInfo.html'),
   })
-    .state('noStep', {
-      url: '/noStep',
-      template: require('../templates/noStep.html')
+    .state('home', {
+      url: '/home',
+      template: require('../templates/home.html')
     });
 }]);
 
