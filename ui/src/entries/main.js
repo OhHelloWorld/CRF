@@ -8,19 +8,24 @@ import '../lib/css/css/skins/skin-blue.min.css';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import '../modules/home.js';
-var main = angular.module('main', [uiRouter, 'home']);
+import '../modules/fourDiagnostic.js';
+var main = angular.module('main', [uiRouter, 'home','fourDiagnostic']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('', '/');
 
   $stateProvider.state('patientInfo', {
-    url: '/patientInfo',
-    template: require('../templates/patientInfo.html'),
-  })
+      url: '/patientInfo',
+      template: require('../templates/patientInfo.html'),
+    })
     .state('home', {
       url: '/home',
       template: require('../templates/home.html')
+    })
+    .state('fourDiagnostic', {
+      url: '/fourDiagnostic',
+      template: require('../templates/fourDiagnostic.html')
     });
 }]);
 
