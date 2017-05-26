@@ -20,7 +20,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', function($sc
   $http({
     method:'POST',
     url:''
-  }).then(function(response){
+  }).then(function(){
     alert('post successed!!');
   })
 }]);
