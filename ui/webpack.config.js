@@ -7,6 +7,7 @@ const cssPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
+
   entry: {
     vendor: [
       'jquery',
@@ -50,6 +51,8 @@ module.exports = {
 
   plugins: [
 
+
+
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'index'],
       filename: __dirname + '/dist/index.html',
@@ -60,6 +63,13 @@ module.exports = {
       filename: __dirname + '/dist/main.html',
       template: './src/entries/main.html'
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.jquery': 'jquery'
+    }),
+    
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       // minChunks: Infinity
