@@ -4,7 +4,7 @@ import angular from 'angular';
 
 var patientInfo = angular.module('patientInfo', []);
 
-patientInfo.controller('patientInfoController', ['$scope', '$http', function($scope, $http) {
+patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
 
   $('#datepicker').datepicker({
@@ -17,15 +17,25 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', function($sc
 
 
   //新建
-  $http({
-    method:'POST',
-    url:''
-  }).then(function(){
-    alert('post successed!!');
-  });
-
+  // $http({
+  //   method:'POST',
+  //   url:''
+  // }).then(function(){
+  //   alert('post successed!!');
+  // });
   //save button
-  $scope.save = function(){
+  $scope.showNextModel = function(){
+    if(true){
+      $('#myModal').modal('show');
+    }
+  };
+
+  $scope.exsitEdit = function(){
+    $('#existModal').modal('toggle');
+    // window.location.href = index.html;
+    setTimeout(function () {
+      $state.go('home');
+    }, 1000);
 
   };
 }]);
