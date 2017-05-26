@@ -22,5 +22,10 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', function($sc
     url:''
   }).then(function(){
     alert('post successed!!');
-  })
+  });
+
+  //save button
+  $scope.save = function(){
+
+  };
 }]);

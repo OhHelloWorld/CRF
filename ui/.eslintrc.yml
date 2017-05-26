@@ -3,6 +3,10 @@ env:
   node: true
   commonjs: true
   es6: true
+globals:
+  $: true
+  jquery: true
+  jQuery: true
 extends: 'eslint:recommended'
 parserOptions:
   sourceType: module
