@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 import angular from 'angular';
 
@@ -15,7 +15,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', function($sc
     autoclose: true
   });
 
- 
+
   //新建
   $http({
     method:'POST',
@@ -23,4 +23,9 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', function($sc
   }).then(function(){
     alert('post successed!!');
   });
+
+  //save button
+  $scope.save = function(){
+
+  };
 }]);
