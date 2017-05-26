@@ -1,2 +1,349 @@
-<div ng-app="fourDiagnostic" ng-controller="fourDiagnosticController"></div>
-<p>hello world</p>
+<section class="content-header">
+  <h1>
+     四诊信息采集
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">四诊信息采集</li>
+  </ol>
+</section>
+  <div  ng-app="fourDiagnostic" ng-controller="fourDiagnosticController">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <br>
+          <div id="confirmModal" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="h3">{{confirmInfo}}</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary"
+							ng-click="confirm()" data-dismiss="modal">确认</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="infoModel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="h3">{{infomation}}</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+          <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
+          	<ol>
+          		<li>
+          			<h4>乏力</h4>
+          			<input type="radio" name="r1" ng-model="fatigue" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r1" ng-model="fatigue" value="1"><span class="h5">肢体乏力，勉强坚持日常生活</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r1" ng-model="fatigue" value="2"><span class="h5">肢体稍倦，可坚持轻体力工作</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r1" ng-model="fatigue" value="3"><span class="h5">全身无力，终日不愿活动</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>皮肤瘙痒</h4>
+          			<input type="radio" name="r2" ng-model="skinItching" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r2" ng-model="skinItching" value="1"><span class="h5">偶有，不影响日常生活</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r2" ng-model="skinItching" value="2"><span class="h5">时常有，轻度影响日常生活</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r2" ng-model="skinItching" value="3"><span class="h5">整日瘙痒，影响日常生活</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>两目干涩</h4>
+          			<input type="radio" name="r3" ng-model="twoEyesDry" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r3" ng-model="twoEyesDry" value="1"><span class="h5">自觉有时目干</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r3" ng-model="twoEyesDry" value="2"><span class="h5">经常两目干涩</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r3" ng-model="twoEyesDry" value="3"><span class="h5">整日两目干涩</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>视物模糊</h4>
+          			<input type="radio" name="r5" ng-model="blurredVision" value="0" ><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r5" ng-model="blurredVision" value="1"><span class="h5">久视后视物不清</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r5" ng-model="blurredVision" value="2"><span class="h5">视物不清</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r5" ng-model="blurredVision" value="3"><span class="h5">视物困难</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>抑郁</h4>
+          			<input type="radio" name="r6" ng-model="depression" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r6" ng-model="depression" value="1"><span class="h5">有时情绪低落</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r6" ng-model="depression" value="2"><span class="h5">经常情绪低落</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r6" ng-model="depression" value="3"><span class="h5">有厌世倾向</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>烦躁易怒</h4>
+          			<input type="radio" name="r7" ng-model="irritability" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r7" ng-model="irritability" value="1"><span class="h5">偶见烦躁</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r7" ng-model="irritability" value="2"><span class="h5">经常烦躁不安</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r7" ng-model="irritability" value="3"><span class="h5">一触即怒</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>失眠</h4>
+          			<input type="radio" name="r8" ng-model="insomnia" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r8" ng-model="insomnia" value="1"><span class="h5">睡眠不足6小时</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r8" ng-model="insomnia" value="2"><span class="h5">睡眠不足4小时</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r8" ng-model="insomnia" value="3"><span class="h5">彻夜难眠</span>
+          			<h4>易醒</h4>
+          			<input type="radio" name="r9" ng-model="easyWakeUp" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r9" ng-model="easyWakeUp" value="1"><span class="h5">每夜眠后醒1-2次</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r9" ng-model="easyWakeUp" value="2"><span class="h5">每夜眠后醒3-4次</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r9" ng-model="easyWakeUp" value="3"><span class="h5">每夜醒5次以上</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>耳鸣</h4>
+          			<input type="radio" name="r10" ng-model="tinnitus" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r10" ng-model="tinnitus" value="1"><span class="h5">偶见轻微耳鸣</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r10" ng-model="tinnitus" value="2"><span class="h5">阵发耳鸣，休息后缓解</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r10" ng-model="tinnitus" value="3"><span class="h5">耳鸣持续不解</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>口干</h4>
+          			<input type="radio" name="r11" ng-model="dryMouth" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r11" ng-model="dryMouth" value="1"><span class="h5">偶有或晨起口干</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r11" ng-model="dryMouth" value="2"><span class="h5">时感口干</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r11" ng-model="dryMouth" value="3"><span class="h5">整日口干</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>口苦</h4>
+          			<input type="radio" name="r12" ng-model="mouthPain" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r12" ng-model="mouthPain" value="1"><span class="h5">偶有或晨起口苦</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r12" ng-model="mouthPain" value="2"><span class="h5">时有口苦</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r12" ng-model="mouthPain" value="3"><span class="h5">整日口苦</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>口臭</h4>
+          			<input type="radio" name="r13" ng-model="badBreath" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r13" ng-model="badBreath" value="1"><span class="h5">偶有或晨起口臭</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r13" ng-model="badBreath" value="2"><span class="h5">时有口臭</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r13" ng-model="badBreath" value="3"><span class="h5">整日口臭</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>恶心</h4>
+          			<input type="radio" name="r14" ng-model="nausea" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r14" ng-model="nausea" value="1"><span class="h5">偶有恶心</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r14" ng-model="nausea" value="2"><span class="h5">每日恶心</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r14" ng-model="nausea" value="3"><span class="h5">恶心频作</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>嗳气</h4>
+          			<input type="radio" name="r15" ng-model="belching" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r15" ng-model="belching" value="1"><span class="h5">偶有嗳气</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r15" ng-model="belching" value="2"><span class="h5">食后嗳气频频</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r15" ng-model="belching" value="3"><span class="h5">整日嗳气</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>脘腹胀满</h4>
+          			<input type="radio" name="r16" ng-model="abdominalDistention" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r16" ng-model="abdominalDistention" value="1"><span class="h5">进食后脘闷腹胀</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r16" ng-model="abdominalDistention" value="2 "><span class="h5">少量进食后即脘闷腹胀</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r16" ng-model="abdominalDistention" value="3"><span class="h5">整日脘闷腹胀</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>胁肋痛-刺痛</h4>
+          			<input type="radio" name="r17" ng-model="flankPainStinging" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r17" ng-model="flankPainStinging" value="1"><span class="h5">偶有</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r17" ng-model="flankPainStinging" value="2"><span class="h5">常有</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r17" ng-model="flankPainStinging" value="3"><span class="h5">持续</span>
+          			<h4>胁肋痛-胀痛</h4>
+          			<input type="radio" name="r18" ng-model="flankPainSwell" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r18" ng-model="flankPainSwell" value="1"><span class="h5">偶有</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r18" ng-model="flankPainSwell" value="2"><span class="h5">常有</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r18" ng-model="flankPainSwell" value="3"><span class="h5">持续</span>
+          			<h4>胁肋痛-隐痛</h4>
+          			<input type="radio" name="r19" ng-model="flankPainDull" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r19" ng-model="flankPainDull" value="1"><span class="h5">偶有</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r19" ng-model="flankPainDull" value="2"><span class="h5">常有</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r19" ng-model="flankPainDull" value="3"><span class="h5">持续</span>
+          			<h4>胁肋痛-不适</h4>
+          			<input type="radio" name="r20" ng-model="flankPainDiscomfort" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r20" ng-model="flankPainDiscomfort" value="1"><span class="h5">偶有</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r20" ng-model="flankPainDiscomfort" value="2"><span class="h5">常有</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r20" ng-model="flankPainDiscomfort" value="3"><span class="h5">持续</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>纳差</h4>
+          			<input type="radio" name="r21" ng-model="anorexia" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r21" ng-model="anorexia" value="1"><span class="h5">胃纳轻度减少</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r21" ng-model="anorexia" value="2"><span class="h5">胃纳明显减少</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r21" ng-model="anorexia" value="3"><span class="h5">不欲食</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>畏寒肢冷</h4>
+          			<input type="radio" name="r22" ng-model="aphrodisiacCold" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r22" ng-model="aphrodisiacCold" value="1"><span class="h5">手足不温</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r22" ng-model="aphrodisiacCold" value="2"><span class="h5">加衣被方可缓解</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r22" ng-model="aphrodisiacCold" value="3"><span class="h5">加衣被不缓解</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>肢体困重</h4>
+          			<input type="radio" name="r23" ng-model="limb" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r23" ng-model="limb" value="1"><span class="h5">下肢偶有沉重感</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r23" ng-model="limb" value="2"><span class="h5">肢体沉重</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r23" ng-model="limb" value="3"><span class="h5">肢体沉重，懒动</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>腰痠脚软</h4>
+          			<input type="radio" name="r24" ng-model="backacheFootSoft" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r24" ng-model="backacheFootSoft" value="1"><span class="h5">偶有腰痠脚软</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r24" ng-model="backacheFootSoft" value="2"><span class="h5">经常腰痠脚软</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r24" ng-model="backacheFootSoft" value="3"><span class="h5">整日腰痠脚软</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>手足烦热</h4>
+          			<input type="radio" name="r25" ng-model="handFootFanHot" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r25" ng-model="handFootFanHot" value="1"><span class="h5">轻度手足烦热</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r25" ng-model="handFootFanHot" value="2"><span class="h5">热甚，但能忍受</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r25" ng-model="handFootFanHot" value="3"><span class="h5">热甚，情绪烦躁</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>尿黄</h4>
+          			<input type="radio" name="r26" ng-model="urineYellow" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r26" ng-model="urineYellow" value="1"><span class="h5">色黄</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r26" ng-model="urineYellow" value="2"><span class="h5">色深黄</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r26" ng-model="urineYellow" value="3"><span class="h5">色黄赤</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>便秘</h4>
+          			<input type="radio" name="r27" ng-model="constipation" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r27" ng-model="constipation" value="1"><span class="h5">2日1行便之不爽</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r27" ng-model="constipation" value="2"><span class="h5">3日一行</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r27" ng-model="constipation" value="3"><span class="h5">>3日一行</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>便溏</h4>
+          			<input type="radio" name="r28" ng-model="looseStools" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r28" ng-model="looseStools" value="1"><span class="h5">大便不成形</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r28" ng-model="looseStools" value="2"><span class="h5">稀便，每日2-3次</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r28" ng-model="looseStools" value="3"><span class="h5">稀便，4次以上</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>自汗</h4>
+          			<input type="radio" name="r29" ng-model="perspiration" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r29" ng-model="perspiration" value="1"><span class="h5">偶有汗出</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r29" ng-model="perspiration" value="2"><span class="h5">经常汗出</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r29" ng-model="perspiration" value="3"><span class="h5">动辄汗出</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>盗汗</h4>
+          			<input type="radio" name="r30" ng-model="nightSweats" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r30" ng-model="nightSweats" value="1"><span class="h5">偶有盗汗</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r30" ng-model="nightSweats" value="2"><span class="h5">经常盗汗</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r30" ng-model="nightSweats" value="3"><span class="h5">每晚盗汗</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>下肢水肿</h4>
+          			<input type="radio" name="r31" ng-model="lowerExtremityEdema" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r31" ng-model="lowerExtremityEdema" value="1"><span class="h5">踝关节以下</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r31" ng-model="lowerExtremityEdema" value="2"><span class="h5">膝关节以下</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r31" ng-model="lowerExtremityEdema" value="3"><span class="h5">膝关节以上</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>面晦暗</h4>
+          			<input type="radio" name="r32" ng-model="faceDull" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r32" ng-model="faceDull" value="1"><span class="h5">色暗少光泽</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r32" ng-model="faceDull" value="2"><span class="h5">色晦暗</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r32" ng-model="faceDull" value="3"><span class="h5">色深褐无光</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>目黄</h4>
+          			<input type="radio" name="r33" ng-model="eyeYellow" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r33" ng-model="eyeYellow" value="1"><span class="h5">色淡黄</span><span class="col-md-offset-1">  &nbsp</span>
+          			<input type="radio" name="r33" ng-model="eyeYellow" value="2"><span class="h5">色黄</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r33" ng-model="eyeYellow" value="3"><span class="h5">色深黄</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>身黄</h4>
+          			<input type="radio" name="r34" ng-model="bodyYellow" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r34" ng-model="bodyYellow" value="1"><span class="h5">色淡黄</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r34" ng-model="bodyYellow" value="2"><span class="h5">色黄</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r34" ng-model="bodyYellow" value="3"><span class="h5">色深黄</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>蜘蛛痣数量</h4>
+          			<input type="radio" name="r35" ng-model="spiderNevus" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r35" ng-model="spiderNevus" value="1"><span class="h5">偶见蜘蛛痣</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r35" ng-model="spiderNevus" value="2"><span class="h5">有2~4个蜘蛛痣</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r35" ng-model="spiderNevus" value="3"><span class="h5">5个以上蜘蛛痣</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>肝掌</h4>
+          			<input type="radio" name="r36" ng-model="liverPalm" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r36" ng-model="liverPalm" value="1"><span class="h5">可疑肝掌</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r36" ng-model="liverPalm" value="2"><span class="h5">肝掌</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r36" ng-model="liverPalm" value="3"><span class="h5">明显肝掌</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>腹壁脉络曲张</h4>
+          			<input type="radio" name="r37" ng-model="abdominalVeins" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r37" ng-model="abdominalVeins" value="1"><span class="h5">隐约可见</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r37" ng-model="abdominalVeins" value="2"><span class="h5">清晰可见</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r37" ng-model="abdominalVeins" value="3"><span class="h5">满腹脉络曲张</span>
+          		</li>
+          		<hr style="border : 1px dashed #3C8DBC;" />
+          		<li>
+          			<h4>黄色瘤</h4>
+          			<input type="radio" name="r38" ng-model="yellowTumor" value="0"><span class="h5">无</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r38" ng-model="yellowTumor" value="1"><span class="h5">隐约可见</span><span class="col-md-offset-1"> &nbsp</span>
+          			<input type="radio" name="r38" ng-model="yellowTumor" value="2"><span class="h5">清晰可见</span><span class="col-md-offset-1">&nbsp</span>
+          			<input type="radio" name="r38" ng-model="yellowTumor" value="3"><span class="h5">明显突出皮肤</span>
+          		</li>
+          	</ol>
+          </div>
+          <br>
+          <span class="col-md-offset-9">&nbsp</span>
+          <input type="button" class="btn btn-primary btn-lg" ng-click="save()" value="保存">&nbsp
+          <input type="button" class="btn btn-primary btn-lg" ng-click="next()" value="下一步">&nbsp
+          <input type="button" class="btn btn-primary btn-lg" ng-click="out()" value="退出">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
