@@ -33,6 +33,6 @@ angular.module('fourDiagnostic', [])
       }
     };
     $scope.confirm = function() {
-
+      
     };
   }]);

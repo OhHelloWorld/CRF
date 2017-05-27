@@ -37,7 +37,7 @@ public class FourDiagnosticInformationDO {
     private int belching;// 嗳气
     private int abdominalDistention;// 脘腹胀满
     private int flankPainStinging;// 胁肋痛-刺痛
-    private int flankPainSwell;// 胁肋痛-胀痛ʹ
+    private int flankPainSwell;// 胁肋痛-胀痛
     private int flankPainDull;// 胁肋痛-隐痛
     private int flankPainDiscomfort;// 胁肋痛-不适
     private int anorexia;// 纳差
