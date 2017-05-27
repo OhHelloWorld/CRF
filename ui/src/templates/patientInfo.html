@@ -252,9 +252,64 @@
         </div>
 
         <span class="col-md-offset-8">&nbsp</span>
-          <input type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal" ng-click="save()" value="保存">&nbsp
-          <input type="button" class="btn btn-primary " ng-click="next()" value="下一步">&nbsp
-          <input type="button" class="btn btn-primary " ng-click="out()" value="退出">
+          <input type="button" class="btn btn-primary " ng-click="showNextModel()" value="下一步">&nbsp
+          <input type="button" class="btn btn-primary " data-toggle="modal" data-target="#existModal" ng-click="showOutModel()" value="退出">
+
+          <!-- 下一步按钮模态框 -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <p>您有部分信息填写不合格，体检查后重新提交！&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">确定</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="existModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <p>您确定要退出吗？&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" ng-click="exsitEdit()">退出编辑</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 下一步按钮模态框 -->
+          <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                ...
+              </div>
+            </div>
+          </div> -->
+
+          <!-- 退出按钮模态框 -->
+          <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                ...
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

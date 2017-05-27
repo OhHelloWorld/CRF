@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../lib/css/css/AdminLTE.min.css';
 import '../lib/css/css/skins/skin-blue.min.css';
 import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
