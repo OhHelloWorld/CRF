@@ -6,8 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.entities.PatientDO;
 import app.repo.PatientRepo;
@@ -39,13 +42,16 @@ public class PatientServiceImpl implements PatientService {
         }
     }
 
-    public List<PatientDTO> getAllPatient() {
+    public PageDTO<PatientDTO> getAllPatient(Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
-        Iterable<PatientDO> patientDOs = patientRepo.findAll();
+        Page<PatientDO> patientDOs = patientRepo.getAll(pageable);
         for (PatientDO patientDO : patientDOs) {
             patientDTOs.add(convertToPatientDTO(patientDO));
         }
-        return patientDTOs;
+        PageDTO<PatientDTO> pageDTO = new PageDTO<>();
+        pageDTO.setContent(patientDTOs);
+        pageDTO.setTotalNumber(patientDOs.getTotalPages());
+        return pageDTO;
     }
 
     public void editPatient(PatientDTO patientDTO) {

@@ -1,11 +1,9 @@
 ﻿<section class="content-header">
   <h1>
-    Page
-    <small>Optional description</small>
+    首页
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-    <li class="active">Here</li>
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
   </ol>
 </section>
   <div  ng-app="home" ng-controller="homeController">
@@ -13,7 +11,50 @@
       <div class="row-fluid">
         <div class="span12">
           <div >
+          <br>
+            <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">患者总览</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6"></div>
+              </div><div class="row">
+              <div class="col-sm-12">
+              <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                <thead>
+                <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">编号</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">年龄</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">采集信息状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients">
+                  <td><span class="h5">{{patient.name}}</span></td>
+                  <td><span class="h5">{{patient.identifier}}</td>
+                  <td><span class="h5">{{patient.gender}}</td>
+                  <td><span class="h5">{{patient.complete}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="page ng-hide col-md-offset-5" my-directive
+                    url={{url}} get-data="patients"></div>
+                </div>
 
+              </div>
+            </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
           </div>
         </div>
       </div>

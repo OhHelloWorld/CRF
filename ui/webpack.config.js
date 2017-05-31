@@ -49,10 +49,16 @@ module.exports = {
     }]
   },
 
+  devServer:{
+    inline:true,
+    port:9000,
+    proxy:{
+      '/api':{
+        target:'http://localhost:8080'
+      }
+    }
+  },
   plugins: [
-
-
-
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'index'],
       filename: __dirname + '/dist/index.html',
@@ -69,7 +75,7 @@ module.exports = {
       'window.jQuery': 'jquery',
       'window.jquery': 'jquery'
     }),
-    
+
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       // minChunks: Infinity

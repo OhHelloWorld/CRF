@@ -1,0 +1,206 @@
+<section class="content-header">
+  <h1 class=" text-center">
+     舌脉象观察
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">舌脉象观察</li>
+  </ol>
+</section>
+<div  ng-app="tonguePulse" ng-controller="tonguePulseController">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <br>
+        <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
+          <ol>
+            <li>
+              <h4>舌质</h4>
+              <input type="checkbox" ng-model="cb1"><span class="h4">淡红</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb2"><span class="h4">淡白</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb3"><span class="h4">淡紫</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb4"><span class="h4">红</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb5"><span class="h4">绛</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb6"><span class="h4">青</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb7"><span class="h4">紫暗</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb8"><span class="h4">瘀点瘀斑</span>
+              <h4>部位</h4>
+              <form class="form-inline">
+              <input type="checkbox" ng-model="cb9"><span class="h4">全舌</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb10" ng-click="tongueShowClick()"><span class="h4">局部</span>
+              <input ng-show="tongueShow" ng-init="tongueShow=false" type="text" class="form-control" placeholder="请注明..">
+              </form>
+            </li>
+            <hr style="border : 1px dashed #3C8DBC;" />
+            <li>
+              <h4>舌体</h4>
+              <input type="checkbox" ng-model="cb11"><span class="h4">荣</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb12"><span class="h4">枯</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb13"><span class="h4">瘦</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb14"><span class="h4">胖</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb15"><span class="h4">齿痕</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb16"><span class="h4">点刺</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb17"><span class="h4">裂纹</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb18"><span class="h4">舌体瘀斑</span>
+            </li>
+            <hr style="border : 1px dashed #3C8DBC;" />
+            <li>
+              <h4>苔质</h4>
+              <input type="checkbox" ng-model="cb19"><span class="h4">薄</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb20"><span class="h4">厚</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb21"><span class="h4">润</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb22"><span class="h4">少津</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb23"><span class="h4">燥</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb24"><span class="h4">糙</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb25"><span class="h4">焦</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb26"><span class="h4">枯</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb27"><span class="h4">腻</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb28"><span class="h4">腐</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb29"><span class="h4">剥</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb30"><span class="h4">类剥</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb31"><span class="h4">无苔</span>
+              <h4>部位</h4>
+              <form class="form-inline">
+              <input type="checkbox" ng-model="cb32"><span class="h4">全舌</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb33" ng-click="mossyShowClick()"><span class="h4">局部</span>
+              <input type="text" ng-show="mossyShow" ng-init="mossyShow=false" class="form-control" placeholder="请注明..">
+              </form>
+            </li>
+            <hr style="border : 1px dashed #3C8DBC;" />
+            <li>
+              <h4>舌苔色</h4>
+              <input type="checkbox" ng-model="cb34"><span class="h4">白</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb35"><span class="h4">略黄</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb36"><span class="h4">黄</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb37"><span class="h4">灰</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb38"><span class="h4">黑</span>
+              <h4>部位</h4>
+              <form class="form-inline">
+              <input type="checkbox" ng-model="cb39"><span class="h4">全舌</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb40" ng-click="tongueColorShowClick()"><span class="h4">局部</span>
+              <input type="text" ng-show="tongueColorShow" ng-init="tongueColorShow=false" class="form-control" placeholder="请注明..">
+              </form>
+            </li>
+            <hr style="border : 1px dashed #3C8DBC;" />
+            <li>
+              <h4>舌下静脉曲张</h4>
+              <input type="checkbox" ng-model="cb41"><span class="h4">正常</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb42"><span class="h4">轻微</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <input type="checkbox" ng-model="cb43"><span class="h4">明显</span>
+            </li>
+            <hr style="border : 1px dashed #3C8DBC;" />
+            <li>
+              <h4>脉象</h4>
+              <ul>
+                <li>
+                  <h4>左</h4>
+                  <input type="checkbox" ng-model="cb44"><span class="h4">浮</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb45"><span class="h4">沉</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb46"><span class="h4">弦</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb47"><span class="h4">滑</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb48"><span class="h4">细</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb49"><span class="h4">数</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb50"><span class="h4">濡</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb51"><span class="h4">缓</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb52"><span class="h4">涩</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb53"><span class="h4">迟</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb54"><span class="h4">长</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb55"><span class="h4">短</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb56"><span class="h4">虚</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb57"><span class="h4">弱</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb58"><span class="h4">结代</span>
+                </li>
+                <li>
+                  <h4>右</h4>
+                  <input type="checkbox" ng-model="cb59"><span class="h4">浮</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb60"><span class="h4">沉</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb61"><span class="h4">弦</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb62"><span class="h4">滑</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb63"><span class="h4">细</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb64"><span class="h4">数</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb65"><span class="h4">濡</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb66"><span class="h4">缓</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb67"><span class="h4">涩</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb68"><span class="h4">迟</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb69"><span class="h4">长</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb70"><span class="h4">短</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb71"><span class="h4">虚</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb72"><span class="h4">弱</span>
+                  &nbsp&nbsp&nbsp&nbsp
+                  <input type="checkbox" ng-model="cb73"><span class="h4">结代</span>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <br>
+        <span class="col-md-offset-9">&nbsp</span>
+        <input type="button" class="btn btn-primary" ng-click="save()" value="保存">&nbsp
+        <input type="button" class="btn btn-primary" ng-click="next()" value="下一步">&nbsp
+        <input type="button" class="btn btn-primary" ng-click="out()" value="退出">
+      </div>
+    </div>
+  </div>
+</div>

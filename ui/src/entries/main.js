@@ -15,8 +15,10 @@ import '../modules/home.js';
 import '../modules/fourDiagnostic.js';
 import '../modules/patientInfo.js';
 import '../modules/phyAChe.js';
+import '../modules/tonguePulse.js';
 
 var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe']);
+var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo','tonguePulse']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -37,6 +39,9 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
     .state('phyAChe', {
       url: '/phyAChe',
       template: require('../templates/phyAChe.html')
+    .state('tonguePulse', {
+      url: '/tonguePulse',
+      template: require('../templates/tonguePulse.html')
     });
 
 }]);
