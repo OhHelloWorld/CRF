@@ -2,7 +2,7 @@ package app.dto;
 
 
 /**
- * @author Administrator ������Ϣ�ɼ�������DTO
+ * @author Administrator 四诊信息
  */
 public class FourDiagnosticInformationDTO {
 

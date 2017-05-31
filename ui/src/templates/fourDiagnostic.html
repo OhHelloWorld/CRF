@@ -25,9 +25,9 @@
 						<p class="h3">{{confirmInfo}}</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">否</button>
 						<button type="button" class="btn btn-primary"
-							ng-click="confirm()" data-dismiss="modal">确认</button>
+							ng-click="confirm()" data-dismiss="modal">是</button>
 					</div>
 				</div>
 			</div>
@@ -45,11 +45,31 @@
 						<p class="h3">{{infomation}}</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
 					</div>
 				</div>
 			</div>
 		</div>
+          <div id="outModel" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">{{outmation}}</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                              <button type="button" class="btn btn-primary"
+                                   ng-click="outSure()" data-dismiss="modal">是</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
           <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
           	<ol>
           		<li>
@@ -339,9 +359,9 @@
           </div>
           <br>
           <span class="col-md-offset-9">&nbsp</span>
-          <input type="button" class="btn btn-primary btn-lg" ng-click="save()" value="保存">&nbsp
-          <input type="button" class="btn btn-primary btn-lg" ng-click="next()" value="下一步">&nbsp
-          <input type="button" class="btn btn-primary btn-lg" ng-click="out()" value="退出">
+          <input type="button" class="btn btn-primary" ng-click="save()" value="保存">&nbsp
+          <input type="button" class="btn btn-primary" ng-click="next()" value="下一步">&nbsp
+          <input type="button" class="btn btn-primary" ng-click="out()" value="退出">
         </div>
       </div>
     </div>

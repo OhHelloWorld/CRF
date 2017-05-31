@@ -1,9 +1,9 @@
 package app.controller;
 
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.service.PatientService;
 
@@ -59,8 +60,8 @@ public class PatientController {
      * @return
      */
     @GetMapping(path = "")
-    public List<PatientDTO> getAllPatient() {
-        return patientService.getAllPatient();
+    public PageDTO<PatientDTO> getAllPatient(@PageableDefault(value = 15) Pageable pageable) {
+        return patientService.getAllPatient(pageable);
     }
 
 }

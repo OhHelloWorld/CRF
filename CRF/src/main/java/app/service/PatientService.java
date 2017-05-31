@@ -1,7 +1,8 @@
 package app.service;
 
-import java.util.List;
+import org.springframework.data.domain.Pageable;
 
+import app.dto.PageDTO;
 import app.dto.PatientDTO;
 
 public interface PatientService {
@@ -34,7 +35,7 @@ public interface PatientService {
      * 
      * @return
      */
-    public List<PatientDTO> getAllPatient();
+    public PageDTO<PatientDTO> getAllPatient(Pageable pageable);
 
     /**
      * 编辑患者的一般资料
