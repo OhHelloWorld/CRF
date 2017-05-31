@@ -1,0 +1,726 @@
+<section class="content-header">
+  <h1 class="text-center">
+    理化检查结果
+  </h1><br>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level5.5</a></li>
+    <li class="active">Here</li>
+  </ol>
+</section>
+<div  ng-app="phyAChe" ng-controller="phyACheController">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div>
+          <!-- 内容放这里 -->
+          <div class="col-md-3">
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Folders</h3>
+
+              <div class="box-tools">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body no-padding">
+              <ul class="nav nav-pills nav-stacked">
+                <li><a ng-click="addTabActive('#tab_1')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝功能</a></li>
+                <li><a ng-click="addTabActive('#tab_2')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能</a></li>
+                <li><a ng-click="addTabActive('#tab_3')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血</a></li>
+                <li><a ng-click="addTabActive('#tab_4')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 血常规</a></li>
+                <li><a ng-click="addTabActive('#tab_5')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝病自身抗体</a></li>
+                <li><a ng-click="addTabActive('#tab_6')" data-toggle="tab"><i class="fa fa-file-text-o"></i> ANA</a></li>
+                <li><a ng-click="addTabActive('#tab_7')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 体液免疫</a></li>
+                <li><a ng-click="addTabActive('#tab_8')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 细胞免疫</a></li>
+                <li><a ng-click="addTabActive('#tab_9')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 风湿免疫相关抗体</a></li>
+                <li><a ng-click="addTabActive('#tab_10')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 腹部超声/CT/MRI</a></li>
+                <li><a ng-click="addTabActive('#tab_11')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝脏硬度检测值</a></li>
+                <li><a ng-click="addTabActive('#tab_12')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝穿刺病理检查</a></li>
+              </ul>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          </div>
+
+
+          <!-- 显示部分==>肝功能 -->
+
+          <div class="col-md-9">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">{{tabTitle}}</h3>
+
+                <!-- 各种tab -->
+                <div class="tab-content">
+              <div class="tab-pane" id="tab_1">
+                <form class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">白蛋白</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">g/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">球蛋白</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">g/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">ALT</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">IU/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">AST</label>
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">IU/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">GGT</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">IU/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">ALP</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">IU/L</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">总胆固醇</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmol/l</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">总胆红素</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmol/l</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">直接胆红素</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">μmmol/l</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">γ-球蛋白</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_2">
+
+                <form class="form-horizontal">
+                <div class="box-body">
+
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">BUN</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmol/L</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Cr</label>
+
+                  <div class="col-sm-10">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">μmol/L</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_3">
+                tab_3
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">PT</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">秒</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">INR</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_4">
+                tab_4
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">RBC</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>12</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Hb</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">WBC</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">中性粒细胞</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">淋巴细胞</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">嗜酸性粒细胞</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">血小板</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_5">
+                tab_5
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">抗线粒体抗体(AMA)</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">AMA-M2</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">抗平滑肌抗体</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">肝肾微粒体抗体</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">肝细胞溶质抗原</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">可溶性肝-胰抗原</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">其他</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_6">
+                tab_6
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">均质型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">颗粒型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">周边型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">核仁型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">核仁增强型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">核点型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">着丝点型</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">其他</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_7">
+                tab_7
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">igG</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">igA</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">igM</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">免疫复合物</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon"></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">补体C3</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">补体C4</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">g/L</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">igE</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">IU/ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">κ-轻链</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">mg/dl</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">λ-轻链</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <span class="input-group-addon">mg/dl</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_8">
+                tab_8
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_9">
+                tab_9
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_10">
+                tab_10
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_11">
+                tab_11
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_12">
+                tab_12
+                <form class="form-horizontal">
+                  <div class="box-body">
+
+
+
+                  </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+
+
+                <div class="box-tools pull-right">
+                  <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="Previous"><i class="fa fa-chevron-left"></i></a>
+                  <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="Next"><i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

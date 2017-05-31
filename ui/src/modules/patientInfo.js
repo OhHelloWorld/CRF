@@ -24,10 +24,15 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
   //   alert('post successed!!');
   // });
   //save button
+
   $scope.showNextModel = function(){
     if(true){
       $('#myModal').modal('show');
     }
+  };
+
+  $scope.showExistModal = function(){
+    $('#existModal').modal('show');
   };
 
   $scope.exsitEdit = function(){

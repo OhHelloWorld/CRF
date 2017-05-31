@@ -14,18 +14,19 @@ import uiRouter from 'angular-ui-router';
 import '../modules/home.js';
 import '../modules/fourDiagnostic.js';
 import '../modules/patientInfo.js';
+import '../modules/phyAChe.js';
 import '../modules/tonguePulse.js';
 
-var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo','tonguePulse']);
+var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe','tonguePulse']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
-      url: '/patientInfo',
-      template: require('../templates/patientInfo.html'),
-    })
+    url: '/patientInfo',
+    template: require('../templates/patientInfo.html'),
+  })
     .state('home', {
       url: '/home',
       template: require('../templates/home.html')
@@ -34,10 +35,15 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
       url: '/fourDiagnostic',
       template: require('../templates/fourDiagnostic.html')
     })
+    .state('phyAChe', {
+      url: '/phyAChe',
+      template: require('../templates/phyAChe.html')
+    })
     .state('tonguePulse', {
       url: '/tonguePulse',
       template: require('../templates/tonguePulse.html')
     });
+
 }]);
 
 main.controller('mainController', ['$scope', '$http', function($scope, $http) {

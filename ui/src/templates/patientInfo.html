@@ -144,37 +144,6 @@
                 </div> -->
 
 
-
-          <!-- <div>
-            <div class="form-group">
-              <lable class="col-sm-1 control-label">姓名</lable>
-              <div class="col-sm-3">
-                <input class="form-control">
-              </div>
-            </div>
-            <br><br><br><br>
-            <div class="form-group form-group-sm">
-
-        			<label class="col-sm-1 control-label" >姓名:</label>
-        	    <div class="col-sm-2" >
-        	      <input class="form-control" type="text">
-        	    </div>
-
-        			<label class="col-sm-1 control-label">性别:</label>
-        			<div class="col-sm-2">
-        				<input class="form-control" type="text">
-        				<p style="color: red" ng-cloak ng-show="judgeTelFormatReason">格式错误，请检查！</p>
-        			</div>
-
-              <label class="col-sm-1 control-label">年龄:</label>
-        			<div class="col-sm-2">
-        				<input class="form-control" type="text">
-        				<p style="color: red" ng-cloak ng-show="judgeTelFormatReason">格式错误，请检查！</p>
-        			</div>
-        	  </div>
-          </div> -->
-
-
           <!-- 诊断 -->
         <div class="col-md-6">
           <div class="box box-primary">
@@ -253,7 +222,7 @@
 
         <span class="col-md-offset-8">&nbsp</span>
           <input type="button" class="btn btn-primary " ng-click="showNextModel()" value="下一步">&nbsp
-          <input type="button" class="btn btn-primary " data-toggle="modal" data-target="#existModal" ng-click="showOutModel()" value="退出">
+          <input type="button" class="btn btn-primary " ng-click="showExistModal()" value="退出">
 
           <!-- 下一步按钮模态框 -->
           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -265,10 +234,10 @@
                 <h4 class="modal-title"></h4>
               </div>
               <div class="modal-body">
-                <p>您有部分信息填写不合格，体检查后重新提交！&hellip;</p>
+                <p>您有部分信息填写不合格，请检查后重新提交！&hellip;</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
               </div>
               </div>
             </div>
@@ -281,9 +250,9 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
-              </div>
+                </div>
               <div class="modal-body">
-                <p>您确定要退出吗？&hellip;</p>
+                <p>您确定要放弃编辑退出吗？&hellip;</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
