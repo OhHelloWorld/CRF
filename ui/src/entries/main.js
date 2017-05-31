@@ -14,17 +14,18 @@ import uiRouter from 'angular-ui-router';
 import '../modules/home.js';
 import '../modules/fourDiagnostic.js';
 import '../modules/patientInfo.js';
+import '../modules/phyAChe.js';
 
-var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo']);
+var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe']);
 
 main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
-      url: '/patientInfo',
-      template: require('../templates/patientInfo.html'),
-    })
+    url: '/patientInfo',
+    template: require('../templates/patientInfo.html'),
+  })
     .state('home', {
       url: '/home',
       template: require('../templates/home.html')
@@ -32,7 +33,12 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
     .state('fourDiagnostic', {
       url: '/fourDiagnostic',
       template: require('../templates/fourDiagnostic.html')
+    })
+    .state('phyAChe', {
+      url: '/phyAChe',
+      template: require('../templates/phyAChe.html')
     });
+
 }]);
 
 main.controller('mainController', ['$scope', '$http', function($scope, $http) {
