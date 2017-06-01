@@ -5,7 +5,7 @@ import uiBootstrap from 'angular-ui-bootstrap';
 import '../commons/page.js';
 
 
-var home = angular.module('home', [uiBootstrap]);
+var home = angular.module('home', [uiBootstrap,'page']);
 
 home.controller('homeController', ['$scope', '$http', function($scope, $http) {
   $scope.url = '/api/patient';

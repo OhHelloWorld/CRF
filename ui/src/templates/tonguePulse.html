@@ -12,6 +12,84 @@
     <div class="row-fluid">
       <div class="span12">
         <br>
+      <div id="confirmModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="h3">{{confirmInfo}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+            <button type="button" class="btn btn-primary"
+              ng-click="confirm(0)" data-dismiss="modal">是</button>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div id="infoModel" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="h3">{{information}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+          <div id="outModel" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">{{outmation}}</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                              <button type="button" class="btn btn-primary"
+                                   ng-click="outSure()" data-dismiss="modal">是</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div id="nextModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="h3">{{nextInfo}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+            <button type="button" class="btn btn-primary"
+              ng-click="confirmNext()" data-dismiss="modal">是</button>
+          </div>
+        </div> 
+      </div>
+    </div>
         <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
           <ol>
             <li>
@@ -36,7 +114,7 @@
               <input type="checkbox" ng-model="cb9"><span class="h4">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb10" ng-click="tongueShowClick()"><span class="h4">局部</span>
-              <input ng-show="tongueShow" ng-init="tongueShow=false" type="text" class="form-control" placeholder="请注明..">
+              <input ng-show="tongueShow" ng-init="tongueShow=false" ng-model="tongueDescription" type="text" class="form-control" placeholder="请注明..">
               </form>
             </li>
             <hr style="border : 1px dashed #3C8DBC;" />
@@ -91,7 +169,7 @@
               <input type="checkbox" ng-model="cb32"><span class="h4">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb33" ng-click="mossyShowClick()"><span class="h4">局部</span>
-              <input type="text" ng-show="mossyShow" ng-init="mossyShow=false" class="form-control" placeholder="请注明..">
+              <input type="text" ng-show="mossyShow" ng-init="mossyShow=false" ng-model="mossyDes" class="form-control" placeholder="请注明..">
               </form>
             </li>
             <hr style="border : 1px dashed #3C8DBC;" />
@@ -111,7 +189,7 @@
               <input type="checkbox" ng-model="cb39"><span class="h4">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb40" ng-click="tongueColorShowClick()"><span class="h4">局部</span>
-              <input type="text" ng-show="tongueColorShow" ng-init="tongueColorShow=false" class="form-control" placeholder="请注明..">
+              <input type="text" ng-show="tongueColorShow" ng-init="tongueColorShow=false" ng-model="tongueColorDes" class="form-control" placeholder="请注明..">
               </form>
             </li>
             <hr style="border : 1px dashed #3C8DBC;" />

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
@@ -25,6 +26,7 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     private PatientRepo patientRepo;
 
+    @Transactional
     public void savePatientGeneralInformation(PatientDTO patientDTO) {
         patientRepo.save(convertToPatientDO(patientDTO));
     }
@@ -54,6 +56,7 @@ public class PatientServiceImpl implements PatientService {
         return pageDTO;
     }
 
+    @Transactional
     public void editPatient(PatientDTO patientDTO) {
         PatientDO patientDO = patientRepo.findOne(patientDTO.getId());
         editToPatientDO(patientDO, patientDTO);

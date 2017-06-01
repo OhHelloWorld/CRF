@@ -2,6 +2,7 @@ package app.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.TonguePulseDTO;
 import app.entities.TonguePulseDO;
@@ -14,6 +15,7 @@ public class TonguePulseImpl implements TonguePulseService {
     @Autowired
     private TonguePulseRepo tonguePulseRepo;
 
+    @Transactional
     public void saveTonguePulse(TonguePulseDTO tonguePulseDTO) {
         tonguePulseRepo.save(convertToTonguePulseDO(tonguePulseDTO));
     }

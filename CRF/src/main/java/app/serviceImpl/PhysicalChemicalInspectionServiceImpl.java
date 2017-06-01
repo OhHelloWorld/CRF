@@ -2,6 +2,7 @@ package app.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.PhysicalChemicalInspectionDTO;
 import app.entities.PhysicalChemicalInspectionDO;
@@ -14,6 +15,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
     @Autowired
     private PhysicalChemicalInspectionRepo pRepo;
 
+    @Transactional
     public void savePhysicalChemicalInspection(PhysicalChemicalInspectionDTO pDto) {
         pRepo.save(convertToPhysicalChemicalInspectionDO(pDto));
     }
