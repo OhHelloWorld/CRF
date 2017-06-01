@@ -32,7 +32,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="infoModel" class="modal" tabindex="-1" role="dialog">
+		<div id="infoModal" class="modal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -42,7 +42,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<p class="h3">{{infomation}}</p>
+						<p class="h3">{{information}}</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
@@ -68,6 +68,26 @@
                                    ng-click="outSure()" data-dismiss="modal">是</button>
                          </div>
                     </div>
+               </div>
+          </div>
+          <div id="nextModal" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal"
+                         aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                         </div>
+                    <div class="modal-body">
+                         <p class="h3">{{nextInfo}}</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                    <button type="button" class="btn btn-primary"
+                    ng-click="confirmNext()" data-dismiss="modal">是</button>
+                    </div>
+                    </div> 
                </div>
           </div>
           <div style="border: 5px;border-style: outset;border-color: #3C8DBC">

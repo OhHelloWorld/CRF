@@ -2,19 +2,19 @@ import angular from 'angular';
 
 angular.module('fourDiagnostic', [])
   .controller('fourDiagnosticController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
-      $scope.blurredVision && $scope.depression && $scope.irritability &&
-      $scope.insomnia && $scope.easyWakeUp && $scope.tinnitus && $scope.dryMouth && $scope.mouthPain &&
-      $scope.badBreath && $scope.nausea && $scope.belching && $scope.abdominalDistention && $scope.flankPainStinging &&
-      $scope.flankPainSwell && $scope.flankPainDull && $scope.flankPainDiscomfort && $scope.anorexia && $scope.aphrodisiacCold &&
-      $scope.limb && $scope.backacheFootSoft && $scope.handFootFanHot && $scope.urineYellow && $scope.constipation && $scope.looseStools &&
-      $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
-      $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
     var fourDiagnosticInformation = {};
     var isSave = false;
     $scope.save = function() {
+      var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
+        $scope.blurredVision && $scope.depression && $scope.irritability &&
+        $scope.insomnia && $scope.easyWakeUp && $scope.tinnitus && $scope.dryMouth && $scope.mouthPain &&
+        $scope.badBreath && $scope.nausea && $scope.belching && $scope.abdominalDistention && $scope.flankPainStinging &&
+        $scope.flankPainSwell && $scope.flankPainDull && $scope.flankPainDiscomfort && $scope.anorexia && $scope.aphrodisiacCold &&
+        $scope.limb && $scope.backacheFootSoft && $scope.handFootFanHot && $scope.urineYellow && $scope.constipation && $scope.looseStools &&
+        $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
+        $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
       if (isSave) {
-        $scope.infoModal = '您已保存，请勿重复操作,谢谢';
+        $scope.information = '您已保存，请勿重复操作,谢谢';
         $('#infoModal').modal({
           keyboard: true
         });
@@ -30,6 +30,14 @@ angular.module('fourDiagnostic', [])
       }
     };
     $scope.next = function() {
+      var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
+        $scope.blurredVision && $scope.depression && $scope.irritability &&
+        $scope.insomnia && $scope.easyWakeUp && $scope.tinnitus && $scope.dryMouth && $scope.mouthPain &&
+        $scope.badBreath && $scope.nausea && $scope.belching && $scope.abdominalDistention && $scope.flankPainStinging &&
+        $scope.flankPainSwell && $scope.flankPainDull && $scope.flankPainDiscomfort && $scope.anorexia && $scope.aphrodisiacCold &&
+        $scope.limb && $scope.backacheFootSoft && $scope.handFootFanHot && $scope.urineYellow && $scope.constipation && $scope.looseStools &&
+        $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
+        $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
       if (isSave) {
         $state.go('tonguePulse');
       } else {
@@ -37,19 +45,24 @@ angular.module('fourDiagnostic', [])
           saveFourDia();
           $state.go('tonguePulse');
         } else {
-          $scope.confirmInfo = '填写尚不完整，是否保存并进入下一步？';
-          $('#confirmModal').modal({
+          $scope.nextInfo = '进入下一步将失去还未保存的内容，是否继续？';
+          $('#nextModal').modal({
             keyboard: true
           });
         }
       }
     };
 
+    $scope.confirmNext = function(){
+      $('#nextModal').modal('hide');
+      $state.go('tonguePulse');
+    };
+
     $scope.out = function() {
       if (isSave) {
         $state.go('home');
       } else {
-        $scope.confirmInfo = '是否保存并退出？';
+        $scope.outmation = '继续退出将失去未保存的内容，是否继续？';
         $('#outModal').modal({
           keyboard: true
         });
@@ -61,11 +74,19 @@ angular.module('fourDiagnostic', [])
     };
 
     $scope.outSure = function() {
-      saveFourDia();
+      $('#outModal').modal('hide');
       $state.go('home');
     };
 
     function saveFourDia() {
+      var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
+        $scope.blurredVision && $scope.depression && $scope.irritability &&
+        $scope.insomnia && $scope.easyWakeUp && $scope.tinnitus && $scope.dryMouth && $scope.mouthPain &&
+        $scope.badBreath && $scope.nausea && $scope.belching && $scope.abdominalDistention && $scope.flankPainStinging &&
+        $scope.flankPainSwell && $scope.flankPainDull && $scope.flankPainDiscomfort && $scope.anorexia && $scope.aphrodisiacCold &&
+        $scope.limb && $scope.backacheFootSoft && $scope.handFootFanHot && $scope.urineYellow && $scope.constipation && $scope.looseStools &&
+        $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
+        $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
       fourDiagnosticInformation.fatigue = formatFourDia($scope.fatigue);
       fourDiagnosticInformation.skinItching = formatFourDia($scope.skinItching);
       fourDiagnosticInformation.twoEyesDry = formatFourDia($scope.twoEyesDry);
@@ -129,6 +150,8 @@ angular.module('fourDiagnostic', [])
     function formatFourDia(data) {
       if (data === undefined) {
         data = -1;
+      }else{
+        return data;
       }
     }
   }]);

@@ -2,6 +2,7 @@ package app.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.FourDiagnosticInformationDTO;
 import app.entities.FourDiagnosticInformationDO;
@@ -14,6 +15,7 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
     @Autowired
     private FourDiagnosticInformationRepo fRepo;
 
+    @Transactional
     public void saveFourDiagnosticInformation(FourDiagnosticInformationDTO fDto) {
 
         fRepo.save(convertToFourdiagnosticinformationDTO(fDto));
