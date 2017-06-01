@@ -51,4 +51,6 @@ public class PhysicalChemicalInspectionController {
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return physicalChemicalInspectionService.getCompleteByPatientId(patientId);
     }
+
+
 }
