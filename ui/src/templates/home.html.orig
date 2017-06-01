@@ -1,6 +1,11 @@
 ﻿<section class="content-header">
   <h1>
+<<<<<<< HEAD
+    Page
+    <small>Optional description</small>
+=======
     首页
+>>>>>>> master
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
@@ -36,10 +41,9 @@
                 <tbody>
                 <tr role="row" style="cursor:pointer" ng-repeat="patient in patients">
                   <td><span class="h5">{{patient.name}}</span></td>
-                  <td><span class="h5">{{patient.identifier}}</span></td>
-                  <td><span class="h5">{{patient.gender}}</span></td>
-                  <td ng-switch="patient.complete"><span class="h5" ng-switch-when="true">已完成<span class="glyphicon glyphicon-ok" style="color:green"></span></span>
-                  <span class="h5" ng-switch-when="false">未完成<span class="glyphicon glyphicon-pencil" style="color:blue"></span></td>
+                  <td><span class="h5">{{patient.identifier}}</td>
+                  <td><span class="h5">{{patient.gender}}</td>
+                  <td><span class="h5">{{patient.complete}}</td>
                 </tr>
                 </tbody>
               </table>
