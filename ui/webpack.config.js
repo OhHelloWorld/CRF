@@ -58,6 +58,7 @@ module.exports = {
       }
     }
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'index'],
