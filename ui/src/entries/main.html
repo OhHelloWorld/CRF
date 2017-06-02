@@ -54,13 +54,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" id="sidebarMenu">
         <!-- Optionally, you can add icons to the links -->
         <li id="li1" class="active"><a ui-sref="home" ng-click="homeClick()"><i class="glyphicon glyphicon-home"></i><span class="h4">首页</span></a></li>
-        <li id="li2"><a ui-sref="patientInfo" ng-click="patientClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
+        <li id="li2"><a ui-sref="patientInfo" ng-click="patientMenuClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
         <li id="li3"><a id="a_four" style="cursor:pointer" ng-click="fourClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i>
         <span class="h4">
-          四诊信息采集
+          四诊信息采集&nbsp&nbsp&nbsp<span id="fourMenuYes" class="h5" style="color: green" ng-cloak>已完成</span><span id="fourMenuNo" class="h5" style="color: red" ng-cloak>未完成</span>
         </span></a></li>
-        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象观察</span></a></li>
-        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查</span></a></li>
+        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象观察&nbsp&nbsp&nbsp<span id="tongueMenuYes" class="h5" style="color: green" ng-cloak>已完成</span><span id="tongueMenuNo" class="h5" style="color: red" ng-cloak>未完成</span></a></li>
+        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查<span id="phyMenuYes" class="h5" style="color: green" ng-cloak>已完成</span><span id="phyMenuNo" class="h5" style="color: red" ng-cloak>未完成</span></span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

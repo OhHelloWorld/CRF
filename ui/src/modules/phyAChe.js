@@ -1,15 +1,17 @@
 'use strict';
 
 import angular from 'angular';
+import '../entries/main.js';
 
-var phyAChe = angular.module('phyAChe', []);
+var phyAChe = angular.module('phyAChe', ['main']);
 
 phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $http) {
 
   var physicalChemicalInspection = {};
   var id;
   $scope.tabTitle = '肝功能';
-  $scope.addTabActive = function(str1, str2){
+  getPatientInfo();
+  $scope.addTabActive = function(str1, str2) {
     $('.tab-pane').removeClass('active');
     $(str1).addClass('active');
     $scope.tabTitle = str2;
@@ -17,7 +19,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $ht
   };
 
   //sent all messages by $http to save
-  $scope.allCommit = function(){
+  $scope.allCommit = function() {
     alert('发送请求,保存信息');
   };
 
@@ -26,8 +28,8 @@ phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $ht
     //1st
     physicalChemicalInspection.totalBileAcid = $scope.totalBileAcid;
     $http({
-      method:'Post',
-      url:'/api/physical/'
+      method: 'Post',
+      url: '/api/physical/'
     });
   };
 
@@ -92,12 +94,22 @@ phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $ht
     physicalChemicalInspection.liverPuncturePathology = $scope.liverPuncturePathology;
 
     $http({
-      method:'POST',
-      url:'/api/physical/',
+      method: 'POST',
+      url: '/api/physical/',
       data: physicalChemicalInspection
     }).then(function() {
       alert('http callback!!');
     });
   };
+
+  function getPatientInfo() {
+    $http({
+      method: 'GET',
+      url: '/api/patient/' + sessionStorage.getItem('patientId')
+    }).then(function success(response) {
+      $scope.patientName = response.data.name;
+      $scope.patientNumber = response.data.identifier;
+    });
+  }
 
 }]);
