@@ -4,10 +4,9 @@ import angular from 'angular';
 
 var phyAChe = angular.module('phyAChe', []);
 
-phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $http) {
+phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
 
   var physicalChemicalInspection = {};
-  var id;
   $scope.tabTitle = '肝功能';
   $scope.addTabActive = function(str1, str2){
     $('.tab-pane').removeClass('active');
@@ -33,7 +32,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $ht
 
   //save some messages
   $scope.saveSomeMessage = function() {
-    //2st
+    physicalChemicalInspection.patientId = $rootScope.patientId;
     physicalChemicalInspection.liverFunctionAlbumin = $scope.liverFunctionAlbumin;
     physicalChemicalInspection.liverFunctionGlobulin = $scope.liverFunctionGlobulin;
     physicalChemicalInspection.liverFunctionALT = $scope.liverFunctionALT;
@@ -96,7 +95,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', function($scope, $ht
       url:'/api/physical/',
       data: physicalChemicalInspection
     }).then(function() {
-      alert('http callback!!');
+      
     });
   };
 
