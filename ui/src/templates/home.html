@@ -14,7 +14,14 @@
           <br>
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">患者总览</h3>
+              <form class="form-inline">
+                <span class="h4">患者总览</span>
+                <span class="col-md-offset-8">
+                <input type="text" name="q" class="form-control form-inline" placeholder="查询" ng-model="queryStr">
+                  <button type="button" class="btn btn-flat" ng-click="query()"><i class="glyphicon glyphicon-search"></i>
+                  </button>
+                  </span>
+              </form>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -24,19 +31,21 @@
                 <div class="col-sm-6"></div>
               </div><div class="row">
               <div class="col-sm-12">
-              <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+              <table id="example2" class="table table-bordered table-hover" role="grid" aria-describedby="example2_info">
                 <thead>
                 <tr role="row">
                   <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">编号</th>
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">年龄</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">性别</th>
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">采集信息状态</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients">
+                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients" ng-click="patientClick(patient)" class="info">
                   <td><span class="h5">{{patient.name}}</span></td>
                   <td><span class="h5">{{patient.identifier}}</span></td>
+                  <td><span class="h5">{{patient.age}}</span></td>
                   <td><span class="h5">{{patient.gender}}</span></td>
                   <td ng-switch="patient.complete"><span class="h5" ng-switch-when="true">已完成<span class="glyphicon glyphicon-ok" style="color:green"></span></span>
                   <span class="h5" ng-switch-when="false">未完成<span class="glyphicon glyphicon-pencil" style="color:blue"></span></td>
