@@ -27,8 +27,8 @@ public class PatientServiceImpl implements PatientService {
     private PatientRepo patientRepo;
 
     @Transactional
-    public void savePatientGeneralInformation(PatientDTO patientDTO) {
-        patientRepo.save(convertToPatientDO(patientDTO));
+    public int savePatientGeneralInformation(PatientDTO patientDTO) {
+        return patientRepo.save(convertToPatientDO(patientDTO)).getId();
     }
 
     public PatientDTO getPatientGeneralInformation(int id) {
@@ -47,6 +47,19 @@ public class PatientServiceImpl implements PatientService {
     public PageDTO<PatientDTO> getAllPatient(Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
         Page<PatientDO> patientDOs = patientRepo.getAll(pageable);
+        for (PatientDO patientDO : patientDOs) {
+            patientDTOs.add(convertToPatientDTO(patientDO));
+        }
+        PageDTO<PatientDTO> pageDTO = new PageDTO<>();
+        pageDTO.setContent(patientDTOs);
+        pageDTO.setTotalNumber(patientDOs.getTotalPages());
+        return pageDTO;
+    }
+
+    @Override
+    public PageDTO<PatientDTO> getPatientByQueryStr(String queryStr, Pageable pageable) {
+        List<PatientDTO> patientDTOs = new ArrayList<>();
+        Page<PatientDO> patientDOs = patientRepo.getPatientByQueryStr(queryStr, queryStr, pageable);
         for (PatientDO patientDO : patientDOs) {
             patientDTOs.add(convertToPatientDTO(patientDO));
         }
@@ -126,4 +139,5 @@ public class PatientServiceImpl implements PatientService {
         patientDO.setWesternMedicineTreatment(patientDTO.getWesternMedicineTreatment());
         return patientDO;
     }
+
 }

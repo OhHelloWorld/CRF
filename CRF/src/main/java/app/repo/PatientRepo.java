@@ -20,4 +20,9 @@ public interface PatientRepo extends CrudRepository<PatientDO, Integer> {
     @Query(value = "select * from patient order by ?#{#pageable}", nativeQuery = true)
     public Page<PatientDO> getAll(Pageable pageable);
 
+    @Query(value = "select * from patient where name like CONCAT('%',?1,'%') or identifier CONCAT('%',?2,'%') order by ?#{#pageable}",
+            nativeQuery = true)
+    public Page<PatientDO> getPatientByQueryStr(String queryStr1, String queryStr2,
+            Pageable pageable);
+
 }

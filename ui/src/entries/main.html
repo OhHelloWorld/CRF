@@ -48,28 +48,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar user panel (optional) -->
 
-
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="查询">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <li class="header"><span class="h3">数据采集项</span></li>
+      <ul class="sidebar-menu" id="sidebarMenu">
         <!-- Optionally, you can add icons to the links -->
-        <li><a ui-sref="home"><i class="fa fa-link"></i><span class="h4">首页</span></a></li>
-        <li><a ui-sref="patientInfo"><i class="fa fa-link"></i><span class="h4">患者资料</span></a></li>
-        <li><a ui-sref="fourDiagnostic"><i class="fa fa-link"></i><span class="h4">四诊信息采集</span></a></li>
-        <li><a ui-sref="tonguePulse"><i class="fa fa-link"></i><span class="h4">舌脉象观察</span></a></li>
-        <li><a ui-sref="phyAChe"><i class="fa fa-link"></i><span class="h4">理化检查</span></a></li>
+        <li id="li1" class="active"><a ui-sref="home" ng-click="homeClick()"><i class="glyphicon glyphicon-home"></i><span class="h4">首页</span></a></li>
+        <li id="li2"><a ui-sref="patientInfo" ng-click="patientClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
+        <li id="li3"><a id="a_four" style="cursor:pointer" ng-click="fourClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i>
+        <span class="h4">
+          四诊信息采集
+        </span></a></li>
+        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象观察</span></a></li>
+        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

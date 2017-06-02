@@ -24,37 +24,8 @@ angular.module('tonguePulse', [])
         $scope.tongueColorShow = false;
       }
     };
-    $scope.save = function() {
-      if (isSave) {
-        $scope.information = '您已保存，请勿重复操作,谢谢';
-        $('#infoModal').modal({
-          keyboard: true
-        });
-      } else if (!($scope.cb1 || $scope.cb2 || $scope.cb3 || $scope.cb4 || $scope.cb5 || $scope.cb6 || $scope.cb7 || $scope.cb8) 
-          || !($scope.cb9 || $scope.cb10) 
-          || !($scope.cb11 || $scope.cb12 || $scope.cb13 || $scope.cb14 || $scope.cb15 || $scope.cb16 || $scope.cb17 || $scope.cb18) 
-          || !($scope.cb19 || $scope.cb20 || $scope.cb21 || $scope.cb22 || $scope.cb23 || $scope.cb24 || $scope.cb25 || $scope.cb26 || $scope.cb27 || $scope.cb28 || $scope.cb29 || $scope.cb30 || $scope.cb31) 
-          || !($scope.cb32 || $scope.cb33) 
-          || !($scope.cb34 || $scope.cb35 || $scope.cb36 || $scope.cb37 || $scope.cb38) 
-          || !($scope.cb39 || $scope.cb40) 
-          || !($scope.cb41 || $scope.cb42 || $scope.cb43) 
-          || !($scope.cb44 || $scope.cb45 || $scope.cb46 || $scope.cb47 || $scope.cb48 || $scope.cb49 || $scope.cb50 || $scope.cb51 || $scope.cb52 || $scope.cb53 || $scope.cb54 || $scope.cb55 || $scope.cb56 || $scope.cb57 || $scope.cb58) 
-          || !($scope.cb59 || $scope.cb60 || $scope.cb61 || $scope.cb62 || $scope.cb63 || $scope.cb64 || $scope.cb65 || $scope.cb66 || $scope.cb67 || $scope.cb68 || $scope.cb69 || $scope.cb70 || $scope.cb71 || $scope.cb72 || $scope.cb73)) { 
-        $scope.confirmInfo = '填写尚不完整，是否保存？';
-        $('#confirmModal').modal({
-          keyboard: true
-        });
-      }else if(!$scope.tongueDescription || !$scope.mossyDes || !$scope.tongueColorDes){
-        $scope.information = '请注明部位！';
-        $('#infoModal').modal({
-          keyboard: true
-        });
-      }else{
-        confirm(1);
-      }
-    };
 
-    $scope.confirm = function(flag) {
+    $scope.myConfirm = function(flag) {
       var tonguePulse = {};
       judge($scope.cb1, 1, tonguePulse);
       judge($scope.cb2, 2, tonguePulse);
@@ -134,6 +105,7 @@ angular.module('tonguePulse', [])
       }else if(flag == 1){
         tonguePulse.complete = true;
       }
+      console.log(tonguePulse);
       $http({
         method: 'POST',
         url: '/api/tonguePulse',
@@ -152,9 +124,39 @@ angular.module('tonguePulse', [])
       });
     };
 
+    $scope.save = function() {
+      if (isSave) {
+        $scope.information = '您已保存，请勿重复操作,谢谢';
+        $('#infoModal').modal({
+          keyboard: true
+        });
+      } else if (!($scope.cb1 || $scope.cb2 || $scope.cb3 || $scope.cb4 || $scope.cb5 || $scope.cb6 || $scope.cb7 || $scope.cb8) 
+          || !($scope.cb9 || $scope.cb10) 
+          || !($scope.cb11 || $scope.cb12 || $scope.cb13 || $scope.cb14 || $scope.cb15 || $scope.cb16 || $scope.cb17 || $scope.cb18) 
+          || !($scope.cb19 || $scope.cb20 || $scope.cb21 || $scope.cb22 || $scope.cb23 || $scope.cb24 || $scope.cb25 || $scope.cb26 || $scope.cb27 || $scope.cb28 || $scope.cb29 || $scope.cb30 || $scope.cb31) 
+          || !($scope.cb32 || $scope.cb33) 
+          || !($scope.cb34 || $scope.cb35 || $scope.cb36 || $scope.cb37 || $scope.cb38) 
+          || !($scope.cb39 || $scope.cb40) 
+          || !($scope.cb41 || $scope.cb42 || $scope.cb43) 
+          || !($scope.cb44 || $scope.cb45 || $scope.cb46 || $scope.cb47 || $scope.cb48 || $scope.cb49 || $scope.cb50 || $scope.cb51 || $scope.cb52 || $scope.cb53 || $scope.cb54 || $scope.cb55 || $scope.cb56 || $scope.cb57 || $scope.cb58) 
+          || !($scope.cb59 || $scope.cb60 || $scope.cb61 || $scope.cb62 || $scope.cb63 || $scope.cb64 || $scope.cb65 || $scope.cb66 || $scope.cb67 || $scope.cb68 || $scope.cb69 || $scope.cb70 || $scope.cb71 || $scope.cb72 || $scope.cb73)) { 
+        $scope.confirmInfo = '填写尚不完整，是否保存？';
+        $('#confirmModal').modal({
+          keyboard: true
+        });
+      }else if((!$scope.tongueDescription && $scope.tongueShow) || (!$scope.mossyDes && $scope.mossyShow) || (!$scope.tongueColorDes && $scope.tongueColorShow)){
+        $scope.information = '请注明部位！';
+        $('#infoModal').modal({
+          keyboard: true
+        });
+      }else{
+        $scope.myConfirm(1);
+      }
+    };
+
     $scope.next = function() {
       if (isSave) {
-        $state.go('home');
+        $state.go('phyAChe');
       } else {
         $scope.nextInfo= '进入下一步将失去还未保存的内容，是否继续？';
         $('#nextModal').modal({
@@ -181,7 +183,7 @@ angular.module('tonguePulse', [])
 
     $scope.confirmNext = function(){
       $('#nextModal').modal('hide');
-      $state.go('home');
+      $state.go('phyAChe');
     };
 
 
@@ -204,7 +206,7 @@ angular.module('tonguePulse', [])
       if(tonguePulse.mossyPart == undefined){
         tonguePulse.mossyPart = '';
       }
-      if(tonguePulse.mossyPartialDescription){
+      if(tonguePulse.mossyPartialDescription == undefined){
         tonguePulse.mossyPartialDescription = '';
       }
       if(tonguePulse.tongueColor == undefined){
@@ -213,7 +215,7 @@ angular.module('tonguePulse', [])
       if(tonguePulse.tongueColorPart == undefined){
         tonguePulse.tongueColorPart = '';
       }
-      if(tonguePulse.tongueColorPartialDescription){
+      if(tonguePulse.tongueColorPartialDescription == undefined){
         tonguePulse.tongueColorPartialDescription = '';
       }
       if(tonguePulse.sublingualVaricoseVeins == undefined){

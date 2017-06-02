@@ -12,7 +12,7 @@ public interface PatientService {
      * 
      * @param patientDTO
      */
-    public void savePatientGeneralInformation(PatientDTO patientDTO);
+    public int savePatientGeneralInformation(PatientDTO patientDTO);
 
     /**
      * 根据id得到患者一般资料
@@ -43,5 +43,14 @@ public interface PatientService {
      * @param patientDTO
      */
     public void editPatient(PatientDTO patientDTO);
+
+    /**
+     * 通过字符串进行查询
+     * 
+     * @param queryStr
+     * @param pageable
+     * @return
+     */
+    public PageDTO<PatientDTO> getPatientByQueryStr(String queryStr, Pageable pageable);
 
 }

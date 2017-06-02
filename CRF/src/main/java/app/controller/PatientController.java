@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.dto.PageDTO;
@@ -28,8 +29,8 @@ public class PatientController {
      * @param patientDTO
      */
     @PostMapping(path = "")
-    public void savePatientGeneralInformation(@RequestBody PatientDTO patientDTO) {
-        patientService.savePatientGeneralInformation(patientDTO);
+    public int savePatientGeneralInformation(@RequestBody PatientDTO patientDTO) {
+        return patientService.savePatientGeneralInformation(patientDTO);
     }
 
     /**
@@ -62,6 +63,20 @@ public class PatientController {
     @GetMapping(path = "")
     public PageDTO<PatientDTO> getAllPatient(@PageableDefault(value = 15) Pageable pageable) {
         return patientService.getAllPatient(pageable);
+    }
+
+    /**
+     * 查询
+     * 
+     * @param queryStr
+     * @param pageable
+     * @return
+     */
+    @GetMapping(path = "/q")
+    public PageDTO<PatientDTO> getPatientByQueryStr(@RequestParam("queryStr") String queryStr,
+            @PageableDefault(value = 15) Pageable pageable) {
+        System.out.println(queryStr);
+        return patientService.getPatientByQueryStr(queryStr, pageable);
     }
 
 }
