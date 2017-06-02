@@ -24,6 +24,24 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
   //   alert('post successed!!');
   // });
   //save button
+  $scope.judgeName = function() {
+    if($scope.name == undefined || $scope.name == '') {
+      // $('#inputName').popover('hide');
+      // $('#inputName').removeAttr('data-content');
+      $('#inputName').attr('data-content', '姓名不能为空');
+      $('#inputName').popover('show');
+      return;
+    }
+    if($scope.name.length < 2 || $scope.name.length >10) {
+      // $('#inputName').popover('hide');
+      // $('#inputName').removeAttr('data-content');
+      $('#inputName').attr('data-content', '长度不符合要求');
+      $('#inputName').popover('show');
+      return;
+    }
+    // $('#inputName').popover('hide');
+    // $('#inputName').removeAttr('data-content');
+  };
 
   $scope.showNextModel = function(){
     if(true){
