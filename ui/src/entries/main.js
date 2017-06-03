@@ -52,13 +52,13 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
     $('#li1').addClass('active');
   };
 
-  $scope.patientClick = function() {
+  $scope.patientMenuClick = function() {
     $('li').removeClass('active');
     $('#li2').addClass('active');
   };
 
   $scope.fourClick = function() {
-    if (!$rootScope.patientId) {
+    if (!sessionStorage.getItem('patientId')) {
       $('#a_four').popover('toggle');
       setTimeout(function() {
         $('#a_four').popover('hide');
@@ -71,7 +71,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   };
 
   $scope.tongueClick = function() {
-    if (!$rootScope.patientId) {
+    if (!sessionStorage.getItem('patientId')) {
       $('#a_tongue').popover('toggle');
       setTimeout(function() {
         $('#a_tongue').popover('hide');
@@ -84,7 +84,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   };
 
   $scope.phyClick = function() {
-    if (!$rootScope.patientId) {
+    if (!sessionStorage.getItem('patientId')) {
       $('#a_phy').popover('toggle');
       setTimeout(function() {
         $('#a_phy').popover('hide');

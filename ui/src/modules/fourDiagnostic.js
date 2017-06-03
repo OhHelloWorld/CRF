@@ -1,9 +1,13 @@
 import angular from 'angular';
+import '../entries/main.js';
 
 angular.module('fourDiagnostic', [])
   .controller('fourDiagnosticController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     var fourDiagnosticInformation = {};
     var isSave = false;
+    $scope.fourClick();
+    getPatientInfo();
+    getFourDiaInfo();
     $scope.save = function() {
       var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
         $scope.blurredVision && $scope.depression && $scope.irritability &&
@@ -53,7 +57,7 @@ angular.module('fourDiagnostic', [])
       }
     };
 
-    $scope.confirmNext = function(){
+    $scope.confirmNext = function() {
       $('#nextModal').modal('hide');
       $state.go('tonguePulse');
     };
@@ -88,6 +92,7 @@ angular.module('fourDiagnostic', [])
         $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
         $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
       fourDiagnosticInformation.fatigue = formatFourDia($scope.fatigue);
+      fourDiagnosticInformation.patientId = sessionStorage.getItem('patientId');
       fourDiagnosticInformation.skinItching = formatFourDia($scope.skinItching);
       fourDiagnosticInformation.twoEyesDry = formatFourDia($scope.twoEyesDry);
       fourDiagnosticInformation.blurredVision = formatFourDia($scope.blurredVision);
@@ -150,8 +155,64 @@ angular.module('fourDiagnostic', [])
     function formatFourDia(data) {
       if (data === undefined) {
         data = -1;
-      }else{
+      } else {
         return data;
       }
     }
+
+    function getFourDiaInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/fourDiagnosticInfor/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.fatigue = response.data.fatigue;
+        $scope.skinItching = response.data.skinItching;
+        $scope.twoEyesDry = response.data.twoEyesDry;
+        $scope.blurredVision = response.data.blurredVision;
+        $scope.depression = response.data.depression;
+        $scope.irritability = response.data.irritability;
+        $scope.insomnia = response.data.insomnia;
+        $scope.easyWakeUp = response.data.easyWakeUp;
+        $scope.tinnitus = response.data.tinnitus;
+        $scope.dryMouth = response.data.dryMouth;
+        $scope.mouthPain = response.data.mouthPain;
+        $scope.badBreath = response.data.badBreath;
+        $scope.nausea = response.data.nausea;
+        $scope.belching = response.data.belching;
+        $scope.abdominalDistention = response.data.abdominalDistention;
+        $scope.flankPainStinging = response.data.flankPainStinging;
+        $scope.flankPainSwell = response.data.flankPainSwell;
+        $scope.flankPainDull = response.data.flankPainDull;
+        $scope.flankPainDiscomfort = response.data.flankPainDiscomfort;
+        $scope.anorexia = response.data.anorexia;
+        $scope.aphrodisiacCold = response.data.aphrodisiacCold;
+        $scope.limb = response.data.limb;
+        $scope.backacheFootSoft = response.data.backacheFootSoft;
+        $scope.handFootFanHot = response.data.handFootFanHot;
+        $scope.urineYellow = response.data.urineYellow;
+        $scope.constipation = response.data.constipation;
+        $scope.looseStools = response.data.looseStools;
+        $scope.perspiration = response.data.perspiration;
+        $scope.nightSweats = response.data.nightSweats;
+        $scope.lowerExtremityEdema = response.data.lowerExtremityEdema;
+        $scope.faceDull = response.data.faceDull;
+        $scope.eyeYellow = response.data.eyeYellow;
+        $scope.bodyYellow = response.data.bodyYellow;
+        $scope.spiderNevus = response.data.spiderNevus;
+        $scope.liverPalm = response.data.liverPalm;
+        $scope.abdominalVeins = response.data.abdominalVeins;
+        $scope.yellowTumor = response.data.yellowTumor;
+      });
+    }
+
+    function getPatientInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/patient/'+sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.patientName = response.data.name;
+        $scope.patientNumber = response.data.identifier;
+      });
+    }
+
   }]);

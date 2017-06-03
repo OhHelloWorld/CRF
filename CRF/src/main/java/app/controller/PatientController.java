@@ -75,7 +75,6 @@ public class PatientController {
     @GetMapping(path = "/q")
     public PageDTO<PatientDTO> getPatientByQueryStr(@RequestParam("queryStr") String queryStr,
             @PageableDefault(value = 15) Pageable pageable) {
-        System.out.println(queryStr);
         return patientService.getPatientByQueryStr(queryStr, pageable);
     }
 

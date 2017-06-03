@@ -15,7 +15,10 @@ import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.entities.PatientDO;
 import app.repo.PatientRepo;
+import app.service.FourDiagnosticInformationService;
 import app.service.PatientService;
+import app.service.PhysicalChemicalInspectionService;
+import app.service.TonguePulseService;
 
 /**
  * @author Administrator ����serviceImpl
@@ -25,6 +28,15 @@ public class PatientServiceImpl implements PatientService {
 
     @Autowired
     private PatientRepo patientRepo;
+
+    @Autowired
+    private FourDiagnosticInformationService fourDiaService;
+
+    @Autowired
+    private TonguePulseService tonguePulseService;
+
+    @Autowired
+    private PhysicalChemicalInspectionService physicalService;
 
     @Transactional
     public int savePatientGeneralInformation(PatientDTO patientDTO) {
@@ -59,7 +71,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PageDTO<PatientDTO> getPatientByQueryStr(String queryStr, Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
-        Page<PatientDO> patientDOs = patientRepo.getPatientByQueryStr(queryStr, queryStr, pageable);
+        Page<PatientDO> patientDOs = patientRepo.getPatientByQueryStr(queryStr, pageable);
         for (PatientDO patientDO : patientDOs) {
             patientDTOs.add(convertToPatientDTO(patientDO));
         }
@@ -105,7 +117,10 @@ public class PatientServiceImpl implements PatientService {
         patientDTO.setChineseMedicineDiagnosis(patientDO.getChineseMedicineDiagnosis());
         patientDTO.setChineseMedicineTreatment(patientDO.getChineseMedicineTreatment());
         patientDTO.setCirrhosisDiagnosisTime(patientDO.getCirrhosisDiagnosisTime());
-        patientDTO.setComplete(patientDO.isComplete());
+        patientDTO.setComplete(
+                patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
+                        && tonguePulseService.getCompleteByPatientId(patientDO.getId())
+                        && physicalService.getCompleteByPatientId(patientDO.getId()));
         patientDTO.setDrink(patientDO.isDrink());
         patientDTO.setFamilyHistory(patientDO.isFamilyHistory());
         patientDTO.setGender(patientDO.getGender());

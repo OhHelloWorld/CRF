@@ -1,12 +1,14 @@
 ﻿'use strict';
 
 import angular from 'angular';
+import '../entries/main.js';
 
-var patientInfo = angular.module('patientInfo', []);
+var patientInfo = angular.module('patientInfo', ['main']);
 
 patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
   var patient = {};
+  $scope.patientMenuClick();
 
   $('#datepicker').datepicker({
     autoclose: true
@@ -57,18 +59,18 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
   //   }
   // };
 
-  $scope.showNextModel = function(){
+  $scope.showNextModel = function() {
     $('#myModal').modal('show');
   };
 
-  $scope.showExistModal = function(){
+  $scope.showExistModal = function() {
     $('#existModal').modal('show');
   };
 
-  $scope.exsitEdit = function(){
+  $scope.exsitEdit = function() {
     $('#existModal').modal('toggle');
     // window.location.href = index.html;
-    setTimeout(function () {
+    setTimeout(function() {
       $state.go('home');
     }, 1000);
   };
@@ -108,4 +110,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
 
     });
   };
+
+
+
 }]);
