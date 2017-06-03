@@ -75,6 +75,12 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     }, 1000);
   };
 
+  //毫秒转换年月日
+  function toPre(date) {
+    var unixTimestamp = new Date(date);
+    return (unixTimestamp.getMonth() + 1) + '/' + unixTimestamp.getDate() + '/' + unixTimestamp.getFullYear();
+  }
+
   // 06/14/2017 ==> 2017-06-14
   function formatDateFromBack(date) {
     var dateArr = date.split('/');
@@ -84,6 +90,27 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     return year + '-' + month + '-' + day;
   }
 
+  //取个人信息
+  $http({
+    method:'GET',
+    url:'api/patient/' + sessionStorage.getItem('patientId')
+  }).then(function(response){
+    patient = response.data;
+    $scope.name = patient.name;
+    $scope.gender = patient.gender;
+    $scope.age = patient.age;
+    $scope.height = patient.height;
+    $scope.weight = patient.weight;
+    $scope.smoke = patient.smoke;
+    $scope.drink = patient.drink;
+    $scope.familyHistory = patient.familyHistory;
+    $scope.hepatitisDiagnosisTime = toPre(patient.hepatitisDiagnosisTime);
+    $scope.cirrhosisDiagnosisTime = toPre(patient.cirrhosisDiagnosisTime);
+    $scope.westernMedicineDiagnosis = patient.westernMedicineDiagnosis;
+    $scope.chineseMedicineDiagnosis = patient.chineseMedicineDiagnosis;
+    $scope.westernMedicineTreatment = patient.westernMedicineTreatment;
+    $scope.chineseMedicineTreatment = patient.chineseMedicineTreatment;
+  });
   //保存 --> 确定  按钮
   $scope.commit = function() {
     patient.name = $scope.name;

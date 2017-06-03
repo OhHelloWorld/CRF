@@ -24,9 +24,9 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
   $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
-      url: '/patientInfo',
-      template: require('../templates/patientInfo.html'),
-    })
+    url: '/patientInfo',
+    template: require('../templates/patientInfo.html'),
+  })
     .state('home', {
       url: '/home',
       template: require('../templates/home.html')

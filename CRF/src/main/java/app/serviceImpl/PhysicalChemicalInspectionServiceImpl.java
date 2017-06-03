@@ -103,7 +103,69 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     private PhysicalChemicalInspectionDTO convertToPhysicalDTO(PhysicalChemicalInspectionDO pDo) {
         PhysicalChemicalInspectionDTO pDto = new PhysicalChemicalInspectionDTO();
-
+        pDto.setANACentromere(pDo.getANACentromere());
+        pDto.setANAHomogeneous(pDo.getANAHomogeneous());
+        pDto.setANANuclear(pDo.getANANuclear());
+        pDto.setANANucleolus(pDo.getANANucleolus());
+        pDto.setANANucleolusEnhancement(pDo.getANANucleolusEnhancement());
+        pDto.setANAOther(pDo.getANAOther());
+        pDto.setANAParticle(pDo.getANAParticle());
+        pDto.setANAPeripheral(pDo.getANAPeripheral());
+        pDto.setBloodRoutineEosinophils(pDo.getBloodRoutineEosinophils());
+        pDto.setBloodRoutineHb(pDo.getBloodRoutineHb());
+        pDto.setBloodRoutineLymphocytes(pDo.getBloodRoutineLymphocytes());
+        pDto.setBloodRoutineNeutrophils(pDo.getBloodRoutineNeutrophils());
+        pDto.setBloodRoutinePlatelets(pDo.getBloodRoutinePlatelets());
+        pDto.setBloodRoutineRBC(pDo.getBloodRoutineRBC());
+        pDto.setBloodRoutineWBC(pDo.getBloodRoutineWBC());
+        pDto.setCellularImmunityCD2(pDo.getCellularImmunityCD2());
+        pDto.setCellularImmunityCD3(pDo.getCellularImmunityCD3());
+        pDto.setCellularImmunityCD4(pDo.getCellularImmunityCD4());
+        pDto.setCellularImmunityCD4CD8(pDo.getCellularImmunityCD4CD8());
+        pDto.setCellularImmunityCD56(pDo.getCellularImmunityCD56());
+        pDto.setCellularImmunityCD8(pDo.getCellularImmunityCD8());
+        pDto.setClottingINR(pDo.getClottingINR());
+        pDto.setClottingPT(pDo.getClottingPT());
+        pDto.setComplete(pDo.isComplete());
+        pDto.setCTMRI(pDo.getCTMRI());
+        pDto.setHumoralImmunityComplementC3(pDo.getHumoralImmunityComplementC3());
+        pDto.setHumoralImmunityComplementC4(pDo.getHumoralImmunityComplementC4());
+        pDto.setHumoralImmunityIgA(pDo.getHumoralImmunityIgA());
+        pDto.setHumoralImmunityIgE(pDo.getHumoralImmunityIgE());
+        pDto.setHumoralImmunityIgG(pDo.getHumoralImmunityIgG());
+        pDto.setHumoralImmunityIgM(pDo.getHumoralImmunityIgM());
+        pDto.setHumoralImmunityImmuneComplexf(pDo.getHumoralImmunityImmuneComplexf());
+        pDto.setHumoralImmunityKlightChain(pDo.getHumoralImmunityKlightChain());
+        pDto.setHumoralImmunityNlightChain(pDo.getHumoralImmunityNlightChain());
+        pDto.setLiverDiseaseAutoantibodiesAMA(pDo.getLiverDiseaseAutoantibodiesAMA());
+        pDto.setLiverDiseaseAutoantibodiesAMAM2(pDo.getLiverDiseaseAutoantibodiesAMAM2());
+        pDto.setLiverDiseaseAutoantibodiesAntiSmoothMuscleAntibody(
+                pDo.getLiverDiseaseAutoantibodiesAntiSmoothMuscleAntibody());
+        pDto.setLiverDiseaseAutoantibodiesHepatocyteSoluteAntigen(
+                pDo.getLiverDiseaseAutoantibodiesHepatocyteSoluteAntigen());
+        pDto.setLiverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies(
+                pDo.getLiverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies());
+        pDto.setLiverDiseaseAutoantibodiesOther(pDo.getLiverDiseaseAutoantibodiesOther());
+        pDto.setLiverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen(
+                pDo.getLiverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen());
+        pDto.setLiverFunctionAlbumin(pDo.getLiverFunctionAlbumin());
+        pDto.setLiverFunctionALP(pDo.getLiverFunctionALP());
+        pDto.setLiverFunctionALT(pDo.getLiverFunctionALT());
+        pDto.setLiverFunctionAST(pDo.getLiverFunctionAST());
+        pDto.setLiverFunctionDirectBilirubin(pDo.getLiverFunctionDirectBilirubin());
+        pDto.setLiverFunctionGGT(pDo.getLiverFunctionGGT());
+        pDto.setLiverFunctionGlobulin(pDo.getLiverFunctionGlobulin());
+        pDto.setLiverFunctionRglobulin(pDo.getLiverFunctionRglobulin());
+        pDto.setLiverFunctionTotalBilirubin(pDo.getLiverFunctionTotalBilirubin());
+        pDto.setLiverFunctionTotalCholesterol(pDo.getLiverFunctionTotalCholesterol());
+        pDto.setLiverHardnessFibroscan(pDo.getLiverHardnessFibroscan());
+        pDto.setLiverHardnessFibrotest(pDo.getLiverHardnessFibrotest());
+        pDto.setLiverPuncturePathology(pDo.getLiverPuncturePathology());
+        pDto.setPatientId(pDo.getPatientId());
+        pDto.setRenalFunctionBUN(pDo.getRenalFunctionBUN());
+        pDto.setRenalFunctionCr(pDo.getRenalFunctionCr());
+        pDto.setRheumaticImmuneRelatedAntibodies(pDo.getRheumaticImmuneRelatedAntibodies());
+        pDto.setTotalBileAcid(pDo.getTotalBileAcid());
         return pDto;
     }
 

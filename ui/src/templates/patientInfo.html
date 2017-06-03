@@ -43,10 +43,10 @@
                       <div>
                         <label>吸烟</label>
                         <label>
-                          <input type="radio" name="optionsRadios1" id="optionsRadios1" ng-model="smoke" value="false">无
+                          <input type="radio" name="optionsRadios1" id="optionsRadios1" ng-model="smoke" ng-value="false">无
                         </label>
                         <label>
-                          <input type="radio" name="optionsRadios1" id="optionsRadios2" ng-model="smoke" value="true">有
+                          <input type="radio" name="optionsRadios1" id="optionsRadios2" ng-model="smoke" ng-value="true">有
                         </label>
                       </div>
                   </div>
@@ -55,10 +55,10 @@
                       <div>
                         <label>饮酒</label>
                         <label>
-                          <input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="drink" value="false">无
+                          <input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="drink" ng-value="false">无
                         </label>
                         <label>
-                          <input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="drink" value="true">有
+                          <input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="drink" ng-value="true">有
                         </label>
                       </div>
                   </div>
@@ -67,10 +67,10 @@
                       <div>
                         <label>家族史</label>
                         <label>
-                          <input type="radio" name="optionsRadios3" id="optionsRadios5" ng-model="familyHistory" value="false">无
+                          <input type="radio" name="optionsRadios3" id="optionsRadios5" ng-model="familyHistory" ng-value="false">无
                         </label>
                         <label>
-                          <input type="radio" name="optionsRadios3" id="optionsRadios6" ng-model="familyHistory" value="true">有
+                          <input type="radio" name="optionsRadios3" id="optionsRadios6" ng-model="familyHistory" ng-value="true">有
                         </label>
                       </div>
                   </div>
@@ -219,7 +219,7 @@
           </div>
         </div>
 
-        <span class="col-md-offset-8">&nbsp</span>
+        <span class="col-md-offset-10">&nbsp</span>
           <input type="button" class="btn btn-primary " ng-click="showNextModel()" value="保存">&nbsp
           <input type="button" class="btn btn-primary " ng-click="showExistModal()" value="退出">
 
