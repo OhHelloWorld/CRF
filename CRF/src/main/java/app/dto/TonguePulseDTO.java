@@ -2,7 +2,7 @@ package app.dto;
 
 
 /**
- * @author Administrator ������۲��DTO
+ * @author Administrator
  */
 public class TonguePulseDTO {
 
