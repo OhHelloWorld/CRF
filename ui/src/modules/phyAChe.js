@@ -22,11 +22,6 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
     $('#saveModal').modal('show');
   };
 
-  //sent all messages by $http to save
-  $scope.allCommit = function() {
-    alert('发送请求,保存信息');
-  };
-
   //save some messages
   // $scope.saveSomeMessage = function() {
   //   //1st
@@ -41,16 +36,74 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
   //get patientInfo by id
   $http({
     method:'GET',
-    url:'api/physical/' + sessionStorage.get('patientId')
+    url:'api/physical/' + sessionStorage.getItem('patientId')
   }).then(function(response) {
     physicalChemicalInspection = response.data;
     $scope.totalBileAcid = physicalChemicalInspection.totalBileAcid;
+    $scope.liverFunctionAlbumin = physicalChemicalInspection.liverFunctionAlbumin;
+    $scope.liverFunctionGlobulin = physicalChemicalInspection.liverFunctionGlobulin;
+    $scope.liverFunctionALT = physicalChemicalInspection.liverFunctionALT;
+    $scope.liverFunctionAST = physicalChemicalInspection.liverFunctionAST;
+    $scope.liverFunctionGGT = physicalChemicalInspection.liverFunctionGGT;
+    $scope.liverFunctionALP = physicalChemicalInspection.liverFunctionALP;
+    $scope.liverFunctionTotalCholesterol = physicalChemicalInspection.liverFunctionTotalCholesterol;
+    $scope.liverFunctionTotalBilirubin = physicalChemicalInspection.liverFunctionTotalBilirubin;
+    $scope.liverFunctionDirectBilirubin = physicalChemicalInspection.liverFunctionDirectBilirubin;
+    $scope.liverFunctionRglobulin = physicalChemicalInspection.liverFunctionRglobulin;
+    $scope.renalFunctionBUN = physicalChemicalInspection.renalFunctionBUN;
+    $scope.renalFunctionCr = physicalChemicalInspection.renalFunctionCr;
+    $scope.clottingPT = physicalChemicalInspection.clottingPT;
+    $scope.clottingINR = physicalChemicalInspection.clottingINR;
+    $scope.bloodRoutineRBC = physicalChemicalInspection.bloodRoutineRBC;
+    $scope.bloodRoutineHb = physicalChemicalInspection.bloodRoutineHb;
+    $scope.bloodRoutineWBC = physicalChemicalInspection.bloodRoutineWBC;
+    $scope.bloodRoutineNeutrophils = physicalChemicalInspection.bloodRoutineNeutrophils;
+    $scope.bloodRoutineLymphocytes = physicalChemicalInspection.bloodRoutineLymphocytes;
+    $scope.bloodRoutineEosinophils = physicalChemicalInspection.bloodRoutineEosinophils;
+    $scope.bloodRoutinePlatelets = physicalChemicalInspection.bloodRoutinePlatelets;
+    $scope.liverDiseaseAutoantibodiesAMA = physicalChemicalInspection.liverDiseaseAutoantibodiesAMA;
+    $scope.liverDiseaseAutoantibodiesAMAM2 = physicalChemicalInspection.liverDiseaseAutoantibodiesAMAM2;
+    $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody = physicalChemicalInspection.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody;
+    $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies = physicalChemicalInspection.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies;
+    $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen = physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;
+    $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen = physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;
+    $scope.liverDiseaseAutoantibodiesOther = physicalChemicalInspection.liverDiseaseAutoantibodiesOther;
+    $scope.anaHomogeneous = physicalChemicalInspection.anahomogeneous;
+    $scope.anaParticle = physicalChemicalInspection.anaparticle;
+    $scope.anaPeripheral = physicalChemicalInspection.anaperipheral;
+    $scope.anaNucleolus = physicalChemicalInspection.ananucleolus;
+    $scope.anaNucleolusEnhancement = physicalChemicalInspection.ananucleolusEnhancement;
+    $scope.anaNuclear = physicalChemicalInspection.ananuclear;
+    $scope.anaCentromere = physicalChemicalInspection.anacentromere;
+    $scope.anaOther = physicalChemicalInspection.anaother;
+    $scope.humoralImmunityIgG = physicalChemicalInspection.humoralImmunityIgG;
+    $scope.humoralImmunityIgA = physicalChemicalInspection.humoralImmunityIgA;
+    $scope.humoralImmunityIgM = physicalChemicalInspection.humoralImmunityIgM;
+    $scope.humoralImmunityImmuneComplexf = physicalChemicalInspection.humoralImmunityImmuneComplexf;
+    $scope.humoralImmunityComplementC3 = physicalChemicalInspection.humoralImmunityComplementC3;
+    $scope.humoralImmunityComplementC4 = physicalChemicalInspection.humoralImmunityComplementC4;
+    $scope.humoralImmunityIgE = physicalChemicalInspection.humoralImmunityIgE;
+    $scope.humoralImmunityKlightChain = physicalChemicalInspection.humoralImmunityKlightChain;
+    $scope.cellularImmunityCD3 = physicalChemicalInspection.cellularImmunityCD3;
+    $scope.cellularImmunityCD4 = physicalChemicalInspection.cellularImmunityCD4;
+    $scope.cellularImmunityCD8 = physicalChemicalInspection.cellularImmunityCD8;
+    $scope.cellularImmunityCD56 = physicalChemicalInspection.cellularImmunityCD56;
+    $scope.cellularImmunityCD2 = physicalChemicalInspection.cellularImmunityCD2;
+    $scope.humoralImmunityNlightChain = physicalChemicalInspection.humoralImmunityNlightChain;
+    $scope.cellularImmunityCD4CD8 = physicalChemicalInspection.cellularImmunityCD4CD8;
+    $scope.rheumaticImmuneRelatedAntibodies = physicalChemicalInspection.rheumaticImmuneRelatedAntibodies;
+    $scope.cTMRI = physicalChemicalInspection.ctmri;
+    $scope.twoEyesDry = physicalChemicalInspection.twoEyesDry;
+    $scope.liverHardnessFibroscan = physicalChemicalInspection.liverHardnessFibroscan;
+    $scope.liverHardnessFibrotest = physicalChemicalInspection.liverHardnessFibrotest;
+    $scope.liverPuncturePathology = physicalChemicalInspection.liverPuncturePathology;
+
   });
 
   //save some messages
   $scope.saveSomeMessage = function() {
     physicalChemicalInspection.totalBileAcid = $scope.totalBileAcid;
-    physicalChemicalInspection.patientId = $rootScope.patientId;
+    physicalChemicalInspection.patientId = sessionStorage.getItem('patientId');
     physicalChemicalInspection.liverFunctionAlbumin = $scope.liverFunctionAlbumin;
     physicalChemicalInspection.liverFunctionGlobulin = $scope.liverFunctionGlobulin;
     physicalChemicalInspection.liverFunctionALT = $scope.liverFunctionALT;
@@ -79,14 +132,15 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
     physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen = $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;
     physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen = $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;
     physicalChemicalInspection.liverDiseaseAutoantibodiesOther = $scope.liverDiseaseAutoantibodiesOther;
-    physicalChemicalInspection.ANAHomogeneous = $scope.ANAHomogeneous;
-    physicalChemicalInspection.ANAParticle = $scope.ANAParticle;
-    physicalChemicalInspection.ANAPeripheral = $scope.ANAPeripheral;
-    physicalChemicalInspection.ANANucleolus = $scope.ANANucleolus;
-    physicalChemicalInspection.ANANucleolusEnhancement = $scope.ANANucleolusEnhancement;
-    physicalChemicalInspection.ANANuclear = $scope.ANANuclear;
-    physicalChemicalInspection.ANACentromere = $scope.ANACentromere;
-    physicalChemicalInspection.ANAOther = $scope.ANAOther;
+    physicalChemicalInspection.anahomogeneous = $scope.anaHomogeneous;
+    physicalChemicalInspection.anaparticle = $scope.anaParticle;
+    physicalChemicalInspection.anaperipheral = $scope.anaPeripheral;
+    physicalChemicalInspection.ananucleolus = $scope.anaNucleolus;
+    physicalChemicalInspection.ananucleolusEnhancement = $scope.anaNucleolusEnhancement;
+    physicalChemicalInspection.ananuclear = $scope.anaNuclear;
+    physicalChemicalInspection.anacentromere = $scope.anaCentromere;
+    physicalChemicalInspection.anaother = $scope.anaOther;
+    physicalChemicalInspection.twoEyesDry = $scope.twoEyesDry;
     physicalChemicalInspection.humoralImmunityIgG = $scope.humoralImmunityIgG;
     physicalChemicalInspection.humoralImmunityIgA = $scope.humoralImmunityIgA;
     physicalChemicalInspection.humoralImmunityIgM = $scope.humoralImmunityIgM;
@@ -103,7 +157,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
     physicalChemicalInspection.cellularImmunityCD2 = $scope.cellularImmunityCD2;
     physicalChemicalInspection.cellularImmunityCD4CD8 = $scope.cellularImmunityCD4CD8;
     physicalChemicalInspection.rheumaticImmuneRelatedAntibodies = $scope.rheumaticImmuneRelatedAntibodies;
-    physicalChemicalInspection.CTMRI = $scope.CTMRI;
+    physicalChemicalInspection.ctmri = $scope.cTMRI;
     physicalChemicalInspection.liverHardnessFibroscan = $scope.liverHardnessFibroscan;
     physicalChemicalInspection.liverHardnessFibrotest = $scope.liverHardnessFibrotest;
     physicalChemicalInspection.liverPuncturePathology = $scope.liverPuncturePathology;

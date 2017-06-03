@@ -448,7 +448,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAHomogeneous">
+                          <input type="text" class="form-control" ng-model="anaHomogeneous">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -459,7 +459,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAParticle">
+                          <input type="text" class="form-control" ng-model="anaParticle">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -470,7 +470,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAPeripheral">
+                          <input type="text" class="form-control" ng-model="anaPeripheral">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -481,7 +481,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANucleolus">
+                          <input type="text" class="form-control" ng-model="anaNucleolus">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -492,7 +492,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANucleolusEnhancement">
+                          <input type="text" class="form-control" ng-model="anaNucleolusEnhancement">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -503,7 +503,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANuclear">
+                          <input type="text" class="form-control" ng-model="anaNuclear">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -514,7 +514,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANACentromere">
+                          <input type="text" class="form-control" ng-model="anaCentromere">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -525,7 +525,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAOther">
+                          <input type="text" class="form-control" ng-model="anaOther">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -748,26 +748,26 @@
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_11">
                 <form class="form-group">
-                  <div class="box-body" ng-model="CTMRI">
+                  <div class="box-body">
 
                     <li>
-                      <input type="radio" name="r3" ng-model="twoEyesDry" value="0"><span class="h5">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="0"><span class="h5">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                			<input type="radio" name="r3" ng-model="twoEyesDry" value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                			<input type="radio" name="r3" ng-model="cTMRI" ng-value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="twoEyesDry" value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  	  <input type="radio" name="r3" ng-model="twoEyesDry" value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                  	  <input type="radio" name="r3" ng-model="cTMRI" ng-value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="twoEyesDry" value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
+                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
 
@@ -826,7 +826,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="allCommit()">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
