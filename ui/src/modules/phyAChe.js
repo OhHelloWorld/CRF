@@ -7,6 +7,7 @@ var phyAChe = angular.module('phyAChe', []);
 phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
 
   var physicalChemicalInspection = {};
+  $scope.modalContent = '您确定要保存所有修改吗？';
   $scope.tabTitle = '肝功能';
   $scope.addTabActive = function(str1, str2){
     $('.tab-pane').removeClass('active');
@@ -15,23 +16,38 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
     // $scope.tabTitle = $(str).val;
   };
 
+  $scope.showSaveModal = function() {
+    $('#saveModal').modal('show');
+  };
+
   //sent all messages by $http to save
   $scope.allCommit = function(){
     alert('发送请求,保存信息');
   };
 
   //save some messages
-  $scope.saveSomeMessage = function() {
-    //1st
-    physicalChemicalInspection.totalBileAcid = $scope.totalBileAcid;
-    $http({
-      method:'Post',
-      url:'/api/physical/'
-    });
-  };
+  // $scope.saveSomeMessage = function() {
+  //   //1st
+  //   $http({
+  //     method:'Post',
+  //     url:'/api/physical/'
+  //   });
+  // };
+
+
+
+  //get patientInfo by id
+  $http({
+    method:'GET',
+    url:'api/physical/' + sessionStorage.get('patientId')
+  }).then(function(response) {
+    physicalChemicalInspection = response.data;
+    $scope.totalBileAcid = physicalChemicalInspection.totalBileAcid;
+  });
 
   //save some messages
   $scope.saveSomeMessage = function() {
+    physicalChemicalInspection.totalBileAcid = $scope.totalBileAcid;
     physicalChemicalInspection.patientId = $rootScope.patientId;
     physicalChemicalInspection.liverFunctionAlbumin = $scope.liverFunctionAlbumin;
     physicalChemicalInspection.liverFunctionGlobulin = $scope.liverFunctionGlobulin;
@@ -92,10 +108,15 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
 
     $http({
       method:'POST',
-      url:'/api/physical/',
+      url:'/api/physical',
       data: physicalChemicalInspection
     }).then(function() {
-      
+      $scope.modalContent = '保存成功，即将跳转至首页！';
+      $('#saveModal').modal('hide');
+      setTimeout(function(){
+        window.location.href = 'main.html#!/home';
+      }, 1000);
+
     });
   };
 

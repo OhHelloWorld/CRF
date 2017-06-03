@@ -10,6 +10,8 @@
     <div class="row-fluid">
       <div class="span12">
         <div>
+
+
           <!-- 内容放这里 -->
           <div class="col-md-3">
           <div class="box box-solid">
@@ -65,7 +67,7 @@
                     </div>
                     <div class="box-footer">
 
-                      <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_2', '肝功能')">整体保存</button>
+                      <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                     </div>
                   </form>
                 </div>
@@ -180,7 +182,7 @@
               <!-- /.box-body -->
               <div class="box-footer">
 
-                <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_2', '肾功能')">整体保存</button>
+                <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -216,7 +218,7 @@
               </div>
               <div class="box-footer">
 
-                <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_3', '凝血')">整体保存</button>
+                <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -251,7 +253,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_4', '血常规')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -340,7 +342,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_5', '肝病自身抗体')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -429,7 +431,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_6', 'ANA')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -529,7 +531,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_7', '体液免疫')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -640,7 +642,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_8', '细胞免疫')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -718,7 +720,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_9', '风湿免疫相关抗体')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -736,7 +738,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_10', '腹部超声/CT/MRI')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -769,7 +771,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_11', '肝脏硬度检测值')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -803,7 +805,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_12', '肝穿刺病理检查')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -832,7 +834,24 @@
             </div>
           </div>
 
-
+          <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+              <div class="modal-body">
+                <p ng-bind="modalContent">&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" ng-click="saveSomeMessage()">确认保存</button>
+              </div>
+              </div>
+            </div>
+          </div>
 
 
 
