@@ -64,13 +64,21 @@ public class PhysicalChemicalInspectionDO {
     private String liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;// 肝病自身抗体-肝细胞溶质抗原
     private String liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;// 肝病自身抗体-可溶性肝-胰抗原
     private String liverDiseaseAutoantibodiesOther;// 肝病自身抗体-其他
+    @Column(name = "ANA_homogeneous")
     private String ANAHomogeneous;// ANA-均质型
+    @Column(name = "ANA_particle")
     private String ANAParticle;// ANA-颗粒型
+    @Column(name = "ANA_peripheral")
     private String ANAPeripheral;// ANA-周边型
+    @Column(name = "ANA_nucleolus")
     private String ANANucleolus;// ANA-核仁型
+    @Column(name = "ANA_nucleolus_enhancement")
     private String ANANucleolusEnhancement;// ANA-核仁增强型
+    @Column(name = "ANA_nuclear")
     private String ANANuclear;// ANA-核点型
+    @Column(name = "ANA_centromere")
     private String ANACentromere;// ANA-着丝点型
+    @Column(name = "ANA_other")
     private String ANAOther;// ANA-其他
     @Column(name = "humoral_immunity_IgG")
     private float humoralImmunityIgG;// 体液免疫-IgG

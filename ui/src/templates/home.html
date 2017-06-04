@@ -16,11 +16,13 @@
             <div class="box-header">
               <form class="form-inline">
                 <span class="h4">患者总览</span>
-                <span class="col-md-offset-8">
+                <span class="col-md-offset-7">
                 <input type="text" name="q" class="form-control form-inline" placeholder="请输入姓名或编号" ng-model="queryStr">
                   <button type="button" class="btn btn-flat" ng-click="query()"><i class="glyphicon glyphicon-search" style="color: #3C8DBC"></i>
                   </button>
                   <button type="button" class="btn btn-flat" ng-click="all()"><i class="glyphicon glyphicon-th-list" style="color: #3C8DBC"></i>
+                  </button>
+                  <button type="button" class="btn btn-flat" ng-click="addPatient()"><i class="fa fa-fw fa-plus" style="color: #3C8DBC"></i>
                   </button>
                   </span>
               </form>

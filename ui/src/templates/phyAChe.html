@@ -13,6 +13,8 @@
       <br>
       <u class="h4 col-md-offset-9">编号：{{patientNumber}}</u>
         <div>
+
+
           <!-- 内容放这里 -->
           <div class="col-md-3">
           <div class="box box-solid">
@@ -68,7 +70,7 @@
                     </div>
                     <div class="box-footer">
 
-                      <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_2', '肝功能')">整体保存</button>
+                      <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                     </div>
                   </form>
                 </div>
@@ -183,7 +185,7 @@
               <!-- /.box-body -->
               <div class="box-footer">
 
-                <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_2', '肾功能')">整体保存</button>
+                <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -219,7 +221,7 @@
               </div>
               <div class="box-footer">
 
-                <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_3', '凝血')">整体保存</button>
+                <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -254,7 +256,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_4', '血常规')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -343,7 +345,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_5', '肝病自身抗体')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -432,7 +434,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_6', 'ANA')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -446,7 +448,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAHomogeneous">
+                          <input type="text" class="form-control" ng-model="anaHomogeneous">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -457,7 +459,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAParticle">
+                          <input type="text" class="form-control" ng-model="anaParticle">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -468,7 +470,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAPeripheral">
+                          <input type="text" class="form-control" ng-model="anaPeripheral">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -479,7 +481,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANucleolus">
+                          <input type="text" class="form-control" ng-model="anaNucleolus">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -490,7 +492,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANucleolusEnhancement">
+                          <input type="text" class="form-control" ng-model="anaNucleolusEnhancement">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -501,7 +503,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANANuclear">
+                          <input type="text" class="form-control" ng-model="anaNuclear">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -512,7 +514,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANACentromere">
+                          <input type="text" class="form-control" ng-model="anaCentromere">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -523,7 +525,7 @@
 
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" class="form-control" ng-model="ANAOther">
+                          <input type="text" class="form-control" ng-model="anaOther">
                           <span class="input-group-addon">阴性</span>
                         </div>
                       </div>
@@ -532,7 +534,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_7', '体液免疫')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -643,7 +645,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_8', '细胞免疫')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -721,7 +723,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_9', '风湿免疫相关抗体')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -739,40 +741,40 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_10', '腹部超声/CT/MRI')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_11">
                 <form class="form-group">
-                  <div class="box-body" ng-model="CTMRI">
+                  <div class="box-body">
 
                     <li>
-                      <input type="radio" name="r3" ng-model="twoEyesDry" value="0"><span class="h5">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="0"><span class="h5">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                			<input type="radio" name="r3" ng-model="twoEyesDry" value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                			<input type="radio" name="r3" ng-model="cTMRI" ng-value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="twoEyesDry" value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  	  <input type="radio" name="r3" ng-model="twoEyesDry" value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                  	  <input type="radio" name="r3" ng-model="cTMRI" ng-value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="twoEyesDry" value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
+                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
 
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_11', '肝脏硬度检测值')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -806,7 +808,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="saveSomeMessage('#tab_12', '肝穿刺病理检查')">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -824,7 +826,7 @@
                   </div>
                   <div class="box-footer">
 
-                    <button type="submit" class="btn btn-info pull-right" ng-click="allCommit()">整体保存</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
                   </div>
                 </form>
               </div>
@@ -835,7 +837,24 @@
             </div>
           </div>
 
-
+          <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+              <div class="modal-body">
+                <p ng-bind="modalContent">&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" ng-click="saveSomeMessage()">确认保存</button>
+              </div>
+              </div>
+            </div>
+          </div>
 
 
 
