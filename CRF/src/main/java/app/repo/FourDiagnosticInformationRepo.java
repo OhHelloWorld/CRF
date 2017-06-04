@@ -10,7 +10,7 @@ import app.entities.FourDiagnosticInformationDO;
 public interface FourDiagnosticInformationRepo
         extends CrudRepository<FourDiagnosticInformationDO, Integer> {
 
-    @Query(value = "select * from four_diagnostic_information where patient_id=?1 and complete = true order by id desc limit 1",
+    @Query(value = "select * from four_diagnostic_information where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
     public FourDiagnosticInformationDO findFourDiagnosticInfoByPatientId(int patientId);
 

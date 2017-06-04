@@ -55,6 +55,40 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   $scope.patientMenuClick = function() {
     $('li').removeClass('active');
     $('#li2').addClass('active');
+    if (sessionStorage.getItem('patientId')) {
+      $http({
+        method: 'GET',
+        url: '/api/fourDiagnosticInfor/complete/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        if (response) {
+          $('#fourMenuYes').removeClass('hide');
+        } else {
+          $('#fourMenuNo').removeClass('hide');
+        }
+      });
+
+      $http({
+        method: 'GET',
+        url: '/api/tonguePulse/complete/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        if (response) {
+          $('#tongueMenuYes').removeClass('hide');
+        } else {
+          $('#tongueMenuNo').removeClass('hide');
+        }
+      });
+
+      $http({
+        method: 'GET',
+        url: '/api/physical/complete/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        if (response) {
+          $('#phyMenuYes').removeClass('hide');
+        } else {
+          $('#phyMenuNo').removeClass('hide');
+        }
+      });
+    }
   };
 
   $scope.fourClick = function() {
