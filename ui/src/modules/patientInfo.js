@@ -7,6 +7,11 @@ var patientInfo = angular.module('patientInfo', ['main']);
 
 patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
+  if(sessionStorage.getItem('patientId')) {
+    $scope.myModalContent = '确认提交吗？';
+  }else{
+    $scope.myModalContent = '确认修改基本资料吗？';
+  }
   var patient = {};
   $scope.patientMenuClick();
 
@@ -90,27 +95,29 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     return year + '-' + month + '-' + day;
   }
 
-  //取个人信息
-  $http({
-    method:'GET',
-    url:'api/patient/' + sessionStorage.getItem('patientId')
-  }).then(function(response){
-    patient = response.data;
-    $scope.name = patient.name;
-    $scope.gender = patient.gender;
-    $scope.age = patient.age;
-    $scope.height = patient.height;
-    $scope.weight = patient.weight;
-    $scope.smoke = patient.smoke;
-    $scope.drink = patient.drink;
-    $scope.familyHistory = patient.familyHistory;
-    $scope.hepatitisDiagnosisTime = toPre(patient.hepatitisDiagnosisTime);
-    $scope.cirrhosisDiagnosisTime = toPre(patient.cirrhosisDiagnosisTime);
-    $scope.westernMedicineDiagnosis = patient.westernMedicineDiagnosis;
-    $scope.chineseMedicineDiagnosis = patient.chineseMedicineDiagnosis;
-    $scope.westernMedicineTreatment = patient.westernMedicineTreatment;
-    $scope.chineseMedicineTreatment = patient.chineseMedicineTreatment;
-  });
+  //非创建用户按钮    取个人信息
+  if(sessionStorage.getItem('patientId')) {
+    $http({
+      method:'GET',
+      url:'api/patient/' + sessionStorage.getItem('patientId')
+    }).then(function(response){
+      patient = response.data;
+      $scope.name = patient.name;
+      $scope.gender = patient.gender;
+      $scope.age = patient.age;
+      $scope.height = patient.height;
+      $scope.weight = patient.weight;
+      $scope.smoke = patient.smoke;
+      $scope.drink = patient.drink;
+      $scope.familyHistory = patient.familyHistory;
+      $scope.hepatitisDiagnosisTime = toPre(patient.hepatitisDiagnosisTime);
+      $scope.cirrhosisDiagnosisTime = toPre(patient.cirrhosisDiagnosisTime);
+      $scope.westernMedicineDiagnosis = patient.westernMedicineDiagnosis;
+      $scope.chineseMedicineDiagnosis = patient.chineseMedicineDiagnosis;
+      $scope.westernMedicineTreatment = patient.westernMedicineTreatment;
+      $scope.chineseMedicineTreatment = patient.chineseMedicineTreatment;
+    });
+  }
   //保存 --> 确定  按钮
   $scope.commit = function() {
     patient.name = $scope.name;
@@ -128,14 +135,33 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     patient.westernMedicineTreatment = $scope.westernMedicineTreatment;
     patient.chineseMedicineTreatment = $scope.chineseMedicineTreatment;
     // console.log('$scope.smoke ==>' + $scope.smoke);
-    $http({
-      method:'POST',
-      url:'/api/patient',
-      data: patient
-    }).then(function(response) {
-      sessionStorage.setItem('patientId', response.data);
-
-    });
+    if(!sessionStorage.getItem('patientId')) {
+      $http({
+        method:'POST',
+        url:'/api/patient',
+        data: patient
+      }).then(function(response) {
+        sessionStorage.setItem('patientId', response.data);
+        $('#mymodal').modal('hide');
+        setTimeout(function(){
+          $scope.justModalContent = '操作成功！';
+          $('#justModal').modal('show');
+        }, 500);
+      });
+    }else{
+      patient.id = sessionStorage.getItem('patientId');
+      $http({
+        method:'PUT',
+        url:'api/patient',
+        data: patient
+      }).then(function(){
+        $('#mymodal').modal('hide');
+        $scope.justModalContent = '基本资料更新成功！';
+        setTimeout(function(){
+          $('#justModal').modal('show');
+        }, 500);
+      });
+    }
   };
 
 
