@@ -4,13 +4,7 @@ package app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
@@ -33,6 +27,14 @@ public class PatientController {
         return patientService.savePatientGeneralInformation(patientDTO);
     }
 
+    /**
+     * 根据id更新病人的基本资料
+     *
+     */
+    @PutMapping(path="")
+    public void updatePatientInfo(@RequestBody PatientDTO patient){
+        patientService.editPatient(patient);
+    }
     /**
      * ͨ根据id得到患者一般资料
      * 

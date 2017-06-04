@@ -5,7 +5,7 @@ import '../entries/main.js';
 
 var phyAChe = angular.module('phyAChe', ['main']);
 
-phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
 
   var physicalChemicalInspection = {};
   $scope.modalContent = '您确定要保存所有修改吗？';
@@ -170,7 +170,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', functi
       $scope.modalContent = '保存成功，即将跳转至首页！';
       $('#saveModal').modal('hide');
       setTimeout(function(){
-        window.location.href = 'main.html#!/home';
+        $state.go('home');
       }, 1000);
 
     });
