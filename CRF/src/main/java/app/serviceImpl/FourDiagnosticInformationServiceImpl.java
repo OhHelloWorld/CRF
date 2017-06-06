@@ -23,7 +23,12 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
 
     public FourDiagnosticInformationDTO getFourDiagnosticInfoByPatientId(int patientId) {
 
-        return convertToFourDiagnosticInfoDTO(fRepo.findFourDiagnosticInfoByPatientId(patientId));
+        if (fRepo.findFourDiagnosticInfoByPatientId(patientId) != null) {
+            return convertToFourDiagnosticInfoDTO(
+                    fRepo.findFourDiagnosticInfoByPatientId(patientId));
+        } else {
+            return null;
+        }
     }
 
     public boolean getCompleteByPatientId(int patientId) {

@@ -21,7 +21,11 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
     }
 
     public PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId) {
-        return convertToPhysicalDTO(pRepo.getPhysicalByPatientId(patientId));
+        if (pRepo.getPhysicalByPatientId(patientId) != null) {
+            return convertToPhysicalDTO(pRepo.getPhysicalByPatientId(patientId));
+        } else {
+            return null;
+        }
     }
 
     public boolean getCompleteByPatientId(int patientId) {

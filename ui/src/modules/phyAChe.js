@@ -11,6 +11,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
   $scope.modalContent = '您确定要保存所有修改吗？';
   $scope.tabTitle = '肝功能';
   getPatientInfo();
+  $scope.changeMenuStatus();
   $scope.addTabActive = function(str1, str2) {
     $('.tab-pane').removeClass('active');
     $(str1).addClass('active');
@@ -35,10 +36,14 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
 
   //get patientInfo by id
   $http({
-    method:'GET',
-    url:'api/physical/' + sessionStorage.getItem('patientId')
+    method: 'GET',
+    url: 'api/physical/' + sessionStorage.getItem('patientId')
   }).then(function(response) {
-    physicalChemicalInspection = response.data;
+    if (response.data != '') {
+      physicalChemicalInspection = response.data;
+    } else {
+      physicalChemicalInspection = {};
+    }
     $scope.totalBileAcid = physicalChemicalInspection.totalBileAcid;
     $scope.liverFunctionAlbumin = physicalChemicalInspection.liverFunctionAlbumin;
     $scope.liverFunctionGlobulin = physicalChemicalInspection.liverFunctionGlobulin;
@@ -93,7 +98,6 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     $scope.cellularImmunityCD4CD8 = physicalChemicalInspection.cellularImmunityCD4CD8;
     $scope.rheumaticImmuneRelatedAntibodies = physicalChemicalInspection.rheumaticImmuneRelatedAntibodies;
     $scope.cTMRI = physicalChemicalInspection.ctmri;
-    $scope.twoEyesDry = physicalChemicalInspection.twoEyesDry;
     $scope.liverHardnessFibroscan = physicalChemicalInspection.liverHardnessFibroscan;
     $scope.liverHardnessFibrotest = physicalChemicalInspection.liverHardnessFibrotest;
     $scope.liverPuncturePathology = physicalChemicalInspection.liverPuncturePathology;
@@ -140,7 +144,6 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.ananuclear = $scope.anaNuclear;
     physicalChemicalInspection.anacentromere = $scope.anaCentromere;
     physicalChemicalInspection.anaother = $scope.anaOther;
-    physicalChemicalInspection.twoEyesDry = $scope.twoEyesDry;
     physicalChemicalInspection.humoralImmunityIgG = $scope.humoralImmunityIgG;
     physicalChemicalInspection.humoralImmunityIgA = $scope.humoralImmunityIgA;
     physicalChemicalInspection.humoralImmunityIgM = $scope.humoralImmunityIgM;
@@ -157,19 +160,28 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.cellularImmunityCD2 = $scope.cellularImmunityCD2;
     physicalChemicalInspection.cellularImmunityCD4CD8 = $scope.cellularImmunityCD4CD8;
     physicalChemicalInspection.rheumaticImmuneRelatedAntibodies = $scope.rheumaticImmuneRelatedAntibodies;
-    physicalChemicalInspection.ctmri = $scope.cTMRI;
+    if (!$scope.cTMRI) {
+      physicalChemicalInspection.ctmri = -1;
+    } else {
+      physicalChemicalInspection.ctmri = $scope.cTMRI;
+    }
     physicalChemicalInspection.liverHardnessFibroscan = $scope.liverHardnessFibroscan;
     physicalChemicalInspection.liverHardnessFibrotest = $scope.liverHardnessFibrotest;
     physicalChemicalInspection.liverPuncturePathology = $scope.liverPuncturePathology;
-
+    if ($scope.totalBileAcid && $scope.liverFunctionAlbumin && $scope.liverFunctionGlobulin && $scope.liverFunctionALT && $scope.liverFunctionAST && $scope.liverFunctionGGT && $scope.liverFunctionALP && $scope.liverFunctionTotalCholesterol && $scope.liverFunctionTotalBilirubin && $scope.liverFunctionDirectBilirubin && $scope.liverFunctionRglobulin && $scope.renalFunctionBUN && $scope.renalFunctionCr && $scope.clottingPT && $scope.clottingINR && $scope.bloodRoutineRBC && $scope.bloodRoutineHb && $scope.bloodRoutineWBC && $scope.bloodRoutineNeutrophils && $scope.bloodRoutineLymphocytes && $scope.bloodRoutineEosinophils && $scope.bloodRoutinePlatelets && $scope.liverDiseaseAutoantibodiesAMA && $scope.liverDiseaseAutoantibodiesAMAM2 && $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody && $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies && $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen && $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen && $scope.liverDiseaseAutoantibodiesOther && $scope.anaHomogeneous && $scope.anaParticle && $scope.anaPeripheral && $scope.anaNucleolus && $scope.anaNucleolusEnhancement && $scope.anaNuclear && $scope.anaCentromere && $scope.anaOther && $scope.humoralImmunityIgG && $scope.humoralImmunityIgA && $scope.humoralImmunityIgM && $scope.humoralImmunityImmuneComplexf && $scope.humoralImmunityComplementC3 && $scope.humoralImmunityComplementC4 && $scope.humoralImmunityIgE && $scope.humoralImmunityKlightChain && $scope.humoralImmunityNlightChain && $scope.cellularImmunityCD3 && $scope.cellularImmunityCD4 && $scope.cellularImmunityCD8 && $scope.cellularImmunityCD56 && $scope.cellularImmunityCD2 && $scope.cellularImmunityCD4CD8 && $scope.rheumaticImmuneRelatedAntibodies && $scope.cTMRI && $scope.liverHardnessFibroscan && $scope.liverHardnessFibrotest && $scope.liverPuncturePathology) {
+      physicalChemicalInspection.complete = true;
+    } else {
+      physicalChemicalInspection.complete = false;
+    }
     $http({
       method: 'POST',
-      url:'/api/physical',
+      url: '/api/physical',
       data: physicalChemicalInspection
     }).then(function() {
+      $scope.changeMenuStatus();
       $scope.modalContent = '保存成功，即将跳转至首页！';
       $('#saveModal').modal('hide');
-      setTimeout(function(){
+      setTimeout(function() {
         $state.go('home');
       }, 1000);
 

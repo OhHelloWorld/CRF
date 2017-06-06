@@ -8,28 +8,28 @@ public class PhysicalChemicalInspectionDTO {
 
     private int id;
     private int patientId;
-    private float totalBileAcid;
-    private float liverFunctionAlbumin;
-    private float liverFunctionGlobulin;
-    private float liverFunctionALT;
-    private float liverFunctionAST;
-    private float liverFunctionGGT;
-    private float liverFunctionALP;
-    private float liverFunctionTotalCholesterol;
-    private float liverFunctionTotalBilirubin;
-    private float liverFunctionDirectBilirubin;
-    private float liverFunctionRglobulin;
-    private float renalFunctionBUN;
-    private float renalFunctionCr;
-    private float clottingPT;
-    private float clottingINR;
-    private float bloodRoutineRBC;
-    private float bloodRoutineHb;
-    private float bloodRoutineWBC;
-    private float bloodRoutineNeutrophils;
-    private float bloodRoutineLymphocytes;
-    private float bloodRoutineEosinophils;
-    private float bloodRoutinePlatelets;
+    private String totalBileAcid;
+    private String liverFunctionAlbumin;
+    private String liverFunctionGlobulin;
+    private String liverFunctionALT;
+    private String liverFunctionAST;
+    private String liverFunctionGGT;
+    private String liverFunctionALP;
+    private String liverFunctionTotalCholesterol;
+    private String liverFunctionTotalBilirubin;
+    private String liverFunctionDirectBilirubin;
+    private String liverFunctionRglobulin;
+    private String renalFunctionBUN;
+    private String renalFunctionCr;
+    private String clottingPT;
+    private String clottingINR;
+    private String bloodRoutineRBC;
+    private String bloodRoutineHb;
+    private String bloodRoutineWBC;
+    private String bloodRoutineNeutrophils;
+    private String bloodRoutineLymphocytes;
+    private String bloodRoutineEosinophils;
+    private String bloodRoutinePlatelets;
     private String liverDiseaseAutoantibodiesAMA;
     private String liverDiseaseAutoantibodiesAMAM2;
     private String liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody;
@@ -45,25 +45,25 @@ public class PhysicalChemicalInspectionDTO {
     private String ANANuclear;
     private String ANACentromere;
     private String ANAOther;
-    private float humoralImmunityIgG;
-    private float humoralImmunityIgA;
-    private float humoralImmunityIgM;
-    private float humoralImmunityImmuneComplexf;
-    private float humoralImmunityComplementC3;
-    private float humoralImmunityComplementC4;
-    private float humoralImmunityIgE;
-    private float humoralImmunityKlightChain;
-    private float humoralImmunityNlightChain;
-    private float cellularImmunityCD3;
-    private float cellularImmunityCD4;
-    private float cellularImmunityCD8;
-    private float cellularImmunityCD56;
-    private float cellularImmunityCD2;
-    private float cellularImmunityCD4CD8;
+    private String humoralImmunityIgG;
+    private String humoralImmunityIgA;
+    private String humoralImmunityIgM;
+    private String humoralImmunityImmuneComplexf;
+    private String humoralImmunityComplementC3;
+    private String humoralImmunityComplementC4;
+    private String humoralImmunityIgE;
+    private String humoralImmunityKlightChain;
+    private String humoralImmunityNlightChain;
+    private String cellularImmunityCD3;
+    private String cellularImmunityCD4;
+    private String cellularImmunityCD8;
+    private String cellularImmunityCD56;
+    private String cellularImmunityCD2;
+    private String cellularImmunityCD4CD8;
     private String rheumaticImmuneRelatedAntibodies;
     private int CTMRI;
-    private float liverHardnessFibroscan;
-    private float liverHardnessFibrotest;
+    private String liverHardnessFibroscan;
+    private String liverHardnessFibrotest;
     private String liverPuncturePathology;
     private boolean complete;
 
@@ -83,179 +83,179 @@ public class PhysicalChemicalInspectionDTO {
         this.patientId = patientId;
     }
 
-    public float getTotalBileAcid() {
+    public String getTotalBileAcid() {
         return totalBileAcid;
     }
 
-    public void setTotalBileAcid(float totalBileAcid) {
+    public void setTotalBileAcid(String totalBileAcid) {
         this.totalBileAcid = totalBileAcid;
     }
 
-    public float getLiverFunctionAlbumin() {
+    public String getLiverFunctionAlbumin() {
         return liverFunctionAlbumin;
     }
 
-    public void setLiverFunctionAlbumin(float liverFunctionAlbumin) {
+    public void setLiverFunctionAlbumin(String liverFunctionAlbumin) {
         this.liverFunctionAlbumin = liverFunctionAlbumin;
     }
 
-    public float getLiverFunctionGlobulin() {
+    public String getLiverFunctionGlobulin() {
         return liverFunctionGlobulin;
     }
 
-    public void setLiverFunctionGlobulin(float liverFunctionGlobulin) {
+    public void setLiverFunctionGlobulin(String liverFunctionGlobulin) {
         this.liverFunctionGlobulin = liverFunctionGlobulin;
     }
 
-    public float getLiverFunctionALT() {
+    public String getLiverFunctionALT() {
         return liverFunctionALT;
     }
 
-    public void setLiverFunctionALT(float liverFunctionALT) {
+    public void setLiverFunctionALT(String liverFunctionALT) {
         this.liverFunctionALT = liverFunctionALT;
     }
 
-    public float getLiverFunctionAST() {
+    public String getLiverFunctionAST() {
         return liverFunctionAST;
     }
 
-    public void setLiverFunctionAST(float liverFunctionAST) {
+    public void setLiverFunctionAST(String liverFunctionAST) {
         this.liverFunctionAST = liverFunctionAST;
     }
 
-    public float getLiverFunctionGGT() {
+    public String getLiverFunctionGGT() {
         return liverFunctionGGT;
     }
 
-    public void setLiverFunctionGGT(float liverFunctionGGT) {
+    public void setLiverFunctionGGT(String liverFunctionGGT) {
         this.liverFunctionGGT = liverFunctionGGT;
     }
 
-    public float getLiverFunctionALP() {
+    public String getLiverFunctionALP() {
         return liverFunctionALP;
     }
 
-    public void setLiverFunctionALP(float liverFunctionALP) {
+    public void setLiverFunctionALP(String liverFunctionALP) {
         this.liverFunctionALP = liverFunctionALP;
     }
 
-    public float getLiverFunctionTotalCholesterol() {
+    public String getLiverFunctionTotalCholesterol() {
         return liverFunctionTotalCholesterol;
     }
 
-    public void setLiverFunctionTotalCholesterol(float liverFunctionTotalCholesterol) {
+    public void setLiverFunctionTotalCholesterol(String liverFunctionTotalCholesterol) {
         this.liverFunctionTotalCholesterol = liverFunctionTotalCholesterol;
     }
 
-    public float getLiverFunctionTotalBilirubin() {
+    public String getLiverFunctionTotalBilirubin() {
         return liverFunctionTotalBilirubin;
     }
 
-    public void setLiverFunctionTotalBilirubin(float liverFunctionTotalBilirubin) {
+    public void setLiverFunctionTotalBilirubin(String liverFunctionTotalBilirubin) {
         this.liverFunctionTotalBilirubin = liverFunctionTotalBilirubin;
     }
 
-    public float getLiverFunctionDirectBilirubin() {
+    public String getLiverFunctionDirectBilirubin() {
         return liverFunctionDirectBilirubin;
     }
 
-    public void setLiverFunctionDirectBilirubin(float liverFunctionDirectBilirubin) {
+    public void setLiverFunctionDirectBilirubin(String liverFunctionDirectBilirubin) {
         this.liverFunctionDirectBilirubin = liverFunctionDirectBilirubin;
     }
 
-    public float getLiverFunctionRglobulin() {
+    public String getLiverFunctionRglobulin() {
         return liverFunctionRglobulin;
     }
 
-    public void setLiverFunctionRglobulin(float liverFunctionRglobulin) {
+    public void setLiverFunctionRglobulin(String liverFunctionRglobulin) {
         this.liverFunctionRglobulin = liverFunctionRglobulin;
     }
 
-    public float getRenalFunctionBUN() {
+    public String getRenalFunctionBUN() {
         return renalFunctionBUN;
     }
 
-    public void setRenalFunctionBUN(float renalFunctionBUN) {
+    public void setRenalFunctionBUN(String renalFunctionBUN) {
         this.renalFunctionBUN = renalFunctionBUN;
     }
 
-    public float getRenalFunctionCr() {
+    public String getRenalFunctionCr() {
         return renalFunctionCr;
     }
 
-    public void setRenalFunctionCr(float renalFunctionCr) {
+    public void setRenalFunctionCr(String renalFunctionCr) {
         this.renalFunctionCr = renalFunctionCr;
     }
 
-    public float getClottingPT() {
+    public String getClottingPT() {
         return clottingPT;
     }
 
-    public void setClottingPT(float clottingPT) {
+    public void setClottingPT(String clottingPT) {
         this.clottingPT = clottingPT;
     }
 
-    public float getClottingINR() {
+    public String getClottingINR() {
         return clottingINR;
     }
 
-    public void setClottingINR(float clottingINR) {
+    public void setClottingINR(String clottingINR) {
         this.clottingINR = clottingINR;
     }
 
-    public float getBloodRoutineRBC() {
+    public String getBloodRoutineRBC() {
         return bloodRoutineRBC;
     }
 
-    public void setBloodRoutineRBC(float bloodRoutineRBC) {
+    public void setBloodRoutineRBC(String bloodRoutineRBC) {
         this.bloodRoutineRBC = bloodRoutineRBC;
     }
 
-    public float getBloodRoutineHb() {
+    public String getBloodRoutineHb() {
         return bloodRoutineHb;
     }
 
-    public void setBloodRoutineHb(float bloodRoutineHb) {
+    public void setBloodRoutineHb(String bloodRoutineHb) {
         this.bloodRoutineHb = bloodRoutineHb;
     }
 
-    public float getBloodRoutineWBC() {
+    public String getBloodRoutineWBC() {
         return bloodRoutineWBC;
     }
 
-    public void setBloodRoutineWBC(float bloodRoutineWBC) {
+    public void setBloodRoutineWBC(String bloodRoutineWBC) {
         this.bloodRoutineWBC = bloodRoutineWBC;
     }
 
-    public float getBloodRoutineNeutrophils() {
+    public String getBloodRoutineNeutrophils() {
         return bloodRoutineNeutrophils;
     }
 
-    public void setBloodRoutineNeutrophils(float bloodRoutineNeutrophils) {
+    public void setBloodRoutineNeutrophils(String bloodRoutineNeutrophils) {
         this.bloodRoutineNeutrophils = bloodRoutineNeutrophils;
     }
 
-    public float getBloodRoutineLymphocytes() {
+    public String getBloodRoutineLymphocytes() {
         return bloodRoutineLymphocytes;
     }
 
-    public void setBloodRoutineLymphocytes(float bloodRoutineLymphocytes) {
+    public void setBloodRoutineLymphocytes(String bloodRoutineLymphocytes) {
         this.bloodRoutineLymphocytes = bloodRoutineLymphocytes;
     }
 
-    public float getBloodRoutineEosinophils() {
+    public String getBloodRoutineEosinophils() {
         return bloodRoutineEosinophils;
     }
 
-    public void setBloodRoutineEosinophils(float bloodRoutineEosinophils) {
+    public void setBloodRoutineEosinophils(String bloodRoutineEosinophils) {
         this.bloodRoutineEosinophils = bloodRoutineEosinophils;
     }
 
-    public float getBloodRoutinePlatelets() {
+    public String getBloodRoutinePlatelets() {
         return bloodRoutinePlatelets;
     }
 
-    public void setBloodRoutinePlatelets(float bloodRoutinePlatelets) {
+    public void setBloodRoutinePlatelets(String bloodRoutinePlatelets) {
         this.bloodRoutinePlatelets = bloodRoutinePlatelets;
     }
 
@@ -387,123 +387,123 @@ public class PhysicalChemicalInspectionDTO {
         ANAOther = aNAOther;
     }
 
-    public float getHumoralImmunityIgG() {
+    public String getHumoralImmunityIgG() {
         return humoralImmunityIgG;
     }
 
-    public void setHumoralImmunityIgG(float humoralImmunityIgG) {
+    public void setHumoralImmunityIgG(String humoralImmunityIgG) {
         this.humoralImmunityIgG = humoralImmunityIgG;
     }
 
-    public float getHumoralImmunityIgA() {
+    public String getHumoralImmunityIgA() {
         return humoralImmunityIgA;
     }
 
-    public void setHumoralImmunityIgA(float humoralImmunityIgA) {
+    public void setHumoralImmunityIgA(String humoralImmunityIgA) {
         this.humoralImmunityIgA = humoralImmunityIgA;
     }
 
-    public float getHumoralImmunityIgM() {
+    public String getHumoralImmunityIgM() {
         return humoralImmunityIgM;
     }
 
-    public void setHumoralImmunityIgM(float humoralImmunityIgM) {
+    public void setHumoralImmunityIgM(String humoralImmunityIgM) {
         this.humoralImmunityIgM = humoralImmunityIgM;
     }
 
-    public float getHumoralImmunityImmuneComplexf() {
+    public String getHumoralImmunityImmuneComplexf() {
         return humoralImmunityImmuneComplexf;
     }
 
-    public void setHumoralImmunityImmuneComplexf(float humoralImmunityImmuneComplexf) {
+    public void setHumoralImmunityImmuneComplexf(String humoralImmunityImmuneComplexf) {
         this.humoralImmunityImmuneComplexf = humoralImmunityImmuneComplexf;
     }
 
-    public float getHumoralImmunityComplementC3() {
+    public String getHumoralImmunityComplementC3() {
         return humoralImmunityComplementC3;
     }
 
-    public void setHumoralImmunityComplementC3(float humoralImmunityComplementC3) {
+    public void setHumoralImmunityComplementC3(String humoralImmunityComplementC3) {
         this.humoralImmunityComplementC3 = humoralImmunityComplementC3;
     }
 
-    public float getHumoralImmunityComplementC4() {
+    public String getHumoralImmunityComplementC4() {
         return humoralImmunityComplementC4;
     }
 
-    public void setHumoralImmunityComplementC4(float humoralImmunityComplementC4) {
+    public void setHumoralImmunityComplementC4(String humoralImmunityComplementC4) {
         this.humoralImmunityComplementC4 = humoralImmunityComplementC4;
     }
 
-    public float getHumoralImmunityIgE() {
+    public String getHumoralImmunityIgE() {
         return humoralImmunityIgE;
     }
 
-    public void setHumoralImmunityIgE(float humoralImmunityIgE) {
+    public void setHumoralImmunityIgE(String humoralImmunityIgE) {
         this.humoralImmunityIgE = humoralImmunityIgE;
     }
 
-    public float getHumoralImmunityKlightChain() {
+    public String getHumoralImmunityKlightChain() {
         return humoralImmunityKlightChain;
     }
 
-    public void setHumoralImmunityKlightChain(float humoralImmunityKlightChain) {
+    public void setHumoralImmunityKlightChain(String humoralImmunityKlightChain) {
         this.humoralImmunityKlightChain = humoralImmunityKlightChain;
     }
 
-    public float getHumoralImmunityNlightChain() {
+    public String getHumoralImmunityNlightChain() {
         return humoralImmunityNlightChain;
     }
 
-    public void setHumoralImmunityNlightChain(float humoralImmunityNlightChain) {
+    public void setHumoralImmunityNlightChain(String humoralImmunityNlightChain) {
         this.humoralImmunityNlightChain = humoralImmunityNlightChain;
     }
 
-    public float getCellularImmunityCD3() {
+    public String getCellularImmunityCD3() {
         return cellularImmunityCD3;
     }
 
-    public void setCellularImmunityCD3(float cellularImmunityCD3) {
+    public void setCellularImmunityCD3(String cellularImmunityCD3) {
         this.cellularImmunityCD3 = cellularImmunityCD3;
     }
 
-    public float getCellularImmunityCD4() {
+    public String getCellularImmunityCD4() {
         return cellularImmunityCD4;
     }
 
-    public void setCellularImmunityCD4(float cellularImmunityCD4) {
+    public void setCellularImmunityCD4(String cellularImmunityCD4) {
         this.cellularImmunityCD4 = cellularImmunityCD4;
     }
 
-    public float getCellularImmunityCD8() {
+    public String getCellularImmunityCD8() {
         return cellularImmunityCD8;
     }
 
-    public void setCellularImmunityCD8(float cellularImmunityCD8) {
+    public void setCellularImmunityCD8(String cellularImmunityCD8) {
         this.cellularImmunityCD8 = cellularImmunityCD8;
     }
 
-    public float getCellularImmunityCD56() {
+    public String getCellularImmunityCD56() {
         return cellularImmunityCD56;
     }
 
-    public void setCellularImmunityCD56(float cellularImmunityCD56) {
+    public void setCellularImmunityCD56(String cellularImmunityCD56) {
         this.cellularImmunityCD56 = cellularImmunityCD56;
     }
 
-    public float getCellularImmunityCD2() {
+    public String getCellularImmunityCD2() {
         return cellularImmunityCD2;
     }
 
-    public void setCellularImmunityCD2(float cellularImmunityCD2) {
+    public void setCellularImmunityCD2(String cellularImmunityCD2) {
         this.cellularImmunityCD2 = cellularImmunityCD2;
     }
 
-    public float getCellularImmunityCD4CD8() {
+    public String getCellularImmunityCD4CD8() {
         return cellularImmunityCD4CD8;
     }
 
-    public void setCellularImmunityCD4CD8(float cellularImmunityCD4CD8) {
+    public void setCellularImmunityCD4CD8(String cellularImmunityCD4CD8) {
         this.cellularImmunityCD4CD8 = cellularImmunityCD4CD8;
     }
 
@@ -523,19 +523,19 @@ public class PhysicalChemicalInspectionDTO {
         CTMRI = cTMRI;
     }
 
-    public float getLiverHardnessFibroscan() {
+    public String getLiverHardnessFibroscan() {
         return liverHardnessFibroscan;
     }
 
-    public void setLiverHardnessFibroscan(float liverHardnessFibroscan) {
+    public void setLiverHardnessFibroscan(String liverHardnessFibroscan) {
         this.liverHardnessFibroscan = liverHardnessFibroscan;
     }
 
-    public float getLiverHardnessFibrotest() {
+    public String getLiverHardnessFibrotest() {
         return liverHardnessFibrotest;
     }
 
-    public void setLiverHardnessFibrotest(float liverHardnessFibrotest) {
+    public void setLiverHardnessFibrotest(String liverHardnessFibrotest) {
         this.liverHardnessFibrotest = liverHardnessFibrotest;
     }
 

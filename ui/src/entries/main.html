@@ -24,8 +24,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Logo -->
     <a href="main.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">自身免疫性肝病信息</span>
     </a>
@@ -33,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -57,10 +55,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li id="li2"><a ui-sref="patientInfo" ng-click="patientMenuClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
         <li id="li3"><a id="a_four" style="cursor:pointer" ng-click="fourClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i>
         <span class="h4">
-          四诊信息采集&nbsp&nbsp&nbsp<span id="fourMenuYes" class="h5 hide" style="color: green" ng-cloak>已完成</span><span id="fourMenuNo hide" class="h5 hide" style="color: red" ng-cloak>未完成</span>
+          四诊信息<span id="fourMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="fourMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span>
         </span></a></li>
-        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象观察&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="tongueMenuYes" class="h5 hide" style="color: green" ng-cloak>已完成</span><span id="tongueMenuNo" class="h5 hide" style="color: red" ng-cloak>未完成</span></a></li>
-        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="phyMenuYes" class="h5 hide" style="color: green" ng-cloak>已完成</span><span id="phyMenuNo" class="h5 hide" style="color: red" ng-cloak>未完成</span></span></a></li>
+        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象<span id="tongueMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="tongueMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></a></li>
+        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查<span id="phyMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="phyMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

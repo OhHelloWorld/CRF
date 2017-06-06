@@ -6,6 +6,7 @@ angular.module('fourDiagnostic', [])
     var fourDiagnosticInformation = {};
     var isSave = false;
     $scope.fourClick();
+    $scope.changeMenuStatus();
     getPatientInfo();
     getFourDiaInfo();
     $scope.save = function() {
@@ -17,21 +18,15 @@ angular.module('fourDiagnostic', [])
         $scope.limb && $scope.backacheFootSoft && $scope.handFootFanHot && $scope.urineYellow && $scope.constipation && $scope.looseStools &&
         $scope.perspiration && $scope.nightSweats && $scope.lowerExtremityEdema && $scope.faceDull && $scope.eyeYellow && $scope.bodyYellow &&
         $scope.spiderNevus && $scope.liverPalm && $scope.abdominalVeins && $scope.yellowTumor;
-      if (isSave) {
-        $scope.information = '您已保存，请勿重复操作,谢谢';
-        $('#infoModal').modal({
+      if (judgeComplete != undefined) {
+        saveFourDia();
+      } else {
+        $scope.confirmInfo = '填写尚不完整，是否保存？';
+        $('#confirmModal').modal({
           keyboard: true
         });
-      } else {
-        if (judgeComplete != undefined) {
-          saveFourDia();
-        } else {
-          $scope.confirmInfo = '填写尚不完整，是否保存？';
-          $('#confirmModal').modal({
-            keyboard: true
-          });
-        }
       }
+
     };
     $scope.next = function() {
       var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
@@ -141,6 +136,7 @@ angular.module('fourDiagnostic', [])
       }).then(function success() {
         isSave = true;
         $scope.information = '保存成功！';
+        $scope.changeMenuStatus();
         $('#infoModal').modal({
           keyboard: true
         });
@@ -208,7 +204,7 @@ angular.module('fourDiagnostic', [])
     function getPatientInfo() {
       $http({
         method: 'GET',
-        url: '/api/patient/'+sessionStorage.getItem('patientId')
+        url: '/api/patient/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
