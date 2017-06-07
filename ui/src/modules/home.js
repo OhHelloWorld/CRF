@@ -9,7 +9,7 @@ var home = angular.module('home', [uiBootstrap, 'page', 'main']);
 
 home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
   $scope.url = '/api/patient';
-
+  $scope.changeMenuStatus();
   $scope.patientClick = function(patient) {
     sessionStorage.setItem('patientId', patient.id);
     $scope.patientMenuClick();
@@ -24,8 +24,14 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', fu
     $scope.url = '/api/patient';
   };
 
-  $scope.addPatient = function(){
+  $scope.addPatient = function() {
     sessionStorage.removeItem('patientId');
+    $('#fourMenuYes').hide();
+    $('#fourMenuNo').hide();
+    $('#tongueMenuYes').hide();
+    $('#tongueMenuNo').hide();
+    $('#phyMenuYes').hide();
+    $('#phyMenuNo').hide();
     $state.go('patientInfo');
   };
 }]);

@@ -6,6 +6,7 @@ angular.module('tonguePulse', ['main'])
   .controller('tonguePulseController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     var isSave = false;
     $scope.tongueClick();
+    $scope.changeMenuStatus();
     getPatientInfo();
     getTongueInfo();
     $scope.tongueShowClick = function() {
@@ -118,6 +119,7 @@ angular.module('tonguePulse', ['main'])
       }).then(function success() {
         isSave = true;
         $scope.information = '保存成功！';
+        $scope.changeMenuStatus();
         $('#infoModal').modal({
           keyboard: true
         });
@@ -130,12 +132,7 @@ angular.module('tonguePulse', ['main'])
     };
 
     $scope.save = function() {
-      if (isSave) {
-        $scope.information = '您已保存，请勿重复操作,谢谢';
-        $('#infoModal').modal({
-          keyboard: true
-        });
-      } else if (!($scope.cb1 || $scope.cb2 || $scope.cb3 || $scope.cb4 || $scope.cb5 || $scope.cb6 || $scope.cb7 || $scope.cb8) || !($scope.cb9 || $scope.cb10) || !($scope.cb11 || $scope.cb12 || $scope.cb13 || $scope.cb14 || $scope.cb15 || $scope.cb16 || $scope.cb17 || $scope.cb18) || !($scope.cb19 || $scope.cb20 || $scope.cb21 || $scope.cb22 || $scope.cb23 || $scope.cb24 || $scope.cb25 || $scope.cb26 || $scope.cb27 || $scope.cb28 || $scope.cb29 || $scope.cb30 || $scope.cb31) || !($scope.cb32 || $scope.cb33) || !($scope.cb34 || $scope.cb35 || $scope.cb36 || $scope.cb37 || $scope.cb38) || !($scope.cb39 || $scope.cb40) || !($scope.cb41 || $scope.cb42 || $scope.cb43) || !($scope.cb44 || $scope.cb45 || $scope.cb46 || $scope.cb47 || $scope.cb48 || $scope.cb49 || $scope.cb50 || $scope.cb51 || $scope.cb52 || $scope.cb53 || $scope.cb54 || $scope.cb55 || $scope.cb56 || $scope.cb57 || $scope.cb58) || !($scope.cb59 || $scope.cb60 || $scope.cb61 || $scope.cb62 || $scope.cb63 || $scope.cb64 || $scope.cb65 || $scope.cb66 || $scope.cb67 || $scope.cb68 || $scope.cb69 || $scope.cb70 || $scope.cb71 || $scope.cb72 || $scope.cb73)) {
+      if (!($scope.cb1 || $scope.cb2 || $scope.cb3 || $scope.cb4 || $scope.cb5 || $scope.cb6 || $scope.cb7 || $scope.cb8) || !($scope.cb9 || $scope.cb10) || !($scope.cb11 || $scope.cb12 || $scope.cb13 || $scope.cb14 || $scope.cb15 || $scope.cb16 || $scope.cb17 || $scope.cb18) || !($scope.cb19 || $scope.cb20 || $scope.cb21 || $scope.cb22 || $scope.cb23 || $scope.cb24 || $scope.cb25 || $scope.cb26 || $scope.cb27 || $scope.cb28 || $scope.cb29 || $scope.cb30 || $scope.cb31) || !($scope.cb32 || $scope.cb33) || !($scope.cb34 || $scope.cb35 || $scope.cb36 || $scope.cb37 || $scope.cb38) || !($scope.cb39 || $scope.cb40) || !($scope.cb41 || $scope.cb42 || $scope.cb43) || !($scope.cb44 || $scope.cb45 || $scope.cb46 || $scope.cb47 || $scope.cb48 || $scope.cb49 || $scope.cb50 || $scope.cb51 || $scope.cb52 || $scope.cb53 || $scope.cb54 || $scope.cb55 || $scope.cb56 || $scope.cb57 || $scope.cb58) || !($scope.cb59 || $scope.cb60 || $scope.cb61 || $scope.cb62 || $scope.cb63 || $scope.cb64 || $scope.cb65 || $scope.cb66 || $scope.cb67 || $scope.cb68 || $scope.cb69 || $scope.cb70 || $scope.cb71 || $scope.cb72 || $scope.cb73)) {
         $scope.confirmInfo = '填写尚不完整，是否保存？';
         $('#confirmModal').modal({
           keyboard: true
@@ -185,7 +182,7 @@ angular.module('tonguePulse', ['main'])
     function getPatientInfo() {
       $http({
         method: 'GET',
-        url: '/api/patient/'+sessionStorage.getItem('patientId')
+        url: '/api/patient/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
