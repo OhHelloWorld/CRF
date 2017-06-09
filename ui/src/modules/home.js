@@ -13,7 +13,7 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', fu
   $scope.patientClick = function(patient) {
     sessionStorage.setItem('patientId', patient.id);
     $scope.patientMenuClick();
-    window.location.href = 'http://localhost:9000/main.html#!/patientInfo';
+    $state.go('patientInfo');
   };
 
   $scope.query = function() {
