@@ -8,9 +8,9 @@ var patientInfo = angular.module('patientInfo', ['main']);
 patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
   if(sessionStorage.getItem('patientId')) {
-    $scope.myModalContent = '确认提交吗？';
-  }else{
     $scope.myModalContent = '确认修改基本资料吗？';
+  }else{
+    $scope.myModalContent = '确认提交吗？';
   }
   var patient = {};
   $scope.patientMenuClick();
@@ -143,8 +143,8 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
       }).then(function(response) {
         sessionStorage.setItem('patientId', response.data);
         $('#mymodal').modal('hide');
+        $scope.justModalContent = '操作成功！';
         setTimeout(function(){
-          $scope.justModalContent = '操作成功！';
           $('#justModal').modal('show');
         }, 500);
       });
