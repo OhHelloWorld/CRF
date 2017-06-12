@@ -6,6 +6,7 @@ public class UserDTO {
     private String realName;
     private String userName;
     private String password;
+    private String account;
 
     public int getId() {
         return id;
@@ -39,4 +40,12 @@ public class UserDTO {
         this.password = password;
     }
 
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getAccount() {
+        return this.account;
+    }
 }
