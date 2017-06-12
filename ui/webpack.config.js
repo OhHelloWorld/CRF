@@ -15,7 +15,8 @@ module.exports = {
       'lodash'
     ],
     main: __dirname + '/src/entries/index.js',
-    start: __dirname + '/src/entries/main.js'
+    start: __dirname + '/src/entries/main.js',
+    login: __dirname + '/src/entries/login.js',
   },
   output: {
     path: __dirname + '/dist',
@@ -69,6 +70,11 @@ module.exports = {
       chunks: ['vendor', 'start'],
       filename: __dirname + '/dist/main.html',
       template: './src/entries/main.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'login'],
+      filename: __dirname + '/dist/login.html',
+      template: './src/entries/login.html'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

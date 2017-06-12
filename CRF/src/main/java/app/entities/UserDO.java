@@ -15,6 +15,7 @@ public class UserDO {
     private int id;
     private String realName;
     private String userName;
+    private String account;
     private String password;
 
     public int getId() {
@@ -49,4 +50,11 @@ public class UserDO {
         this.password = password;
     }
 
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getAccount() {
+        return this.account;
+    }
 }
