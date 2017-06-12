@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
   <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1">
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-controller="mainController">
@@ -25,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="main.html" class="logo">
       <!-- logo for regular state and mobile devices -->
+      <span class="logo-mini"><b>病</b></span>
       <span class="logo-lg">自身免疫性肝病信息</span>
     </a>
 
@@ -42,10 +44,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">6</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+              <li class="header">你有4条信息</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -97,41 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+          <!-- <li class="dropdown tasks-menu">
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -178,9 +146,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -192,20 +160,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" id="sidebarMenu">
+      <ul class="sidebar-menu" id="sidebarMenu" ng-repeat="project in projects">
         <!-- Optionally, you can add icons to the links -->
-        <li id="li1" class="active"><a ui-sref="home" ng-click="homeClick()"><i class="glyphicon glyphicon-home"></i><span class="h4">首页</span></a></li>
-        <li id="li2"><a ui-sref="patientInfo" ng-click="patientMenuClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
-        <li id="li3"><a id="a_four" style="cursor:pointer" ng-click="fourClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i>
-        <span class="h4">
-          四诊信息<span id="fourMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="fourMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span>
-        </span></a></li>
-        <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象<span id="tongueMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="tongueMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></a></li>
-        <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查<span id="phyMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="phyMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+        <li class="treeview" ng-model="project">
+          <a href="#"><i class="fa fa-link"></i> <span>{{project}}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="li1" class="active"><a ui-sref="home" ng-click="homeClick()"><i class="glyphicon glyphicon-home"></i><span class="h4">首页</span></a></li>
+            <li id="li2"><a ui-sref="patientInfo" ng-click="patientMenuClick()"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
+            <li id="li3"><a id="a_four" style="cursor:pointer" ng-click="fourClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i>
+            <span class="h4">
+              四诊信息<span id="fourMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="fourMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span>
+            </span></a></li>
+            <li id="li4"><a id="a_tongue" style="cursor:pointer" ng-click="tongueClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">舌脉象<span id="tongueMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="tongueMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></a></li>
+            <li id="li5"><a id="a_phy" style="cursor:pointer" ng-click="phyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">理化检查<span id="phyMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="phyMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+          </ul>
+        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
