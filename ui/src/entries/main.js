@@ -4,6 +4,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../lib/css/css/AdminLTE.min.css';
 import '../lib/css/css/skins/skin-blue.min.css';
+import '../lib/css/js/app.min.js';
 import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
 import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
@@ -24,9 +25,9 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
   $urlRouterProvider.when('', '/home');
 
   $stateProvider.state('patientInfo', {
-      url: '/patientInfo',
-      template: require('../templates/patientInfo.html'),
-    })
+    url: '/patientInfo',
+    template: require('../templates/patientInfo.html'),
+  })
     .state('home', {
       url: '/home',
       template: require('../templates/home.html')
@@ -47,6 +48,9 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
 }]);
 
 main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+
+  $scope.projects = ['project1', 'project2', 'project3'];
+
   $scope.homeClick = function() {
     $('li').removeClass('active');
     $('#li1').addClass('active');
