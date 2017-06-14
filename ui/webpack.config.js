@@ -17,6 +17,7 @@ module.exports = {
     main: __dirname + '/src/entries/index.js',
     start: __dirname + '/src/entries/main.js',
     login: __dirname + '/src/entries/login.js',
+    homePage: __dirname + '/src/entries/homePage.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -50,12 +51,12 @@ module.exports = {
     }]
   },
 
-  devServer:{
-    inline:true,
-    port:9000,
-    proxy:{
-      '/api':{
-        target:'http://localhost:8080'
+  devServer: {
+    inline: true,
+    port: 9000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080'
       }
     }
   },
@@ -75,6 +76,11 @@ module.exports = {
       chunks: ['vendor', 'login'],
       filename: __dirname + '/dist/login.html',
       template: './src/entries/login.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'homePage'],
+      filename: __dirname + '/dist/homePage.html',
+      template: './src/entries/homePage.html'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
