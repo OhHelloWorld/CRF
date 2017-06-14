@@ -23,7 +23,7 @@ login.controller('loginController', ['$scope', '$http', '$base64', function($sco
     var authValue = $base64.encode($scope.account + '#' + $scope.password);
     $http({
       method:'GET',
-      url:'api/login',
+      url:'/api/login',
       headers:{
         'Authorization' : authValue
       }

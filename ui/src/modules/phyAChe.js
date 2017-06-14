@@ -8,7 +8,7 @@ var phyAChe = angular.module('phyAChe', ['main']);
 phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
 
   var physicalChemicalInspection = {};
-  $scope.modalContent = '您确定要保存所有修改吗？';
+  $scope.modalContent = '您确定要保存吗？';
   $scope.tabTitle = '肝功能';
   getPatientInfo();
   $scope.changeMenuStatus();
@@ -179,10 +179,16 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       data: physicalChemicalInspection
     }).then(function() {
       $scope.changeMenuStatus();
-      $scope.modalContent = '保存成功，即将跳转至首页！';
       $('#saveModal').modal('hide');
+      $scope.justModalContent = '保存成功，即将跳转至首页！';
       setTimeout(function() {
-        $state.go('home');
+        $('#justModal').modal('show');
+        setTimeout(function() {
+          $('#justModal').modal('hide');
+          setTimeout(function() {
+            $state.go('home');
+          }, 1000);
+        }, 1000);
       }, 1000);
 
     });

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.apache.tomcat.util.codec.binary.Base64;
 @RestController
-@RequestMapping(path = "api")
+@RequestMapping(path = "/api")
 public class LoginController {
 
     @Autowired
