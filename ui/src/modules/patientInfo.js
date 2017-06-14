@@ -134,6 +134,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     patient.chineseMedicineDiagnosis = $scope.chineseMedicineDiagnosis;
     patient.westernMedicineTreatment = $scope.westernMedicineTreatment;
     patient.chineseMedicineTreatment = $scope.chineseMedicineTreatment;
+    patient.complete = true;
     // console.log('$scope.smoke ==>' + $scope.smoke);
     if(!sessionStorage.getItem('patientId')) {
       $http({
