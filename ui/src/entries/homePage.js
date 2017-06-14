@@ -34,6 +34,7 @@ homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
 }]);
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+
   var project1 = {
     name: 'test1'
   };
@@ -45,5 +46,6 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   };
 
   $scope.projects = [project1, project2, project3];
+  sessionStorage.setItem('permission',['邀请联合发起人','邀请分中心研究者','邀请录入员']);
 
 }]);
