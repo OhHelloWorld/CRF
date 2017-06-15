@@ -17,7 +17,8 @@ module.exports = {
     main: __dirname + '/src/entries/index.js',
     start: __dirname + '/src/entries/main.js',
     login: __dirname + '/src/entries/login.js',
-    homePage: __dirname + '/src/entries/homePage.js'
+    homePage: __dirname + '/src/entries/homePage.js',
+    hospitalDetail: __dirname + '/src/entries/hospitalDetail.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -81,6 +82,11 @@ module.exports = {
       chunks: ['vendor', 'homePage'],
       filename: __dirname + '/dist/homePage.html',
       template: './src/entries/homePage.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'hospitalDetail'],
+      filename: __dirname + '/dist/hospitalDetail.html',
+      template: './src/entries/hospitalDetail.html'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

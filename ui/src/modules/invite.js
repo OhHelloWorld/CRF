@@ -9,7 +9,7 @@ angular.module('invite', [])
       $('#data-manager').addClass('hide');
     }
     if (sessionStorage.getItem('permission').indexOf('邀请分中心研究者') === -1) {
-      $('sub-center-researcher').addClass('hide');
+      $('#sub-center-researcher').addClass('hide');
     }
     if (sessionStorage.getItem('permission').indexOf('邀请CRA（临床监查员）') === -1) {
       $('#clinical-examiner').addClass('hide');

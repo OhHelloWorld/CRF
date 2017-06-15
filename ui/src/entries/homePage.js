@@ -42,8 +42,8 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     name: 'test2'
   };
   var project3 = {
-    name: 'test3'
-  };
+    name: 'test3' 
+  }; 
 
   $scope.projects = [project1, project2, project3];
   sessionStorage.setItem('permission',['邀请联合发起人','邀请分中心研究者','邀请录入员']);
