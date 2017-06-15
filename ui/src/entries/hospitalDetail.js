@@ -17,16 +17,13 @@ var hospitalDetail = angular.module('hospitalDetail', [uiRouter]);
 
 hospitalDetail.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  // $urlRouterProvider.when('', '/default');
+  $urlRouterProvider.when('', '/hospitalDetailDefault');
 
-  // $stateProvider.state('default', {
-  //   url: '/default',
-  //   template: require('../templates/default.html')
-  // })
-  // .state('invite',{
-  //   url:'/invite',
-  //   template:require('../templates/invite.html')
-  // });
+  $stateProvider.state('hospitalDetailDefault', {
+    url: '/hospitalDetailDefault',
+    template: require('../templates/hospitalDetailDefault.html')
+  });
+
 
 }]);
 
