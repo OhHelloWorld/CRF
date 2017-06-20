@@ -1,11 +1,15 @@
 package app.serviceImpl;
 
+import app.Utils.ConvertUtil;
+import app.dto.UserDTO;
+import app.entities.PermissionDO;
 import app.entities.UserDO;
 import app.repo.LoginRepo;
 import app.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,6 +22,9 @@ public class LoginServiceImpl implements LoginService{
     @Autowired
     private LoginRepo loginRepo;
 
+    @Autowired
+    private ConvertUtil convertUtil;
+
 
     @Override
     public boolean inputCompareToDatabase(String account, String password) {
@@ -29,22 +36,30 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public boolean login(String account, String password) {
-        return false;
-    }
-
-    @Override
     public UserDO getUserDOByAccount(String account) {
-        return null;
+        return loginRepo.findByAccount(account);
     }
 
     @Override
     public Set<String> listRole(String account) {
-        return null;
+        UserDO userDO = loginRepo.findByAccount(account);
+        Set<String> roles = new HashSet<>();
+        roles.add(userDO.getRoleDO().getRoleName());
+        return roles;
     }
 
     @Override
     public Set<String> listPermission(String account) {
-        return null;
+        UserDO userDO = loginRepo.findByAccount(account);
+        Set<String> permissions = new HashSet<>();
+        for(PermissionDO p : userDO.getRoleDO().getListPermission()) {
+            permissions.add(p.getPermissionName());
+        }
+        return permissions;
+    }
+
+    @Override
+    public UserDTO getUserDTOByAccount(String account) {
+        return convertUtil.convertToUserDTO(loginRepo.findByAccount(account));
     }
 }

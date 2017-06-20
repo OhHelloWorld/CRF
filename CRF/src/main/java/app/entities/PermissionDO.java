@@ -10,6 +10,8 @@ import java.util.List;
 @Table(name = "permission")
 public class PermissionDO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String PermissionName;
 

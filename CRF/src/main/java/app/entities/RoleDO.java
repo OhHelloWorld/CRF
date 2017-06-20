@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 public class RoleDO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String roleName;
 
@@ -21,7 +23,7 @@ public class RoleDO {
     private List<PermissionDO> listPermission;
 
     @OneToMany
-    private UserDO userDO;
+    private List<UserDO> userDO;
 
     public List<PermissionDO> getListPermission() {
         return listPermission;
@@ -31,11 +33,11 @@ public class RoleDO {
         this.listPermission = listPermission;
     }
 
-    public UserDO getUserDO() {
+    public List<UserDO> getUserDO() {
         return userDO;
     }
 
-    public void setUserDO(UserDO userDO) {
+    public void setUserDO(List<UserDO> userDO) {
         this.userDO = userDO;
     }
 

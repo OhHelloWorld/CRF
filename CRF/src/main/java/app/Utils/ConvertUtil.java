@@ -272,9 +272,27 @@ public class ConvertUtil {
         return permissionDTO;
     }
 
-    public PermissionDO convertToPermissionDTO(PermissionDTO permissionDO) {
-        PermissionDO permissionDTO = new PermissionDO();
+    public PermissionDO convertToPermissionDTO(PermissionDTO permissionDTO) {
+        PermissionDO permissionDO = new PermissionDO();
         permissionDO.setPermissionName(permissionDTO.getPermissionName());
-        return permissionDTO;
+        return permissionDO;
+    }
+
+    public UserDTO convertToUserDTO(UserDO userDO) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setRealName(userDO.getRealName());
+        userDTO.setId(userDO.getId());
+        userDTO.setAccount(userDO.getCredentialSalt());
+        userDTO.setUserName(userDO.getUserName());
+        return userDTO;
+    }
+
+    public UserDO convertToUserDO(UserDTO userDTO) {
+        UserDO userDO = new UserDO();
+        userDO.setRealName(userDTO.getRealName());
+        userDO.setAccount(userDTO.getAccount());
+        userDO.setPassword(userDTO.getPassword());
+        userDO.setUserName(userDTO.getUserName());
+        return userDO;
     }
 }

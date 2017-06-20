@@ -1,5 +1,6 @@
 package app.service;
 
+import app.dto.UserDTO;
 import app.entities.UserDO;
 
 import java.util.Set;
@@ -11,13 +12,13 @@ public interface LoginService {
 
     boolean inputCompareToDatabase(String account, String password);
 
-    boolean login(String account, String password);
-
     UserDO getUserDOByAccount(String account);
 
     Set<String> listRole(String account);
 
     Set<String> listPermission(String account);
+
+    UserDTO getUserDTOByAccount(String account);
 
 
 }

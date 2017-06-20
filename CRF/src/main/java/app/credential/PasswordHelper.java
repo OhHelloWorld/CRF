@@ -3,10 +3,12 @@ package app.credential;
 import app.entities.UserDO;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by 52400 on 2017/6/20.
  */
+@Service
 public class PasswordHelper {
 
     private SecureRandomNumberGenerator srn = new SecureRandomNumberGenerator();
