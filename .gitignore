@@ -1,7 +1,7 @@
 .dist
 .idea
 .eslintcache
-CRF/.idea/
+/CRF/.idea/
 /ui/.idea/
 node_modules
 bin
