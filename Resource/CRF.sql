@@ -153,10 +153,11 @@ create table users(
     real_name varchar(20) not null,
     user_name varchar(30) not null,
     password varchar(100) not null,
+    role_id int,
     primary key(id)
 );
 #角色表
-create table roles(
+create table role(
 	id int not null auto_increment,
     role_name varchar(20) not null,
     primary key(id)
@@ -169,7 +170,7 @@ create table role_permission(
     primary key(id)
 );
 #权限表
-create table permissions(
+create table permission(
 	id int not null auto_increment,
     permission_name varchar(50) not null,
     primary key(id)

@@ -20,6 +20,13 @@ public class PermissionDO {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private List<RoleDO> listRole;
 
+    public List<RoleDO> getListRole() {
+        return listRole;
+    }
+
+    public void setListRole(List<RoleDO> listRole) {
+        this.listRole = listRole;
+    }
 
     public Long getId() {
         return id;

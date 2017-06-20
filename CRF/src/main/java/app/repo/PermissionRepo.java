@@ -8,11 +8,4 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PermissionRepo extends CrudRepository<PermissionDO, Long>{
 
-    
-
-
-
-
-
-
 }

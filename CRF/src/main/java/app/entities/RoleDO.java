@@ -20,6 +20,25 @@ public class RoleDO {
             inverseJoinColumns = {@JoinColumn(name = "permission_id")})
     private List<PermissionDO> listPermission;
 
+    @OneToMany
+    private UserDO userDO;
+
+    public List<PermissionDO> getListPermission() {
+        return listPermission;
+    }
+
+    public void setListPermission(List<PermissionDO> listPermission) {
+        this.listPermission = listPermission;
+    }
+
+    public UserDO getUserDO() {
+        return userDO;
+    }
+
+    public void setUserDO(UserDO userDO) {
+        this.userDO = userDO;
+    }
+
     public Long getId() {
         return id;
     }
