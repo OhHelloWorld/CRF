@@ -1,8 +1,0 @@
-.dist
-.idea
-.eslintcache
-CRF/.idea/
-/ui/.idea/
-node_modules
-*.orig
-*.log
