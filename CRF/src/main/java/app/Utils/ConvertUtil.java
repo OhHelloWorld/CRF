@@ -1,11 +1,7 @@
 package app.Utils;
 
-import app.dto.PatientDTO;
-import app.dto.PhysicalChemicalInspectionDTO;
-import app.dto.TonguePulseDTO;
-import app.entities.PatientDO;
-import app.entities.PhysicalChemicalInspectionDO;
-import app.entities.TonguePulseDO;
+import app.dto.*;
+import app.entities.*;
 import app.service.FourDiagnosticInformationService;
 import app.service.PhysicalChemicalInspectionService;
 import app.service.TonguePulseService;
@@ -254,5 +250,31 @@ public class ConvertUtil {
         patientDTO.setWesternMedicineDiagnosis(patientDO.getWesternMedicineDiagnosis());
         patientDTO.setWesternMedicineTreatment(patientDO.getWesternMedicineTreatment());
         return patientDTO;
+    }
+
+    public  RoleDO convertToRoleDO(RoleDTO roleDTO) {
+        RoleDO roleDO = new RoleDO();
+        roleDO.setRoleName(roleDO.getRoleName());
+        return roleDO;
+    }
+
+    public  RoleDTO convertoToRoleDTO(RoleDO roleDO) {
+        RoleDTO roleDTO = new RoleDTO();
+        roleDTO.setId(roleDO.getId());
+        roleDTO.setRoleName(roleDO.getRoleName());
+        return roleDTO;
+    }
+
+    public PermissionDTO convertToPermissionDTO(PermissionDO permissionDO) {
+        PermissionDTO permissionDTO = new PermissionDTO();
+        permissionDTO.setId(permissionDO.getId());
+        permissionDTO.setPermissionName(permissionDO.getPermissionName());
+        return permissionDTO;
+    }
+
+    public PermissionDO convertToPermissionDTO(PermissionDTO permissionDO) {
+        PermissionDO permissionDTO = new PermissionDO();
+        permissionDO.setPermissionName(permissionDTO.getPermissionName());
+        return permissionDTO;
     }
 }
