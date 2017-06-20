@@ -152,7 +152,9 @@ create table users(
 	id int not null auto_increment,
     real_name varchar(20) not null,
     user_name varchar(30) not null,
+    account varchar(100) not null,
     password varchar(100) not null,
+    salt varchar(255) not null,
     role_id int,
     primary key(id)
 );

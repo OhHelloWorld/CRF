@@ -1,6 +1,6 @@
 package app.serviceImpl;
 
-import app.dto.PermissionDTO;
+import app.dto.SysPermissionDTO;
 import app.service.PermissionService;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PermissionServiceImpl implements PermissionService{
     @Override
-    public PermissionDTO getPermissionById(Long id) {
+    public SysPermissionDTO getPermissionById(Long id) {
         return null;
     }
 }

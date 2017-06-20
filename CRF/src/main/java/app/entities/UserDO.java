@@ -1,7 +1,6 @@
 package app.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,13 +17,13 @@ public class UserDO {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private RoleDO roleDO;
+    private SysRoleDO roleDO;
 
-    public RoleDO getRoleDO() {
+    public SysRoleDO getRoleDO() {
         return roleDO;
     }
 
-    public void setRoleDO(RoleDO roleDO) {
+    public void setRoleDO(SysRoleDO roleDO) {
         this.roleDO = roleDO;
     }
 

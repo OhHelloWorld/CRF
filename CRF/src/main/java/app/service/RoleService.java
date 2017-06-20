@@ -1,11 +1,11 @@
 package app.service;
 
-import app.dto.RoleDTO;
+import app.dto.SysRoleDTO;
 
 /**
  * Created by 52400 on 2017/6/20.
  */
 public interface RoleService {
 
-    RoleDTO getRoleById(Long id);
+    SysRoleDTO getRoleById(Long id);
 }

@@ -26,27 +26,28 @@ public class AuthenticationFilter extends AccessControlFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response)
             throws Exception {
-        Subject subject = SecurityUtils.getSubject();
-
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
-        String uri = httpRequest.getRequestURI();
-        String curUrl = getRequestUrl(request);
-
-        if ((subject.getPrincipals() == null
-                || StringUtils.endsWithAny(curUrl, ".js", ".css", ".html", ".woff", ".ttf",
-                ".woff2")
-                || StringUtils.endsWithAny(curUrl, ".jpg", ".png", ".gif", ".jpeg"))) {
-            return true;
-        } else if (uri.contains("login") || uri.contains("logout") || subject.isAuthenticated()) {
-            return true;
-        } else {
-            httpResponse.getWriter()
-                    .write("{\"errorMessage\": \"user not login or session time out\"}");
-            httpResponse.setStatus(401);
-            httpResponse.setContentType("application/json");
-            return false;
-        }
+//        Subject subject = SecurityUtils.getSubject();
+//
+//        HttpServletRequest httpRequest = (HttpServletRequest) request;
+//        HttpServletResponse httpResponse = (HttpServletResponse) response;
+//        String uri = httpRequest.getRequestURI();
+//        String curUrl = getRequestUrl(request);
+//
+//        if ((subject.getPrincipals() == null
+//                || StringUtils.endsWithAny(curUrl, ".js", ".css", ".html", ".woff", ".ttf",
+//                ".woff2")
+//                || StringUtils.endsWithAny(curUrl, ".jpg", ".png", ".gif", ".jpeg"))) {
+//            return true;
+//        } else if (uri.contains("login") || uri.contains("logout") || subject.isAuthenticated()) {
+//            return true;
+//        } else {
+//            httpResponse.getWriter()
+//                    .write("{\"errorMessage\": \"user not login or session time out\"}");
+//            httpResponse.setStatus(401);
+//            httpResponse.setContentType("application/json");
+//            return false;
+//        }
+        return true;
     }
 
     private String getRequestUrl(ServletRequest request) {

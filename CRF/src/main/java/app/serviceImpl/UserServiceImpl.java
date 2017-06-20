@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO addUser(UserDTO userDTO) {
         UserDO userDO = convertUtil.convertToUserDO(userDTO);
         passwordHelper.encrypUserPassword(userDO);
+        userRepo.save(userDO);
         return convertUtil.convertToUserDTO(userDO);
     }
 }

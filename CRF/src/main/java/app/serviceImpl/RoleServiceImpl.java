@@ -1,7 +1,7 @@
 package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
-import app.dto.RoleDTO;
+import app.dto.SysRoleDTO;
 import app.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class RoleServiceImpl implements RoleService {
     private ConvertUtil convertUtil;
 
     @Override
-    public RoleDTO getRoleById(Long id) {
+    public SysRoleDTO getRoleById(Long id) {
         return null;
     }
 }

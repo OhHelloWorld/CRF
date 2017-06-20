@@ -8,7 +8,8 @@ import java.util.List;
  */
 @Table(name = "role")
 @Entity
-public class RoleDO {
+//这是与系统管理相关的角色
+public class SysRoleDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,16 +21,16 @@ public class RoleDO {
             name = "role_permission",
             joinColumns = {@JoinColumn(name = "role_id")},
             inverseJoinColumns = {@JoinColumn(name = "permission_id")})
-    private List<PermissionDO> listPermission;
+    private List<SysPermissionDO> listPermission;
 
     @OneToMany
     private List<UserDO> userDO;
 
-    public List<PermissionDO> getListPermission() {
+    public List<SysPermissionDO> getListPermission() {
         return listPermission;
     }
 
-    public void setListPermission(List<PermissionDO> listPermission) {
+    public void setListPermission(List<SysPermissionDO> listPermission) {
         this.listPermission = listPermission;
     }
 

@@ -2,7 +2,7 @@ package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
 import app.dto.UserDTO;
-import app.entities.PermissionDO;
+import app.entities.SysPermissionDO;
 import app.entities.UserDO;
 import app.repo.LoginRepo;
 import app.service.LoginService;
@@ -52,7 +52,7 @@ public class LoginServiceImpl implements LoginService{
     public Set<String> listPermission(String account) {
         UserDO userDO = loginRepo.findByAccount(account);
         Set<String> permissions = new HashSet<>();
-        for(PermissionDO p : userDO.getRoleDO().getListPermission()) {
+        for(SysPermissionDO p : userDO.getRoleDO().getListPermission()) {
             permissions.add(p.getPermissionName());
         }
         return permissions;

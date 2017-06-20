@@ -252,28 +252,28 @@ public class ConvertUtil {
         return patientDTO;
     }
 
-    public  RoleDO convertToRoleDO(RoleDTO roleDTO) {
-        RoleDO roleDO = new RoleDO();
+    public SysRoleDO convertToRoleDO(SysRoleDTO roleDTO) {
+        SysRoleDO roleDO = new SysRoleDO();
         roleDO.setRoleName(roleDO.getRoleName());
         return roleDO;
     }
 
-    public  RoleDTO convertoToRoleDTO(RoleDO roleDO) {
-        RoleDTO roleDTO = new RoleDTO();
+    public SysRoleDTO convertoToRoleDTO(SysRoleDO roleDO) {
+        SysRoleDTO roleDTO = new SysRoleDTO();
         roleDTO.setId(roleDO.getId());
         roleDTO.setRoleName(roleDO.getRoleName());
         return roleDTO;
     }
 
-    public PermissionDTO convertToPermissionDTO(PermissionDO permissionDO) {
-        PermissionDTO permissionDTO = new PermissionDTO();
+    public SysPermissionDTO convertToPermissionDTO(SysPermissionDO permissionDO) {
+        SysPermissionDTO permissionDTO = new SysPermissionDTO();
         permissionDTO.setId(permissionDO.getId());
         permissionDTO.setPermissionName(permissionDO.getPermissionName());
         return permissionDTO;
     }
 
-    public PermissionDO convertToPermissionDTO(PermissionDTO permissionDTO) {
-        PermissionDO permissionDO = new PermissionDO();
+    public SysPermissionDO convertToPermissionDTO(SysPermissionDTO permissionDTO) {
+        SysPermissionDO permissionDO = new SysPermissionDO();
         permissionDO.setPermissionName(permissionDTO.getPermissionName());
         return permissionDO;
     }
@@ -282,7 +282,7 @@ public class ConvertUtil {
         UserDTO userDTO = new UserDTO();
         userDTO.setRealName(userDO.getRealName());
         userDTO.setId(userDO.getId());
-        userDTO.setAccount(userDO.getCredentialSalt());
+        userDTO.setAccount(userDO.getAccount());
         userDTO.setUserName(userDO.getUserName());
         return userDTO;
     }

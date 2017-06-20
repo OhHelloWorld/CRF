@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by 52400 on 2017/6/20.
  */
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/api/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "")
     public UserDTO register(@RequestBody UserDTO userDTO) {
         return userService.addUser(userDTO);
     }

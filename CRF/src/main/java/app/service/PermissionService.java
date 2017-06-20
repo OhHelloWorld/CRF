@@ -1,11 +1,11 @@
 package app.service;
 
-import app.dto.PermissionDTO;
+import app.dto.SysPermissionDTO;
 
 /**
  * Created by 52400 on 2017/6/20.
  */
 public interface PermissionService {
 
-    PermissionDTO getPermissionById(Long id);
+    SysPermissionDTO getPermissionById(Long id);
 }
