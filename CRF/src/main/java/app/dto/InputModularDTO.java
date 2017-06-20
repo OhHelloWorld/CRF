@@ -1,6 +1,6 @@
 package app.dto;
 
-public class inputModularDTO {
+public class InputModularDTO {
 
     private int id;
     private String description;
