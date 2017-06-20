@@ -10,13 +10,14 @@ import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
 import '../../node_modules/bootstrap/js/modal.js';
 
+import '../modules/project.js';
 import '../modules/default.js';
 import '../modules/invite.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-var homePage = angular.module('homePage', [uiRouter, 'default','invite']);
+var homePage = angular.module('homePage', [uiRouter, 'default', 'project', 'invite']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -24,7 +25,23 @@ homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
 
   $stateProvider.state('default', {
     url: '/default',
-    template: require('../templates/default.html')
+    template: require('../templates/default.html'),
+    controller: 'defaultController'
+  })
+  .state('project', {
+    url: '/project',
+    template: require('../templates/project.html'),
+    controller: 'projectController'
+  })
+  .state('project.projectDefault', {
+    url: '/projetDefault',
+    template: require('../templates/project/projectDefault.html'),
+    controller: 'projectDefaultController'
+  })
+  .state('project.projectCase', {
+    url: '/projectCase',
+    template: require('../templates/project/caseIllness.html'),
+    controller: 'projectCaseController'
   })
   .state('invite',{
     url:'/invite',
