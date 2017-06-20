@@ -1,8 +1,12 @@
 package app.service;
 
-import app.dto.inputModularDTO;
+import java.util.List;
+
+import app.dto.InputModularDTO;
 
 public interface InputModularService {
 
-    public void saveInputModularService(inputModularDTO inputModularDTO);
+    public void saveInputModularService(InputModularDTO inputModularDTO);
+
+    public List<InputModularDTO> getInputModularByInformationId(int informationId);
 }
