@@ -13,11 +13,12 @@ import '../../node_modules/bootstrap/js/modal.js';
 import '../modules/project.js';
 import '../modules/default.js';
 import '../modules/invite.js';
+import '../modules/projectSetting.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-var homePage = angular.module('homePage', [uiRouter, 'default', 'project', 'invite']);
+var homePage = angular.module('homePage', [uiRouter, 'default', 'project', 'invite', 'projectSetting']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -45,21 +46,28 @@ homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
   })
   .state('invite',{
     url:'/invite',
-    template:require('../templates/invite.html')
+    template:require('../templates/invite.html'),
+    controller: 'inviteController'
+  })
+  .state('projectSetting',{
+    url:'/projectSetting',
+    template:require('../templates/projectSetting.html'),
+    controller: 'projectSettingController'
   });
+
 
 }]);
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
 
   var project1 = {
-    name: 'test1'
+    name: '测试项目'
   };
   var project2 = {
-    name: 'test2'
+    name: '测试项目2'
   };
   var project3 = {
-    name: 'test3' 
+    name: '测试项目3' 
   }; 
 
   $scope.projects = [project1, project2, project3];

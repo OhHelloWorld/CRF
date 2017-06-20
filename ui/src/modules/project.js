@@ -28,5 +28,11 @@ angular.module('project', [uiRouter, 'chart.js'])
   }])
 
   .controller('projectCaseController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
+    $scope.positals = [
+                        {'name':'病例1', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
+                        {'name':'病例2', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
+                        {'name':'病例3', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
+                        {'name':'病例4', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
+                        {'name':'病例5', 'address':'发烧，咽炎', 'telephone':'2015-06-25'}
+    ]
   }]);
