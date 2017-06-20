@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by 10210 on 2017/6/7.
@@ -25,5 +26,25 @@ public class LoginServiceImpl implements LoginService{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public boolean login(String account, String password) {
+        return false;
+    }
+
+    @Override
+    public UserDO getUserDOByAccount(String account) {
+        return null;
+    }
+
+    @Override
+    public Set<String> listRole(String account) {
+        return null;
+    }
+
+    @Override
+    public Set<String> listPermission(String account) {
+        return null;
     }
 }

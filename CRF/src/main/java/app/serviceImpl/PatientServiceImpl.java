@@ -1,16 +1,6 @@
 package app.serviceImpl;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
+import app.Utils.ConvertUtil;
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.entities.PatientDO;
@@ -19,10 +9,16 @@ import app.service.FourDiagnosticInformationService;
 import app.service.PatientService;
 import app.service.PhysicalChemicalInspectionService;
 import app.service.TonguePulseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-/**
- * @author Administrator ����serviceImpl
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Service
 public class PatientServiceImpl implements PatientService {
 
@@ -38,14 +34,17 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     private PhysicalChemicalInspectionService physicalService;
 
+    @Autowired
+    private ConvertUtil convertUtil;
+
     @Transactional
     public int savePatientGeneralInformation(PatientDTO patientDTO) {
-        return patientRepo.save(convertToPatientDO(patientDTO)).getId();
+        return patientRepo.save(convertUtil.convertToPatientDO(patientDTO)).getId();
     }
 
     public PatientDTO getPatientGeneralInformation(int id) {
 
-        return convertToPatientDTO(patientRepo.getPatientInformationById(id));
+        return convertUtil.convertToPatientDTO(patientRepo.getPatientInformationById(id));
     }
 
     public boolean getCompleteById(int id) {
@@ -60,7 +59,7 @@ public class PatientServiceImpl implements PatientService {
         List<PatientDTO> patientDTOs = new ArrayList<>();
         Page<PatientDO> patientDOs = patientRepo.getAll(pageable);
         for (PatientDO patientDO : patientDOs) {
-            patientDTOs.add(convertToPatientDTO(patientDO));
+            patientDTOs.add(convertUtil.convertToPatientDTO(patientDO));
         }
         PageDTO<PatientDTO> pageDTO = new PageDTO<>();
         pageDTO.setContent(patientDTOs);
@@ -73,7 +72,7 @@ public class PatientServiceImpl implements PatientService {
         List<PatientDTO> patientDTOs = new ArrayList<>();
         Page<PatientDO> patientDOs = patientRepo.getPatientByQueryStr(queryStr, pageable);
         for (PatientDO patientDO : patientDOs) {
-            patientDTOs.add(convertToPatientDTO(patientDO));
+            patientDTOs.add(convertUtil.convertToPatientDTO(patientDO));
         }
         PageDTO<PatientDTO> pageDTO = new PageDTO<>();
         pageDTO.setContent(patientDTOs);
@@ -88,51 +87,7 @@ public class PatientServiceImpl implements PatientService {
         patientRepo.save(patientDO);
     }
 
-    private PatientDO convertToPatientDO(PatientDTO patientDTO) {
-        PatientDO patientDO = new PatientDO();
-        patientDO.setIdentifier(new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date()));
-        patientDO.setAge(patientDTO.getAge());
-        patientDO.setChineseMedicineDiagnosis(patientDTO.getChineseMedicineDiagnosis());
-        patientDO.setChineseMedicineTreatment(patientDTO.getChineseMedicineTreatment());
-        patientDO.setCirrhosisDiagnosisTime(patientDTO.getCirrhosisDiagnosisTime());
-        patientDO.setComplete(patientDTO.isComplete());
-        patientDO.setDrink(patientDTO.isDrink());
-        patientDO.setFamilyHistory(patientDTO.isFamilyHistory());
-        patientDO.setGender(patientDTO.getGender());
-        patientDO.setHeight(patientDTO.getHeight());
-        patientDO.setHepatitisDiagnosisTime(patientDTO.getHepatitisDiagnosisTime());
-        patientDO.setName(patientDTO.getName());
-        patientDO.setSmoke(patientDTO.isSmoke());
-        patientDO.setWeight(patientDTO.getWeight());
-        patientDO.setWesternMedicineDiagnosis(patientDTO.getWesternMedicineDiagnosis());
-        patientDO.setWesternMedicineTreatment(patientDTO.getWesternMedicineTreatment());
-        return patientDO;
-    }
 
-    private PatientDTO convertToPatientDTO(PatientDO patientDO) {
-        PatientDTO patientDTO = new PatientDTO();
-        patientDTO.setIdentifier(patientDO.getIdentifier());
-        patientDTO.setId(patientDO.getId());
-        patientDTO.setAge(patientDO.getAge());
-        patientDTO.setChineseMedicineDiagnosis(patientDO.getChineseMedicineDiagnosis());
-        patientDTO.setChineseMedicineTreatment(patientDO.getChineseMedicineTreatment());
-        patientDTO.setCirrhosisDiagnosisTime(patientDO.getCirrhosisDiagnosisTime());
-        patientDTO.setComplete(
-                patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
-                        && tonguePulseService.getCompleteByPatientId(patientDO.getId())
-                        && physicalService.getCompleteByPatientId(patientDO.getId()));
-        patientDTO.setDrink(patientDO.isDrink());
-        patientDTO.setFamilyHistory(patientDO.isFamilyHistory());
-        patientDTO.setGender(patientDO.getGender());
-        patientDTO.setHeight(patientDO.getHeight());
-        patientDTO.setHepatitisDiagnosisTime(patientDO.getHepatitisDiagnosisTime());
-        patientDTO.setName(patientDO.getName());
-        patientDTO.setSmoke(patientDO.isSmoke());
-        patientDTO.setWeight(patientDO.getWeight());
-        patientDTO.setWesternMedicineDiagnosis(patientDO.getWesternMedicineDiagnosis());
-        patientDTO.setWesternMedicineTreatment(patientDO.getWesternMedicineTreatment());
-        return patientDTO;
-    }
 
     private PatientDO editToPatientDO(PatientDO patientDO, PatientDTO patientDTO) {
         patientDO.setIdentifier(patientDTO.getIdentifier());

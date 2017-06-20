@@ -17,6 +17,9 @@ public class UserDO {
     private String userName;
     private String account;
     private String password;
+    private String salt;
+
+
 
     public int getId() {
         return id;
@@ -56,5 +59,17 @@ public class UserDO {
 
     public String getAccount() {
         return this.account;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getCredentialSalt() {
+        return account + salt;
     }
 }
