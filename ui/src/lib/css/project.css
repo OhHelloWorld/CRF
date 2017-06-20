@@ -1,0 +1,11 @@
+.panel-default>.panel-heading {
+  font-weight: bold;
+  font-size:x-large;
+}
+.panel-body {
+  padding:15px;
+}
+.panel-default{
+  width: 1050px;
+  height: 600px;
+}
