@@ -159,7 +159,7 @@ create table users(
     primary key(id)
 );
 #角色表
-create table role(
+create table SysRole(
 	id int not null auto_increment,
     role_name varchar(20) not null,
     primary key(id)
@@ -172,7 +172,7 @@ create table role_permission(
     primary key(id)
 );
 #权限表
-create table permission(
+create table SysPermission(
 	id int not null auto_increment,
     permission_name varchar(50) not null,
     primary key(id)
