@@ -178,9 +178,12 @@ create table SysPermission(
     primary key(id)
 ); 
 #项目表
-create table projects(
+create table project(
 	id int not null auto_increment,
     project_name varchar(50) not null,
+    organizer varchar(30) not null,
+    create_time datetime not null,
+    Introduction text not null,
     primary key(id)
 );
 #医院表

@@ -19,6 +19,10 @@ public class UserDO {
     @JoinColumn(name = "role_id")
     private SysRoleDO roleDO;
 
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private HospitalDO hospital;
+
     public SysRoleDO getRoleDO() {
         return roleDO;
     }
