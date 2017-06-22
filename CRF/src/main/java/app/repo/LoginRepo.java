@@ -15,7 +15,7 @@ public interface LoginRepo extends CrudRepository<UserDO, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "select * from users where account = ?1 and password = ?2", nativeQuery = true)
+    @Query(value = "select * from user where account = ?1 and password = ?2", nativeQuery = true)
     List<UserDO> inputCompareToDatabase(String account, String password);
 
     UserDO findByAccount(String account);

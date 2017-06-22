@@ -14,7 +14,7 @@ public class SysRoleDO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String roleName;
+    private String sysRoleName;
 
     @ManyToMany
     @JoinTable(
@@ -23,7 +23,7 @@ public class SysRoleDO {
             inverseJoinColumns = {@JoinColumn(name = "permission_id")})
     private List<SysPermissionDO> listPermission;
 
-    @OneToMany
+    @OneToMany(mappedBy = "sysRoleDO")
     private List<UserDO> userDO;
 
     public List<SysPermissionDO> getListPermission() {
@@ -50,11 +50,11 @@ public class SysRoleDO {
         this.id = id;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getSysRoleName() {
+        return sysRoleName;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setSysRoleName(String sysRoleName) {
+        this.sysRoleName = sysRoleName;
     }
 }

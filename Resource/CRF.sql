@@ -148,35 +148,57 @@ create table physical_chemical_inspection(
     primary key(id)
 );
 #用户表
-create table users(
+create table user(
 	id int not null auto_increment,
     real_name varchar(20) not null,
     user_name varchar(30) not null,
     account varchar(100) not null,
     password varchar(100) not null,
     salt varchar(255) not null,
-    role_id int,
+    hospital_id int not null,
+    sys_role_id int default 1,
     primary key(id)
 );
 #角色表
-create table SysRole(
+create table sys_role(
 	id int not null auto_increment,
-    role_name varchar(20) not null,
+    sys_role_name varchar(20) not null,
     primary key(id)
 );
 #角色_权限关联表
 create table role_permission(
     id int not null auto_increment,
-    role_id int not null,
-    permission_id int not null,
+    sys_role_id int not null,
+    sys_permission_id int not null,
     primary key(id)
 );
 #权限表
-create table SysPermission(
+create table sys_permission(
 	id int not null auto_increment,
-    permission_name varchar(50) not null,
+    sys_permission_name varchar(50) not null,
     primary key(id)
 ); 
+
+
+create table project_role(
+    id int not null auto_increment,
+    project_role_name varchar(20) not null,
+    primary key(id)
+);
+#角色_权限关联表
+create table project_role_permission(
+    id int not null auto_increment,
+    project_role_id int not null,
+    project_permission_id int not null,
+    primary key(id)
+);
+#权限表
+create table project_permission(
+    id int not null auto_increment,
+    project_permission_name varchar(50) not null,
+    primary key(id)
+); 
+
 #项目表
 create table project(
 	id int not null auto_increment,

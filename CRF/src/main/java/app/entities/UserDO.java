@@ -3,12 +3,12 @@ package app.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class UserDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String realName;
     private String userName;
     private String account;
@@ -16,26 +16,26 @@ public class UserDO {
     private String salt;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
-    private SysRoleDO roleDO;
+    @JoinColumn(name = "sys_role_id")
+    private SysRoleDO sysRoleDO;
 
     @ManyToOne
     @JoinColumn(name = "hospital_id")
-    private HospitalDO hospital;
+    private HospitalDO hospital;//多个用户对应一个医院
 
-    public SysRoleDO getRoleDO() {
-        return roleDO;
+    public SysRoleDO getSysRoleDO() {
+        return sysRoleDO;
     }
 
-    public void setRoleDO(SysRoleDO roleDO) {
-        this.roleDO = roleDO;
+    public void setSysRoleDO(SysRoleDO sysRoleDO) {
+        this.sysRoleDO = sysRoleDO;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -81,5 +81,13 @@ public class UserDO {
 
     public String getCredentialSalt() {
         return account + salt;
+    }
+
+    public HospitalDO getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(HospitalDO hospital) {
+        this.hospital = hospital;
     }
 }

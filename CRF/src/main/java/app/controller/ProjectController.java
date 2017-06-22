@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.dto.HospitalDTO;
 import app.dto.ProjectDTO;
 import app.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,11 @@ public class ProjectController {
     @GetMapping(value = "/user/{userId}")
     public List<ProjectDTO> getProjectByUserId(@PathVariable Long userId) {
         return projectService.getProjectByUserId(userId);
+    }
+
+    @GetMapping(value = "/hospitals/{projectId}")
+    public List<HospitalDTO> getProjectHospitalList(@PathVariable Long projectId) {
+        return projectService.getProjectHospitalList(projectId);
     }
 
 }

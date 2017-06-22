@@ -44,7 +44,7 @@ public class LoginServiceImpl implements LoginService{
     public Set<String> listRole(String account) {
         UserDO userDO = loginRepo.findByAccount(account);
         Set<String> roles = new HashSet<>();
-        roles.add(userDO.getRoleDO().getRoleName());
+        roles.add(userDO.getSysRoleDO().getSysRoleName());
         return roles;
     }
 
@@ -52,8 +52,8 @@ public class LoginServiceImpl implements LoginService{
     public Set<String> listPermission(String account) {
         UserDO userDO = loginRepo.findByAccount(account);
         Set<String> permissions = new HashSet<>();
-        for(SysPermissionDO p : userDO.getRoleDO().getListPermission()) {
-            permissions.add(p.getPermissionName());
+        for(SysPermissionDO p : userDO.getSysRoleDO().getListPermission()) {
+            permissions.add(p.getSysPermissionName());
         }
         return permissions;
     }

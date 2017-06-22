@@ -28,7 +28,7 @@ public class ProjectDO {
             name = "project_hospital",
             joinColumns = {@JoinColumn(name = "project_id")},
             inverseJoinColumns = {@JoinColumn(name = "hospital_id")})
-    private List<HospitalDO> hospitalList;
+    private List<HospitalDO> hospitalList;//多个医院对应多个项目
 
     public Long getId() {
         return id;
@@ -68,5 +68,13 @@ public class ProjectDO {
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+
+    public List<HospitalDO> getHospitalList() {
+        return hospitalList;
+    }
+
+    public void setHospitalList(List<HospitalDO> hospitalList) {
+        this.hospitalList = hospitalList;
     }
 }

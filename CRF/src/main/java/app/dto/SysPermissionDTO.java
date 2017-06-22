@@ -6,7 +6,7 @@ package app.dto;
 public class SysPermissionDTO {
 
     private Long id;
-    private String PermissionName;
+    private String sysPermissionName;
 
     public Long getId() {
         return id;
@@ -16,11 +16,11 @@ public class SysPermissionDTO {
         this.id = id;
     }
 
-    public String getPermissionName() {
-        return PermissionName;
+    public String getSysPermissionName() {
+        return sysPermissionName;
     }
 
-    public void setPermissionName(String permissionName) {
-        PermissionName = permissionName;
+    public void setSysPermissionName(String sysPermissionName) {
+        this.sysPermissionName = sysPermissionName;
     }
 }

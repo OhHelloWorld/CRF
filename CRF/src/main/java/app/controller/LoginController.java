@@ -26,10 +26,10 @@ public class LoginController {
     private LoginService loginService;
 
     @GetMapping(path = "/login")
-    public UserDTO login(@RequestHeader("Authorization") String authValue){
-        String value = new String(Base64.decodeBase64(authValue));
-        String account = value.split("#")[0];
-        String password = value.split("#")[1];
+    public UserDTO login(/*@RequestHeader("Authorization") String authValue*/@RequestHeader("account") String account, @RequestHeader("password") String password){
+//        String value = new String(Base64.decodeBase64(authValue));
+//        String account = value.split("#")[0];
+//        String password = value.split("#")[1];
         Subject subject = SecurityUtils.getSubject();
 
         try {
