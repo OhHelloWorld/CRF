@@ -35,7 +35,35 @@ INSERT INTO
  	`salt`, `hospital_id`, `sys_role_id`)
  VALUES("贾瑞", "贾瑞", "15285900084", "54e91edb2e7cd4b2ac7036fecd78f26a", "9b9d0688fc12d0ceb0c2b83aeaf3bfac", 3, 1);
 
+  INSERT INTO
+ `user`(
+ 	`real_name`, `user_name`, 
+ 	`account`, `password`, 
+ 	`salt`, `hospital_id`, `sys_role_id`)
+ VALUES("任向杰", "任向杰", "15285900081", "829f59f1bc1112403d0592b2604f0cab", "7da3888ab20a17b80268af51c4131cf7", 3, 1);
 
+  INSERT INTO
+ `user`(
+ 	`real_name`, `user_name`, 
+ 	`account`, `password`, 
+ 	`salt`, `hospital_id`, `sys_role_id`)
+ VALUES("张阿姨", "张阿姨", "15285900080", "3afe6e98687b9ce046bb56da98796ae7", "92c1c8b49e8edf11fb1356dac32d52a2", 3, 1);
+
+
+##项目
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
+		VALUES("小儿麻痹症", "宋天健", '2017-06-22 00:00:00', "小儿麻麻痹症研究");
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
+		VALUES("多动症", "贾瑞", '2017-06-22 00:00:00', "多动症研究");
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
+		VALUES("肿瘤", "彭佳慧", '2017-06-22 00:00:00', "肿瘤研究");
+
+
+##项目医院关联
+INSERT INTO project_hospital(`project_id`, `hospital_id`)VALUES(1, 1);
+INSERT INTO project_hospital(`project_id`, `hospital_id`)VALUES(1, 2);
+INSERT INTO project_hospital(`project_id`, `hospital_id`)VALUES(2, 2);
+INSERT INTO project_hospital(`project_id`, `hospital_id`)VALUES(3, 3);
 
 
 
@@ -47,6 +75,21 @@ INSERT INTO `project_role`(`project_role_name`)VALUES("数据管理员");#3
 INSERT INTO `project_role`(`project_role_name`)VALUES("分中心研究者");#4
 INSERT INTO `project_role`(`project_role_name`)VALUES("临床监查员");#5
 INSERT INTO `project_role`(`project_role_name`)VALUES("录入员");#6
+
+
+##项目角色用户关联
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(2, 1, 2);
+
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
+
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
+
+
+
+
+
+
 
 ##项目角色对应的权限
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("邀请");#1
