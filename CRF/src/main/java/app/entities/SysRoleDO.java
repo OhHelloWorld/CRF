@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by 52400 on 2017/6/20.
  */
-@Table(name = "role")
+@Table(name = "sys_role")
 @Entity
 //这是与系统管理相关的角色
 public class SysRoleDO {

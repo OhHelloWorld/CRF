@@ -7,7 +7,7 @@ import java.util.List;
  * Created by 52400 on 2017/6/20.
  */
 @Entity
-@Table(name = "permission")
+@Table(name = "sys_permission")
 //此处为与系统有关的权限
 public class SysPermissionDO {
 

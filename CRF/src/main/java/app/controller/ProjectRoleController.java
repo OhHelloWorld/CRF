@@ -2,6 +2,8 @@ package app.controller;
 
 import app.dto.ProjectRoleDTO;
 import app.service.ProjectRoleService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/projectRoles")
+@Api(value = "项目角色")
 public class ProjectRoleController {
 
 
@@ -23,6 +26,7 @@ public class ProjectRoleController {
 
 
     @GetMapping(value = "")
+    @ApiOperation(value = "得到项目的默认角色")
     public List<ProjectRoleDTO> getAllProjectRoles() {
         return projectRoleService.getAllProjectRole();
     }

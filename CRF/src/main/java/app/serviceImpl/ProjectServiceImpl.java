@@ -3,15 +3,14 @@ package app.serviceImpl;
 import app.Utils.ConvertUtil;
 import app.dto.HospitalDTO;
 import app.dto.ProjectDTO;
+import app.dto.ProjectUsersDTO;
 import app.entities.HospitalDO;
 import app.entities.ProjectDO;
 import app.entities.UserDO;
 import app.entities.UserProjectRoleDO;
-import app.repo.HospitalRepo;
-import app.repo.ProjectRepo;
-import app.repo.UserProjectRoleRepo;
-import app.repo.UserRepo;
+import app.repo.*;
 import app.service.ProjectService;
+import org.apache.commons.collections.list.PredicatedList;
 import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +38,9 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private ProjectRoleRepo projectRoleRepo;
 
     @Override
     public ProjectDTO addProject(ProjectDTO projectDTO) {
@@ -97,5 +99,17 @@ public class ProjectServiceImpl implements ProjectService {
             hospitalDTOS.add(convertUtil.convertHospitalDTO(h));
         }
         return hospitalDTOS;
+    }
+
+    @Override
+    public List<ProjectUsersDTO> getUsersInProject(Long projectId) {
+        List<ProjectUsersDTO> projectUsersDTOS = new ArrayList<>();
+        for(UserProjectRoleDO p : userProjectRoleRepo.findByProjectId(projectId)) {
+            ProjectUsersDTO pro = new ProjectUsersDTO();
+            pro.setProjectRoleName(projectRoleRepo.findOne(p.getProjectRoleId()).getProjectRoleName());
+            pro.setUserName(userRepo.findOne(p.getUserId()).getUserName());
+            projectUsersDTOS.add(pro);
+        }
+        return projectUsersDTOS;
     }
 }

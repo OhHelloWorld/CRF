@@ -1,6 +1,6 @@
 #患者表
 create table patient(
-	id int not null auto_increment,
+    id int not null auto_increment,
     identifier varchar(50) not null,
     name varchar(20) not null,
     gender varchar(5) not null,
@@ -21,7 +21,7 @@ create table patient(
 );
 #四诊信息表
 create table four_diagnostic_information(
-	id int not null auto_increment,
+    id int not null auto_increment,
     patient_id int not null,
     fatigue int,
     skin_itching int,
@@ -65,7 +65,7 @@ create table four_diagnostic_information(
 );
 #舌脉象表
 create table tongue_pulse(
-	id int not null auto_increment,
+    id int not null auto_increment,
     patient_id int not null,
     tongue varchar(20),
     tongue_part varchar(20),
@@ -85,10 +85,10 @@ create table tongue_pulse(
 );
 #理化检查表
 create table physical_chemical_inspection(
-	id int not null auto_increment,
+    id int not null auto_increment,
     patient_id int not null,
     total_bile_acid varchar(20),
-	liver_function_albumin varchar(20),
+    liver_function_albumin varchar(20),
     liver_function_globulin varchar(20),
     liver_function_ALT varchar(20),
     liver_function_AST varchar(20),
@@ -108,7 +108,7 @@ create table physical_chemical_inspection(
     blood_routine_neutrophils varchar(20),
     blood_routine_lymphocytes varchar(20),
     blood_routine_eosinophils varchar(20),
-	blood_routine_platelets varchar(20),
+    blood_routine_platelets varchar(20),
     liver_disease_autoantibodies_AMA varchar(10),
     liver_disease_autoantibodies_AMA_M2 varchar(10),
     liver_disease_autoantibodies_anti_smooth_muscle_antibody varchar(10),
@@ -149,7 +149,7 @@ create table physical_chemical_inspection(
 );
 #用户表
 create table user(
-	id int not null auto_increment,
+    id int not null auto_increment,
     real_name varchar(20) not null,
     user_name varchar(30) not null,
     account varchar(100) not null,
@@ -161,7 +161,7 @@ create table user(
 );
 #角色表
 create table sys_role(
-	id int not null auto_increment,
+    id int not null auto_increment,
     sys_role_name varchar(20) not null,
     primary key(id)
 );
@@ -174,7 +174,7 @@ create table role_permission(
 );
 #权限表
 create table sys_permission(
-	id int not null auto_increment,
+    id int not null auto_increment,
     sys_permission_name varchar(50) not null,
     primary key(id)
 ); 
@@ -201,7 +201,7 @@ create table project_permission(
 
 #项目表
 create table project(
-	id int not null auto_increment,
+    id int not null auto_increment,
     project_name varchar(50) not null,
     organizer varchar(30) not null,
     create_time datetime not null,
@@ -210,28 +210,28 @@ create table project(
 );
 #医院表
 create table hospital(
-	id int not null auto_increment,
+    id int not null auto_increment,
     hospital_name varchar(50) not null,
     primary key(id)
 );
 #用户_医院关联表
 create table user_hospital(
     id int not null auto_increment,
-	user_id int not null,
+    user_id int not null,
     hospital_id int not null,
     primary key(id)
 );
 #项目_医院关联表
 create table project_hospital(
-	project_id int not null,
+    project_id int not null,
     hospital_id int not null
 );
 #用户_项目_角色三方关联表
 create table user_project_role(
     id int not null auto_increment,
-	user_id int not null,
+    user_id int not null,
     project_id int not null,
-    role_id int not null,
+    project_role_id int not null,
     primary key(id)
 );
 

@@ -78,12 +78,12 @@ INSERT INTO `project_role`(`project_role_name`)VALUES("录入员");#6
 
 
 ##项目角色用户关联
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(2, 1, 2);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 1, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(2, 1, 2);
 
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 2, 1);
 
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `role_id`)VALUES(1, 1, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 3, 1);
 
 
 
