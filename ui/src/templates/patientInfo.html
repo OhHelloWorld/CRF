@@ -14,29 +14,152 @@
           <div class="col-md-12">
             <div class="box box-primary">
               <div class="box-header with-border">
+                <!-- 姓名字段 -->
                 <div class="col-sm-3">
-                  <input class="form-control" ng-model="name" id="inputName" placeholder="姓名" ng-blur="judgeName()"
-                  data-toggle="popover" data-placement="top">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">姓名</i>
+                    </div>
+                    <input class="form-control" ng-model="name" id="inputName" ng-blur="judgeName()"
+                    data-toggle="popover" data-placement="top">
+                  </div>
                 </div>
-                <div class="col-sm-offset-1 col-sm-3">
-                  <input class="form-control" id="inputGender" ng-model="gender" tabindex="0" placeholder="性别" ng-blur="judgeGender()"
-                  data-toggle="popover" data-placement="top">
+                <!-- 性别字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">性别</i>
+                    </div>
+                    <input class="form-control" id="inputGender" ng-model="gender" tabindex="0" ng-blur="judgeGender()"
+                    data-toggle="popover" data-placement="top">
+                  </div>
                 </div>
-                <div class="col-sm-offset-1 col-sm-3">
-                  <input class="form-control" id="inputEmail3" ng-model="age" placeholder="年龄">
+                <!-- 出生年月 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">出生日期</i>
+                    </div>
+                    <input class="form-control pull-right" id="datepicker1" ng-model="age" >
+                  </div>
+                </div>
+                <!-- 民族字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 民族 &ensp; &#8197; </i>
+                    </div>
+                    <input class="form-control" id="inputEmail3" ng-model="age">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="box-header with-border">
+                <!-- 体重字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">体重</i>
+                    </div>
+                    <input class="form-control" ng-model="name" id="inputName" ng-blur="judgeName()"
+                    data-toggle="popover" data-placement="top">
+                  </div>
+                </div>
+                <!-- 身高字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">身高</i>
+                    </div>
+                    <input class="form-control" id="inputGender" ng-model="gender" tabindex="0" ng-blur="judgeGender()"
+                    data-toggle="popover" data-placement="top">
+                  </div>
+                </div>
+                <!-- BMI -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-weight: 900;font-style: inherit;"> &emsp; BMI &emsp; </i>
+                    </div>
+                    <input class="form-control" id="inputEmail3" ng-model="age">
+                  </div>
+                </div>
+                <!-- 文化程度字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">文化程度</i>
+                    </div>
+                    <input class="form-control" id="inputEmail3" ng-model="age">
+                  </div>
                 </div>
               </div>
 
               <div class="box-header with-border">
+                <!-- 首次出现肝损伤时间字段 -->
                 <div class="col-sm-6">
-                  <input class="form-control" id="inputEmail3" ng-model="height" placeholder="身高/cm">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">首次出现肝损伤时间</i>
+                    </div>
+                    <input class="form-control" ng-model="name" id="datepicker4">
+                  </div>
                 </div>
+                <!-- 调查医院 -->
                 <div class="col-sm-6">
-                  <input class="form-control" id="inputEmail3" ng-model="weight" placeholder="体重/kg">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &emsp; 调查医院 &emsp; </i>
+                    </div>
+                    <input class="form-control" id="inputEmail3" ng-model="age">
+                  </div>
                 </div>
               </div>
 
               <div class="box-header with-border">
+                <!-- 联系电话字段 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">  &ensp; &ensp; 联系电话 &ensp; </i>
+                    </div>
+                    <input class="form-control" ng-model="name">
+                  </div>
+                </div>
+                <!-- 就诊时病程医院 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">&#8197; &#8197; 就诊时病程&#8197; &#8197; </i>
+                    </div>
+                    <input class="form-control" id="inputEmail3" ng-model="age" placeholder="（体检发现、肝硬化、其他）">
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-header with-border">
+                <!-- 初次诊断年龄字段 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">初次诊断年龄</i>
+                    </div>
+                    <input class="form-control" ng-model="name">
+                  </div>
+                </div>
+                <!-- 初次诊断年月医院 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 初次诊断年月</i>
+                    </div>
+                    <input class="form-control" id="datepicker5" ng-model="age">
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="box-header with-border">
                 <div class="form-inline form-group">
 
                   <div class="radio col-sm-3">
@@ -75,7 +198,7 @@
                       </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- /.box-header -->
 
@@ -87,45 +210,13 @@
           <div class="col-md-12">
             <div class="box box-primary">
               <div class="box-header with-border">
-                <h3 class="box-title">确诊时间</h3>
+                <h3 class="box-title">个人家族史</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
                 <form role="form">
                   <!-- text input -->
-                  <div class="form-group col-sm-5">
-                    <label>肝炎:</label>
-                    <div class="input-group date">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control pull-right" ng-model="hepatitisDiagnosisTime" id="datepicker">
-                    </div>
-                <!-- /.input group -->
-                  </div>
 
-                  <div class="form-group col-sm-offset-1 col-sm-5">
-                    <label>肝硬化:</label>
-                    <div class="input-group date">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control pull-right" ng-model="cirrhosisDiagnosisTime" id="datepicker2">
-                    </div>
-                <!-- /.input group -->
-                  </div>
-                  <!-- textarea -->
-
-                  <!-- input states -->
-
-                  <!-- checkbox -->
-
-                  <!-- radio -->
-
-                  <!-- select -->
-
-
-                  <!-- Select multiple-->
 
                 </form>
               </div>
@@ -133,96 +224,6 @@
             </div>
           </div>
 
-
-          <!-- <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                  </div>
-                </div> -->
-
-
-          <!-- 诊断 -->
-        <div class="col-md-6">
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">诊断</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>西医诊断</label>
-                  <textarea class="form-control" rows="3" ng-model="westernMedicineDiagnosis"></textarea>
-                </div>
-                <div class="form-group">
-                  <label>中医诊断</label>
-                  <textarea class="form-control" rows="3" ng-model="chineseMedicineDiagnosis"></textarea>
-                </div>
-
-                <!-- input states -->
-
-                <!-- checkbox -->
-
-                <!-- radio -->
-
-                <!-- select -->
-
-
-                <!-- Select multiple-->
-
-              </form>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </div>
-
-          <!-- 治疗史 -->
-        <div class="col-md-6">
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">治疗史</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>西医治疗</label>
-                  <textarea class="form-control" rows="3" ng-model="westernMedicineTreatment"></textarea>
-                </div>
-                <div class="form-group">
-                  <label>中医治疗</label>
-                  <textarea class="form-control" rows="3" ng-model="chineseMedicineTreatment" ></textarea>
-                </div>
-
-                <!-- input states -->
-
-                <!-- checkbox -->
-
-                <!-- radio -->
-
-                <!-- select -->
-
-
-                <!-- Select multiple-->
-
-              </form>
-            </div>
-            <input type="button" value="修改问题">
-            <input type="button" value="查看问题历史">
-            <input type="button" value="查看质疑历史">
-            <input type="button" value="提出质疑">
-            <input type="button" value="回应质疑">
-            <!-- /.box-body -->
-          </div>
-        </div>
 
         <span class="col-md-offset-10">&nbsp</span>
           <input type="button" class="btn btn-primary " ng-click="showNextModel()" value="保存">&nbsp
@@ -284,23 +285,6 @@
             </div>
           </div>
 
-          <!-- 下一步按钮模态框 -->
-          <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                ...
-              </div>
-            </div>
-          </div> -->
-
-          <!-- 退出按钮模态框 -->
-          <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                ...
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
