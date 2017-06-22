@@ -17,8 +17,9 @@ import '../modules/projectSetting.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, 'default', 'project', 'invite', 'projectSetting']);
+var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, 'default', 'project', 'invite', 'projectSetting']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -55,22 +56,32 @@ homePage.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
     controller: 'projectSettingController'
   });
 
+  localStorageServiceProvider
+      .setPrefix('demo.login')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true);
+
 
 }]);
 
-homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
 
   var project1 = {
-    name: '测试项目'
+    name: '测试项目',
+    id: 1
   };
   var project2 = {
-    name: '测试项目2'
+    name: '测试项目2',
+    id: 2
   };
   var project3 = {
-    name: '测试项目3' 
+    name: '测试项目3',
+    id: 3
   }; 
 
   $scope.projects = [project1, project2, project3];
   sessionStorage.setItem('permission',['邀请联合发起人','邀请分中心研究者','邀请录入员']);
+
+  
 
 }]);
