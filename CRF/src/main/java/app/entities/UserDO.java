@@ -1,10 +1,6 @@
 package app.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +13,19 @@ public class UserDO {
     private String userName;
     private String account;
     private String password;
+    private String salt;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private SysRoleDO roleDO;
+
+    public SysRoleDO getRoleDO() {
+        return roleDO;
+    }
+
+    public void setRoleDO(SysRoleDO roleDO) {
+        this.roleDO = roleDO;
+    }
 
     public int getId() {
         return id;
@@ -56,5 +65,17 @@ public class UserDO {
 
     public String getAccount() {
         return this.account;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getCredentialSalt() {
+        return account + salt;
     }
 }

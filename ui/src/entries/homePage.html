@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="../lib/css/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">彭佳辉</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -177,13 +177,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" id="sidebarMenu">
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview" ng-repeat="project in projects">
-          <a href="#"><i class="fa fa-link"></i> <span>{{project.name}}</span>
+          <a ui-sref="project.projectDefault"><i class="fa fa-link"></i> <span>{{project.name}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li class="active"><a ui-sref="invite"><i class="glyphicon glyphicon-home"></i><span class="h4">邀请</span></a>
+            </li>
+            <li class="active"><a href="main.html" target="view_window"><i class="glyphicon glyphicon-home"></i><span class="h4">调整项目表</span></a>
+            </li>
+            <li class="active"><a ui-sref="projectSetting"><i class="glyphicon glyphicon-home"></i><span class="h4">项目设置</span></a>
             </li>
           </ul>
         </li>
@@ -198,12 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content">
       <div data-ui-view=""></div>
-    </section>
-
-    <!-- Main content -->
   </div>
 
 
