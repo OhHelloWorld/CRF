@@ -1,0 +1,17 @@
+.project
+.dist
+bin
+dist
+node_modules
+target
+.classpath
+.settings
+.eslintcache
+disit
+.vscode
+*.log
+/server/.idea/
+/ui/.idea/
+*.docx
+*.xlsx
+*.orig
