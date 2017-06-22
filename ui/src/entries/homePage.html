@@ -175,24 +175,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" id="sidebarMenu">
+        <li>
+          <a href="#"><i class="fa fa-folder-open"></i><span>创建项目</span></a>
+        </li>
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview" ng-repeat="project in projects">
-          <a ui-sref="project.projectDefault"><i class="fa fa-link"></i> <span>{{project.name}}</span>
+          <a ui-sref="project.projectDefault" ng-click="click_project()"><i class="fa fa-folder"></i> <span>{{project.name}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a ui-sref="invite"><i class="glyphicon glyphicon-home"></i><span class="h4">邀请</span></a>
+            <li class="active"><a ui-sref="invite"><i class="fa fa-user-plus"></i><span class="h4">邀请</span></a>
             </li>
-            <li class="active"><a href="main.html" target="view_window"><i class="glyphicon glyphicon-home"></i><span class="h4">调整项目表</span></a>
+            <li class="active"><a href="main.html" target="view_window"><i class="fa fa-wrench"></i><span class="h4">调整项目表</span></a>
             </li>
-            <li class="active"><a ui-sref="projectSetting"><i class="glyphicon glyphicon-home"></i><span class="h4">项目设置</span></a>
+            <li class="active"><a ui-sref="projectSetting"><i class="fa fa-gear"></i><span class="h4">项目设置</span></a>
             </li>
           </ul>
-        </li>
-        <li>
-          <a href="#"><span>新增项目</span></a>
         </li>
       </ul>
       <!-- /.sidebar-menu -->
