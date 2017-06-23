@@ -14,6 +14,10 @@
           <div class="col-md-12">
             <div class="box box-primary">
               <div class="box-header with-border">
+                <h3 class="box-title">基本信息</h3>
+              </div>
+                <div class="box-body">
+                  <form role="form">
                 <!-- 姓名字段 -->
                 <div class="col-sm-3">
                   <div class="input-group date">
@@ -203,6 +207,7 @@
               <!-- /.box-header -->
 
               <!-- /.box-body -->
+              </form>
             </div>
           </div>
 
@@ -212,15 +217,45 @@
               <div class="box-header with-border">
                 <h3 class="box-title">个人家族史</h3>
               </div>
-              <!-- /.box-header -->
               <div class="box-body">
                 <form role="form">
-                  <!-- text input -->
 
+
+                  <div class="radio col-sm-3">
+                    <div>
+                      <label>吸烟</label>
+                      <label>
+                        <input type="radio" name="optionsRadios1" id="optionsRadios1" ng-model="smoke" ng-value="false">无
+                      </label>
+                      <label>
+                        <input type="radio" name="optionsRadios1" id="optionsRadios2" ng-model="smoke" ng-value="true">有
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="radio col-sm-offset-1 col-sm-3">
+                    <div>
+                      <label>饮酒</label>
+                      <label>
+                        <input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="drink" ng-value="false">无
+                      </label>
+                      <label>
+                        <input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="drink" ng-value="true">有
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="radio col-sm-offset-1 col-sm-3">
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i style="font-style: inherit;">家族史</i>
+                      </div>
+                      <input class="form-control" ng-model="name">
+                    </div>
+                  </div>
 
                 </form>
               </div>
-              <!-- /.box-body -->
             </div>
           </div>
 
