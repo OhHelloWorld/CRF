@@ -14,6 +14,7 @@ public class InformationDO {
     @Id
     private int id;
     private String informationName;
+
     private int projectId;
     private int hospitalId;
 

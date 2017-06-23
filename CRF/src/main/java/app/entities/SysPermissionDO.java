@@ -7,14 +7,14 @@ import java.util.List;
  * Created by 52400 on 2017/6/20.
  */
 @Entity
-@Table(name = "permission")
+@Table(name = "sys_permission")
 //此处为与系统有关的权限
 public class SysPermissionDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String PermissionName;
+    private String sysPermissionName;
 
     @ManyToMany
     @JoinTable(
@@ -39,11 +39,11 @@ public class SysPermissionDO {
         this.id = id;
     }
 
-    public String getPermissionName() {
-        return PermissionName;
+    public String getSysPermissionName() {
+        return sysPermissionName;
     }
 
-    public void setPermissionName(String permissionName) {
-        PermissionName = permissionName;
+    public void setSysPermissionName(String sysPermissionName) {
+        this.sysPermissionName = sysPermissionName;
     }
 }

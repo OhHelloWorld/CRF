@@ -6,7 +6,7 @@ package app.dto;
 public class SysRoleDTO {
 
     private Long id;
-    private String roleName;
+    private String sysRoleName;
 
     public Long getId() {
         return id;
@@ -16,11 +16,11 @@ public class SysRoleDTO {
         this.id = id;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getSysRoleName() {
+        return sysRoleName;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setSysRoleName(String sysRoleName) {
+        this.sysRoleName = sysRoleName;
     }
 }

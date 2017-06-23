@@ -2,6 +2,8 @@ package app.Utils;
 
 import app.dto.*;
 import app.entities.*;
+import app.repo.ProjectRoleRepo;
+import app.repo.UserProjectRoleRepo;
 import app.service.FourDiagnosticInformationService;
 import app.service.PhysicalChemicalInspectionService;
 import app.service.TonguePulseService;
@@ -9,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by 52400 on 2017/6/20.
@@ -23,6 +27,15 @@ public class ConvertUtil {
 
     @Autowired
     private TonguePulseService tonguePulseService;
+
+    @Autowired
+    private UserMsgTool userTool;
+
+    @Autowired
+    private ProjectRoleRepo projectRoleRepo;
+
+    @Autowired
+    private UserProjectRoleRepo userProjectRoleRepo;
 
     @Autowired
     private PhysicalChemicalInspectionService physicalService;
@@ -254,27 +267,27 @@ public class ConvertUtil {
 
     public SysRoleDO convertToRoleDO(SysRoleDTO roleDTO) {
         SysRoleDO roleDO = new SysRoleDO();
-        roleDO.setRoleName(roleDO.getRoleName());
+        roleDO.setSysRoleName(roleDO.getSysRoleName());
         return roleDO;
     }
 
     public SysRoleDTO convertoToRoleDTO(SysRoleDO roleDO) {
         SysRoleDTO roleDTO = new SysRoleDTO();
         roleDTO.setId(roleDO.getId());
-        roleDTO.setRoleName(roleDO.getRoleName());
+        roleDTO.setSysRoleName(roleDO.getSysRoleName());
         return roleDTO;
     }
 
     public SysPermissionDTO convertToPermissionDTO(SysPermissionDO permissionDO) {
         SysPermissionDTO permissionDTO = new SysPermissionDTO();
         permissionDTO.setId(permissionDO.getId());
-        permissionDTO.setPermissionName(permissionDO.getPermissionName());
+        permissionDTO.setSysPermissionName(permissionDO.getSysPermissionName());
         return permissionDTO;
     }
 
     public SysPermissionDO convertToPermissionDTO(SysPermissionDTO permissionDTO) {
         SysPermissionDO permissionDO = new SysPermissionDO();
-        permissionDO.setPermissionName(permissionDTO.getPermissionName());
+        permissionDO.setSysPermissionName(permissionDTO.getSysPermissionName());
         return permissionDO;
     }
 
@@ -284,6 +297,7 @@ public class ConvertUtil {
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
         userDTO.setUserName(userDO.getUserName());
+        userDTO.setHospitalId(userDO.getId());
         return userDTO;
     }
 
@@ -295,4 +309,76 @@ public class ConvertUtil {
         userDO.setUserName(userDTO.getUserName());
         return userDO;
     }
+
+    public ProjectDO convertToProjectDO(ProjectDTO projectDTO) {
+        ProjectDO projectDO = new ProjectDO();
+        projectDO.setCreate_time(new Date());
+        projectDO.setIntroduction(projectDTO.getIntroduction());
+        projectDO.setOrganizer(userTool.getCurrentUserAccount());
+        projectDO.setProjectName(projectDTO.getProjectName());
+        return projectDO;
+    }
+
+    public ProjectDTO convertToProjectDTO(ProjectDO projectDO)  {
+        ProjectDTO projectDTO = new ProjectDTO();
+        projectDTO.setId(projectDO.getId());
+        projectDTO.setCreate_time(projectDO.getCreate_time());
+        projectDTO.setIntroduction(projectDO.getIntroduction());
+        projectDTO.setOrganizer(projectDO.getOrganizer());
+        projectDTO.setProjectName(projectDO.getProjectName());
+        List<HospitalDTO> hospitalDTOS = new ArrayList<>();
+        for(HospitalDO h : projectDO.getHospitalList()) {
+            hospitalDTOS.add(convertHospitalDTO(h));
+        }
+        projectDTO.setHospitals(hospitalDTOS);
+        List<ProjectPermissionDTO> projectPermissionDTOS = new ArrayList<>();
+        Long projectRoleId =  userProjectRoleRepo.getRoleId(userTool.getCurrentUserId(),projectDO.getId()).getProjectRoleId();
+        for(ProjectPermissionDO p : projectRoleRepo.findOne(projectRoleId).getProjectPermissionDOS()) {
+            projectPermissionDTOS.add(convertToProjectPermissionDTO(p));
+        }
+        projectDTO.setCurrentUserPermissionInProject(projectPermissionDTOS);
+        return projectDTO;
+    }
+
+    public ProjectRoleDO convertToProjectRoleDO(ProjectRoleDTO projectRoleDTO) {
+        ProjectRoleDO projectRoleDO = new ProjectRoleDO();
+        projectRoleDO.setProjectRoleName(projectRoleDTO.getProjectRoleName());
+        return projectRoleDO;
+    }
+
+    public ProjectRoleDTO convertToProjectRoleDTO(ProjectRoleDO projectRoleDO) {
+        ProjectRoleDTO projectRoleDTO = new ProjectRoleDTO();
+        projectRoleDTO.setId(projectRoleDO.getId());
+        projectRoleDTO.setProjectRoleName(projectRoleDO.getProjectRoleName());
+        return projectRoleDTO;
+    }
+
+    public HospitalDTO convertHospitalDTO(HospitalDO hospitalDO) {
+        HospitalDTO hospitalDTO = new HospitalDTO();
+        hospitalDTO.setHospitalName(hospitalDO.getHospitalName());
+        hospitalDTO.setId(hospitalDO.getId());
+        return hospitalDTO;
+    }
+
+    public HospitalDO convertHospitalDO(HospitalDTO hospitalDTO) {
+        HospitalDO hospitalDO = new HospitalDO();
+        hospitalDO.setHospitalName(hospitalDTO.getHospitalName());
+        hospitalDO.setId(hospitalDTO.getId());
+        return hospitalDO;
+    }
+
+    public ProjectPermissionDO convertToProjectPermissionDO(ProjectPermissionDTO projectPermissionDTO) {
+        ProjectPermissionDO projectPermissionDO = new ProjectPermissionDO();
+        projectPermissionDO.setProjectPermissionName(projectPermissionDTO.getProjectPermissionName());
+        return projectPermissionDO;
+    }
+
+    public ProjectPermissionDTO convertToProjectPermissionDTO(ProjectPermissionDO projectPermissionDO) {
+        ProjectPermissionDTO projectPermissionDTO = new ProjectPermissionDTO();
+        projectPermissionDTO.setId(projectPermissionDO.getId());
+        projectPermissionDTO.setProjectPermissionName(projectPermissionDO.getProjectPermissionName());
+        return projectPermissionDTO;
+    }
+
+
 }
