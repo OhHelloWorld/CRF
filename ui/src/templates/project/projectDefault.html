@@ -22,14 +22,14 @@
           </thead>
           <tbody ng-repeat="x in positals">
             <tr>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.name}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.address}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.address}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.telephone}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.telephone}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
             </tr>
           </tbody>
         </table>
