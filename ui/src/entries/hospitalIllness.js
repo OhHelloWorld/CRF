@@ -73,22 +73,22 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
 
   var project1 = {
-    name: 'æµ‹è¯•é¡¹ç›®',
+    name: '²âÊÔÏîÄ¿',
     id: 1
   };
   var project2 = {
-    name: 'æµ‹è¯•é¡¹ç›®2',
+    name: '²âÊÔÏîÄ¿2',
     id: 2
   };
   var project3 = {
-    name: 'æµ‹è¯•é¡¹ç›®3',
+    name: '²âÊÔÏîÄ¿3',
     id: 3
   }; 
 
   $scope.projects = [project1, project2, project3];
 
   /**
-   *è®¾ç½®è¯¥è´¦æˆ·å½“å‰ç‚¹å‡»çš„é¡¹ç›®ï¼Œå¹¶å°†è¯¥è´¦æˆ·åœ¨è¯¥é¡¹ç›®ä¸‹çš„æƒé™ä¹Ÿä¿å­˜åœ¨projectå¯¹è±¡é‡Œ
+   *ÉèÖÃ¸ÃÕË»§µ±Ç°µã»÷µÄÏîÄ¿£¬²¢½«¸ÃÕË»§ÔÚ¸ÃÏîÄ¿ÏÂµÄÈ¨ÏŞÒ²±£´æÔÚproject¶ÔÏóÀï
    */
   $scope.click_project = function(project){
     localStorageService.set('project', project);
@@ -104,7 +104,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
 
 
     }, function failCallback(response){
-      console.log('æ²¡æœ‰æ‰¾åˆ°ç›¸å…³é¡¹ç›®ï¼');
+      console.log('Ã»ÓĞÕÒµ½Ïà¹ØÏîÄ¿£¡');
     });
  */
   }
