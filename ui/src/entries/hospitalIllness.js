@@ -10,57 +10,14 @@ import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
 import '../../node_modules/bootstrap/js/modal.js';
 
-import '../modules/project.js';
-import '../modules/default.js';
-import '../modules/invite.js';
-import '../modules/projectSetting.js';
+
 
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, 'default', 'project', 'invite', 'projectSetting']);
+var hospitalCase = angular.module('hospitalCase', [LocalStorageModule]);
 
-homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
-
-  $urlRouterProvider.when('', '/default');
-
-  $stateProvider.state('default', {
-    url: '/default',
-    template: require('../templates/default.html'),
-    controller: 'defaultController'
-  })
-  .state('project', {
-    url: '/project',
-    template: require('../templates/project.html'),
-    controller: 'projectController'
-  })
-  .state('project.projectDefault', {
-    url: '/projetDefault',
-    template: require('../templates/project/projectDefault.html'),
-    controller: 'projectDefaultController'
-  })
-  .state('project.projectCase', {
-    url: '/projectCase',
-    params: {'project_searchInput' : null},
-    template: require('../templates/project/caseIllness.html'),
-    controller: 'projectCaseController'
-  })
-  .state('project.hospitalDefault', {
-    url: '/hospitalDefault',
-    template: require('../templates/project/hospitalDefault.html'),
-    controller: 'hospitalDefaultController'
-  })
-  .state('invite',{
-    url:'/invite',
-    template:require('../templates/invite.html'),
-    controller: 'inviteController'
-  })
-  .state('projectSetting',{
-    url:'/projectSetting',
-    template:require('../templates/projectSetting.html'),
-    controller: 'projectSettingController'
-  });
+hospitalCase.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
 
   localStorageServiceProvider
       .setPrefix('login')
@@ -70,7 +27,7 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 
 }]);
 
-homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
+hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScope', 'localStorageService', function($scope, $http, $rootScope, localStorageService) {
 
   var project1 = {
     name: '≤‚ ‘œÓƒø',

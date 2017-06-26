@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="hospitalCase" ng-controller="hospitalCaseController">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -27,182 +27,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Logo -->
     <a class="logo">
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-mini"><b>菜单</b></span>
       <span class="logo-lg">深蓝医学信息管理系统</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">6</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">你有4条信息</li>
-              <li>
-                <!-- inner menu: contains the messages -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <!-- User Image -->
-                        <img src="../lib/css/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <!-- Message title and timestamp -->
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                </ul>
-                <!-- /.menu -->
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li>
-          <!-- /.messages-menu -->
-
-          <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>
-                <!-- Inner Menu: contains the notifications -->
-                <ul class="menu">
-                  <li><!-- start notification -->
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <!-- end notification -->
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
-          <!-- Tasks Menu -->
-          <!-- <li class="dropdown tasks-menu">
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="../lib/css/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">彭佳辉</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="../lib/css/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <!-- <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li> -->
-        </ul>
-      </div>
+     
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-
-      <!-- Sidebar user panel (optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text"ng-model="search_projectName" name="q" class="form-control" placeholder="请输入项目名称。。。">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat" ng--click="search_project(search_projectName)"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" id="sidebarMenu">
-        <li>
-          <a href="#"><i class="fa fa-folder-open"></i><span>创建项目</span></a>
-        </li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="treeview" ng-repeat="project in projects">
-          <a ui-sref="project.projectDefault" ng-click="click_project()"><i class="fa fa-folder"></i> <span>{{project.name}}</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a ui-sref="invite"><i class="fa fa-user-plus"></i><span class="h4">邀请</span></a>
-            </li>
-            <li class="active"><a href="main.html" target="view_window"><i class="fa fa-wrench"></i><span class="h4">调整项目表</span></a>
-            </li>
-            <li class="active"><a ui-sref="projectSetting"><i class="fa fa-gear"></i><span class="h4">项目设置</span></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-      <div data-ui-view=""></div>
+  <div class="wrapper-body">
+    <!-- Main content -->
+    <section class="content" style="background-color:#d8eff5;">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+    <section class="body">
+    <div class="box box-primary">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h2>甲肝疫苗初次成功病例</h2></div>
+        <div class="panel-body">
+          <div class="box box-muted">
+    
+      <div class="panel-heading">该病例表1名称</div>
+      <div class="panel-body">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>医院名称</td>
+              <td>医院地址</td>
+              <td>联系电话</td>
+            </tr>
+          </thead>
+          <tbody ng-repeat="x in positals">
+            <tr>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+      </div>
+    
+  </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </section>
   </div>
 
 
