@@ -1,22 +1,73 @@
-<div ng-app="invite" ng-controller="inviteController">
-	<table id="example2" class="table table-bordered table-hover" role="grid" aria-describedby="example2_info">
-        <thead>
-            <tr role="row">
-                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
-                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">身份</th>
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">测试项目</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>测试项目</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+  <div class="box box-primary">
+    <div class="panel panel-default">
+      <div class="panel-heading">已被邀请人员</div>
+      <div class="panel-body">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>医院名称</td>
+              <td>医院地址</td>
+              <td>联系电话</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr role="row" style="cursor:pointer" class="info">
-                <td><span class="h5">贾锐</span></td>
-                <td><span class="h5">录入员</span></td>
+          </thead>
+          <tbody ng-repeat="x in positals">
+            <tr>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
             </tr>
-        </tbody>
-    </table>
-	<input id="co-sponsor" type="button" value="邀请联合发起人">
+          </tbody>
+        </table>
+        <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+      </div>
+    </div>
+    <input id="co-sponsor" type="button" value="邀请联合发起人">
 	<input id="data-manager" type="button" value="邀请数据管理员">
 	<input id="sub-center-researcher" type="button" value="邀请分中心研究者">
 	<input id="clinical-examiner" type="button" value="邀请临床检查员">
 	<input id="reporter" type="button" value="邀请录入员">
 	<input id="kicked-out" type="button" value="踢出人员">
+  </div>
 </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

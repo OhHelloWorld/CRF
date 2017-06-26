@@ -69,7 +69,7 @@
             </tr>
           </thead>
           <tbody ng-repeat="x in positals">
-            <tr>
+            <tr onclick="window.open('/hospitalIllness.html');">
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
