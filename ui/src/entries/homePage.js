@@ -8,18 +8,22 @@ import '../lib/css/js/app.min.js';
 import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
 import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
-import '../../node_modules/bootstrap/js/modal.js';
+import ngFileUpload from 'ng-file-upload';
+
 
 import '../modules/project.js';
 import '../modules/default.js';
 import '../modules/invite.js';
 import '../modules/projectSetting.js';
+import '../modules/message.js';
+import '../modules/create_hospital.js';
+import '../modules/update_hospital.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, 'default', 'project', 'invite', 'projectSetting']);
+var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'createHospital', 'updateHospital']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -30,6 +34,26 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     template: require('../templates/default.html'),
     controller: 'defaultController'
   })
+  .state('message',{
+    url:'/message',
+    template:require('../templates/message.html'),
+    controller: 'messageController'
+  })
+  .state('createHospital',{
+    url:'/createHospital',
+    template:require('../templates/create_hospital.html'),
+    controller: 'createHospitalController'
+  })
+  .state('updateHospital',{
+    url:'/updateHospital',
+    template:require('../templates/update_hospital.html'),
+    controller: 'updateHospitalController'
+  }) 
+  .state('hospital',{
+    url:'/hospital',
+    template:require('../templates/hospital.html'),
+    controller: 'hospitalController'
+  }) 
   .state('project', {
     url: '/project',
     template: require('../templates/project.html'),

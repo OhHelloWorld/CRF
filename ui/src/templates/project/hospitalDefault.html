@@ -64,8 +64,8 @@
             <tr>
               <td>序号</td>
               <td>病例名称</td>
-              <td>病例详情</td>
-              <td>时间</td>
+              <td>病例类型</td>
+              <td>录入时间</td>
             </tr>
           </thead>
           <tbody ng-repeat="x in positals">
@@ -81,7 +81,14 @@
             </tr>
           </tbody>
         </table>
-        <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+        <div class="col col-md-12">
+          <div class="col-md-8">
+            <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+          </div>
+          <div class="col-md-4 text-right">
+            <button type="button" id="train" class="btn btn-lg btn-default" ng-click="goTrain()">病例录入</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
