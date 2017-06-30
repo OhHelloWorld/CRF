@@ -74,4 +74,17 @@ public class ProjectController {
     public void sendInvited(@RequestParam Long userId, @PathVariable(value = "projectId") Long projectId, @RequestParam Long projectRoleId) {
         projectService.inviteUser(userId, projectId, projectRoleId);
     }
+
+    @PostMapping(value = "/rejectInv")
+    @ApiOperation(value = "拒绝邀请")
+    public void rejectInvited(@RequestParam Long userId, @RequestParam String projectName) {
+        projectService.rejectInvited(userId, projectName);
+    }
+
+
+    @GetMapping(value = "/msg")
+    @ApiOperation(value = "根据项目名字搜索项目")
+    public List<ProjectDTO> getProjetBySearchMsg(String msg) {
+        return projectService.getProjectBySearchMsg(msg);
+    }
 }

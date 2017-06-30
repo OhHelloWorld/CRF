@@ -33,4 +33,9 @@ public class MessageServiceImpl implements MessageService {
         return messageDTOList;
     }
 
+    public void readMessage(Long messageId) {
+        MessageDO messageDO = messageRepo.findOne(messageId);
+        messageDO.setRead(true);
+    }
+
 }

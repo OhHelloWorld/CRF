@@ -13,6 +13,8 @@ public interface UserRepo extends CrudRepository<UserDO, Long> {
 
     UserDO findByAccount(String account);
 
+    UserDO findByRealName(String realName);
+
     @Query(value = "select * from user u where " +
             "u.real_name like %?1% or " +
             "u.user_name like %?1% or" +

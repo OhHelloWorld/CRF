@@ -1,5 +1,7 @@
 package app.dto;
 
+import java.util.List;
+
 public class UserDTO {
 
     private Long id;
@@ -7,6 +9,7 @@ public class UserDTO {
     private String password;
     private String account;
     private Long hospitalId;
+    private List<SysPermissionDTO> permissionDTOS;
 
     public Long getId() {
         return id;
@@ -32,7 +35,6 @@ public class UserDTO {
         this.password = password;
     }
 
-
     public void setAccount(String account) {
         this.account = account;
     }
@@ -47,5 +49,13 @@ public class UserDTO {
 
     public void setHospitalId(Long hospitalId) {
         this.hospitalId = hospitalId;
+    }
+
+    public List<SysPermissionDTO> getPermissionDTOS() {
+        return permissionDTOS;
+    }
+
+    public void setPermissionDTOS(List<SysPermissionDTO> permissionDTOS) {
+        this.permissionDTOS = permissionDTOS;
     }
 }

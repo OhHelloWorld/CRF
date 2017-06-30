@@ -17,4 +17,6 @@ public interface HospitalService {
     public void saveImag(MultipartFile file) throws IOException;
 
     public HospitalDTO addHospital(HospitalDTO hospitalDTO);
+
+    public HospitalDTO getHospitalById(Long hospitalId);
 }

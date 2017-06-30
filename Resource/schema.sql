@@ -238,7 +238,7 @@ create table user_project_role(
     user_id int not null,
     project_id int not null,
     project_role_id int not null,
-    is_accept boolean default false,
+    accept boolean,
     primary key(id)
 );
 
@@ -398,9 +398,20 @@ create table message (
 	id int not null auto_increment,
 	content text not null,
 	received_user_id int not null,
-	is_read boolean default false,
+	read boolean default false,
 	primary key(id)
 );
+
+#病例
+create table case(
+	id int not null auto_increment,
+	case_name varchar(100) not null,
+	case_category varchar(100) not null,
+	create_time datetime not null,
+	project_id int not null,
+	hospital_id int not null,
+	primary key(id)
+)
 
 
 

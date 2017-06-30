@@ -6,6 +6,7 @@ package app.controller;
 
 import app.dto.UserDTO;
 import app.service.LoginService;
+import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
@@ -20,16 +21,17 @@ import org.apache.tomcat.util.codec.binary.Base64;
 
 @RestController
 @RequestMapping(path = "/api")
+@Api(value = "登陆")
 public class LoginController {
 
     @Autowired
     private LoginService loginService;
 
     @GetMapping(path = "/login")
-    public UserDTO login(/*@RequestHeader("Authorization") String authValue*/@RequestHeader("account") String account, @RequestHeader("password") String password){
-//        String value = new String(Base64.decodeBase64(authValue));
-//        String account = value.split("#")[0];
-//        String password = value.split("#")[1];
+    public UserDTO login(@RequestHeader("Authorization") String authValue){
+        String value = new String(Base64.decodeBase64(authValue));
+        String account = value.split("#")[0];
+        String password = value.split("#")[1];
         Subject subject = SecurityUtils.getSubject();
 
         try {
@@ -47,7 +49,11 @@ public class LoginController {
             throw new LockedAccountException("您的账号已被禁用!");
         }
 
+    }
 
-
+    @GetMapping(path = "/logout")
+    public void logout() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
     }
 }

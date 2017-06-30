@@ -1,7 +1,6 @@
 package app.controller;
 
 import app.dto.HospitalDTO;
-import app.entities.HospitalDO;
 import app.service.HospitalService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,6 +38,12 @@ public class HospitalController {
     @ApiOperation(value = "添加医院")
     public HospitalDTO addHospital(@RequestBody HospitalDTO hospitalDTO) {
         return hospitalService.addHospital(hospitalDTO);
+    }
+
+    @GetMapping(value = "/{hospitalId}")
+    @ApiOperation(value = "通过id获取医院")
+    public HospitalDTO getHospitalById(Long hospitalId) {
+        return hospitalService.getHospitalById(hospitalId);
     }
 
 }

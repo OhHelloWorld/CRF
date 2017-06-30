@@ -29,4 +29,8 @@ public interface ProjectService {
     List<ProjectUsersDTO> getUsersInProject(Long projectId);//得到一个项目下的用户
 
     public void acceptInvited(Long userId, String projectName);//接受邀请
+
+    public void rejectInvited(Long userId, String projectName);//拒绝邀请
+
+    public List<ProjectDTO> getProjectBySearchMsg(String msg);//根据名字找到项目
 }

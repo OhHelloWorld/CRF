@@ -36,15 +36,16 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDTO addUser(UserDTO userDTO) {
+        UserDO userDO = convertUtil.convertToUserDO(userDTO);
+        passwordHelper.encrypUserPassword(userDO);
+        userDO.setHospital(hospitalRepo.findOne(userDTO.getHospitalId()));
         if(userRepo.findByAccount(userDTO.getAccount()) == null) {
-            UserDO userDO = convertUtil.convertToUserDO(userDTO);
-            passwordHelper.encrypUserPassword(userDO);
-            userDO.setHospital(hospitalRepo.findOne(userDTO.getHospitalId()));
             userRepo.save(userDO);
             return convertUtil.convertToUserDTO(userDO);
         }else {
             throw new RepeatAccountException("该账号已被注册");
         }
+
     }
 
     @Override

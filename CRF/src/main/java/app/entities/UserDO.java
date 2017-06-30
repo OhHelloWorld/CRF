@@ -46,7 +46,6 @@ public class UserDO {
         this.realName = realName;
     }
 
-
     public String getPassword() {
         return password;
     }

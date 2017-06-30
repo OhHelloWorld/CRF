@@ -97,7 +97,7 @@ public class ProjectServiceImpl implements ProjectService {
         for(UserProjectRoleDO p : userProjectRoleRepo.findByProjectId(projectId)) {
             ProjectUsersDTO pro = new ProjectUsersDTO();
             pro.setProjectRoleName(projectRoleRepo.findOne(p.getProjectRoleId()).getProjectRoleName());
-            pro.setUserName(userRepo.findOne(p.getUserId()).getUserName());
+            pro.setUserName(userRepo.findOne(p.getUserId()).getRealName());
             projectUsersDTOS.add(pro);
         }
         return projectUsersDTOS;
@@ -108,7 +108,6 @@ public class ProjectServiceImpl implements ProjectService {
         userProjectRoleDO.setProjectId(projectId);
         userProjectRoleDO.setProjectRoleId(projectRoleId);
         userProjectRoleDO.setUserId(userId);
-        userProjectRoleDO.setAccept(false);
 
         ProjectDO projectDO = projectRepo.findOne(projectId);
         UserDO userDO = userRepo.findOne(userId);
@@ -128,5 +127,20 @@ public class ProjectServiceImpl implements ProjectService {
         UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
         p.setAccept(true);
         userProjectRoleRepo.save(p);
+    }
+
+    public void rejectInvited(Long userId, String projectName) {
+        ProjectDO projectDO = projectRepo.findByProjectName(projectName);
+        UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
+        p.setAccept(false);
+        userProjectRoleRepo.save(p);
+    }
+
+    public List<ProjectDTO> getProjectBySearchMsg(String msg) {
+        List<ProjectDTO> projectDTOS = new ArrayList<>();
+        for(ProjectDO p : projectRepo.getListProjectByMsg(msg)) {
+            projectDTOS.add(convertUtil.convertToProjectDTO(p));
+        }
+        return projectDTOS;
     }
 }

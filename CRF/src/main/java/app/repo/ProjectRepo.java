@@ -15,4 +15,7 @@ public interface ProjectRepo extends CrudRepository<ProjectDO, Long>{
     List<ProjectDO> getListProject(Long userId);
 
     ProjectDO findByProjectName(String projectName);
+
+    @Query(value = "select * from project where project_name like %?1%", nativeQuery = true)
+    List<ProjectDO> getListProjectByMsg(String msg);
 }

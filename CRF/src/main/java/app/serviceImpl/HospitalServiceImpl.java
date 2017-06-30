@@ -22,7 +22,7 @@ import java.util.List;
 public class HospitalServiceImpl implements HospitalService {
 
     @Autowired
-    private ConvertUtil convertUtil;;
+    private ConvertUtil convertUtil;
 
     @Autowired
     private HospitalRepo hospitalRepo;
@@ -50,5 +50,10 @@ public class HospitalServiceImpl implements HospitalService {
     public HospitalDTO addHospital(HospitalDTO hospitalDTO) {
         HospitalDO hospitalDO = hospitalRepo.save(convertUtil.convertHospitalDO(hospitalDTO));
         return convertUtil.convertHospitalDTO(hospitalDO);
+    }
+
+    public HospitalDTO getHospitalById(Long hospitalId) {
+        HospitalDTO hospitalDTO = convertUtil.convertHospitalDTO(hospitalRepo.findOne(hospitalId));
+        return hospitalDTO;
     }
 }

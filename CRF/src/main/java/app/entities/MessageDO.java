@@ -18,7 +18,7 @@ public class MessageDO {
 
     private Long received_user_id;
 
-    private boolean isRead;
+    private boolean read;
 
     public Long getId() {
         return id;
@@ -45,10 +45,10 @@ public class MessageDO {
     }
 
     public boolean isRead() {
-        return isRead;
+        return read;
     }
 
     public void setRead(boolean read) {
-        isRead = read;
+        this.read = read;
     }
 }

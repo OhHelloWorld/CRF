@@ -297,6 +297,11 @@ public class ConvertUtil {
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
         userDTO.setHospitalId(userDO.getId());
+        List<SysPermissionDTO> permissionDTOS = new ArrayList<>();
+        for(SysPermissionDO sr: userDO.getSysRoleDO().getListPermission()) {
+            permissionDTOS.add(convertToPermissionDTO(sr));
+        }
+        userDTO.setPermissionDTOS(permissionDTOS);
         return userDTO;
     }
 
@@ -392,9 +397,29 @@ public class ConvertUtil {
 
     public MessageDTO convertToMessageDTO(MessageDO messageDO) {
         MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setId(messageDTO.getId());
         messageDTO.setContent(messageDO.getContent());
         messageDTO.setReceived_user_id(messageDO.getReceived_user_id());
         messageDTO.setStatus(messageDO.getContent());
         return messageDTO;
     }
+
+    public CaseDTO convertToCaseDTO(CaseDO caseDO) {
+        CaseDTO caseDTO = new CaseDTO();
+        caseDTO.setCaseCategory(caseDO.getCaseCategory());
+        caseDTO.setCaseName(caseDO.getCaseName());
+        caseDTO.setCreateTime(caseDO.getCreateTime());
+        caseDTO.setId(caseDO.getId());
+        return caseDTO;
+    }
+
+    public CaseDO convertToCaseDO(CaseDTO caseDTO) {
+        CaseDO caseDO = new CaseDO();
+        caseDO.setCaseCategory(caseDTO.getCaseCategory());
+        caseDO.setCaseName(caseDTO.getCaseName());
+        caseDO.setCreateTime(new Date());
+        return caseDO;
+    }
+
+
 }
