@@ -62,4 +62,16 @@ public class ProjectController {
     public List<ProjectUsersDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId) {
         return projectService.getUsersInProject(projectId);
     }
+
+    @PostMapping(value = "/acceptInv")
+    @ApiOperation(value = "接受邀请")
+    public void accpetInvited(@RequestParam Long userId, @RequestParam String projectName) {
+        projectService.acceptInvited(userId, projectName);
+    }
+
+    @PostMapping(value = "/{projectId}/Inv")
+    @ApiOperation(value = "发送邀请")
+    public void sendInvited(@RequestParam Long userId, @PathVariable(value = "projectId") Long projectId, @RequestParam Long projectRoleId) {
+        projectService.inviteUser(userId, projectId, projectRoleId);
+    }
 }

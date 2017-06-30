@@ -26,6 +26,18 @@ public class HospitalDO {
             inverseJoinColumns = {@JoinColumn(name = "project_id")})
     private List<ProjectDO> projectList;//多个项目对应多个医院
 
+    private String address;//地址
+
+    private String addressDetail;//详细地址
+
+    private String telephone;//电话
+
+    private String specialMajor;//特色专科
+
+    private String manageRange;//经营范围
+
+    private String image_url;//图片地址
+
     public Long getId() {
         return id;
     }
@@ -56,5 +68,53 @@ public class HospitalDO {
 
     public void setProjectList(List<ProjectDO> projectList) {
         this.projectList = projectList;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddressDetail() {
+        return addressDetail;
+    }
+
+    public void setAddressDetail(String addressDetail) {
+        this.addressDetail = addressDetail;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getSpecialMajor() {
+        return specialMajor;
+    }
+
+    public void setSpecialMajor(String specialMajor) {
+        this.specialMajor = specialMajor;
+    }
+
+    public String getManageRange() {
+        return manageRange;
+    }
+
+    public void setManageRange(String manageRange) {
+        this.manageRange = manageRange;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 }

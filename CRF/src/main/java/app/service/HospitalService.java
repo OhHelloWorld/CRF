@@ -1,7 +1,10 @@
 package app.service;
 
 import app.dto.HospitalDTO;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -10,4 +13,8 @@ import java.util.List;
 public interface HospitalService {
 
     List<HospitalDTO> getAllHospital();
+
+    public void saveImag(MultipartFile file) throws IOException;
+
+    public HospitalDTO addHospital(HospitalDTO hospitalDTO);
 }

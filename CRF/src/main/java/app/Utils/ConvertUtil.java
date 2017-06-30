@@ -296,7 +296,6 @@ public class ConvertUtil {
         userDTO.setRealName(userDO.getRealName());
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
-        userDTO.setUserName(userDO.getUserName());
         userDTO.setHospitalId(userDO.getId());
         return userDTO;
     }
@@ -306,7 +305,6 @@ public class ConvertUtil {
         userDO.setRealName(userDTO.getRealName());
         userDO.setAccount(userDTO.getAccount());
         userDO.setPassword(userDTO.getPassword());
-        userDO.setUserName(userDTO.getUserName());
         return userDO;
     }
 
@@ -357,6 +355,12 @@ public class ConvertUtil {
         HospitalDTO hospitalDTO = new HospitalDTO();
         hospitalDTO.setHospitalName(hospitalDO.getHospitalName());
         hospitalDTO.setId(hospitalDO.getId());
+        hospitalDTO.setAddress(hospitalDO.getAddress());
+        hospitalDTO.setAddressDetail(hospitalDO.getAddressDetail());
+        hospitalDTO.setImage_url(hospitalDO.getImage_url());
+        hospitalDTO.setManageRange(hospitalDO.getManageRange());
+        hospitalDTO.setSpecialMajor(hospitalDO.getSpecialMajor());
+        hospitalDTO.setTelephone(hospitalDO.getTelephone());
         return hospitalDTO;
     }
 
@@ -364,6 +368,12 @@ public class ConvertUtil {
         HospitalDO hospitalDO = new HospitalDO();
         hospitalDO.setHospitalName(hospitalDTO.getHospitalName());
         hospitalDO.setId(hospitalDTO.getId());
+        hospitalDO.setAddress(hospitalDTO.getAddress());
+        hospitalDO.setAddressDetail(hospitalDTO.getAddressDetail());
+        hospitalDO.setImage_url(hospitalDTO.getImage_url());
+        hospitalDO.setManageRange(hospitalDTO.getManageRange());
+        hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
+        hospitalDO.setTelephone(hospitalDTO.getTelephone());
         return hospitalDO;
     }
 
@@ -380,5 +390,11 @@ public class ConvertUtil {
         return projectPermissionDTO;
     }
 
-
+    public MessageDTO convertToMessageDTO(MessageDO messageDO) {
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setContent(messageDO.getContent());
+        messageDTO.setReceived_user_id(messageDO.getReceived_user_id());
+        messageDTO.setStatus(messageDO.getContent());
+        return messageDTO;
+    }
 }

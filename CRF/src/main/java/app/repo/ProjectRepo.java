@@ -11,11 +11,8 @@ import java.util.List;
  */
 public interface ProjectRepo extends CrudRepository<ProjectDO, Long>{
 
-
-
     @Query(value = "select p.* from project p , user_project_role upr where upr.user_id = ?1 and upr.project_id = p.id", nativeQuery = true)
     List<ProjectDO> getListProject(Long userId);
 
-
-
+    ProjectDO findByProjectName(String projectName);
 }

@@ -4,7 +4,6 @@ public class UserDTO {
 
     private Long id;
     private String realName;
-    private String userName;
     private String password;
     private String account;
     private Long hospitalId;
@@ -23,14 +22,6 @@ public class UserDTO {
 
     public void setRealName(String realName) {
         this.realName = realName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getPassword() {

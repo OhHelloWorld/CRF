@@ -1,9 +1,13 @@
 
 ##医院数据
-INSERT INTO `hospital`(`hospital_name`)VALUES("上海华西医院");
-INSERT INTO `hospital`(`hospital_name`)VALUES("上海仁和医院");
-INSERT INTO `hospital`(`hospital_name`)VALUES("北京华西医院");
-INSERT INTO `hospital`(`hospital_name`)VALUES("北京人和医院");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
+VALUES("上海华西医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
+ALUES("上海仁和医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
+VALUES("北京华西医院", , "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
+VALUES("北京人和医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
 
 ##系统角色数据
 INSERT INTO `sys_role`(`sys_role_name`)VALUES("normal");

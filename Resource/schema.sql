@@ -151,7 +151,6 @@ create table physical_chemical_inspection(
 create table user(
     id int not null auto_increment,
     real_name varchar(20) not null,
-    user_name varchar(30) not null,
     account varchar(100) not null,
     password varchar(100) not null,
     salt varchar(255) not null,
@@ -179,7 +178,7 @@ create table sys_permission(
     primary key(id)
 ); 
 
-
+#项目角色
 create table project_role(
     id int not null auto_increment,
     project_role_name varchar(20) not null,
@@ -190,6 +189,7 @@ create table project_role_permission(
     id int not null auto_increment,
     project_role_id int not null,
     project_permission_id int not null,
+    status varchar(50),
     primary key(id)
 );
 #权限表
@@ -212,6 +212,12 @@ create table project(
 create table hospital(
     id int not null auto_increment,
     hospital_name varchar(50) not null,
+    address varchar(255) not null,
+    address_detail varchar(255) not null,
+    telephone varchar(30) not null,
+    special_major varchar(100) not null,
+    manage_range varchar(100) not null,
+    image_url varchar(255) not null,
     primary key(id)
 );
 #用户_医院关联表
@@ -232,6 +238,7 @@ create table user_project_role(
     user_id int not null,
     project_id int not null,
     project_role_id int not null,
+    is_accept boolean default false,
     primary key(id)
 );
 
@@ -384,6 +391,15 @@ create table information_patient(
     patient_id int not null,
     information_id int not null,
     primary key(id)
+);
+
+#信息表
+create table message (
+	id int not null auto_increment,
+	content text not null,
+	received_user_id int not null,
+	is_read boolean default false,
+	primary key(id)
 );
 
 

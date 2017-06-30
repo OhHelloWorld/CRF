@@ -10,7 +10,6 @@ public class UserDO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String realName;
-    private String userName;
     private String account;
     private String password;
     private String salt;
@@ -47,13 +46,6 @@ public class UserDO {
         this.realName = realName;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getPassword() {
         return password;

@@ -27,4 +27,6 @@ public interface ProjectService {
     List<HospitalDTO> getProjectHospitalList(Long projectId);//得到项目的医院列表
 
     List<ProjectUsersDTO> getUsersInProject(Long projectId);//得到一个项目下的用户
+
+    public void acceptInvited(Long userId, String projectName);//接受邀请
 }
