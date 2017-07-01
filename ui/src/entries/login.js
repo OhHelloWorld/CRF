@@ -11,7 +11,15 @@ import angular from 'angular';
 
 var login = angular.module('login',['base64']);
 
-login.controller('loginController', ['$scope', '$http', '$base64', function($scope, $http, $base64){
+login.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+  
+  localStorageServiceProvider
+      .setPrefix('login')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true);
+}]);
+
+login.controller('loginController', ['$scope', '$http', '$base64', 'localStorageService', function($scope, $http, $base64, localStorageService){
 
   $('input').iCheck({
     checkboxClass: 'icheckbox_square-blue',
@@ -27,19 +35,17 @@ login.controller('loginController', ['$scope', '$http', '$base64', function($sco
       headers:{
         'Authorization' : authValue
       }
-    }).then(function(response){
+    }).then(function success(response){
       var compareResult = response.data;
-      if(compareResult == true){
-        $scope.justModalContent = '登录成功，即将跳转！';
-        $('#justModal').modal('show');
-        setTimeout(function(){
-          window.location.href = 'http://localhost:9000/main.html#!/home';
-        }, 500);
-      }else{
+      localStorageService.set('user', compareResult);
+      $scope.justModalContent = '登录成功，即将跳转！';
+      $('#justModal').modal('show');
+      setTimeout(function(){
+        window.location.href = 'http://localhost:9000/main.html#!/home';
+      }, 500);
+    }, function failed() {
         $scope.justModalContent = '账号或验证码输入错误，请检查后重新登陆！';
         $('#justModal').modal('show');
-      }
-
     });
   };
 
