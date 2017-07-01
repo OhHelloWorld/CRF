@@ -18,9 +18,9 @@ public class SysPermissionDO {
 
     @ManyToMany
     @JoinTable(
-            name = "role_permission",
-            joinColumns = {@JoinColumn(name = "permission_id")},
-            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+            name = "sys_role_permission",
+            joinColumns = {@JoinColumn(name = "sys_permission_id")},
+            inverseJoinColumns = {@JoinColumn(name = "sys_role_id")})
     private List<SysRoleDO> listRole;
 
     public List<SysRoleDO> getListRole() {

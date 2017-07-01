@@ -1,7 +1,6 @@
 package app.service;
 
 import app.dto.UserDTO;
-import app.entities.UserDO;
 
 import java.util.List;
 

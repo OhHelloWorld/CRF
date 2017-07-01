@@ -296,8 +296,13 @@ public class ConvertUtil {
         userDTO.setRealName(userDO.getRealName());
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
-        userDTO.setUserName(userDO.getUserName());
-        userDTO.setHospitalId(userDO.getId());
+        userDTO.setHospitalId(userDO.getHospital().getId());
+        userDTO.setEmail(userDO.getEmail());
+        List<SysPermissionDTO> permissionDTOS = new ArrayList<>();
+        for(SysPermissionDO sr: userDO.getSysRoleDO().getListPermission()) {
+            permissionDTOS.add(convertToPermissionDTO(sr));
+        }
+        userDTO.setPermissionDTOS(permissionDTOS);
         return userDTO;
     }
 
@@ -306,7 +311,7 @@ public class ConvertUtil {
         userDO.setRealName(userDTO.getRealName());
         userDO.setAccount(userDTO.getAccount());
         userDO.setPassword(userDTO.getPassword());
-        userDO.setUserName(userDTO.getUserName());
+        userDO.setEmail(userDTO.getEmail());
         return userDO;
     }
 
@@ -357,6 +362,12 @@ public class ConvertUtil {
         HospitalDTO hospitalDTO = new HospitalDTO();
         hospitalDTO.setHospitalName(hospitalDO.getHospitalName());
         hospitalDTO.setId(hospitalDO.getId());
+        hospitalDTO.setAddress(hospitalDO.getAddress());
+        hospitalDTO.setAddressDetail(hospitalDO.getAddressDetail());
+        hospitalDTO.setImage_url(hospitalDO.getImage_url());
+        hospitalDTO.setManageRange(hospitalDO.getManageRange());
+        hospitalDTO.setSpecialMajor(hospitalDO.getSpecialMajor());
+        hospitalDTO.setTelephone(hospitalDO.getTelephone());
         return hospitalDTO;
     }
 
@@ -364,6 +375,12 @@ public class ConvertUtil {
         HospitalDO hospitalDO = new HospitalDO();
         hospitalDO.setHospitalName(hospitalDTO.getHospitalName());
         hospitalDO.setId(hospitalDTO.getId());
+        hospitalDO.setAddress(hospitalDTO.getAddress());
+        hospitalDO.setAddressDetail(hospitalDTO.getAddressDetail());
+        hospitalDO.setImage_url(hospitalDTO.getImage_url());
+        hospitalDO.setManageRange(hospitalDTO.getManageRange());
+        hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
+        hospitalDO.setTelephone(hospitalDTO.getTelephone());
         return hospitalDO;
     }
 
@@ -378,6 +395,32 @@ public class ConvertUtil {
         projectPermissionDTO.setId(projectPermissionDO.getId());
         projectPermissionDTO.setProjectPermissionName(projectPermissionDO.getProjectPermissionName());
         return projectPermissionDTO;
+    }
+
+    public MessageDTO convertToMessageDTO(MessageDO messageDO) {
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setId(messageDTO.getId());
+        messageDTO.setContent(messageDO.getContent());
+        messageDTO.setReceived_user_id(messageDO.getReceivedUserId());
+        messageDTO.setStatus(messageDO.isRead());
+        return messageDTO;
+    }
+
+    public CaseDTO convertToCaseDTO(CaseDO caseDO) {
+        CaseDTO caseDTO = new CaseDTO();
+        caseDTO.setCaseCategory(caseDO.getCaseCategory());
+        caseDTO.setCaseName(caseDO.getCaseName());
+        caseDTO.setCreateTime(caseDO.getCreateTime());
+        caseDTO.setId(caseDO.getId());
+        return caseDTO;
+    }
+
+    public CaseDO convertToCaseDO(CaseDTO caseDTO) {
+        CaseDO caseDO = new CaseDO();
+        caseDO.setCaseCategory(caseDTO.getCaseCategory());
+        caseDO.setCaseName(caseDTO.getCaseName());
+        caseDO.setCreateTime(new Date());
+        return caseDO;
     }
 
 

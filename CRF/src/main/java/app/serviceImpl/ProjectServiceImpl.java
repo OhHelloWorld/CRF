@@ -1,17 +1,13 @@
 package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
+import app.Utils.UserMsgTool;
 import app.dto.HospitalDTO;
 import app.dto.ProjectDTO;
 import app.dto.ProjectUsersDTO;
-import app.entities.HospitalDO;
-import app.entities.ProjectDO;
-import app.entities.UserDO;
-import app.entities.UserProjectRoleDO;
+import app.entities.*;
 import app.repo.*;
 import app.service.ProjectService;
-import org.apache.commons.collections.list.PredicatedList;
-import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +37,12 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
     private ProjectRoleRepo projectRoleRepo;
+
+    @Autowired
+    private MessageRepo messageRepo;
+
+    @Autowired
+    private UserMsgTool userMsgTool;
 
     @Override
     public ProjectDTO addProject(ProjectDTO projectDTO) {
@@ -74,22 +76,13 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void inviteUser(Long userId, Long projectId, Long projectRoleId) {
-        UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
-        userProjectRoleDO.setProjectId(projectId);
-        userProjectRoleDO.setProjectRoleId(projectRoleId);
-        userProjectRoleDO.setUserId(userId);
-
+        MessageDO messageDO = new MessageDO();
         ProjectDO projectDO = projectRepo.findOne(projectId);
-        UserDO userDO = userRepo.findOne(userId);
-        for(HospitalDO h : projectDO.getHospitalList()){
-            if(h.getId() == userDO.getHospital().getId()) {
-                break;
-            }else {
-                projectDO.getHospitalList().add(userDO.getHospital());
-                projectRepo.save(projectDO);
-            }
-        }
-        userProjectRoleRepo.save(userProjectRoleDO);
+        messageDO.setContent(projectDO.getProjectName() + ": 项目向你发出邀请！");
+        messageDO.setReceivedUserId(userId);
+        messageDO.setRead(false);
+        messageRepo.save(messageDO);
+        saveInvited(userId, projectId, projectRoleId);
     }
 
     @Override
@@ -107,9 +100,60 @@ public class ProjectServiceImpl implements ProjectService {
         for(UserProjectRoleDO p : userProjectRoleRepo.findByProjectId(projectId)) {
             ProjectUsersDTO pro = new ProjectUsersDTO();
             pro.setProjectRoleName(projectRoleRepo.findOne(p.getProjectRoleId()).getProjectRoleName());
-            pro.setUserName(userRepo.findOne(p.getUserId()).getUserName());
+            pro.setUserName(userRepo.findOne(p.getUserId()).getRealName());
             projectUsersDTOS.add(pro);
         }
         return projectUsersDTOS;
+    }
+
+    public void saveInvited(Long userId, Long projectId, Long projectRoleId) {
+        UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
+        userProjectRoleDO.setProjectId(projectId);
+        userProjectRoleDO.setProjectRoleId(projectRoleId);
+        userProjectRoleDO.setUserId(userId);
+        userProjectRoleDO.setAccept(false);
+
+        ProjectDO projectDO = projectRepo.findOne(projectId);
+        UserDO userDO = userRepo.findOne(userId);
+        for(HospitalDO h : projectDO.getHospitalList()){
+            if(h.getId() == userDO.getHospital().getId()) {
+                break;
+            }else {
+                projectDO.getHospitalList().add(userDO.getHospital());
+                projectRepo.save(projectDO);
+                userProjectRoleRepo.save(userProjectRoleDO);
+                break;
+            }
+        }
+    }
+
+    public void acceptInvited(Long userId, String projectName) {
+        ProjectDO projectDO = projectRepo.findByProjectName(projectName);
+        UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
+        p.setAccept(true);
+        userProjectRoleRepo.save(p);
+    }
+
+    public void rejectInvited(Long userId, String projectName) {
+        ProjectDO projectDO = projectRepo.findByProjectName(projectName);
+        UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
+        p.setAccept(false);
+        userProjectRoleRepo.save(p);
+    }
+
+    public List<ProjectDTO> getProjectBySearchMsg(String msg) {
+        List<ProjectDTO> projectDTOS = new ArrayList<>();
+        for(ProjectDO p : projectRepo.getListProjectByMsg(msg)) {
+            projectDTOS.add(convertUtil.convertToProjectDTO(p));
+        }
+        return projectDTOS;
+    }
+
+    public List<ProjectDTO> getCurrentUserProjectList() {
+        List<ProjectDTO> projectDTOS = new ArrayList<>();
+        for(ProjectDO p : projectRepo.getListProject(userMsgTool.getCurrentUserId())) {
+            projectDTOS.add(convertUtil.convertToProjectDTO(p));
+        }
+        return projectDTOS;
     }
 }

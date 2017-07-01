@@ -62,4 +62,35 @@ public class ProjectController {
     public List<ProjectUsersDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId) {
         return projectService.getUsersInProject(projectId);
     }
+
+    @PostMapping(value = "/acceptInv")
+    @ApiOperation(value = "接受邀请")
+    public void accpetInvited(@RequestParam Long userId, @RequestParam String projectName) {
+        projectService.acceptInvited(userId, projectName);
+    }
+
+    @PostMapping(value = "/Inv")
+    @ApiOperation(value = "发送邀请")
+    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId, @RequestParam Long projectRoleId) {
+        projectService.inviteUser(userId, projectId, projectRoleId);
+    }
+
+    @PostMapping(value = "/rejectInv")
+    @ApiOperation(value = "拒绝邀请")
+    public void rejectInvited(@RequestParam Long userId, @RequestParam String projectName) {
+        projectService.rejectInvited(userId, projectName);
+    }
+
+
+    @GetMapping(value = "/msg")
+    @ApiOperation(value = "根据项目名字搜索项目")
+    public List<ProjectDTO> getProjetBySearchMsg(@RequestParam String msg) {
+        return projectService.getProjectBySearchMsg(msg);
+    }
+
+    @GetMapping(value = "")
+    @ApiOperation(value = "得到当前用户拥有的项目")
+    public List<ProjectDTO> getCurrentUserProject() {
+        return projectService.getCurrentUserProjectList();
+    }
 }

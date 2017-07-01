@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.Exception.RepeatAccountException;
+import app.Exception.RepeatNameException;
 import app.dto.ErrorDTO;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
@@ -45,6 +46,15 @@ public class ExceptionController {
     @ResponseStatus
     @ResponseBody
     public ErrorDTO incorrectCredentialsException(Exception e) {
+        ErrorDTO errorDto = new ErrorDTO();
+        errorDto.setErrorMessage(e.getMessage());
+        return errorDto;
+    }
+
+    @ExceptionHandler(RepeatNameException.class)
+    @ResponseStatus
+    @ResponseBody
+    public ErrorDTO repeatNameException(Exception e) {
         ErrorDTO errorDto = new ErrorDTO();
         errorDto.setErrorMessage(e.getMessage());
         return errorDto;
