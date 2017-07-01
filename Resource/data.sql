@@ -3,9 +3,9 @@
 INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
 VALUES("上海华西医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
 INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-ALUES("上海仁和医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
+vALUES("上海仁和医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
 INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-VALUES("北京华西医院", , "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
+VALUES("北京华西医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
 INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
 VALUES("北京人和医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
 
@@ -14,44 +14,49 @@ INSERT INTO `sys_role`(`sys_role_name`)VALUES("normal");
 INSERT INTO `sys_role`(`sys_role_name`)VALUES("manager");
 
 ##系统权限表
-##INSERT INTO `sys_permission`(`sys_permission_name`)VALUES(`添加医院`);
-##INSERT INTO `sys_permission`(`sys_permission_name`)VALUES(`普通使用`);
+INSERT INTO `sys_permission`(`sys_permission_name`)VALUES("添加医院");
+INSERT INTO `sys_permission`(`sys_permission_name`)VALUES("普通使用");
+
+##系统权限角色关联
+INSERT INTO `sys_role_permission`(`sys_role_id`, `sys_permission_id`)vALUES(1, 2);
+INSERT INTO `sys_role_permission`(`sys_role_id`, `sys_permission_id`)vALUES(2, 1);
+INSERT INTO `sys_role_permission`(`sys_role_id`, `sys_permission_id`)vALUES(2, 2);
 
 ##用户数据E
 INSERT INTO
  `user`(
- 	`real_name`, `user_name`, 
+ 	`real_name`, 
  	`account`, `password`, 
- 	`salt`, `hospital_id`, `sys_role_id`)
- VALUES("宋天健", "宋天健", "15285900082", "67175aca5d4817fdacc8275ff0b167c8", "32e750a79391bf38549750388ab16eb8", 1, 1);
+ 	`salt`, `hospital_id`, `sys_role_id`, `email`)
+ VALUES("宋天健", "15285900082", "67175aca5d4817fdacc8275ff0b167c8", "32e750a79391bf38549750388ab16eb8", 1, 2, "524000659@qq.com");
 
  INSERT INTO
  `user`(
- 	`real_name`, `user_name`, 
+ 	`real_name`, 
  	`account`, `password`, 
- 	`salt`, `hospital_id`, `sys_role_id`)
- VALUES("彭佳慧", "彭佳慧", "15285900083", "c716b5b271b0ec2e4e535aeadf21abed", "8e878508c432c4e19004e648d8fd02b2", 2, 1);
+ 	`salt`, `hospital_id`, `sys_role_id`, `email`)
+ VALUES("彭佳慧", "15285900083", "c716b5b271b0ec2e4e535aeadf21abed", "8e878508c432c4e19004e648d8fd02b2", 2, 1, "524000657@qq.com");
 
  INSERT INTO
  `user`(
- 	`real_name`, `user_name`, 
+ 	`real_name`, 
  	`account`, `password`, 
- 	`salt`, `hospital_id`, `sys_role_id`)
- VALUES("贾瑞", "贾瑞", "15285900084", "54e91edb2e7cd4b2ac7036fecd78f26a", "9b9d0688fc12d0ceb0c2b83aeaf3bfac", 3, 1);
+ 	`salt`, `hospital_id`, `sys_role_id`, `email`)
+ VALUES("贾瑞", "15285900084", "54e91edb2e7cd4b2ac7036fecd78f26a", "9b9d0688fc12d0ceb0c2b83aeaf3bfac", 3, 1, "524000658@qq.com");
 
   INSERT INTO
  `user`(
- 	`real_name`, `user_name`, 
+ 	`real_name`, 
  	`account`, `password`, 
- 	`salt`, `hospital_id`, `sys_role_id`)
- VALUES("任向杰", "任向杰", "15285900081", "829f59f1bc1112403d0592b2604f0cab", "7da3888ab20a17b80268af51c4131cf7", 3, 1);
+ 	`salt`, `hospital_id`, `sys_role_id`, `email`)
+ VALUES("任向杰", "15285900081", "829f59f1bc1112403d0592b2604f0cab", "7da3888ab20a17b80268af51c4131cf7", 3, 1, "524000656@qq.com");
 
   INSERT INTO
  `user`(
- 	`real_name`, `user_name`, 
+ 	`real_name`, 
  	`account`, `password`, 
- 	`salt`, `hospital_id`, `sys_role_id`)
- VALUES("张阿姨", "张阿姨", "15285900080", "3afe6e98687b9ce046bb56da98796ae7", "92c1c8b49e8edf11fb1356dac32d52a2", 3, 1);
+ 	`salt`, `hospital_id`, `sys_role_id`, `email`)
+ VALUES("张阿姨", "15285900080", "3afe6e98687b9ce046bb56da98796ae7", "92c1c8b49e8edf11fb1356dac32d52a2", 3, 1, "524000653@qq.com");
 
 
 ##项目
@@ -82,15 +87,20 @@ INSERT INTO `project_role`(`project_role_name`)VALUES("录入员");#6
 
 
 ##项目角色用户关联
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 1, 1);
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(2, 1, 2);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`, `accept`)VALUES(1, 1, 1, true);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`, `accept`)VALUES(2, 1, 2, true);
 
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 2, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`, `accept`)VALUES(1, 2, 1, true);
 
-INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`)VALUES(1, 3, 1);
+INSERT INTO `user_project_role`(`user_id`, `project_id`, `project_role_id`, `accept`)VALUES(1, 3, 1, true);
 
 
-
+##病例
+INSERT INTO `cases`(`case_name`, `case_category`, `create_time`, `project_id`, `hospital_id`)VALUES("病例1", "类型1", '2017-03-05', 1, 1);
+INSERT INTO `cases`(`case_name`, `case_category`, `create_time`, `project_id`, `hospital_id`)VALUES("病例2", "类型2", '2017-03-05', 1, 1);
+INSERT INTO `cases`(`case_name`, `case_category`, `create_time`, `project_id`, `hospital_id`)VALUES("病例3", "类型3", '2017-03-05', 1, 1);
+INSERT INTO `cases`(`case_name`, `case_category`, `create_time`, `project_id`, `hospital_id`)VALUES("病例4", "类型4", '2017-03-05', 1, 1);
+INSERT INTO `cases`(`case_name`, `case_category`, `create_time`, `project_id`, `hospital_id`)VALUES("病例5", "类型5", '2017-03-05', 1, 1);
 
 
 

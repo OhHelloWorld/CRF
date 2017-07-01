@@ -42,7 +42,7 @@ public class HospitalController {
 
     @GetMapping(value = "/{hospitalId}")
     @ApiOperation(value = "通过id获取医院")
-    public HospitalDTO getHospitalById(Long hospitalId) {
+    public HospitalDTO getHospitalById(@PathVariable Long hospitalId) {
         return hospitalService.getHospitalById(hospitalId);
     }
 

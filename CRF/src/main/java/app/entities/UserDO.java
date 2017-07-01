@@ -22,6 +22,16 @@ public class UserDO {
     @JoinColumn(name = "hospital_id")
     private HospitalDO hospital;//多个用户对应一个医院
 
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public SysRoleDO getSysRoleDO() {
         return sysRoleDO;
     }

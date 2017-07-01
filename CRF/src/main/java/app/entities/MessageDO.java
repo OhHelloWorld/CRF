@@ -16,8 +16,10 @@ public class MessageDO {
 
     private String content;
 
-    private Long received_user_id;
+    @Column(name = "received_user_id")
+    private Long receivedUserId;
 
+    @Column(name = "readed")
     private boolean read;
 
     public Long getId() {
@@ -36,12 +38,12 @@ public class MessageDO {
         this.content = content;
     }
 
-    public Long getReceived_user_id() {
-        return received_user_id;
+    public Long getReceivedUserId() {
+        return receivedUserId;
     }
 
-    public void setReceived_user_id(Long received_user_id) {
-        this.received_user_id = received_user_id;
+    public void setReceivedUserId(Long receivedUserId) {
+        this.receivedUserId = receivedUserId;
     }
 
     public boolean isRead() {

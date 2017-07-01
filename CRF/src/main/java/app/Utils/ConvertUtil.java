@@ -296,7 +296,8 @@ public class ConvertUtil {
         userDTO.setRealName(userDO.getRealName());
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
-        userDTO.setHospitalId(userDO.getId());
+        userDTO.setHospitalId(userDO.getHospital().getId());
+        userDTO.setEmail(userDO.getEmail());
         List<SysPermissionDTO> permissionDTOS = new ArrayList<>();
         for(SysPermissionDO sr: userDO.getSysRoleDO().getListPermission()) {
             permissionDTOS.add(convertToPermissionDTO(sr));
@@ -310,6 +311,7 @@ public class ConvertUtil {
         userDO.setRealName(userDTO.getRealName());
         userDO.setAccount(userDTO.getAccount());
         userDO.setPassword(userDTO.getPassword());
+        userDO.setEmail(userDTO.getEmail());
         return userDO;
     }
 
@@ -399,8 +401,8 @@ public class ConvertUtil {
         MessageDTO messageDTO = new MessageDTO();
         messageDTO.setId(messageDTO.getId());
         messageDTO.setContent(messageDO.getContent());
-        messageDTO.setReceived_user_id(messageDO.getReceived_user_id());
-        messageDTO.setStatus(messageDO.getContent());
+        messageDTO.setReceived_user_id(messageDO.getReceivedUserId());
+        messageDTO.setStatus(messageDO.isRead());
         return messageDTO;
     }
 

@@ -4,10 +4,13 @@ import app.Exception.RepeatAccountException;
 import app.Utils.ConvertUtil;
 import app.credential.PasswordHelper;
 import app.dto.UserDTO;
+import app.entities.SysRoleDO;
 import app.entities.UserDO;
 import app.repo.HospitalRepo;
+import app.repo.SysRoleRepo;
 import app.repo.UserRepo;
 import app.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +36,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private HospitalRepo hospitalRepo;
 
+    @Autowired
+    private SysRoleRepo sysRoleRepo;
+
     @Override
     @Transactional
     public UserDTO addUser(UserDTO userDTO) {
@@ -40,6 +46,7 @@ public class UserServiceImpl implements UserService {
         passwordHelper.encrypUserPassword(userDO);
         userDO.setHospital(hospitalRepo.findOne(userDTO.getHospitalId()));
         if(userRepo.findByAccount(userDTO.getAccount()) == null) {
+            userDO.setSysRoleDO(sysRoleRepo.findOne(1L));
             userRepo.save(userDO);
             return convertUtil.convertToUserDTO(userDO);
         }else {

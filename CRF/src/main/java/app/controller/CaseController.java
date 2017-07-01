@@ -27,10 +27,16 @@ public class CaseController {
         return caseService.getCaseByProjectId(projectId, hospitalId);
     }
 
-    @GetMapping(value = "/{projectId}")
+    @GetMapping(value = "")
     @ApiOperation(value = "通过项目id和病例名字项目下医院下的病例")
-    public List<CaseDTO> getCaseByProjectId(@PathVariable Long projectId, @RequestParam String caseName) {
+    public List<CaseDTO> getCaseByProjectId(@RequestParam Long projectId, @RequestParam String caseName) {
         return caseService.getCaseByProjectIdAndCaseName(projectId, caseName);
+    }
+
+    @GetMapping(value = "/{projectId}")
+    @ApiOperation(value = "通过项目id得到的病例")
+    public List<CaseDTO> getCaseByProjectId(@PathVariable Long projectId) {
+        return caseService.getCaseByProjectId(projectId);
     }
 
 

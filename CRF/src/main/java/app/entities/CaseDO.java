@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by 52400 on 2017/6/30.
  */
 @Entity
-@Table(name = "case")
+@Table(name = "cases")
 public class CaseDO {
 
     @Id

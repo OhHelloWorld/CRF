@@ -1,6 +1,7 @@
 package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
+import app.Utils.UserMsgTool;
 import app.dto.HospitalDTO;
 import app.dto.ProjectDTO;
 import app.dto.ProjectUsersDTO;
@@ -9,7 +10,6 @@ import app.repo.*;
 import app.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.plugin2.message.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,9 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
     private MessageRepo messageRepo;
+
+    @Autowired
+    private UserMsgTool userMsgTool;
 
     @Override
     public ProjectDTO addProject(ProjectDTO projectDTO) {
@@ -75,8 +78,8 @@ public class ProjectServiceImpl implements ProjectService {
     public void inviteUser(Long userId, Long projectId, Long projectRoleId) {
         MessageDO messageDO = new MessageDO();
         ProjectDO projectDO = projectRepo.findOne(projectId);
-        messageDO.setContent(projectDO.getProjectName() + "项目向你发出邀请！");
-        messageDO.setReceived_user_id(userId);
+        messageDO.setContent(projectDO.getProjectName() + ": 项目向你发出邀请！");
+        messageDO.setReceivedUserId(userId);
         messageDO.setRead(false);
         messageRepo.save(messageDO);
         saveInvited(userId, projectId, projectRoleId);
@@ -108,6 +111,7 @@ public class ProjectServiceImpl implements ProjectService {
         userProjectRoleDO.setProjectId(projectId);
         userProjectRoleDO.setProjectRoleId(projectRoleId);
         userProjectRoleDO.setUserId(userId);
+        userProjectRoleDO.setAccept(false);
 
         ProjectDO projectDO = projectRepo.findOne(projectId);
         UserDO userDO = userRepo.findOne(userId);
@@ -118,6 +122,7 @@ public class ProjectServiceImpl implements ProjectService {
                 projectDO.getHospitalList().add(userDO.getHospital());
                 projectRepo.save(projectDO);
                 userProjectRoleRepo.save(userProjectRoleDO);
+                break;
             }
         }
     }
@@ -139,6 +144,14 @@ public class ProjectServiceImpl implements ProjectService {
     public List<ProjectDTO> getProjectBySearchMsg(String msg) {
         List<ProjectDTO> projectDTOS = new ArrayList<>();
         for(ProjectDO p : projectRepo.getListProjectByMsg(msg)) {
+            projectDTOS.add(convertUtil.convertToProjectDTO(p));
+        }
+        return projectDTOS;
+    }
+
+    public List<ProjectDTO> getCurrentUserProjectList() {
+        List<ProjectDTO> projectDTOS = new ArrayList<>();
+        for(ProjectDO p : projectRepo.getListProject(userMsgTool.getCurrentUserId())) {
             projectDTOS.add(convertUtil.convertToProjectDTO(p));
         }
         return projectDTOS;

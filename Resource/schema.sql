@@ -156,6 +156,7 @@ create table user(
     salt varchar(255) not null,
     hospital_id int not null,
     sys_role_id int default 1,
+    email varchar(100),
     primary key(id)
 );
 #角色表
@@ -165,7 +166,7 @@ create table sys_role(
     primary key(id)
 );
 #角色_权限关联表
-create table role_permission(
+create table sys_role_permission(
     id int not null auto_increment,
     sys_role_id int not null,
     sys_permission_id int not null,
@@ -398,12 +399,12 @@ create table message (
 	id int not null auto_increment,
 	content text not null,
 	received_user_id int not null,
-	read boolean default false,
+	readed boolean default false,
 	primary key(id)
 );
 
 #病例
-create table case(
+create table cases(
 	id int not null auto_increment,
 	case_name varchar(100) not null,
 	case_category varchar(100) not null,

@@ -11,5 +11,7 @@ public interface CaseService {
 
     List<CaseDTO> getCaseByProjectId(Long projectId, Long hospitalId);
 
-    public List<CaseDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName);
+    List<CaseDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName);
+
+    List<CaseDTO> getCaseByProjectId(Long projectId);
 }

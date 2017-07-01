@@ -9,7 +9,16 @@ public class UserDTO {
     private String password;
     private String account;
     private Long hospitalId;
+    private String email;
     private List<SysPermissionDTO> permissionDTOS;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getId() {
         return id;

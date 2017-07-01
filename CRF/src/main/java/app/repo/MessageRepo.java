@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface MessageRepo extends CrudRepository<MessageDO, Long> {
 
-    List<MessageDO> findByUserId(Long userId);
+    List<MessageDO> findByReceivedUserId(Long userId);
 }

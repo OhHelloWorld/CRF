@@ -7,6 +7,7 @@ import app.entities.MessageDO;
 import app.repo.MessageRepo;
 import app.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,8 @@ import java.util.List;
 /**
  * Created by 52400 on 2017/6/30.
  */
+
+@Service
 public class MessageServiceImpl implements MessageService {
 
     @Autowired
@@ -27,7 +30,7 @@ public class MessageServiceImpl implements MessageService {
 
     public List<MessageDTO> getCurrentUserMessage() {
         List<MessageDTO> messageDTOList = new ArrayList<>();
-        for(MessageDO m : messageRepo.findByUserId(userMsgTool.getCurrentUserId())) {
+        for(MessageDO m : messageRepo.findByReceivedUserId(userMsgTool.getCurrentUserId())) {
             messageDTOList.add(convertUtil.convertToMessageDTO(m));
         }
         return messageDTOList;
@@ -36,6 +39,7 @@ public class MessageServiceImpl implements MessageService {
     public void readMessage(Long messageId) {
         MessageDO messageDO = messageRepo.findOne(messageId);
         messageDO.setRead(true);
+        messageRepo.save(messageDO);
     }
 
 }

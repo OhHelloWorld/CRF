@@ -69,9 +69,9 @@ public class ProjectController {
         projectService.acceptInvited(userId, projectName);
     }
 
-    @PostMapping(value = "/{projectId}/Inv")
+    @PostMapping(value = "/Inv")
     @ApiOperation(value = "发送邀请")
-    public void sendInvited(@RequestParam Long userId, @PathVariable(value = "projectId") Long projectId, @RequestParam Long projectRoleId) {
+    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId, @RequestParam Long projectRoleId) {
         projectService.inviteUser(userId, projectId, projectRoleId);
     }
 
@@ -84,7 +84,13 @@ public class ProjectController {
 
     @GetMapping(value = "/msg")
     @ApiOperation(value = "根据项目名字搜索项目")
-    public List<ProjectDTO> getProjetBySearchMsg(String msg) {
+    public List<ProjectDTO> getProjetBySearchMsg(@RequestParam String msg) {
         return projectService.getProjectBySearchMsg(msg);
+    }
+
+    @GetMapping(value = "")
+    @ApiOperation(value = "得到当前用户拥有的项目")
+    public List<ProjectDTO> getCurrentUserProject() {
+        return projectService.getCurrentUserProjectList();
     }
 }

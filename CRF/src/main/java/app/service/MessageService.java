@@ -9,5 +9,7 @@ import java.util.List;
  */
 public interface MessageService {
 
-    public List<MessageDTO> getCurrentUserMessage();
+    List<MessageDTO> getCurrentUserMessage();
+
+    void readMessage(Long messageId);
 }
