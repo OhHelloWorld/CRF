@@ -8,8 +8,9 @@ import '../lib/css/blue.css';
 import 'angular-base64';
 
 import angular from 'angular';
+import LocalStorageModule from 'angular-local-storage';
 
-var login = angular.module('login',['base64']);
+var login = angular.module('login',['base64', LocalStorageModule]);
 
 login.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
   
