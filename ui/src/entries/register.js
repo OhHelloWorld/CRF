@@ -87,7 +87,7 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
       user.password = $scope.password;
       user.realName = $scope.realName;
       user.email = $scope.email;
-      user.hospitalId = $scope.hospital.id;
+      user.hospital.id = $scope.hospital.id;
       console.log('a');
       $http({
         method: 'POST',

@@ -8,7 +8,7 @@ public class UserDTO {
     private String realName;
     private String password;
     private String account;
-    private Long hospitalId;
+    private HospitalDTO hospital;
     private String email;
     private List<SysPermissionDTO> permissionDTOS;
 
@@ -52,12 +52,12 @@ public class UserDTO {
         return this.account;
     }
 
-    public Long getHospitalId() {
-        return hospitalId;
+    public HospitalDTO getHospital() {
+        return hospital;
     }
 
-    public void setHospitalId(Long hospitalId) {
-        this.hospitalId = hospitalId;
+    public void setHospital(HospitalDTO hospital) {
+        this.hospital = hospital;
     }
 
     public List<SysPermissionDTO> getPermissionDTOS() {

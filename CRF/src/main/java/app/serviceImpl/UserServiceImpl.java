@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO addUser(UserDTO userDTO) {
         UserDO userDO = convertUtil.convertToUserDO(userDTO);
         passwordHelper.encrypUserPassword(userDO);
-        userDO.setHospital(hospitalRepo.findOne(userDTO.getHospitalId()));
+        userDO.setHospital(hospitalRepo.findOne(userDTO.getHospital().getId()));
         if(userRepo.findByAccount(userDTO.getAccount()) == null) {
             userDO.setSysRoleDO(sysRoleRepo.findOne(1L));
             userRepo.save(userDO);

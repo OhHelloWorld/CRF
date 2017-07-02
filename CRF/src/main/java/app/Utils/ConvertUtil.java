@@ -296,7 +296,7 @@ public class ConvertUtil {
         userDTO.setRealName(userDO.getRealName());
         userDTO.setId(userDO.getId());
         userDTO.setAccount(userDO.getAccount());
-        userDTO.setHospitalId(userDO.getHospital().getId());
+        userDTO.setHospital(convertHospitalDTO(userDO.getHospital()));
         userDTO.setEmail(userDO.getEmail());
         List<SysPermissionDTO> permissionDTOS = new ArrayList<>();
         for(SysPermissionDO sr: userDO.getSysRoleDO().getListPermission()) {
