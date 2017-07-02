@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -167,23 +167,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="treeview-menu">
             <li class="active"><a ui-sref="createHospital"><i class="fa fa-user-plus"></i><span class="h4">创建医院信息</span></a>
             </li>
-            <li class="active"><a ui-sref="updateHospital"><i class="fa fa-wrench"></i><span class="h4">修改医院信息</span></a>
+            <li class="active"><a ui-sref="updateHospital"><i class="fa fa-wrench"></i><span class="h4">编辑医院信息</span></a>
             </li>
           </ul>
         </li>
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview" ng-repeat="project in projects">
-          <a ui-sref="project.projectDefault" ng-click="click_project()"><i class="fa fa-folder"></i> <span>{{project.name}}</span>
+          <a ui-sref="project.projectDefault" ng-click="click_project(project)"><i class="fa fa-folder"></i> <span>{{project.name}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a ui-sref="invite"><i class="fa fa-user-plus"></i><span class="h4">邀请</span></a>
+            <li class="active" ng-if="invitePermissions[$index]" ><a ui-sref="invite"><i class="fa fa-user-plus"></i><span class="h4">邀请</span></a>
             </li>
-            <li class="active"><a href="main.html" target="view_window"><i class="fa fa-wrench"></i><span class="h4">调整项目表</span></a>
+            <li class="active" ng-if="digustPermissions[$index]" ><a href="main.html" target="view_window"><i class="fa fa-wrench"></i><span class="h4">调整项目表</span></a>
             </li>
-            <li class="active"><a ui-sref="projectSetting"><i class="fa fa-gear"></i><span class="h4">项目设置</span></a>
+            <li class="active" ng-if="settingPermissions[$index]" ><a ui-sref="projectSetting"><i class="fa fa-gear"></i><span class="h4">项目设置</span></a>
             </li>
           </ul>
         </li>
@@ -203,18 +203,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- alert message! -->
 <div class="modal" tabindex="-1" role="dialog" id="messageModal">
-	<div class="modal-dialog">
-		<div class="modal-content" style="width:500px;height:150px;">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<h3 ng-bind="alertMessage"></h3>
-			</div>
-		</div>
-	</div>
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:500px;height:150px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 ng-bind="alertMessage"></h3>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

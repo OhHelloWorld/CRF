@@ -81,14 +81,14 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
   
   var user = {};
   $scope.register = function(){
-    if($scope.judgeAccountExist === false && $scope.judgePasswordExist === false && $scope.judgePasswordEqual === false && $scope.judgeAccountAlready === false &&
+    if($scope.judgeAccountExist === false && $scope.judgePasswordExist === false && $scope.judgePasswordEqual === false && $scope.judgeRealNameExist === false &&
       $scope.judgeSurePasswordExist === false && $scope.judgeHospitalExist === false){
       user.account = $scope.account;
-      user.password = $base64.encode($scope.password);
+      user.password = $scope.password;
       user.realName = $scope.realName;
       user.email = $scope.email;
-      user.hospital = $scope.hospital;
-
+      user.hospitalId = $scope.hospital.id;
+      console.log('a');
       $http({
         method: 'POST',
         url: '/api/users',
@@ -100,6 +100,7 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
         $scope.judgeAccountAlready = true;
       });
     }
+    
   };
   
 }]);
