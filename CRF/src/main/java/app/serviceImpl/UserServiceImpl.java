@@ -70,6 +70,11 @@ public class UserServiceImpl implements UserService {
         return getPageDTO(userRepo.getAllNormalUser(pageable));
     }
 
+    @Override
+    public UserDO getUserDOByAccount(String account) {
+        return userRepo.findByAccount(account);
+    }
+
     public PageDTO<UserDTO> getPageDTO(Page<UserDO> page) {
         PageDTO<UserDTO> pageDTO = new PageDTO<>();
         List<UserDTO> caseDTOList = new ArrayList<>();

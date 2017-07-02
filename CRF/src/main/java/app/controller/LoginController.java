@@ -12,6 +12,7 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,8 @@ public class LoginController {
         String account = userNamePasswordArray[0];
         String password = userNamePasswordArray[1];
         Subject subject = SecurityUtils.getSubject();
-
+        Session session = subject.getSession();
+        session.setAttribute("user", loginService.getUserDOByAccount(account));
         try {
            UsernamePasswordToken token = new UsernamePasswordToken(account, password);
            subject.login(token);
