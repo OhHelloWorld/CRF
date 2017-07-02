@@ -20,4 +20,11 @@ angular.module('invite', [])
     if (sessionStorage.getItem('permission').indexOf('踢出人员') === -1) {
       $('#kicked-out').addClass('hide');
     }
+
+   var user = []; 
+   $scope.url = '/api/users';
+
+
+
+
   }]);

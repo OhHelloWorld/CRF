@@ -13,6 +13,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface HospitalRepo extends PagingAndSortingRepository<HospitalDO, Long> {
 
-    @Query(value = "select h.* from hospital h, project_hospital ph where ph.hospital_id = h.id and project_id = ?2 order by ?#{#pageable}", nativeQuery = true)
+    @Query(value = "select h.* from hospital h, project_hospital ph where ph.hospital_id = h.id and project_id = ?1 order by ?#{#pageable}", nativeQuery = true)
     Page<HospitalDO> getHospitalByProjectId(Long projectId, Pageable pageable);
 }

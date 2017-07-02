@@ -85,6 +85,11 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     url:'/projectSetting',
     template:require('../templates/projectSetting.html'),
     controller: 'projectSettingController'
+  })
+  .state('inviteUsers',{
+    url:'/inviteUsers',
+    template:require('../templates/userList.html'),
+    controller: 'inviteController'
   });
 
   localStorageServiceProvider
