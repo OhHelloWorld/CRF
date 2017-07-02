@@ -63,21 +63,24 @@
           <thead>
             <tr>
               <td>序号</td>
-              <td>病例名称</td>
-              <td>病例类型</td>
-              <td>录入时间</td>
+              <td>病例编号</td>
+              <td>姓名</td>
+              <td>性别</td>
+              <td>年龄</td>
             </tr>
           </thead>
-          <tbody ng-repeat="x in positals">
+          <tbody ng-repeat="x in Illnesses">
             <tr onclick="window.open('/hospitalIllness.html');">
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.identifier}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.identifier}}</td>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{x.name}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.address}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.address}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.telephone}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.telephone}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.gender}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.gender}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.age}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.age}}</td>
             </tr>
           </tbody>
         </table>
@@ -86,7 +89,7 @@
             <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
           </div>
           <div class="col-md-4 text-right">
-            <button type="button" id="train" class="btn btn-lg btn-default" ng-click="goTrain()">病例录入</button>
+            <button type="button" id="writeIllness" class="btn btn-lg btn-default" ng-click="writeIllness()">病例录入</button>
           </div>
         </div>
       </div>

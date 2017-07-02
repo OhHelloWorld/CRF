@@ -20,58 +20,72 @@ angular.module('project', [uiRouter, 'chart.js'])
 
   }])
 
-  .controller('projectDefaultController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('projectDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
     $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
     $scope.data = [65, 55, 35, 50, 80, 60, 55, 45,0];
-    $scope.positals = [
-                        {'name':'上海书馆', 'address':'大笔大道1号', 'telephone':'1391372189'},
-                        {'name':'上海书馆', 'address':'大笔大道1号', 'telephone':'1391372189'},
-                        {'name':'上海书馆', 'address':'大笔大道1号', 'telephone':'1391372189'},
-                        {'name':'上海书馆', 'address':'大笔大道1号', 'telephone':'1391372189'},
-                        {'name':'上海书馆', 'address':'大笔大道1号', 'telephone':'1391372189'}
+    $scope.hospitals = [
+                        {'id':'1', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
+                        {'id':'2', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
+                        {'id':'3', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
+                        {'id':'4', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
+                        {'id':'5', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'}
     ]
+    
+    $scope.url = '/projectHospitals/' + localStorageService.get('project');  
 
-    $scope.click_hospital = function(hospital){ 
-   
+    /**
+    *点击某个项目的某家医院，将其数据序列化到本地库中
+    */
+    $scope.click_hospital = function(hospital){  
       localStorageService.set('hospital', hospital);
+    };
 
-    }
+
   }])
 
-  .controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', function($scope, $http, $state, $stateParams) {
-    $scope.positals = [
-                        {'name':'病例1', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例2', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例3', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例4', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例5', 'address':'发烧，咽炎', 'telephone':'2015-06-25'}
+  .controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', 'localStorageService', function($scope, $http, $state, $stateParams, localStorageService) {
+    $scope.Illnesses = [
+                        {'identifier':'1213468', 'name':'张三', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'李四', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'秦大柱', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'马云飞', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'赵天成', 'gender':'男', 'age':'25'}
     ]
 
-    console.log($stateParams.project_searchInput);
-
-    /* $http({
-      method: 'GET',
-      url: '/projecCases/' + $stateParams.project_searchInput  
-    }).then(function successCallback(response){
-
-    }, function failCallback(repsonse){
-       console.log('暂时没有相关数据！')
-    });
- */
+    $scope.url = '/searchCases/' + $stateParams.project_searchInput + localStorageService.get('project').id;
 
 
   }])
 
   .controller('hospitalDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
-    $scope.positals = [
-                        {'name':'病例1', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例2', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例3', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例4', 'address':'发烧，咽炎', 'telephone':'2015-06-25'},
-                        {'name':'病例5', 'address':'发烧，咽炎', 'telephone':'2015-06-25'}
+    writeIllnessPermission();
+
+    $scope.Illnesses = [
+                        {'identifier':'1213468', 'name':'张三', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'李四', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'秦大柱', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'马云飞', 'gender':'男', 'age':'25'},
+                        {'identifier':'1213468', 'name':'赵天成', 'gender':'男', 'age':'25'}
     ]
+
+    $scope.url = '/projectCases/' + localStorageService.get('hospital').id + localStorageService.get('project').id;
+
+
+    /**
+    *病例录入权限判断，然后进行控制
+    */
+    function writeIllnessPermission(){
+      if(localStorageService.get('project').role.permissions.contains('病例录入')){
+
+      }else{
+        $('#writeIllness').addClass('ng-hide');
+      }
+
+    };
+
+
   }]);
 
 

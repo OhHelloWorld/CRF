@@ -38,6 +38,7 @@ login.controller('loginController', ['$scope', '$http', '$base64', 'localStorage
     }).then(function success(response){
       var compareResult = response.data;
       localStorageService.set('user', compareResult);
+      localStorageService.set('projectList', compareResult);
       $scope.justModalContent = '登录成功，即将跳转！';
       $('#justModal').modal('show');
       setTimeout(function(){

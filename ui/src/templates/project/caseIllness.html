@@ -7,21 +7,24 @@
           <thead>
             <tr>
               <td>序号</td>
-              <td>病例名称</td>
-              <td>病例详情</td>
-              <td>时间</td>
+              <td>病例编号</td>
+              <td>姓名</td>
+              <td>性别</td>
+              <td>年龄</td>
             </tr>
           </thead>
-          <tbody ng-repeat="x in positals">
+          <tbody ng-repeat="x in Illnesses">
             <tr>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.identifier}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.identifier}}</td>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{x.name}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.address}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.address}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.telephone}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.telephone}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.gender}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.gender}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.age}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.age}}</td>
             </tr>
           </tbody>
         </table>

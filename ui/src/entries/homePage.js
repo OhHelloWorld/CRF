@@ -18,12 +18,13 @@ import '../modules/projectSetting.js';
 import '../modules/message.js';
 import '../modules/create_hospital.js';
 import '../modules/update_hospital.js';
+import '../modules/hospital.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'createHospital', 'updateHospital']);
+var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'createHospital', 'updateHospital', 'hospital']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -98,18 +99,57 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
 
   var project1 = {
     name: '测试项目',
-    id: 1
+    id: 1,
+    role: {permissions: ['邀请', '调整项目表', '项目设置', '病例录入']}
   };
   var project2 = {
     name: '测试项目2',
-    id: 2
+    id: 2,
+    role: {permissions: ['调整项目表', '项目设置']}
   };
   var project3 = {
     name: '测试项目3',
-    id: 3
+    id: 3,
+    role: {permissions: ['邀请']}
   }; 
 
   $scope.projects = [project1, project2, project3];
+  
+  
+  $scope.invitePermissions = [];
+  $scope.digustPermissions = [];
+  $scope.settingPermissions = [];
+  projectListPermission();
+
+  /**
+  *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）
+  */
+  function projectListPermission(){
+    angular.forEach($scope.projects, function(data, index){
+      if(data.role.permissions.contains('邀请')){
+        $scope.invitePermissions[index] = true;
+      }else{
+        $scope.invitePermissions[index] = false;
+      }
+      if(data.role.permissions.contains('调整项目表')){
+        $scope.digustPermissions[index] = true;
+      }else{
+        $scope.digustPermissions[index] = false;
+      }
+      if(data.role.permissions.contains('项目设置')){
+        $scope.settingPermissions[index] = true;
+      }else{
+        $scope.settingPermissions[index] = false;
+      }
+    });
+
+  } 
+  
+  
+  
+  
+
+  
 
   /**
    *设置该账户当前点击的项目，并将该账户在该项目下的权限也保存在project对象里
@@ -118,24 +158,36 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     localStorageService.set('project', project);
   }
 
-
+  /**
+   *左侧栏对项目进行搜索
+   */
   $scope.search_project = function(){
 
-   /*  $http({
+    $http({
       method: 'GET',
       url: '/search_projectName'
     }).then(function successCallback(response){
-
-
+      $scope.projects = response.data;
+      projectListPermission();
     }, function failCallback(response){
-      console.log('没有找到相关项目！');
+      
     });
- */
+
   }
 
   
 
 }]);
+
+Array.prototype.contains = function(obj) {
+  var i = this.length;
+  while (i--) {
+    if (this[i] === obj) {
+      return true;
+    }
+  }
+  return false;
+};
 
 
 
