@@ -5,7 +5,7 @@ import '../commons/page.js';
 import '../../node_modules/chart.js/dist/Chart.min.js';
 import '../../node_modules/angular-chart.js/dist/angular-chart.min.js';
 
-angular.module('project', [uiRouter, 'chart.js'])
+angular.module('project', [uiRouter, 'chart.js', 'page'])
   .config(['ChartJsProvider', 'localStorageServiceProvider', function(ChartJsProvider, localStorageServiceProvider) {
     ChartJsProvider.setOptions({ colors : [ '#949FB1', '#4D5360'] });
 
@@ -16,23 +16,23 @@ angular.module('project', [uiRouter, 'chart.js'])
   
   }])
 
-  .controller('projectController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('projectController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    
+    $scope.click_project = localStorageService.get('project');
+
 
   }])
 
   .controller('projectDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-
+    
+    
+    
     $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
     $scope.data = [65, 55, 35, 50, 80, 60, 55, 45,0];
-    $scope.hospitals = [
-                        {'id':'1', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'2', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'3', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'4', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'5', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'}
-    ]
     
-    $scope.url = '/projectHospitals/' + localStorageService.get('project');  
+
+    //得到该项目的所有医院
+    $scope.url = '/api/projects/' + localStorageService.get('project').id + '/hospital';  
 
     /**
     *点击某个项目的某家医院，将其数据序列化到本地库中
