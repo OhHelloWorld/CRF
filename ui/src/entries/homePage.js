@@ -98,12 +98,13 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
   
   sysPermission();
-  // getProjectList();
+  getProjectList();
   
+  $scope.projects = [];
   $scope.invitePermissions = [];
   $scope.digustPermissions = [];
   $scope.settingPermissions = [];
-  projectListPermission();
+  
 
   /**
   *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）
@@ -134,9 +135,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   *对系统的的权限进行判断，（普通用户，管理员）
   */
   function sysPermission(){
-    console.log(localStorageService.get('sysPermissions'));
     angular.forEach(localStorageService.get('sysPermissions'), function(data){
-      console.log(data.sysPermissionName);
       if(data.sysPermissionName === '医院信息'){
         $scope.hospitalPermission = true;
       }
@@ -188,6 +187,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       url: '/api/projects'
     }).then(function successCallback(response){
       $scope.projects = response.data;
+      console.log(response.data);
       getProjectPermission();
     }, function failCallback(response){
       
@@ -206,6 +206,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       });
       data.currentUserPermissionInProject = projectPermissionName;
     });
+    projectListPermission();
   }   
 
 
