@@ -1,15 +1,19 @@
 package app.controller;
 
 import app.dto.HospitalDTO;
+import app.dto.PageDTO;
 import app.dto.ProjectDTO;
 import app.dto.ProjectUsersDTO;
+import app.service.HospitalService;
 import app.service.ProjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
+import java.awt.print.Pageable;
 import java.util.List;
 
 /**
@@ -23,6 +27,9 @@ public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
+
+    @Autowired
+    private HospitalService hospitalService;
 
     @PostMapping(value = "")
     public ProjectDTO addProject(@RequestBody ProjectDTO projectDTO) {
@@ -92,5 +99,11 @@ public class ProjectController {
     @ApiOperation(value = "得到当前用户拥有的项目")
     public List<ProjectDTO> getCurrentUserProject() {
         return projectService.getCurrentUserProjectList();
+    }
+
+    @GetMapping(value = "/{projectId}/hospital")
+    @ApiOperation(value = "通过某个项目id得到拥有的医院")
+    public PageDTO<HospitalDTO> getHospitalsByProjectId(@PathVariable Long projectId, @PageableDefault(value = 15) org.springframework.data.domain.Pageable pageable) {
+        return hospitalService.getHospitalByProjectId(projectId, pageable);
     }
 }

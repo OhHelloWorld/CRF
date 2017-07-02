@@ -3,17 +3,19 @@ package app.serviceImpl;
 import app.Exception.RepeatAccountException;
 import app.Utils.ConvertUtil;
 import app.credential.PasswordHelper;
+import app.dto.PageDTO;
 import app.dto.UserDTO;
-import app.entities.SysRoleDO;
 import app.entities.UserDO;
 import app.repo.HospitalRepo;
 import app.repo.SysRoleRepo;
 import app.repo.UserRepo;
 import app.service.UserService;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,5 +64,20 @@ public class UserServiceImpl implements UserService {
             userDTOList.add(convertUtil.convertToUserDTO(u));
         }
         return userDTOList;
+    }
+
+    public PageDTO<UserDTO> getAllNormalUser(Pageable pageable) {
+        return getPageDTO(userRepo.getAllNormalUser(pageable));
+    }
+
+    public PageDTO<UserDTO> getPageDTO(Page<UserDO> page) {
+        PageDTO<UserDTO> pageDTO = new PageDTO<>();
+        List<UserDTO> caseDTOList = new ArrayList<>();
+        for(UserDO c : page.getContent()) {
+            caseDTOList.add(convertUtil.convertToUserDTO(c));
+        }
+        pageDTO.setTotalNumber(page.getTotalPages());
+        pageDTO.setContent(caseDTOList);
+        return  pageDTO;
     }
 }

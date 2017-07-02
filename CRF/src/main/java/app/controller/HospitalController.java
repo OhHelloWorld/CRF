@@ -1,10 +1,13 @@
 package app.controller;
 
 import app.dto.HospitalDTO;
+import app.dto.PageDTO;
 import app.service.HospitalService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,8 +28,8 @@ public class HospitalController {
 
     @GetMapping(value = "")
     @ApiOperation(value = "得到所有的医院")
-    public List<HospitalDTO> getAllHospital() {
-        return hospitalService.getAllHospital();
+    public PageDTO<HospitalDTO> getAllHospital(@PageableDefault(value = 5) Pageable pageable) {
+        return hospitalService.getAllHospital(pageable);
     }
 
     public String uploadImagFile(@RequestParam("file") MultipartFile file) throws IOException {
@@ -46,4 +49,9 @@ public class HospitalController {
         return hospitalService.getHospitalById(hospitalId);
     }
 
+    @PutMapping(value = "}")
+    @ApiOperation(value = "修改医院")
+    public HospitalDTO updateHospital(@RequestBody HospitalDTO hospitalDTO) {
+        return hospitalService.updateHospital(hospitalDTO);
+    }
 }
