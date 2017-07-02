@@ -60,37 +60,39 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
 
   .controller('hospitalDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
+    $scope.click_hospital = localStorageService.get('hospital');
     writeIllnessPermission();
 
-    $scope.Illnesses = [
-                        {'identifier':'1213468', 'name':'张三', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'李四', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'秦大柱', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'马云飞', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'赵天成', 'gender':'男', 'age':'25'}
-    ]
-
-    $scope.url = '/projectCases/' + localStorageService.get('hospital').id + localStorageService.get('project').id;
+    $scope.Illnesses = [];
+    $scope.url = '/api/case/' + localStorageService.get('project').id + '/' + localStorageService.get('hospital').id;
 
 
     /**
     *病例录入权限判断，然后进行控制
     */
+    
     function writeIllnessPermission(){
-      if(localStorageService.get('project').role.permissions.contains('病例录入')){
-
-      }else{
+      if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
         $('#writeIllness').addClass('ng-hide');
       }
-
     };
+
+
 
 
   }]);
 
 
 
-
+Array.prototype.contains = function(obj) {
+  var i = this.length;
+  while (i--) {
+    if (this[i] === obj) {
+      return true;
+    }
+  }
+  return false;
+};
 
 
 

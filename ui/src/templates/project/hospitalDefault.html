@@ -1,7 +1,7 @@
 ﻿<div class="hospitalDefault">
   <div class="box box-primary">
     <div class="panel panel-default">
-      <div class="panel-heading">上海曙光医院</div>
+      <div class="panel-heading">{{click_hospital.hospitalName}}</div>
       <div class="panel-body">
         <div class="col-md-12">
           <div class="col-md-6">
@@ -19,33 +19,33 @@
                 <tr style="height:50px;">
                   <td class="col-md-6">
                     <strong>中文名称：</strong>
-                    <span>上海曙光医院</span>
+                    <span>{{click_hospital.hospitalName}}</span>
                   </td>
                   <td class="col-md-6">
                     <strong>所在地区：</strong>
-                    <span>上海</span>
+                    <span>{{click_hospital.address}}</span>
                   </td>
                 </tr>
                 <tr style="height:50px;">
                   <td class="col-md-6">
                     <strong>特色专科：</strong>
-                    <span>肝肠骨科</span>
+                    <span>{{click_hospital.specialMajor}}</span>
                   </td>
                   <td class="col-md-6">
                     <strong>经营范围：</strong>
-                    <span>医疗机构</span>
+                    <span>{{click_hospital.manageRange}}</span>
                   </td>
                 </tr>
                 <tr style="height:50px;">
                   <td class="col-md-6">
                     <strong>医院联系地址：</strong>
-                    <span>上海浦东新区张江高科技园区张衡路288号</span>
+                    <span>{{click_hospital.addressDetail}}</span>
                   </td>
                 </tr>    
                 <tr style="height:50px;">
                   <td class="col-md-6">
                     <strong>医院联系电话：</strong>
-                    <span>021-44489865</span>
+                    <span>{{click_hospital.telephone}}</span>
                   </td>
                 </tr>              
               </tbody>
@@ -63,33 +63,30 @@
           <thead>
             <tr>
               <td>序号</td>
-              <td>病例编号</td>
-              <td>姓名</td>
-              <td>性别</td>
-              <td>年龄</td>
+              <td>案例名称</td>
+              <td>案例类型</td>
+              <td>案例录入时间</td>
             </tr>
           </thead>
           <tbody ng-repeat="x in Illnesses">
             <tr onclick="window.open('/hospitalIllness.html');">
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.identifier}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.identifier}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.name}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.gender}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.gender}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.age}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.age}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseName}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseName}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseCategory}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseCategory}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.createTime}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.createTime}}</td>
             </tr>
           </tbody>
         </table>
         <div class="col col-md-12">
           <div class="col-md-8">
-            <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+            <div class="page ng-hide" my-directive url={{url}} get-data="Illnesses"></div>
           </div>
           <div class="col-md-4 text-right">
-            <button type="button" id="writeIllness" class="btn btn-lg btn-default" ng-click="writeIllness()">病例录入</button>
+            <button type="button" id="writeIllness" class="btn btn-lg btn-default" ng-click="writeIllness()">新增案例</button>
           </div>
         </div>
       </div>
