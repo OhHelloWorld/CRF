@@ -14,7 +14,7 @@ INSERT INTO `sys_role`(`sys_role_name`)VALUES("normal");
 INSERT INTO `sys_role`(`sys_role_name`)VALUES("manager");
 
 ##系统权限表
-INSERT INTO `sys_permission`(`sys_permission_name`)VALUES("添加医院");
+INSERT INTO `sys_permission`(`sys_permission_name`)VALUES("医院信息");
 INSERT INTO `sys_permission`(`sys_permission_name`)VALUES("普通使用");
 
 ##系统权限角色关联

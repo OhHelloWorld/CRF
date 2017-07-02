@@ -29,21 +29,20 @@ login.controller('loginController', ['$scope', '$http', '$base64', 'localStorage
   });
 
   $scope.login = function() {
-    var authValue = $base64.encode($scope.account + '#' + $scope.password);
+    var authKey = $base64.encode($scope.account + ':' + $scope.password);
     $http({
       method:'GET',
       url:'/api/login',
       headers:{
-        'Authorization' : authValue
+        'Authorization': 'Basic ' + authKey
       }
     }).then(function success(response){
-      var compareResult = response.data;
-      localStorageService.set('user', compareResult);
-      localStorageService.set('projectList', compareResult);
+      localStorageService.set('user', response.data);
+      localStorageService.set('sysPermissions', response.data.permissionDTOS);
       $scope.justModalContent = '登录成功，即将跳转！';
       $('#justModal').modal('show');
       setTimeout(function(){
-        window.location.href = 'http://localhost:9000/main.html#!/home';
+        window.location.href = '/homePage.html';
       }, 500);
     }, function failed() {
         $scope.justModalContent = '账号或验证码输入错误，请检查后重新登陆！';

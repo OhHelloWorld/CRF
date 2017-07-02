@@ -96,25 +96,9 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 }]);
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
-
-  var project1 = {
-    name: '测试项目',
-    id: 1,
-    role: {permissions: ['邀请', '调整项目表', '项目设置', '病例录入']}
-  };
-  var project2 = {
-    name: '测试项目2',
-    id: 2,
-    role: {permissions: ['调整项目表', '项目设置']}
-  };
-  var project3 = {
-    name: '测试项目3',
-    id: 3,
-    role: {permissions: ['邀请']}
-  }; 
-
-  $scope.projects = [project1, project2, project3];
   
+  sysPermission();
+  // getProjectList();
   
   $scope.invitePermissions = [];
   $scope.digustPermissions = [];
@@ -126,17 +110,17 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   */
   function projectListPermission(){
     angular.forEach($scope.projects, function(data, index){
-      if(data.role.permissions.contains('邀请')){
+      if(data.currentUserPermissionInProject.contains('邀请')){
         $scope.invitePermissions[index] = true;
       }else{
         $scope.invitePermissions[index] = false;
       }
-      if(data.role.permissions.contains('调整项目表')){
+      if(data.currentUserPermissionInProject.contains('编辑项目相关内容')){
         $scope.digustPermissions[index] = true;
       }else{
         $scope.digustPermissions[index] = false;
       }
-      if(data.role.permissions.contains('项目设置')){
+      if(data.currentUserPermissionInProject.contains('项目设置')){
         $scope.settingPermissions[index] = true;
       }else{
         $scope.settingPermissions[index] = false;
@@ -144,10 +128,21 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     });
 
   } 
-  
-  
-  
-  
+
+
+  /**
+  *对系统的的权限进行判断，（普通用户，管理员）
+  */
+  function sysPermission(){
+    console.log(localStorageService.get('sysPermissions'));
+    angular.forEach(localStorageService.get('sysPermissions'), function(data){
+      console.log(data.sysPermissionName);
+      if(data.sysPermissionName === '医院信息'){
+        $scope.hospitalPermission = true;
+      }
+    });
+
+  }  
 
   
 
@@ -175,7 +170,44 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
 
   }
 
-  
+  /**
+  *对是否登录进入首页进行判断，（未登录跳回登陆页面）
+  */
+  function loginStatus(){
+    if(!localStorageService.get('user')){
+      window.location.href = '/login.html';
+    }
+  }   
+
+  /**
+  *请求得到该用户的所有项目
+  */
+  function getProjectList(){
+    $http({
+      method: 'GET',
+      url: '/api/projects'
+    }).then(function successCallback(response){
+      $scope.projects = response.data;
+      getProjectPermission();
+    }, function failCallback(response){
+      
+    });
+  }   
+
+
+  /**
+  *过滤用户每个项目下的权限
+  */  
+  function getProjectPermission(){    
+    angular.forEach($scope.projects, function(data){
+      var projectPermissionName = [];
+      angular.forEach(data.currentUserPermissionInProject, function(permission_data){
+        projectPermissionName.push(permission_data.projectPermissionName);
+      });
+      data.currentUserPermissionInProject = projectPermissionName;
+    });
+  }   
+
 
 }]);
 
