@@ -1,9 +1,7 @@
 package app.service;
 
-import app.dto.HospitalDTO;
-import app.dto.ProjectDTO;
-import app.dto.ProjectUsersDTO;
-import app.dto.UserDTO;
+import app.dto.*;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -22,7 +20,7 @@ public interface ProjectService {
 
     ProjectDTO updateProject(ProjectDTO projectDTO);//更新项目1
 
-    void inviteUser(Long userId, Long projectId, Long projectRoleId);//邀请用户进项目
+    void inviteUser(Long userId, Long projectId, String projectRoleId);//邀请用户进项目
 
     List<HospitalDTO> getProjectHospitalList(Long projectId);//得到项目的医院列表
 
@@ -37,4 +35,8 @@ public interface ProjectService {
     List<ProjectDTO> getCurrentUserProjectList();//得到当前用户下的项目列表
 
     void deleteMeber(Long userId, Long projectId);//踢出
+
+    PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable);
+
+    PageDTO<UserDTO> getProjectNotInUser(Long projectId, Pageable pageable);
 }

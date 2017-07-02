@@ -1,19 +1,17 @@
 package app.controller;
 
-import app.dto.HospitalDTO;
-import app.dto.PageDTO;
-import app.dto.ProjectDTO;
-import app.dto.ProjectUsersDTO;
+import app.dto.*;
 import app.service.HospitalService;
 import app.service.ProjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
-import java.awt.print.Pageable;
+
 import java.util.List;
 
 /**
@@ -66,8 +64,14 @@ public class ProjectController {
 
     @GetMapping(value = "/{projectId}/users")
     @ApiOperation(value = "根据projectId得到项目下面的用户")
-    public List<ProjectUsersDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId) {
-        return projectService.getUsersInProject(projectId);
+    public PageDTO<UserDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId, @PageableDefault(value = 15) Pageable pageable) {
+        return projectService.getProjectUser(projectId, pageable);
+    }
+
+    @GetMapping(value = "/{projectId}/invUsers")
+    @ApiOperation(value = "得到不是这个项目下的user")
+    public PageDTO<UserDTO> getUsersNotInProject(@PathVariable Long projectId, @PageableDefault(value = 15) Pageable pageable) {
+        return projectService.getProjectNotInUser(projectId, pageable);
     }
 
     @PostMapping(value = "/acceptInv")
@@ -78,8 +82,8 @@ public class ProjectController {
 
     @PostMapping(value = "/Inv")
     @ApiOperation(value = "发送邀请")
-    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId, @RequestParam Long projectRoleId) {
-        projectService.inviteUser(userId, projectId, projectRoleId);
+    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId, @RequestParam String inviteType) {
+        projectService.inviteUser(userId, projectId, inviteType);
     }
 
     @PostMapping(value = "/rejectInv")
@@ -112,4 +116,6 @@ public class ProjectController {
     public void rejectInvited(@RequestParam Long userId, @RequestParam Long projectId) {
         projectService.deleteMeber(userId, projectId);
     }
+
+
 }

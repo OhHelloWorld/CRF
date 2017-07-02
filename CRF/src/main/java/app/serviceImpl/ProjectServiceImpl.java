@@ -75,7 +75,7 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void inviteUser(Long userId, Long projectId, Long projectRoleId) {
+    public void inviteUser(Long userId, Long projectId, String projectRoleId) {
         MessageDO messageDO = new MessageDO();
         ProjectDO projectDO = projectRepo.findOne(projectId);
         messageDO.setContent(projectDO.getProjectName() + ": 项目向你发出邀请！");
@@ -106,10 +106,10 @@ public class ProjectServiceImpl implements ProjectService {
         return projectUsersDTOS;
     }
 
-    public void saveInvited(Long userId, Long projectId, Long projectRoleId) {
+    public void saveInvited(Long userId, Long projectId, String projectRoleId) {
         UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
         userProjectRoleDO.setProjectId(projectId);
-        userProjectRoleDO.setProjectRoleId(projectRoleId);
+        userProjectRoleDO.setProjectRoleId(projectRoleRepo.findByProjectRoleName(projectRoleId).getId());
         userProjectRoleDO.setUserId(userId);
         userProjectRoleDO.setAccept(false);
 
@@ -166,10 +166,24 @@ public class ProjectServiceImpl implements ProjectService {
     public PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable) {
         PageDTO<UserDTO> page = new PageDTO<>();
         List<UserDTO> users = new ArrayList<>();
-        for(UserDO u : userRepo.getUserByProjectDTO(projectId, pageable)) {
+        Page<UserDO> page1 = userRepo.getUserByProjectDTO(projectId, pageable);
+        for(UserDO u : page1) {
             users.add(convertUtil.convertToUserDTO(u));
         }
+        page.setContent(users);
+        page.setTotalNumber(page1.getTotalPages());
         return page;
+    }
 
+    public PageDTO<UserDTO> getProjectNotInUser(Long projectId, Pageable pageable) {
+        PageDTO<UserDTO> page = new PageDTO<>();
+        List<UserDTO> users = new ArrayList<>();
+        Page<UserDO> page1 = userRepo.getUserNotInByProjectDTO(projectId, pageable);
+        for(UserDO u : page1) {
+            users.add(convertUtil.convertToUserDTO(u));
+        }
+        page.setContent(users);
+        page.setTotalNumber(page1.getTotalPages());
+        return page;
     }
 }

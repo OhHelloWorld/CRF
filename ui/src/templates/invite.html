@@ -31,29 +31,35 @@
         <table class="table table-hover table-bordered">
           <thead>
             <tr>
+          
               <td>序号</td>
               <td>姓名</td>
               <td>医院</td>
               <td>联系电话</td>
             </tr>
           </thead>
-          <tbody >
+          <tbody ng-repeat="x in inviteUsers">
             <tr>
-             <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
+            
+              <td>{{$index + 1}}</td>
+              <td>{{x.realName}}</td>
+              <td>{{x.hospital.hospitalName}}</td>
+              <td>{{x.account}}</td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="getRemoveName(x.realName, x.id)">
+              踢出
+              </button></td>
             </tr>
           </tbody>
-        </table>
+        </table> 
       </div>
     </div>
-    <input id="co-sponsor" type="button" value="邀请联合发起人" ng-click="users()">
-    <input id="data-manager" type="button" value="邀请数据管理员">
-    <input id="sub-center-researcher" type="button" value="邀请分中心研究者">
-    <input id="clinical-examiner" type="button" value="邀请临床检查员">
-    <input id="reporter" type="button" value="邀请录入员" >
-    <input id="kicked-out" type="button" value="踢出人员">
+    <input id="co-sponsor" class="btn btn-primary" type="button" value="邀请联合发起人" ng-click="users('联合发起人')"> 
+    <input id="data-manager" class="btn btn-primary" type="button" value="邀请数据管理员" ng-click="users('数据管理员')">
+    <input id="sub-center-researcher" class="btn btn-primary" type="button" value="邀请分中心研究者" ng-click="users('分中心研究者')">
+    <input id="clinical-examiner" class="btn btn-primary" type="button" value="邀请临床检查员" ng-click="users('临床检查员')">
+    <input id="reporter" class="btn btn-primary" type="button" value="邀请录入员" ng-click="users('录入员')">
+    
+    <div class="page ng-hide" my-directive url={{inviteUrl}} get-data="inviteUsers"></div>
   </div>
 </div>
                 </section>
@@ -66,3 +72,26 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+
+ <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        是否踢出: {{removeName}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="remove()">是 </button>
+      </div>
+    </div>
+  </div>
+</div>
