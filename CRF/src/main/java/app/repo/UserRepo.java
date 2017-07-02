@@ -1,6 +1,10 @@
 package app.repo;
 
+import app.dto.PageDTO;
+import app.dto.UserDTO;
 import app.entities.UserDO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -20,4 +24,7 @@ public interface UserRepo extends CrudRepository<UserDO, Long> {
             "u.user_name like %?1% or" +
             " account like %?1%", nativeQuery = true)
     List<UserDO> findUserBySearchMsg(String msg);
+
+    @Query(value = "select * from user where sys_role_id = 1 order by ?#{#pageable}", nativeQuery = true)
+    Page<UserDO> getAllNormalUser(Pageable pageable);
 }

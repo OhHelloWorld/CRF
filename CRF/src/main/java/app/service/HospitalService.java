@@ -1,6 +1,8 @@
 package app.service;
 
 import app.dto.HospitalDTO;
+import app.dto.PageDTO;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -12,11 +14,15 @@ import java.util.List;
  */
 public interface HospitalService {
 
-    List<HospitalDTO> getAllHospital();
+    PageDTO<HospitalDTO> getAllHospital(Pageable pageable);
 
-    public void saveImag(MultipartFile file) throws IOException;
+    void saveImag(MultipartFile file) throws IOException;
 
-    public HospitalDTO addHospital(HospitalDTO hospitalDTO);
+    HospitalDTO addHospital(HospitalDTO hospitalDTO);
 
-    public HospitalDTO getHospitalById(Long hospitalId);
+    HospitalDTO getHospitalById(Long hospitalId);
+
+    PageDTO<HospitalDTO> getHospitalByProjectId(Long projectId, Pageable pageable);
+
+    HospitalDTO updateHospital(HospitalDTO hospitalDTO);
 }

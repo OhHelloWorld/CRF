@@ -1,14 +1,14 @@
 package app.controller;
 
+import app.dto.PageDTO;
 import app.dto.UserDTO;
 import app.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by 52400 on 2017/6/20.
@@ -26,4 +26,12 @@ public class UserController {
     public UserDTO register(@RequestBody UserDTO userDTO) {
         return userService.addUser(userDTO);
     }
+
+
+    @GetMapping(value = "")
+    @ApiOperation(value = "得到所有普通用户")
+    public PageDTO<UserDTO> register(@PageableDefault(value = 15) Pageable pageable) {
+        return userService.getAllNormalUser(pageable);
+    }
+
 }

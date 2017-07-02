@@ -1,6 +1,8 @@
 package app.service;
 
 import app.dto.CaseDTO;
+import app.dto.PageDTO;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -9,9 +11,9 @@ import java.util.List;
  */
 public interface CaseService {
 
-    List<CaseDTO> getCaseByProjectId(Long projectId, Long hospitalId);
+    PageDTO<CaseDTO> getCaseByProjectId(Long projectId, Long hospitalId, Pageable pageable);
 
-    List<CaseDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName);
+    PageDTO<CaseDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName, Pageable pageable);
 
-    List<CaseDTO> getCaseByProjectId(Long projectId);
+    PageDTO<CaseDTO> getCaseByProjectId(Long projectId, Pageable pageable);
 }
