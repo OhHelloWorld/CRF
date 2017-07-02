@@ -37,27 +37,22 @@
               <td>联系电话</td>
             </tr>
           </thead>
-          <tbody ng-repeat="x in positals">
+          <tbody >
             <tr>
-              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
-              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
-              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
-              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
-              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}</td>
-              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}</td>
-              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
-              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
+             <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
             </tr>
           </tbody>
         </table>
-        <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
       </div>
     </div>
-    <input id="co-sponsor" type="button" value="邀请联合发起人">
+    <input id="co-sponsor" type="button" value="邀请联合发起人" ng-click="users()">
     <input id="data-manager" type="button" value="邀请数据管理员">
     <input id="sub-center-researcher" type="button" value="邀请分中心研究者">
     <input id="clinical-examiner" type="button" value="邀请临床检查员">
-    <input id="reporter" type="button" value="邀请录入员">
+    <input id="reporter" type="button" value="邀请录入员" >
     <input id="kicked-out" type="button" value="踢出人员">
   </div>
 </div>

@@ -27,4 +27,7 @@ public interface UserRepo extends CrudRepository<UserDO, Long> {
 
     @Query(value = "select * from user where sys_role_id = 1 order by ?#{#pageable}", nativeQuery = true)
     Page<UserDO> getAllNormalUser(Pageable pageable);
+
+    @Query(value = "select u.* from user u, user_project_role upr where u.id = upr.user_id and upr.project_id = ?1 order by ?#{#pageable}", nativeQuery = true)
+    Page<UserDO> getUserByProjectDTO(Long projectId, Pageable pageable);
 }

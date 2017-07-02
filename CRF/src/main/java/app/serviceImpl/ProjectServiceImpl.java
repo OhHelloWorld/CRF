@@ -2,13 +2,13 @@ package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
 import app.Utils.UserMsgTool;
-import app.dto.HospitalDTO;
-import app.dto.ProjectDTO;
-import app.dto.ProjectUsersDTO;
+import app.dto.*;
 import app.entities.*;
 import app.repo.*;
 import app.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -161,5 +161,15 @@ public class ProjectServiceImpl implements ProjectService {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectId);
         userProjectRoleDO.setAccept(false);
         userProjectRoleRepo.save(userProjectRoleDO);
+    }
+
+    public PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable) {
+        PageDTO<UserDTO> page = new PageDTO<>();
+        List<UserDTO> users = new ArrayList<>();
+        for(UserDO u : userRepo.getUserByProjectDTO(projectId, pageable)) {
+            users.add(convertUtil.convertToUserDTO(u));
+        }
+        return page;
+
     }
 }

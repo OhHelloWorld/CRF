@@ -21,8 +21,17 @@ angular.module('invite', [])
       $('#kicked-out').addClass('hide');
     }
 
-   var user = []; 
-   $scope.url = '/api/users';
+    // var invitedUsers = [];
+    // $scope.invitedUrl = ''
+
+   $scope.users = function() {
+     console.log(2333);
+     // var user = []; 
+     // $scope.url = '/api/users';
+     // $state.go('inviteUsers');
+   }
+  
+
 
 
 
