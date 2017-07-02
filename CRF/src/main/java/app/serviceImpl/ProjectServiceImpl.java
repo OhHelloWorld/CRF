@@ -156,4 +156,10 @@ public class ProjectServiceImpl implements ProjectService {
         }
         return projectDTOS;
     }
+
+    public void deleteMeber(Long userId, Long projectId) {
+        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectId);
+        userProjectRoleDO.setAccept(false);
+        userProjectRoleRepo.save(userProjectRoleDO);
+    }
 }

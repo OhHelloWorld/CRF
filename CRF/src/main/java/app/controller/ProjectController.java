@@ -106,4 +106,10 @@ public class ProjectController {
     public PageDTO<HospitalDTO> getHospitalsByProjectId(@PathVariable Long projectId, @PageableDefault(value = 15) org.springframework.data.domain.Pageable pageable) {
         return hospitalService.getHospitalByProjectId(projectId, pageable);
     }
+
+    @PostMapping(value = "/demeber")
+    @ApiOperation(value = "踢出人员")
+    public void rejectInvited(@RequestParam Long userId, @RequestParam Long projectId) {
+        projectService.deleteMeber(userId, projectId);
+    }
 }
