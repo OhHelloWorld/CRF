@@ -112,6 +112,7 @@ public class ProjectServiceImpl implements ProjectService {
         UserDO userDO = userRepo.findOne(userId);
         for(HospitalDO h : projectDO.getHospitalList()){
             if(h.getId() == userDO.getHospital().getId()) {
+                userProjectRoleRepo.save(userProjectRoleDO);
                 break;
             }else {
                 projectDO.getHospitalList().add(userDO.getHospital());
@@ -120,6 +121,7 @@ public class ProjectServiceImpl implements ProjectService {
                 break;
             }
         }
+
     }
 
     public void acceptInvited(Long userId, String projectName) {
