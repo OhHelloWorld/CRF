@@ -10,7 +10,7 @@ angular.module('projectSetting', [])
       if($scope.statusButton){
         $http({
           method: 'PUT',
-          url: '/api/projects/data?isCollect=false/projectId=' + localStorageService.get('project').id
+          url: '/api/projects/data?isCollect=false&&projectId=' + localStorageService.get('project').id
         }).then(function successCallback(response){
           $rootScope.alertMessage = '已关闭数据收集功能';
           $('#messageModal').modal('show');
@@ -22,7 +22,7 @@ angular.module('projectSetting', [])
       }else{
         $http({
           method: 'PUT',
-          url: '/api/projects/data?isCollect=true/projectId=' + localStorageService.get('project').id
+          url: '/api/projects/data?isCollect=true&&projectId=' + localStorageService.get('project').id
         }).then(function successCallback(response){
           $rootScope.alertMessage = '已打开数据收集功能';
           $('#messageModal').modal('show');
@@ -54,9 +54,9 @@ angular.module('projectSetting', [])
 
     function isCollect(){
       if($scope.statusButton){
-        $scope.status_button = '打开数据收集';
-      }else{
         $scope.status_button = '暂停数据收集';
+      }else{
+        $scope.status_button = '打开数据收集';
       }
     };
 
