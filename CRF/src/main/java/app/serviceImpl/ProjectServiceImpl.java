@@ -110,10 +110,17 @@ public class ProjectServiceImpl implements ProjectService {
 
         ProjectDO projectDO = projectRepo.findOne(projectId);
         UserDO userDO = userRepo.findOne(userId);
-       
-
+        for(HospitalDO h : projectDO.getHospitalList()){
+            if(h.getId() == userDO.getHospital().getId()) {
                 userProjectRoleRepo.save(userProjectRoleDO);
-
+                break;
+            }else {
+                projectDO.getHospitalList().add(userDO.getHospital());
+                projectRepo.save(projectDO);
+                userProjectRoleRepo.save(userProjectRoleDO);
+                break;
+            }
+        }
     }
 
     public void acceptInvited(Long userId, String projectName) {

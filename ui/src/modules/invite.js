@@ -28,7 +28,6 @@ angular.module('invite', [])
      $scope.inviteUrl = '/api/projects/' + localStorageService.get('project').id + '/users';
      var users = []; 
      $scope.url = '/api/projects/' + localStorageService.get('project').id + '/invUsers';
-     console.log(users);
 
     $scope.backInvite = function() {
       
@@ -73,6 +72,11 @@ angular.module('invite', [])
       }, function() {
 
       })
+    }
+
+    $scope.search_users = function(){
+
+      $scope.url = '/api/users/userName/' + $scope.user_searchInput + '/' + localStorageService.get('project').id;
     }
 
   }]);

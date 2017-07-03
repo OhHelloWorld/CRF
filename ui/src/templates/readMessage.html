@@ -33,10 +33,10 @@
                             <div class="col col-md-12" style="margin-top:150px;">
                             <div class="col col-md-6 pull-right">
                               <div class="col col-md-6">
-                                <button type="button" id="projectWrite" class="btn btn-lg btn-primary" ng-click="receive_invite()">接受邀请</button>
+                                <button type="button" id="receive" class="btn btn-lg btn-primary" ng-disabled="receiveDisabled" ng-click="receive_invite()" ng-bind="receiveName"></button>
                               </div>
                               <div class="col col-md-6">
-                                <button data-toggle="modal" data-target="#remove_projectModal" class="btn btn-lg btn-default" style="color:red;">拒绝邀请</button>
+                                <button data-toggle="modal" data-target="#remove_projectModal" id="refuse" class="btn btn-lg btn-default" ng-disabled="refuseDisabled" style="color:red;" ng-bind="refuseName"></button>
                               </div>
                               
                             </div>
