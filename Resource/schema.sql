@@ -217,7 +217,7 @@ create table hospital(
     telephone varchar(30) not null,
     special_major varchar(100) not null,
     manage_range varchar(100) not null,
-    
+    introduction text,
     image_url varchar(255) not null,
     primary key(id)
 );
