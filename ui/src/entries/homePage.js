@@ -245,6 +245,18 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     projectListPermission();
   }   
 
+  $scope.sign_out = function(){
+    $http({
+      method: 'GET',
+      url: '/api/logout'
+    }).then(function successCallback(response){
+      window.location.href = '/login.html';
+    }, function failCallback(response){
+      
+    });
+
+  }
+
 
 }]);
 
