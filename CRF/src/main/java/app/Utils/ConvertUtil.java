@@ -321,6 +321,7 @@ public class ConvertUtil {
         projectDO.setIntroduction(projectDTO.getIntroduction());
         projectDO.setOrganizer(userTool.getCurrentUserAccount());
         projectDO.setProjectName(projectDTO.getProjectName());
+        projectDO.setCollect(true);
         return projectDO;
     }
 
@@ -331,6 +332,7 @@ public class ConvertUtil {
         projectDTO.setIntroduction(projectDO.getIntroduction());
         projectDTO.setOrganizer(projectDO.getOrganizer());
         projectDTO.setProjectName(projectDO.getProjectName());
+        projectDTO.setCollect(projectDO.isCollect());
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
         for(HospitalDO h : projectDO.getHospitalList()) {
             hospitalDTOS.add(convertHospitalDTO(h));

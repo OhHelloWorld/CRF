@@ -206,6 +206,7 @@ create table project(
     organizer varchar(30) not null,
     create_time datetime not null,
     Introduction text not null,
+    is_collect boolean default true,
     primary key(id)
 );
 #医院表

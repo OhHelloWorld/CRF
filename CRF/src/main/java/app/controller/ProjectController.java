@@ -118,5 +118,11 @@ public class ProjectController {
         projectService.deleteMeber(userId, projectId);
     }
 
+    @PutMapping(value = "/data")
+    @ApiOperation(value = "关闭或者开启")
+    public void dataCollecrChange(@RequestParam String isCollect, @RequestParam Long projectId) {
+        projectService.dataCollectChange(isCollect, projectId);
+    }
+
 
 }

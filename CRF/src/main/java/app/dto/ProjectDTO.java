@@ -22,6 +22,8 @@ public class ProjectDTO {
 
     private List<UserDTO> userDTOList;
 
+    private boolean collect;
+
     public List<UserDTO> getUserDTOList() {
         return userDTOList;
     }
@@ -86,5 +88,13 @@ public class ProjectDTO {
 
     public void setIntroduction(String introduction) {
         Introduction = introduction;
+    }
+
+    public boolean isCollect() {
+        return collect;
+    }
+
+    public void setCollect(boolean collect) {
+        this.collect = collect;
     }
 }
