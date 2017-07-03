@@ -1,0 +1,72 @@
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">消息查看</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>系统消息</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+                    <div class="box box-primary">
+                      <div class="panel panel-default panel-chart" style="height:400px;">
+                        <div class="panel-heading">邀请消息</div>
+                        <div class="panel-body">
+                            <h3>邀请通知:</h3>
+                            <h4 class="filename" style="margin-left:100px;">{{readMessage.content}}</h4>
+                            <div class="col col-md-12" style="margin-top:150px;">
+                            <div class="col col-md-6 pull-right">
+                              <div class="col col-md-6">
+                                <button type="button" id="receive" class="btn btn-lg btn-primary" ng-disabled="receiveDisabled" ng-click="receive_invite()" ng-bind="receiveName"></button>
+                              </div>
+                              <div class="col col-md-6">
+                                <button data-toggle="modal" data-target="#remove_projectModal" id="refuse" class="btn btn-lg btn-default" ng-disabled="refuseDisabled" style="color:red;" ng-bind="refuseName"></button>
+                              </div>
+                              
+                            </div>
+                          </div>      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="remove_projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">拒绝邀请</h4>
+            </div>
+            <div class="modal-body">你正在拒绝邀请</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" ng-click="refuse_invite()">拒绝</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

@@ -19,12 +19,13 @@ import '../modules/message.js';
 import '../modules/create_hospital.js';
 import '../modules/update_hospital.js';
 import '../modules/hospital.js';
+import '../modules/readMessage.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'createHospital', 'updateHospital', 'hospital']);
+var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'readMessage', 'createHospital', 'updateHospital', 'hospital']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -39,6 +40,11 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     url:'/message',
     template:require('../templates/message.html'),
     controller: 'messageController'
+  })
+  .state('readMessage',{
+    url:'/readMessage',
+    template:require('../templates/readMessage.html'),
+    controller: 'readMessageController'
   })
   .state('createHospital',{
     url:'/createHospital',
@@ -102,6 +108,9 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
   
+  getMessageInfos();
+  $scope.user = localStorageService.get('user');
+
   sysPermission();
   getProjectList();
   
@@ -110,6 +119,29 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   $scope.digustPermissions = [];
   $scope.settingPermissions = [];
   
+  /**
+  *获取未读邀请消息
+  */
+  function getMessageInfos(){
+    $http({
+      method: 'GET',
+      url: '/api/message/noRead'
+    }).then(function successCallback(response){
+      $scope.messageInfos = response.data;
+      $scope.newMessageCount = response.data.length;
+    }, function failCallback(response){
+      
+    });
+
+  };
+
+  /**
+  *进入单个未读信息
+  */
+  $scope.clickMessage = function(messageInfo){
+    localStorageService.set('message', messageInfo);
+  };
+
 
   /**
   *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）

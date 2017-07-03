@@ -6,13 +6,8 @@ import '../../node_modules/chart.js/dist/Chart.min.js';
 import '../../node_modules/angular-chart.js/dist/angular-chart.min.js';
 
 angular.module('project', [uiRouter, 'chart.js', 'page'])
-  .config(['ChartJsProvider', 'localStorageServiceProvider', function(ChartJsProvider, localStorageServiceProvider) {
+  .config(['ChartJsProvider', function(ChartJsProvider) {
     ChartJsProvider.setOptions({ colors : [ '#949FB1', '#4D5360'] });
-
-    localStorageServiceProvider
-      .setPrefix('login')
-      .setStorageType('sessionStorage')
-      .setNotify(true, true);
   
   }])
 
@@ -72,8 +67,12 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     *病例录入权限判断，然后进行控制
     */   
     function writeIllnessPermission(){
-      if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
-        $('#writeIllness').addClass('ng-hide');
+      if(localStorageService.get('project').isCollect){
+        if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
+          $('#writeIllness').addClass('ng-hide');
+        }
+      }else{
+          $('#writeIllness').addClass('ng-hide');
       }
     };
 

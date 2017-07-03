@@ -1,4 +1,4 @@
-package app.serviceImpl;
+﻿package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
 import app.Utils.UserMsgTool;
@@ -121,7 +121,6 @@ public class ProjectServiceImpl implements ProjectService {
                 break;
             }
         }
-
     }
 
     public void acceptInvited(Long userId, String projectName) {

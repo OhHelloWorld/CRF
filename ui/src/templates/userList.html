@@ -21,6 +21,18 @@
             </div>
             <div class="tab-content">
               <div class="project-content">
+                <section class="search">
+                  <form class="sidebar-form" style="width:450px;height:55px;">
+                    <div class="input-group" style="height:100%;">
+                    <input type="text" ng-model="user_searchInput" name="q" class="form-control" placeholder="请输入用户名称" style="height:100%;width:364px;background-color:white;">
+                    <span class="input-group-btn">
+                      <button type="submit" name="search" id="search-btn" class="btn btn-flat" ng-click="search_users()" style="height:100%;width:84px;background-color:#716d65;"><i class="fa fa-3x fa-search"></i>
+                      </button>
+                    </span>
+                    </div>
+                  </form>
+                </section>
+                <hr>
                 <section class="body">
                   <div class="inviteDefault">
   <div class="box box-primary">
