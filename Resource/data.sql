@@ -125,6 +125,7 @@ INSERT INTO `project_permission`(`project_permission_name`)VALUES("对项目参�
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("回应质疑");#17
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("新增案例");#18
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("查看所有案例");#19
+INSERT INTO `project_permission`(`project_permission_name`)VALUES("项目设置");#20
 
 
 ##项目权限对应的角色
@@ -147,6 +148,7 @@ INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 17);
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 18);
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 19);
+INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 20);
 
 
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(2, 1);
