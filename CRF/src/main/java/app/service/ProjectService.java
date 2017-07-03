@@ -42,4 +42,6 @@ public interface ProjectService {
     PageDTO<UserDTO> getProjectNotInUser(Long projectId, Pageable pageable);
 
     void dataCollectChange(String isCollect, Long projectId);
+
+    boolean getInvitedStatus(Long userId, String projectName);
 }

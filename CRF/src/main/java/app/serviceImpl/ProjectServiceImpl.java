@@ -196,6 +196,17 @@ public class ProjectServiceImpl implements ProjectService {
         projectRepo.save(projectDO);
     }
 
+    @Override
+    public boolean getInvitedStatus(Long userId, String projectName) {
+        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectRepo.findByProjectName(projectName).getId());
+        if(userProjectRoleDO == null) {
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
 
     public void deleteProject(Long projectId) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);

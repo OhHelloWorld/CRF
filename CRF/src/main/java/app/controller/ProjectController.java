@@ -124,5 +124,10 @@ public class ProjectController {
         projectService.dataCollectChange(isCollect, projectId);
     }
 
+    @GetMapping(value = "/invited")
+    @ApiOperation(value = "拒绝邀请")
+    public boolean getInvitedStatus(@RequestParam Long userId, @RequestParam String projectName) {
+        return projectService.getInvitedStatus(userId, projectName);
+    }
 
 }
