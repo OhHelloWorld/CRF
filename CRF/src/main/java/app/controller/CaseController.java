@@ -30,12 +30,14 @@ public class CaseController {
         return caseService.getCaseByProjectId(projectId, hospitalId, pageable);
     }
 
-    @GetMapping(value = "")
+    
+    @GetMapping(value = "/search/{projectId}/{caseName}")
     @ApiOperation(value = "通过项目id和病例名字项目下医院下的病例")
-    public PageDTO<CaseDTO> getCaseByProjectId(@RequestParam Long projectId, @RequestParam String caseName, @PageableDefault(value = 5) Pageable pageable) {
+    public PageDTO<CaseDTO> getCaseByProjectId(@PathVariable Long projectId, @PathVariable String caseName, @PageableDefault(value = 5) Pageable pageable) {
         return caseService.getCaseByProjectIdAndCaseName(projectId, caseName, pageable);
     }
 
+    
     @GetMapping(value = "/{projectId}")
     @ApiOperation(value = "通过项目id得到的病例")
     public PageDTO<CaseDTO> getCaseByProjectId(@PathVariable Long projectId, @PageableDefault(value = 5) Pageable pageable) {

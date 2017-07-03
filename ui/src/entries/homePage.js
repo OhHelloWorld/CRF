@@ -164,10 +164,10 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
 
     $http({
       method: 'GET',
-      url: '/search_projectName'
+      url: '/api/projects/msg?msg=' + $scope.search_projectName
     }).then(function successCallback(response){
       $scope.projects = response.data;
-      projectListPermission();
+      getProjectPermission();
     }, function failCallback(response){
       
     });
@@ -192,7 +192,6 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       url: '/api/projects'
     }).then(function successCallback(response){
       $scope.projects = response.data;
-      console.log(response.data);
       getProjectPermission();
     }, function failCallback(response){
       

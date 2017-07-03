@@ -19,7 +19,7 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
     method:'GET',
     url:'/api/hospitals'
   }).then(function success(response) {
-    $scope.hospitals = response.data;
+    $scope.hospitals = response.data.content;
   }, function failed() {
 
   });
@@ -88,7 +88,6 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
       user.realName = $scope.realName;
       user.email = $scope.email;
       user.hospital.id = $scope.hospital.id;
-      console.log('a');
       $http({
         method: 'POST',
         url: '/api/users',
