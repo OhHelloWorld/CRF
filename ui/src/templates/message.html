@@ -28,29 +28,18 @@
                       <div class="panel panel-default panel-chart">
                         <div class="panel-heading">邀请消息</div>
                         <div class="panel-body">
-                          <div class="col-md-12" >
-          <!-- 每个信息 -->
-          <div class="widget-box" style="height:750px;overflow:auto;">
-            <div class=".col-xs-12 coach" ng-repeat="message in messages">
-              <div class="row coch-grid chr" style="height:200px;">
-                <div class="coach-pic" style="width:100px;">
-                  <img src="/src/lib/images/message.jpg" style="width:100px;height:100px"/>
-                  <br><br>
-                  <span>&nbsp;{{message.date|date:"yyyy-MM-dd"}}</span>
-                </div>
-                <!-- 消息主题 -->
-                <div class="coach-pic-info">
-                  <span>标题：{{message.title}}</span>
-                  <br>
-                  <div class="widget-box " style="height:100px;width:auto;overflow:auto;">
-                    {{message.content}}
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-                          
+                          <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                              <tbody ng-repeat="x in messages">
+                                <tr>
+                                  <td class="mailbox-subject">邀请消息</td>
+                                  <td ui-sref="readMessage" class="mailbox-name" ng-click="click_message(x)">{{x.content}}</td>
+                                  <td class="mailbox-subject">未读</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="page ng-hide" my-directive url={{url}} get-data="messages"></div>
+                          </div>                          
                         </div>
                       </div>
                     </div>
@@ -64,19 +53,4 @@
     </section>
   </div>
   <!-- /.content-wrapper -->
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="remove_projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">删除项目</h4>
-            </div>
-            <div class="modal-body">你正在删除测试项目1</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">确定删除</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
+

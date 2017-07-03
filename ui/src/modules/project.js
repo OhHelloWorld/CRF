@@ -6,13 +6,8 @@ import '../../node_modules/chart.js/dist/Chart.min.js';
 import '../../node_modules/angular-chart.js/dist/angular-chart.min.js';
 
 angular.module('project', [uiRouter, 'chart.js', 'page'])
-  .config(['ChartJsProvider', 'localStorageServiceProvider', function(ChartJsProvider, localStorageServiceProvider) {
+  .config(['ChartJsProvider', function(ChartJsProvider) {
     ChartJsProvider.setOptions({ colors : [ '#949FB1', '#4D5360'] });
-
-    localStorageServiceProvider
-      .setPrefix('login')
-      .setStorageType('sessionStorage')
-      .setNotify(true, true);
   
   }])
 
