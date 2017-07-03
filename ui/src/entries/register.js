@@ -80,6 +80,8 @@ register.controller('registerController', ['$scope', '$http', '$base64', '$rootS
   };
   
   var user = {};
+  var hospital = {};
+  user.hospital = hospital; 
   $scope.register = function(){
     if($scope.judgeAccountExist === false && $scope.judgePasswordExist === false && $scope.judgePasswordEqual === false && $scope.judgeRealNameExist === false &&
       $scope.judgeSurePasswordExist === false && $scope.judgeHospitalExist === false){

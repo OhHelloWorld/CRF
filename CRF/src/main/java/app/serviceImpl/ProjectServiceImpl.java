@@ -133,8 +133,8 @@ public class ProjectServiceImpl implements ProjectService {
     public void rejectInvited(Long userId, String projectName) {
         ProjectDO projectDO = projectRepo.findByProjectName(projectName);
         UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
-        p.setAccept(false);
-        userProjectRoleRepo.save(p);
+        userProjectRoleRepo.delete(p);
+
     }
 
     public List<ProjectDTO> getProjectBySearchMsg(String msg) {
@@ -156,7 +156,7 @@ public class ProjectServiceImpl implements ProjectService {
     public void deleteMeber(Long userId, Long projectId) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectId);
         userProjectRoleDO.setAccept(false);
-        userProjectRoleRepo.save(userProjectRoleDO);
+        userProjectRoleRepo.delete(userProjectRoleDO);
     }
 
     public PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable) {

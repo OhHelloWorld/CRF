@@ -28,7 +28,7 @@ angular.module('readMessage', [])
     $scope.refuse_invite = function(){
       $http({
         method: 'POST',
-        url: '/api/projects/acceptInv?userId=' + localStorageService.get('user').id + '&&projectName=' + localStorageService.get('message').content.split(':')[0]
+        url: '/api/projects/rejectInv?userId=' + localStorageService.get('user').id + '&&projectName=' + localStorageService.get('message').content.split(':')[0]
       }).then(function successCallback(response){
         $rootScope.alertMessage = '已成功拒绝邀请';
         $('#messageModal').modal('show');
