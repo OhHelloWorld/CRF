@@ -182,6 +182,19 @@ public class ProjectServiceImpl implements ProjectService {
         return page;
     }
 
+    @Override
+    public void dataCollectChange(String isCollect, Long projectId) {
+        boolean flag;
+        if("true".equals(isCollect)) {
+            flag = true;
+        }else {
+            flag = false;
+        }
+        ProjectDO projectDO = projectRepo.findOne(projectId);
+        projectDO.setCollect(flag);
+        projectRepo.save(projectDO);
+    }
+
 
     public void deleteProject(Long projectId) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);

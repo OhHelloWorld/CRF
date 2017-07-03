@@ -23,6 +23,9 @@ public class ProjectDO {
 
     private String projectName;//项目名称
 
+    @Column(name = "is_collect")
+    private boolean collect;
+
     @ManyToMany
     @JoinTable(
             name = "project_hospital",
@@ -76,5 +79,13 @@ public class ProjectDO {
 
     public void setHospitalList(List<HospitalDO> hospitalList) {
         this.hospitalList = hospitalList;
+    }
+
+    public boolean isCollect() {
+        return collect;
+    }
+
+    public void setCollect(boolean collect) {
+        this.collect = collect;
     }
 }

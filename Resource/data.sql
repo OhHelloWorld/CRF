@@ -60,12 +60,12 @@ INSERT INTO
 
 
 ##项目
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("小儿麻痹症", "宋天健", '2017-06-22 00:00:00', "小儿麻麻痹症研究");
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("多动症", "贾瑞", '2017-06-22 00:00:00', "多动症研究");
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("肿瘤", "彭佳慧", '2017-06-22 00:00:00', "肿瘤研究");
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("小儿麻痹症", "宋天健", '2017-06-22 00:00:00', "小儿麻麻痹症研究", true);
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("多动症", "贾瑞", '2017-06-22 00:00:00', "多动症研究", true);
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("肿瘤", "彭佳慧", '2017-06-22 00:00:00', "肿瘤研究", true);
 
 
 ##项目医院关联
