@@ -38,8 +38,8 @@
                                   <td ng-if="$even" style="background-color:#4ba8b3" ui-sref="readMessage" class="mailbox-subject">邀请消息</td>
                                   <td ng-if="$odd" style="background-color:#f1f1f1" ui-sref="readMessage" class="mailbox-name">{{x.content}}</td>
                                   <td ng-if="$even" style="background-color:#4ba8b3" ui-sref="readMessage" class="mailbox-name">{{x.content}}</td>
-                                  <td ng-if="$odd" style="background-color:#f1f1f1" ui-sref="readMessage" class="mailbox-subject">未读</td>
-                                  <td ng-if="$even" style="background-color:#4ba8b3" ui-sref="readMessage" class="mailbox-subject">未读</td>
+                                  <td ng-if="$odd" style="background-color:#f1f1f1" ui-sref="readMessage" class="mailbox-subject">{{x.status | isRead}}</td>
+                                  <td ng-if="$even" style="background-color:#4ba8b3" ui-sref="readMessage" class="mailbox-subject">{{x.status | isRead}}</td>
                                 </tr>
                               </tbody>
                             </table>
