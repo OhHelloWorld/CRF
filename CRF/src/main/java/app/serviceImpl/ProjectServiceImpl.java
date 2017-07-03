@@ -197,12 +197,14 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public boolean getInvitedStatus(Long userId, String projectName) {
+    public String getInvitedStatus(Long userId, String projectName) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectRepo.findByProjectName(projectName).getId());
         if(userProjectRoleDO == null) {
-            return false;
+            return "拒绝";
+        }else if(!userProjectRoleDO.isAccept()){
+            return "未选择";
         }else {
-            return true;
+            return "接受";
         }
 
     }

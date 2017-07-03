@@ -43,5 +43,5 @@ public interface ProjectService {
 
     void dataCollectChange(String isCollect, Long projectId);
 
-    boolean getInvitedStatus(Long userId, String projectName);
+    String getInvitedStatus(Long userId, String projectName);
 }
