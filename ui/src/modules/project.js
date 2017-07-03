@@ -45,16 +45,17 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   }])
 
   .controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', 'localStorageService', function($scope, $http, $state, $stateParams, localStorageService) {
-    $scope.Illnesses = [
-                        {'identifier':'1213468', 'name':'张三', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'李四', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'秦大柱', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'马云飞', 'gender':'男', 'age':'25'},
-                        {'identifier':'1213468', 'name':'赵天成', 'gender':'男', 'age':'25'}
-    ]
 
-    $scope.url = '/searchCases/' + $stateParams.project_searchInput + localStorageService.get('project').id;
-
+    $scope.Illnesses = [];
+    searchIllness();
+   
+    function searchIllness(){
+      if(!$stateParams.project_searchInput){
+        $scope.url = '/api/case/' + localStorageService.get('project').id;
+      }else{
+        $scope.url = '/api/case/search/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
+      }
+    };
 
   }])
 

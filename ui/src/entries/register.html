@@ -39,7 +39,7 @@
         <input type="email" class="form-control" placeholder="邮箱" ng-model="email">
       </div>
       <div class="form-group has-feedback">
-        <select ng-options="hospital.hospitalName for hospital in hospitals" ng-model="hospital" ng-init="hospital=''" ng-blur="judgeHospital(hospital)">
+        <select ng-options="x.hospitalName for x in hospitals" ng-model="hospital" ng-init="hospital=''" ng-blur="judgeHospital(hospital)">
           <option value="">--选择所属医院--</option>
         </select>
         <p style="color: red" class="text" ng-cloak ng-show="judgeHospitalExist">请选择所属医院</p>
