@@ -1,23 +1,78 @@
 import angular from 'angular';
+import LocalStorageModule from 'angular-local-storage';
 
 angular.module('invite', [])
-  .controller('inviteController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    if (sessionStorage.getItem('permission').indexOf('邀请联合发起人') === -1) {
-      $('#co-sponsor').addClass('hide');
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+     localStorageServiceProvider
+      .setPrefix('login')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true);
+
+   }])
+  .controller('inviteController', ['$scope', '$http', '$state', 'localStorageService',function($scope, $http, $state, localStorageService) {
+   
+
+    // var invitedUsers = [];
+    // $scope.invitedUrl = ''
+
+    var inviteUserId;
+    var inviteProject;
+    var removeUserId;
+
+   $scope.users = function(type) {
+      localStorageService.set('type', type); 
+      $state.go('inviteUsers');
+   }
+  
+     var inviteUsers = [];
+     $scope.inviteUrl = '/api/projects/' + localStorageService.get('project').id + '/users';
+     var users = []; 
+     $scope.url = '/api/projects/' + localStorageService.get('project').id + '/invUsers';
+     console.log(users);
+
+    $scope.backInvite = function() {
+      
+      $state.go('invite');
+     
     }
-    if (sessionStorage.getItem('permission').indexOf('邀请DM（数据管理员）') === -1) {
-      $('#data-manager').addClass('hide');
+
+    $scope.getRemoveName = function(name, userId) {
+      removeUserId = userId;
+      $scope.removeName = name;
     }
-    if (sessionStorage.getItem('permission').indexOf('邀请分中心研究者') === -1) {
-      $('#sub-center-researcher').addClass('hide');
+
+    $scope.getInviteName = function(name, userId) {
+      inviteUserId = userId;
+      $scope.inviteName = name;   
     }
-    if (sessionStorage.getItem('permission').indexOf('邀请CRA（临床监查员）') === -1) {
-      $('#clinical-examiner').addClass('hide');
+
+    $scope.invite = function() {
+      console.log();
+      $http({
+        method:'POST',
+        url: '/api/projects/Inv?userId=' + inviteUserId + '&projectId=' + localStorageService.get('project').id + '&inviteType=' + localStorageService.get('type')
+      }).then(function() {
+          setTimeout(function(){
+          $state.go('invite');
+        }, 500);
+      }, function() {
+
+      })  
     }
-    if (sessionStorage.getItem('permission').indexOf('邀请录入员') === -1) {
-      $('#reporter').addClass('hide');
+  
+    $scope.remove = function() {
+
+      
+      $http({
+        method: 'POST',
+        url: '/api/projects/demeber?userId=' + removeUserId + '&projectId=' + localStorageService.get('project').id 
+      }).then(function() {
+          setTimeout(function(){
+          $state.reload();
+        }, 500);
+      }, function() {
+
+      })
     }
-    if (sessionStorage.getItem('permission').indexOf('踢出人员') === -1) {
-      $('#kicked-out').addClass('hide');
-    }
+
   }]);

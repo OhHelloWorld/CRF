@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ProjectRoleRepo extends CrudRepository<ProjectRoleDO, Long> {
 
-
+    ProjectRoleDO findByProjectRoleName(String name);
 
 
 }

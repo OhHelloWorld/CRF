@@ -8,7 +8,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">测试项目</li>
+        <li class="active">项目-{{click_project.projectName}}</li>
       </ol>
     </section>
 
@@ -18,16 +18,16 @@
         <div class="col-xs-12">
           <div class="nav-tabs-custom">
             <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
-              <h1>测试项目</h1>
+              <h1 style="margin-left:12px;">项目-{{click_project.projectName}}</h1>
             </div>
             <div class="tab-content">
               <div class="project-content">
                 <section class="search">
                   <form class="sidebar-form" style="width:450px;height:55px;">
                     <div class="input-group" style="height:100%;">
-                    <input type="text" name="q" class="form-control" placeholder="该项目有关病例搜索" style="height:100%;width:364px;background-color:white;">
+                    <input type="text" ng-model="project_searchInput" name="q" class="form-control" placeholder="请输入病例名称" style="height:100%;width:364px;background-color:white;">
                     <span class="input-group-btn">
-                      <a ui-sref="project.projectCase"><button type="submit" name="search" id="search-btn" class="btn btn-flat" style="height:100%;width:84px;background-color:#716d65;"><i class="fa fa-3x fa-search"></i>
+                      <a ui-sref="project.projectCase({project_searchInput:project_searchInput})"><button type="submit" name="search" id="search-btn" class="btn btn-flat" style="height:100%;width:84px;background-color:#716d65;"><i class="fa fa-3x fa-search"></i>
                       </button></a>
                     </span>
                     </div>
@@ -37,7 +37,7 @@
                 <section class="body">
                   <div data-ui-view=""></div>
                 </section>
-              <div>
+              </div>
             </div>
           </div>
         </div>

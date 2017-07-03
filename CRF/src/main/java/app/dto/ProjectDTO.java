@@ -20,6 +20,16 @@ public class ProjectDTO {
 
     private List<HospitalDTO> hospitals;
 
+    private List<UserDTO> userDTOList;
+
+    public List<UserDTO> getUserDTOList() {
+        return userDTOList;
+    }
+
+    public void setUserDTOList(List<UserDTO> userDTOList) {
+        this.userDTOList = userDTOList;
+    }
+
     public List<HospitalDTO> getHospitals() {
         return hospitals;
     }

@@ -8,10 +8,19 @@ import '../lib/css/blue.css';
 import 'angular-base64';
 
 import angular from 'angular';
+import LocalStorageModule from 'angular-local-storage';
 
-var login = angular.module('login',['base64']);
+var login = angular.module('login',['base64', LocalStorageModule]);
 
-login.controller('loginController', ['$scope', '$http', '$base64', function($scope, $http, $base64){
+login.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+  
+  localStorageServiceProvider
+      .setPrefix('login')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true);
+}]);
+
+login.controller('loginController', ['$scope', '$http', '$base64', 'localStorageService', function($scope, $http, $base64, localStorageService){
 
   $('input').iCheck({
     checkboxClass: 'icheckbox_square-blue',
@@ -20,26 +29,24 @@ login.controller('loginController', ['$scope', '$http', '$base64', function($sco
   });
 
   $scope.login = function() {
-    var authValue = $base64.encode($scope.account + '#' + $scope.password);
+    var authKey = $base64.encode($scope.account + ':' + $scope.password);
     $http({
       method:'GET',
       url:'/api/login',
       headers:{
-        'Authorization' : authValue
+        'Authorization': 'Basic ' + authKey
       }
-    }).then(function(response){
-      var compareResult = response.data;
-      if(compareResult == true){
-        $scope.justModalContent = '登录成功，即将跳转！';
-        $('#justModal').modal('show');
-        setTimeout(function(){
-          window.location.href = 'http://localhost:9000/main.html#!/home';
-        }, 500);
-      }else{
+    }).then(function success(response){
+      localStorageService.set('user', response.data);
+      localStorageService.set('sysPermissions', response.data.permissionDTOS);
+      $scope.justModalContent = '登录成功，即将跳转！';
+      $('#justModal').modal('show');
+      setTimeout(function(){
+        window.location.href = '/homePage.html';
+      }, 500);
+    }, function failed() {
         $scope.justModalContent = '账号或验证码输入错误，请检查后重新登陆！';
         $('#justModal').modal('show');
-      }
-
     });
   };
 

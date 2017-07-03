@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.PhysicalChemicalInspectionDTO;
-import app.entities.PhysicalChemicalInspectionDO;
 import app.repo.PhysicalChemicalInspectionRepo;
 import app.service.PhysicalChemicalInspectionService;
 

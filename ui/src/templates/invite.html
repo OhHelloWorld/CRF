@@ -1,22 +1,97 @@
-<div ng-app="invite" ng-controller="inviteController">
-	<table id="example2" class="table table-bordered table-hover" role="grid" aria-describedby="example2_info">
-        <thead>
-            <tr role="row">
-                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
-                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">身份</th>
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">测试项目</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>测试项目</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+  <div class="box box-primary">
+    <div class="panel panel-default">
+      <div class="panel-heading">已被邀请人员</div>
+      <div class="panel-body">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+          
+              <td>序号</td>
+              <td>姓名</td>
+              <td>医院</td>
+              <td>联系电话</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr role="row" style="cursor:pointer" class="info">
-                <td><span class="h5">贾锐</span></td>
-                <td><span class="h5">录入员</span></td>
+          </thead>
+          <tbody ng-repeat="x in inviteUsers">
+            <tr>
+            
+              <td>{{$index + 1}}</td>
+              <td>{{x.realName}}</td>
+              <td>{{x.hospital.hospitalName}}</td>
+              <td>{{x.account}}</td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="getRemoveName(x.realName, x.id)">
+              踢出
+              </button></td>
             </tr>
-        </tbody>
-    </table>
-	<input id="co-sponsor" type="button" value="邀请联合发起人">
-	<input id="data-manager" type="button" value="邀请数据管理员">
-	<input id="sub-center-researcher" type="button" value="邀请分中心研究者">
-	<input id="clinical-examiner" type="button" value="邀请临床检查员">
-	<input id="reporter" type="button" value="邀请录入员">
-	<input id="kicked-out" type="button" value="踢出人员">
+          </tbody>
+        </table> 
+      </div>
+    </div>
+    <input id="co-sponsor" class="btn btn-primary" type="button" value="邀请联合发起人" ng-click="users('联合发起人')"> 
+    <input id="data-manager" class="btn btn-primary" type="button" value="邀请数据管理员" ng-click="users('数据管理员')">
+    <input id="sub-center-researcher" class="btn btn-primary" type="button" value="邀请分中心研究者" ng-click="users('分中心研究者')">
+    <input id="clinical-examiner" class="btn btn-primary" type="button" value="邀请临床检查员" ng-click="users('临床检查员')">
+    <input id="reporter" class="btn btn-primary" type="button" value="邀请录入员" ng-click="users('录入员')">
+    
+    <div class="page ng-hide" my-directive url={{inviteUrl}} get-data="inviteUsers"></div>
+  </div>
+</div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+ <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        是否踢出: {{removeName}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="remove()">是 </button>
+      </div>
+    </div>
+  </div>
 </div>

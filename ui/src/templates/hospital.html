@@ -1,0 +1,146 @@
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">医院信息</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1 style="margin-left:12px;">医院信息</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+                    <div class="box box-primary">
+                      <div class="panel panel-default panel-chart">
+                        <div class="panel-heading">基础信息</div>
+                        <div class="panel-body">
+                          <div class="col col-md-12">
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>医院名称：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.name"></input>
+                              </div>                             
+                            </div>
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>所在地区：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.address"></input>
+                              </div>                             
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col col-md-12">
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>详细地址：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.addressDetail"></input>
+                              </div>                             
+                            </div>
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>联系电话：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.telphone"></input>
+                              </div>                             
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col col-md-12">
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>特色专科：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.specialMajor"></input>
+                              </div>                             
+                            </div>
+                            <div class="col col-md-6">
+                              <div class="col col-md-3">
+                                <strong>经营范围：</strong>
+                              </div>
+                              <div class="col col-md-9">
+                                <input type="text" class="form-control" ng-model="hospital.manageRange"></input>
+                              </div>                             
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col col-md-12">
+                            <div class="col col-md-12">
+                              <div class="col col-md-2">
+                                <strong>公司图片：</strong>
+                              </div>
+                              <div class="col col-md-10">
+                                <img ngf-src="image" id="blah2" alt= "" width="500" height="200" class="img-box"/>
+                                <button class="btn btn-primary"
+			                      ngf-select="" ng-model="image" name="file" ngf-pattern="'image/*'"
+			                      ngf-accept="'image/*'"  ngf-min-height="100" ngf-resize="{width: 500, height: 500}"
+			                      ng-disabled="disabled" style="margin-bottom: 0px;border-radius:3px;height:30px;">选择上传</button>
+                              </div>                        
+                            </div>
+                          
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                          <div class="form-group" style="margin-top: 20px;margin-bottom: 25px;">
+                            <div class="col col-sm-12">
+                              <div class="col col-sm-6 text-center">
+                                <button data-toggle="modal" data-target="#remove_projectModal" class="btn btn-lg btn-default" style="color:red;">删除医院</button>
+                              </div>
+                              <div class="col col-sm-6">
+                                <button type="button" class="btn btn-lg btn-primary" ng-click="submitReview()">确定修改</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="remove_projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">删除医院</h4>
+            </div>
+            <div class="modal-body">你正在删除医院</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">确定删除</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

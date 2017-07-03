@@ -1,0 +1,82 @@
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">消息查看</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>系统消息</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+                    <div class="box box-primary">
+                      <div class="panel panel-default panel-chart">
+                        <div class="panel-heading">邀请消息</div>
+                        <div class="panel-body">
+                          <div class="col-md-12" >
+          <!-- 每个信息 -->
+          <div class="widget-box" style="height:750px;overflow:auto;">
+            <div class=".col-xs-12 coach" ng-repeat="message in messages">
+              <div class="row coch-grid chr" style="height:200px;">
+                <div class="coach-pic" style="width:100px;">
+                  <img src="/src/lib/images/message.jpg" style="width:100px;height:100px"/>
+                  <br><br>
+                  <span>&nbsp;{{message.date|date:"yyyy-MM-dd"}}</span>
+                </div>
+                <!-- 消息主题 -->
+                <div class="coach-pic-info">
+                  <span>标题：{{message.title}}</span>
+                  <br>
+                  <div class="widget-box " style="height:100px;width:auto;overflow:auto;">
+                    {{message.content}}
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="remove_projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">删除项目</h4>
+            </div>
+            <div class="modal-body">你正在删除测试项目1</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">确定删除</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

@@ -1,0 +1,88 @@
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">测试项目</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>未被邀请的用户</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+  <div class="box box-primary">
+    <div class="panel panel-default">
+      <div class="panel-heading">未被邀请的用户</div>
+      <div class="panel-body">
+      <div>
+<div>
+<table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>姓名</td>
+              <td>医院</td>
+              <td>联系电话</td>
+            </tr>
+          </thead>
+          <tbody ng-repeat="x in users">
+            <tr>
+              <td>{{$index + 1}}</td>
+              <td>{{x.realName}}</td>
+              <td>{{x.hospital.hospitalName}}</td>
+              <td>{{x.account}}</td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="getInviteName(x.realName, x.id)">
+              邀请
+              </button><b</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="page ng-hide" my-directive url={{url}} get-data="users"></div>
+</div>
+<div>
+<input id="kicked-out" type="button" class="btn btn-primary" value="返回" ng-click="backInvite()">
+</div>
+</div>
+        </div>
+  </div>
+</div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        是否邀请: {{inviteName}}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="invite()">是 </button>
+      </div>
+    </div>
+  </div>
+</div>
+

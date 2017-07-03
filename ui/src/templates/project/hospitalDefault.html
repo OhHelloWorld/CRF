@@ -1,0 +1,97 @@
+﻿<div class="hospitalDefault">
+  <div class="box box-primary">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{click_hospital.hospitalName}}</div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <img src="../../lib/images/hospital1.jpg" style="height:220px;width:400px;">
+          </div>
+          <div class="col-md-6">
+            <span><h4>简介：</h4>上海中医药大学附属曙光医院是于1960年由上海市第十人民医院和上海市第十一人民医院合并而成。她的前身是建院于1906年的上海四明医院，是一所沪上的百年老院，位列上海十大综合医院之一。医院拥有东西二部，核定床位1000张，开放床位1320张。西部位于普安路185号，毗邻淮海公园，占地28亩。东部于2005年4月23日正式启用，位于浦东张江高科技园区张衡路528号，投资6亿元，占地160亩，是融现代建筑与传统特色为一体的园林式医院。</span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <h3 class="h3-title">基本信息：</h3>
+            <table>
+              <tbody>
+                <tr style="height:50px;">
+                  <td class="col-md-6">
+                    <strong>中文名称：</strong>
+                    <span>{{click_hospital.hospitalName}}</span>
+                  </td>
+                  <td class="col-md-6">
+                    <strong>所在地区：</strong>
+                    <span>{{click_hospital.address}}</span>
+                  </td>
+                </tr>
+                <tr style="height:50px;">
+                  <td class="col-md-6">
+                    <strong>特色专科：</strong>
+                    <span>{{click_hospital.specialMajor}}</span>
+                  </td>
+                  <td class="col-md-6">
+                    <strong>经营范围：</strong>
+                    <span>{{click_hospital.manageRange}}</span>
+                  </td>
+                </tr>
+                <tr style="height:50px;">
+                  <td class="col-md-6">
+                    <strong>医院联系地址：</strong>
+                    <span>{{click_hospital.addressDetail}}</span>
+                  </td>
+                </tr>    
+                <tr style="height:50px;">
+                  <td class="col-md-6">
+                    <strong>医院联系电话：</strong>
+                    <span>{{click_hospital.telephone}}</span>
+                  </td>
+                </tr>              
+              </tbody>
+            </table>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="box box-primary">
+    <div class="panel panel-default">
+      <div class="panel-heading">医院的相关病例</div>
+      <div class="panel-body">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>案例名称</td>
+              <td>案例类型</td>
+              <td>案例录入时间</td>
+            </tr>
+          </thead>
+          <tbody ng-repeat="x in Illnesses">
+            <tr onclick="window.open('/hospitalIllness.html');">
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseName}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseName}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseCategory}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseCategory}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.createTime | date:"MM/dd/yyyy"}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.createTime | date:"MM/dd/yyyy"}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col col-md-12">
+          <div class="col-md-8">
+            <div class="page ng-hide" my-directive url={{url}} get-data="Illnesses"></div>
+          </div>
+          <div class="col-md-4 text-right">
+            <button type="button" id="writeIllness" class="btn btn-lg btn-default" ng-click="writeIllness()">新增案例</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          

@@ -20,6 +20,16 @@ public class UserProjectRoleDO {
 
     private Long projectRoleId;
 
+    private boolean accept;
+
+    public boolean isAccept() {
+        return accept;
+    }
+
+    public void setAccept(boolean accept) {
+        this.accept = accept;
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,0 +1,81 @@
+﻿<!-- Content Wrapper. Contains page content -->
+  <div class="project">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <small> </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">医院列表</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
+              <h1>医院列表</h1>
+            </div>
+            <div class="tab-content">
+              <div class="project-content">
+                <section class="body">
+                  <div class="inviteDefault">
+                    <div class="box box-primary">
+                      <div class="panel panel-default panel-chart">
+                        <div class="panel-heading">基本信息</div>
+                        <div class="panel-body">
+                          <table class="table table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <td>序号</td>
+                                <td>医院名称</td>
+                                <td>医院地址</td>
+                                <td>联系电话</td>
+                              </tr>
+                            </thead>
+                            <tbody ng-repeat="x in hospitals">
+                              <tr>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address_detail}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address_detail}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telphone}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telphone}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="remove_projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">删除项目</h4>
+            </div>
+            <div class="modal-body">你正在删除测试项目1</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">确定删除</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

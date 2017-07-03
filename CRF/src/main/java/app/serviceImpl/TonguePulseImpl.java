@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import app.dto.TonguePulseDTO;
-import app.entities.TonguePulseDO;
 import app.repo.TonguePulseRepo;
 import app.service.TonguePulseService;
 

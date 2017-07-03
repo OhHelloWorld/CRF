@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>深蓝医学</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1">
+</head>
+<body class="hold-transition register-page" ng-app="register" ng-controller="registerController">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="http://www.navyblue.cn/"><img src="../lib/images/navyblueLogo.png" width="150" height="100"></img></a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">用户注册</p>
+
+    <form>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="账户/手机号" ng-model="account" ng-blur="judgeAccount()">
+        <p style="color: red" class="text" ng-cloak ng-show="judgeAccountExist">账户不能为空</p>
+        <p style="color: red" class="text" ng-cloak ng-show="judgeAccountAlready">该账户已存在</p>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="密码" ng-model="password" ng-blur="judgePassword()">
+        <p style="color: red" class="text" ng-cloak ng-show="judgePasswordExist">密码不能为空</p>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="确定密码" ng-model="sure_password" ng-blur="judgeSure_password()">
+        <p style="color: red" class="text" ng-cloak ng-show="judgeSurePasswordExist">确定密码不能为空</p>
+        <p style="color: red" class="text" ng-cloak ng-show="judgePasswordEqual">两次密码不一致</p>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="真实姓名" ng-model="realName" ng-blur="judgeRealName()">
+        <p style="color: red" class="text" ng-cloak ng-show="judgeRealNameExist">真实姓名不能为空</p>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="邮箱" ng-model="email">
+      </div>
+      <div class="form-group has-feedback">
+        <select ng-options="x.hospitalName for x in hospitals" ng-model="hospital" ng-init="hospital=''" ng-blur="judgeHospital(hospital)">
+          <option value="">--选择所属医院--</option>
+        </select>
+        <p style="color: red" class="text" ng-cloak ng-show="judgeHospitalExist">请选择所属医院</p>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck col-xs-12">
+            <label>
+              <input type="checkbox" ng-model="check" ng-click="tol()"/>我已阅读并同意<a href="#">《大家科普用户协议》</a>
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="register()" ng-disabled="button_disable">注册</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <a href="login.html" class="text-center">我已经注册，去登录</a>
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+
+</body>
+</html>

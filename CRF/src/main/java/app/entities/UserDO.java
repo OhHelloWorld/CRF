@@ -10,7 +10,6 @@ public class UserDO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String realName;
-    private String userName;
     private String account;
     private String password;
     private String salt;
@@ -22,6 +21,16 @@ public class UserDO {
     @ManyToOne
     @JoinColumn(name = "hospital_id")
     private HospitalDO hospital;//多个用户对应一个医院
+
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public SysRoleDO getSysRoleDO() {
         return sysRoleDO;
@@ -45,14 +54,6 @@ public class UserDO {
 
     public void setRealName(String realName) {
         this.realName = realName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getPassword() {

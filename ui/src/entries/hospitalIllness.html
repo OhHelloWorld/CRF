@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>深蓝医学信息管理系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1"> -->
+  <link rel="shortcut icon" src="../lib/images/favicon.ico">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1">
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="hospitalCase" ng-controller="hospitalCaseController">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a class="logo">
+      <span class="logo-lg">深蓝医学信息管理系统</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+     
+    </nav>
+  </header>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="wrapper-body">
+    <!-- Main content -->
+    <section class="content" style="background-color:#d8eff5;">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+    <section class="body">
+    <div class="box box-primary">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h2>甲肝疫苗初次成功病例</h2></div>
+        <div class="panel-body">
+          <div class="box box-muted">
+    
+      <div class="panel-heading">该病例表1名称</div>
+      <div class="panel-body">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>医院名称</td>
+              <td>医院地址</td>
+              <td>联系电话</td>
+            </tr>
+          </thead>
+          <tbody ng-repeat="x in positals">
+            <tr>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}</td>
+              <td ng-if="$odd" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
+              <td ng-if="$even" ui-sref="project.hospitalDefault" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="page ng-hide" my-directive url={{url}} get-data=""></div>
+      </div>
+    
+  </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </section>
+  </div>
+
+
+</div>
+
+
+
+</body>
+</html>
