@@ -86,8 +86,8 @@ public class UserServiceImpl implements UserService {
         return  pageDTO;
     }
 
-    public PageDTO<UserDTO> getUserByRealName(String realName,  Pageable pageable) {
-        return getPageDTO(userRepo.getByRealName(realName, pageable));
+    public PageDTO<UserDTO> getUserByRealName(String realName, Long projectId, Pageable pageable) {
+        return getPageDTO(userRepo.getByRealName(realName, projectId, pageable));
     }
 
 }

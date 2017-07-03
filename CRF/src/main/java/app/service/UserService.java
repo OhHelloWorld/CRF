@@ -20,5 +20,5 @@ public interface UserService {
 
     UserDO getUserDOByAccount(String account);
 
-    PageDTO<UserDTO> getUserByRealName(String realName,  Pageable pageable);
+    PageDTO<UserDTO> getUserByRealName(String realName, Long projectId, Pageable pageable);
 }

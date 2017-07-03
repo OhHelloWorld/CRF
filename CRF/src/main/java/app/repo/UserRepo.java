@@ -34,6 +34,6 @@ public interface UserRepo extends CrudRepository<UserDO, Long> {
     @Query(value = " select * from user where id not in (select s.id from (select u.* from user u, user_project_role upr where u.id = upr.user_id and upr.project_id = ?1)  s) order by ?#{#pageable}", nativeQuery = true)
     Page<UserDO> getUserNotInByProjectDTO(Long projectId, Pageable pageable);
 
-    @Query(value = "select * from user where real_name like %?1% order by ?#{#pageable}", nativeQuery = true)
-    Page<UserDO> getByRealName(String realName, Pageable pageable);
+    @Query(value = "select * from user where  real_name like %?1% and id not in (select s.id from (select u.* from user u, user_project_role upr where u.id = upr.user_id and upr.project_id = ?2)  s)  order by ?#{#pageable}", nativeQuery = true)
+    Page<UserDO> getByRealName(String realName, Long projectId,  Pageable pageable);
 }
