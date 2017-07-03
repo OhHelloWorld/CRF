@@ -5,8 +5,7 @@ angular.module('readMessage', [])
   
     $scope.readMessage = localStorageService.get('message');
     message_status($scope.readMessage.id);
-    $scope.receiveName = '接受邀请'; 
-    $scope.refuseName = '拒绝邀请';   
+    judgeStatus();
 
     $scope.receive_invite = function(){
       console.log(localStorageService.get('message').content.split(':')[0]);
@@ -39,19 +38,43 @@ angular.module('readMessage', [])
       
       });
 
-    }
+    };
 
     function message_status(messageId){
       $http({
         method: 'GET',
         url: '/api/message/' + messageId
       }).then(function successCallback(response){
-        
+        $scope.readMessage = response.data;
       }, function failCallback(response){
       
       });
 
-    }
+    };
+
+    function judgeStatus(){
+      $http({
+        method: 'GET',
+        url: '/api/invited?userId=' + localStorageService.get('user').id + '&&projectName=' + localStorageService.get('message').content.split(':')[0]
+      }).then(function successCallback(response){
+        $scope.readStatus = response.data;
+        if($scope.readStatus === '未选择'){
+          $scope.receiveName = '接受邀请'; 
+          $scope.refuseName = '拒绝邀请';   
+        }else if($scope.readStatus === '拒绝'){
+          $scope.refuseName = '已拒绝邀请';
+          $('#receive').addClass('hide');
+          $scope.refuseDisabled = true;
+        }else if($scope.readStatus === '接受'){
+          $scope.receiveName = '已接受邀请'; 
+          $('#refuse').addClass('hide');
+          $scope.receiveDisabled = true;
+        }
+      }, function failCallback(response){
+      
+      });
+
+    };
 
   }]).filter('isRead', function(){
     return function(status) {

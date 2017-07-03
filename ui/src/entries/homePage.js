@@ -107,7 +107,7 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 }]);
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
-  
+  loginStatus();
   getMessageInfos();
   $scope.user = localStorageService.get('user');
 
@@ -165,7 +165,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  } 
+  };
 
 
   /**
@@ -178,7 +178,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  }  
+  };
 
   
 
@@ -187,7 +187,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
    */
   $scope.click_project = function(project){
     localStorageService.set('project', project);
-  }
+  };
 
   /**
    *左侧栏对项目进行搜索
@@ -204,7 +204,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       
     });
 
-  }
+  };
 
   /**
   *对是否登录进入首页进行判断，（未登录跳回登陆页面）
@@ -213,7 +213,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     if(!localStorageService.get('user')){
       window.location.href = '/login.html';
     }
-  }   
+  };
 
   /**
   *请求得到该用户的所有项目
@@ -228,7 +228,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }, function failCallback(response){
       
     });
-  }   
+  };
 
 
   /**
@@ -243,7 +243,19 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       data.currentUserPermissionInProject = projectPermissionName;
     });
     projectListPermission();
-  }   
+  }; 
+
+  $scope.sign_out = function(){
+    $http({
+      method: 'GET',
+      url: '/api/logout'
+    }).then(function successCallback(response){
+      window.location.href = '/login.html';
+    }, function failCallback(response){
+      
+    });
+
+  };
 
 
 }]);

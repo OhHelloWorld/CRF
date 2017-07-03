@@ -6,20 +6,21 @@ angular.module('createHospital', [])
 
     var hospital = {};
     $scope.submitReview = function(){
+      dealGraph();
       hospital.hospitalName = $scope.hospital_name;
       hospital.address = $scope.hospital_address;
       hospital.addressDetail = $scope.hospital_addressDetail
       hospital.telphone = $scope.hospital_telphone;
       hospital.specialMajor = $scope.hospital_specialMajor;
       hospital.manageRange = $scope.hospital_manageRange;
-      hospital.image = $scope.image;
+      hospital.troduction = $scope.hospital_troducution;
+      hospital.image_url = '/hospital/image/' + $scope.imageName + '.jpg';
 
       $http({
         method:'POST',
-        url:'/api/hospitals/newHospital',
+        url:'/api/hospitals',
         data:hospital
-      }).then(function success() {
-        dealGraph();
+      }).then(function success() {    
         $scope.alertMessage = '创建医院成功';
         $('#messageModal').modal('show');
       }, function failed() {
@@ -37,9 +38,9 @@ angular.module('createHospital', [])
     */
     function dealGraph(){
       if((typeof $scope.image) == (typeof '')){
-
+        $scope.imageName = 'src/lib/images/hospital1.jpg';
       }else{
-        uploadPic($scope.image, $scope.hospitalName, 'hospital');
+        uploadPic($scope.image);
       }
     }
 
@@ -47,12 +48,12 @@ angular.module('createHospital', [])
     /**
     *医院图片上传
     */
-    function uploadPic(picFile, hospitalName, imageType) {
+    function uploadPic(picFile) {
       picFile.upload = Upload.upload({
-        url: '/users/uploadImage/' + hospitalName + '/' + imageType,
+        url: '/api/hospitals/upload',
         data: {file: picFile}
-      }).then(function success() {
-
+      }).then(function success(response) {
+        $scope.imageName = response.data;
       });
     };
     
