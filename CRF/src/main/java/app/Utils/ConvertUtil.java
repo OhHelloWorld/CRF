@@ -368,6 +368,7 @@ public class ConvertUtil {
         hospitalDTO.setManageRange(hospitalDO.getManageRange());
         hospitalDTO.setSpecialMajor(hospitalDO.getSpecialMajor());
         hospitalDTO.setTelephone(hospitalDO.getTelephone());
+        hospitalDTO.setIntroduction(hospitalDO.getIntroduction());
         return hospitalDTO;
     }
 
@@ -381,6 +382,7 @@ public class ConvertUtil {
         hospitalDO.setManageRange(hospitalDTO.getManageRange());
         hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
         hospitalDO.setTelephone(hospitalDTO.getTelephone());
+        hospitalDO.setImage_url(hospitalDTO.getImage_url());
         return hospitalDO;
     }
 

@@ -190,7 +190,6 @@ create table project_role_permission(
     id int not null auto_increment,
     project_role_id int not null,
     project_permission_id int not null,
-    status varchar(50),
     primary key(id)
 );
 #权限表
