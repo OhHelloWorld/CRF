@@ -19,4 +19,6 @@ public interface UserService {
     PageDTO<UserDTO> getAllNormalUser(Pageable pageable);//得到所有普通用户
 
     UserDO getUserDOByAccount(String account);
+
+    PageDTO<UserDTO> getUserByRealName(String realName,  Pageable pageable);
 }
