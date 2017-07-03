@@ -4,7 +4,7 @@ angular.module('readMessage', [])
   .controller('readMessageController', ['$scope', '$http', '$state', '$rootScope', 'localStorageService', function($scope, $http, $state, $rootScope, localStorageService) {
   
     $scope.readMessage = localStorageService.get('message');
-
+    message_status($scope.readMessage.id);
 
     $scope.receive_invite = function(){
       console.log(localStorageService.get('message').content.split(':')[0]);
@@ -31,10 +31,18 @@ angular.module('readMessage', [])
       
       });
 
-
-
     }
 
+    function message_status(messageId){
+      $http({
+        method: 'GET',
+        url: '/api/message/' + messageId
+      }).then(function successCallback(response){
+        
+      }, function failCallback(response){
+      
+      });
 
+    }
 
   }]);
