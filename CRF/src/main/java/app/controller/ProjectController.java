@@ -119,7 +119,7 @@ public class ProjectController {
     }
 
     @PutMapping(value = "/data")
-    @ApiOperation(value = "关闭或者开启")
+    @ApiOperation(value = "关闭或者开启收集数据")
     public void dataCollecrChange(@RequestParam String isCollect, @RequestParam Long projectId) {
         projectService.dataCollectChange(isCollect, projectId);
     }
