@@ -67,8 +67,12 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     *病例录入权限判断，然后进行控制
     */   
     function writeIllnessPermission(){
-      if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
-        $('#writeIllness').addClass('ng-hide');
+      if(localStorageService.get('project').isCollect){
+        if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
+          $('#writeIllness').addClass('ng-hide');
+        }
+      }else{
+          $('#writeIllness').addClass('ng-hide');
       }
     };
 
