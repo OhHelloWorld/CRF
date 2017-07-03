@@ -120,33 +120,27 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   $scope.settingPermissions = [];
   
   /**
-  *邀请消息接受
+  *获取未读邀请消息
   */
   function getMessageInfos(){
     $http({
       method: 'GET',
-      url: '/api/message/user'
+      url: '/api/message/noRead'
     }).then(function successCallback(response){
       $scope.messageInfos = response.data;
-      getNewMessageCount();
+      $scope.newMessageCount = response.data.length;
     }, function failCallback(response){
       
     });
 
-  }
+  };
 
   /**
-  *新消息数目newMessageCount
+  *进入单个未读信息
   */
-  function getNewMessageCount(){
-    $scope.newMessageCount = 0;
-    angular.forEach($scope.messageInfos, function(data){
-      if(data.status){
-        $scope.newMessageCount++;
-      }
-    });
-
-  }   
+  $scope.clickMessage = function(messageInfo){
+    localStorageService.set('message', messageInfo);
+  };
 
 
   /**
