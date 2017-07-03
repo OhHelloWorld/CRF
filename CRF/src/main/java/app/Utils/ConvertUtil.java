@@ -403,7 +403,7 @@ public class ConvertUtil {
 
     public MessageDTO convertToMessageDTO(MessageDO messageDO) {
         MessageDTO messageDTO = new MessageDTO();
-        messageDTO.setId(messageDTO.getId());
+        messageDTO.setId(messageDO.getId());
         messageDTO.setContent(messageDO.getContent());
         messageDTO.setReceived_user_id(messageDO.getReceivedUserId());
         messageDTO.setStatus(messageDO.isRead());
