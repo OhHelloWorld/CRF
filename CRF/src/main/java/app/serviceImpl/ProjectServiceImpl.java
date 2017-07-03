@@ -65,11 +65,6 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void deleteProjectById(Long id) {
-
-    }
-
-    @Override
     public ProjectDTO updateProject(ProjectDTO projectDTO) {
         return null;
     }
@@ -185,5 +180,12 @@ public class ProjectServiceImpl implements ProjectService {
         page.setContent(users);
         page.setTotalNumber(page1.getTotalPages());
         return page;
+    }
+
+
+    public void deleteProject(Long projectId) {
+        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);
+        projectRepo.delete(projectId);
+
     }
 }

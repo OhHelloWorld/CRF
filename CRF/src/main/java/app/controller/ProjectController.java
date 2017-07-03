@@ -35,8 +35,9 @@ public class ProjectController {
     }
 
     @DeleteMapping(value = "/{projectId}")
+    @ApiOperation(value = "删除项目")
     public void deleteProject(@PathVariable Long projectId) {
-        projectService.deleteProjectById(projectId);
+        projectService.deleteProject(projectId);
     }
 
     @PatchMapping(value = "")

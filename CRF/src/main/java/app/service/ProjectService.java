@@ -16,7 +16,7 @@ public interface ProjectService {
 
     List<ProjectDTO> getProjectByUserId(Long userId);//根据用户id找到项目
 
-    void deleteProjectById(Long id);//删除项目
+    void deleteProject(Long projectId);//删除项目
 
     ProjectDTO updateProject(ProjectDTO projectDTO);//更新项目1
 
