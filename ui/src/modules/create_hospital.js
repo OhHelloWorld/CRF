@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 angular.module('createHospital', [])
-  .controller('createHospitalController', ['$scope', '$http', '$state', '$rootScope', function($scope, $http, $state, $rootScope) {
+  .controller('createHospitalController', ['$scope', '$http', '$state', '$rootScope', 'Upload', function($scope, $http, $state, $rootScope, Upload) {
     $scope.image ='src/lib/images/hospital1.jpg';
 
     var hospital = {};
@@ -10,7 +10,7 @@ angular.module('createHospital', [])
       hospital.hospitalName = $scope.hospital_name;
       hospital.address = $scope.hospital_address;
       hospital.addressDetail = $scope.hospital_addressDetail
-      hospital.telphone = $scope.hospital_telphone;
+      hospital.telephone = $scope.hospital_telphone;
       hospital.specialMajor = $scope.hospital_specialMajor;
       hospital.manageRange = $scope.hospital_manageRange;
       hospital.troduction = $scope.hospital_troducution;

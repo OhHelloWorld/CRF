@@ -19,9 +19,9 @@ angular.module('hospital', [])
     $scope.hospital_name = hospiatl.hospitalName;
     $scope.hospital_address = hospiatl.address;
     $scope.hospital_addressDetail = hospiatl.addressDetail;
-    $scope.hospital_telphone = telphone;
-    $scope.hospital_specialMajor = specialMajor;
-    $scope.hospital_troducution = troduction;
+    $scope.hospital_telphone = hospiatl.telephone;
+    $scope.hospital_specialMajor = hospiatl.specialMajor;
+    $scope.hospital_troducution = hospiatl.troduction;
 
     var hospital = {};
     $scope.submitReview = function(){
@@ -29,7 +29,7 @@ angular.module('hospital', [])
       hospital.hospitalName = $scope.hospital_name;
       hospital.address = $scope.hospital_address;
       hospital.addressDetail = $scope.hospital_addressDetail;
-      hospital.telphone = $scope.hospital_telphone;
+      hospital.telephone = $scope.hospital_telphone;
       hospital.specialMajor = $scope.hospital_specialMajor;
       hospital.manageRange = $scope.hospital_manageRange;
       hospital.troduction = $scope.hospital_troducution;
