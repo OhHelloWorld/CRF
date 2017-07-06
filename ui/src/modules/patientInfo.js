@@ -125,6 +125,9 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
       $scope.concurrentAutoDisease = patient.concurrentAutoDisease;
       $scope.concurrentAutoDate = toPre(patient.concurrentAutoDate);
       $scope.conAutoDisFirstOrNot = patient.conAutoDisFirstOrNot;
+
+      $scope.showOthers();
+      $scope.showDatepicker();
     });
   }
   //保存 --> 确定  按钮

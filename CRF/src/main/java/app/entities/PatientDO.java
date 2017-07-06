@@ -21,22 +21,29 @@ public class PatientDO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String identifier;//编号
-    private String name;// 姓名
-    private String gender;// 性别
-    private int age;// 年龄
-    private float height;// 身高
-    private float weight;// 体重
-    private boolean smoke;// 是否吸烟
-    private boolean drink;// 是否饮酒
-    private boolean familyHistory;// 是否有家族病史
-    private Date hepatitisDiagnosisTime;// 肝炎确诊时间
-    private Date cirrhosisDiagnosisTime;// 肝硬化确诊时间
-    private String westernMedicineDiagnosis;// 西医诊断
-    private String chineseMedicineDiagnosis;// 中医辨证
-    private String westernMedicineTreatment;// 西医治疗
-    private String chineseMedicineTreatment;// 中医治疗
-    private boolean complete;// 是否完成
+    private String identifier;
+    private String name;
+    private String gender;
+    private String nation;
+    private float height;
+    private float weight;
+    private boolean smoke;
+    private boolean drink;
+    private String familyHistory;
+    private Date birthday;
+    private int bmi;
+    private String degreeOfEducation;
+    private Date firstTimeLiverInjury;
+    private String investigateHospital;
+    private String telephone;
+    private String durationOfVisit;
+    private Long firstVisitAge;
+    private Date firstVisitTime;
+    private String smokeDrinkFamHis;
+    private boolean concurrentAutoDisease;
+    private Date concurrentAutoDate;
+    private boolean conAutoDisFirstOrNot;
+    private boolean complete;
 
     public int getId() {
         return id;
@@ -45,7 +52,7 @@ public class PatientDO {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getIdentifier() {
         return identifier;
     }
@@ -70,12 +77,12 @@ public class PatientDO {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
+    public String getNation() {
+        return nation;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setNation(String nation) {
+        this.nation = nation;
     }
 
     public float getHeight() {
@@ -110,60 +117,116 @@ public class PatientDO {
         this.drink = drink;
     }
 
-    public boolean isFamilyHistory() {
+    public String getFamilyHistory() {
         return familyHistory;
     }
 
-    public void setFamilyHistory(boolean familyHistory) {
+    public void setFamilyHistory(String familyHistory) {
         this.familyHistory = familyHistory;
     }
 
-    public Date getHepatitisDiagnosisTime() {
-        return hepatitisDiagnosisTime;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setHepatitisDiagnosisTime(Date hepatitisDiagnosisTime) {
-        this.hepatitisDiagnosisTime = hepatitisDiagnosisTime;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public Date getCirrhosisDiagnosisTime() {
-        return cirrhosisDiagnosisTime;
+    public int getBmi() {
+        return bmi;
     }
 
-    public void setCirrhosisDiagnosisTime(Date cirrhosisDiagnosisTime) {
-        this.cirrhosisDiagnosisTime = cirrhosisDiagnosisTime;
+    public void setBmi(int bmi) {
+        this.bmi = bmi;
     }
 
-    public String getWesternMedicineDiagnosis() {
-        return westernMedicineDiagnosis;
+    public String getDegreeOfEducation() {
+        return degreeOfEducation;
     }
 
-    public void setWesternMedicineDiagnosis(String westernMedicineDiagnosis) {
-        this.westernMedicineDiagnosis = westernMedicineDiagnosis;
+    public void setDegreeOfEducation(String degreeOfEducation) {
+        this.degreeOfEducation = degreeOfEducation;
     }
 
-    public String getChineseMedicineDiagnosis() {
-        return chineseMedicineDiagnosis;
+    public Date getFirstTimeLiverInjury() {
+        return firstTimeLiverInjury;
     }
 
-    public void setChineseMedicineDiagnosis(String chineseMedicineDiagnosis) {
-        this.chineseMedicineDiagnosis = chineseMedicineDiagnosis;
+    public void setFirstTimeLiverInjury(Date firstTimeLiverInjury) {
+        this.firstTimeLiverInjury = firstTimeLiverInjury;
     }
 
-    public String getWesternMedicineTreatment() {
-        return westernMedicineTreatment;
+    public String getInvestigateHospital() {
+        return investigateHospital;
     }
 
-    public void setWesternMedicineTreatment(String westernMedicineTreatment) {
-        this.westernMedicineTreatment = westernMedicineTreatment;
+    public void setInvestigateHospital(String investigateHospital) {
+        this.investigateHospital = investigateHospital;
     }
 
-    public String getChineseMedicineTreatment() {
-        return chineseMedicineTreatment;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setChineseMedicineTreatment(String chineseMedicineTreatment) {
-        this.chineseMedicineTreatment = chineseMedicineTreatment;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getDurationOfVisit() {
+        return durationOfVisit;
+    }
+
+    public void setDurationOfVisit(String durationOfVisit) {
+        this.durationOfVisit = durationOfVisit;
+    }
+
+    public Long getFirstVisitAge() {
+        return firstVisitAge;
+    }
+
+    public void setFirstVisitAge(Long firstVisitAge) {
+        this.firstVisitAge = firstVisitAge;
+    }
+
+    public Date getFirstVisitTime() {
+        return firstVisitTime;
+    }
+
+    public void setFirstVisitTime(Date firstVisitTime) {
+        this.firstVisitTime = firstVisitTime;
+    }
+
+    public String getSmokeDrinkFamHis() {
+        return smokeDrinkFamHis;
+    }
+
+    public void setSmokeDrinkFamHis(String smokeDrinkFamHis) {
+        this.smokeDrinkFamHis = smokeDrinkFamHis;
+    }
+
+    public boolean getConcurrentAutoDisease() {
+        return concurrentAutoDisease;
+    }
+
+    public void setConcurrentAutoDisease(boolean concurrentAutoDisease) {
+        this.concurrentAutoDisease = concurrentAutoDisease;
+    }
+
+    public Date getConcurrentAutoDate() {
+        return concurrentAutoDate;
+    }
+
+    public void setConcurrentAutoDate(Date concurrentAutoDate) {
+        this.concurrentAutoDate = concurrentAutoDate;
+    }
+
+    public boolean isConAutoDisFirstOrNot() {
+        return conAutoDisFirstOrNot;
+    }
+
+    public void setConAutoDisFirstOrNot(boolean conAutoDisFirstOrNot) {
+        this.conAutoDisFirstOrNot = conAutoDisFirstOrNot;
     }
 
     public boolean isComplete() {
@@ -173,7 +236,4 @@ public class PatientDO {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
-
-
-
 }

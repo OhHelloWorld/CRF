@@ -12,19 +12,27 @@ public class PatientDTO {
     private String identifier;
     private String name;
     private String gender;
-    private int age;
+    private String nation;
     private float height;
     private float weight;
     private boolean smoke;
     private boolean drink;
-    private boolean familyHistory;
-    private Date hepatitisDiagnosisTime;
-    private Date cirrhosisDiagnosisTime;
-    private String westernMedicineDiagnosis;
-    private String chineseMedicineDiagnosis;
-    private String westernMedicineTreatment;
-    private String chineseMedicineTreatment;
+    private String familyHistory;
+    private Date birthday;
+    private int bmi;
+    private String degreeOfEducation;
+    private Date firstTimeLiverInjury;
+    private String investigateHospital;
+    private String telephone;
+    private String durationOfVisit;
+    private Long firstVisitAge;
+    private Date firstVisitTime;
+    private String smokeDrinkFamHis;
+    private boolean concurrentAutoDisease;
+    private Date concurrentAutoDate;
+    private boolean conAutoDisFirstOrNot;
     private boolean complete;
+
 
     public int getId() {
         return id;
@@ -58,12 +66,12 @@ public class PatientDTO {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
+    public String getNation() {
+        return nation;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setNation(String nation) {
+        this.nation = nation;
     }
 
     public float getHeight() {
@@ -98,60 +106,116 @@ public class PatientDTO {
         this.drink = drink;
     }
 
-    public boolean isFamilyHistory() {
+    public String getFamilyHistory() {
         return familyHistory;
     }
 
-    public void setFamilyHistory(boolean familyHistory) {
+    public void setFamilyHistory(String familyHistory) {
         this.familyHistory = familyHistory;
     }
 
-    public Date getHepatitisDiagnosisTime() {
-        return hepatitisDiagnosisTime;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setHepatitisDiagnosisTime(Date hepatitisDiagnosisTime) {
-        this.hepatitisDiagnosisTime = hepatitisDiagnosisTime;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public Date getCirrhosisDiagnosisTime() {
-        return cirrhosisDiagnosisTime;
+    public int getBmi() {
+        return bmi;
     }
 
-    public void setCirrhosisDiagnosisTime(Date cirrhosisDiagnosisTime) {
-        this.cirrhosisDiagnosisTime = cirrhosisDiagnosisTime;
+    public void setBmi(int bmi) {
+        this.bmi = bmi;
     }
 
-    public String getWesternMedicineDiagnosis() {
-        return westernMedicineDiagnosis;
+    public String getDegreeOfEducation() {
+        return degreeOfEducation;
     }
 
-    public void setWesternMedicineDiagnosis(String westernMedicineDiagnosis) {
-        this.westernMedicineDiagnosis = westernMedicineDiagnosis;
+    public void setDegreeOfEducation(String degreeOfEducation) {
+        this.degreeOfEducation = degreeOfEducation;
     }
 
-    public String getChineseMedicineDiagnosis() {
-        return chineseMedicineDiagnosis;
+    public Date getFirstTimeLiverInjury() {
+        return firstTimeLiverInjury;
     }
 
-    public void setChineseMedicineDiagnosis(String chineseMedicineDiagnosis) {
-        this.chineseMedicineDiagnosis = chineseMedicineDiagnosis;
+    public void setFirstTimeLiverInjury(Date firstTimeLiverInjury) {
+        this.firstTimeLiverInjury = firstTimeLiverInjury;
     }
 
-    public String getWesternMedicineTreatment() {
-        return westernMedicineTreatment;
+    public String getInvestigateHospital() {
+        return investigateHospital;
     }
 
-    public void setWesternMedicineTreatment(String westernMedicineTreatment) {
-        this.westernMedicineTreatment = westernMedicineTreatment;
+    public void setInvestigateHospital(String investigateHospital) {
+        this.investigateHospital = investigateHospital;
     }
 
-    public String getChineseMedicineTreatment() {
-        return chineseMedicineTreatment;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setChineseMedicineTreatment(String chineseMedicineTreatment) {
-        this.chineseMedicineTreatment = chineseMedicineTreatment;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getDurationOfVisit() {
+        return durationOfVisit;
+    }
+
+    public void setDurationOfVisit(String durationOfVisit) {
+        this.durationOfVisit = durationOfVisit;
+    }
+
+    public Long getFirstVisitAge() {
+        return firstVisitAge;
+    }
+
+    public void setFirstVisitAge(Long firstVisitAge) {
+        this.firstVisitAge = firstVisitAge;
+    }
+
+    public Date getFirstVisitTime() {
+        return firstVisitTime;
+    }
+
+    public void setFirstVisitTime(Date firstVisitTime) {
+        this.firstVisitTime = firstVisitTime;
+    }
+
+    public String getSmokeDrinkFamHis() {
+        return smokeDrinkFamHis;
+    }
+
+    public void setSmokeDrinkFamHis(String smokeDrinkFamHis) {
+        this.smokeDrinkFamHis = smokeDrinkFamHis;
+    }
+
+    public boolean isConcurrentAutoDisease() {
+        return concurrentAutoDisease;
+    }
+
+    public void setConcurrentAutoDisease(boolean concurrentAutoDisease) {
+        this.concurrentAutoDisease = concurrentAutoDisease;
+    }
+
+    public Date getConcurrentAutoDate() {
+        return concurrentAutoDate;
+    }
+
+    public void setConcurrentAutoDate(Date concurrentAutoDate) {
+        this.concurrentAutoDate = concurrentAutoDate;
+    }
+
+    public boolean isConAutoDisFirstOrNot() {
+        return conAutoDisFirstOrNot;
+    }
+
+    public void setConAutoDisFirstOrNot(boolean conAutoDisFirstOrNot) {
+        this.conAutoDisFirstOrNot = conAutoDisFirstOrNot;
     }
 
     public boolean isComplete() {
@@ -162,5 +226,33 @@ public class PatientDTO {
         this.complete = complete;
     }
 
-
+    @Override
+    public String toString() {
+        return "PatientDTO{" +
+                "id=" + id +
+                ", identifier='" + identifier + '\'' +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", nation=" + nation +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", smoke=" + smoke +
+                ", drink=" + drink +
+                ", familyHistory=" + familyHistory +
+                ", birthday=" + birthday +
+                ", bmi=" + bmi +
+                ", degreeOfEducation='" + degreeOfEducation + '\'' +
+                ", firstTimeLiverInjury='" + firstTimeLiverInjury + '\'' +
+                ", investigateHospital='" + investigateHospital + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", durationOfVisit='" + durationOfVisit + '\'' +
+                ", firstVisitAge=" + firstVisitAge +
+                ", firstVisitTime=" + firstVisitTime +
+                ", smokeDrinkFamHis='" + smokeDrinkFamHis + '\'' +
+                ", concurrentAutoDisease='" + concurrentAutoDisease + '\'' +
+                ", concurrentAutoDate=" + concurrentAutoDate +
+                ", conAutoDisFirstOrNot=" + conAutoDisFirstOrNot +
+                ", complete=" + complete +
+                '}';
+    }
 }

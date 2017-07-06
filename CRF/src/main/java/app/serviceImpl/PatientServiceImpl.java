@@ -15,7 +15,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -43,8 +45,9 @@ public class PatientServiceImpl implements PatientService {
     }
 
     public PatientDTO getPatientGeneralInformation(int id) {
-
-        return convertUtil.convertToPatientDTO(patientRepo.getPatientInformationById(id));
+        PatientDO testDo = patientRepo.getPatientInformationById(id);
+        PatientDTO testDTO = convertUtil.convertToPatientDTO(testDo);
+        return testDTO;
     }
 
     public boolean getCompleteById(int id) {
@@ -92,21 +95,28 @@ public class PatientServiceImpl implements PatientService {
     private PatientDO editToPatientDO(PatientDO patientDO, PatientDTO patientDTO) {
         patientDO.setIdentifier(patientDTO.getIdentifier());
         patientDO.setId(patientDTO.getId());
-        patientDO.setAge(patientDTO.getAge());
-        patientDO.setChineseMedicineDiagnosis(patientDTO.getChineseMedicineDiagnosis());
-        patientDO.setChineseMedicineTreatment(patientDTO.getChineseMedicineTreatment());
-        patientDO.setCirrhosisDiagnosisTime(patientDTO.getCirrhosisDiagnosisTime());
-        patientDO.setComplete(patientDTO.isComplete());
+        patientDO.setNation(patientDTO.getNation());
         patientDO.setDrink(patientDTO.isDrink());
-        patientDO.setFamilyHistory(patientDTO.isFamilyHistory());
+        patientDO.setFamilyHistory(patientDTO.getFamilyHistory());
         patientDO.setGender(patientDTO.getGender());
         patientDO.setHeight(patientDTO.getHeight());
-        patientDO.setHepatitisDiagnosisTime(patientDTO.getHepatitisDiagnosisTime());
         patientDO.setName(patientDTO.getName());
         patientDO.setSmoke(patientDTO.isSmoke());
         patientDO.setWeight(patientDTO.getWeight());
-        patientDO.setWesternMedicineDiagnosis(patientDTO.getWesternMedicineDiagnosis());
-        patientDO.setWesternMedicineTreatment(patientDTO.getWesternMedicineTreatment());
+        patientDO.setComplete(patientDTO.isComplete());
+        patientDO.setBirthday(patientDTO.getBirthday());
+        patientDO.setBmi(patientDTO.getBmi());
+        patientDO.setDegreeOfEducation(patientDTO.getDegreeOfEducation());
+        patientDO.setFirstTimeLiverInjury(patientDTO.getFirstTimeLiverInjury());
+        patientDO.setInvestigateHospital(patientDTO.getInvestigateHospital());
+        patientDO.setTelephone(patientDTO.getTelephone());
+        patientDO.setDurationOfVisit(patientDTO.getDurationOfVisit());
+        patientDO.setFirstVisitAge(patientDTO.getFirstVisitAge());
+        patientDO.setFirstVisitTime(patientDTO.getFirstVisitTime());
+        patientDO.setSmokeDrinkFamHis(patientDTO.getSmokeDrinkFamHis());
+        patientDO.setConcurrentAutoDate(patientDTO.getConcurrentAutoDate());
+        patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
+        patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
         return patientDO;
     }
 
