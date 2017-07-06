@@ -30,26 +30,26 @@ hospitalCase.config(['localStorageServiceProvider', function(localStorageService
 hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScope', 'localStorageService', function($scope, $http, $rootScope, localStorageService) {
 
   var project1 = {
-    name: '测试项目',
+    name: '锟斤拷锟斤拷锟斤拷目',
     id: 1
   };
   var project2 = {
-    name: '测试项目2',
+    name: '锟斤拷锟斤拷锟斤拷目2',
     id: 2
   };
   var project3 = {
-    name: '测试项目3',
+    name: '锟斤拷锟斤拷锟斤拷目3',
     id: 3
   }; 
 
   $scope.projects = [project1, project2, project3];
 
   /**
-   *设置该账户当前点击的项目，并将该账户在该项目下的权限也保存在project对象里
+   *锟斤拷锟矫革拷锟剿伙拷锟斤拷前锟斤拷锟斤拷锟斤拷锟斤拷目锟斤拷锟斤拷锟斤拷锟斤拷锟剿伙拷锟节革拷锟斤拷目锟铰碉拷权锟斤拷也锟斤拷锟斤拷锟斤拷project锟斤拷锟斤拷锟斤拷
    */
   $scope.click_project = function(project){
     localStorageService.set('project', project);
-  }
+  };
 
 
   $scope.search_project = function(){
@@ -61,10 +61,10 @@ hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScop
 
 
     }, function failCallback(response){
-      console.log('没有找到相关项目！');
+      console.log('没锟斤拷锟揭碉拷锟斤拷锟斤拷锟斤拷目锟斤拷');
     });
  */
-  }
+  };
 
   
 

@@ -45,8 +45,8 @@ login.controller('loginController', ['$scope', '$http', '$base64', 'localStorage
         window.location.href = '/homePage.html';
       }, 500);
     }, function failed() {
-        $scope.justModalContent = '账号或验证码输入错误，请检查后重新登陆！';
-        $('#justModal').modal('show');
+      $scope.justModalContent = '账号或验证码输入错误，请检查后重新登陆！';
+      $('#justModal').modal('show');
     });
   };
 

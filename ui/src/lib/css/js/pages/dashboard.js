@@ -7,28 +7,28 @@
 
 $(function () {
 
-  "use strict";
+  'use strict';
 
   //Make the dashboard widgets sortable Using jquery UI
-  $(".connectedSortable").sortable({
-    placeholder: "sort-highlight",
-    connectWith: ".connectedSortable",
-    handle: ".box-header, .nav-tabs",
+  $('.connectedSortable').sortable({
+    placeholder: 'sort-highlight',
+    connectWith: '.connectedSortable',
+    handle: '.box-header, .nav-tabs',
     forcePlaceholderSize: true,
     zIndex: 999999
   });
-  $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
+  $('.connectedSortable .box-header, .connectedSortable .nav-tabs-custom').css('cursor', 'move');
 
   //jQuery UI sortable for the todo list
-  $(".todo-list").sortable({
-    placeholder: "sort-highlight",
-    handle: ".handle",
+  $('.todo-list').sortable({
+    placeholder: 'sort-highlight',
+    handle: '.handle',
     forcePlaceholderSize: true,
     zIndex: 999999
   });
 
   //bootstrap WYSIHTML5 - text editor
-  $(".textarea").wysihtml5();
+  $('.textarea').wysihtml5();
 
   $('.daterange').daterangepicker({
     ranges: {
@@ -42,48 +42,48 @@ $(function () {
     startDate: moment().subtract(29, 'days'),
     endDate: moment()
   }, function (start, end) {
-    window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    window.alert('You chose: ' + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
   });
 
   /* jQueryKnob */
-  $(".knob").knob();
+  $('.knob').knob();
 
   //jvectormap data
   var visitorsData = {
-    "US": 398, //USA
-    "SA": 400, //Saudi Arabia
-    "CA": 1000, //Canada
-    "DE": 500, //Germany
-    "FR": 760, //France
-    "CN": 300, //China
-    "AU": 700, //Australia
-    "BR": 600, //Brazil
-    "IN": 800, //India
-    "GB": 320, //Great Britain
-    "RU": 3000 //Russia
+    'US': 398, //USA
+    'SA': 400, //Saudi Arabia
+    'CA': 1000, //Canada
+    'DE': 500, //Germany
+    'FR': 760, //France
+    'CN': 300, //China
+    'AU': 700, //Australia
+    'BR': 600, //Brazil
+    'IN': 800, //India
+    'GB': 320, //Great Britain
+    'RU': 3000 //Russia
   };
   //World map by jvectormap
   $('#world-map').vectorMap({
     map: 'world_mill_en',
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     regionStyle: {
       initial: {
         fill: '#e4e4e4',
-        "fill-opacity": 1,
+        'fill-opacity': 1,
         stroke: 'none',
-        "stroke-width": 0,
-        "stroke-opacity": 1
+        'stroke-width': 0,
+        'stroke-opacity': 1
       }
     },
     series: {
       regions: [{
         values: visitorsData,
-        scale: ["#92c1dc", "#ebf4f9"],
+        scale: ['#92c1dc', '#ebf4f9'],
         normalizeFunction: 'polynomial'
       }]
     },
     onRegionLabelShow: function (e, el, code) {
-      if (typeof visitorsData[code] != "undefined")
+      if (typeof visitorsData[code] != 'undefined')
         el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
     }
   });
@@ -93,7 +93,7 @@ $(function () {
   $('#sparkline-1').sparkline(myvalues, {
     type: 'line',
     lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
+    fillColor: '#ebf4f9',
     height: '50',
     width: '80'
   });
@@ -101,7 +101,7 @@ $(function () {
   $('#sparkline-2').sparkline(myvalues, {
     type: 'line',
     lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
+    fillColor: '#ebf4f9',
     height: '50',
     width: '80'
   });
@@ -109,13 +109,13 @@ $(function () {
   $('#sparkline-3').sparkline(myvalues, {
     type: 'line',
     lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
+    fillColor: '#ebf4f9',
     height: '50',
     width: '80'
   });
 
   //The Calender
-  $("#calendar").datepicker();
+  $('#calendar').datepicker();
 
   //SLIMSCROLL FOR CHAT WIDGET
   $('#chat-box').slimScroll({
@@ -166,12 +166,12 @@ $(function () {
     lineColors: ['#efefef'],
     lineWidth: 2,
     hideHover: 'auto',
-    gridTextColor: "#fff",
+    gridTextColor: '#fff',
     gridStrokeWidth: 0.4,
     pointSize: 4,
-    pointStrokeColors: ["#efefef"],
-    gridLineColor: "#efefef",
-    gridTextFamily: "Open Sans",
+    pointStrokeColors: ['#efefef'],
+    gridLineColor: '#efefef',
+    gridTextFamily: 'Open Sans',
     gridTextSize: 10
   });
 
@@ -179,11 +179,11 @@ $(function () {
   var donut = new Morris.Donut({
     element: 'sales-chart',
     resize: true,
-    colors: ["#3c8dbc", "#f56954", "#00a65a"],
+    colors: ['#3c8dbc', '#f56954', '#00a65a'],
     data: [
-      {label: "Download Sales", value: 12},
-      {label: "In-Store Sales", value: 30},
-      {label: "Mail-Order Sales", value: 20}
+      {label: 'Download Sales', value: 12},
+      {label: 'In-Store Sales', value: 30},
+      {label: 'Mail-Order Sales', value: 20}
     ],
     hideHover: 'auto'
   });
@@ -196,13 +196,13 @@ $(function () {
   });
 
   /* The todo list plugin */
-  $(".todo-list").todolist({
+  $('.todo-list').todolist({
     onCheck: function (ele) {
-      window.console.log("The element has been checked");
+      window.console.log('The element has been checked');
       return ele;
     },
     onUncheck: function (ele) {
-      window.console.log("The element has been unchecked");
+      window.console.log('The element has been unchecked');
       return ele;
     }
   });
