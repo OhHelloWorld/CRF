@@ -148,6 +148,25 @@ public class ConvertUtil {
         pDo.setRenalFunctionCr(pDto.getRenalFunctionCr());
         pDo.setRheumaticImmuneRelatedAntibodies(pDto.getRheumaticImmuneRelatedAntibodies());
         pDo.setTotalBileAcid(pDto.getTotalBileAcid());
+
+        pDo.setaFP(pDto.getaFP());
+        pDo.setCarcinoembryonicAntigenCEA(pDto.getCarcinoembryonicAntigenCEA());
+        pDo.setCa125(pDto.getCa125());
+        pDo.setCa199(pDto.getCa199());
+        pDo.setHbsag(pDto.getHbsag());
+        pDo.setHbsab(pDto.getHbsab());
+        pDo.setHbeag(pDto.getHbeag());
+        pDo.setHbeab(pDto.getHbeab());
+        pDo.setHbcab(pDto.getHbcab());
+        pDo.setHbvRna(pDto.getHbvRna());
+        pDo.setAntiHCVantibody(pDto.getAntiHCVantibody());
+        pDo.setHcvRna(pDto.getHcvRna());
+        pDo.setProtein(pDto.getProtein());
+        pDo.setRedBloodCell(pDto.getRedBloodCell());
+        pDo.setWhiteBloodCell(pDto.getWhiteBloodCell());
+        pDo.setBilirubin(pDto.getBilirubin());
+        pDo.setCa199(pDto.getCa199());
+        pDo.setCopperProtein(pDto.getCopperProtein());
         return pDo;
     }
 
@@ -216,52 +235,84 @@ public class ConvertUtil {
         pDto.setRenalFunctionCr(pDo.getRenalFunctionCr());
         pDto.setRheumaticImmuneRelatedAntibodies(pDo.getRheumaticImmuneRelatedAntibodies());
         pDto.setTotalBileAcid(pDo.getTotalBileAcid());
+        pDto.setaFP(pDo.getaFP());
+        pDto.setCarcinoembryonicAntigenCEA(pDo.getCarcinoembryonicAntigenCEA());
+        pDto.setCa125(pDo.getCa125());
+        pDto.setCa199(pDo.getCa199());
+        pDto.setHbsag(pDo.getHbsag());
+        pDto.setHbsab(pDo.getHbsab());
+        pDto.setHbeag(pDo.getHbeag());
+        pDto.setHbeab(pDo.getHbeab());
+        pDto.setHbcab(pDo.getHbcab());
+        pDto.setHbvRna(pDo.getHbvRna());
+        pDto.setAntiHCVantibody(pDo.getAntiHCVantibody());
+        pDto.setHcvRna(pDo.getHcvRna());
+        pDto.setProtein(pDo.getProtein());
+        pDto.setRedBloodCell(pDo.getRedBloodCell());
+        pDto.setWhiteBloodCell(pDo.getWhiteBloodCell());
+        pDto.setBilirubin(pDo.getBilirubin());
+        pDto.setCa199(pDo.getCa199());
+        pDto.setCopperProtein(pDo.getCopperProtein());
         return pDto;
     }
 
     public  PatientDO convertToPatientDO(PatientDTO patientDTO) {
         PatientDO patientDO = new PatientDO();
         patientDO.setIdentifier(new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date()));
-        patientDO.setAge(patientDTO.getAge());
-        patientDO.setChineseMedicineDiagnosis(patientDTO.getChineseMedicineDiagnosis());
-        patientDO.setChineseMedicineTreatment(patientDTO.getChineseMedicineTreatment());
-        patientDO.setCirrhosisDiagnosisTime(patientDTO.getCirrhosisDiagnosisTime());
-        patientDO.setComplete(patientDTO.isComplete());
+        patientDO.setNation(patientDTO.getNation());
         patientDO.setDrink(patientDTO.isDrink());
-        patientDO.setFamilyHistory(patientDTO.isFamilyHistory());
+        patientDO.setFamilyHistory(patientDTO.getFamilyHistory());
         patientDO.setGender(patientDTO.getGender());
         patientDO.setHeight(patientDTO.getHeight());
-        patientDO.setHepatitisDiagnosisTime(patientDTO.getHepatitisDiagnosisTime());
         patientDO.setName(patientDTO.getName());
         patientDO.setSmoke(patientDTO.isSmoke());
         patientDO.setWeight(patientDTO.getWeight());
-        patientDO.setWesternMedicineDiagnosis(patientDTO.getWesternMedicineDiagnosis());
-        patientDO.setWesternMedicineTreatment(patientDTO.getWesternMedicineTreatment());
+        patientDO.setComplete(patientDTO.isComplete());
+        patientDO.setBirthday(patientDTO.getBirthday());
+        patientDO.setBmi(patientDTO.getBmi());
+        patientDO.setDegreeOfEducation(patientDTO.getDegreeOfEducation());
+        patientDO.setFirstTimeLiverInjury(patientDTO.getFirstTimeLiverInjury());
+        patientDO.setInvestigateHospital(patientDTO.getInvestigateHospital());
+        patientDO.setTelephone(patientDTO.getTelephone());
+        patientDO.setDurationOfVisit(patientDTO.getDurationOfVisit());
+        patientDO.setFirstVisitAge(patientDTO.getFirstVisitAge());
+        patientDO.setFirstVisitTime(patientDTO.getFirstVisitTime());
+        patientDO.setSmokeDrinkFamHis(patientDTO.getSmokeDrinkFamHis());
+        patientDO.setConcurrentAutoDate(patientDTO.getConcurrentAutoDate());
+        patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
+        patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
         return patientDO;
     }
 
     public  PatientDTO convertToPatientDTO(PatientDO patientDO) {
         PatientDTO patientDTO = new PatientDTO();
-        patientDTO.setIdentifier(patientDO.getIdentifier());
         patientDTO.setId(patientDO.getId());
-        patientDTO.setAge(patientDO.getAge());
-        patientDTO.setChineseMedicineDiagnosis(patientDO.getChineseMedicineDiagnosis());
-        patientDTO.setChineseMedicineTreatment(patientDO.getChineseMedicineTreatment());
-        patientDTO.setCirrhosisDiagnosisTime(patientDO.getCirrhosisDiagnosisTime());
+        patientDTO.setIdentifier(patientDO.getIdentifier());
+        patientDTO.setNation(patientDO.getNation());
+        patientDTO.setDrink(patientDO.isDrink());
+        patientDTO.setFamilyHistory(patientDO.getFamilyHistory());
+        patientDTO.setGender(patientDO.getGender());
+        patientDTO.setHeight(patientDO.getHeight());
+        patientDTO.setName(patientDO.getName());
+        patientDTO.setSmoke(patientDO.isSmoke());
+        patientDTO.setWeight(patientDO.getWeight());
+        patientDTO.setBirthday(patientDO.getBirthday());
+        patientDTO.setBmi(patientDO.getBmi());
+        patientDTO.setDegreeOfEducation(patientDO.getDegreeOfEducation());
+        patientDTO.setFirstTimeLiverInjury(patientDO.getFirstTimeLiverInjury());
+        patientDTO.setInvestigateHospital(patientDO.getInvestigateHospital());
+        patientDTO.setTelephone(patientDO.getTelephone());
+        patientDTO.setDurationOfVisit(patientDO.getDurationOfVisit());
+        patientDTO.setFirstVisitAge(patientDO.getFirstVisitAge());
+        patientDTO.setFirstVisitTime(patientDO.getFirstVisitTime());
+        patientDTO.setSmokeDrinkFamHis(patientDO.getSmokeDrinkFamHis());
+        patientDTO.setConcurrentAutoDate(patientDO.getConcurrentAutoDate());
+        patientDTO.setConcurrentAutoDisease(patientDO.getConcurrentAutoDisease());
+        patientDTO.setConAutoDisFirstOrNot(patientDO.isConAutoDisFirstOrNot());
         patientDTO.setComplete(
                 patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
                         && tonguePulseService.getCompleteByPatientId(patientDO.getId())
                         && physicalService.getCompleteByPatientId(patientDO.getId()));
-        patientDTO.setDrink(patientDO.isDrink());
-        patientDTO.setFamilyHistory(patientDO.isFamilyHistory());
-        patientDTO.setGender(patientDO.getGender());
-        patientDTO.setHeight(patientDO.getHeight());
-        patientDTO.setHepatitisDiagnosisTime(patientDO.getHepatitisDiagnosisTime());
-        patientDTO.setName(patientDO.getName());
-        patientDTO.setSmoke(patientDO.isSmoke());
-        patientDTO.setWeight(patientDO.getWeight());
-        patientDTO.setWesternMedicineDiagnosis(patientDO.getWesternMedicineDiagnosis());
-        patientDTO.setWesternMedicineTreatment(patientDO.getWesternMedicineTreatment());
         return patientDTO;
     }
 

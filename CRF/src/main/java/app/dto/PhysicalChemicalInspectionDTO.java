@@ -65,6 +65,161 @@ public class PhysicalChemicalInspectionDTO {
     private String liverHardnessFibroscan;
     private String liverHardnessFibrotest;
     private String liverPuncturePathology;
+    private String copperProtein;
+
+    public String getCopperProtein() {
+        return copperProtein;
+    }
+
+    public void setCopperProtein(String copperProtein) {
+        this.copperProtein = copperProtein;
+    }
+
+    private String aFP;
+    private String carcinoembryonicAntigenCEA;
+    private String ca125;
+    private String hbsag;
+    private String hbsab;
+    private String hbeag;
+    private String hbeab;
+    private String hbcab;
+    private String hbvRna;
+    private String antiHCVantibody;
+    private String hcvRna;
+    private String protein;
+    private String redBloodCell;
+    private String whiteBloodCell;
+    private String bilirubin;
+    private String ca199;
+
+    public String getAntiHCVantibody() {
+        return antiHCVantibody;
+    }
+
+    public void setAntiHCVantibody(String antiHCVantibody) {
+        this.antiHCVantibody = antiHCVantibody;
+    }
+
+    public String getHcvRna() {
+        return hcvRna;
+    }
+
+    public void setHcvRna(String hcvRna) {
+        this.hcvRna = hcvRna;
+    }
+
+    public String getProtein() {
+        return protein;
+    }
+
+    public void setProtein(String protein) {
+        this.protein = protein;
+    }
+
+    public String getRedBloodCell() {
+        return redBloodCell;
+    }
+
+    public void setRedBloodCell(String redBloodCell) {
+        this.redBloodCell = redBloodCell;
+    }
+
+    public String getWhiteBloodCell() {
+        return whiteBloodCell;
+    }
+
+    public void setWhiteBloodCell(String whiteBloodCell) {
+        this.whiteBloodCell = whiteBloodCell;
+    }
+
+    public String getBilirubin() {
+        return bilirubin;
+    }
+
+    public void setBilirubin(String bilirubin) {
+        this.bilirubin = bilirubin;
+    }
+
+    public String getCa199() {
+        return ca199;
+    }
+
+    public void setCa199(String ca199) {
+        this.ca199 = ca199;
+    }
+
+    public String getCa125() {
+        return ca125;
+    }
+
+    public void setCa125(String ca125) {
+        this.ca125 = ca125;
+    }
+
+    public String getHbsag() {
+        return hbsag;
+    }
+
+    public void setHbsag(String hbsag) {
+        this.hbsag = hbsag;
+    }
+
+    public String getHbsab() {
+        return hbsab;
+    }
+
+    public void setHbsab(String hbsab) {
+        this.hbsab = hbsab;
+    }
+
+    public String getHbeag() {
+        return hbeag;
+    }
+
+    public void setHbeag(String hbeag) {
+        this.hbeag = hbeag;
+    }
+
+    public String getHbeab() {
+        return hbeab;
+    }
+
+    public void setHbeab(String hbeab) {
+        this.hbeab = hbeab;
+    }
+
+    public String getHbcab() {
+        return hbcab;
+    }
+
+    public void setHbcab(String hbcab) {
+        this.hbcab = hbcab;
+    }
+
+    public String getHbvRna() {
+        return hbvRna;
+    }
+
+    public void setHbvRna(String hbvRna) {
+        this.hbvRna = hbvRna;
+    }
+
+    public String getaFP() {
+        return aFP;
+    }
+
+    public void setaFP(String aFP) {
+        this.aFP = aFP;
+    }
+
+    public String getCarcinoembryonicAntigenCEA() {
+        return carcinoembryonicAntigenCEA;
+    }
+
+    public void setCarcinoembryonicAntigenCEA(String carcinoembryonicAntigenCEA) {
+        this.carcinoembryonicAntigenCEA = carcinoembryonicAntigenCEA;
+    }
+
     private boolean complete;
 
     public int getId() {
