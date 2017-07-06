@@ -23,16 +23,6 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     $('#saveModal').modal('show');
   };
 
-  //save some messages
-  // $scope.saveSomeMessage = function() {
-  //   //1st
-  //   $http({
-  //     method:'Post',
-  //     url:'/api/physical/'
-  //   });
-  // };
-
-
 
   //get patientInfo by id
   $http({
@@ -102,6 +92,24 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     $scope.liverHardnessFibrotest = physicalChemicalInspection.liverHardnessFibrotest;
     $scope.liverPuncturePathology = physicalChemicalInspection.liverPuncturePathology;
 
+
+    $scope.aFP = physicalChemicalInspection.aFP;
+    $scope.carcinoembryonicAntigenCEA = physicalChemicalInspection.carcinoembryonicAntigenCEA;
+    $scope.ca125 = physicalChemicalInspection.ca125;
+    $scope.hbsag = physicalChemicalInspection.hbsag;
+    $scope.hbsab = physicalChemicalInspection.hbsab;
+    $scope.hbeag = physicalChemicalInspection.hbeag;
+    $scope.hbeab = physicalChemicalInspection.hbeab;
+    $scope.hbcab = physicalChemicalInspection.hbcab;
+    $scope.hbvRna = physicalChemicalInspection.hbvRna;
+    $scope.antiHCVantibody = physicalChemicalInspection.antiHCVantibody;
+    $scope.hcvRna = physicalChemicalInspection.hcvRna;
+    $scope.protein = physicalChemicalInspection.protein;
+    $scope.redBloodCell = physicalChemicalInspection.redBloodCell;
+    $scope.whiteBloodCell = physicalChemicalInspection.whiteBloodCell;
+    $scope.bilirubin = physicalChemicalInspection.bilirubin;
+    $scope.ca199 = physicalChemicalInspection.ca199;
+
   });
 
   //save some messages
@@ -160,6 +168,27 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.cellularImmunityCD2 = $scope.cellularImmunityCD2;
     physicalChemicalInspection.cellularImmunityCD4CD8 = $scope.cellularImmunityCD4CD8;
     physicalChemicalInspection.rheumaticImmuneRelatedAntibodies = $scope.rheumaticImmuneRelatedAntibodies;
+
+
+    physicalChemicalInspection.aFP = $scope.aFP;
+    physicalChemicalInspection.carcinoembryonicAntigenCEA = $scope.carcinoembryonicAntigenCEA;
+    physicalChemicalInspection.ca199 = $scope.ca199;
+    physicalChemicalInspection.ca125 = $scope.ca125;
+    physicalChemicalInspection.hbsag = $scope.hbsag;
+    physicalChemicalInspection.hbsab = $scope.hbsab;
+    physicalChemicalInspection.hbeag = $scope.hbeag;
+    physicalChemicalInspection.hbeab = $scope.hbeab;
+    physicalChemicalInspection.hbcab = $scope.hbcab;
+    physicalChemicalInspection.hbvRna = $scope.hbvRna;
+    physicalChemicalInspection.antiHCVantibody = $scope.antiHCVantibody;
+    physicalChemicalInspection.hcvRna = $scope.hcvRna;
+    physicalChemicalInspection.protein = $scope.protein;
+    physicalChemicalInspection.redBloodCell = $scope.redBloodCell;
+    physicalChemicalInspection.whiteBloodCell = $scope.whiteBloodCell;
+    physicalChemicalInspection.bilirubin = $scope.bilirubin;
+
+
+
     if (!$scope.cTMRI) {
       physicalChemicalInspection.ctmri = -1;
     } else {
@@ -168,7 +197,8 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.liverHardnessFibroscan = $scope.liverHardnessFibroscan;
     physicalChemicalInspection.liverHardnessFibrotest = $scope.liverHardnessFibrotest;
     physicalChemicalInspection.liverPuncturePathology = $scope.liverPuncturePathology;
-    if ($scope.totalBileAcid && $scope.liverFunctionAlbumin && $scope.liverFunctionGlobulin && $scope.liverFunctionALT && $scope.liverFunctionAST && $scope.liverFunctionGGT && $scope.liverFunctionALP && $scope.liverFunctionTotalCholesterol && $scope.liverFunctionTotalBilirubin && $scope.liverFunctionDirectBilirubin && $scope.liverFunctionRglobulin && $scope.renalFunctionBUN && $scope.renalFunctionCr && $scope.clottingPT && $scope.clottingINR && $scope.bloodRoutineRBC && $scope.bloodRoutineHb && $scope.bloodRoutineWBC && $scope.bloodRoutineNeutrophils && $scope.bloodRoutineLymphocytes && $scope.bloodRoutineEosinophils && $scope.bloodRoutinePlatelets && $scope.liverDiseaseAutoantibodiesAMA && $scope.liverDiseaseAutoantibodiesAMAM2 && $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody && $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies && $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen && $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen && $scope.liverDiseaseAutoantibodiesOther && $scope.anaHomogeneous && $scope.anaParticle && $scope.anaPeripheral && $scope.anaNucleolus && $scope.anaNucleolusEnhancement && $scope.anaNuclear && $scope.anaCentromere && $scope.anaOther && $scope.humoralImmunityIgG && $scope.humoralImmunityIgA && $scope.humoralImmunityIgM && $scope.humoralImmunityImmuneComplexf && $scope.humoralImmunityComplementC3 && $scope.humoralImmunityComplementC4 && $scope.humoralImmunityIgE && $scope.humoralImmunityKlightChain && $scope.humoralImmunityNlightChain && $scope.cellularImmunityCD3 && $scope.cellularImmunityCD4 && $scope.cellularImmunityCD8 && $scope.cellularImmunityCD56 && $scope.cellularImmunityCD2 && $scope.cellularImmunityCD4CD8 && $scope.rheumaticImmuneRelatedAntibodies && $scope.cTMRI && $scope.liverHardnessFibroscan && $scope.liverHardnessFibrotest && $scope.liverPuncturePathology) {
+    if ($scope.totalBileAcid && $scope.liverFunctionAlbumin && $scope.liverFunctionGlobulin && $scope.liverFunctionALT && $scope.liverFunctionAST && $scope.liverFunctionGGT && $scope.liverFunctionALP && $scope.liverFunctionTotalCholesterol && $scope.liverFunctionTotalBilirubin && $scope.liverFunctionDirectBilirubin && $scope.liverFunctionRglobulin && $scope.renalFunctionBUN && $scope.renalFunctionCr && $scope.clottingPT && $scope.clottingINR && $scope.bloodRoutineRBC && $scope.bloodRoutineHb && $scope.bloodRoutineWBC && $scope.bloodRoutineNeutrophils && $scope.bloodRoutineLymphocytes && $scope.bloodRoutineEosinophils && $scope.bloodRoutinePlatelets && $scope.liverDiseaseAutoantibodiesAMA && $scope.liverDiseaseAutoantibodiesAMAM2 && $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody && $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies && $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen && $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen && $scope.liverDiseaseAutoantibodiesOther && $scope.anaHomogeneous && $scope.anaParticle && $scope.anaPeripheral && $scope.anaNucleolus && $scope.anaNucleolusEnhancement && $scope.anaNuclear && $scope.anaCentromere && $scope.anaOther && $scope.humoralImmunityIgG && $scope.humoralImmunityIgA && $scope.humoralImmunityIgM && $scope.humoralImmunityImmuneComplexf && $scope.humoralImmunityComplementC3 && $scope.humoralImmunityComplementC4 && $scope.humoralImmunityIgE && $scope.humoralImmunityKlightChain && $scope.humoralImmunityNlightChain && $scope.cellularImmunityCD3 && $scope.cellularImmunityCD4 && $scope.cellularImmunityCD8 && $scope.cellularImmunityCD56 && $scope.cellularImmunityCD2 && $scope.cellularImmunityCD4CD8 && $scope.rheumaticImmuneRelatedAntibodies && $scope.cTMRI && $scope.liverHardnessFibroscan && $scope.liverHardnessFibrotest && $scope.liverPuncturePathology
+    && $scope.aFP && $scope.carcinoembryonicAntigenCEA && $scope.ca199 && $scope.ca125 && $scope.hbsag && $scope.hbsab && $scope.hbeag && $scope.hbcab && $scope.hbvRna && $scope.antiHCVantibody && $scope.hcvRna && $scope.protein && $scope.redBloodCell && $scope.whiteBloodCell && $scope.whiteBloodCell && $scope.bilirubin) {
       physicalChemicalInspection.complete = true;
     } else {
       physicalChemicalInspection.complete = false;

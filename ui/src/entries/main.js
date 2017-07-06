@@ -4,6 +4,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../lib/css/css/AdminLTE.min.css';
 import '../lib/css/css/skins/skin-blue.min.css';
+import '../lib/css/css/alt/AdminLTE-select2.min.css';
+
 import '../lib/css/js/app.min.js';
 import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
 import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
@@ -93,16 +95,16 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   };
 
   $scope.phyClick = function() {
-    if (!sessionStorage.getItem('patientId')) {
-      $('#a_phy').popover('toggle');
-      setTimeout(function() {
-        $('#a_phy').popover('hide');
-      }, 1500);
-    } else {
-      $('li').removeClass('active');
-      $('#li5').addClass('active');
-      $state.go('phyAChe');
-    }
+    // if (!sessionStorage.getItem('patientId')) {
+    //   $('#a_phy').popover('toggle');
+    //   setTimeout(function() {
+    //     $('#a_phy').popover('hide');
+    //   }, 1500);
+    // } else {
+    //   $('li').removeClass('active');
+    //   $('#li5').addClass('active');
+    $state.go('phyAChe');
+    // }
   };
 
   function changeStatus() {

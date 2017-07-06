@@ -55,12 +55,12 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     url:'/updateHospital',
     template:require('../templates/update_hospital.html'),
     controller: 'updateHospitalController'
-  }) 
+  })
   .state('hospital',{
     url:'/hospital',
     template:require('../templates/hospital.html'),
     controller: 'hospitalController'
-  }) 
+  })
   .state('project', {
     url: '/project',
     template: require('../templates/project.html'),
@@ -113,12 +113,12 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
 
   sysPermission();
   getProjectList();
-  
+
   $scope.projects = [];
   $scope.invitePermissions = [];
   $scope.digustPermissions = [];
   $scope.settingPermissions = [];
-  
+
   /**
   *获取未读邀请消息
   */
@@ -129,11 +129,11 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }).then(function successCallback(response){
       $scope.messageInfos = response.data;
       $scope.newMessageCount = response.data.length;
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
 
-  };
+  }
 
   /**
   *进入单个未读信息
@@ -165,7 +165,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  };
+  }
 
 
   /**
@@ -178,9 +178,9 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  };
+  }
 
-  
+
 
   /**
    *设置该账户当前点击的项目，并将该账户在该项目下的权限也保存在project对象里
@@ -200,8 +200,8 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }).then(function successCallback(response){
       $scope.projects = response.data;
       getProjectPermission();
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
 
   };
@@ -213,7 +213,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     if(!localStorageService.get('user')){
       window.location.href = '/login.html';
     }
-  };
+  }
 
   /**
   *请求得到该用户的所有项目
@@ -225,16 +225,16 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }).then(function successCallback(response){
       $scope.projects = response.data;
       getProjectPermission();
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
-  };
+  }
 
 
   /**
   *过滤用户每个项目下的权限
-  */  
-  function getProjectPermission(){    
+  */
+  function getProjectPermission(){
     angular.forEach($scope.projects, function(data){
       var projectPermissionName = [];
       angular.forEach(data.currentUserPermissionInProject, function(permission_data){
@@ -243,16 +243,16 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       data.currentUserPermissionInProject = projectPermissionName;
     });
     projectListPermission();
-  }; 
+  }
 
   $scope.sign_out = function(){
     $http({
       method: 'GET',
       url: '/api/logout'
-    }).then(function successCallback(response){
+    }).then(function successCallback(){
       window.location.href = '/login.html';
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
 
   };
@@ -269,8 +269,3 @@ Array.prototype.contains = function(obj) {
   }
   return false;
 };
-
-
-
-
-

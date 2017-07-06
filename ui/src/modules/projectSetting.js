@@ -58,6 +58,6 @@ angular.module('projectSetting', [])
       }else{
         $scope.status_button = '打开数据收集';
       }
-    };
+    }
 
   }]);

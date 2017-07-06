@@ -23,7 +23,7 @@
             </div>
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked" style="cursor:pointer">
-                <li class="active"><a ng-click="addTabActive('#tab_1', '总胆汁酸')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 总胆汁酸</a></li>
+                <li class="active"><a ng-click="addTabActive('#tab_1', '总胆汁酸')" data-toggle="tab"><i class="fa fa-file-text-o"></i> </a></li>
                 <li><a ng-click="addTabActive('#tab_2', '肝功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝功能</a></li>
                 <li><a ng-click="addTabActive('#tab_3', '肾功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能</a></li>
                 <li><a ng-click="addTabActive('#tab_4', '凝血')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血</a></li>
@@ -32,6 +32,10 @@
                 <li><a ng-click="addTabActive('#tab_7', 'ANA')" data-toggle="tab"><i class="fa fa-file-text-o"></i> ANA</a></li>
                 <li><a ng-click="addTabActive('#tab_8', '体液免疫')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 体液免疫</a></li>
                 <li><a ng-click="addTabActive('#tab_9', '细胞免疫')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 细胞免疫</a></li>
+                <li><a ng-click="addTabActive('#tab_14', '肿瘤标记物')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肿瘤标记物</a></li>
+                <li><a ng-click="addTabActive('#tab_15', '乙肝五项+定量')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 乙肝五项+定量</a></li>
+                <li><a ng-click="addTabActive('#tab_16', '丙肝抗体+定量')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 丙肝抗体+定量</a></li>
+                <li><a ng-click="addTabActive('#tab_17', '尿液分析')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 尿液分析</a></li>
                 <li><a ng-click="addTabActive('#tab_10', '风湿免疫相关抗体')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 风湿免疫相关抗体</a></li>
                 <li><a ng-click="addTabActive('#tab_11', '腹部超声')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 腹部超声/CT/MRI</a></li>
                 <li><a ng-click="addTabActive('#tab_12', '肝脏硬度检测值')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝脏硬度检测值</a></li>
@@ -62,7 +66,18 @@
                         <div class="col-sm-10">
                           <div class="input-group">
                             <input type="text" class="form-control" ng-model="totalBileAcid">
-                            <span class="input-group-addon">umol/l</span>
+                            <span class="input-group-addon">(0-15)μmol/l</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">铜蓝蛋白：</label>
+
+                        <div class="col-sm-10">
+                          <div class="input-group">
+                            <input type="text" class="form-control" ng-model="copperProtein ">
+                            <span class="input-group-addon">(22-58)mg/dl</span>
                           </div>
                         </div>
                       </div>
@@ -86,7 +101,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionAlbumin">
-                      <span class="input-group-addon">g/L</span>
+                      <span class="input-group-addon">(35-52)g/L</span>
                     </div>
                   </div>
                 </div>
@@ -97,7 +112,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionGlobulin">
-                      <span class="input-group-addon">g/L</span>
+                      <span class="input-group-addon">20-35g/L</span>
                     </div>
                   </div>
                 </div>
@@ -108,7 +123,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionALT">
-                      <span class="input-group-addon">IU/L</span>
+                      <span class="input-group-addon"><35IU/L</span>
                     </div>
                   </div>
                 </div>
@@ -117,7 +132,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionAST">
-                      <span class="input-group-addon">IU/L</span>
+                      <span class="input-group-addon"><35IU/L</span>
                     </div>
                   </div>
                 </div>
@@ -127,7 +142,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionGGT">
-                      <span class="input-group-addon">IU/L</span>
+                      <span class="input-group-addon">(9-64)IU/L</span>
                     </div>
                   </div>
                 </div>
@@ -137,7 +152,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionALP">
-                      <span class="input-group-addon">IU/L</span>
+                      <span class="input-group-addon">(30-120)IU/L</span>
                     </div>
                   </div>
                 </div>
@@ -147,7 +162,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionTotalCholesterol">
-                      <span class="input-group-addon">mmol/l</span>
+                      <span class="input-group-addon">(2.8-5.69)mmol/l</span>
                     </div>
                   </div>
                 </div>
@@ -157,7 +172,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionTotalBilirubin">
-                      <span class="input-group-addon">mmol/l</span>
+                      <span class="input-group-addon">(5-21)μmol/L</span>
                     </div>
                   </div>
                 </div>
@@ -167,7 +182,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionDirectBilirubin">
-                      <span class="input-group-addon">μmmol/l</span>
+                      <span class="input-group-addon"><3.4μmol/L</span>
                     </div>
                   </div>
                 </div>
@@ -177,7 +192,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionRglobulin">
-                      <span class="input-group-addon">%</span>
+                      <span class="input-group-addon">(11.1-18.8)%</span>
                     </div>
                   </div>
                 </div>
@@ -202,7 +217,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="renalFunctionBUN">
-                      <span class="input-group-addon">mmol/L</span>
+                      <span class="input-group-addon">(2.8-7.2)mmol/L</span>
                     </div>
                   </div>
                 </div>
@@ -213,7 +228,7 @@
                   <div class="col-sm-10">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="renalFunctionCr">
-                      <span class="input-group-addon">μmol/L</span>
+                      <span class="input-group-addon">(59-104)μmol/L</span>
                     </div>
                   </div>
                 </div>
@@ -237,7 +252,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="clottingPT">
-                          <span class="input-group-addon">秒</span>
+                          <span class="input-group-addon">(11-15)秒</span>
                         </div>
                       </div>
                     </div>
@@ -248,7 +263,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="clottingINR">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(0.8-1.5)</span>
                         </div>
                       </div>
                     </div>
@@ -271,7 +286,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineRBC">
-                          <span class="input-group-addon">10<sup>12</sup>/L</span>
+                          <span class="input-group-addon">(4.09-5.74)X10<sup>12</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -282,7 +297,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineHb">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(131-172)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -293,7 +308,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineWBC">
-                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                          <span class="input-group-addon">(3.97-9.15)X10<sup>9</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -304,7 +319,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineNeutrophils">
-                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                          <span class="input-group-addon">(2.0-7.0)X10<sup>9</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -315,7 +330,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineLymphocytes">
-                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                          <span class="input-group-addon">(0.8-4.0)X10<sup>9</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -326,7 +341,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineEosinophils">
-                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                          <span class="input-group-addon">(0.02-0.5)X10<sup>9</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -337,7 +352,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutinePlatelets">
-                          <span class="input-group-addon">10<sup>9</sup>/L</span>
+                          <span class="input-group-addon">(85-303)X10<sup>9</sup>/L</span>
                         </div>
                       </div>
                     </div>
@@ -549,7 +564,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgG">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(7.2-16.9)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -560,7 +575,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgA">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(0.69-3.82)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -571,7 +586,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgM">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(0.63-2.8)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -582,7 +597,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityImmuneComplexf">
-                          <span class="input-group-addon"></span>
+                          <span class="input-group-addon"><0.056</span>
                         </div>
                       </div>
                     </div>
@@ -593,7 +608,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityComplementC3">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(0.85-1.9)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -604,7 +619,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityComplementC4">
-                          <span class="input-group-addon">g/L</span>
+                          <span class="input-group-addon">(0.12-0.36)g/L</span>
                         </div>
                       </div>
                     </div>
@@ -615,7 +630,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgE">
-                          <span class="input-group-addon">IU/ml</span>
+                          <span class="input-group-addon"><120 IU/ml</span>
                         </div>
                       </div>
                     </div>
@@ -626,7 +641,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityKlightChain">
-                          <span class="input-group-addon">mg/dl</span>
+                          <span class="input-group-addon">(598-1320)mg/dl</span>
                         </div>
                       </div>
                     </div>
@@ -637,7 +652,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityNlightChain">
-                          <span class="input-group-addon">mg/dl</span>
+                          <span class="input-group-addon">(280-665)mg/dl</span>
                         </div>
                       </div>
                     </div>
@@ -660,7 +675,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD3">
-                          <span class="input-group-addon">mg/dl</span>
+                          <span class="input-group-addon">(64-73) %</span>
                         </div>
                       </div>
                     </div>
@@ -671,7 +686,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD4">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(30-45) %</span>
                         </div>
                       </div>
                     </div>
@@ -682,7 +697,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD8">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(21-30) %</span>
                         </div>
                       </div>
                     </div>
@@ -693,7 +708,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD56">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(10-20) %</span>
                         </div>
                       </div>
                     </div>
@@ -704,7 +719,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD2">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(65-80) %</span>
                         </div>
                       </div>
                     </div>
@@ -715,7 +730,7 @@
                       <div class="col-sm-10">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD4CD8">
-                          <span class="input-group-addon">%</span>
+                          <span class="input-group-addon">(1.1-2.3)</span>
                         </div>
                       </div>
                     </div>
@@ -778,11 +793,7 @@
                   </div>
                 </form>
               </div>
-              <input type="button" value="修改问题">
-              <input type="button" value="查看问题历史">
-              <input type="button" value="查看质疑历史">
-              <input type="button" value="提出质疑">
-              <input type="button" value="回应质疑">
+
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_12">
                 <form class="form-horizontal">
@@ -835,7 +846,236 @@
                   </div>
                 </form>
               </div>
+
+              <div class="tab-pane" id="tab_14">
+                <form class="form-horizontal">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">AFP</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="aFP">
+                          <span class="input-group-addon"><8.78 ng/ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">癌胚抗原CEA</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="carcinoembryonicAntigenCEA">
+                          <span class="input-group-addon"><5 ng/ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">CA199</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="ca199">
+                          <span class="input-group-addon"><39.0 U.ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">CA125</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="ca125">
+                          <span class="input-group-addon"><35.0 U/ml</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+                  </div>
+                </form>
+              </div>
+
+
+
+              <div class="tab-pane" id="tab_15">
+                <form class="form-horizontal">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBsAg</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbsag">
+                          <span class="input-group-addon">(0-0.05) IU/ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBsAb</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbsab">
+                          <span class="input-group-addon">(0-10) mlU/ml</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBeAg</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbeag">
+                          <span class="input-group-addon">(0-1) S/CO</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBeAb</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbeab">
+                          <span class="input-group-addon">>1 S/CO</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBcAb</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbcab">
+                          <span class="input-group-addon">(0-1) S/CO</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HBV-RNA</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hbvRna">
+                          <span class="input-group-addon"><500 copies/ml</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+                  </div>
+                </form>
+              </div>
+
+
+
+              <div class="tab-pane" id="tab_16">
+                <form class="form-horizontal">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">抗HCV抗体</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="antiHCVantibody">
+                          <span class="input-group-addon"><1 S/CO</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">HCV-RNA</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="hcvRna">
+                          <span class="input-group-addon"></span>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="box-footer">
+
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+                  </div>
+                </form>
+              </div>
+
+
+
+              <div class="tab-pane" id="tab_17">
+                <form class="form-horizontal">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">蛋白质</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="protein">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">红细胞</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="redBloodCell">
+                          <span class="input-group-addon">(0-5) p/ul</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">白细胞</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="whiteBloodCell">
+                          <span class="input-group-addon">(0-9)p/ul</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">胆红素</label>
+
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="bilirubin">
+                          <span class="input-group-addon">阴性</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                    <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+                  </div>
+                </form>
+              </div>
+<!--
+              <input type="button" value="修改问题">
+              <input type="button" value="查看问题历史">
+              <input type="button" value="查看质疑历史">
+              <input type="button" value="提出质疑">
+              <input type="button" value="回应质疑"> -->
+
+
               <!-- /.tab-pane -->
+
             </div>
 
               </div>

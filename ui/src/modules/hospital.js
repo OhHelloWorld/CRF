@@ -74,6 +74,6 @@ angular.module('hospital', [])
       }).then(function success(response) {
         $scope.imageName = response.data;
       });
-    };
+    }
     
   }]);

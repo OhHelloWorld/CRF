@@ -50,7 +50,7 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
       }else{
         $scope.url = '/api/case/search/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
       }
-    };
+    }
 
   }])
 
@@ -72,9 +72,9 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
           $('#writeIllness').addClass('ng-hide');
         }
       }else{
-          $('#writeIllness').addClass('ng-hide');
+        $('#writeIllness').addClass('ng-hide');
       }
-    };
+    }
 
 
 

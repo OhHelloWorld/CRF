@@ -50,7 +50,7 @@ angular.module('readMessage', [])
       
       });
 
-    };
+    }
 
     function judgeStatus(){
       $http({
@@ -74,14 +74,14 @@ angular.module('readMessage', [])
       
       });
 
-    };
+    }
 
   }]).filter('isRead', function(){
     return function(status) {
       if(status) {
-        return "已读"
+        return '已读';
       }else {
-        return "未读"
+        return '未读';
       }
-    } 
-  })
+    }; 
+  });

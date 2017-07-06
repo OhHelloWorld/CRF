@@ -14,6 +14,10 @@
           <div class="col-md-12">
             <div class="box box-primary">
               <div class="box-header with-border">
+                <h3 class="box-title">基本信息</h3>
+              </div>
+                <div class="box-body">
+                  <form role="form">
                 <!-- 姓名字段 -->
                 <div class="col-sm-3">
                   <div class="input-group date">
@@ -40,7 +44,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">出生日期</i>
                     </div>
-                    <input class="form-control pull-right" id="datepicker1" ng-model="age" >
+                    <input class="form-control pull-right" id="datepicker1" ng-model="birthday" >
                   </div>
                 </div>
                 <!-- 民族字段 -->
@@ -49,7 +53,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 民族 &ensp; &#8197; </i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="age">
+                    <input class="form-control" id="inputEmail3" ng-model="nation">
                   </div>
                 </div>
               </div>
@@ -62,7 +66,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">体重</i>
                     </div>
-                    <input class="form-control" ng-model="name" id="inputName" ng-blur="judgeName()"
+                    <input class="form-control" ng-model="weight" id="inputName" ng-blur="judgeName()"
                     data-toggle="popover" data-placement="top">
                   </div>
                 </div>
@@ -72,7 +76,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">身高</i>
                     </div>
-                    <input class="form-control" id="inputGender" ng-model="gender" tabindex="0" ng-blur="judgeGender()"
+                    <input class="form-control" id="inputGender" ng-model="height" tabindex="0" ng-blur="judgeGender()"
                     data-toggle="popover" data-placement="top">
                   </div>
                 </div>
@@ -82,7 +86,7 @@
                     <div class="input-group-addon">
                       <i style="font-weight: 900;font-style: inherit;"> &emsp; BMI &emsp; </i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="age">
+                    <input class="form-control" id="inputEmail3" ng-model="bmi">
                   </div>
                 </div>
                 <!-- 文化程度字段 -->
@@ -91,7 +95,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">文化程度</i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="age">
+                    <input class="form-control" id="inputEmail3" ng-model="degreeOfEducation">
                   </div>
                 </div>
               </div>
@@ -103,7 +107,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">首次出现肝损伤时间</i>
                     </div>
-                    <input class="form-control" ng-model="name" id="datepicker4">
+                    <input class="form-control" ng-model="firstTimeLiverInjury" id="datepicker4">
                   </div>
                 </div>
                 <!-- 调查医院 -->
@@ -112,7 +116,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &emsp; 调查医院 &emsp; </i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="age">
+                    <input class="form-control" id="inputEmail3" ng-model="investigateHospital">
                   </div>
                 </div>
               </div>
@@ -124,7 +128,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">  &ensp; &ensp; 联系电话 &ensp; </i>
                     </div>
-                    <input class="form-control" ng-model="name">
+                    <input class="form-control" ng-model="telephone">
                   </div>
                 </div>
                 <!-- 就诊时病程医院 -->
@@ -133,7 +137,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">&#8197; &#8197; 就诊时病程&#8197; &#8197; </i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="age" placeholder="（体检发现、肝硬化、其他）">
+                    <input class="form-control" id="inputEmail3" ng-model="durationOfVisit" placeholder="（体检发现、肝硬化、其他）">
                   </div>
                 </div>
               </div>
@@ -145,7 +149,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">初次诊断年龄</i>
                     </div>
-                    <input class="form-control" ng-model="name">
+                    <input class="form-control" ng-model="firstVisitAge">
                   </div>
                 </div>
                 <!-- 初次诊断年月医院 -->
@@ -154,55 +158,11 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 初次诊断年月</i>
                     </div>
-                    <input class="form-control" id="datepicker5" ng-model="age">
+                    <input class="form-control" id="datepicker5" ng-model="firstVisitTime">
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="box-header with-border">
-                <div class="form-inline form-group">
-
-                  <div class="radio col-sm-3">
-                      <div>
-                        <label>吸烟</label>
-                        <label>
-                          <input type="radio" name="optionsRadios1" id="optionsRadios1" ng-model="smoke" ng-value="false">无
-                        </label>
-                        <label>
-                          <input type="radio" name="optionsRadios1" id="optionsRadios2" ng-model="smoke" ng-value="true">有
-                        </label>
-                      </div>
-                  </div>
-
-                  <div class="radio col-sm-offset-1 col-sm-3">
-                      <div>
-                        <label>饮酒</label>
-                        <label>
-                          <input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="drink" ng-value="false">无
-                        </label>
-                        <label>
-                          <input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="drink" ng-value="true">有
-                        </label>
-                      </div>
-                  </div>
-
-                  <div class="radio col-sm-offset-1 col-sm-3">
-                      <div>
-                        <label>家族史</label>
-                        <label>
-                          <input type="radio" name="optionsRadios3" id="optionsRadios5" ng-model="familyHistory" ng-value="false">无
-                        </label>
-                        <label>
-                          <input type="radio" name="optionsRadios3" id="optionsRadios6" ng-model="familyHistory" ng-value="true">有
-                        </label>
-                      </div>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- /.box-header -->
-
-              <!-- /.box-body -->
+              </form>
             </div>
           </div>
 
@@ -212,15 +172,98 @@
               <div class="box-header with-border">
                 <h3 class="box-title">个人家族史</h3>
               </div>
-              <!-- /.box-header -->
               <div class="box-body">
                 <form role="form">
-                  <!-- text input -->
+
+                  <div class="box-header with-border">
+                    <div class="col-sm-6">
+                      <div>
+                        <label>吸烟：</label>
+                        <label>
+                          <input type="radio" name="optionsRadios1" id="optionsRadios1" ng-model="smoke" ng-click="showOthers()" ng-value="false" ng-checked="true">无
+                        </label>
+                        <label>
+                          <input type="radio" name="optionsRadios1" id="optionsRadios2" ng-model="smoke" ng-click="showOthers()" ng-value="true">有
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div>
+                        <label>饮酒：</label>
+                        <label>
+                          <input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="drink" ng-click="showOthers()" ng-value="false" ng-checked="true">无
+                        </label>
+                        <label>
+                          <input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="drink" ng-click="showOthers()" ng-value="true">有
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-header with-border">
+                    <div class="col-sm-6">
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i style="font-style: inherit;">家族史</i>
+                        </div>
+                        <select class="form-control" ng-model="familyHistory" ng-blur="showOthers()">
+                          <option>无</option>
+                          <option>肿瘤家族史</option>
+                          <option>自身免疫性肝病家族史</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6" ng-show="showOthersResult">
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i style="font-style: inherit;">相关备注</i>
+                        </div>
+                        <input class="form-control" ng-model="smokeDrinkFamHis">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="box-header with-border">
+                    <div class="col-sm-3">
+                      <div class="input-group date">
+                        <div>
+                          <label>并发自身免疫性疾病：</label>
+                          <label>
+                            <input type="radio" id="optionsRadios5" ng-model="concurrentAutoDisease" ng-click="showDatepicker()" ng-value="false" ng-checked="true">无
+                          </label>
+                          <label>
+                            <input type="radio" id="optionsRadios6" ng-model="concurrentAutoDisease" ng-click="showDatepicker()" ng-value="true">有
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4" ng-show="concurrentDatepicker">
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i style="font-style: inherit;">请选择年月</i>
+                        </div>
+                        <input class="form-control" ng-model="concurrentAutoDate" id="datepicker6">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4" ng-show="concurrentDatepicker">
+                      <div>
+                        <label>是否首发：</label>
+                        <label>
+                          <input type="radio" id="optionsRadios3" ng-model="conAutoDisFirstOrNot" ng-click="showOthers()" ng-value="false" ng-checked="true">无
+                        </label>
+                        <label>
+                          <input type="radio" id="optionsRadios4" ng-model="conAutoDisFirstOrNot" ng-click="showOthers()" ng-value="true">有
+                        </label>
+                      </div>
+                    </div>
+                  </div>
 
 
                 </form>
               </div>
-              <!-- /.box-body -->
             </div>
           </div>
 
@@ -237,13 +280,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
-              </div>
-              <div class="modal-body">
-                <p ng-bind="myModalContent">&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="commit()">确定</button>
-              </div>
+                </div>
+                <div class="modal-body">
+                  <p ng-bind="myModalContent">&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="commit()">确定</button>
+                </div>
               </div>
             </div>
           </div>

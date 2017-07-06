@@ -9,7 +9,7 @@ angular.module('createHospital', [])
       dealGraph();
       hospital.hospitalName = $scope.hospital_name;
       hospital.address = $scope.hospital_address;
-      hospital.addressDetail = $scope.hospital_addressDetail
+      hospital.addressDetail = $scope.hospital_addressDetail;
       hospital.telephone = $scope.hospital_telphone;
       hospital.specialMajor = $scope.hospital_specialMajor;
       hospital.manageRange = $scope.hospital_manageRange;
@@ -55,7 +55,7 @@ angular.module('createHospital', [])
       }).then(function success(response) {
         $scope.imageName = response.data;
       });
-    };
+    }
     
   }]);
 
