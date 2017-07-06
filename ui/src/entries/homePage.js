@@ -49,12 +49,12 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     url:'/updateHospital',
     template:require('../templates/update_hospital.html'),
     controller: 'updateHospitalController'
-  }) 
+  })
   .state('hospital',{
     url:'/hospital',
     template:require('../templates/hospital.html'),
     controller: 'hospitalController'
-  }) 
+  })
   .state('project', {
     url: '/project',
     template: require('../templates/project.html'),
@@ -101,15 +101,15 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
 }]);
 
 homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
-  
+
   sysPermission();
   getProjectList();
-  
+
   $scope.projects = [];
   $scope.invitePermissions = [];
   $scope.digustPermissions = [];
   $scope.settingPermissions = [];
-  
+
 
   /**
   *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）
@@ -133,7 +133,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  } 
+  }
 
 
   /**
@@ -146,16 +146,16 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       }
     });
 
-  }  
+  }
 
-  
+
 
   /**
    *设置该账户当前点击的项目，并将该账户在该项目下的权限也保存在project对象里
    */
   $scope.click_project = function(project){
     localStorageService.set('project', project);
-  }
+  };
 
   /**
    *左侧栏对项目进行搜索
@@ -168,20 +168,20 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }).then(function successCallback(response){
       $scope.projects = response.data;
       getProjectPermission();
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
 
-  }
+  };
 
   /**
   *对是否登录进入首页进行判断，（未登录跳回登陆页面）
   */
-  function loginStatus(){
-    if(!localStorageService.get('user')){
-      window.location.href = '/login.html';
-    }
-  }   
+  // function loginStatus(){
+  //   if(!localStorageService.get('user')){
+  //     window.location.href = '/login.html';
+  //   }
+  // }
 
   /**
   *请求得到该用户的所有项目
@@ -193,16 +193,16 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
     }).then(function successCallback(response){
       $scope.projects = response.data;
       getProjectPermission();
-    }, function failCallback(response){
-      
+    }, function failCallback(){
+
     });
-  }   
+  }
 
 
   /**
   *过滤用户每个项目下的权限
-  */  
-  function getProjectPermission(){    
+  */
+  function getProjectPermission(){
     angular.forEach($scope.projects, function(data){
       var projectPermissionName = [];
       angular.forEach(data.currentUserPermissionInProject, function(permission_data){
@@ -211,7 +211,7 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
       data.currentUserPermissionInProject = projectPermissionName;
     });
     projectListPermission();
-  }   
+  }
 
 
 }]);
@@ -225,8 +225,3 @@ Array.prototype.contains = function(obj) {
   }
   return false;
 };
-
-
-
-
-

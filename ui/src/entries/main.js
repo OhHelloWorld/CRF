@@ -95,16 +95,16 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   };
 
   $scope.phyClick = function() {
-    if (!sessionStorage.getItem('patientId')) {
-      $('#a_phy').popover('toggle');
-      setTimeout(function() {
-        $('#a_phy').popover('hide');
-      }, 1500);
-    } else {
-      $('li').removeClass('active');
-      $('#li5').addClass('active');
-      $state.go('phyAChe');
-    }
+    // if (!sessionStorage.getItem('patientId')) {
+    //   $('#a_phy').popover('toggle');
+    //   setTimeout(function() {
+    //     $('#a_phy').popover('hide');
+    //   }, 1500);
+    // } else {
+    //   $('li').removeClass('active');
+    //   $('#li5').addClass('active');
+    $state.go('phyAChe');
+    // }
   };
 
   function changeStatus() {

@@ -14,6 +14,16 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
   }
   var patient = {};
   $scope.patientMenuClick();
+  $scope.familyHistory = '无';
+
+
+  $scope.showOthers = function(){
+    $scope.showOthersResult = (!$scope.smoke || !$scope.drink || ($scope.familyHistory == '无')) ? false : true;
+  };
+
+  $scope.showDatepicker = function() {
+    $scope.concurrentDatepicker = !$scope.concurrentAutoDisease == true ? false : true;
+  };
 
   $('#datepicker1').datepicker({
     autoclose: true
@@ -35,14 +45,10 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
     autoclose: true
   });
 
-  //新建
-  // $http({
-  //   method:'POST',
-  //   url:''
-  // }).then(function(){
-  //   alert('post successed!!');
-  // });
-  //save button
+  $('#datepicker6').datepicker({
+    autoclose: true
+  });
+
 
   //姓名失焦事件
   $scope.judgeName = function() {
@@ -59,22 +65,6 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
       $('#inputName').attr('data-content', '');
     }
   };
-
-  //姓名失焦事件
-  // $scope.judgeGender = function() {
-  //   if($scope.gender == undefined || $scope.gender == '') {
-  //     $('#inputGender').removeAttr('data-content');
-  //     $('#inputGender').attr('data-content', '不能为空');
-  //     $('#inputGender').popover('show');
-  //   }else if($scope.gender.length < 2 || $scope.gender.length >10) {
-  //     $('#inputGenderinputGender').removeAttr('data-content');
-  //     $('#inputGender').attr('data-content', '长度不符合要求');
-  //     $('#inputGender').popover('show');
-  //   }else{
-  //     $('#inputGender').removeAttr('data-content');
-  //     $('#inputGender').attr('data-content', '');
-  //   }
-  // };
 
   $scope.showNextModel = function() {
     $('#myModal').modal('show');
@@ -116,38 +106,51 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
       patient = response.data;
       $scope.name = patient.name;
       $scope.gender = patient.gender;
-      $scope.age = patient.age;
       $scope.height = patient.height;
+      $scope.nation = patient.nation;
+      $scope.birthday = toPre(patient.birthday);
       $scope.weight = patient.weight;
+      $scope.bmi = patient.bmi;
+      $scope.degreeOfEducation = patient.degreeOfEducation;
+      $scope.firstTimeLiverInjury = toPre(patient.firstTimeLiverInjury);
+      $scope.investigateHospital = patient.investigateHospital;
+      $scope.telephone = patient.telephone;
+      $scope.durationOfVisit = patient.durationOfVisit;
+      $scope.firstVisitAge = patient.firstVisitAge;
+      $scope.firstVisitTime = toPre(patient.firstVisitTime);
       $scope.smoke = patient.smoke;
       $scope.drink = patient.drink;
       $scope.familyHistory = patient.familyHistory;
-      $scope.hepatitisDiagnosisTime = toPre(patient.hepatitisDiagnosisTime);
-      $scope.cirrhosisDiagnosisTime = toPre(patient.cirrhosisDiagnosisTime);
-      $scope.westernMedicineDiagnosis = patient.westernMedicineDiagnosis;
-      $scope.chineseMedicineDiagnosis = patient.chineseMedicineDiagnosis;
-      $scope.westernMedicineTreatment = patient.westernMedicineTreatment;
-      $scope.chineseMedicineTreatment = patient.chineseMedicineTreatment;
+      $scope.smokeDrinkFamHis = patient.smokeDrinkFamHis;
+      $scope.concurrentAutoDisease = patient.concurrentAutoDisease;
+      $scope.concurrentAutoDate = toPre(patient.concurrentAutoDate);
+      $scope.conAutoDisFirstOrNot = patient.conAutoDisFirstOrNot;
     });
   }
   //保存 --> 确定  按钮
   $scope.commit = function() {
     patient.name = $scope.name;
     patient.gender = $scope.gender;
-    patient.age = $scope.age;
     patient.height = $scope.height;
+    patient.nation = $scope.nation;
+    patient.birthday = formatDateFromBack($scope.birthday);
     patient.weight = $scope.weight;
+    patient.bmi = $scope.bmi;
+    patient.degreeOfEducation = $scope.degreeOfEducation;
+    patient.firstTimeLiverInjury = formatDateFromBack($scope.firstTimeLiverInjury);
+    patient.investigateHospital = $scope.investigateHospital;
+    patient.telephone = $scope.telephone;
+    patient.durationOfVisit = $scope.durationOfVisit;
+    patient.firstVisitAge = $scope.firstVisitAge;
+    patient.firstVisitTime = formatDateFromBack($scope.firstVisitTime);
     patient.smoke = $scope.smoke;
     patient.drink = $scope.drink;
     patient.familyHistory = $scope.familyHistory;
-    patient.hepatitisDiagnosisTime = formatDateFromBack($scope.hepatitisDiagnosisTime);
-    patient.cirrhosisDiagnosisTime = formatDateFromBack($scope.cirrhosisDiagnosisTime);
-    patient.westernMedicineDiagnosis = $scope.westernMedicineDiagnosis;
-    patient.chineseMedicineDiagnosis = $scope.chineseMedicineDiagnosis;
-    patient.westernMedicineTreatment = $scope.westernMedicineTreatment;
-    patient.chineseMedicineTreatment = $scope.chineseMedicineTreatment;
+    patient.smokeDrinkFamHis = $scope.smokeDrinkFamHis;
+    patient.concurrentAutoDisease = $scope.concurrentAutoDisease;
+    patient.concurrentAutoDate = formatDateFromBack($scope.concurrentAutoDate);
+    patient.conAutoDisFirstOrNot = $scope.conAutoDisFirstOrNot;
     patient.complete = true;
-    // console.log('$scope.smoke ==>' + $scope.smoke);
     if(!sessionStorage.getItem('patientId')) {
       $http({
         method:'POST',
