@@ -85,4 +85,9 @@ public class UserServiceImpl implements UserService {
         pageDTO.setContent(caseDTOList);
         return  pageDTO;
     }
+
+    public PageDTO<UserDTO> getUserByRealName(String realName, Long projectId, Pageable pageable) {
+        return getPageDTO(userRepo.getByRealName(realName, projectId, pageable));
+    }
+
 }

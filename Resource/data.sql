@@ -1,13 +1,13 @@
 
 ##医院数据
-INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-VALUES("上海华西医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
-INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-vALUES("上海仁和医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
-INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-VALUES("北京华西医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg");
-INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`)
-VALUES("北京人和医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`, `introduction`)
+VALUES("上海华西医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg", "医院");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`, `introduction`)
+vALUES("上海仁和医院", "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg", "医院");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`, `introduction`)
+VALUES("北京华西医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/2.jpg", "医院");
+INSERT INTO `hospital`(`hospital_name`, `address`, `address_detail`, `telephone`, `special_major`,  `manage_range`, `image_url`, `introduction`)
+VALUES("北京人和医院",  "中国-上海-浦东新区", "南京西路东二门", "1305213052", "神经专科", "全国", "../../../resources/image/1.jpg", "医院");
 
 ##系统角色数据
 INSERT INTO `sys_role`(`sys_role_name`)VALUES("normal");
@@ -60,12 +60,12 @@ INSERT INTO
 
 
 ##项目
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("小儿麻痹症", "宋天健", '2017-06-22 00:00:00', "小儿麻麻痹症研究");
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("多动症", "贾瑞", '2017-06-22 00:00:00', "多动症研究");
-INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`)
-		VALUES("肿瘤", "彭佳慧", '2017-06-22 00:00:00', "肿瘤研究");
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("小儿麻痹症", "宋天健", '2017-06-22 00:00:00', "小儿麻麻痹症研究", true);
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("多动症", "贾瑞", '2017-06-22 00:00:00', "多动症研究", true);
+INSERT INTO project(`project_name`, `organizer`, `create_time`, `introduction`, `is_collect`)
+		VALUES("肿瘤", "彭佳慧", '2017-06-22 00:00:00', "肿瘤研究", true);
 
 
 ##项目医院关联
@@ -125,6 +125,7 @@ INSERT INTO `project_permission`(`project_permission_name`)VALUES("对项目参�
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("回应质疑");#17
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("新增案例");#18
 INSERT INTO `project_permission`(`project_permission_name`)VALUES("查看所有案例");#19
+INSERT INTO `project_permission`(`project_permission_name`)VALUES("项目设置");#20
 
 
 ##项目权限对应的角色
@@ -147,6 +148,7 @@ INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 17);
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 18);
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 19);
+INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(1, 20);
 
 
 INSERT INTO `project_role_permission`(`project_role_id`, `project_permission_id`)VALUES(2, 1);

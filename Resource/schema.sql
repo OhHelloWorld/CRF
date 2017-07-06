@@ -190,7 +190,6 @@ create table project_role_permission(
     id int not null auto_increment,
     project_role_id int not null,
     project_permission_id int not null,
-    status varchar(50),
     primary key(id)
 );
 #权限表
@@ -207,6 +206,7 @@ create table project(
     organizer varchar(30) not null,
     create_time datetime not null,
     Introduction text not null,
+    is_collect boolean default true,
     primary key(id)
 );
 #医院表
@@ -218,6 +218,7 @@ create table hospital(
     telephone varchar(30) not null,
     special_major varchar(100) not null,
     manage_range varchar(100) not null,
+    introduction text,
     image_url varchar(255) not null,
     primary key(id)
 );

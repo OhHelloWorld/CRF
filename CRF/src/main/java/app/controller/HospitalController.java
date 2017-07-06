@@ -32,6 +32,8 @@ public class HospitalController {
         return hospitalService.getAllHospital(pageable);
     }
 
+    @PostMapping(path = "/upload")
+    @ApiOperation(value = "上传图片")
     public String uploadImagFile(@RequestParam("file") MultipartFile file) throws IOException {
         hospitalService.saveImag(file);
         return "" + file.hashCode();

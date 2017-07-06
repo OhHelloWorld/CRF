@@ -21,6 +21,16 @@ public class HospitalDTO {
 
     private String image_url;
 
+    private String introduction;
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
     public Long getId() {
         return id;
     }

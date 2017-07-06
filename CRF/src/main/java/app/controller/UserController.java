@@ -34,4 +34,11 @@ public class UserController {
         return userService.getAllNormalUser(pageable);
     }
 
+    @GetMapping(value = "/userName/{name}/{projectId}")
+    @ApiOperation(value = "根据真实姓名查询")
+    public PageDTO<UserDTO> getByUserByRealName(@RequestParam String name, @PageableDefault(value = 15) Pageable pageable, @PathVariable Long projectId) {
+        return userService.getUserByRealName(name, projectId, pageable);
+    }
+
+
 }

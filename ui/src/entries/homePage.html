@@ -46,15 +46,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu toggle button -->
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">6</span>
+              <span class="label label-success" ng-bind="newMessageCount"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">你有1条信息</li>
+              <li class="header">你有{{newMessageCount}}条信息</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
-                  <li><!-- start message -->
-                    <a ui-sref="message">
+                  <li ng-repeat="messageInfo in messageInfos"><!-- start message -->
+                    <a ui-sref="readMessage" ng-click="clickMessage(messageInfo)">
                       <div class="pull-left">
                         <!-- User Image -->
                         <img src="../lib/css/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -65,14 +65,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <small><i class="fa fa-clock-o"></i>2017-02-12 12:37</small>
                       </h4>
                       <!-- The message -->
-                      <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">某某医院张华邀请您作为联合发起人参加测试项目2的研究</p>
+                      <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" ng-bind="messageInfo.content"></p>
                     </a>
                   </li>
                   <!-- end message -->
                 </ul>
                 <!-- /.menu -->
               </li>
-              <li class="footer"><a href="#">查看全部</a></li>
+              <li class="footer"><a ui-sref="message">查看全部</a></li>
             </ul>
           </li>
           <!-- /.messages-menu -->
@@ -83,49 +83,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu Toggle Button -->
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="../lib/css/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="../lib/images/user.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">彭佳辉</span>
+              <span class="hidden-xs" ng-bind="user.realName"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="../lib/css/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="../lib/images/user.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{user.hospital.hospitalName}}
+                  <small>{{user.hospital.addressDetail}}</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                  <div class="col-xs-12 text-left">
+                    <h5>邮箱：{{user.email}}</h5>
+                  </div
                 </div>
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat">个人信息</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li class="sign_out">
-            <a href="/login.html" class="btn" ng-click="sign_out()">退出</a>
+            <a href="" class="btn" ng-click="sign_out()">退出</a>
           </li>
           <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>

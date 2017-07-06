@@ -2,6 +2,7 @@ package app.service;
 
 import app.dto.*;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,4 +40,8 @@ public interface ProjectService {
     PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable);
 
     PageDTO<UserDTO> getProjectNotInUser(Long projectId, Pageable pageable);
+
+    void dataCollectChange(String isCollect, Long projectId);
+
+    String getInvitedStatus(Long userId, String projectName);
 }

@@ -1,6 +1,8 @@
 package app.service;
 
 import app.dto.MessageDTO;
+import app.dto.PageDTO;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -9,7 +11,9 @@ import java.util.List;
  */
 public interface MessageService {
 
-    List<MessageDTO> getCurrentUserMessage();
+    PageDTO<MessageDTO> getCurrentUserMessage(Pageable pageable);
 
     void readMessage(Long messageId);
+
+    List<MessageDTO> getNotReadMessage();
 }

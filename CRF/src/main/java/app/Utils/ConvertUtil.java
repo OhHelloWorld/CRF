@@ -321,6 +321,7 @@ public class ConvertUtil {
         projectDO.setIntroduction(projectDTO.getIntroduction());
         projectDO.setOrganizer(userTool.getCurrentUserAccount());
         projectDO.setProjectName(projectDTO.getProjectName());
+        projectDO.setCollect(true);
         return projectDO;
     }
 
@@ -331,6 +332,7 @@ public class ConvertUtil {
         projectDTO.setIntroduction(projectDO.getIntroduction());
         projectDTO.setOrganizer(projectDO.getOrganizer());
         projectDTO.setProjectName(projectDO.getProjectName());
+        projectDTO.setCollect(projectDO.isCollect());
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
         for(HospitalDO h : projectDO.getHospitalList()) {
             hospitalDTOS.add(convertHospitalDTO(h));
@@ -368,6 +370,7 @@ public class ConvertUtil {
         hospitalDTO.setManageRange(hospitalDO.getManageRange());
         hospitalDTO.setSpecialMajor(hospitalDO.getSpecialMajor());
         hospitalDTO.setTelephone(hospitalDO.getTelephone());
+        hospitalDTO.setIntroduction(hospitalDO.getIntroduction());
         return hospitalDTO;
     }
 
@@ -381,6 +384,7 @@ public class ConvertUtil {
         hospitalDO.setManageRange(hospitalDTO.getManageRange());
         hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
         hospitalDO.setTelephone(hospitalDTO.getTelephone());
+        hospitalDO.setImage_url(hospitalDTO.getImage_url());
         return hospitalDO;
     }
 
@@ -399,7 +403,7 @@ public class ConvertUtil {
 
     public MessageDTO convertToMessageDTO(MessageDO messageDO) {
         MessageDTO messageDTO = new MessageDTO();
-        messageDTO.setId(messageDTO.getId());
+        messageDTO.setId(messageDO.getId());
         messageDTO.setContent(messageDO.getContent());
         messageDTO.setReceived_user_id(messageDO.getReceivedUserId());
         messageDTO.setStatus(messageDO.isRead());

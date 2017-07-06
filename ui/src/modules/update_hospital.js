@@ -12,15 +12,9 @@ angular.module('updateHospital', [])
   }])
 
   .controller('updateHospitalController', ['$scope', '$http', '$state', '$rootScope', 'localStorageService', function($scope, $http, $state, $rootScope, localStorageService) {
-    $scope.hospitals = [
-                        {'id':'1', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'2', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'3', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'4', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'},
-                        {'id':'5', 'name':'上海书馆', 'address_detail':'大笔大道1号', 'telphone':'1391372189'}
-    ]
+    $scope.hospitals = [];
 
-    $scope.url = '/projectHospitals';
+    $scope.url = '/api/hospitals';
 
 
     /**

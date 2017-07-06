@@ -112,6 +112,7 @@ public class ProjectServiceImpl implements ProjectService {
         UserDO userDO = userRepo.findOne(userId);
         for(HospitalDO h : projectDO.getHospitalList()){
             if(h.getId() == userDO.getHospital().getId()) {
+                userProjectRoleRepo.save(userProjectRoleDO);
                 break;
             }else {
                 projectDO.getHospitalList().add(userDO.getHospital());
@@ -132,8 +133,8 @@ public class ProjectServiceImpl implements ProjectService {
     public void rejectInvited(Long userId, String projectName) {
         ProjectDO projectDO = projectRepo.findByProjectName(projectName);
         UserProjectRoleDO p = userProjectRoleRepo.getRoleId(userId, projectDO.getId());
-        p.setAccept(false);
-        userProjectRoleRepo.save(p);
+        userProjectRoleRepo.delete(p);
+
     }
 
     public List<ProjectDTO> getProjectBySearchMsg(String msg) {
@@ -155,7 +156,7 @@ public class ProjectServiceImpl implements ProjectService {
     public void deleteMeber(Long userId, Long projectId) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectId);
         userProjectRoleDO.setAccept(false);
-        userProjectRoleRepo.save(userProjectRoleDO);
+        userProjectRoleRepo.delete(userProjectRoleDO);
     }
 
     public PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable) {
@@ -180,6 +181,32 @@ public class ProjectServiceImpl implements ProjectService {
         page.setContent(users);
         page.setTotalNumber(page1.getTotalPages());
         return page;
+    }
+
+    @Override
+    public void dataCollectChange(String isCollect, Long projectId) {
+        boolean flag;
+        if("true".equals(isCollect)) {
+            flag = true;
+        }else {
+            flag = false;
+        }
+        ProjectDO projectDO = projectRepo.findOne(projectId);
+        projectDO.setCollect(flag);
+        projectRepo.save(projectDO);
+    }
+
+    @Override
+    public String getInvitedStatus(Long userId, String projectName) {
+        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectRepo.findByProjectName(projectName).getId());
+        if(userProjectRoleDO == null) {
+            return "拒绝";
+        }else if(!userProjectRoleDO.isAccept()){
+            return "未选择";
+        }else {
+            return "接受";
+        }
+
     }
 
 
