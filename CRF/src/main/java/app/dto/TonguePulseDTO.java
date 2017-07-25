@@ -1,5 +1,6 @@
 package app.dto;
 
+import java.util.Date;
 
 /**
  * @author Administrator
@@ -22,6 +23,24 @@ public class TonguePulseDTO {
     private String leftPulse;
     private String rightPulse;
     private boolean complete;
+    private boolean followUp;
+    private Date followUpDate;
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
+    }
 
     public int getId() {
         return id;

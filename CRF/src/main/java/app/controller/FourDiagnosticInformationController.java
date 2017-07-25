@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dto.FourDiagnosticInformationDTO;
 import app.service.FourDiagnosticInformationService;
 
+/**
+ * @author Administrator
+ *  @category 四诊信息表
+ */
 @RestController
 @RequestMapping(path = "/api/fourDiagnosticInfor")
 public class FourDiagnosticInformationController {

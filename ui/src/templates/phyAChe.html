@@ -11,7 +11,18 @@
       <div class="span12">
       <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
       <br>
-      <u class="h4 col-md-offset-9">编号：{{patientNumber}}</u>
+      <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+      <form class="form-inline col-md-offset-9">
+          <div class="form-group">
+               <u class="h4">随访</u><checkbox ng-model="follow"></checkbox>
+                <div class="input-group date" ng-show="followDateShow">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+                </div>
+          </div>
+          </form>
         <div>
 
 
@@ -770,19 +781,19 @@
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                			<input type="radio" name="r3" ng-model="cTMRI" ng-value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="2"><span class="h5">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  	  <input type="radio" name="r3" ng-model="cTMRI" ng-value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="3"><span class="h5">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
                     <li>
-                  		<input type="radio" name="r3" ng-model="cTMRI" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
+                      <input type="radio" name="r3" ng-model="cTMRI" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
 

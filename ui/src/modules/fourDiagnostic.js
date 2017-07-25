@@ -3,12 +3,16 @@ import '../entries/main.js';
 
 angular.module('fourDiagnostic', [])
   .controller('fourDiagnosticController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+    $scope.judgeGoHome();
     var fourDiagnosticInformation = {};
     var isSave = false;
     $scope.fourClick();
     $scope.changeMenuStatus();
     getPatientInfo();
     getFourDiaInfo();
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
     $scope.save = function() {
       var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&
         $scope.blurredVision && $scope.depression && $scope.irritability &&
@@ -124,6 +128,8 @@ angular.module('fourDiagnostic', [])
       fourDiagnosticInformation.liverPalm = formatFourDia($scope.liverPalm);
       fourDiagnosticInformation.abdominalVeins = formatFourDia($scope.abdominalVeins);
       fourDiagnosticInformation.yellowTumor = formatFourDia($scope.yellowTumor);
+      fourDiagnosticInformation.followUp = $scope.follow;
+      fourDiagnosticInformation.followUpDate = new Date($scope.followUpDate);
       if (judgeComplete == undefined) {
         fourDiagnosticInformation.complete = false;
       } else {
@@ -147,6 +153,52 @@ angular.module('fourDiagnostic', [])
         });
       });
     }
+
+    $scope.$watch('follow', function() {
+      if ($scope.follow) {
+        $scope.followDateShow = true;
+        $scope.fatigue = undefined;
+        $scope.skinItching = undefined;
+        $scope.twoEyesDry = undefined;
+        $scope.blurredVision = undefined;
+        $scope.depression = undefined;
+        $scope.irritability = undefined;
+        $scope.insomnia = undefined;
+        $scope.easyWakeUp = undefined;
+        $scope.tinnitus = undefined;
+        $scope.dryMouth = undefined;
+        $scope.mouthPain = undefined;
+        $scope.badBreath = undefined;
+        $scope.nausea = undefined;
+        $scope.belching = undefined;
+        $scope.abdominalDistention = undefined;
+        $scope.flankPainStinging = undefined;
+        $scope.flankPainSwell = undefined;
+        $scope.flankPainDull = undefined;
+        $scope.flankPainDiscomfort = undefined;
+        $scope.anorexia = undefined;
+        $scope.aphrodisiacCold = undefined;
+        $scope.limb = undefined;
+        $scope.backacheFootSoft = undefined;
+        $scope.handFootFanHot = undefined;
+        $scope.urineYellow = undefined;
+        $scope.constipation = undefined;
+        $scope.looseStools = undefined;
+        $scope.perspiration = undefined;
+        $scope.nightSweats = undefined;
+        $scope.lowerExtremityEdema = undefined;
+        $scope.faceDull = undefined;
+        $scope.eyeYellow = undefined;
+        $scope.bodyYellow = undefined;
+        $scope.spiderNevus = undefined;
+        $scope.liverPalm = undefined;
+        $scope.abdominalVeins = undefined;
+        $scope.yellowTumor = undefined;
+      } else {
+        $scope.followDateShow = false;
+        getFourDiaInfo();
+      }
+    });
 
     function formatFourDia(data) {
       if (data === undefined) {

@@ -92,7 +92,19 @@
           </div>
           <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
           <br>
-          <u class="h4 col-md-offset-9">编号：{{patientNumber}}</u>
+          <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+          <form class="form-inline col-md-offset-9">
+          <div class="form-group">
+               <u class="h4">随访</u><checkbox ng-model="follow"></checkbox>
+                <div class="input-group date" ng-show="followDateShow">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+                </div>
+          </div>
+          </form>
+          <br/>
           <div class="box box-primary">
           <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
           	<ol>
@@ -381,11 +393,6 @@
           		</li>
           	</ol>
           </div>
-          <input type="button" value="修改问题">
-          <input type="button" value="查看问题历史">
-          <input type="button" value="查看质疑历史">
-          <input type="button" value="提出质疑">
-          <input type="button" value="回应质疑">
           </div>
           <br>
           <span class="col-md-offset-9">&nbsp</span>

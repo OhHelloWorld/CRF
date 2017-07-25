@@ -1,5 +1,7 @@
 package app.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -118,8 +120,9 @@ public class PhysicalChemicalInspectionDO {
     private boolean complete;// 是否完成
     @Column(name = "copper_protein")
     private String copperProtein;
+    @Column(name = "a_f_p")
     private String aFP;
-    @Column(name ="carcinoembryonic_antigenCEA")
+    @Column(name = "carcinoembryonic_antigenCEA")
     private String carcinoembryonicAntigenCEA;
     private String ca125;
     private String hbsag;
@@ -139,6 +142,8 @@ public class PhysicalChemicalInspectionDO {
     private String whiteBloodCell;
     private String bilirubin;
     private String ca199;
+    private boolean followUp;
+    private Date followUpDate;
 
     public String getCopperProtein() {
         return copperProtein;
@@ -146,6 +151,22 @@ public class PhysicalChemicalInspectionDO {
 
     public void setCopperProtein(String copperProtein) {
         this.copperProtein = copperProtein;
+    }
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
     }
 
     public String getaFP() {
