@@ -20,12 +20,13 @@ import '../modules/create_hospital.js';
 import '../modules/update_hospital.js';
 import '../modules/hospital.js';
 import '../modules/readMessage.js';
+import '../modules/createProject.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import LocalStorageModule from 'angular-local-storage';
 
-var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'readMessage', 'createHospital', 'updateHospital', 'hospital']);
+var homePage = angular.module('homePage', [uiRouter, LocalStorageModule, ngFileUpload, 'default', 'project', 'invite', 'projectSetting', 'message', 'readMessage', 'createHospital', 'updateHospital', 'hospital', 'createProject']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -45,6 +46,11 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     url:'/readMessage',
     template:require('../templates/readMessage.html'),
     controller: 'readMessageController'
+  })
+  .state('createProject',{
+    url:'/createProject',
+    template:require('../templates/createProject.html'),
+    controller: 'createProjectController'
   })
   .state('createHospital',{
     url:'/createHospital',
