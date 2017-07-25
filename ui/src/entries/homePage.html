@@ -152,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" target="view_window"><i class="fa fa-folder-open"></i><span>创建项目</span></a>
         </li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="treeview" ng-if="hospitalPermission">
+        <li class="treeview" ng-if="hospitalPermission" style="cursor: pointer;">
           <a><i class="fa fa-folder"></i> <span>医院信息</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -166,7 +166,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </ul>
         </li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="treeview" ng-repeat="project in projects">
+        <li class="treeview" ng-repeat="project in projects" style="cursor: pointer">
           <a ui-sref="project.projectDefault" ng-click="click_project(project)"><i class="fa fa-folder"></i> <span>{{project.projectName}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
