@@ -7,79 +7,86 @@ import '../../node_modules/angular-chart.js/dist/angular-chart.min.js';
 
 angular.module('project', [uiRouter, 'chart.js', 'page'])
   .config(['ChartJsProvider', function(ChartJsProvider) {
-    ChartJsProvider.setOptions({ colors : [ '#949FB1', '#4D5360'] });
-  
-  }])
-
-  .controller('projectController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-    
-    $scope.click_project = localStorageService.get('project');
-
+    ChartJsProvider.setOptions({
+      colors: ['#949FB1', '#4D5360']
+    });
 
   }])
 
-  .controller('projectDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-    
-    
-    
+.controller('projectController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+
+  $scope.click_project = localStorageService.get('project');
+
+
+}])
+
+.controller('projectDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+
+
+  $http({
+    method: 'GET',
+    url: '/api/projects/projectData'
+  }).then(function success(response) {
     $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
-    $scope.data = [65, 55, 35, 50, 80, 60, 55, 45,0];
-    
-
-    //得到该项目的所有医院
-    $scope.url = '/api/projects/' + localStorageService.get('project').id + '/hospital';  
-
-    /**
-    *点击某个项目的某家医院，将其数据序列化到本地库中
-    */
-    $scope.click_hospital = function(hospital){  
-      localStorageService.set('hospital', hospital);
-    };
+    $scope.data = [response.data[0], response.data[1], response.data[2], response.data[3], response.data[4], 60, 55, 45, 0];
+  });
+  // $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
+  // $scope.data = [65, 55, 35, 50, 80, 60, 55, 45,0];
 
 
-  }])
+  //得到该项目的所有医院
+  $scope.url = '/api/projects/' + localStorageService.get('project').id + '/hospital';
 
-  .controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', 'localStorageService', function($scope, $http, $state, $stateParams, localStorageService) {
+  /**
+   *点击某个项目的某家医院，将其数据序列化到本地库中
+   */
+  $scope.click_hospital = function(hospital) {
+    localStorageService.set('hospital', hospital);
+  };
 
-    $scope.Illnesses = [];
-    searchIllness();
-   
-    function searchIllness(){
-      if(!$stateParams.project_searchInput){
-        $scope.url = '/api/case/' + localStorageService.get('project').id;
-      }else{
-        $scope.url = '/api/case/search/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
-      }
+
+}])
+
+.controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', 'localStorageService', function($scope, $http, $state, $stateParams, localStorageService) {
+
+  $scope.Illnesses = [];
+  searchIllness();
+
+  function searchIllness() {
+    if (!$stateParams.project_searchInput) {
+      $scope.url = '/api/case/' + localStorageService.get('project').id;
+    } else {
+      $scope.url = '/api/case/search/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
     }
+  }
 
-  }])
+}])
 
-  .controller('hospitalDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+.controller('hospitalDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
-    $scope.click_hospital = localStorageService.get('hospital');
-    writeIllnessPermission();
+  $scope.click_hospital = localStorageService.get('hospital');
+  writeIllnessPermission();
 
-    $scope.Illnesses = [];
-    $scope.url = '/api/case/' + localStorageService.get('project').id + '/' + localStorageService.get('hospital').id;
+  $scope.Illnesses = [];
+  $scope.url = '/api/case/' + localStorageService.get('project').id + '/' + localStorageService.get('hospital').id;
 
 
-    /**
-    *病例录入权限判断，然后进行控制
-    */   
-    function writeIllnessPermission(){
-      if(localStorageService.get('project').isCollect){
-        if(!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))){
-          $('#writeIllness').addClass('ng-hide');
-        }
-      }else{
+  /**
+   *病例录入权限判断，然后进行控制
+   */
+  function writeIllnessPermission() {
+    if (localStorageService.get('project').isCollect) {
+      if (!(localStorageService.get('project').currentUserPermissionInProject.contains('新增案例'))) {
         $('#writeIllness').addClass('ng-hide');
       }
+    } else {
+      $('#writeIllness').addClass('ng-hide');
     }
+  }
 
 
 
-
-  }]);
+}]);
 
 
 
@@ -92,17 +99,3 @@ Array.prototype.contains = function(obj) {
   }
   return false;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-

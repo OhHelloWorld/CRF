@@ -6,12 +6,15 @@ import app.dto.*;
 import app.entities.*;
 import app.repo.*;
 import app.service.ProjectService;
+
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -58,7 +61,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<ProjectDTO> getProjectByUserId(Long userId) {
         List<ProjectDTO> projectDTOS = new ArrayList<>();
-        for(ProjectDO p : projectRepo.getListProject(userId)) {
+        for (ProjectDO p : projectRepo.getListProject(userId)) {
             projectDTOS.add(convertUtil.convertToProjectDTO(p));
         }
         return projectDTOS;
@@ -83,7 +86,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<HospitalDTO> getProjectHospitalList(Long projectId) {
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for(HospitalDO h : projectRepo.findOne(projectId).getHospitalList()) {
+        for (HospitalDO h : projectRepo.findOne(projectId).getHospitalList()) {
             hospitalDTOS.add(convertUtil.convertHospitalDTO(h));
         }
         return hospitalDTOS;
@@ -92,9 +95,10 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<ProjectUsersDTO> getUsersInProject(Long projectId) {
         List<ProjectUsersDTO> projectUsersDTOS = new ArrayList<>();
-        for(UserProjectRoleDO p : userProjectRoleRepo.findByProjectId(projectId)) {
+        for (UserProjectRoleDO p : userProjectRoleRepo.findByProjectId(projectId)) {
             ProjectUsersDTO pro = new ProjectUsersDTO();
-            pro.setProjectRoleName(projectRoleRepo.findOne(p.getProjectRoleId()).getProjectRoleName());
+            pro.setProjectRoleName(
+                    projectRoleRepo.findOne(p.getProjectRoleId()).getProjectRoleName());
             pro.setUserName(userRepo.findOne(p.getUserId()).getRealName());
             projectUsersDTOS.add(pro);
         }
@@ -104,17 +108,18 @@ public class ProjectServiceImpl implements ProjectService {
     public void saveInvited(Long userId, Long projectId, String projectRoleId) {
         UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
         userProjectRoleDO.setProjectId(projectId);
-        userProjectRoleDO.setProjectRoleId(projectRoleRepo.findByProjectRoleName(projectRoleId).getId());
+        userProjectRoleDO
+                .setProjectRoleId(projectRoleRepo.findByProjectRoleName(projectRoleId).getId());
         userProjectRoleDO.setUserId(userId);
         userProjectRoleDO.setAccept(false);
 
         ProjectDO projectDO = projectRepo.findOne(projectId);
         UserDO userDO = userRepo.findOne(userId);
-        for(HospitalDO h : projectDO.getHospitalList()){
-            if(h.getId() == userDO.getHospital().getId()) {
+        for (HospitalDO h : projectDO.getHospitalList()) {
+            if (h.getId() == userDO.getHospital().getId()) {
                 userProjectRoleRepo.save(userProjectRoleDO);
                 break;
-            }else {
+            } else {
                 projectDO.getHospitalList().add(userDO.getHospital());
                 projectRepo.save(projectDO);
                 userProjectRoleRepo.save(userProjectRoleDO);
@@ -139,7 +144,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     public List<ProjectDTO> getProjectBySearchMsg(String msg) {
         List<ProjectDTO> projectDTOS = new ArrayList<>();
-        for(ProjectDO p : projectRepo.getListProjectByMsg(msg)) {
+        for (ProjectDO p : projectRepo.getListProjectByMsg(msg)) {
             projectDTOS.add(convertUtil.convertToProjectDTO(p));
         }
         return projectDTOS;
@@ -147,7 +152,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     public List<ProjectDTO> getCurrentUserProjectList() {
         List<ProjectDTO> projectDTOS = new ArrayList<>();
-        for(ProjectDO p : projectRepo.getListProject(userMsgTool.getCurrentUserId())) {
+        for (ProjectDO p : projectRepo.getListProject(userMsgTool.getCurrentUserId())) {
             projectDTOS.add(convertUtil.convertToProjectDTO(p));
         }
         return projectDTOS;
@@ -163,7 +168,7 @@ public class ProjectServiceImpl implements ProjectService {
         PageDTO<UserDTO> page = new PageDTO<>();
         List<UserDTO> users = new ArrayList<>();
         Page<UserDO> page1 = userRepo.getUserByProjectDTO(projectId, pageable);
-        for(UserDO u : page1) {
+        for (UserDO u : page1) {
             users.add(convertUtil.convertToUserDTO(u));
         }
         page.setContent(users);
@@ -175,7 +180,7 @@ public class ProjectServiceImpl implements ProjectService {
         PageDTO<UserDTO> page = new PageDTO<>();
         List<UserDTO> users = new ArrayList<>();
         Page<UserDO> page1 = userRepo.getUserNotInByProjectDTO(projectId, pageable);
-        for(UserDO u : page1) {
+        for (UserDO u : page1) {
             users.add(convertUtil.convertToUserDTO(u));
         }
         page.setContent(users);
@@ -186,9 +191,9 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public void dataCollectChange(String isCollect, Long projectId) {
         boolean flag;
-        if("true".equals(isCollect)) {
+        if ("true".equals(isCollect)) {
             flag = true;
-        }else {
+        } else {
             flag = false;
         }
         ProjectDO projectDO = projectRepo.findOne(projectId);
@@ -198,12 +203,13 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public String getInvitedStatus(Long userId, String projectName) {
-        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectRepo.findByProjectName(projectName).getId());
-        if(userProjectRoleDO == null) {
+        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId,
+                projectRepo.findByProjectName(projectName).getId());
+        if (userProjectRoleDO == null) {
             return "拒绝";
-        }else if(!userProjectRoleDO.isAccept()){
+        } else if (!userProjectRoleDO.isAccept()) {
             return "未选择";
-        }else {
+        } else {
             return "接受";
         }
 
@@ -214,5 +220,16 @@ public class ProjectServiceImpl implements ProjectService {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);
         projectRepo.delete(projectId);
 
+    }
+
+    @Override
+    public List<Integer> getProjectData() {
+        List<Integer> projectDataList = new ArrayList<>();
+        projectDataList.add(projectRepo.getMan());
+        projectDataList.add(projectRepo.getWoman());
+        projectDataList.add(projectRepo.getSaveCount());
+        projectDataList.add(projectRepo.getPushCount());
+        projectDataList.add(projectRepo.getAllCount());
+        return projectDataList;
     }
 }
