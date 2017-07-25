@@ -59,19 +59,22 @@ public class ProjectController {
 
     @GetMapping(value = "/{projectId}/hospitals/")
     @ApiOperation(value = "根据项目的id得到该项目的医院")
-    public List<HospitalDTO> getProjectHospitalList(@PathVariable @PathParam("项目的id") Long projectId) {
+    public List<HospitalDTO> getProjectHospitalList(
+            @PathVariable @PathParam("项目的id") Long projectId) {
         return projectService.getProjectHospitalList(projectId);
     }
 
     @GetMapping(value = "/{projectId}/users")
     @ApiOperation(value = "根据projectId得到项目下面的用户")
-    public PageDTO<UserDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId, @PageableDefault(value = 15) Pageable pageable) {
+    public PageDTO<UserDTO> getUsersInProject(@PathVariable @PathParam("项目id") Long projectId,
+            @PageableDefault(value = 15) Pageable pageable) {
         return projectService.getProjectUser(projectId, pageable);
     }
 
     @GetMapping(value = "/{projectId}/invUsers")
     @ApiOperation(value = "得到不是这个项目下的user")
-    public PageDTO<UserDTO> getUsersNotInProject(@PathVariable Long projectId, @PageableDefault(value = 15) Pageable pageable) {
+    public PageDTO<UserDTO> getUsersNotInProject(@PathVariable Long projectId,
+            @PageableDefault(value = 15) Pageable pageable) {
         return projectService.getProjectNotInUser(projectId, pageable);
     }
 
@@ -83,7 +86,8 @@ public class ProjectController {
 
     @PostMapping(value = "/Inv")
     @ApiOperation(value = "发送邀请")
-    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId, @RequestParam String inviteType) {
+    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId,
+            @RequestParam String inviteType) {
         projectService.inviteUser(userId, projectId, inviteType);
     }
 
@@ -108,7 +112,8 @@ public class ProjectController {
 
     @GetMapping(value = "/{projectId}/hospital")
     @ApiOperation(value = "通过某个项目id得到拥有的医院")
-    public PageDTO<HospitalDTO> getHospitalsByProjectId(@PathVariable Long projectId, @PageableDefault(value = 15) org.springframework.data.domain.Pageable pageable) {
+    public PageDTO<HospitalDTO> getHospitalsByProjectId(@PathVariable Long projectId,
+            @PageableDefault(value = 15) org.springframework.data.domain.Pageable pageable) {
         return hospitalService.getHospitalByProjectId(projectId, pageable);
     }
 
@@ -128,6 +133,11 @@ public class ProjectController {
     @ApiOperation(value = "拒绝邀请")
     public String getInvitedStatus(@RequestParam Long userId, @RequestParam String projectName) {
         return projectService.getInvitedStatus(userId, projectName);
+    }
+
+    @GetMapping(value = "/projectData")
+    public List<Integer> getProjectData() {
+        return projectService.getProjectData();
     }
 
 }

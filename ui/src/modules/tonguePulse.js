@@ -2,13 +2,17 @@ import angular from 'angular';
 import '../entries/main.js';
 
 
-angular.module('tonguePulse', ['main'])
+angular.module('tonguePulse', ['ui.checkbox', 'main'])
   .controller('tonguePulseController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     var isSave = false;
+    $scope.judgeGoHome();
     $scope.tongueClick();
     $scope.changeMenuStatus();
     getPatientInfo();
     getTongueInfo();
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
     $scope.tongueShowClick = function() {
       if ($scope.cb10) {
         $scope.tongueShow = true;
@@ -112,6 +116,8 @@ angular.module('tonguePulse', ['main'])
         tonguePulse.complete = true;
       }
       tonguePulse.patientId = sessionStorage.getItem('patientId');
+      tonguePulse.followUp = $scope.follow;
+      tonguePulse.followUpDate = new Date($scope.followUpDate);
       $http({
         method: 'POST',
         url: '/api/tonguePulse',
@@ -188,6 +194,94 @@ angular.module('tonguePulse', ['main'])
         $scope.patientNumber = response.data.identifier;
       });
     }
+
+    $scope.$watch('follow', function() {
+      if ($scope.follow) {
+        $scope.followDateShow = true;
+        $scope.cb1 = undefined;
+        $scope.cb2 = undefined;
+        $scope.cb3 = undefined;
+        $scope.cb4 = undefined;
+        $scope.cb5 = undefined;
+        $scope.cb6 = undefined;
+        $scope.cb7 = undefined;
+        $scope.cb8 = undefined;
+        $scope.cb9 = undefined;
+        $scope.cb10 = undefined;
+        $scope.cb11 = undefined;
+        $scope.cb12 = undefined;
+        $scope.cb13 = undefined;
+        $scope.cb14 = undefined;
+        $scope.cb15 = undefined;
+        $scope.cb16 = undefined;
+        $scope.cb17 = undefined;
+        $scope.cb18 = undefined;
+        $scope.cb19 = undefined;
+        $scope.cb20 = undefined;
+        $scope.cb21 = undefined;
+        $scope.cb22 = undefined;
+        $scope.cb23 = undefined;
+        $scope.cb24 = undefined;
+        $scope.cb25 = undefined;
+        $scope.cb26 = undefined;
+        $scope.cb27 = undefined;
+        $scope.cb28 = undefined;
+        $scope.cb29 = undefined;
+        $scope.cb30 = undefined;
+        $scope.cb31 = undefined;
+        $scope.cb32 = undefined;
+        $scope.cb33 = undefined;
+        $scope.cb34 = undefined;
+        $scope.cb35 = undefined;
+        $scope.cb36 = undefined;
+        $scope.cb37 = undefined;
+        $scope.cb38 = undefined;
+        $scope.cb39 = undefined;
+        $scope.cb40 = undefined;
+        $scope.cb41 = undefined;
+        $scope.cb42 = undefined;
+        $scope.cb43 = undefined;
+        $scope.cb44 = undefined;
+        $scope.cb45 = undefined;
+        $scope.cb46 = undefined;
+        $scope.cb47 = undefined;
+        $scope.cb48 = undefined;
+        $scope.cb49 = undefined;
+        $scope.cb50 = undefined;
+        $scope.cb51 = undefined;
+        $scope.cb52 = undefined;
+        $scope.cb53 = undefined;
+        $scope.cb54 = undefined;
+        $scope.cb55 = undefined;
+        $scope.cb56 = undefined;
+        $scope.cb57 = undefined;
+        $scope.cb58 = undefined;
+        $scope.cb59 = undefined;
+        $scope.cb60 = undefined;
+        $scope.cb61 = undefined;
+        $scope.cb62 = undefined;
+        $scope.cb63 = undefined;
+        $scope.cb64 = undefined;
+        $scope.cb65 = undefined;
+        $scope.cb66 = undefined;
+        $scope.cb67 = undefined;
+        $scope.cb68 = undefined;
+        $scope.cb69 = undefined;
+        $scope.cb70 = undefined;
+        $scope.cb71 = undefined;
+        $scope.cb72 = undefined;
+        $scope.cb73 = undefined;
+        $scope.tongueShow = false;
+        $scope.mossyShow = false;
+        $scope.tongueColorShow = false;
+        $scope.tongueDescription = undefined;
+        $scope.mossyDes = undefined;
+        $scope.tongueColorDes = undefined;
+      } else {
+        getTongueInfo();
+        $scope.followDateShow = false;
+      }
+    });
 
     function getTongueInfo() {
       $http({

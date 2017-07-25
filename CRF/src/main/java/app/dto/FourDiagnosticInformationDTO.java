@@ -1,5 +1,6 @@
 package app.dto;
 
+import java.util.Date;
 
 /**
  * @author Administrator 四诊信息
@@ -45,6 +46,25 @@ public class FourDiagnosticInformationDTO {
     private int liverPalm;
     private int abdominalVeins;
     private int yellowTumor;
+    private boolean followUp;
+    private Date followUpDate;
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
+    }
+
     private boolean complete;
 
     public int getId() {

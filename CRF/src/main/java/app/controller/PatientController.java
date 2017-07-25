@@ -10,6 +10,10 @@ import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.service.PatientService;
 
+/**
+ * @author Administrator
+ * @category 患者信息
+ */
 @RestController
 @RequestMapping(path = "/api/patient")
 public class PatientController {
@@ -31,10 +35,11 @@ public class PatientController {
      * 根据id更新病人的基本资料
      *
      */
-    @PutMapping(path="")
-    public void updatePatientInfo(@RequestBody PatientDTO patient){
+    @PutMapping(path = "")
+    public void updatePatientInfo(@RequestBody PatientDTO patient) {
         patientService.editPatient(patient);
     }
+
     /**
      * ͨ根据id得到患者一般资料
      * 
@@ -63,7 +68,7 @@ public class PatientController {
      * @return
      */
     @GetMapping(path = "")
-    public PageDTO<PatientDTO> getAllPatient(@PageableDefault(value = 15) Pageable pageable) {
+    public PageDTO<PatientDTO> getAllPatient(@PageableDefault(value = 10) Pageable pageable) {
         return patientService.getAllPatient(pageable);
     }
 

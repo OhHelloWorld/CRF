@@ -1,5 +1,7 @@
 package app.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,6 +36,24 @@ public class TonguePulseDO {
     private String leftPulse;// 左脉象
     private String rightPulse;// 右脉象
     private boolean complete;// 是否完成
+    private boolean followUp;
+    private Date followUpDate;
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
+    }
 
     public int getId() {
         return id;

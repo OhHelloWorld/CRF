@@ -1,5 +1,6 @@
 package app.dto;
 
+import java.util.Date;
 
 /**
  * @author Administrator �������DTO
@@ -66,15 +67,6 @@ public class PhysicalChemicalInspectionDTO {
     private String liverHardnessFibrotest;
     private String liverPuncturePathology;
     private String copperProtein;
-
-    public String getCopperProtein() {
-        return copperProtein;
-    }
-
-    public void setCopperProtein(String copperProtein) {
-        this.copperProtein = copperProtein;
-    }
-
     private String aFP;
     private String carcinoembryonicAntigenCEA;
     private String ca125;
@@ -91,6 +83,33 @@ public class PhysicalChemicalInspectionDTO {
     private String whiteBloodCell;
     private String bilirubin;
     private String ca199;
+    private boolean followUp;
+    private Date followUpDate;
+
+    public String getCopperProtein() {
+        return copperProtein;
+    }
+
+    public void setCopperProtein(String copperProtein) {
+        this.copperProtein = copperProtein;
+    }
+
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
+    }
 
     public String getAntiHCVantibody() {
         return antiHCVantibody;

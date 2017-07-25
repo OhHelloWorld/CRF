@@ -63,6 +63,8 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
         fDo.setFlankPainDull(fDto.getFlankPainDull());
         fDo.setFlankPainStinging(fDto.getFlankPainStinging());
         fDo.setFlankPainSwell(fDto.getFlankPainSwell());
+        fDo.setFollowUp(fDto.isFollowUp());
+        fDo.setFollowUpDate(fDto.getFollowUpDate());
         fDo.setHandFootFanHot(fDto.getHandFootFanHot());
         fDo.setInsomnia(fDto.getInsomnia());
         fDo.setIrritability(fDto.getIrritability());

@@ -13,6 +13,7 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', fu
   $scope.patientClick = function(patient) {
     sessionStorage.setItem('patientId', patient.id);
     $scope.patientMenuClick();
+    location.reload('true');
     $state.go('patientInfo');
   };
 
@@ -32,6 +33,18 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', fu
     $('#tongueMenuNo').hide();
     $('#phyMenuYes').hide();
     $('#phyMenuNo').hide();
+    $('#liverMenuYes').hide();
+    $('#liverMenuNo').hide();
+    $('#boneMenuYes').hide();
+    $('#boneMenuNo').hide();
+    $('#simAIHMenuYes').hide();
+    $('#simAIHMenuNo').hide();
+    $('#comAIHMenuYes').hide();
+    $('#comAIHMenuNo').hide();
+    $('#treatMenuYes').hide();
+    $('#treatMenuNo').hide();
+    $('#finalDiagnosisMenuYes').hide();
+    $('#finalDiagnosisMenuNo').hide();
     $state.go('patientInfo');
   };
 }]);

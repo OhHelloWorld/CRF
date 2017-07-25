@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dto.PhysicalChemicalInspectionDTO;
 import app.service.PhysicalChemicalInspectionService;
 
+/**
+ * @author Administrator
+ * @category 理化检查表
+ */
 @RestController
 @RequestMapping(path = "/api/physical")
 public class PhysicalChemicalInspectionController {

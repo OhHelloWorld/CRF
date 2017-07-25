@@ -1,0 +1,172 @@
+<section class="content-header">
+  <h1 class=" text-center">
+     肝脏病理学检查
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">肝脏病理学检查</li>
+  </ol>
+</section>
+<div ng-app="liverPathology" ng-controller="liverPathologyController">
+	<!--模态框-->
+	<div id="infoModal" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">{{information}}</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button id="modalButton1" type="button" class="btn btn-default" data-dismiss="modal">{{buttonContent1}}</button>
+                              <button id="modalButton2" type="button" class="btn btn-primary" data-dismiss="modal" ng-click="confirm()">{{buttonContent2}}</button>
+                         </div>
+                    </div>
+               </div>
+     </div>
+
+	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+    <br>
+    <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+    <form class="form-inline col-md-offset-9">
+    	<div class="form-group">
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepickerliver" ng-model="addDate">
+                </div>
+		</div>
+		</form>
+		<br/>
+	<div class="box box-primary">
+    <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
+		<br>
+		<ul>
+			<li>
+				<sapn class="h4">小叶内炎症</sapn>
+				<div>
+				<input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">界面性肝炎</sapn>
+				<div>
+				<input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">汇管区炎症</sapn>
+				<div>
+				<input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">淋巴细胞浆细胞浸润</sapn>
+				<div>
+				<input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">纤维组织增生</sapn>
+				<div>
+				<input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="2">><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="3">><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="4">><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">胆管炎症/损伤</sapn>
+				<div>
+				<input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">肝细胞脂肪变性</sapn>
+				<div>
+				<input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="1"><span class="h3">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="2"><span class="h3">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="3"><span class="h3">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="4"><span class="h3">3</span></span>
+				</div>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">玫瑰花结样改变</sapn>
+				<div>
+				<input type="radio" name="roseSample" ng-model="rose" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="roseSample" ng-model="rose" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<sapn class="h4">HBsAg染色</sapn>
+				<div>
+				<input type="radio" name="hbsAg" ng-model="hbs" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hbsAg" ng-model="hbs" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" /><li>
+				<sapn class="h4">HBcAg染色</sapn>
+				<div>
+				<input type="radio" name="hbcAg" ng-model="hbc" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hbcAg" ng-model="hbc" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" /><li>
+				<sapn class="h4">HCV染色</sapn>
+				<div>
+				<input type="radio" name="hcv" ng-model="hcv" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hcv" ng-model="hcv" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" /><li>
+				<sapn class="h4">其他</sapn>
+				<div>
+				<input type="radio" name="other" ng-model="other" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="other" ng-model="other" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" /><li>
+				<sapn class="h4">诊断（分期分级）</sapn>
+				<div>
+				<input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="1"><span class="h4">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="2"><span class="h4">阳性</span></span>
+			</li>
+			<hr style="border : 1px dashed #3C8DBC;" />
+			<li>
+				<span class="h4">备注</span>
+				<div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="请输入备注..." ng-model="mark"></textarea>
+                </div>
+			</li>
+		</ul>
+    </div>
+    <br>
+    <div class="col-md-offset-9">
+    <input type="button" class="btn btn-primary" value="保存" ng-click="save()">&nbsp
+    <input type="button" class="btn btn-primary" value="退出" ng-click="layout()">
+    </div>
+</div>
+</div>

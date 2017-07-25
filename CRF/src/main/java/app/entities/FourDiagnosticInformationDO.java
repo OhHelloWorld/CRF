@@ -1,5 +1,7 @@
 package app.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -59,6 +61,24 @@ public class FourDiagnosticInformationDO {
     private int abdominalVeins;// 腹壁脉络曲张
     private int yellowTumor;// 黄色瘤
     private boolean complete;// 是否完成
+    private boolean followUp;// 是否为随访
+    private Date followUpDate;// 随访时间
+
+    public boolean isFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(boolean followUp) {
+        this.followUp = followUp;
+    }
+
+    public Date getFollowUpDate() {
+        return followUpDate;
+    }
+
+    public void setFollowUpDate(Date followUpDate) {
+        this.followUpDate = followUpDate;
+    }
 
     public int getId() {
         return id;

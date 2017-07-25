@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dto.TonguePulseDTO;
 import app.service.TonguePulseService;
 
+/**
+ * @author Administrator
+ * @category 舌脉象信息
+ */
 @RestController
 @RequestMapping(path = "/api/tonguePulse")
 public class TonguePulseController {

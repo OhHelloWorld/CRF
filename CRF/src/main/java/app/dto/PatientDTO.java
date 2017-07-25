@@ -228,31 +228,17 @@ public class PatientDTO {
 
     @Override
     public String toString() {
-        return "PatientDTO{" +
-                "id=" + id +
-                ", identifier='" + identifier + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", nation=" + nation +
-                ", height=" + height +
-                ", weight=" + weight +
-                ", smoke=" + smoke +
-                ", drink=" + drink +
-                ", familyHistory=" + familyHistory +
-                ", birthday=" + birthday +
-                ", bmi=" + bmi +
-                ", degreeOfEducation='" + degreeOfEducation + '\'' +
-                ", firstTimeLiverInjury='" + firstTimeLiverInjury + '\'' +
-                ", investigateHospital='" + investigateHospital + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", durationOfVisit='" + durationOfVisit + '\'' +
-                ", firstVisitAge=" + firstVisitAge +
-                ", firstVisitTime=" + firstVisitTime +
-                ", smokeDrinkFamHis='" + smokeDrinkFamHis + '\'' +
-                ", concurrentAutoDisease='" + concurrentAutoDisease + '\'' +
-                ", concurrentAutoDate=" + concurrentAutoDate +
-                ", conAutoDisFirstOrNot=" + conAutoDisFirstOrNot +
-                ", complete=" + complete +
-                '}';
+        return "PatientDTO{" + "id=" + id + ", identifier='" + identifier + '\'' + ", name='" + name
+                + '\'' + ", gender='" + gender + '\'' + ", nation=" + nation + ", height=" + height
+                + ", weight=" + weight + ", smoke=" + smoke + ", drink=" + drink
+                + ", familyHistory=" + familyHistory + ", birthday=" + birthday + ", bmi=" + bmi
+                + ", degreeOfEducation='" + degreeOfEducation + '\'' + ", firstTimeLiverInjury='"
+                + firstTimeLiverInjury + '\'' + ", investigateHospital='" + investigateHospital
+                + '\'' + ", telephone='" + telephone + '\'' + ", durationOfVisit='"
+                + durationOfVisit + '\'' + ", firstVisitAge=" + firstVisitAge + ", firstVisitTime="
+                + firstVisitTime + ", smokeDrinkFamHis='" + smokeDrinkFamHis + '\''
+                + ", concurrentAutoDisease='" + concurrentAutoDisease + '\''
+                + ", concurrentAutoDate=" + concurrentAutoDate + ", conAutoDisFirstOrNot="
+                + conAutoDisFirstOrNot + ", complete=" + complete + '}';
     }
 }
