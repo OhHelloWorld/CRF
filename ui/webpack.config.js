@@ -19,8 +19,8 @@ module.exports = {
     login: __dirname + '/src/entries/login.js',
     homePage: __dirname + '/src/entries/homePage.js',
     hospitalDetail: __dirname + '/src/entries/hospitalDetail.js',
-    hospitalIllness:__dirname + '/src/entries/hospitalIllness.js',
-    register:__dirname + '/src/entries/register.js'
+    hospitalIllness: __dirname + '/src/entries/hospitalIllness.js',
+    register: __dirname + '/src/entries/register.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -59,6 +59,9 @@ module.exports = {
     port: 9000,
     proxy: {
       '/api': {
+        target: 'http://localhost:8080'
+      },
+      '/hospital': {
         target: 'http://localhost:8080'
       }
     }

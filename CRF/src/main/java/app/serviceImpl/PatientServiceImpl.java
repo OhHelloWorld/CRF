@@ -151,10 +151,11 @@ public class PatientServiceImpl implements PatientService {
         patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
         patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
         patientDO.setHospitalId(new UserMsgTool().getCurrentUser().getHospital().getId());
+        patientDO.setProjectId(patientDTO.getProjectId());
         return patientDO;
     }
 
-    private PatientDTO convertToPatientDTO(PatientDO patientDO) {
+    public PatientDTO convertToPatientDTO(PatientDO patientDO) {
         PatientDTO patientDTO = new PatientDTO();
         patientDTO.setId(patientDO.getId());
         patientDTO.setIdentifier(patientDO.getIdentifier());
@@ -193,6 +194,7 @@ public class PatientServiceImpl implements PatientService {
                         && simpleAIHService.getCompleteByPatientId(patientDO.getId())
                         && treatmentService.getCompleteByPatientId(patientDO.getId()));
         patientDTO.setHospitalId(patientDO.getHospitalId());
+        patientDTO.setProjectId(patientDO.getProjectId());
         return patientDTO;
     }
 
@@ -222,6 +224,7 @@ public class PatientServiceImpl implements PatientService {
         patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
         patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
         patientDO.setHospitalId(new UserMsgTool().getCurrentUser().getHospital().getId());
+        patientDO.setProjectId(patientDTO.getProjectId());
         return patientDO;
     }
 

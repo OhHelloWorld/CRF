@@ -5,7 +5,7 @@ angular.module('fourDiagnostic', [])
   .controller('fourDiagnosticController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     $scope.judgeGoHome();
     var fourDiagnosticInformation = {};
-    var isSave = false;
+    var isSave = true;
     $scope.fourClick();
     $scope.changeMenuStatus();
     getPatientInfo();
@@ -62,14 +62,10 @@ angular.module('fourDiagnostic', [])
     };
 
     $scope.out = function() {
-      if (isSave) {
-        $state.go('home');
-      } else {
-        $scope.outmation = '继续退出将失去未保存的内容，是否继续？';
-        $('#outModal').modal({
-          keyboard: true
-        });
-      }
+      $scope.outmation = '是否退出至录入首页';
+      $('#outModal').modal({
+        keyboard: true
+      });
     };
 
     $scope.confirm = function() {

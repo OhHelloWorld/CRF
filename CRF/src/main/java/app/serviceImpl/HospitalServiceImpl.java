@@ -33,7 +33,7 @@ public class HospitalServiceImpl implements HospitalService {
     @Override
     public PageDTO<HospitalDTO> getAllHospital(Pageable pageable) {
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for(HospitalDO h : hospitalRepo.findAll()) {
+        for (HospitalDO h : hospitalRepo.findAll()) {
             hospitalDTOS.add(convertUtil.convertHospitalDTO(h));
         }
         return getPageDTO(hospitalRepo.findAll(pageable));
@@ -79,11 +79,16 @@ public class HospitalServiceImpl implements HospitalService {
     public PageDTO<HospitalDTO> getPageDTO(Page<HospitalDO> page) {
         PageDTO<HospitalDTO> pageDTO = new PageDTO<>();
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for(HospitalDO h : hospitalRepo.findAll()) {
+        for (HospitalDO h : hospitalRepo.findAll()) {
             hospitalDTOS.add(convertUtil.convertHospitalDTO(h));
         }
         pageDTO.setTotalNumber(page.getTotalPages());
         pageDTO.setContent(hospitalDTOS);
-        return  pageDTO;
+        return pageDTO;
+    }
+
+    @Override
+    public void deleteHospital(Long hospitalId) {
+        hospitalRepo.delete(hospitalId);
     }
 }

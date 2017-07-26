@@ -5,8 +5,7 @@ import '../entries/main.js';
 
 var patientInfo = angular.module('patientInfo', ['main']);
 
-patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
+patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
   if (sessionStorage.getItem('patientId')) {
     $scope.myModalContent = '确认修改基本资料吗？';
   } else {
@@ -169,6 +168,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', fu
       patient.concurrentAutoDate = formatDateFromBack($scope.concurrentAutoDate);
     }
     patient.conAutoDisFirstOrNot = $scope.conAutoDisFirstOrNot;
+    patient.projectId = localStorageService.get('project').id;
     patient.complete = true;
     if (!sessionStorage.getItem('patientId')) {
       $http({

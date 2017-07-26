@@ -66,6 +66,11 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
 
   $scope.click_hospital = localStorageService.get('hospital');
   writeIllnessPermission();
+  $scope.image = $scope.click_hospital.image_url;
+  $scope.clickPatient = function(x) {
+    sessionStorage.setItem('patientId', x.id);
+    window.open('/main.html#!/patientInfo');
+  };
 
   $scope.Illnesses = [];
   $scope.url = '/api/case/' + localStorageService.get('project').id + '/' + localStorageService.get('hospital').id;
@@ -83,12 +88,7 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
       $('#writeIllness').addClass('ng-hide');
     }
   }
-
-
-
 }]);
-
-
 
 Array.prototype.contains = function(obj) {
   var i = this.length;

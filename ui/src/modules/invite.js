@@ -1,7 +1,7 @@
 import angular from 'angular';
 import LocalStorageModule from 'angular-local-storage';
 
-angular.module('invite', [])
+angular.module('invite', [LocalStorageModule])
   .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
     localStorageServiceProvider
       .setPrefix('login')

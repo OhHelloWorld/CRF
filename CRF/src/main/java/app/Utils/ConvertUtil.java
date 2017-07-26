@@ -4,9 +4,18 @@ import app.dto.*;
 import app.entities.*;
 import app.repo.ProjectRoleRepo;
 import app.repo.UserProjectRoleRepo;
+import app.service.BoneDensityService;
+import app.service.ComplexAIHAfterTreatmentService;
+import app.service.ComplexAIHBeforeTreatmentService;
+import app.service.FinalDiaSpeCirService;
 import app.service.FourDiagnosticInformationService;
+import app.service.LiverPathologyService;
+import app.service.MedicinePrescriptionService;
 import app.service.PhysicalChemicalInspectionService;
+import app.service.SimpleAIHService;
 import app.service.TonguePulseService;
+import app.service.TreatmentService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +49,74 @@ public class ConvertUtil {
     @Autowired
     private PhysicalChemicalInspectionService physicalService;
 
-    public  TonguePulseDO convertToTonguePulseDO(TonguePulseDTO tonguePulseDTO) {
+    @Autowired
+    private BoneDensityService boneDensityService;
+
+    @Autowired
+    private ComplexAIHBeforeTreatmentService complexAIHBeforeTreatmentService;
+
+    @Autowired
+    private ComplexAIHAfterTreatmentService complexAIHAfterTreatmentService;
+
+    @Autowired
+    private FinalDiaSpeCirService finalDiaSpeCirService;
+
+    @Autowired
+    private LiverPathologyService liverPathologyService;
+
+    @Autowired
+    private MedicinePrescriptionService medicinePrescriptionService;
+
+    @Autowired
+    private SimpleAIHService simpleAIHService;
+
+    @Autowired
+    private TreatmentService treatmentService;
+
+    public PatientDTO convertToPatientDTO(PatientDO patientDO) {
+        PatientDTO patientDTO = new PatientDTO();
+        patientDTO.setId(patientDO.getId());
+        patientDTO.setIdentifier(patientDO.getIdentifier());
+        patientDTO.setNation(patientDO.getNation());
+        patientDTO.setDrink(patientDO.isDrink());
+        patientDTO.setFamilyHistory(patientDO.getFamilyHistory());
+        patientDTO.setGender(patientDO.getGender());
+        patientDTO.setHeight(patientDO.getHeight());
+        patientDTO.setName(patientDO.getName());
+        patientDTO.setSmoke(patientDO.isSmoke());
+        patientDTO.setWeight(patientDO.getWeight());
+        patientDTO.setBirthday(patientDO.getBirthday());
+        patientDTO.setBmi(patientDO.getBmi());
+        patientDTO.setDegreeOfEducation(patientDO.getDegreeOfEducation());
+        patientDTO.setFirstTimeLiverInjury(patientDO.getFirstTimeLiverInjury());
+        patientDTO.setInvestigateHospital(patientDO.getInvestigateHospital());
+        patientDTO.setTelephone(patientDO.getTelephone());
+        patientDTO.setDurationOfVisit(patientDO.getDurationOfVisit());
+        patientDTO.setFirstVisitAge(patientDO.getFirstVisitAge());
+        patientDTO.setFirstVisitTime(patientDO.getFirstVisitTime());
+        patientDTO.setSmokeDrinkFamHis(patientDO.getSmokeDrinkFamHis());
+        patientDTO.setConcurrentAutoDate(patientDO.getConcurrentAutoDate());
+        patientDTO.setConcurrentAutoDisease(patientDO.getConcurrentAutoDisease());
+        patientDTO.setConAutoDisFirstOrNot(patientDO.isConAutoDisFirstOrNot());
+        patientDTO.setComplete(
+                patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
+                        && tonguePulseService.getCompleteByPatientId(patientDO.getId())
+                        && physicalService.getCompleteByPatientId(patientDO.getId())
+                        && boneDensityService.getCompleteByPatientId(patientDO.getId())
+                        && complexAIHBeforeTreatmentService
+                                .getCompleteByPatientId(patientDO.getId())
+                        && complexAIHAfterTreatmentService.getCompleteByPatientId(patientDO.getId())
+                        && finalDiaSpeCirService.getCompleteByPatientId(patientDO.getId())
+                        && liverPathologyService.getCompleteByPatientId(patientDO.getId())
+                        && medicinePrescriptionService.getCompleteByPatientId(patientDO.getId())
+                        && simpleAIHService.getCompleteByPatientId(patientDO.getId())
+                        && treatmentService.getCompleteByPatientId(patientDO.getId()));
+        patientDTO.setHospitalId(patientDO.getHospitalId());
+        patientDTO.setProjectId(patientDO.getProjectId());
+        return patientDTO;
+    }
+
+    public TonguePulseDO convertToTonguePulseDO(TonguePulseDTO tonguePulseDTO) {
         TonguePulseDO tonguePulseDO = new TonguePulseDO();
         tonguePulseDO.setComplete(tonguePulseDTO.isComplete());
         tonguePulseDO.setLeftPulse(tonguePulseDTO.getLeftPulse());
@@ -61,7 +137,7 @@ public class ConvertUtil {
         return tonguePulseDO;
     }
 
-    public  TonguePulseDTO convertToTonguePulseDTO(TonguePulseDO tDo) {
+    public TonguePulseDTO convertToTonguePulseDTO(TonguePulseDO tDo) {
         TonguePulseDTO tDto = new TonguePulseDTO();
         tDto.setId(tDo.getId());
         tDto.setComplete(tDo.isComplete());
@@ -82,7 +158,7 @@ public class ConvertUtil {
         return tDto;
     }
 
-    public  PhysicalChemicalInspectionDO convertToPhysicalChemicalInspectionDO(
+    public PhysicalChemicalInspectionDO convertToPhysicalChemicalInspectionDO(
             PhysicalChemicalInspectionDTO pDto) {
         PhysicalChemicalInspectionDO pDo = new PhysicalChemicalInspectionDO();
         pDo.setANACentromere(pDto.getANACentromere());
@@ -170,7 +246,7 @@ public class ConvertUtil {
         return pDo;
     }
 
-    public  PhysicalChemicalInspectionDTO convertToPhysicalDTO(PhysicalChemicalInspectionDO pDo) {
+    public PhysicalChemicalInspectionDTO convertToPhysicalDTO(PhysicalChemicalInspectionDO pDo) {
         PhysicalChemicalInspectionDTO pDto = new PhysicalChemicalInspectionDTO();
         pDto.setANACentromere(pDo.getANACentromere());
         pDto.setANAHomogeneous(pDo.getANAHomogeneous());
@@ -256,7 +332,9 @@ public class ConvertUtil {
         return pDto;
     }
 
-    public  PatientDO convertToPatientDO(PatientDTO patientDTO) {
+
+
+    public PatientDO convertToPatientDO(PatientDTO patientDTO) {
         PatientDO patientDO = new PatientDO();
         patientDO.setIdentifier(new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date()));
         patientDO.setNation(patientDTO.getNation());
@@ -282,38 +360,6 @@ public class ConvertUtil {
         patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
         patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
         return patientDO;
-    }
-
-    public  PatientDTO convertToPatientDTO(PatientDO patientDO) {
-        PatientDTO patientDTO = new PatientDTO();
-        patientDTO.setId(patientDO.getId());
-        patientDTO.setIdentifier(patientDO.getIdentifier());
-        patientDTO.setNation(patientDO.getNation());
-        patientDTO.setDrink(patientDO.isDrink());
-        patientDTO.setFamilyHistory(patientDO.getFamilyHistory());
-        patientDTO.setGender(patientDO.getGender());
-        patientDTO.setHeight(patientDO.getHeight());
-        patientDTO.setName(patientDO.getName());
-        patientDTO.setSmoke(patientDO.isSmoke());
-        patientDTO.setWeight(patientDO.getWeight());
-        patientDTO.setBirthday(patientDO.getBirthday());
-        patientDTO.setBmi(patientDO.getBmi());
-        patientDTO.setDegreeOfEducation(patientDO.getDegreeOfEducation());
-        patientDTO.setFirstTimeLiverInjury(patientDO.getFirstTimeLiverInjury());
-        patientDTO.setInvestigateHospital(patientDO.getInvestigateHospital());
-        patientDTO.setTelephone(patientDO.getTelephone());
-        patientDTO.setDurationOfVisit(patientDO.getDurationOfVisit());
-        patientDTO.setFirstVisitAge(patientDO.getFirstVisitAge());
-        patientDTO.setFirstVisitTime(patientDO.getFirstVisitTime());
-        patientDTO.setSmokeDrinkFamHis(patientDO.getSmokeDrinkFamHis());
-        patientDTO.setConcurrentAutoDate(patientDO.getConcurrentAutoDate());
-        patientDTO.setConcurrentAutoDisease(patientDO.getConcurrentAutoDisease());
-        patientDTO.setConAutoDisFirstOrNot(patientDO.isConAutoDisFirstOrNot());
-        patientDTO.setComplete(
-                patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
-                        && tonguePulseService.getCompleteByPatientId(patientDO.getId())
-                        && physicalService.getCompleteByPatientId(patientDO.getId()));
-        return patientDTO;
     }
 
     public SysRoleDO convertToRoleDO(SysRoleDTO roleDTO) {
@@ -350,7 +396,7 @@ public class ConvertUtil {
         userDTO.setHospital(convertHospitalDTO(userDO.getHospital()));
         userDTO.setEmail(userDO.getEmail());
         List<SysPermissionDTO> permissionDTOS = new ArrayList<>();
-        for(SysPermissionDO sr: userDO.getSysRoleDO().getListPermission()) {
+        for (SysPermissionDO sr : userDO.getSysRoleDO().getListPermission()) {
             permissionDTOS.add(convertToPermissionDTO(sr));
         }
         userDTO.setPermissionDTOS(permissionDTOS);
@@ -376,7 +422,7 @@ public class ConvertUtil {
         return projectDO;
     }
 
-    public ProjectDTO convertToProjectDTO(ProjectDO projectDO)  {
+    public ProjectDTO convertToProjectDTO(ProjectDO projectDO) {
         ProjectDTO projectDTO = new ProjectDTO();
         projectDTO.setId(projectDO.getId());
         projectDTO.setCreate_time(projectDO.getCreate_time());
@@ -385,13 +431,15 @@ public class ConvertUtil {
         projectDTO.setProjectName(projectDO.getProjectName());
         projectDTO.setCollect(projectDO.isCollect());
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for(HospitalDO h : projectDO.getHospitalList()) {
+        for (HospitalDO h : projectDO.getHospitalList()) {
             hospitalDTOS.add(convertHospitalDTO(h));
         }
         projectDTO.setHospitals(hospitalDTOS);
         List<ProjectPermissionDTO> projectPermissionDTOS = new ArrayList<>();
-        Long projectRoleId =  userProjectRoleRepo.getRoleId(userTool.getCurrentUserId(),projectDO.getId()).getProjectRoleId();
-        for(ProjectPermissionDO p : projectRoleRepo.findOne(projectRoleId).getProjectPermissionDOS()) {
+        Long projectRoleId = userProjectRoleRepo
+                .getRoleId(userTool.getCurrentUserId(), projectDO.getId()).getProjectRoleId();
+        for (ProjectPermissionDO p : projectRoleRepo.findOne(projectRoleId)
+                .getProjectPermissionDOS()) {
             projectPermissionDTOS.add(convertToProjectPermissionDTO(p));
         }
         projectDTO.setCurrentUserPermissionInProject(projectPermissionDTOS);
@@ -434,21 +482,26 @@ public class ConvertUtil {
         hospitalDO.setImage_url(hospitalDTO.getImage_url());
         hospitalDO.setManageRange(hospitalDTO.getManageRange());
         hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
+        hospitalDO.setIntroduction(hospitalDTO.getIntroduction());
         hospitalDO.setTelephone(hospitalDTO.getTelephone());
         hospitalDO.setImage_url(hospitalDTO.getImage_url());
         return hospitalDO;
     }
 
-    public ProjectPermissionDO convertToProjectPermissionDO(ProjectPermissionDTO projectPermissionDTO) {
+    public ProjectPermissionDO convertToProjectPermissionDO(
+            ProjectPermissionDTO projectPermissionDTO) {
         ProjectPermissionDO projectPermissionDO = new ProjectPermissionDO();
-        projectPermissionDO.setProjectPermissionName(projectPermissionDTO.getProjectPermissionName());
+        projectPermissionDO
+                .setProjectPermissionName(projectPermissionDTO.getProjectPermissionName());
         return projectPermissionDO;
     }
 
-    public ProjectPermissionDTO convertToProjectPermissionDTO(ProjectPermissionDO projectPermissionDO) {
+    public ProjectPermissionDTO convertToProjectPermissionDTO(
+            ProjectPermissionDO projectPermissionDO) {
         ProjectPermissionDTO projectPermissionDTO = new ProjectPermissionDTO();
         projectPermissionDTO.setId(projectPermissionDO.getId());
-        projectPermissionDTO.setProjectPermissionName(projectPermissionDO.getProjectPermissionName());
+        projectPermissionDTO
+                .setProjectPermissionName(projectPermissionDO.getProjectPermissionName());
         return projectPermissionDTO;
     }
 

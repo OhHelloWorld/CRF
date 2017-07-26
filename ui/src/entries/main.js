@@ -26,10 +26,11 @@ import '../modules/simpleAIH.js';
 import '../modules/complexAIH.js';
 import '../modules/treatment.js';
 import '../modules/finalDiagnosis.js';
+import LocalStorageModule from 'angular-local-storage';
 
-var main = angular.module('main', [uiRouter, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis']);
+var main = angular.module('main', [uiRouter, LocalStorageModule, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis']);
 
-main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+main.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
   $urlRouterProvider.when('', '/home');
 
@@ -77,6 +78,11 @@ main.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $u
       url: '/finalDiagnosis',
       template: require('../templates/finalDiagnosis.html')
     });
+
+  localStorageServiceProvider
+    .setPrefix('login')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true);
 
 }]);
 

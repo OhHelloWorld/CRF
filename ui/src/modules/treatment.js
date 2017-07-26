@@ -166,6 +166,13 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     };
 
+    $scope.confirm = function() {
+      if ($scope.buttonContent1 == '否' && $scope.buttonContent2 == '是') {
+        $('#infoModal').modal('hide');
+        $state.go('home');
+      }
+    };
+
     $scope.chooseqds = function() {
       $scope.qds1 = false;
       $scope.qds2 = true;
@@ -698,6 +705,16 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     });
 
+    $scope.layout = function() {
+      initializeModal();
+      $scope.buttonContent1 = '否';
+      $scope.buttonContent2 = '是';
+      $scope.information = '是否退出至录入首页';
+      $('#infoModal').modal({
+        keyboard: true
+      });
+    };
+
     function formatDate(myDate) {
       return myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate();
     }
@@ -705,6 +722,8 @@ angular.module('treatment', ['chart.js', 'main'])
     function initializeModal() {
       $('#modalButton1').removeClass('hide');
       $('#modalButton2').removeClass('hide');
+      $scope.buttonContent1 = '';
+      $scope.buttonContent2 = '';
     }
 
     function getPatientInfo() {

@@ -29,14 +29,14 @@
                         <div class="panel-heading">邀请消息</div>
                         <div class="panel-body">
                             <h3>邀请通知:</h3>
-                            <h4 class="filename" style="margin-left:100px;">{{readMessage.content}}</h4>
+                            <h4 class="filename">{{content}}</h4>
                             <div class="col col-md-12" style="margin-top:150px;">
-                            <div class="col col-md-6 pull-right">
+                            <div class="col-md-6 col-md-offset-3">
                               <div class="col col-md-6">
-                                <button type="button" id="receive" class="btn btn-lg btn-primary" ng-disabled="receiveDisabled" ng-click="receive_invite()" ng-bind="receiveName"></button>
+                                <button type="button" id="receive" class="btn btn-lg btn-primary" ng-disabled="receiveDisabled" ng-click="receive_invite()">接受</button>
                               </div>
                               <div class="col col-md-6">
-                                <button data-toggle="modal" data-target="#remove_projectModal" id="refuse" class="btn btn-lg btn-default" ng-disabled="refuseDisabled" style="color:red;" ng-bind="refuseName"></button>
+                                <button data-toggle="modal" data-target="#remove_projectModal" id="refuse" class="btn btn-lg btn-default" ng-disabled="refuseDisabled" style="color:red;">拒绝</button>
                               </div>
                               
                             </div>

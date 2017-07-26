@@ -7,21 +7,21 @@
           <thead>
             <tr>
               <td>序号</td>
-              <td>案例名称</td>
-              <td>案例类型</td>
-              <td>案例录入时间</td>
+              <td>病例名</td>
+              <td>病例性别</td>
+              <td>病例录入时间</td>
             </tr>
           </thead>
           <tbody ng-repeat="x in Illnesses">
             <tr>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseName}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseName}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.caseCategory}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.caseCategory}}</td>
-              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.createTime | date:"MM/dd/yyyy"}}</td>
-              <td ng-if="$even" style="background-color:#f1f1f1">{{x.createTime | date:"MM/dd/yyyy"}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.name}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.gender}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.gender}}</td>
+              <td ng-if="$odd" style="background-color:#4ba8b3">{{x.identifier.substring(0,4)}}-{{x.identifier.substring(4,6)}}-{{x.identifier.substring(6,8)}}</td>
+              <td ng-if="$even" style="background-color:#f1f1f1">{{x.identifier.substring(0,4)}}-{{x.identifier.substring(4,6)}}-{{x.identifier.substring(6,8)}}</td>
             </tr>
           </tbody>
         </table>

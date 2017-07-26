@@ -45,6 +45,7 @@ public class PatientDO {
     private boolean conAutoDisFirstOrNot;
     private boolean complete;
     private Long hospitalId;
+    private Long projectId;
 
     public int getId() {
         return id;
@@ -52,6 +53,14 @@ public class PatientDO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
     }
 
     public Long getHospitalId() {

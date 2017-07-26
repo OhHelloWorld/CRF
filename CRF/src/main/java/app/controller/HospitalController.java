@@ -51,9 +51,14 @@ public class HospitalController {
         return hospitalService.getHospitalById(hospitalId);
     }
 
-    @PutMapping(value = "}")
+    @PutMapping(value = "")
     @ApiOperation(value = "修改医院")
     public HospitalDTO updateHospital(@RequestBody HospitalDTO hospitalDTO) {
         return hospitalService.updateHospital(hospitalDTO);
+    }
+
+    @DeleteMapping(value = "/{hospitalId}")
+    public void deleteHospital(@PathVariable Long hospitalId) {
+        hospitalService.deleteHospital(hospitalId);
     }
 }
