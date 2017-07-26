@@ -34,4 +34,16 @@ public interface ProjectRepo extends CrudRepository<ProjectDO, Long> {
 
     @Query(value = "select count(*) from patient", nativeQuery = true)
     int getAllCount();
+
+    @Query(value = "select count(*) from patient where hospital_id=?1", nativeQuery = true)
+    int getHospitalCount(Long hospitalId);
+
+    @Query(value = "select count(*) from patient where hospital_id=?1 and gender like '%男%'",
+            nativeQuery = true)
+    int getHospitalMan(Long hospitalId);
+
+    @Query(value = "select count(*) from patient where hospital_id=?1 and gender like '%女%'",
+            nativeQuery = true)
+    int getHospitalWoman(Long hospitalId);
 }
+

@@ -32,6 +32,7 @@ public class PatientDTO {
     private Date concurrentAutoDate;
     private boolean conAutoDisFirstOrNot;
     private boolean complete;
+    private Long hospitalId;
 
 
     public int getId() {
@@ -40,6 +41,14 @@ public class PatientDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Long getHospitalId() {
+        return hospitalId;
+    }
+
+    public void setHospitalId(Long hospitalId) {
+        this.hospitalId = hospitalId;
     }
 
     public String getIdentifier() {

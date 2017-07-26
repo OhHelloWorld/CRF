@@ -219,17 +219,20 @@ public class ProjectServiceImpl implements ProjectService {
     public void deleteProject(Long projectId) {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);
         projectRepo.delete(projectId);
-
     }
 
     @Override
     public List<Integer> getProjectData() {
         List<Integer> projectDataList = new ArrayList<>();
+        Long currentHospitalId = new UserMsgTool().getCurrentUser().getHospital().getId();
         projectDataList.add(projectRepo.getMan());
         projectDataList.add(projectRepo.getWoman());
         projectDataList.add(projectRepo.getSaveCount());
         projectDataList.add(projectRepo.getPushCount());
         projectDataList.add(projectRepo.getAllCount());
+        projectDataList.add(projectRepo.getHospitalCount(currentHospitalId));
+        projectDataList.add(projectRepo.getHospitalMan(currentHospitalId));
+        projectDataList.add(projectRepo.getHospitalWoman(currentHospitalId));
         return projectDataList;
     }
 }

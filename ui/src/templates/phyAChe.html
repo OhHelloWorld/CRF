@@ -796,6 +796,8 @@
                       <input type="radio" name="r3" ng-model="cTMRI" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class="col-md-offset-1">&nbsp</span>
                     </li>
                       <hr style="border : 1px dashed #3C8DBC;" />
+                      <button class="btn btn-info" ngf-select="" ng-model="image" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-min-height="100" ngf-resize="{width: 500, height: 500}">上传图片资料</button>
+                      <img ngf-src="image" id="blah2" width="500" height="200" class="img-box">
 
                   </div>
                   <div class="box-footer">

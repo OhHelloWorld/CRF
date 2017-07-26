@@ -85,6 +85,7 @@ public class PhysicalChemicalInspectionDTO {
     private String ca199;
     private boolean followUp;
     private Date followUpDate;
+    private String imageUrl;
 
     public String getCopperProtein() {
         return copperProtein;
@@ -94,6 +95,13 @@ public class PhysicalChemicalInspectionDTO {
         this.copperProtein = copperProtein;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public boolean isFollowUp() {
         return followUp;

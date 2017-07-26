@@ -1,11 +1,12 @@
 ﻿'use strict';
 
 import angular from 'angular';
+import ngFileUpload from 'ng-file-upload';
 import '../entries/main.js';
 
-var phyAChe = angular.module('phyAChe', ['main']);
+var phyAChe = angular.module('phyAChe', ['main', ngFileUpload]);
 
-phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', 'Upload', function($scope, $http, $rootScope, $state, Upload) {
   $scope.judgeGoHome();
   var physicalChemicalInspection = {};
   $scope.modalContent = '您确定要保存吗？';
@@ -24,6 +25,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
   });
 
   $scope.showSaveModal = function() {
+    saveImg($scope.image);
     $('#saveModal').modal('show');
   };
 
@@ -170,8 +172,6 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.cellularImmunityCD2 = $scope.cellularImmunityCD2;
     physicalChemicalInspection.cellularImmunityCD4CD8 = $scope.cellularImmunityCD4CD8;
     physicalChemicalInspection.rheumaticImmuneRelatedAntibodies = $scope.rheumaticImmuneRelatedAntibodies;
-
-
     physicalChemicalInspection.copperProtein = $scope.copperProtein;
     physicalChemicalInspection.aFP = $scope.aFP;
     physicalChemicalInspection.carcinoembryonicAntigenCEA = $scope.carcinoembryonicAntigenCEA;
@@ -191,7 +191,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.bilirubin = $scope.bilirubin;
     physicalChemicalInspection.followUp = $scope.follow;
     physicalChemicalInspection.followUpDate = new Date($scope.followUpDate);
-
+    physicalChemicalInspection.imageUrl = $scope.imageName;
 
 
     if (!$scope.cTMRI) {
@@ -322,7 +322,19 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = physicalChemicalInspection.whiteBloodCell;
       $scope.bilirubin = physicalChemicalInspection.bilirubin;
       $scope.ca199 = physicalChemicalInspection.ca199;
+      $scope.image = '/api/image/'+physicalChemicalInspection.imageUrl+'.jpg';
 
+    });
+  }
+
+  function saveImg(image) {
+    Upload.upload({
+      url: '/api/physical/upload',
+      data: {
+        file: image
+      }
+    }).then(function success(response) {
+      $scope.imageName = response.data;
     });
   }
 

@@ -9,8 +9,8 @@ angular.module('invite', [])
       .setNotify(true, true);
 
   }])
-  .controller('inviteController', ['$scope', '$http', '$state', 'localStorageService',function($scope, $http, $state, localStorageService) {
-   
+  .controller('inviteController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+
 
     // var invitedUsers = [];
     // $scope.invitedUrl = ''
@@ -20,19 +20,19 @@ angular.module('invite', [])
     var removeUserId;
 
     $scope.users = function(type) {
-      localStorageService.set('type', type); 
+      localStorageService.set('type', type);
       $state.go('inviteUsers');
     };
-  
+
     var inviteUsers = [];
     $scope.inviteUrl = '/api/projects/' + localStorageService.get('project').id + '/users';
-    var users = []; 
+    var users = [];
     $scope.url = '/api/projects/' + localStorageService.get('project').id + '/invUsers';
 
     $scope.backInvite = function() {
-      
+
       $state.go('invite');
-     
+
     };
 
     $scope.getRemoveName = function(name, userId) {
@@ -42,31 +42,31 @@ angular.module('invite', [])
 
     $scope.getInviteName = function(name, userId) {
       inviteUserId = userId;
-      $scope.inviteName = name;   
+      $scope.inviteName = name;
     };
 
     $scope.invite = function() {
       console.log();
       $http({
-        method:'POST',
+        method: 'POST',
         url: '/api/projects/Inv?userId=' + inviteUserId + '&projectId=' + localStorageService.get('project').id + '&inviteType=' + localStorageService.get('type')
       }).then(function() {
-        setTimeout(function(){
+        setTimeout(function() {
           $state.go('invite');
         }, 500);
       }, function() {
 
-      });  
+      });
     };
-  
+
     $scope.remove = function() {
 
-      
+
       $http({
         method: 'POST',
-        url: '/api/projects/demeber?userId=' + removeUserId + '&projectId=' + localStorageService.get('project').id 
+        url: '/api/projects/demeber?userId=' + removeUserId + '&projectId=' + localStorageService.get('project').id
       }).then(function() {
-        setTimeout(function(){
+        setTimeout(function() {
           $state.reload();
         }, 500);
       }, function() {
@@ -74,7 +74,7 @@ angular.module('invite', [])
       });
     };
 
-    $scope.search_users = function(){
+    $scope.search_users = function() {
 
       $scope.url = '/api/users/userName/' + $scope.user_searchInput + '/' + localStorageService.get('project').id;
     };

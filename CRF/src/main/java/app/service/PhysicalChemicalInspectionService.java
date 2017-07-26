@@ -1,5 +1,9 @@
 package app.service;
 
+import java.io.IOException;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import app.dto.PhysicalChemicalInspectionDTO;
 
 public interface PhysicalChemicalInspectionService {
@@ -26,4 +30,6 @@ public interface PhysicalChemicalInspectionService {
      * @return
      */
     public boolean getCompleteByPatientId(int patientId);
+
+    public void savePhysicalImage(MultipartFile file) throws IOException;
 }

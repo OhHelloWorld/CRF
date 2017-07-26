@@ -1,8 +1,13 @@
 package app.serviceImpl;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import app.dto.PhysicalChemicalInspectionDTO;
 import app.entities.PhysicalChemicalInspectionDO;
@@ -20,6 +25,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pRepo.save(convertToPhysicalChemicalInspectionDO(pDto));
     }
 
+    @Override
     public PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId) {
         if (pRepo.getPhysicalByPatientId(patientId) != null) {
             return convertToPhysicalDTO(pRepo.getPhysicalByPatientId(patientId));
@@ -28,11 +34,23 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         }
     }
 
+    @Override
     public boolean getCompleteByPatientId(int patientId) {
         try {
             return pRepo.getCompleteByPatientId(patientId);
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    @Override
+    public void savePhysicalImage(MultipartFile file) throws IOException {
+        File saveFile = new File("C:/image/", file.hashCode() + ".jpg");
+        try (FileOutputStream fos = new FileOutputStream(saveFile)) {
+            fos.write(file.getBytes());
+            fos.flush();
+        } catch (IOException e) {
+            throw new IOException("保存图片失败");
         }
     }
 
@@ -122,6 +140,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pDo.setBilirubin(pDto.getBilirubin());
         pDo.setCa199(pDto.getCa199());
         pDo.setCopperProtein(pDto.getCopperProtein());
+        pDo.setImageUrl(pDto.getImageUrl());
         return pDo;
     }
 
@@ -210,6 +229,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pDto.setCopperProtein(pDo.getCopperProtein());
         pDto.setFollowUp(pDo.isFollowUp());
         pDto.setFollowUpDate(pDo.getFollowUpDate());
+        pDto.setImageUrl(pDo.getImageUrl());
         return pDto;
     }
 

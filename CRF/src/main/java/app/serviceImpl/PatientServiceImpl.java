@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import app.Utils.UserMsgTool;
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.entities.PatientDO;
@@ -149,6 +150,7 @@ public class PatientServiceImpl implements PatientService {
         patientDO.setConcurrentAutoDate(patientDTO.getConcurrentAutoDate());
         patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
         patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
+        patientDO.setHospitalId(new UserMsgTool().getCurrentUser().getHospital().getId());
         return patientDO;
     }
 
@@ -190,6 +192,7 @@ public class PatientServiceImpl implements PatientService {
                         && medicinePrescriptionService.getCompleteByPatientId(patientDO.getId())
                         && simpleAIHService.getCompleteByPatientId(patientDO.getId())
                         && treatmentService.getCompleteByPatientId(patientDO.getId()));
+        patientDTO.setHospitalId(patientDO.getHospitalId());
         return patientDTO;
     }
 
@@ -218,6 +221,7 @@ public class PatientServiceImpl implements PatientService {
         patientDO.setConcurrentAutoDate(patientDTO.getConcurrentAutoDate());
         patientDO.setConcurrentAutoDisease(patientDTO.isConcurrentAutoDisease());
         patientDO.setConAutoDisFirstOrNot(patientDTO.isConAutoDisFirstOrNot());
+        patientDO.setHospitalId(new UserMsgTool().getCurrentUser().getHospital().getId());
         return patientDO;
     }
 
