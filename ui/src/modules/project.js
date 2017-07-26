@@ -28,7 +28,7 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     url: '/api/projects/projectData'
   }).then(function success(response) {
     $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
-    $scope.data = [response.data[0], response.data[1], response.data[2], response.data[3], response.data[4], 60, 55, 45, 0];
+    $scope.data = [response.data[0], response.data[1], response.data[2], response.data[3], response.data[4], 10, 1, 1, 1];
   });
   // $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
   // $scope.data = [65, 55, 35, 50, 80, 60, 55, 45,0];

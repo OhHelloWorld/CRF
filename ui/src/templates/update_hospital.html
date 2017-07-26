@@ -37,16 +37,16 @@
                                 <td>联系电话</td>
                               </tr>
                             </thead>
-                            <tbody ng-repeat="x in hospitals">
-                              <tr>
+                            <tbody>
+                              <tr ng-repeat="x in hospitals" style="cursor: pointer;">
                                 <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{$index+1}}</td>
                                 <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{$index+1}}</td>
-                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.name}}</td>
-                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.name}}</td>
-                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address_detail}}</td>
-                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address_detail}}</td>
-                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telphone}}</td>
-                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telphone}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.hospitalName}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.hospitalName}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.address}}-{{x.addressDetail}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.address}}-{{x.addressDetail}}</td>
+                                <td ng-if="$odd" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#4ba8b3">{{x.telephone}}</td>
+                                <td ng-if="$even" ui-sref="hospital" ng-click="click_hospital(x)" style="background-color:#f1f1f1">{{x.telephone}}</td>
                               </tr>
                             </tbody>
                           </table>
