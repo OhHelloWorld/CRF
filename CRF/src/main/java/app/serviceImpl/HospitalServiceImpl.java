@@ -41,7 +41,7 @@ public class HospitalServiceImpl implements HospitalService {
 
     @Override
     public void saveImag(MultipartFile file) throws IOException {
-        File saveFile = new File("C:/image/", file.hashCode() + ".jpg");
+        File saveFile = new File("/image/", file.hashCode() + ".jpg");
         try (FileOutputStream fos = new FileOutputStream(saveFile)) {
             fos.write(file.getBytes());
             fos.flush();
