@@ -8,3 +8,8 @@ clinical information scale for autoimmune liver disease
 
 ### 获取数据库表和初始和初始化数据
 * Resource下的schema为数据表结构，data为初始化数据
+
+### 图片路径修改文件
+* HospitalServiceImpl.java
+* physicalChemicalInspectionService.java
+* webConfig.java
