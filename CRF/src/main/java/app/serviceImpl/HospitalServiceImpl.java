@@ -79,7 +79,7 @@ public class HospitalServiceImpl implements HospitalService {
     public PageDTO<HospitalDTO> getPageDTO(Page<HospitalDO> page) {
         PageDTO<HospitalDTO> pageDTO = new PageDTO<>();
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for (HospitalDO h : hospitalRepo.findAll()) {
+        for (HospitalDO h : page) {
             hospitalDTOS.add(convertUtil.convertHospitalDTO(h));
         }
         pageDTO.setTotalNumber(page.getTotalPages());

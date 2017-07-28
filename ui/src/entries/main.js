@@ -26,9 +26,10 @@ import '../modules/simpleAIH.js';
 import '../modules/complexAIH.js';
 import '../modules/treatment.js';
 import '../modules/finalDiagnosis.js';
+import '../modules/patientOverview.js';
 import LocalStorageModule from 'angular-local-storage';
 
-var main = angular.module('main', [uiRouter, LocalStorageModule, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis']);
+var main = angular.module('main', [uiRouter, LocalStorageModule, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis','patientOverview']);
 
 main.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -77,6 +78,10 @@ main.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvide
     .state('finalDiagnosis', {
       url: '/finalDiagnosis',
       template: require('../templates/finalDiagnosis.html')
+    })
+    .state('patientOverview', {
+      url: '/patientOverview',
+      template: require('../templates/patientOverview.html')
     });
 
   localStorageServiceProvider
@@ -96,6 +101,12 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
   $scope.patientMenuClick = function() {
     $('li').removeClass('active');
     $('#li2').addClass('active');
+    changeStatus();
+  };
+
+  $scope.patientMenuClick1 = function() {
+    $('li').removeClass('active');
+    $('#li12').addClass('active');
     changeStatus();
   };
 

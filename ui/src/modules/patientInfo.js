@@ -65,6 +65,12 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'l
   //   }
   // };
 
+  $scope.$watch('height', function() {
+    if ($scope.weight && $scope.height) {
+      $scope.bmi = ($scope.weight) / ($scope.height/100 * $scope.height/100);
+    }
+  });
+
   $scope.showNextModel = function() {
     $('#myModal').modal('show');
   };

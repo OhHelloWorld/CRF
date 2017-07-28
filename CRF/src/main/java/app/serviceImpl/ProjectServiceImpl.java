@@ -7,14 +7,12 @@ import app.entities.*;
 import app.repo.*;
 import app.service.ProjectService;
 
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,9 +46,14 @@ public class ProjectServiceImpl implements ProjectService {
     private UserMsgTool userMsgTool;
 
     @Override
-    public ProjectDTO addProject(ProjectDTO projectDTO) {
-        ProjectDO projectDO = convertUtil.convertToProjectDO(projectDTO);
-        return convertUtil.convertToProjectDTO(projectDO);
+    public void addProject(ProjectDTO projectDTO) {
+        ProjectDO projectDO = projectRepo.save(convertToDO(projectDTO));
+        UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
+        userProjectRoleDO.setAccept(true);
+        userProjectRoleDO.setProjectId(projectDO.getId());
+        userProjectRoleDO.setUserId(userMsgTool.getCurrentUserId());
+        userProjectRoleDO.setProjectRoleId(1L);
+        userProjectRoleRepo.save(userProjectRoleDO);
     }
 
     @Override
@@ -222,17 +225,29 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public List<Integer> getProjectData() {
+    public List<Integer> getProjectData(Long projectId) {
         List<Integer> projectDataList = new ArrayList<>();
         Long currentHospitalId = new UserMsgTool().getCurrentUser().getHospital().getId();
-        projectDataList.add(projectRepo.getMan());
-        projectDataList.add(projectRepo.getWoman());
-        projectDataList.add(projectRepo.getSaveCount());
-        projectDataList.add(projectRepo.getPushCount());
-        projectDataList.add(projectRepo.getAllCount());
-        projectDataList.add(projectRepo.getHospitalCount(currentHospitalId));
-        projectDataList.add(projectRepo.getHospitalMan(currentHospitalId));
-        projectDataList.add(projectRepo.getHospitalWoman(currentHospitalId));
+        projectDataList.add(projectRepo.getMan(projectId));
+        projectDataList.add(projectRepo.getWoman(projectId));
+        projectDataList.add(projectRepo.getSaveCount(projectId));
+        projectDataList.add(projectRepo.getPushCount(projectId));
+        projectDataList.add(projectRepo.getAllCount(projectId));
+        projectDataList.add(projectRepo.getHospitalCount(projectId, currentHospitalId));
+        projectDataList.add(projectRepo.getHospitalMan(projectId, currentHospitalId));
+        projectDataList.add(projectRepo.getHospitalWoman(projectId, currentHospitalId));
         return projectDataList;
     }
+
+    private ProjectDO convertToDO(ProjectDTO projectDTO) {
+        ProjectDO projectDO = new ProjectDO();
+        projectDO.setCollect(true);
+        projectDO.setCreate_time(new Date());
+        projectDO.setIntroduction(projectDTO.getIntroduction());
+        projectDO.setOrganizer(new UserMsgTool().getCurrentUser().getRealName());
+        projectDO.setProjectName(projectDTO.getProjectName());
+        return projectDO;
+
+    }
 }
+

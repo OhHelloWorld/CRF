@@ -20,30 +20,35 @@ public interface ProjectRepo extends CrudRepository<ProjectDO, Long> {
     @Query(value = "select * from project where project_name like %?1%", nativeQuery = true)
     List<ProjectDO> getListProjectByMsg(String msg);
 
-    @Query(value = "select count(*) from patient where gender like '%男%'", nativeQuery = true)
-    int getMan();
-
-    @Query(value = "select count(*) from patient where gender like '%女%'", nativeQuery = true)
-    int getWoman();
-
-    @Query(value = "select count(*) from patient where complete = 1", nativeQuery = true)
-    int getSaveCount();
-
-    @Query(value = "select count(*) from patient where complete = 0", nativeQuery = true)
-    int getPushCount();
-
-    @Query(value = "select count(*) from patient", nativeQuery = true)
-    int getAllCount();
-
-    @Query(value = "select count(*) from patient where hospital_id=?1", nativeQuery = true)
-    int getHospitalCount(Long hospitalId);
-
-    @Query(value = "select count(*) from patient where hospital_id=?1 and gender like '%男%'",
+    @Query(value = "select count(*) from patient where gender like '%男%' and project_id=?1",
             nativeQuery = true)
-    int getHospitalMan(Long hospitalId);
+    int getMan(Long projectId);
 
-    @Query(value = "select count(*) from patient where hospital_id=?1 and gender like '%女%'",
+    @Query(value = "select count(*) from patient where gender like '%女%' and project_id=?1",
             nativeQuery = true)
-    int getHospitalWoman(Long hospitalId);
+    int getWoman(Long projectId);
+
+    @Query(value = "select count(*) from patient where complete = 1 and project_id = ?1",
+            nativeQuery = true)
+    int getSaveCount(Long projectId);
+
+    @Query(value = "select count(*) from patient where complete = 0 and project_id = ?1",
+            nativeQuery = true)
+    int getPushCount(Long projectId);
+
+    @Query(value = "select count(*) from patient where project_id = ?1", nativeQuery = true)
+    int getAllCount(Long projectId);
+
+    @Query(value = "select count(*) from patient where project_id = ?1 and hospital_id=?2",
+            nativeQuery = true)
+    int getHospitalCount(Long projectId, Long hospitalId);
+
+    @Query(value = "select count(*) from patient where project_id = ?1 and hospital_id=?2 and gender like '%男%'",
+            nativeQuery = true)
+    int getHospitalMan(Long projectId, Long hospitalId);
+
+    @Query(value = "select count(*) from patient where project_id = ?1 and hospital_id=?2 and gender like '%女%'",
+            nativeQuery = true)
+    int getHospitalWoman(Long projectId, Long hospitalId);
 }
 

@@ -189,6 +189,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.redBloodCell = $scope.redBloodCell;
     physicalChemicalInspection.whiteBloodCell = $scope.whiteBloodCell;
     physicalChemicalInspection.bilirubin = $scope.bilirubin;
+    physicalChemicalInspection.copperProtein = $scope.copperProtein;
     physicalChemicalInspection.followUp = $scope.follow;
     physicalChemicalInspection.followUpDate = new Date($scope.followUpDate);
     physicalChemicalInspection.imageUrl = $scope.imageName;
@@ -322,7 +323,7 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = physicalChemicalInspection.whiteBloodCell;
       $scope.bilirubin = physicalChemicalInspection.bilirubin;
       $scope.ca199 = physicalChemicalInspection.ca199;
-      $scope.image = '/api/image/'+physicalChemicalInspection.imageUrl+'.jpg';
+      $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
 
     });
   }

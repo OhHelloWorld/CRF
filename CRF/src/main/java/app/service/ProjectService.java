@@ -2,7 +2,6 @@ package app.service;
 
 import app.dto.*;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  */
 public interface ProjectService {
 
-    ProjectDTO addProject(ProjectDTO projectDTO);// 添加项目
+    void addProject(ProjectDTO projectDTO);// 添加项目
 
     ProjectDTO findProjectById(Long projectId);// 根据项目id找到项目
 
@@ -45,5 +44,5 @@ public interface ProjectService {
 
     String getInvitedStatus(Long userId, String projectName);
 
-    public List<Integer> getProjectData();
+    public List<Integer> getProjectData(Long projectId);
 }

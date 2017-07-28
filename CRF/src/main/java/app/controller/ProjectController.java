@@ -30,8 +30,8 @@ public class ProjectController {
     private HospitalService hospitalService;
 
     @PostMapping(value = "")
-    public ProjectDTO addProject(@RequestBody ProjectDTO projectDTO) {
-        return projectService.addProject(projectDTO);
+    public void addProject(@RequestBody ProjectDTO projectDTO) {
+        projectService.addProject(projectDTO);
     }
 
     @DeleteMapping(value = "/{projectId}")
@@ -135,9 +135,9 @@ public class ProjectController {
         return projectService.getInvitedStatus(userId, projectName);
     }
 
-    @GetMapping(value = "/projectData")
-    public List<Integer> getProjectData() {
-        return projectService.getProjectData();
+    @GetMapping(value = "/projectData/{projectId}")
+    public List<Integer> getProjectData(@PathVariable Long projectId) {
+        return projectService.getProjectData(projectId);
     }
 
 }

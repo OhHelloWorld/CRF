@@ -368,6 +368,8 @@ create table patient(
     concurrent_auto_date datetime,
     con_auto_dis_first_or_not boolean,
     complete boolean,
+    hospital_id long,
+    project_id long,
     primary key(id)
 );
 #用户表

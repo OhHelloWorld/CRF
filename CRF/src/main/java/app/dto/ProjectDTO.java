@@ -10,13 +10,13 @@ public class ProjectDTO {
 
     private Long id;
 
-    private String projectName;//项目名字
+    private String projectName;// 项目名字
 
-    private String organizer;//发起人
+    private String organizer;// 发起人
 
-    private Date create_time;//创建事件
+    private Date create_time;// 创建事件
 
-    private String Introduction;//项目简介
+    private String introduction;// 项目简介
 
     private List<HospitalDTO> hospitals;
 
@@ -36,13 +36,14 @@ public class ProjectDTO {
         return hospitals;
     }
 
-    public List<ProjectPermissionDTO> currentUserPermissionInProject;//当前用户在当前项目的权限
+    public List<ProjectPermissionDTO> currentUserPermissionInProject;// 当前用户在当前项目的权限
 
     public List<ProjectPermissionDTO> getCurrentUserPermissionInProject() {
         return currentUserPermissionInProject;
     }
 
-    public void setCurrentUserPermissionInProject(List<ProjectPermissionDTO> currentUserPermissionInProject) {
+    public void setCurrentUserPermissionInProject(
+            List<ProjectPermissionDTO> currentUserPermissionInProject) {
         this.currentUserPermissionInProject = currentUserPermissionInProject;
     }
 
@@ -83,11 +84,11 @@ public class ProjectDTO {
     }
 
     public String getIntroduction() {
-        return Introduction;
+        return introduction;
     }
 
     public void setIntroduction(String introduction) {
-        Introduction = introduction;
+        this.introduction = introduction;
     }
 
     public boolean isCollect() {

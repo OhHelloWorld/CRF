@@ -416,7 +416,7 @@ public class ConvertUtil {
         ProjectDO projectDO = new ProjectDO();
         projectDO.setCreate_time(new Date());
         projectDO.setIntroduction(projectDTO.getIntroduction());
-        projectDO.setOrganizer(userTool.getCurrentUserAccount());
+        projectDO.setOrganizer(userTool.getCurrentUser().getRealName());
         projectDO.setProjectName(projectDTO.getProjectName());
         projectDO.setCollect(true);
         return projectDO;
@@ -431,8 +431,10 @@ public class ConvertUtil {
         projectDTO.setProjectName(projectDO.getProjectName());
         projectDTO.setCollect(projectDO.isCollect());
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
-        for (HospitalDO h : projectDO.getHospitalList()) {
-            hospitalDTOS.add(convertHospitalDTO(h));
+        if (projectDO.getHospitalList() != null) {
+            for (HospitalDO h : projectDO.getHospitalList()) {
+                hospitalDTOS.add(convertHospitalDTO(h));
+            }
         }
         projectDTO.setHospitals(hospitalDTOS);
         List<ProjectPermissionDTO> projectPermissionDTOS = new ArrayList<>();

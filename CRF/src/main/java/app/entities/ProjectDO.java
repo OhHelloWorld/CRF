@@ -15,23 +15,21 @@ public class ProjectDO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String organizer;//发起人
+    private String organizer;// 发起人
 
-    private Date create_time;//创建事件
+    private Date create_time;// 创建事件
 
-    private String Introduction;//项目简介
+    private String introduction;// 项目简介
 
-    private String projectName;//项目名称
+    private String projectName;// 项目名称
 
     @Column(name = "is_collect")
     private boolean collect;
 
     @ManyToMany
-    @JoinTable(
-            name = "project_hospital",
-            joinColumns = {@JoinColumn(name = "project_id")},
+    @JoinTable(name = "project_hospital", joinColumns = {@JoinColumn(name = "project_id")},
             inverseJoinColumns = {@JoinColumn(name = "hospital_id")})
-    private List<HospitalDO> hospitalList;//多个医院对应多个项目
+    private List<HospitalDO> hospitalList;// 多个医院对应多个项目
 
     public Long getId() {
         return id;
@@ -58,14 +56,14 @@ public class ProjectDO {
     }
 
     public String getIntroduction() {
-        return Introduction;
+        return introduction;
     }
 
     public void setIntroduction(String introduction) {
-        Introduction = introduction;
+        this.introduction = introduction;
     }
 
-    public String getProjectName()  {
+    public String getProjectName() {
         return projectName;
     }
 

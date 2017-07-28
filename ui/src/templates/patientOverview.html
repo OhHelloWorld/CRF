@@ -1,0 +1,1346 @@
+<section class="content-header">
+  <h1 class=" text-center">
+     患者病例总览  
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">患者病例总览</li>
+  </ol>
+</section>
+<div ng-app="patientOverview" ng-controller="patientOverviewController">
+	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+  	<br>
+  <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+  <br/>
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">四诊信息</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>乏力</td>
+                  <td>
+                  {{fatigue}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>皮肤瘙痒</td>
+                  <td>
+                    {{skinItching}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>两目干涩</td>
+                  <td>
+                    {{twoEyesDry}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>视物模糊</td>
+                  <td>
+                    {{blurredVision}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>抑郁</td>
+                  <td>
+                    {{depression}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>烦躁易怒</td>
+                  <td>
+                    {{irritability}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>失眠</td>
+                  <td>
+                    {{insomnia}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>易醒</td>
+                  <td>
+                    {{easyWakeUp}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>耳鸣</td>
+                  <td>
+                    {{tinnitus}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>口干</td>
+                  <td>
+                    {{dryMouth}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>口苦</td>
+                  <td>
+                    {{mouthPain}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>口臭</td>
+                  <td>
+                    {{badBreath}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>恶心</td>
+                  <td>
+                    {{nausea}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>嗳气</td>
+                  <td>
+                    {{belching}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>脘腹胀满</td>
+                  <td>
+                    {{abdominalDistention}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>胁肋痛-刺痛</td>
+                  <td>
+                    {{flankPainStinging}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>胁肋痛-胀痛</td>
+                  <td>
+                    {{flankPainSwell}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>胁肋痛-隐痛</td>
+                  <td>
+                    {{flankPainDull}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>胁肋痛-不适</td>
+                  <td>
+                    {{flankPainDiscomfort}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>纳差</td>
+                  <td>
+                    {{anorexia}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td>畏寒肢冷</td>
+                  <td>
+                    {{aphrodisiacCold}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>肢体困重</td>
+                  <td>
+                    {{limb}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>腰痠脚软</td>
+                  <td>
+                    {{backacheFootSoft}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>手足烦热</td>
+                  <td>
+                    {{handFootFanHot}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td>尿黄</td>
+                  <td>
+                    {{urineYellow}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>便秘</td>
+                  <td>
+                    {{constipation}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td>便溏</td>
+                  <td>
+                    {{looseStools}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td>自汗</td>
+                  <td>
+                    {{perspiration}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td>盗汗</td>
+                  <td>
+                    {{nightSweats}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>下肢水肿</td>
+                  <td>
+                    {{lowerExtremityEdema}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td>面晦暗</td>
+                  <td>
+                    {{faceDull}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>32</td>
+                  <td>身黄</td>
+                  <td>
+                    {{eyeYellow}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>33</td>
+                  <td>蜘蛛痣数量</td>
+                  <td>
+                    {{spiderNevus}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td>肝掌</td>
+                  <td>
+                    {{liverPalm}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>35</td>
+                  <td>腹壁脉络曲张</td>
+                  <td>
+                    {{abdominalVeins}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td>黄色瘤</td>
+                  <td>
+                    {{yellowTumor}}
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            </div>
+  </div>
+  
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">舌脉象</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>舌质及部位</td>
+                  <td>{{tongue.substring(1)}} 部位：{{tonguePart.substring(1)}}-{{tonguePartialDescription}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>舌体</td>
+                  <td>{{tongueBody.substring(1)}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>苔质及部位</td>
+                  <td>{{mossy.substring(1)}} 部位：{{mossyPart.substring(1)}}-{{mossyPartialDescription}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>舌苔色及部位</td>
+                  <td>{{tongueColor.substring(1)}} 部位：{{tongueColorPart.substring(1)}}-{{tongueColorPartialDescription}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>舌下静脉曲张</td>
+                  <td>{{sublingualVaricoseVeins.substring(1)}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>左脉象</td>
+                  <td>{{leftPulse.substring(1)}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>右脉象</td>
+                  <td>{{rightPulse.substring(1)}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+  </div>
+  
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">理化检查</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>总胆汁酸</td>
+                  <td>{{totalBileAcid}} μmol/l</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>铜蓝蛋白</td>
+                  <td>{{copperProtein}} mg/dl</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>肝功能-白蛋白</td>
+                  <td>{{liverFunctionAlbumin}} g/L</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>肝功能-球蛋白</td>
+                  <td>{{liverFunctionGlobulin}} g/L</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>肝功能-ALT</td>
+                  <td>{{liverFunctionALT}} IU/L</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>肝功能-AST</td>
+                  <td>{{liverFunctionAST}} IU/L</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>肝功能-GGT</td>
+                  <td>{{liverFunctionGGT}} IU/L</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>肝功能--ALP</td>
+                  <td>{{liverFunctionALP}} IU/L</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>肝功能-总胆固醇</td>
+                  <td>{{liverFunctionTotalCholesterol}} mmol/l</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>肝功能-总胆红素</td>
+                  <td>{{liverFunctionTotalBilirubin}} μmol/L</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>肝功能-直接胆红素</td>
+                  <td>{{liverFunctionDirectBilirubin}} μmol/L</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>肝功能-γ球蛋白</td>
+                  <td>{{liverFunctionRglobulin}} %</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>肾功能-BUN</td>
+                  <td>{{renalFunctionBUN}} mmol/L</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>肾功能-Cr</td>
+                  <td>{{renalFunctionCr}} μmol/L</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>凝血-PT</td>
+                  <td>{{clottingPT}} 秒</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>凝血-INR</td>
+                  <td>{{clottingINR}}</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>血常规-RBC</td>
+                  <td>{{bloodRoutineRBC}} X10<sup>12</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>血常规-HB</td>
+                  <td>{{bloodRoutineHb}} g/L</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>血常规-WBC</td>
+                  <td>{{bloodRoutineWBC}} X10<sup>9</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>血常规-中性粒细胞</td>
+                  <td>{{bloodRoutineNeutrophils}} X10<sup>9</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td>血常规-淋巴细胞</td>
+                  <td>{{bloodRoutineLymphocytes}} X10<sup>9</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>血常规-嗜酸性粒细胞</td>
+                  <td>{{bloodRoutineEosinophils}} X10<sup>9</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>血常规-血小板</td>
+                  <td>{{bloodRoutinePlatelets}} X10<sup>9</sup>/L</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>肝病自身抗体-AMA</td>
+                  <td>{{liverDiseaseAutoantibodiesAMA}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td>肝病自身抗体-AMA-M2</td>
+                  <td>{{liverDiseaseAutoantibodiesAMAM2}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>肝病自身抗体-抗平滑肌抗体</td>
+                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td>肝病自身抗体-肝肾微粒体抗体</td>
+                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td>肝病自身抗体-肝细胞溶质抗原</td>
+                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigen}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td>肝病自身抗体-可溶性肝-胰抗原</td>
+                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>肝病自身抗体-其他</td>
+                  <td>{{liverDiseaseAutoantibodiesOther}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td>ANA-均质型</td>
+                  <td>{{ANAHomogeneous}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>32</td>
+                  <td>ANA-颗粒型</td>
+                  <td>{{ANAParticle}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>33</td>
+                  <td>ANA-周边型</td>
+                  <td>{{ANAPeripheral}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td>ANA-核仁型</td>
+                  <td>{{ANANucleolus}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>35</td>
+                  <td>ANA-核仁增强型</td>
+                  <td>{{ANANucleolusEnhancement}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td>ANA-核点型</td>
+                  <td>{{ANANuclear}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>37</td>
+                  <td>ANA-着丝点型</td>
+                  <td>{{ANACentromere}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>38</td>
+                  <td>ANA-其他</td>
+                  <td>{{ANAOther}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>39</td>
+                  <td>体液免疫-IgG</td>
+                  <td>{{humoralImmunityIgG}} g/L</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                  <td>体液免疫-IgA</td>
+                  <td>{{humoralImmunityIgA}} g/L</td>
+                </tr>
+                <tr>
+                  <td>41</td>
+                  <td>体液免疫-IgM</td>
+                  <td>{{humoralImmunityIgM}} g/L</td>
+                </tr>
+                <tr>
+                  <td>42</td>
+                  <td>体液免疫-免疫复合物</td>
+                  <td>{{humoralImmunityImmuneComplexf}}</td>
+                </tr>
+                <tr>
+                  <td>43</td>
+                  <td>体液免疫-补体C3</td>
+                  <td>{{humoralImmunityComplementC3}}</td>
+                </tr>
+                <tr>
+                  <td>44</td>
+                  <td>体液免疫-补体C4</td>
+                  <td>{{humoralImmunityComplementC4}} g/L</td>
+                </tr>
+                <tr>
+                  <td>45</td>
+                  <td>体液免疫-IgE</td>
+                  <td>{{humoralImmunityIgE}} IU/ml</td>
+                </tr>
+                <tr>
+                  <td>46</td>
+                  <td>体液免疫-k-轻链</td>
+                  <td>{{humoralImmunityKlightChain}} mg/dl</td>
+                </tr>
+                <tr>
+                  <td>47</td>
+                  <td>体液免疫-λ-轻链</td>
+                  <td>{{humoralImmunityNlightChain}} mg/dl</td>
+                </tr>
+                <tr>
+                  <td>48</td>
+                  <td>细胞免疫-CD<sub>3</sub></td>
+                  <td>{{cellularImmunityCD3}} %</td>
+                </tr>
+                <tr>
+                  <td>49</td>
+                  <td>细胞免疫-CD<sub>4</sub><sup>+</sup></td>
+                  <td>{{cellularImmunityCD4}} %</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td>细胞免疫-CD<sub>8</sub><sup>+</sup></td>
+                  <td>{{cellularImmunityCD8}} %</td>
+                </tr>
+                <tr>
+                  <td>51</td>
+                  <td>细胞免疫-CD56+16(NK)</td>
+                  <td>{{cellularImmunityCD56}} %</td>
+                </tr>
+                <tr>
+                  <td>52</td>
+                  <td>细胞免疫-CD2</td>
+                  <td>{{cellularImmunityCD2}} %</td>
+                </tr>
+                <tr>
+                  <td>53</td>
+                  <td>细胞免疫-CD4/CD8</td>
+                  <td>{{cellularImmunityCD4CD8}}</td>
+                </tr>
+                <tr>
+                  <td>54</td>
+                  <td>风湿免疫相关抗体</td>
+                  <td>{{rheumaticImmuneRelatedAntibodies}}</td>
+                </tr>
+                <tr>
+                  <td>55</td>
+                  <td>腹部超声CT/MRI</td>
+                  <td>{{CTMRI}}</td>
+                </tr>
+                <tr>
+                  <td>56</td>
+                  <td>肝脏硬度检查值-Fibroscan值</td>
+                  <td>{{liverHardnessFibroscan}}</td>
+                </tr>
+                <tr>
+                  <td>57</td>
+                  <td>肝脏硬度检查值-Fibrotest值</td>
+                  <td>{{liverHardnessFibrotest}}</td>
+                </tr>
+                <tr>
+                  <td>58</td>
+                  <td>肝穿刺病理检查</td>
+                  <td>{{liverPuncturePathology}}</td>
+                </tr>
+                <tr>
+                  <td>59</td>
+                  <td>肿瘤标记物-afp</td>
+                  <td>{{aFP}}  ng/ml</td>
+                </tr>
+                <tr>
+                  <td>60</td>
+                  <td>肿瘤标记物-癌胚抗原CEA</td>
+                  <td>{{carcinoembryonicAntigenCEA}}  ng/ml</td>
+                </tr>
+                <tr>
+                  <td>61</td>
+                  <td>肿瘤标记物-ca199</td>
+                  <td>{{ca199}} U/ml</td>
+                </tr>
+                <tr>
+                  <td>62</td>
+                  <td>肿瘤标记物-ca125</td>
+                  <td>{{ca125}} U/ml</td>
+                </tr>
+                <tr>
+                  <td>63</td>
+                  <td>乙肝-hbsag</td>
+                  <td>{{hbsag}}  IU/ml</td>
+                </tr>
+                <tr>
+                  <td>64</td>
+                  <td>乙肝-hbsab</td>
+                  <td>{{hbsab}} mlU/ml</td>
+                </tr>
+                <tr>
+                  <td>65</td>
+                  <td>乙肝-hbeag</td>
+                  <td>{{hbeag}} S/CO</td>
+                </tr>
+                <tr>
+                  <td>66</td>
+                  <td>乙肝-hbeab</td>
+                  <td>{{hbeab}} S/CO</td>
+                </tr>
+                <tr>
+                  <td>67</td>
+                  <td>乙肝-hbcab</td>
+                  <td>{{hbcab}} S/CO</td>
+                </tr>
+                <tr>
+                  <td>68</td>
+                  <td>乙肝-HBV-RNA</td>
+                  <td>{{hbvRna}} copies/ml</td>
+                </tr>
+                <tr>
+                  <td>69</td>
+                  <td>丙肝-抗HCV抗体</td>
+                  <td>{{antiHCVantibody}} S/CO</td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                  <td>丙肝-HCV-RNA</td>
+                  <td>{{hcvRna}}</td>
+                </tr>
+                <tr>
+                  <td>71</td>
+                  <td>尿液分析-红细胞</td>
+                  <td>{{redBloodCell}} p/ul</td>
+                </tr>
+                <tr>
+                  <td>72</td>
+                  <td>尿液分析-白细胞</td>
+                  <td>{{whiteBloodCell}} p/ul</td>
+                </tr>
+                <tr>
+                  <td>73</td>
+                  <td>尿液分析-胆红素</td>
+                  <td>{{bilirubin}} 阴性</td>
+                </tr>
+                <tr>
+                  <td>74</td>
+                  <td>尿液分析-蛋白质</td>
+                  <td>{{protein}} 阴性</td>
+                </tr>
+            </div>
+            </tbody>
+            </table>
+            </div>
+            </div>
+  </div>
+
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">肝脏病理学检查</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>小叶内炎症</td>
+                  <td>{{inflammationLeaflets}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>界面型肝炎</td>
+                  <td>{{interfacialInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>汇管区炎症</td>
+                  <td>{{portalAreaInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>淋巴细胞浆细胞浸润</td>
+                  <td>{{lymphocytePlasmaCellInfiltration}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>纤维组织增生</td>
+                  <td>{{fibrousTissueHyperplasia}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>胆管炎症/损伤</td>
+                  <td>{{inflammationBileDuct}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>肝细胞脂肪变性</td>
+                  <td>{{hepatocellularSteatosis}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>玫瑰花结样改变</td>
+                  <td>{{roseSample}}</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>HBsAg染色</td>
+                  <td>{{hbsAg}}</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>HBcAg染色</td>
+                  <td>{{hbcAg}}</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>HCV染色</td>
+                  <td>{{hcv}}</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>其他</td>
+                  <td>{{other}}</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>其他</td>
+                  <td>{{diagnosis}}</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>备注</td>
+                  <td>{{remarks}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">骨密度</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>腰椎1-4 骨密度</td>
+                  <td>{{lumbarSpine}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>腰椎1-4 T值</td>
+                  <td>{{lumbarSpineT}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>股骨颈 骨密度</td>
+                  <td>{{femoralNeck}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>股骨颈 T值</td>
+                  <td>{{femoralNeckT}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>大粗隆 骨密度</td>
+                  <td>{{bigTrochanter}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>大粗隆 T值</td>
+                  <td>{{bigTrochanterT}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>全髋 骨密度</td>
+                  <td>{{fullHip}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>全髋 T值</td>
+                  <td>{{fullHipT}}</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>诊断</td>
+                  <td>{{diagnosis}}</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>备注 何时发生何部位的骨折</td>
+                  <td>{{remarks}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">简化AIH</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>ANA或SMA</td>
+                  <td>{{anasma1}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>ANA/SMA</td>
+                  <td>{{anasma2}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Anti-LKM-l</td>
+                  <td>{{antiLkm}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Anti-SLA</td>
+                  <td>{{antiSla}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>IgG</td>
+                  <td>{{igG}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>肝组织学</td>
+                  <td>{{liver}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>排除病毒性肝炎</td>
+                  <td>{{eliminateViralHepatitis}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>结果</td>
+                  <td>{{result}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">复杂AIH（治疗前）</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>性别</td>
+                  <td>{{woman}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>药物史</td>
+                  <td>{{historyDrugs}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>
+                  <td>{{aLPAST}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>平均酒精摄入量</td>
+                  <td>{{alcoholIntake}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>血清球蛋白或IgG与正常值的比值</td>
+                  <td>{{serumGlobulinNormal}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>肝脏组织学检查</td>
+                  <td>{{liverCheck}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>其他免疫疾病</td>
+                  <td>{{otherImmuneDiseases}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>ANA,SMA或LKM-l</td>
+                  <td>{{ana}}</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>AMA阳性</td>
+                  <td>{{amaPositive}}</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>肝炎病毒标志物</td>
+                  <td>{{hepatitisVirusMarkers}}</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>其他可用的参数</td>
+                  <td>{{otherAvailableParameters}}</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+            </div>
+  </div>
+
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">复杂AIH（治疗后）</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>性别</td>
+                  <td>{{woman}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>药物史</td>
+                  <td>{{historyDrugs}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>
+                  <td>{{aLPAST}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>平均酒精摄入量</td>
+                  <td>{{alcoholIntake}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>血清球蛋白或IgG与正常值的比值</td>
+                  <td>{{serumGlobulinNormal}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>肝脏组织学检查</td>
+                  <td>{{liverCheck}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>其他免疫疾病</td>
+                  <td>{{otherImmuneDiseases}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>ANA,SMA或LKM-l</td>
+                  <td>{{ana}}</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>AMA阳性</td>
+                  <td>{{amaPositive}}</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>肝炎病毒标志物</td>
+                  <td>{{hepatitisVirusMarkers}}</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>其他可用的参数</td>
+                  <td>{{otherAvailableParameters}}</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>对治疗的反应</td>
+                  <td>{{responseTreatment}}</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+            </div>
+  </div>
+
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">治疗方案</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>药名</th>
+                  <th>开始用药时间</th>
+                  <th>日剂量（g/日）</th>
+                  <th>疗程（天）</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>强的松</td>
+                  <td>{{qdsTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{qdsDose}}</td>
+                  <td>{{qdsHeal}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>强的松龙</td>
+                  <td>{{qdslTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{qdslDose}}</td>
+                  <td>{{qdslHeal}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>甲基强的松龙</td>
+                  <td>{{jjqTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{jjqDose}}</td>
+                  <td>{{jjqHeal}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>布地奈德</td>
+                  <td>{{bdndTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{bdndDose}}</td>
+                  <td>{{bdndHeal}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>硫锉嘌呤</td>
+                  <td>{{lcplTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{lcplDose}}</td>
+                  <td>{{lcplHeal}}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>免疫抑制剂-MTX</td>
+                  <td>{{mtxTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{mtxDose}}</td>
+                  <td>{{mtxHeal}}</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>免疫抑制剂-CysA</td>
+                  <td>{{cysaTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{cysaDose}}</td>
+                  <td>{{cysaHeal}}</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>免疫抑制剂-CTX</td>
+                  <td>{{ctxTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{ctxDose}}</td>
+                  <td>{{ctxHeal}}</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>吗替麦考酚酯</td>
+                  <td>{{mtmkTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{mtmkDose}}</td>
+                  <td>{{mtmkHeal}}</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>秋水仙素</td>
+                  <td>{{qsxsTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{qsxsDose}}</td>
+                  <td>{{qsxsHeal}}</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>熊去氧胆酸</td>
+                  <td>{{xqydTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{xqydDose}}</td>
+                  <td>{{xqydHeal}}</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>非诺贝特</td>
+                  <td>{{fnbtTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{fnbtDose}}</td>
+                  <td>{{fnbtHeal}}</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>苯扎贝特</td>
+                  <td>{{bzbtTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{bzbtDose}}</td>
+                  <td>{{bzbtHeal}}</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>肝移植</td>
+                  <td>{{gyzTime | date:"yyyy-MM-dd"}}</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>肝移植详情</td>
+                  <td>{{gyzDetails | date:"yyyy-MM-dd"}}</td>
+                  <td>肝移植结果:{{gyzResult}}</td>
+                  <td>{{gyzReason}}</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>中药方剂</td>
+                  <td>{{chineseMedicineTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{chineseMedicineFormulasDose}}</td>
+                  <td>{{chineseMedicineHeal}}</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>中成药1</td>
+                  <td>{{aProprietaryMedicineTime | date:"yyyy-MM-dd"}}</td>
+                  <td>描述：{{aProprietaryMedicineName}}</td>
+                  <td>{{aProprietaryMedicineHeal}}</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>中成药2</td>
+                  <td>{{bProprietaryMedicineTime | date:"yyyy-MM-dd"}}</td>
+                  <td>描述：{{bProprietaryMedicineName}}</td>
+                  <td>{{bProprietaryMedicineHeal}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">最后诊断和特殊情况</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr>
+                  <th>序号</th>
+                  <th>调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>PBC临床分期</td>
+                  <td>{{pbcClinicalStage}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>AIH临床分期</td>
+                  <td>{{aihClinicalStage}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>特殊情况</td>
+                  <td>{{special}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">腹部超声/CT/MRI 图片</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div style="text-align: center;">
+              <img ngf-src="image" width="500" height="500">
+              </div>
+            </div>
+  </div>
+</div>
