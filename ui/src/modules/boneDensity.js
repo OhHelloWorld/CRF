@@ -2,8 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('boneDensity', ['main'])
-  .controller('boneDensityController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
+  .controller('boneDensityController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
 
     var boneDensity = {};
@@ -167,5 +167,11 @@ angular.module('boneDensity', ['main'])
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
       });
+    }
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
     }
   }]);

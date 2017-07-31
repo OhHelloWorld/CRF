@@ -14,6 +14,7 @@ angular.module('hospital', [ngFileUpload])
 
 
 .controller('hospitalController', ['$scope', '$http', '$state', '$rootScope', 'localStorageService', 'Upload', function($scope, $http, $state, $rootScope, localStorageService, Upload) {
+  loginStatus();
   var hospital1 = localStorageService.get('hospital');
   $scope.image = hospital1.image_url;
   $scope.hospital_name = hospital1.hospitalName;
@@ -104,5 +105,11 @@ angular.module('hospital', [ngFileUpload])
       $('#messageModal1').modal('show');
     });
   };
+
+  function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
 
 }]);

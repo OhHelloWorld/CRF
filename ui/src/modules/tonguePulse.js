@@ -3,7 +3,8 @@ import '../entries/main.js';
 
 
 angular.module('tonguePulse', ['ui.checkbox', 'main'])
-  .controller('tonguePulseController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('tonguePulseController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     var isSave = false;
     $scope.judgeGoHome();
     $scope.tongueClick();
@@ -27,6 +28,12 @@ angular.module('tonguePulse', ['ui.checkbox', 'main'])
         $scope.mossyShow = false;
       }
     };
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
     $scope.tongueColorShowClick = function() {
       if ($scope.cb40) {
         $scope.tongueColorShow = true;

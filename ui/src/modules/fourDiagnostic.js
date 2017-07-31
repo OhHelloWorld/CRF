@@ -2,7 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('fourDiagnostic', [])
-  .controller('fourDiagnosticController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('fourDiagnosticController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
     var fourDiagnosticInformation = {};
     var isSave = true;
@@ -76,6 +77,12 @@ angular.module('fourDiagnostic', [])
       $('#outModal').modal('hide');
       $state.go('home');
     };
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
 
     function saveFourDia() {
       var judgeComplete = $scope.fatigue && $scope.skinItching && $scope.twoEyesDry &&

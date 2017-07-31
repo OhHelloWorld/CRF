@@ -2,7 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('patientOverview', ['main'])
-  .controller('patientOverviewController', ['$scope', '$http', function($scope, $http) {
+  .controller('patientOverviewController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
+    loginStatus();
     getPatientInfo();
     getFourDiagnostic();
     getTonguePulse();
@@ -25,6 +26,12 @@ angular.module('patientOverview', ['main'])
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
       });
+    }
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
     }
 
     function getFourDiagnostic() {
@@ -937,6 +944,7 @@ angular.module('patientOverview', ['main'])
         method: 'GET',
         url: '/api/complexAIHBeforeTreatment/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
+        var beforeScore = 0;
         var complexAIHBeforeTreatment = response.data;
         switch (complexAIHBeforeTreatment.woman) {
           case 1:
@@ -944,44 +952,54 @@ angular.module('patientOverview', ['main'])
             break;
           case 2:
             $scope.woman = '女';
+            beforeScore += 2;
             break;
         }
         switch (complexAIHBeforeTreatment.historyDrugs) {
           case 1:
             $scope.historyDrugs = '阳性';
+            beforeScore -= 4;
             break;
           case 2:
             $scope.historyDrugs = '阴性';
+            beforeScore += 1;
             break;
         }
         switch (complexAIHBeforeTreatment.aLPAST) {
           case 1:
             $scope.aLPAST = '<1.5';
+            beforeScore += 2;
             break;
           case 2:
             $scope.aLPAST = '1.5~3.0';
             break;
           case 3:
             $scope.aLPAST = '>3.0';
+            beforeScore -= 2;
             break;
         }
         switch (complexAIHBeforeTreatment.alcoholIntake) {
           case 1:
             $scope.alcoholIntake = '<25g/天';
+            beforeScore += 2;
             break;
           case 2:
             $scope.alcoholIntake = '>60g/天';
+            beforeScore -= 2;
             break;
         }
         switch (complexAIHBeforeTreatment.serumGlobulinNormal) {
           case 1:
             $scope.serumGlobulinNormal = '>2.0';
+            beforeScore += 3;
             break;
           case 2:
             $scope.serumGlobulinNormal = '1.5~2.0';
+            beforeScore += 2;
             break;
           case 3:
             $scope.serumGlobulinNormal = '1.0~1.5';
+            beforeScore += 1;
             break;
           case 4:
             $scope.serumGlobulinNormal = '<1.0';
@@ -990,32 +1008,41 @@ angular.module('patientOverview', ['main'])
         switch (complexAIHBeforeTreatment.liverCheck) {
           case 1:
             $scope.liverCheck = '界面型肝炎';
+            beforeScore += 3;
             break;
           case 2:
             $scope.liverCheck = '主要为淋巴浆细胞浸润';
+            beforeScore += 1;
             break;
           case 3:
             $scope.liverCheck = '肝细胞呈玫瑰花结样改变';
+            beforeScore += 1;
             break;
           case 4:
             $scope.liverCheck = '无上述表现';
+            beforeScore -= 5;
             break;
           case 5:
             $scope.liverCheck = '胆管改变';
+            beforeScore -= 3;
             break;
           case 6:
             $scope.liverCheck = '其它改变';
+            beforeScore -= 3;
             break;
         }
         switch (complexAIHBeforeTreatment.ana) {
           case 1:
             $scope.ana = '>1:80';
+            beforeScore += 3;
             break;
           case 2:
             $scope.ana = '1:80';
+            beforeScore += 2;
             break;
           case 3:
             $scope.ana = '1:40';
+            beforeScore += 1;
             break;
           case 4:
             $scope.ana = '<1:40';
@@ -1024,6 +1051,7 @@ angular.module('patientOverview', ['main'])
         switch (complexAIHBeforeTreatment.otherImmuneDiseases) {
           case 1:
             $scope.otherImmuneDiseases = '存在';
+            beforeScore += 2;
             break;
           case 2:
             $scope.otherImmuneDiseases = '不存在';
@@ -1032,6 +1060,7 @@ angular.module('patientOverview', ['main'])
         switch (complexAIHBeforeTreatment.amaPositive) {
           case 1:
             $scope.amaPositive = '是';
+            beforeScore -= 4;
             break;
           case 2:
             $scope.amaPositive = '否';
@@ -1040,18 +1069,30 @@ angular.module('patientOverview', ['main'])
         switch (complexAIHBeforeTreatment.otherAvailableParameters) {
           case 1:
             $scope.otherAvailableParameters = '其他特异性自身抗体阳性';
+            beforeScore += 2;
             break;
           case 2:
             $scope.otherAvailableParameters = 'HLA DR3或DR4';
+            beforeScore += 1;
             break;
         }
         switch (complexAIHBeforeTreatment.hepatitisVirusMarkers) {
           case 1:
             $scope.hepatitisVirusMarkers = '阳性';
+            beforeScore -= 3;
             break;
           case 2:
             $scope.hepatitisVirusMarkers = '阴性';
+            beforeScore += 3;
             break;
+        }
+        $scope.beforeScore = beforeScore;
+        if ($scope.beforeScore > 15) {
+          $scope.beforeResult = '明确的AIH';
+        } else if ($scope.beforeScore >= 10 && $scope.beforeScore <= 15) {
+          $scope.beforeResult = '可能的AIH';
+        } else {
+          $scope.beforeResult = '低概率的AIH';
         }
       });
     }
@@ -1062,129 +1103,165 @@ angular.module('patientOverview', ['main'])
         method: 'GET',
         url: '/api/complexAIHAfterTreatment/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        var complexAIHBeforeTreatment = response.data;
-        switch (complexAIHBeforeTreatment.woman) {
+        var afterScore = 0;
+        var complexAIHAfterTreatment = response.data;
+        switch (complexAIHAfterTreatment.woman) {
           case 1:
             $scope.woman = '男';
             break;
           case 2:
             $scope.woman = '女';
+            afterScore += 2;
             break;
         }
-        switch (complexAIHBeforeTreatment.historyDrugs) {
+        switch (complexAIHAfterTreatment.historyDrugs) {
           case 1:
             $scope.historyDrugs = '阳性';
+            afterScore -= 4;
             break;
           case 2:
             $scope.historyDrugs = '阴性';
+            afterScore += 1;
             break;
         }
-        switch (complexAIHBeforeTreatment.aLPAST) {
+        switch (complexAIHAfterTreatment.aLPAST) {
           case 1:
             $scope.aLPAST = '<1.5';
+            afterScore += 2;
             break;
           case 2:
             $scope.aLPAST = '1.5~3.0';
             break;
           case 3:
             $scope.aLPAST = '>3.0';
+            afterScore -= 2;
             break;
         }
-        switch (complexAIHBeforeTreatment.alcoholIntake) {
+        switch (complexAIHAfterTreatment.alcoholIntake) {
           case 1:
             $scope.alcoholIntake = '<25g/天';
+            afterScore += 2;
             break;
           case 2:
             $scope.alcoholIntake = '>60g/天';
+            afterScore -= 2;
             break;
         }
-        switch (complexAIHBeforeTreatment.serumGlobulinNormal) {
+        switch (complexAIHAfterTreatment.serumGlobulinNormal) {
           case 1:
             $scope.serumGlobulinNormal = '>2.0';
+            afterScore += 3;
             break;
           case 2:
             $scope.serumGlobulinNormal = '1.5~2.0';
+            afterScore += 2;
             break;
           case 3:
             $scope.serumGlobulinNormal = '1.0~1.5';
+            afterScore += 1;
             break;
           case 4:
             $scope.serumGlobulinNormal = '<1.0';
             break;
         }
-        switch (complexAIHBeforeTreatment.liverCheck) {
+        switch (complexAIHAfterTreatment.liverCheck) {
           case 1:
             $scope.liverCheck = '界面型肝炎';
+            afterScore += 3;
             break;
           case 2:
             $scope.liverCheck = '主要为淋巴浆细胞浸润';
+            afterScore += 1;
             break;
           case 3:
             $scope.liverCheck = '肝细胞呈玫瑰花结样改变';
+            afterScore += 1;
             break;
           case 4:
             $scope.liverCheck = '无上述表现';
+            afterScore -= 5;
             break;
           case 5:
             $scope.liverCheck = '胆管改变';
+            afterScore -= 3;
             break;
           case 6:
             $scope.liverCheck = '其它改变';
+            afterScore -= 3;
             break;
         }
-        switch (complexAIHBeforeTreatment.ana) {
+        switch (complexAIHAfterTreatment.ana) {
           case 1:
             $scope.ana = '>1:80';
+            afterScore += 3;
             break;
           case 2:
             $scope.ana = '1:80';
+            afterScore += 2;
             break;
           case 3:
             $scope.ana = '1:40';
+            afterScore += 1;
             break;
           case 4:
             $scope.ana = '<1:40';
             break;
         }
-        switch (complexAIHBeforeTreatment.otherImmuneDiseases) {
+        switch (complexAIHAfterTreatment.otherImmuneDiseases) {
           case 1:
             $scope.otherImmuneDiseases = '存在';
+            afterScore += 2;
             break;
           case 2:
             $scope.otherImmuneDiseases = '不存在';
             break;
         }
-        switch (complexAIHBeforeTreatment.amaPositive) {
+        switch (complexAIHAfterTreatment.amaPositive) {
           case 1:
             $scope.amaPositive = '是';
+            afterScore -= 4;
             break;
           case 2:
             $scope.amaPositive = '否';
             break;
         }
-        switch (complexAIHBeforeTreatment.otherAvailableParameters) {
+        switch (complexAIHAfterTreatment.otherAvailableParameters) {
           case 1:
             $scope.otherAvailableParameters = '其他特异性自身抗体阳性';
+            afterScore += 2;
             break;
           case 2:
             $scope.otherAvailableParameters = 'HLA DR3或DR4';
+            afterScore += 1;
             break;
         }
-        switch (complexAIHBeforeTreatment.hepatitisVirusMarkers) {
+        switch (complexAIHAfterTreatment.hepatitisVirusMarkers) {
           case 1:
             $scope.hepatitisVirusMarkers = '阳性';
+            afterScore -= 3;
             break;
           case 2:
             $scope.hepatitisVirusMarkers = '阴性';
+            afterScore += 3;
             break;
         }
-        switch (complexAIHBeforeTreatment.responseTreatment) {
+        switch (complexAIHAfterTreatment.responseTreatment) {
           case 1:
             $scope.responseTreatment = '完全';
+            afterScore += 2;
             break;
           case 2:
             $scope.responseTreatment = '复发';
+            afterScore += 3;
             break;
+        }
+        $scope.afterScore = afterScore;
+        if (afterScore > 17) {
+          $scope.afterResult = '明确的AIH';
+        } else if (afterScore >= 12 && afterScore <= 17) {
+          $scope.afterResult = '可能的AIH';
+        } else {
+          $scope.afterResult = '低概率的AIH';
         }
       });
     }

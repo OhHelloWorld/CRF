@@ -14,15 +14,20 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   }])
 
 .controller('projectController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-
+  loginStatus();
   $scope.click_project = localStorageService.get('project');
 
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 
 }])
 
 .controller('projectDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
-
+  loginStatus();
   $http({
     method: 'GET',
     url: '/api/projects/projectData/' + localStorageService.get('project').id
@@ -41,11 +46,17 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     localStorageService.set('hospital', hospital);
   };
 
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
+
 
 }])
 
 .controller('projectCaseController', ['$scope', '$http', '$state', '$stateParams', 'localStorageService', function($scope, $http, $state, $stateParams, localStorageService) {
-
+  loginStatus();
   $scope.Illnesses = [];
   searchIllness();
 
@@ -57,10 +68,16 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     }
   }
 
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
+
 }])
 
 .controller('hospitalDefaultController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-
+  loginStatus();
   $scope.click_hospital = localStorageService.get('hospital');
   writeIllnessPermission();
   $scope.image = $scope.click_hospital.image_url;
@@ -68,6 +85,12 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     sessionStorage.setItem('patientId', x.id);
     window.open('/main.html#!/patientInfo');
   };
+
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 
   $scope.Illnesses = [];
   $scope.url = '/api/case/' + localStorageService.get('project').id + '/' + localStorageService.get('hospital').id;

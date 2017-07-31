@@ -14,7 +14,7 @@ angular.module('invite', [LocalStorageModule])
 
     // var invitedUsers = [];
     // $scope.invitedUrl = ''
-
+    loginStatus();
     var inviteUserId;
     var inviteProject;
     var removeUserId;
@@ -79,4 +79,9 @@ angular.module('invite', [LocalStorageModule])
       $scope.url = '/api/users/userName/' + $scope.user_searchInput + '/' + localStorageService.get('project').id;
     };
 
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
   }]);

@@ -6,7 +6,8 @@ import '../entries/main.js';
 
 var phyAChe = angular.module('phyAChe', ['main', ngFileUpload]);
 
-phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', 'Upload', function($scope, $http, $rootScope, $state, Upload) {
+phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$state', 'Upload', 'localStorageService', function($scope, $http, $rootScope, $state, Upload, localStorageService) {
+  loginStatus();
   $scope.judgeGoHome();
   var physicalChemicalInspection = {};
   $scope.modalContent = '您确定要保存吗？';
@@ -28,6 +29,12 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     saveImg($scope.image);
     $('#saveModal').modal('show');
   };
+
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 
   $scope.$watch('follow', function() {
     if ($scope.follow) {

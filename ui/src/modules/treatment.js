@@ -2,7 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('treatment', ['chart.js', 'main'])
-  .controller('treatmentController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('treatmentController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
     var treatment = {};
     var chineseMedicine = {};
@@ -33,6 +34,11 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     };
 
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
     $scope.chartChange = function() {
       switch ($scope.chartSelect) {
         case '1':

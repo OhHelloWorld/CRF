@@ -2,12 +2,17 @@
 
 angular.module('readMessage', [])
   .controller('readMessageController', ['$scope', '$http', '$state', '$rootScope', 'localStorageService', function($scope, $http, $state, $rootScope, localStorageService) {
-
+    loginStatus();
     $scope.readMessage = localStorageService.get('message');
     $scope.content = $scope.readMessage.content;
     message_status($scope.readMessage.id);
     judgeStatus();
 
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
     $scope.receive_invite = function() {
       console.log(localStorageService.get('message').content.split(':')[0]);
       $http({

@@ -2,13 +2,19 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('finalDiagnosis', ['ui.checkbox', 'main'])
-  .controller('finalDiagnosisController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('finalDiagnosisController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
 
+    loginStatus();
     getPatientInfo();
     $scope.judgeGoHome();
     $scope.finalDiagnosisClick();
     $scope.changeMenuStatus();
 
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
     //显示数据
     $http({
       method: 'GET',

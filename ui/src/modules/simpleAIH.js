@@ -2,7 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('simpleAIH', [])
-  .controller('simpleAIHController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('simpleAIHController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
     $scope.simpleAIHClick();
     $scope.changeMenuStatus();
@@ -95,6 +96,12 @@ angular.module('simpleAIH', [])
       }
     };
 
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
+
     function initializeModal() {
       $('#modalButton1').removeClass('hide');
       $('#modalButton2').removeClass('hide');
@@ -142,7 +149,7 @@ angular.module('simpleAIH', [])
     function get() {
       $http({
         method: 'GET',
-        url: '/api/simpleAIH/'+ sessionStorage.getItem('patientId'),
+        url: '/api/simpleAIH/' + sessionStorage.getItem('patientId'),
       }).then(function success(response) {
         var res = response.data;
         $scope.anasma1 = res.anasma1;
@@ -161,7 +168,7 @@ angular.module('simpleAIH', [])
     function getPatientInfo() {
       $http({
         method: 'GET',
-        url: '/api/patient/'+ sessionStorage.getItem('patientId')
+        url: '/api/patient/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;

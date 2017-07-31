@@ -29,7 +29,7 @@ import '../modules/finalDiagnosis.js';
 import '../modules/patientOverview.js';
 import LocalStorageModule from 'angular-local-storage';
 
-var main = angular.module('main', [uiRouter, LocalStorageModule, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis','patientOverview']);
+var main = angular.module('main', [uiRouter, LocalStorageModule, 'home', 'fourDiagnostic', 'patientInfo', 'phyAChe', 'tonguePulse', 'liverPathology', 'boneDensity', 'simpleAIH', 'complexAIH', 'treatment', 'finalDiagnosis', 'patientOverview']);
 
 main.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -91,8 +91,8 @@ main.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvide
 
 }]);
 
-main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
-
+main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
+  loginStatus();
   $scope.homeClick = function() {
     $('li').removeClass('active');
     $('#li1').addClass('active');
@@ -382,6 +382,12 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', fu
         });
       });
 
+    }
+  }
+
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
     }
   }
 

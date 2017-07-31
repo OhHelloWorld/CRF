@@ -34,8 +34,12 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">性别</i>
                     </div>
-                    <input class="form-control" id="inputGender" ng-model="gender" tabindex="0" ng-blur="judgeGender()"
-                    data-toggle="popover" data-placement="top">
+                    <select ng-model="gender" class="form-control">
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                    <!-- <input class="form-control" id="inputGender" ng-model="gender" tabindex="0"
+                    data-toggle="popover" data-placement="top"> -->
                   </div>
                 </div>
                 <!-- 出生年月 -->
@@ -95,7 +99,19 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;">文化程度</i>
                     </div>
-                    <input class="form-control" id="inputEmail3" ng-model="degreeOfEducation">
+                    <select ng-model="degreeOfEducation" class="form-control">
+                      <option value="半文盲或文盲">半文盲或文盲</option>
+                      <option value="小学">小学</option>
+                      <option value="初中">初中</option>
+                      <option value="高中">高中</option>
+                      <option value="技工学校">技工学校</option>
+                      <option value="中等技术学校">中等技术学校</option>
+                      <option value="中专">中专</option>
+                      <option value="大专">大专</option>
+                      <option value="本科">本科</option>
+                      <option value="研究生以上">研究生以上</option>
+                    </select>
+                    <!-- <input class="form-control" id="inputEmail3" ng-model="degreeOfEducation"> -->
                   </div>
                 </div>
               </div>

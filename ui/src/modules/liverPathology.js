@@ -2,7 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('liverPathology', ['main'])
-  .controller('liverPathologyController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('liverPathologyController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
     var liverPathology = {};
 
@@ -152,6 +153,12 @@ angular.module('liverPathology', ['main'])
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
       });
+    }
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
     }
 
   }]);

@@ -12,8 +12,9 @@ import '../../node_modules/bootstrap/js/modal.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import LocalStorageModule from 'angular-local-storage';
 
-var hospitalDetail = angular.module('hospitalDetail', [uiRouter]);
+var hospitalDetail = angular.module('hospitalDetail', [uiRouter, LocalStorageModule]);
 
 hospitalDetail.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -27,7 +28,12 @@ hospitalDetail.config(['$stateProvider', '$urlRouterProvider', function($statePr
 
 }]);
 
-hospitalDetail.controller('hospitalDetailController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+hospitalDetail.controller('hospitalDetailController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
+  loginStatus();
 
-
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 }]);

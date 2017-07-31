@@ -7,7 +7,8 @@ import '../entries/main.js';
 
 var home = angular.module('home', [uiBootstrap, 'page', 'main']);
 
-home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', function($scope, $http, $rootScope, $state) {
+home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
+  loginStatus();
   $scope.url = '/api/patient';
   $scope.changeMenuStatus();
   $scope.patientClick = function(patient) {
@@ -47,4 +48,10 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', fu
     $('#finalDiagnosisMenuNo').hide();
     $state.go('patientInfo');
   };
+
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 }]);

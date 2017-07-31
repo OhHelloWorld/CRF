@@ -2,8 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('complexAIH', ['main'])
-  .controller('complexAIHController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
+  .controller('complexAIHController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    loginStatus();
     $scope.judgeGoHome();
     $scope.complexAIHClick();
     $scope.beforeShow = true;
@@ -230,6 +230,10 @@ angular.module('complexAIH', ['main'])
       });
     }
 
-
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
 
   }]);

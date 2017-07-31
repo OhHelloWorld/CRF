@@ -20,15 +20,21 @@ var hospitalCase = angular.module('hospitalCase', [LocalStorageModule]);
 hospitalCase.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
 
   localStorageServiceProvider
-      .setPrefix('login')
-      .setStorageType('sessionStorage')
-      .setNotify(true, true);
+    .setPrefix('login')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true);
 
 
 }]);
 
 hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScope', 'localStorageService', function($scope, $http, $rootScope, localStorageService) {
+  loginStatus();
 
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
   var project1 = {
     name: '������Ŀ',
     id: 1
@@ -40,21 +46,21 @@ hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScop
   var project3 = {
     name: '������Ŀ3',
     id: 3
-  }; 
+  };
 
   $scope.projects = [project1, project2, project3];
 
   /**
    *���ø��˻���ǰ��������Ŀ���������˻��ڸ���Ŀ�µ�Ȩ��Ҳ������project������
    */
-  $scope.click_project = function(project){
+  $scope.click_project = function(project) {
     localStorageService.set('project', project);
   };
 
 
-  $scope.search_project = function(){
+  $scope.search_project = function() {
 
-   /*  $http({
+    /*  $http({
       method: 'GET',
       url: '/search_projectName'
     }).then(function successCallback(response){
@@ -66,11 +72,6 @@ hospitalCase.controller('hospitalCaseController', ['$scope', '$http', '$rootScop
  */
   };
 
-  
+
 
 }]);
-
-
-
-
-

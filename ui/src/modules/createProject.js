@@ -2,8 +2,8 @@ import angular from 'angular';
 
 
 angular.module('createProject', [])
-  .controller('createProjectController', ['$scope', '$http', function($scope, $http) {
-
+  .controller('createProjectController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
+    loginStatus();
     $scope.addActive = function(str) {
       $('#basicData').removeClass('active');
       $('#collectData').removeClass('active');
@@ -29,10 +29,16 @@ angular.module('createProject', [])
         data: project
       }).then(function success() {
         alert('创建项目成功');
-      },function fail(){
+      }, function fail() {
         alert('创建项目失败');
       });
     };
+
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
 
 
 

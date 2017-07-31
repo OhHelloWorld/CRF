@@ -6,6 +6,7 @@ import '../entries/main.js';
 var patientInfo = angular.module('patientInfo', ['main']);
 
 patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+  loginStatus();
   if (sessionStorage.getItem('patientId')) {
     $scope.myModalContent = '确认修改基本资料吗？';
   } else {
@@ -67,7 +68,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'l
 
   $scope.$watch('height', function() {
     if ($scope.weight && $scope.height) {
-      $scope.bmi = ($scope.weight) / ($scope.height/100 * $scope.height/100);
+      $scope.bmi = ($scope.weight) / ($scope.height / 100 * $scope.height / 100);
     }
   });
 
@@ -204,6 +205,12 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'l
       });
     }
   };
+
+  function loginStatus() {
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
+    }
+  }
 
 
 

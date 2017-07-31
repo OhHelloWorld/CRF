@@ -1,7 +1,8 @@
 import angular from 'angular';
 
 angular.module('createHospital', [])
-  .controller('createHospitalController', ['$scope', '$http', '$state', '$rootScope', 'Upload', function($scope, $http, $state, $rootScope, Upload) {
+  .controller('createHospitalController', ['$scope', '$http', '$state', '$rootScope', 'Upload', 'localStorageService', function($scope, $http, $state, $rootScope, Upload, localStorageService) {
+    loginStatus();
     $scope.image = 'src/lib/images/hospital1.jpg';
 
     var hospital = {};
@@ -10,7 +11,11 @@ angular.module('createHospital', [])
     };
 
 
-
+    function loginStatus() {
+      if (!localStorageService.get('user')) {
+        window.location.href = '/login.html';
+      }
+    }
     /**
      *医院图片处理
      */
