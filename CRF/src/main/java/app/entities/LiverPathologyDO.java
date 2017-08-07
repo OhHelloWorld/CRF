@@ -29,7 +29,7 @@ public class LiverPathologyDO {
     private int roseSample;// 玫瑰花结样改变
     @Column(name = "HBs_Ag")
     private int hbsAg;// HBsAg染色
-    @Column(name="HBc_Ag")
+    @Column(name = "HBc_Ag")
     private int hbcAg;// HBcAg染色
     @Column(name = "HCV")
     private int hcv;// HCV染色
@@ -37,6 +37,7 @@ public class LiverPathologyDO {
     private int diagnosis;// 诊断(分期分级)
     private String remarks;// 备注
     private boolean complete;
+    private boolean choose;
 
     public int getId() {
         return id;
@@ -44,6 +45,14 @@ public class LiverPathologyDO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isChoose() {
+        return choose;
+    }
+
+    public void setChoose(boolean choose) {
+        this.choose = choose;
     }
 
     public int getPatientId() {

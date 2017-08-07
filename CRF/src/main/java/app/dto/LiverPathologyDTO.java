@@ -23,6 +23,7 @@ public class LiverPathologyDTO {
     private int diagnosis;
     private String remarks;
     private boolean complete;
+    private boolean choose;
 
     public int getId() {
         return id;
@@ -30,6 +31,14 @@ public class LiverPathologyDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isChoose() {
+        return choose;
+    }
+
+    public void setChoose(boolean choose) {
+        this.choose = choose;
     }
 
     public int getPatientId() {

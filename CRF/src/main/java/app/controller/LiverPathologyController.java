@@ -1,5 +1,7 @@
 package app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,5 +56,16 @@ public class LiverPathologyController {
     @GetMapping(path = "/complete/{patientId}")
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return liverPathologyService.getCompleteByPatientId(patientId);
+    }
+
+    /**
+     * 根据patientId得到评分系统的选择情况
+     * 
+     * @param patientId
+     * @return
+     */
+    @GetMapping(path = "/choose/{patientId}")
+    public List<Boolean> getChooseAll(@PathVariable int patientId) {
+        return liverPathologyService.getChoose(patientId);
     }
 }

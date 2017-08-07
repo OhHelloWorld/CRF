@@ -17,7 +17,6 @@ angular.module('patientOverview', ['main'])
     getMedicine();
     getFinal();
 
-
     function getPatientInfo() {
       $http({
         method: 'GET',
@@ -722,66 +721,118 @@ angular.module('patientOverview', ['main'])
     function getLiverPhy() {
       $http({
         method: 'GET',
-        url: '/api/liverPathology/' + sessionStorage.getItem('patientId')
+        url: '/api/liverPathology/choose/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        var liver = response.data;
-        $scope.inflammationLeaflets = liver.inflammationLeaflets - 1;
-        $scope.interfacialInflammation = liver.interfacialInflammation - 1;
-        $scope.portalAreaInflammation = liver.interfacialInflammation - 1;
-        $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
-        $scope.fibrousTissueHyperplasia = liver.fibrousTissueHyperplasia;
-        $scope.inflammationBileDuct = liver.inflammationBileDuct;
-        $scope.hepatocellularSteatosis = liver.hepatocellularSteatosis;
-        switch (liver.roseSample) {
-          case 1:
-            $scope.roseSample = '阴性';
-            break;
-          case 2:
-            $scope.roseSample = '阳性';
-            break;
+        var chooseList = response.data;
+        if (chooseList[0]) {
+          $scope.gsShow = true;
+          $scope.ishakShow = false;
+          $scope.haiShow = false;
+          $http({
+            method: 'GET',
+            url: '/api/liverPathology/' + sessionStorage.getItem('patientId')
+          }).then(function success(response) {
+            var liver = response.data;
+            $scope.inflammationLeaflets = liver.inflammationLeaflets - 1;
+            $scope.interfacialInflammation = liver.interfacialInflammation - 1;
+            $scope.portalAreaInflammation = liver.interfacialInflammation - 1;
+            $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
+            $scope.fibrousTissueHyperplasia = liver.fibrousTissueHyperplasia - 1;
+            $scope.inflammationBileDuct = liver.inflammationBileDuct - 1;
+            $scope.hepatocellularSteatosis = liver.hepatocellularSteatosis - 1;
+            switch (liver.roseSample) {
+              case 1:
+                $scope.roseSample = '阴性';
+                break;
+              case 2:
+                $scope.roseSample = '阳性';
+                break;
+            }
+            switch (liver.hbsAg) {
+              case 1:
+                $scope.hbsAg = '阴性';
+                break;
+              case 2:
+                $scope.hbsAg = '阳性';
+                break;
+            }
+            switch (liver.hbcAg) {
+              case 1:
+                $scope.hbcAg = '阴性';
+                break;
+              case 2:
+                $scope.hbcAg = '阳性';
+                break;
+            }
+            switch (liver.hcv) {
+              case 1:
+                $scope.hcv = '阴性';
+                break;
+              case 2:
+                $scope.hcv = '阳性';
+                break;
+            }
+            switch (liver.other) {
+              case 1:
+                $scope.other = '阴性';
+                break;
+              case 2:
+                $scope.other = '阳性';
+                break;
+            }
+            switch (liver.diagnosis) {
+              case 1:
+                $scope.diagnosis = '阴性';
+                break;
+              case 2:
+                $scope.diagnosis = '阳性';
+                break;
+            }
+            $scope.remarks = liver.remarks;
+          });
+        } else if (chooseList[1]) {
+          $scope.gsShow = false;
+          $scope.ishakShow = true;
+          $scope.haiShow = false;
+          $http({
+            url: '/api/ishak/' + sessionStorage.getItem('patientId'),
+            method: 'GET'
+          }).then(function success(response) {
+            var ishakData = response.data;
+            $scope.portalAreaInflammation = ishakData.portalAreaInflammation;
+            $scope.lobularMobility = ishakData.lobularMobility;
+            $scope.interfaceInflammation = ishakData.interfaceInflammation;
+            $scope.confluentNecrosis = ishakData.confluentNecrosis;
+            $scope.fibrosis = ishakData.fibrosis;
+          });
+        } else if (chooseList[2]) {
+          $scope.gsShow = false;
+          $scope.ishakShow = false;
+          $scope.haiShow = true;
+          $http({
+            url: '/api/hai/' + sessionStorage.getItem('patientId'),
+            method: 'GET'
+          }).then(function success(response) {
+            var haiData = response.data;
+            $scope.portalAreaInflammation = haiData.portalAreaInflammation;
+            if (haiData.lobularMobility == 1 || haiData.lobularMobility == 2) {
+              $scope.lobularMobility = haiData.lobularMobility - 1;
+            } else {
+              $scope.lobularMobility = haiData.lobularMobility;
+            }
+            if (haiData.interfaceInflammation == 1 || haiData.interfaceInflammation == 2) {
+              $scope.interfaceInflammation = haiData.interfaceInflammation - 1;
+            } else if (haiData.interfaceInflammation == 7) {
+              $scope.interfaceInflammation = 10;
+            } else {
+              $scope.interfaceInflammation = haiData.interfaceInflammation;
+            }
+          });
         }
-        switch (liver.hbsAg) {
-          case 1:
-            $scope.hbsAg = '阴性';
-            break;
-          case 2:
-            $scope.hbsAg = '阳性';
-            break;
-        }
-        switch (liver.hbcAg) {
-          case 1:
-            $scope.hbcAg = '阴性';
-            break;
-          case 2:
-            $scope.hbcAg = '阳性';
-            break;
-        }
-        switch (liver.hcv) {
-          case 1:
-            $scope.hcv = '阴性';
-            break;
-          case 2:
-            $scope.hcv = '阳性';
-            break;
-        }
-        switch (liver.other) {
-          case 1:
-            $scope.other = '阴性';
-            break;
-          case 2:
-            $scope.other = '阳性';
-            break;
-        }
-        switch (liver.diagnosis) {
-          case 1:
-            $scope.diagnosis = '阴性';
-            break;
-          case 2:
-            $scope.diagnosis = '阳性';
-            break;
-        }
-        $scope.remarks = liver.remarks;
       });
+
+
+
     }
 
 

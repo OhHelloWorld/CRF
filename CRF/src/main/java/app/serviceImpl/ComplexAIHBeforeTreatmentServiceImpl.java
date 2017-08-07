@@ -73,7 +73,12 @@ public class ComplexAIHBeforeTreatmentServiceImpl implements ComplexAIHBeforeTre
 
     @Override
     public ComplexAIHBeforeTreatmentDTO getComplexAIHBeforeTreatment(int patientId) {
-        return convertToDto(complexAIHBeforeTreatmentRepo.getComplexAIHBeforeTreatment(patientId));
+        if (complexAIHBeforeTreatmentRepo.getComplexAIHBeforeTreatment(patientId) != null) {
+            return convertToDto(
+                    complexAIHBeforeTreatmentRepo.getComplexAIHBeforeTreatment(patientId));
+        } else {
+            return null;
+        }
     }
 
     @Override
