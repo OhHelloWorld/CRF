@@ -22,6 +22,15 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <!-- <ul class="col-md-2"  style="cursor: pointer;">
+                <li><a ng-click="followFirst()"><span class="h4">医院录入表</span></a></li>
+                <li><a ng-repeat = "fourDiaFollow in fourDiaFollowList" ng-click="fourDiaClick(fourDiaFollow)"><span class="h4">随访表{{fourDiaFollow.id}}</span></a></li>
+              </ul> -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="fourDiaDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="fourDiaFollow in fourDiaFollowList" class="btn btn-primary btn-sm" ng-click="fourDiaClick(fourDiaFollow)">随访表{{fourDiaFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped table-bordered table-hover">
                 <tbody>
@@ -298,6 +307,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="tongueDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="tongueFollow in tongueFollowList" class="btn btn-primary btn-sm" ng-click="tongueClick(tongueFollow)">随访表{{tongueFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -357,6 +371,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="phyDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="phyFollow in phyFollowList" class="btn btn-primary btn-sm" ng-click="phyClick(phyFollow)">随访表{{phyFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -912,6 +931,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="boneDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="boneFollow in boneFollowList" class="btn btn-primary btn-sm" ng-click="boneClick(boneFollow)">随访表{{boneFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -1233,6 +1257,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="treatDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="treatFollow in treatFollowList" class="btn btn-primary btn-sm" ng-click="treatClick(treatFollow)">随访表{{treatFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -1347,6 +1376,37 @@
                   <td>{{gyzDetails | date:"yyyy-MM-dd"}}</td>
                   <td>肝移植结果:{{gyzResult}}</td>
                   <td>{{gyzReason}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">中药方剂</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="medicineDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="medicineFollow in medicineFollowList" class="btn btn-primary btn-sm" ng-click="medicineClick(medicineFollow)">随访表{{medicineFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr class="info">
+                  <th>序号</th>
+                  <th>类别</th>
+                  <th>开始服药时间</th>
+                  <th>描述</th>
+                  <th>疗程</th>
                 </tr>
                 <tr>
                   <td>16</td>

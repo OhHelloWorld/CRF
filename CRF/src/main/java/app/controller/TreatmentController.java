@@ -198,4 +198,14 @@ public class TreatmentController {
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return treatmentService.getCompleteByPatientId(patientId);
     }
+
+    @GetMapping(path = "/follow/{patientId}")
+    public List<TreatmentProgramsDTO> getFollowTreat(@PathVariable int patientId) {
+        return treatmentService.getFollowTreat(patientId);
+    }
+
+    @GetMapping(path = "/default/{patientId}")
+    public TreatmentProgramsDTO getDefaultTreat(@PathVariable int patientId) {
+        return treatmentService.getDefaultTreat(patientId);
+    }
 }

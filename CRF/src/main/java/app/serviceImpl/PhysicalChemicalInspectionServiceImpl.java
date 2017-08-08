@@ -3,6 +3,8 @@ package app.serviceImpl;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -231,6 +233,28 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pDto.setFollowUpDate(pDo.getFollowUpDate());
         pDto.setImageUrl(pDo.getImageUrl());
         return pDto;
+    }
+
+    @Override
+    public List<PhysicalChemicalInspectionDTO> getFollowPhy(int patientId) {
+        if (!pRepo.getFollowphy(patientId).isEmpty()) {
+            List<PhysicalChemicalInspectionDTO> physicalChemicalInspectionDTOs = new ArrayList<>();
+            List<PhysicalChemicalInspectionDO> physicalChemicalInspectionDOs =
+                    pRepo.getFollowphy(patientId);
+            for (PhysicalChemicalInspectionDO physicalChemicalInspectionDO : physicalChemicalInspectionDOs) {
+                physicalChemicalInspectionDTOs
+                        .add(convertToPhysicalDTO(physicalChemicalInspectionDO));
+            }
+            return physicalChemicalInspectionDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public PhysicalChemicalInspectionDTO getDefaultPhy(int patientId) {
+        return pRepo.getDefaultPhy(patientId) != null
+                ? convertToPhysicalDTO(pRepo.getDefaultPhy(patientId)) : null;
     }
 
 }

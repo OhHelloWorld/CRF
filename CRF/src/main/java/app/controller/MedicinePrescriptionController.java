@@ -1,5 +1,7 @@
 package app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,5 +55,15 @@ public class MedicinePrescriptionController {
     @GetMapping(path = "/complete/{patientId}")
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return medicinePrescriptionService.getCompleteByPatientId(patientId);
+    }
+
+    @GetMapping(path = "/follow/{patientId}")
+    public List<ChineseMedicinePrescriptionDTO> getFollowMedicine(@PathVariable int patientId) {
+        return medicinePrescriptionService.getFollowMedicine(patientId);
+    }
+
+    @GetMapping(path = "/default/{patientId}")
+    public ChineseMedicinePrescriptionDTO getDefaultMedicine(@PathVariable int patientId) {
+        return medicinePrescriptionService.getDefaultMedicine(patientId);
     }
 }

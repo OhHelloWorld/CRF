@@ -1,5 +1,8 @@
 package app.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,6 +78,29 @@ public class BoneDensityServiceImpl implements BoneDensityService {
             return bRepo.getCompleteByPatientId(patientId);
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    @Override
+    public List<BoneDensityDTO> getFollowBone(int patientId) {
+        if (!bRepo.getFollowBone(patientId).isEmpty()) {
+            List<BoneDensityDO> boneDensityDOs = bRepo.getFollowBone(patientId);
+            List<BoneDensityDTO> boneDensityDTOs = new ArrayList<>();
+            for (BoneDensityDO boneDensityDO : boneDensityDOs) {
+                boneDensityDTOs.add(convertToDTO(boneDensityDO));
+            }
+            return boneDensityDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public BoneDensityDTO getDefaultBone(int patientId) {
+        if (bRepo.getDefaultBone(patientId) != null) {
+            return convertToDTO(bRepo.getDefaultBone(patientId));
+        } else {
+            return null;
         }
     }
 

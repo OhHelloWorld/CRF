@@ -1,5 +1,8 @@
 package app.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -111,6 +114,8 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
         fDto.setFlankPainDull(fDo.getFlankPainDull());
         fDto.setFlankPainStinging(fDo.getFlankPainStinging());
         fDto.setFlankPainSwell(fDo.getFlankPainSwell());
+        fDto.setFollowUp(fDo.isFollowUp());
+        fDto.setFollowUpDate(fDo.getFollowUpDate());
         fDto.setHandFootFanHot(fDo.getHandFootFanHot());
         fDto.setInsomnia(fDo.getInsomnia());
         fDto.setIrritability(fDo.getIrritability());
@@ -130,5 +135,27 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
         fDto.setUrineYellow(fDo.getUrineYellow());
         fDto.setYellowTumor(fDo.getYellowTumor());
         return fDto;
+    }
+
+    @Override
+    public List<FourDiagnosticInformationDTO> getFollowFourDia(int patientId) {
+        if (!fRepo.getFollowFourDia(patientId).isEmpty()) {
+            List<FourDiagnosticInformationDO> fourDiagnosticInformationDOs =
+                    fRepo.getFollowFourDia(patientId);
+            List<FourDiagnosticInformationDTO> fourDiagnosticInformationDTOs = new ArrayList<>();
+            for (FourDiagnosticInformationDO fourDiagnosticInformationDO : fourDiagnosticInformationDOs) {
+                fourDiagnosticInformationDTOs
+                        .add(convertToFourDiagnosticInfoDTO(fourDiagnosticInformationDO));
+            }
+            return fourDiagnosticInformationDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public FourDiagnosticInformationDTO getDefaultFourDia(int patientId) {
+        return fRepo.getDefaultFourDia(patientId) != null
+                ? convertToFourDiagnosticInfoDTO(fRepo.getDefaultFourDia(patientId)) : null;
     }
 }

@@ -36,7 +36,7 @@ angular.module('patientOverview', ['main'])
     function getFourDiagnostic() {
       $http({
         method: 'GET',
-        url: '/api/fourDiagnosticInfor/' + sessionStorage.getItem('patientId')
+        url: '/api/fourDiagnosticInfor/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var fourDiagnostic = response.data;
         switch (fourDiagnostic.fatigue) {
@@ -594,12 +594,19 @@ angular.module('patientOverview', ['main'])
             break;
         }
       });
+
+      $http({
+        method: 'GET',
+        url: '/api/fourDiagnosticInfor/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.fourDiaFollowList = response.data;
+      });
     }
 
     function getTonguePulse() {
       $http({
         method: 'GET',
-        url: '/api/tonguePulse/' + sessionStorage.getItem('patientId')
+        url: '/api/tonguePulse/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var tonguePulse = response.data;
         $scope.tongue = tonguePulse.tongue;
@@ -616,12 +623,19 @@ angular.module('patientOverview', ['main'])
         $scope.leftPulse = tonguePulse.leftPulse;
         $scope.rightPulse = tonguePulse.rightPulse;
       });
+
+      $http({
+        method: 'GET',
+        url: '/api/tonguePulse/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.tongueFollowList = response.data;
+      });
     }
 
     function getPhyAChe() {
       $http({
         method: 'GET',
-        url: '/api/physical/' + sessionStorage.getItem('patientId')
+        url: '/api/physical/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var phy = response.data;
         $scope.totalBileAcid = phy.totalBileAcid;
@@ -715,6 +729,13 @@ angular.module('patientOverview', ['main'])
         $scope.bilirubin = phy.bilirubin;
         $scope.ca199 = phy.ca199;
         $scope.image = '/api/image/' + phy.imageUrl + '.jpg';
+      });
+
+      $http({
+        method: 'GET',
+        url: '/api/physical/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.phyFollowList = response.data;
       });
     }
 
@@ -839,7 +860,7 @@ angular.module('patientOverview', ['main'])
     function getBone() {
       $http({
         method: 'GET',
-        url: '/api/boneDensity/' + sessionStorage.getItem('patientId')
+        url: '/api/boneDensity/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var bone = response.data;
         $scope.lumbarSpine = bone.lumbarSpine;
@@ -917,6 +938,13 @@ angular.module('patientOverview', ['main'])
             break;
         }
         $scope.remarks = bone.remarks;
+      });
+
+      $http({
+        method: 'GET',
+        url: '/api/boneDensity/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.boneFollowList = response.data;
       });
     }
 
@@ -1321,7 +1349,7 @@ angular.module('patientOverview', ['main'])
     function getTreatment() {
       $http({
         method: 'GET',
-        url: '/api/treatment/' + sessionStorage.getItem('patientId')
+        url: '/api/treatment/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var treatment = response.data;
         $scope.qdsTime = treatment.qdsTime;
@@ -1378,12 +1406,19 @@ angular.module('patientOverview', ['main'])
           $scope.gyzReason = '';
         }
       });
+
+      $http({
+        method: 'GET',
+        url: '/api/treatment/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.treatFollowList = response.data;
+      });
     }
 
     function getMedicine() {
       $http({
         method: 'GET',
-        url: '/api/medicine/' + sessionStorage.getItem('patientId')
+        url: '/api/medicine/default/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var medicine = response.data;
         $scope.chineseMedicineTime = medicine.chineseMedicineTime;
@@ -1395,6 +1430,13 @@ angular.module('patientOverview', ['main'])
         $scope.bProprietaryMedicineTime = medicine.bProprietaryMedicineTime;
         $scope.bProprietaryMedicineName = medicine.bProprietaryMedicineName;
         $scope.bProprietaryMedicineHeal = medicine.bProprietaryMedicineHeal;
+      });
+
+      $http({
+        method: 'GET',
+        url: '/api/medicine/follow/' + sessionStorage.getItem('patientId')
+      }).then(function success(response) {
+        $scope.medicineFollowList = response.data;
       });
     }
 
@@ -1440,5 +1482,834 @@ angular.module('patientOverview', ['main'])
         $scope.special = temp;
       });
     }
+
+    $scope.fourDiaDefault = function() {
+      getFourDiagnostic();
+    };
+    $scope.tongueDefault = function() {
+      getTonguePulse();
+    };
+    $scope.phyDefault = function() {
+      getPhyAChe();
+    };
+    $scope.boneDefault = function() {
+      getBone();
+    };
+    $scope.treatDefault = function() {
+      getTreatment();
+    };
+
+    $scope.fourDiaClick = function(fourDiaFollow) {
+      switch (fourDiaFollow.fatigue) {
+        case 0:
+          $scope.fatigue = '无';
+          break;
+        case 1:
+          $scope.fatigue = '肢体乏力，勉强坚持日常生活';
+          break;
+        case 2:
+          $scope.fatigue = '肢体稍倦，可坚持轻体力工作';
+          break;
+        case 3:
+          $scope.fatigue = '全身无力，终日不愿活动';
+          break;
+      }
+
+      switch (fourDiaFollow.skinItching) {
+        case 0:
+          $scope.skinItching = '无';
+          break;
+        case 1:
+          $scope.skinItching = '偶有，不影响日常生活';
+          break;
+        case 2:
+          $scope.skinItching = '时常有，轻度影响日常生活';
+          break;
+        case 3:
+          $scope.skinItching = '整日瘙痒，影响日常生活';
+          break;
+      }
+
+      switch (fourDiaFollow.twoEyesDry) {
+        case 0:
+          $scope.twoEyesDry = '无';
+          break;
+        case 1:
+          $scope.twoEyesDry = '自觉有时目干';
+          break;
+        case 2:
+          $scope.twoEyesDry = '经常两目干涩';
+          break;
+        case 3:
+          $scope.twoEyesDry = '整日两目干涩';
+          break;
+      }
+
+      switch (fourDiaFollow.blurredVision) {
+        case 0:
+          $scope.blurredVision = '无';
+          break;
+        case 1:
+          $scope.blurredVision = '久视后视物不清';
+          break;
+        case 2:
+          $scope.blurredVision = '视物不清';
+          break;
+        case 3:
+          $scope.blurredVision = '视物困难';
+          break;
+      }
+
+      switch (fourDiaFollow.depression) {
+        case 0:
+          $scope.depression = '无';
+          break;
+        case 1:
+          $scope.depression = '有时情绪低落';
+          break;
+        case 2:
+          $scope.depression = '经常情绪低落';
+          break;
+        case 3:
+          $scope.depression = '有厌世倾向';
+          break;
+      }
+
+      switch (fourDiaFollow.irritability) {
+        case 0:
+          $scope.irritability = '无';
+          break;
+        case 1:
+          $scope.irritability = '偶见烦躁';
+          break;
+        case 2:
+          $scope.irritability = '经常烦躁不安';
+          break;
+        case 3:
+          $scope.irritability = '一触即怒';
+          break;
+      }
+
+      switch (fourDiaFollow.insomnia) {
+        case 0:
+          $scope.insomnia = '无';
+          break;
+        case 1:
+          $scope.insomnia = '睡眠不足6小时';
+          break;
+        case 2:
+          $scope.insomnia = '睡眠不足4小时';
+          break;
+        case 3:
+          $scope.insomnia = '彻夜难眠';
+          break;
+      }
+
+      switch (fourDiaFollow.easyWakeUp) {
+        case 0:
+          $scope.easyWakeUp = '无';
+          break;
+        case 1:
+          $scope.easyWakeUp = '每夜眠后醒1-2次';
+          break;
+        case 2:
+          $scope.easyWakeUp = '每夜眠后醒3-4次';
+          break;
+        case 3:
+          $scope.easyWakeUp = '每夜醒5次以上';
+          break;
+      }
+
+      switch (fourDiaFollow.tinnitus) {
+        case 0:
+          $scope.tinnitus = '无';
+          break;
+        case 1:
+          $scope.tinnitus = '偶见轻微耳鸣';
+          break;
+        case 2:
+          $scope.tinnitus = '阵发耳鸣，休息后缓解';
+          break;
+        case 3:
+          $scope.tinnitus = '耳鸣持续不解';
+          break;
+      }
+
+      switch (fourDiaFollow.dryMouth) {
+        case 0:
+          $scope.dryMouth = '无';
+          break;
+        case 1:
+          $scope.dryMouth = '偶有或晨起口干';
+          break;
+        case 2:
+          $scope.dryMouth = '时感口干';
+          break;
+        case 3:
+          $scope.dryMouth = '整日口干';
+          break;
+      }
+
+      switch (fourDiaFollow.mouthPain) {
+        case 0:
+          $scope.mouthPain = '无';
+          break;
+        case 1:
+          $scope.mouthPain = '偶有或晨起口苦';
+          break;
+        case 2:
+          $scope.mouthPain = '时有口苦';
+          break;
+        case 3:
+          $scope.mouthPain = '整日口苦';
+          break;
+      }
+
+      switch (fourDiaFollow.badBreath) {
+        case 0:
+          $scope.badBreath = '无';
+          break;
+        case 1:
+          $scope.badBreath = '偶有或晨起口臭';
+          break;
+        case 2:
+          $scope.badBreath = '时有口臭';
+          break;
+        case 3:
+          $scope.badBreath = '整日口臭';
+          break;
+      }
+
+      switch (fourDiaFollow.nausea) {
+        case 0:
+          $scope.nausea = '无';
+          break;
+        case 1:
+          $scope.nausea = '偶有恶心';
+          break;
+        case 2:
+          $scope.nausea = '每日恶心';
+          break;
+        case 3:
+          $scope.nausea = '恶心频作';
+          break;
+      }
+
+      switch (fourDiaFollow.belching) {
+        case 0:
+          $scope.belching = '无';
+          break;
+        case 1:
+          $scope.belching = '偶有嗳气';
+          break;
+        case 2:
+          $scope.belching = '食后嗳气频频';
+          break;
+        case 3:
+          $scope.belching = '整日嗳气';
+          break;
+      }
+
+      switch (fourDiaFollow.abdominalDistention) {
+        case 0:
+          $scope.abdominalDistention = '无';
+          break;
+        case 1:
+          $scope.abdominalDistention = '进食后脘闷腹胀';
+          break;
+        case 2:
+          $scope.abdominalDistention = '少量进食后即脘闷腹胀';
+          break;
+        case 3:
+          $scope.abdominalDistention = '整日脘闷腹胀';
+          break;
+      }
+
+      switch (fourDiaFollow.flankPainStinging) {
+        case 0:
+          $scope.flankPainStinging = '无';
+          break;
+        case 1:
+          $scope.flankPainStinging = '偶有';
+          break;
+        case 2:
+          $scope.flankPainStinging = '常有';
+          break;
+        case 3:
+          $scope.flankPainStinging = '持续';
+          break;
+      }
+
+      switch (fourDiaFollow.flankPainSwell) {
+        case 0:
+          $scope.flankPainSwell = '无';
+          break;
+        case 1:
+          $scope.flankPainSwell = '偶有';
+          break;
+        case 2:
+          $scope.flankPainSwell = '常有';
+          break;
+        case 3:
+          $scope.flankPainSwell = '持续';
+          break;
+      }
+
+      switch (fourDiaFollow.flankPainDull) {
+        case 0:
+          $scope.flankPainDull = '无';
+          break;
+        case 1:
+          $scope.flankPainDull = '偶有';
+          break;
+        case 2:
+          $scope.flankPainDull = '常有';
+          break;
+        case 3:
+          $scope.flankPainDull = '持续';
+          break;
+      }
+
+      switch (fourDiaFollow.flankPainDiscomfort) {
+        case 0:
+          $scope.flankPainDiscomfort = '无';
+          break;
+        case 1:
+          $scope.flankPainDiscomfort = '偶有';
+          break;
+        case 2:
+          $scope.flankPainDiscomfort = '常有';
+          break;
+        case 3:
+          $scope.flankPainDiscomfort = '持续';
+          break;
+      }
+
+      switch (fourDiaFollow.anorexia) {
+        case 0:
+          $scope.anorexia = '无';
+          break;
+        case 1:
+          $scope.anorexia = '胃纳轻度减少';
+          break;
+        case 2:
+          $scope.anorexia = '胃纳明显减少';
+          break;
+        case 3:
+          $scope.anorexia = '不欲食';
+          break;
+      }
+
+      switch (fourDiaFollow.aphrodisiacCold) {
+        case 0:
+          $scope.aphrodisiacCold = '无';
+          break;
+        case 1:
+          $scope.aphrodisiacCold = '手足不温';
+          break;
+        case 2:
+          $scope.aphrodisiacCold = '加衣被方可缓解';
+          break;
+        case 3:
+          $scope.aphrodisiacCold = '加衣被不缓解';
+          break;
+      }
+
+      switch (fourDiaFollow.limb) {
+        case 0:
+          $scope.limb = '无';
+          break;
+        case 1:
+          $scope.limb = '下肢偶有沉重感';
+          break;
+        case 2:
+          $scope.limb = '肢体沉重';
+          break;
+        case 3:
+          $scope.limb = '肢体沉重，懒动';
+          break;
+      }
+
+      switch (fourDiaFollow.backacheFootSoft) {
+        case 0:
+          $scope.backacheFootSoft = '无';
+          break;
+        case 1:
+          $scope.backacheFootSoft = '偶有腰痠脚软';
+          break;
+        case 2:
+          $scope.backacheFootSoft = '经常腰痠脚软';
+          break;
+        case 3:
+          $scope.backacheFootSoft = '整日腰痠脚软';
+          break;
+      }
+
+      switch (fourDiaFollow.handFootFanHot) {
+        case 0:
+          $scope.handFootFanHot = '无';
+          break;
+        case 1:
+          $scope.handFootFanHot = '轻度手足烦热';
+          break;
+        case 2:
+          $scope.handFootFanHot = '热甚，但能忍受';
+          break;
+        case 3:
+          $scope.handFootFanHot = '热甚，情绪烦躁';
+          break;
+      }
+
+      switch (fourDiaFollow.urineYellow) {
+        case 0:
+          $scope.urineYellow = '无';
+          break;
+        case 1:
+          $scope.urineYellow = '色黄';
+          break;
+        case 2:
+          $scope.urineYellow = '色深黄';
+          break;
+        case 3:
+          $scope.urineYellow = '色黄赤';
+          break;
+      }
+
+      switch (fourDiaFollow.constipation) {
+        case 0:
+          $scope.constipation = '无';
+          break;
+        case 1:
+          $scope.constipation = '2日1行便之不爽';
+          break;
+        case 2:
+          $scope.constipation = '3日一行';
+          break;
+        case 3:
+          $scope.constipation = '>3日一行';
+          break;
+      }
+
+      switch (fourDiaFollow.looseStools) {
+        case 0:
+          $scope.looseStools = '无';
+          break;
+        case 1:
+          $scope.looseStools = '大便不成形';
+          break;
+        case 2:
+          $scope.looseStools = '稀便，每日2-3次';
+          break;
+        case 3:
+          $scope.looseStools = '稀便，4次以上';
+          break;
+      }
+
+      switch (fourDiaFollow.perspiration) {
+        case 0:
+          $scope.perspiration = '无';
+          break;
+        case 1:
+          $scope.perspiration = '偶有汗出';
+          break;
+        case 2:
+          $scope.perspiration = '经常汗出';
+          break;
+        case 3:
+          $scope.perspiration = '动辄汗出';
+          break;
+      }
+
+      switch (fourDiaFollow.nightSweats) {
+        case 0:
+          $scope.nightSweats = '无';
+          break;
+        case 1:
+          $scope.nightSweats = '偶有盗汗';
+          break;
+        case 2:
+          $scope.nightSweats = '经常盗汗';
+          break;
+        case 3:
+          $scope.nightSweats = '每晚盗汗';
+          break;
+      }
+
+      switch (fourDiaFollow.lowerExtremityEdema) {
+        case 0:
+          $scope.lowerExtremityEdema = '无';
+          break;
+        case 1:
+          $scope.lowerExtremityEdema = '踝关节以下';
+          break;
+        case 2:
+          $scope.lowerExtremityEdema = '膝关节以下';
+          break;
+        case 3:
+          $scope.lowerExtremityEdema = '膝关节以上';
+          break;
+      }
+
+      switch (fourDiaFollow.faceDull) {
+        case 0:
+          $scope.faceDull = '无';
+          break;
+        case 1:
+          $scope.faceDull = '色暗少光泽';
+          break;
+        case 2:
+          $scope.faceDull = '色晦暗';
+          break;
+        case 3:
+          $scope.faceDull = '色深褐无光';
+          break;
+      }
+
+      switch (fourDiaFollow.eyeYellow) {
+        case 0:
+          $scope.eyeYellow = '无';
+          break;
+        case 1:
+          $scope.eyeYellow = '色淡黄';
+          break;
+        case 2:
+          $scope.eyeYellow = '色黄';
+          break;
+        case 3:
+          $scope.eyeYellow = '色深黄';
+          break;
+      }
+
+      switch (fourDiaFollow.bodyYellow) {
+        case 0:
+          $scope.bodyYellow = '无';
+          break;
+        case 1:
+          $scope.bodyYellow = '色淡黄';
+          break;
+        case 2:
+          $scope.bodyYellow = '色黄';
+          break;
+        case 3:
+          $scope.bodyYellow = '色深黄';
+          break;
+      }
+
+      switch (fourDiaFollow.spiderNevus) {
+        case 0:
+          $scope.spiderNevus = '无';
+          break;
+        case 1:
+          $scope.spiderNevus = '偶见蜘蛛痣';
+          break;
+        case 2:
+          $scope.spiderNevus = '有2~4个蜘蛛痣';
+          break;
+        case 3:
+          $scope.spiderNevus = '5个以上蜘蛛痣';
+          break;
+      }
+
+      switch (fourDiaFollow.liverPalm) {
+        case 0:
+          $scope.liverPalm = '无';
+          break;
+        case 1:
+          $scope.liverPalm = '可疑肝掌';
+          break;
+        case 2:
+          $scope.liverPalm = '肝掌';
+          break;
+        case 3:
+          $scope.liverPalm = '明显肝掌';
+          break;
+      }
+
+      switch (fourDiaFollow.abdominalVeins) {
+        case 0:
+          $scope.abdominalVeins = '无';
+          break;
+        case 1:
+          $scope.abdominalVeins = '隐约可见';
+          break;
+        case 2:
+          $scope.abdominalVeins = '清晰可见';
+          break;
+        case 3:
+          $scope.abdominalVeins = '满腹脉络曲张';
+          break;
+      }
+
+      switch (fourDiaFollow.yellowTumor) {
+        case 0:
+          $scope.yellowTumor = '无';
+          break;
+        case 1:
+          $scope.yellowTumor = '隐约可见';
+          break;
+        case 2:
+          $scope.yellowTumor = '清晰可见';
+          break;
+        case 3:
+          $scope.yellowTumor = '明显突出皮肤';
+          break;
+      }
+    };
+
+    $scope.tongueClick = function(tongueFollow) {
+      $scope.tongue = tongueFollow.tongue;
+      $scope.tonguePart = tongueFollow.tonguePart;
+      $scope.tonguePartialDescription = tongueFollow.tonguePartialDescription;
+      $scope.tongueBody = tongueFollow.tongueBody;
+      $scope.mossy = tongueFollow.mossy;
+      $scope.mossyPart = tongueFollow.mossyPart;
+      $scope.mossyPartialDescription = tongueFollow.mossyPartialDescription;
+      $scope.tongueColor = tongueFollow.tongueColor;
+      $scope.tongueColorPart = tongueFollow.tongueColorPart;
+      $scope.tongueColorPartialDescription = tongueFollow.tongueColorPartialDescription;
+      $scope.sublingualVaricoseVeins = tongueFollow.sublingualVaricoseVeins;
+      $scope.leftPulse = tongueFollow.leftPulse;
+      $scope.rightPulse = tongueFollow.rightPulse;
+    };
+
+    $scope.phyClick = function(phyFollow) {
+      $scope.totalBileAcid = phyFollow.totalBileAcid;
+      $scope.liverFunctionAlbumin = phyFollow.liverFunctionAlbumin;
+      $scope.liverFunctionGlobulin = phyFollow.liverFunctionGlobulin;
+      $scope.liverFunctionALT = phyFollow.liverFunctionALT;
+      $scope.liverFunctionGGT = phyFollow.liverFunctionGGT;
+      $scope.liverFunctionAST = phyFollow.liverFunctionAST;
+      $scope.liverFunctionALP = phyFollow.liverFunctionALP;
+      $scope.liverFunctionTotalCholesterol = phyFollow.liverFunctionTotalCholesterol;
+      $scope.liverFunctionTotalBilirubin = phyFollow.liverFunctionTotalBilirubin;
+      $scope.liverFunctionDirectBilirubin = phyFollow.liverFunctionDirectBilirubin;
+      $scope.liverFunctionRglobulin = phyFollow.liverFunctionRglobulin;
+      $scope.renalFunctionBUN = phyFollow.renalFunctionBUN;
+      $scope.renalFunctionCr = phyFollow.renalFunctionCr;
+      $scope.clottingPT = phyFollow.clottingPT;
+      $scope.clottingINR = phyFollow.clottingINR;
+      $scope.bloodRoutineRBC = phyFollow.bloodRoutineRBC;
+      $scope.bloodRoutineHb = phyFollow.bloodRoutineHb;
+      $scope.bloodRoutineWBC = phyFollow.bloodRoutineWBC;
+      $scope.bloodRoutineNeutrophils = phyFollow.bloodRoutineNeutrophils;
+      $scope.bloodRoutineLymphocytes = phyFollow.bloodRoutineLymphocytes;
+      $scope.bloodRoutineEosinophils = phyFollow.bloodRoutineEosinophils;
+      $scope.bloodRoutinePlatelets = phyFollow.bloodRoutinePlatelets;
+      $scope.liverDiseaseAutoantibodiesAMA = phyFollow.liverDiseaseAutoantibodiesAMA;
+      $scope.liverDiseaseAutoantibodiesAMAM2 = phyFollow.liverDiseaseAutoantibodiesAMAM2;
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody = phyFollow.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody;
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies = phyFollow.liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies;
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen = phyFollow.liverDiseaseAutoantibodiesHepatocyteSoluteAntigen;
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen = phyFollow.liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen;
+      $scope.liverDiseaseAutoantibodiesOther = phyFollow.liverDiseaseAutoantibodiesOther;
+      $scope.ANAHomogeneous = phyFollow.anahomogeneous;
+      $scope.ANAParticle = phyFollow.anaparticle;
+      $scope.ANAPeripheral = phyFollow.anaperipheral;
+      $scope.ANANucleolus = phyFollow.ananucleolus;
+      $scope.ANANucleolusEnhancement = phyFollow.ananucleolusEnhancement;
+      $scope.ANANuclear = phyFollow.ananuclear;
+      $scope.ANACentromere = phyFollow.anacentromere;
+      $scope.ANAOther = phyFollow.anaother;
+      $scope.humoralImmunityIgG = phyFollow.humoralImmunityIgG;
+      $scope.humoralImmunityIgA = phyFollow.humoralImmunityIgA;
+      $scope.humoralImmunityIgM = phyFollow.humoralImmunityIgM;
+      $scope.humoralImmunityImmuneComplexf = phyFollow.humoralImmunityImmuneComplexf;
+      $scope.humoralImmunityComplementC3 = phyFollow.humoralImmunityComplementC3;
+      $scope.humoralImmunityComplementC4 = phyFollow.humoralImmunityComplementC4;
+      $scope.humoralImmunityIgE = phyFollow.humoralImmunityIgE;
+      $scope.humoralImmunityKlightChain = phyFollow.humoralImmunityKlightChain;
+      $scope.humoralImmunityNlightChain = phyFollow.humoralImmunityNlightChain;
+      $scope.cellularImmunityCD3 = phyFollow.cellularImmunityCD3;
+      $scope.cellularImmunityCD4 = phyFollow.cellularImmunityCD4;
+      $scope.cellularImmunityCD8 = phyFollow.cellularImmunityCD8;
+      $scope.cellularImmunityCD56 = phyFollow.cellularImmunityCD56;
+      $scope.cellularImmunityCD2 = phyFollow.cellularImmunityCD2;
+      $scope.cellularImmunityCD4CD8 = phyFollow.cellularImmunityCD4CD8;
+      $scope.rheumaticImmuneRelatedAntibodies = phyFollow.rheumaticImmuneRelatedAntibodies;
+      switch (phyFollow.ctmri) {
+        case 0:
+          $scope.CTMRI = '肝表面光滑，边缘锐，血管走向清晰';
+          break;
+        case 1:
+          $scope.CTMRI = '肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰';
+          break;
+        case 2:
+          $scope.CTMRI = '肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰';
+          break;
+        case 3:
+          $scope.CTMRI = '肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰';
+          break;
+        case 4:
+          $scope.CTMRI = '肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等';
+          break;
+      }
+      $scope.liverHardnessFibroscan = phyFollow.liverHardnessFibroscan;
+      $scope.liverHardnessFibrotest = phyFollow.liverHardnessFibrotest;
+      $scope.liverPuncturePathology = phyFollow.liverPuncturePathology;
+      $scope.copperProtein = phyFollow.copperProtein;
+      $scope.aFP = phyFollow.aFP;
+      $scope.carcinoembryonicAntigenCEA = phyFollow.carcinoembryonicAntigenCEA;
+      $scope.ca125 = phyFollow.ca125;
+      $scope.hbsag = phyFollow.hbsag;
+      $scope.hbsab = phyFollow.hbsab;
+      $scope.hbeag = phyFollow.hbeag;
+      $scope.hbeab = phyFollow.hbeab;
+      $scope.hbcab = phyFollow.hbcab;
+      $scope.hbvRna = phyFollow.hbvRna;
+      $scope.antiHCVantibody = phyFollow.antiHCVantibody;
+      $scope.hcvRna = phyFollow.hcvRna;
+      $scope.protein = phyFollow.protein;
+      $scope.redBloodCell = phyFollow.redBloodCell;
+      $scope.whiteBloodCell = phyFollow.whiteBloodCell;
+      $scope.bilirubin = phyFollow.bilirubin;
+      $scope.ca199 = phyFollow.ca199;
+      $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
+    };
+
+    $scope.boneClick = function(boneFollow) {
+      $scope.lumbarSpine = boneFollow.lumbarSpine;
+      switch (boneFollow.lumbarSpineT) {
+        case 1:
+          $scope.lumbarSpineT = '未检测';
+          break;
+        case 2:
+          $scope.lumbarSpineT = '>1';
+          break;
+        case 3:
+          $scope.lumbarSpineT = '-1~-2.5';
+          break;
+        case 4:
+          $scope.lumbarSpineT = '<-2.5';
+          break;
+      }
+      $scope.femoralNeck = boneFollow.femoralNeck;
+      switch (boneFollow.femoralNeckT) {
+        case 1:
+          $scope.femoralNeckT = '未检测';
+          break;
+        case 2:
+          $scope.femoralNeckT = '>1';
+          break;
+        case 3:
+          $scope.femoralNeckT = '-1~-2.5';
+          break;
+        case 4:
+          $scope.femoralNeckT = '<-2.5';
+          break;
+      }
+      $scope.bigTrochanter = boneFollow.bigTrochanter;
+      switch (boneFollow.bigTrochanterT) {
+        case 1:
+          $scope.bigTrochanterT = '未检测';
+          break;
+        case 2:
+          $scope.bigTrochanterT = '>1';
+          break;
+        case 3:
+          $scope.bigTrochanterT = '-1~-2.5';
+          break;
+        case 4:
+          $scope.bigTrochanterT = '<-2.5';
+          break;
+      }
+      $scope.fullHip = boneFollow.fullHip;
+      switch (boneFollow.fullHipT) {
+        case 1:
+          $scope.fullHipT = '未检测';
+          break;
+        case 2:
+          $scope.fullHipT = '>1';
+          break;
+        case 3:
+          $scope.fullHipT = '-1~-2.5';
+          break;
+        case 4:
+          $scope.fullHipT = '<-2.5';
+          break;
+      }
+      switch (boneFollow.diagnosis) {
+        case 1:
+          $scope.diagnosis = '骨量正常';
+          break;
+        case 2:
+          $scope.diagnosis = '骨量减少';
+          break;
+        case 3:
+          $scope.diagnosis = '骨质疏松';
+          break;
+        case 4:
+          $scope.diagnosis = '严重骨质疏松';
+          break;
+      }
+      $scope.remarks = boneFollow.remarks;
+    };
+
+    $scope.treatClick = function(treatFollow) {
+      $scope.qdsTime = treatFollow.qdsTime;
+      $scope.qdsDose = treatFollow.qdsDose;
+      $scope.qdsHeal = treatFollow.qdsHeal;
+      $scope.qdslTime = treatFollow.qdslTime;
+      $scope.qdslDose = treatFollow.qdslDose;
+      $scope.qdslHeal = treatFollow.qdslHeal;
+      $scope.jjqTime = treatFollow.jjqTime;
+      $scope.jjqDose = treatFollow.jjqDose;
+      $scope.jjqHeal = treatFollow.jjqHeal;
+      $scope.bdndTime = treatFollow.bdndTime;
+      $scope.bdndDose = treatFollow.bdndDose;
+      $scope.bdndHeal = treatFollow.bdndHeal;
+      $scope.lcplTime = treatFollow.lcplTime;
+      $scope.lcplDose = treatFollow.lcplDose;
+      $scope.lcplHeal = treatFollow.lcplHeal;
+      $scope.mtxTime = treatFollow.mtxTime;
+      $scope.mtxDose = treatFollow.mtxDose;
+      $scope.mtxHeal = treatFollow.mtxHeal;
+      $scope.cysaTime = treatFollow.cysaTime;
+      $scope.cysaDose = treatFollow.cysaDose;
+      $scope.cysaHeal = treatFollow.cysaHeal;
+      $scope.ctxTime = treatFollow.ctxTime;
+      $scope.ctxDose = treatFollow.ctxDose;
+      $scope.ctxHeal = treatFollow.ctxHeal;
+      $scope.mtmkTime = treatFollow.mtmkTime;
+      $scope.mtmkDose = treatFollow.mtmkDose;
+      $scope.mtmkHeal = treatFollow.mtmkHeal;
+      $scope.qsxsTime = treatFollow.qsxsTime;
+      $scope.qsxsDose = treatFollow.qsxsDose;
+      $scope.qsxsHeal = treatFollow.qsxsHeal;
+      $scope.xqydTime = treatFollow.xqydTime;
+      $scope.xqydDose = treatFollow.xqydDose;
+      $scope.xqydHeal = treatFollow.xqydHeal;
+      $scope.fnbtTime = treatFollow.fnbtTime;
+      $scope.fnbtDose = treatFollow.fnbtDose;
+      $scope.fnbtHeal = treatFollow.fnbtHeal;
+      $scope.bzbtTime = treatFollow.bzbtTime;
+      $scope.bzbtDose = treatFollow.bzbtDose;
+      $scope.bzbtHeal = treatFollow.bzbtHeal;
+      $scope.gyzTime = treatFollow.gyzTime;
+      $scope.gyzDetails = treatFollow.gyzDetails;
+      if (treatFollow.gyzResult == 'die') {
+        $scope.gyzResult = '死亡';
+      } else {
+        $scope.gyzResult = '生存';
+      }
+      if (treatFollow.gyzReason == 'liver' && treatFollow.gyzResult == 'die') {
+        $scope.gyzReason = '死亡原因：肝脏';
+      } else if (treatFollow.gyzResult == 'die') {
+        $scope.gyzReason = '死亡原因：其他原因';
+      } else {
+        $scope.gyzReason = '';
+      }
+    };
+
+    $scope.medicineClick = function(medicineFollow) {
+      $scope.chineseMedicineTime = medicineFollow.chineseMedicineTime;
+      $scope.chineseMedicineFormulasDose = medicineFollow.chineseMedicineFormulasDose;
+      $scope.chineseMedicineHeal = medicineFollow.chineseMedicineHeal;
+      $scope.aProprietaryMedicineTime = medicineFollow.aProprietaryMedicineTime;
+      $scope.aProprietaryMedicineName = medicineFollow.aProprietaryMedicineName;
+      $scope.aProprietaryMedicineHeal = medicineFollow.aProprietaryMedicineHeal;
+      $scope.bProprietaryMedicineTime = medicineFollow.bProprietaryMedicineTime;
+      $scope.bProprietaryMedicineName = medicineFollow.bProprietaryMedicineName;
+      $scope.bProprietaryMedicineHeal = medicineFollow.bProprietaryMedicineHeal;
+    };
 
   }]);

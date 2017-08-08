@@ -1,5 +1,8 @@
 package app.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -97,6 +100,28 @@ public class MedicinePrescriptionzServiceImpl implements MedicinePrescriptionSer
         } catch (Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public List<ChineseMedicinePrescriptionDTO> getFollowMedicine(int patientId) {
+        if (!(medicinePrescriptionRepo.getFollowMedicine(patientId)).isEmpty()) {
+            List<ChineseMedicinePrescriptionDTO> chineseMedicinePrescriptionDTOs =
+                    new ArrayList<>();
+            List<ChineseMedicinePrescriptionDO> chineseMedicinePrescriptionDOs =
+                    medicinePrescriptionRepo.getFollowMedicine(patientId);
+            for (ChineseMedicinePrescriptionDO chineseMedicinePrescriptionDO : chineseMedicinePrescriptionDOs) {
+                chineseMedicinePrescriptionDTOs.add(convertToDto(chineseMedicinePrescriptionDO));
+            }
+            return chineseMedicinePrescriptionDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public ChineseMedicinePrescriptionDTO getDefaultMedicine(int patientId) {
+        return medicinePrescriptionRepo.getDefaultMedicine(patientId) != null
+                ? convertToDto(medicinePrescriptionRepo.getDefaultMedicine(patientId)) : null;
     }
 
 }

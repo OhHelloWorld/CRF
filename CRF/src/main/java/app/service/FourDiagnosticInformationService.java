@@ -1,5 +1,7 @@
 package app.service;
 
+import java.util.List;
+
 import app.dto.FourDiagnosticInformationDTO;
 
 public interface FourDiagnosticInformationService {
@@ -26,5 +28,9 @@ public interface FourDiagnosticInformationService {
      * @return
      */
     public boolean getCompleteByPatientId(int patientId);
+
+    public List<FourDiagnosticInformationDTO> getFollowFourDia(int patientId);
+
+    public FourDiagnosticInformationDTO getDefaultFourDia(int patientId);
 
 }

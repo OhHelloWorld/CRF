@@ -37,4 +37,8 @@ public interface TreatmentService {
     public List<Float> getBzbtDose(int patientId);
 
     public boolean getCompleteByPatientId(int patientId);
+
+    public List<TreatmentProgramsDTO> getFollowTreat(int patientId);
+
+    public TreatmentProgramsDTO getDefaultTreat(int patientId);
 }

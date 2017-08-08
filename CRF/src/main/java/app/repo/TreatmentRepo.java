@@ -68,4 +68,12 @@ public interface TreatmentRepo extends CrudRepository<TreatmentProgramsDO, Integ
     @Query(value = "select complete from treatment_programs where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
     public boolean getCompleteByPatientId(int patientId);
+
+    @Query(value = "select * from treatment_programs where follow_up = 1 and patient_id=?1",
+            nativeQuery = true)
+    public List<TreatmentProgramsDO> getFollowTreat(int patientId);
+
+    @Query(value = "select * from treatment_programs where patient_id = ?1 and follow_up = 0 order by id desc limit 1",
+            nativeQuery = true)
+    public TreatmentProgramsDO getDefaultTreat(int patientId);
 }

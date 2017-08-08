@@ -324,7 +324,6 @@ angular.module('liverPathology', ['main'])
         url: '/api/liverPathology/choose/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var chooseList = response.data;
-        console.log(chooseList);
         if (chooseList[0]) {
           $scope.gs = true;
           $scope.ishak = false;

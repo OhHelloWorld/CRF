@@ -1,5 +1,8 @@
 package app.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -80,6 +83,26 @@ public class TonguePulseImpl implements TonguePulseService {
         tDto.setFollowUp(tDo.isFollowUp());
         tDto.setFollowUpDate(tDo.getFollowUpDate());
         return tDto;
+    }
+
+    @Override
+    public List<TonguePulseDTO> getFollowTongue(int patientId) {
+        if (!tonguePulseRepo.getFollowTongue(patientId).isEmpty()) {
+            List<TonguePulseDTO> tonguePulseDTOs = new ArrayList<>();
+            List<TonguePulseDO> tonguePulseDOs = tonguePulseRepo.getFollowTongue(patientId);
+            for (TonguePulseDO tonguePulseDO : tonguePulseDOs) {
+                tonguePulseDTOs.add(convertToTonguePulseDTO(tonguePulseDO));
+            }
+            return tonguePulseDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public TonguePulseDTO getDefaultTongue(int patientId) {
+        return tonguePulseRepo.getDefaultTongue(patientId) != null
+                ? convertToTonguePulseDTO(tonguePulseRepo.getDefaultTongue(patientId)) : null;
     }
 
 }
