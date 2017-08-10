@@ -30,8 +30,8 @@ public class ProjectServiceImpl implements ProjectService {
     @Autowired
     private UserProjectRoleRepo userProjectRoleRepo;
 
-    @Autowired
-    private HospitalRepo hospitalRepo;
+    // @Autowired
+    // private HospitalRepo hospitalRepo;
 
     @Autowired
     private UserRepo userRepo;
@@ -220,7 +220,7 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     public void deleteProject(Long projectId) {
-        UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);
+        // UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.findOne(projectId);
         projectRepo.delete(projectId);
     }
 

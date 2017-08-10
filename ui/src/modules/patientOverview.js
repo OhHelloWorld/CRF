@@ -756,7 +756,7 @@ angular.module('patientOverview', ['main'])
             var liver = response.data;
             $scope.inflammationLeaflets = liver.inflammationLeaflets - 1;
             $scope.interfacialInflammation = liver.interfacialInflammation - 1;
-            $scope.portalAreaInflammation = liver.interfacialInflammation - 1;
+            $scope.portalAreaInflammation = liver.portalAreaInflammation - 1;
             $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
             $scope.fibrousTissueHyperplasia = liver.fibrousTissueHyperplasia - 1;
             $scope.inflammationBileDuct = liver.inflammationBileDuct - 1;

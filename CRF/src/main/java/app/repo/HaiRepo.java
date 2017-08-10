@@ -18,4 +18,8 @@ public interface HaiRepo extends CrudRepository<HaiDO, Integer> {
     @Query(value = "select complete from hai where patient_id = ?1 order by id desc limit 1",
             nativeQuery = true)
     public Boolean getCompleteByPatientId(int patientId);
+
+    @Query(value = "select * from hai where patient_id = ?1 order by id desc limit 1",
+            nativeQuery = true)
+    public HaiDO getDefaultHai(int patientId);
 }

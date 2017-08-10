@@ -7,6 +7,26 @@
   </ol>
 </section>
   <div  ng-app="home" ng-controller="homeController">
+
+  <!--模态框-->
+  <div id="infoModal" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">{{information}}</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button id="modalButton1" type="button" class="btn btn-default" data-dismiss="modal">{{buttonContent}}</button>
+                         </div>
+                    </div>
+               </div>
+     </div>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
@@ -15,8 +35,8 @@
             <div class="box">
             <div class="box-header">
               <form class="form-inline">
-                <span class="h4">患者总览</span>
-                <span class="col-md-offset-7">
+                <span class="h3">患者总览</span>&nbsp<a ng-click="createExcel()"><span class="h4" style="cursor: pointer;">导出所有患者病例资料</span></a>
+                <span class="col-md-offset-5">
                 <input type="text" name="q" class="form-control form-inline" placeholder="请输入姓名或编号" ng-model="queryStr">
                   <button type="button" class="btn btn-flat" ng-click="query()"><i class="glyphicon glyphicon-search" style="color: #3C8DBC"></i>
                   </button>

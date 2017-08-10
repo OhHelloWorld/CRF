@@ -28,4 +28,5 @@ public interface FourDiagnosticInformationRepo
     @Query(value = "select * from four_diagnostic_information where patient_id = ?1 and follow_up = 0 order by id desc limit 1",
             nativeQuery = true)
     public FourDiagnosticInformationDO getDefaultFourDia(int patientId);
+
 }

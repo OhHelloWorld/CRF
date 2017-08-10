@@ -19,4 +19,8 @@ public interface LiverPathologyRepo extends CrudRepository<LiverPathologyDO, Int
     @Query(value = "select choose from liver_pathology where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
     public Boolean getChooseByPatientId(int patientId);
+
+    @Query(value = "select * from liver_pathology where patient_id = ?1 order by id desc limit 1",
+            nativeQuery = true)
+    public LiverPathologyDO getDefaultLiverpathology(int patientId);
 }
