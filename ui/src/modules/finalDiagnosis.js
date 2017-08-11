@@ -45,7 +45,7 @@ angular.module('finalDiagnosis', ['ui.checkbox', 'main'])
       finalDiagnosis.children = !!$scope.children;
       finalDiagnosis.gestationPeriod = !!$scope.gestationPeriod;
       finalDiagnosis.repeatedRelapse = !!$scope.repeatedRelapse;
-      finalDiagnosis.resistantToSteroidTreatment = !!$scope.repeatedRelapse;
+      finalDiagnosis.resistantToSteroidTreatment = !!$scope.resistantToSteroidTreatment;
       finalDiagnosis.patientsWithChronicHepatitisB = !!$scope.patientsWithChronicHepatitisB;
       finalDiagnosis.patientsWithChronicHepatitisC = !!$scope.patientsWithChronicHepatitisC;
       finalDiagnosis.overlappingAIHPBC = !!$scope.overlappingAIHPBC;

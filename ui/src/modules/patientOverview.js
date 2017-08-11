@@ -44,10 +44,10 @@ angular.module('patientOverview', ['main'])
             $scope.fatigue = '无';
             break;
           case 1:
-            $scope.fatigue = '肢体乏力，勉强坚持日常生活';
+            $scope.fatigue = '肢体稍倦，可坚持轻体力工作';
             break;
           case 2:
-            $scope.fatigue = '肢体稍倦，可坚持轻体力工作';
+            $scope.fatigue = '肢体乏力，勉强坚持日常生活';
             break;
           case 3:
             $scope.fatigue = '全身无力，终日不愿活动';
@@ -745,6 +745,7 @@ angular.module('patientOverview', ['main'])
         url: '/api/liverPathology/choose/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var chooseList = response.data;
+        console.log(chooseList);
         if (chooseList[0]) {
           $scope.gsShow = true;
           $scope.ishakShow = false;
@@ -925,16 +926,16 @@ angular.module('patientOverview', ['main'])
         }
         switch (bone.diagnosis) {
           case 1:
-            $scope.diagnosis = '骨量正常';
+            $scope.boneDiagnosis = '骨量正常';
             break;
           case 2:
-            $scope.diagnosis = '骨量减少';
+            $scope.boneDiagnosis = '骨量减少';
             break;
           case 3:
-            $scope.diagnosis = '骨质疏松';
+            $scope.boneDiagnosis = '骨质疏松';
             break;
           case 4:
-            $scope.diagnosis = '严重骨质疏松';
+            $scope.boneDiagnosis = '严重骨质疏松';
             break;
         }
         $scope.remarks = bone.remarks;

@@ -146,6 +146,7 @@ angular.module('liverPathology', ['main'])
         liverPathology.hcv = $scope.hcv;
         liverPathology.other = $scope.other;
         liverPathology.diagnosis = $scope.diagnosis;
+        liverPathology.choose = true;
         liverPathology.remarks = $scope.mark;
         if ($scope.buttonContent1 == '取消') {
           liverPathology.complete = false;
