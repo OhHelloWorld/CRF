@@ -1,11 +1,13 @@
 package app.repo;
 
-import java.util.List;
+        import java.util.Date;
+        import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+        import org.springframework.data.jpa.repository.Modifying;
+        import org.springframework.data.jpa.repository.Query;
+        import org.springframework.data.repository.CrudRepository;
 
-import app.entities.TreatmentProgramsDO;
+        import app.entities.TreatmentProgramsDO;
 
 public interface TreatmentRepo extends CrudRepository<TreatmentProgramsDO, Integer> {
 
@@ -68,4 +70,20 @@ public interface TreatmentRepo extends CrudRepository<TreatmentProgramsDO, Integ
     @Query(value = "select complete from treatment_programs where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
     public boolean getCompleteByPatientId(int patientId);
+
+
+
+
+    @Query(value = "select sum(qds_dose) from treatment_programs where patient_id = ?1",nativeQuery = true)
+    public int getQdsDate(int patientId);
+
+    @Query(value = "select qds_time from treatment_programs where patient_id = ?1 order by id limit 1",nativeQuery = true)
+    public List<String> getStartTime(int patientId);
+
+    @Query(value = "select qds_heal from treatment_programs where qds_time = ?1", nativeQuery = true)
+    public List<Integer> getQdsWeeks(String startDate);
+
+    @Query(value = "select qds_dose from treatment_programs where qds_time = ?1", nativeQuery = true)
+    public List<Integer> getQdsDosage(String startDate);
+
 }
