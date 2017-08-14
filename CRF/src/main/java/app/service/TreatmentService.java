@@ -1,8 +1,11 @@
-﻿package app.service;
+package app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+
 import app.dto.TreatmentProgramsDTO;
+import org.springframework.web.bind.annotation.PathVariable;
 
 public interface TreatmentService {
 
@@ -38,7 +41,5 @@ public interface TreatmentService {
 
     public boolean getCompleteByPatientId(int patientId);
 
-    public List<TreatmentProgramsDTO> getFollowTreat(int patientId);
-
-    public TreatmentProgramsDTO getDefaultTreat(int patientId);
+    public ArrayList<String> getQdsDate(int patientId);
 }

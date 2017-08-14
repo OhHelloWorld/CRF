@@ -1,4 +1,4 @@
-﻿package app.controller;
+package app.controller;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class TreatmentController {
 
     /**
      * 存储治疗方案信息
-     * 
+     *
      * @param treatmentProgramsDTO
      */
     @PostMapping(path = "")
@@ -40,7 +40,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到治疗方案信息
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -51,7 +51,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到强的松剂量信息
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -62,7 +62,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到强的松龙剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -73,7 +73,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到甲基强剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -84,7 +84,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到布地奈德剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -95,7 +95,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到硫锉嘌呤剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -106,7 +106,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到MTX剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -117,7 +117,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到cysa剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -128,7 +128,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到ctx剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -139,7 +139,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到吗替麦考酚酯剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -150,7 +150,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到秋水仙素剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -161,7 +161,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到熊去氧胆酸剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -172,7 +172,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到非诺贝特剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -183,7 +183,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到苯扎贝特剂量
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -194,7 +194,7 @@ public class TreatmentController {
 
     /**
      * 根据patientId得到治疗方案完成情况
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -206,15 +206,5 @@ public class TreatmentController {
     @GetMapping(path = "/getQdsDate/{patientId}")
     public ArrayList<String> getQdsDate(@PathVariable int patientId){
         return treatmentService.getQdsDate(patientId);
-    }
-
-    @GetMapping(path = "/follow/{patientId}")
-    public List<TreatmentProgramsDTO> getFollowTreat(@PathVariable int patientId) {
-        return treatmentService.getFollowTreat(patientId);
-    }
-
-    @GetMapping(path = "/default/{patientId}")
-    public TreatmentProgramsDTO getDefaultTreat(@PathVariable int patientId) {
-        return treatmentService.getDefaultTreat(patientId);
     }
 }
