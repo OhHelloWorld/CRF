@@ -1,5 +1,6 @@
 ﻿package app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import app.dto.TreatmentProgramsDTO;
@@ -41,4 +42,6 @@ public interface TreatmentService {
     public List<TreatmentProgramsDTO> getFollowTreat(int patientId);
 
     public TreatmentProgramsDTO getDefaultTreat(int patientId);
+
+    public ArrayList<String> getQdsDate(int patientId);
 }

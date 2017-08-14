@@ -76,4 +76,20 @@ public interface TreatmentRepo extends CrudRepository<TreatmentProgramsDO, Integ
     @Query(value = "select * from treatment_programs where patient_id = ?1 and follow_up = 0 order by id desc limit 1",
             nativeQuery = true)
     public TreatmentProgramsDO getDefaultTreat(int patientId);
+
+    @Query(value = "select sum(qds_dose) from treatment_programs where patient_id = ?1",
+            nativeQuery = true)
+    public int getQdsDate(int patientId);
+
+    @Query(value = "select qds_time from treatment_programs where patient_id = ?1 order by id limit 1",
+            nativeQuery = true)
+    public List<String> getStartTime(int patientId);
+
+    @Query(value = "select qds_heal from treatment_programs where qds_time = ?1",
+            nativeQuery = true)
+    public List<Integer> getQdsWeeks(String startDate);
+
+    @Query(value = "select qds_dose from treatment_programs where qds_time = ?1",
+            nativeQuery = true)
+    public List<Integer> getQdsDosage(String startDate);
 }
