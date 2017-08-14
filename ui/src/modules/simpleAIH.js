@@ -178,18 +178,18 @@ angular.module('simpleAIH', [])
     function judgeScore(anasma1, anasma2, antiLkm, antiSla, igG, liver, eliminateViralHepatitis) {
       $scope.result = 0;
       var temp = 0;
-      anasma1 == 1 ? $scope.result += 0 : $scope.result += 1;
-      anasma2 == 1 ? temp += 0 : (anasma2 == 2 ? temp += 1 : temp += 2);
-      antiLkm == 1 ? temp += 0 : temp += 2;
-      antiSla == 1 ? temp += 0 : temp += 2;
+      anasma1 == 2 ? $scope.result += 1 : $scope.result += 0;
+      anasma2 == 3 ? temp += 2 : (anasma2 == 2 ? temp += 1 : temp += 0);
+      antiLkm == 2 ? temp += 2 : temp += 0;
+      antiSla == 2 ? temp += 2 : temp += 0;
       if (temp >= 2) {
         $scope.result += 2;
       } else {
         $scope.result += temp;
       }
-      igG == 1 ? $scope.result += 1 : $scope.result += 2;
-      liver == 1 ? $scope.result += 1 : $scope.result += 2;
-      eliminateViralHepatitis == 1 ? $scope.result += 0 : $scope.result += 2;
+      igG == 1 ? $scope.result += 1 : (igG == 2 ? $scope.result += 2 : $scope.result += 0);
+      liver == 1 ? $scope.result += 1 : (liver == 2 ? $scope.result += 2 : $scope.result += 0);
+      eliminateViralHepatitis == 2 ? $scope.result += 2 : $scope.result += 0;
       simpleAIH.result = $scope.result;
     }
   }]);

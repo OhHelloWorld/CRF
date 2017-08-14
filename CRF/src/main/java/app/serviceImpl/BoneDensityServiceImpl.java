@@ -19,17 +19,33 @@ public class BoneDensityServiceImpl implements BoneDensityService {
 
     private BoneDensityDO convertToEntity(BoneDensityDTO boneDensityDTO) {
         BoneDensityDO boneDensityDO = new BoneDensityDO();
-        boneDensityDO.setBigTrochanter(boneDensityDTO.getBigTrochanter());
+        if (boneDensityDTO.getBigTrochanter() != 0) {
+            boneDensityDO.setBigTrochanter(boneDensityDTO.getBigTrochanter());
+        } else {
+            boneDensityDO.setBigTrochanter(null);
+        }
         boneDensityDO.setBigTrochanterT(boneDensityDTO.getBigTrochanterT());
         boneDensityDO.setComplete(boneDensityDTO.isComplete());
         boneDensityDO.setDiagnosis(boneDensityDTO.getDiagnosis());
-        boneDensityDO.setFemoralNeck(boneDensityDTO.getFemoralNeck());
+        if (boneDensityDTO.getFemoralNeck() != 0) {
+            boneDensityDO.setFemoralNeck(boneDensityDTO.getFemoralNeck());
+        } else {
+            boneDensityDO.setFemoralNeck(null);
+        }
         boneDensityDO.setFemoralNeckT(boneDensityDTO.getFemoralNeckT());
         boneDensityDO.setFollowUp(boneDensityDTO.isFollowUp());
         boneDensityDO.setFollowUpDate(boneDensityDTO.getFollowUpDate());
-        boneDensityDO.setFullHip(boneDensityDTO.getFullHip());
+        if (boneDensityDTO.getFullHip() != 0) {
+            boneDensityDO.setFullHip(boneDensityDTO.getFullHip());
+        } else {
+            boneDensityDO.setFullHip(null);
+        }
         boneDensityDO.setFullHipT(boneDensityDTO.getFullHipT());
-        boneDensityDO.setLumbarSpine(boneDensityDTO.getLumbarSpine());
+        if (boneDensityDTO.getLumbarSpine() != 0) {
+            boneDensityDO.setLumbarSpine(boneDensityDTO.getLumbarSpine());
+        } else {
+            boneDensityDO.setLumbarSpine(null);
+        }
         boneDensityDO.setLumbarSpineT(boneDensityDTO.getLumbarSpineT());
         boneDensityDO.setMeasuringTime(boneDensityDTO.getMeasuringTime());
         boneDensityDO.setPatientId(boneDensityDTO.getPatientId());

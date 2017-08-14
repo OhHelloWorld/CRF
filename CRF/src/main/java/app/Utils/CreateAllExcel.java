@@ -1153,15 +1153,48 @@ public class CreateAllExcel {
 
             // GS肝脏理化检查
             if (liverPathologyDO != null) {
-                row.createCell(138).setCellValue(liverPathologyDO.getInflammationLeaflets() - 1);
-                row.createCell(139).setCellValue(liverPathologyDO.getInterfacialInflammation() - 1);
-                row.createCell(140).setCellValue(liverPathologyDO.getPortalAreaInflammation() - 1);
-                row.createCell(141)
-                        .setCellValue(liverPathologyDO.getLymphocytePlasmaCellInfiltration() - 1);
-                row.createCell(142)
-                        .setCellValue(liverPathologyDO.getFibrousTissueHyperplasia() - 1);
-                row.createCell(143).setCellValue(liverPathologyDO.getInflammationBileDuct() - 1);
-                row.createCell(144).setCellValue(liverPathologyDO.getHepatocellularSteatosis() - 1);
+                if (liverPathologyDO.getInflammationLeaflets() != 0) {
+                    row.createCell(138)
+                            .setCellValue(liverPathologyDO.getInflammationLeaflets() - 1);
+                } else {
+                    row.createCell(138).setCellValue("");
+                }
+                if (liverPathologyDO.getInterfacialInflammation() != 0) {
+                    row.createCell(139)
+                            .setCellValue(liverPathologyDO.getInterfacialInflammation() - 1);
+                } else {
+                    row.createCell(139).setCellValue("");
+                }
+                if (liverPathologyDO.getPortalAreaInflammation() != 0) {
+                    row.createCell(140)
+                            .setCellValue(liverPathologyDO.getPortalAreaInflammation() - 1);
+                } else {
+                    row.createCell(140).setCellValue("");
+                }
+                if (liverPathologyDO.getLymphocytePlasmaCellInfiltration() != 0) {
+                    row.createCell(141).setCellValue(
+                            liverPathologyDO.getLymphocytePlasmaCellInfiltration() - 1);
+                } else {
+                    row.createCell(141).setCellValue("");
+                }
+                if (liverPathologyDO.getFibrousTissueHyperplasia() != 0) {
+                    row.createCell(142)
+                            .setCellValue(liverPathologyDO.getFibrousTissueHyperplasia() - 1);
+                } else {
+                    row.createCell(142).setCellValue("");
+                }
+                if (liverPathologyDO.getInflammationBileDuct() != 0) {
+                    row.createCell(143)
+                            .setCellValue(liverPathologyDO.getInflammationBileDuct() - 1);
+                } else {
+                    row.createCell(143).setCellValue("");
+                }
+                if (liverPathologyDO.getHepatocellularSteatosis() != 0) {
+                    row.createCell(144)
+                            .setCellValue(liverPathologyDO.getHepatocellularSteatosis() - 1);
+                } else {
+                    row.createCell(144).setCellValue("");
+                }
                 if (liverPathologyDO.getRoseSample() == 1) {
                     row.createCell(145).setCellValue("阴性");
                 } else {
@@ -1197,18 +1230,57 @@ public class CreateAllExcel {
 
             // ishak评分
             if (ishakDO != null) {
-                row.createCell(152).setCellValue(ishakDO.getPortalAreaInflammation() - 1);
-                row.createCell(153).setCellValue(ishakDO.getLobularMobility() - 1);
-                row.createCell(154).setCellValue(ishakDO.getInterfaceInflammation() - 1);
-                row.createCell(155).setCellValue(ishakDO.getConfluentNecrosis() - 1);
-                row.createCell(156).setCellValue(ishakDO.getFibrosis() - 1);
+                if (ishakDO.getPortalAreaInflammation() != 0) {
+                    row.createCell(152).setCellValue(ishakDO.getPortalAreaInflammation() - 1);
+                } else {
+                    row.createCell(152).setCellValue("");
+                }
+                if (ishakDO.getLobularMobility() != 0) {
+                    row.createCell(153).setCellValue(ishakDO.getLobularMobility() - 1);
+                } else {
+                    row.createCell(154).setCellValue("");
+                }
+                if (ishakDO.getInterfaceInflammation() != 0) {
+                    row.createCell(154).setCellValue(ishakDO.getInterfaceInflammation() - 1);
+                } else {
+                    row.createCell(154).setCellValue("");
+                }
+                if (ishakDO.getConfluentNecrosis() != 0) {
+                    row.createCell(155).setCellValue(ishakDO.getConfluentNecrosis() - 1);
+                } else {
+                    row.createCell(155).setCellValue("");
+                }
+                if (ishakDO.getFibrosis() != 0) {
+                    row.createCell(156).setCellValue(ishakDO.getFibrosis() - 1);
+                } else {
+                    row.createCell(156).setCellValue("");
+                }
             }
 
             // hai评分
             if (haiDO != null) {
-                row.createCell(157).setCellValue(haiDO.getPortalAreaInflammation() - 1);
-                row.createCell(158).setCellValue(haiDO.getLobularMobility() - 1);
-                row.createCell(159).setCellValue(haiDO.getInterfaceInflammation() - 1);
+                if (haiDO.getPortalAreaInflammation() != 0) {
+                    row.createCell(157).setCellValue(haiDO.getPortalAreaInflammation() - 1);
+                } else {
+                    row.createCell(157).setCellValue("");
+                }
+                if (haiDO.getLobularMobility() == 1 || haiDO.getLobularMobility() == 2) {
+                    row.createCell(158).setCellValue(haiDO.getLobularMobility() - 1);
+                } else if (haiDO.getLobularMobility() == 3 || haiDO.getLobularMobility() == 4) {
+                    row.createCell(158).setCellValue(haiDO.getLobularMobility());
+                } else {
+                    row.createCell(158).setCellValue("");
+                }
+                if (haiDO.getInterfaceInflammation() == 1
+                        || haiDO.getInterfaceInflammation() == 2) {
+                    row.createCell(159).setCellValue(haiDO.getInterfaceInflammation() - 1);
+                } else if (haiDO.getInterfaceInflammation() == 7) {
+                    row.createCell(159).setCellValue(10);
+                } else if (haiDO.getInterfaceInflammation() == 0) {
+                    row.createCell(159).setCellValue("");
+                } else {
+                    row.createCell(159).setCellValue(haiDO.getInterfaceInflammation());
+                }
             }
 
             // 骨密度

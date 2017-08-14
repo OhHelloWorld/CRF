@@ -755,13 +755,37 @@ angular.module('patientOverview', ['main'])
             url: '/api/liverPathology/' + sessionStorage.getItem('patientId')
           }).then(function success(response) {
             var liver = response.data;
-            $scope.inflammationLeaflets = liver.inflammationLeaflets - 1;
-            $scope.interfacialInflammation = liver.interfacialInflammation - 1;
-            $scope.portalAreaInflammation = liver.portalAreaInflammation - 1;
-            $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
-            $scope.fibrousTissueHyperplasia = liver.fibrousTissueHyperplasia - 1;
-            $scope.inflammationBileDuct = liver.inflammationBileDuct - 1;
-            $scope.hepatocellularSteatosis = liver.hepatocellularSteatosis - 1;
+            if (liver.inflammationLeaflets != 0) {
+              $scope.inflammationLeaflets = liver.inflammationLeaflets - 1;
+            } else {
+              $scope.inflammationLeaflets = '';
+            }
+            if (liver.interfacialInflammation != 0) {
+              $scope.interfacialInflammation = liver.interfacialInflammation - 1;
+            } else {
+              $scope.interfacialInflammation = '';
+            }
+            if (liver.portalAreaInflammation != 0) {
+              $scope.portalAreaInflammation = liver.portalAreaInflammation - 1;
+            } else {
+              $scope.lymphocytePlasmaCellInfiltration = '';
+            }
+            if (liver.fibrousTissueHyperplasia != 0) {
+              $scope.fibrousTissueHyperplasia = liver.fibrousTissueHyperplasia - 1;
+            } else {
+              $scope.fibrousTissueHyperplasia = '';
+            }
+            if (liver.inflammationBileDuct != 0) {
+              $scope.inflammationBileDuct = liver.inflammationBileDuct - 1;
+            } else {
+              $scope.inflammationBileDuct = '';
+            }
+            if (liver.hepatocellularSteatosis != 0) {
+              $scope.hepatocellularSteatosis = liver.hepatocellularSteatosis - 1;
+            } else {
+              $scope.hepatocellularSteatosis = '';
+            }
+
             switch (liver.roseSample) {
               case 1:
                 $scope.roseSample = '阴性';
@@ -821,11 +845,31 @@ angular.module('patientOverview', ['main'])
             method: 'GET'
           }).then(function success(response) {
             var ishakData = response.data;
-            $scope.portalAreaInflammation = ishakData.portalAreaInflammation;
-            $scope.lobularMobility = ishakData.lobularMobility;
-            $scope.interfaceInflammation = ishakData.interfaceInflammation;
-            $scope.confluentNecrosis = ishakData.confluentNecrosis;
-            $scope.fibrosis = ishakData.fibrosis;
+            if (ishakData.portalAreaInflammation != 0) {
+              $scope.portalAreaInflammation = ishakData.portalAreaInflammation - 1;
+            } else {
+              $scope.portalAreaInflammation = '';
+            }
+            if (ishakData.lobularMobility != 0) {
+              $scope.lobularMobility = ishakData.lobularMobility - 1;
+            } else {
+              $scope.lobularMobility = '';
+            }
+            if (ishakData.interfaceInflammation != 0) {
+              $scope.interfaceInflammation = ishakData.interfaceInflammation - 1;
+            } else {
+              $scope.interfaceInflammation = '';
+            }
+            if (ishakData.confluentNecrosis != 0) {
+              $scope.confluentNecrosis = ishakData.confluentNecrosis - 1;
+            } else {
+              $scope.confluentNecrosis = '';
+            }
+            if (ishakData.fibrosis != 0) {
+              $scope.fibrosis = ishakData.fibrosis - 1;
+            } else {
+              $scope.fibrosis = '';
+            }
           });
         } else if (chooseList[2]) {
           $scope.gsShow = false;
@@ -836,16 +880,24 @@ angular.module('patientOverview', ['main'])
             method: 'GET'
           }).then(function success(response) {
             var haiData = response.data;
-            $scope.portalAreaInflammation = haiData.portalAreaInflammation;
+            if (haiData.portalAreaInflammation != 0) {
+              $scope.portalAreaInflammation = haiData.portalAreaInflammation - 1;
+            } else {
+              $scope.portalAreaInflammation = '';
+            }
             if (haiData.lobularMobility == 1 || haiData.lobularMobility == 2) {
               $scope.lobularMobility = haiData.lobularMobility - 1;
-            } else {
+            } else if (haiData.lobularMobility == 3 || haiData.lobularMobility == 4) {
               $scope.lobularMobility = haiData.lobularMobility;
+            } else {
+              $scope.lobularMobility = '';
             }
             if (haiData.interfaceInflammation == 1 || haiData.interfaceInflammation == 2) {
               $scope.interfaceInflammation = haiData.interfaceInflammation - 1;
             } else if (haiData.interfaceInflammation == 7) {
               $scope.interfaceInflammation = 10;
+            } else if (haiData.interfaceInflammation == 0) {
+              $scope.interfaceInflammation = '';
             } else {
               $scope.interfaceInflammation = haiData.interfaceInflammation;
             }
