@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>深蓝医学</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1"> -->
+<link href="login.bundle.css" rel="stylesheet"></head>
+<body style="background-image:url(/api/image/back.jpg);background-size: 100%" class="hold-transition login-page" ng-app="login" ng-controller="loginController">
+<div class="login-box">
+  <div class="login-logo">
+    <a><img src="data:image/gif;base64,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" width="100%"></img></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">登录</p>
+
+    <form>
+      <div class="form-group has-feedback">
+        <input class="form-control" placeholder="账号" ng-model="account">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="密码" ng-model="password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <a href="register.html" class="text-center">注册账号</a>
+        </div>
+        <div class="col-sm-offset-8 col-xs-4">
+          <button class="btn btn-primary btn-block btn-flat" ng-click="login()">登录</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title"></h4>
+      </div>
+    <div class="modal-body">
+      <p ng-bind="justModalContent">&hellip;</p>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- /.login-box -->
+<script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="login.bundle.js"></script></body>
+</html>

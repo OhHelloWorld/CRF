@@ -15,11 +15,21 @@ angular.module('treatment', ['chart.js', 'main'])
     });
     getTreatment();
     getChineseMedicine();
+
+    function testfunction(testnumber) {
+      $scope.labels.length = 0;
+      for(var a = 0; a <= testnumber; a++) {
+        $scope.labels.push(a);
+      }
+    }
+    var dateArray = [];
+    var dosageArray = [];
     $scope.labels = ['疗程一', '疗程二', '疗程三', '疗程四', '疗程五', '疗程六', '疗程七'];
     $scope.series = ['日剂量'];
     $scope.data = [
       [0, 0, 0, 0, 0, 0, 0]
     ];
+
     $scope.datasetOverride = [{
       yAxisID: 'y-axis-1'
     }];
@@ -40,72 +50,73 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     }
     $scope.chartChange = function() {
+      testfunction(1);
       switch ($scope.chartSelect) {
-        case '1':
-          {
-            getQdsDose();
-            break;
-          }
-        case '2':
-          {
-            getQdslDose();
-            break;
-          }
-        case '3':
-          {
-            getJjqDose();
-            break;
-          }
-        case '4':
-          {
-            getBdndDose();
-            break;
-          }
-        case '5':
-          {
-            getLcplDose();
-            break;
-          }
-        case '6':
-          {
-            getMtxDose();
-            break;
-          }
-        case '7':
-          {
-            getCysaDose();
-            break;
-          }
-        case '8':
-          {
-            getCtxDose();
-            break;
-          }
-        case '9':
-          {
-            getMtmkDose();
-            break;
-          }
-        case '10':
-          {
-            getQsxsDose();
-            break;
-          }
-        case '11':
-          {
-            getXqydDose();
-            break;
-          }
-        case '12':
-          {
-            getFnbtDose();
-            break;
-          }
-        case '13':
-          {
-            getBzbtDose();
-            break;
-          }
+      case '1':
+        {
+          getQdsDose();
+          break;
+        }
+      case '2':
+        {
+          getQdslDose();
+          break;
+        }
+      case '3':
+        {
+          getJjqDose();
+          break;
+        }
+      case '4':
+        {
+          getBdndDose();
+          break;
+        }
+      case '5':
+        {
+          getLcplDose();
+          break;
+        }
+      case '6':
+        {
+          getMtxDose();
+          break;
+        }
+      case '7':
+        {
+          getCysaDose();
+          break;
+        }
+      case '8':
+        {
+          getCtxDose();
+          break;
+        }
+      case '9':
+        {
+          getMtmkDose();
+          break;
+        }
+      case '10':
+        {
+          getQsxsDose();
+          break;
+        }
+      case '11':
+        {
+          getXqydDose();
+          break;
+        }
+      case '12':
+        {
+          getFnbtDose();
+          break;
+        }
+      case '13':
+        {
+          getBzbtDose();
+          break;
+        }
       }
     };
 
@@ -747,9 +758,21 @@ angular.module('treatment', ['chart.js', 'main'])
     function getQdsDose() {
       $http({
         method: 'GET',
-        url: '/api/treatment/qds/' + sessionStorage.getItem('patientId')
+        url: '/api/treatment/getQdsDate/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+
+        // for(var s : dat) {
+        //   $scope.labels.push(s.split("$")[0]);
+        //   $scope.data.push(s.split("$")[1]);
+        // }
+
+        for(var i = 0; i < dat.length; i++) {
+          $scope.labels.push(dat[i].split("$")[0]);
+          $scope.data.push(dat[i].split("$")[1]);
+        }
+
+        // $scope.data = response.data;
       });
     }
 
