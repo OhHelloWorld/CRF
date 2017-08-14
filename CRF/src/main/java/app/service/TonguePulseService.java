@@ -1,5 +1,7 @@
 package app.service;
 
+import java.util.List;
+
 import app.dto.TonguePulseDTO;
 
 public interface TonguePulseService {
@@ -25,4 +27,8 @@ public interface TonguePulseService {
      * @return
      */
     public boolean getCompleteByPatientId(int patientId);
+
+    public List<TonguePulseDTO> getFollowTongue(int patientId);
+
+    public TonguePulseDTO getDefaultTongue(int patientId);
 }

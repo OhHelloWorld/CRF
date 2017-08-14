@@ -43,7 +43,11 @@ public class FinalDiaSpeCirServiceImpl implements FinalDiaSpeCirService {
 
     @Override
     public FinalDiagnosisSpecialCircumstancesDTO getInformation(Long id) {
-        return doConvertToDtoUtil.finalDSCDoConvertToDto(fdscRepo.getInformation(id));
+        if (fdscRepo.getInformation(id) != null) {
+            return doConvertToDtoUtil.finalDSCDoConvertToDto(fdscRepo.getInformation(id));
+        } else {
+            return null;
+        }
     }
 
     @Override

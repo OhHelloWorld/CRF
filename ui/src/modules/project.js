@@ -33,7 +33,7 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
     url: '/api/projects/projectData/' + localStorageService.get('project').id
   }).then(function success(response) {
     $scope.labels = ['男病例患者', '女病例患者', '已保存病例', '已提交病例', '所有病例', '所在医院病例', '所在医院男病例', '所在医院女病例'];
-    $scope.data = [response.data[0], response.data[1], response.data[3], response.data[2], response.data[4], response.data[5], response.data[6], response.data[7], response.data[8]];
+    $scope.data = [response.data[0], response.data[1], response.data[3], response.data[2], response.data[4], response.data[5], response.data[6], response.data[7]];
   });
 
   //得到该项目的所有医院
@@ -59,6 +59,11 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   loginStatus();
   $scope.Illnesses = [];
   searchIllness();
+
+  $scope.clickIll = function(x) {
+    sessionStorage.setItem('patientId', x.id);
+    window.open('/main.html#!/patientInfo');
+  };
 
   function searchIllness() {
     if (!$stateParams.project_searchInput) {

@@ -205,7 +205,7 @@ angular.module('fourDiagnostic', [])
 
     function formatFourDia(data) {
       if (data === undefined) {
-        data = -1;
+        return -1;
       } else {
         return data;
       }

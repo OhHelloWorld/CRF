@@ -107,9 +107,9 @@ angular.module('hospital', [ngFileUpload])
   };
 
   function loginStatus() {
-      if (!localStorageService.get('user')) {
-        window.location.href = '/login.html';
-      }
+    if (!localStorageService.get('user')) {
+      window.location.href = '/login.html';
     }
+  }
 
 }]);

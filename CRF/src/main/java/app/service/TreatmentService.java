@@ -1,4 +1,4 @@
-package app.service;
+﻿package app.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,4 +43,6 @@ public interface TreatmentService {
     public boolean getCompleteByPatientId(int patientId);
 
     public ArrayList<String> getQdsDate(int patientId);
+
+    public TreatmentProgramsDTO getDefaultTreat(int patientId);
 }

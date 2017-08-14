@@ -1,4 +1,4 @@
-package app.controller;
+﻿package app.controller;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -206,5 +206,15 @@ public class TreatmentController {
     @GetMapping(path = "/getQdsDate/{patientId}")
     public ArrayList<String> getQdsDate(@PathVariable int patientId){
         return treatmentService.getQdsDate(patientId);
+    }
+
+    @GetMapping(path = "/follow/{patientId}")
+    public List<TreatmentProgramsDTO> getFollowTreat(@PathVariable int patientId) {
+        return treatmentService.getFollowTreat(patientId);
+    }
+
+    @GetMapping(path = "/default/{patientId}")
+    public TreatmentProgramsDTO getDefaultTreat(@PathVariable int patientId) {
+        return treatmentService.getDefaultTreat(patientId);
     }
 }

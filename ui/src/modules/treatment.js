@@ -435,7 +435,8 @@ angular.module('treatment', ['chart.js', 'main'])
           $scope.changeMenuStatus();
           initializeModal();
           $('#modalButton1').addClass('hide');
-          $scope.buttonContent2 = '确认';
+          $('#modalButton2').addClass('hide');
+          // $scope.buttonContent2 = '确认';
           $scope.information = '保存成功';
           $('#infoModal').modal({
             keyboard: true
@@ -443,7 +444,8 @@ angular.module('treatment', ['chart.js', 'main'])
         } else {
           initializeModal();
           $('#modalButton1').addClass('hide');
-          $scope.buttonContent2 = '确认';
+          $('#modalButton2').addClass('hide');
+          // $scope.buttonContent2 = '确认';
           $scope.information = '保存失败';
           $('#infoModal').modal({
             keyboard: true

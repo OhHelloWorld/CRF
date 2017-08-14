@@ -49,6 +49,34 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'l
     $state.go('patientInfo');
   };
 
+  $scope.createExcel = function() {
+    $scope.information = '正在导出，请稍候...';
+    $scope.buttonShow = false;
+    $('#infoModal').modal({
+      keyboard: true
+    });
+    $http({
+      method: 'POST',
+      url: '/api/excel'
+    }).then(function success() {
+      $('#infoModal').modal('hide');
+      $scope.information = '信息已成功导出至"C:/hospitalExcel"文件夹下';
+      $scope.buttonShow = true;
+      $scope.buttonContent = '确认';
+      $('#infoModal').modal({
+        keyboard: true
+      });
+    }, function fail() {
+      $('#infoModal').modal('hide');
+      $scope.information = '导出出错，请稍候再试';
+      $scope.buttonShow = true;
+      $scope.buttonContent = '确认';
+      $('#infoModal').modal({
+        keyboard: true
+      });
+    });
+  };
+
   function loginStatus() {
     if (!localStorageService.get('user')) {
       window.location.href = '/login.html';

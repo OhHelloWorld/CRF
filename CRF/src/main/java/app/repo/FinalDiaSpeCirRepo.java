@@ -18,4 +18,8 @@ public interface FinalDiaSpeCirRepo
             nativeQuery = true)
     public boolean getCompleteByPatientId(int patientId);
 
+    @Query(value = "select * from final_diagnosis_special_circumstances where patient_id = ?1 order by id desc limit 1",
+            nativeQuery = true)
+    public FinalDiagnosisSpecialCircumstancesDO getDefaultFinalDia(int patientId);
+
 }

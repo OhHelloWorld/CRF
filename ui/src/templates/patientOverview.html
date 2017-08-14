@@ -22,6 +22,15 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <!-- <ul class="col-md-2"  style="cursor: pointer;">
+                <li><a ng-click="followFirst()"><span class="h4">医院录入表</span></a></li>
+                <li><a ng-repeat = "fourDiaFollow in fourDiaFollowList" ng-click="fourDiaClick(fourDiaFollow)"><span class="h4">随访表{{fourDiaFollow.id}}</span></a></li>
+              </ul> -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="fourDiaDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="fourDiaFollow in fourDiaFollowList" class="btn btn-primary btn-sm" ng-click="fourDiaClick(fourDiaFollow)">随访表{{fourDiaFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped table-bordered table-hover">
                 <tbody>
@@ -298,6 +307,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="tongueDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="tongueFollow in tongueFollowList" class="btn btn-primary btn-sm" ng-click="tongueClick(tongueFollow)">随访表{{tongueFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -357,6 +371,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="phyDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="phyFollow in phyFollowList" class="btn btn-primary btn-sm" ng-click="phyClick(phyFollow)">随访表{{phyFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -483,77 +502,77 @@
                 <tr>
                   <td>24</td>
                   <td>肝病自身抗体-AMA</td>
-                  <td>{{liverDiseaseAutoantibodiesAMA}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesAMA}}</td>
                 </tr>
                 <tr>
                   <td>25</td>
                   <td>肝病自身抗体-AMA-M2</td>
-                  <td>{{liverDiseaseAutoantibodiesAMAM2}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesAMAM2}}</td>
                 </tr>
                 <tr>
                   <td>26</td>
                   <td>肝病自身抗体-抗平滑肌抗体</td>
-                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody}}</td>
                 </tr>
                 <tr>
                   <td>27</td>
                   <td>肝病自身抗体-肝肾微粒体抗体</td>
-                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies}}</td>
                 </tr>
                 <tr>
                   <td>28</td>
                   <td>肝病自身抗体-肝细胞溶质抗原</td>
-                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigen}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigen}}</td>
                 </tr>
                 <tr>
                   <td>29</td>
                   <td>肝病自身抗体-可溶性肝-胰抗原</td>
-                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen}}</td>
                 </tr>
                 <tr>
                   <td>30</td>
                   <td>肝病自身抗体-其他</td>
-                  <td>{{liverDiseaseAutoantibodiesOther}} 阴性</td>
+                  <td>{{liverDiseaseAutoantibodiesOther}}</td>
                 </tr>
                 <tr>
                   <td>31</td>
                   <td>ANA-均质型</td>
-                  <td>{{ANAHomogeneous}} 阴性</td>
+                  <td>{{ANAHomogeneous}}</td>
                 </tr>
                 <tr>
                   <td>32</td>
                   <td>ANA-颗粒型</td>
-                  <td>{{ANAParticle}} 阴性</td>
+                  <td>{{ANAParticle}}</td>
                 </tr>
                 <tr>
                   <td>33</td>
                   <td>ANA-周边型</td>
-                  <td>{{ANAPeripheral}} 阴性</td>
+                  <td>{{ANAPeripheral}}</td>
                 </tr>
                 <tr>
                   <td>34</td>
                   <td>ANA-核仁型</td>
-                  <td>{{ANANucleolus}} 阴性</td>
+                  <td>{{ANANucleolus}}</td>
                 </tr>
                 <tr>
                   <td>35</td>
                   <td>ANA-核仁增强型</td>
-                  <td>{{ANANucleolusEnhancement}} 阴性</td>
+                  <td>{{ANANucleolusEnhancement}}</td>
                 </tr>
                 <tr>
                   <td>36</td>
                   <td>ANA-核点型</td>
-                  <td>{{ANANuclear}} 阴性</td>
+                  <td>{{ANANuclear}}</td>
                 </tr>
                 <tr>
                   <td>37</td>
                   <td>ANA-着丝点型</td>
-                  <td>{{ANACentromere}} 阴性</td>
+                  <td>{{ANACentromere}}</td>
                 </tr>
                 <tr>
                   <td>38</td>
                   <td>ANA-其他</td>
-                  <td>{{ANAOther}} 阴性</td>
+                  <td>{{ANAOther}}</td>
                 </tr>
                 <tr>
                   <td>39</td>
@@ -728,12 +747,12 @@
                 <tr>
                   <td>73</td>
                   <td>尿液分析-胆红素</td>
-                  <td>{{bilirubin}} 阴性</td>
+                  <td>{{bilirubin}}</td>
                 </tr>
                 <tr>
                   <td>74</td>
                   <td>尿液分析-蛋白质</td>
-                  <td>{{protein}} 阴性</td>
+                  <td>{{protein}}</td>
                 </tr>
             </div>
             </tbody>
@@ -752,7 +771,7 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
-              <div class="box-body no-padding">
+              <div class="box-body no-padding" ng-show="gsShow">
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
@@ -822,7 +841,7 @@
                 </tr>
                 <tr>
                   <td>13</td>
-                  <td>其他</td>
+                  <td>诊断(分期分级)</td>
                   <td>{{diagnosis}}</td>
                 </tr>
                 <tr>
@@ -833,6 +852,72 @@
               </tbody>
               </table>
               </div>
+
+              <div class="box-body no-padding" ng-show="ishakShow">
+              <table class="table table-striped">
+                <tbody>
+                <tr class="info">
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>门脉区炎症</td>
+                  <td>{{portalAreaInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>小叶内活动度</td>
+                  <td>{{lobularMobility}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>界面炎</td>
+                  <td>{{interfaceInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>融合性坏死</td>
+                  <td>{{confluentNecrosis}}</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>纤维化评分</td>
+                  <td>{{fibrosis}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+
+              <div class="box-body no-padding" ng-show="haiShow">
+              <table class="table table-striped">
+                <tbody>
+                <tr class="info">
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">调查项</th>
+                  <th>结果</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>门脉区炎症</td>
+                  <td>{{portalAreaInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>小叶内活动度</td>
+                  <td>{{lobularMobility}}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>界面炎</td>
+                  <td>{{interfaceInflammation}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+
+
             </div>
   </div>
 
@@ -846,6 +931,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="boneDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="boneFollow in boneFollowList" class="btn btn-primary btn-sm" ng-click="boneClick(boneFollow)">随访表{{boneFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -897,7 +987,7 @@
                 <tr>
                   <td>9</td>
                   <td>诊断</td>
-                  <td>{{diagnosis}}</td>
+                  <td>{{boneDiagnosis}}</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -1167,6 +1257,11 @@
             </div>
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="treatDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="treatFollow in treatFollowList" class="btn btn-primary btn-sm" ng-click="treatClick(treatFollow)">随访表{{treatFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
               <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody>
@@ -1281,6 +1376,37 @@
                   <td>{{gyzDetails | date:"yyyy-MM-dd"}}</td>
                   <td>肝移植结果:{{gyzResult}}</td>
                   <td>{{gyzReason}}</td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+  </div>
+
+  <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">中药方剂</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                </button>
+              </div>
+            </div>
+            <div class="box-body" style="display: none;">
+              <!-- 显示数据 -->
+              <div class="btn-group-vertical col-md-2" role="group">
+                <button ng-click="medicineDefault()" class="btn btn-primary btn-sm">医院录入表</button>
+                <br/>
+                <button ng-repeat="medicineFollow in medicineFollowList" class="btn btn-primary btn-sm" ng-click="medicineClick(medicineFollow)">随访表{{medicineFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
+              </div>
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr class="info">
+                  <th>序号</th>
+                  <th>类别</th>
+                  <th>开始服药时间</th>
+                  <th>描述</th>
+                  <th>疗程</th>
                 </tr>
                 <tr>
                   <td>16</td>

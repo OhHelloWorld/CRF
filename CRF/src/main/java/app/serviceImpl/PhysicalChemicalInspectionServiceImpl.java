@@ -3,8 +3,11 @@ package app.serviceImpl;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +22,9 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Autowired
     private PhysicalChemicalInspectionRepo pRepo;
+
+    @Value("${local_image_path}")
+    private String localImagePath;
 
     @Transactional
     public void savePhysicalChemicalInspection(PhysicalChemicalInspectionDTO pDto) {
@@ -45,7 +51,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Override
     public void savePhysicalImage(MultipartFile file) throws IOException {
-        File saveFile = new File("C:/image/", file.hashCode() + ".jpg");
+        File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
         try (FileOutputStream fos = new FileOutputStream(saveFile)) {
             fos.write(file.getBytes());
             fos.flush();
@@ -231,6 +237,28 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pDto.setFollowUpDate(pDo.getFollowUpDate());
         pDto.setImageUrl(pDo.getImageUrl());
         return pDto;
+    }
+
+    @Override
+    public List<PhysicalChemicalInspectionDTO> getFollowPhy(int patientId) {
+        if (!pRepo.getFollowphy(patientId).isEmpty()) {
+            List<PhysicalChemicalInspectionDTO> physicalChemicalInspectionDTOs = new ArrayList<>();
+            List<PhysicalChemicalInspectionDO> physicalChemicalInspectionDOs =
+                    pRepo.getFollowphy(patientId);
+            for (PhysicalChemicalInspectionDO physicalChemicalInspectionDO : physicalChemicalInspectionDOs) {
+                physicalChemicalInspectionDTOs
+                        .add(convertToPhysicalDTO(physicalChemicalInspectionDO));
+            }
+            return physicalChemicalInspectionDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public PhysicalChemicalInspectionDTO getDefaultPhy(int patientId) {
+        return pRepo.getDefaultPhy(patientId) != null
+                ? convertToPhysicalDTO(pRepo.getDefaultPhy(patientId)) : null;
     }
 
 }

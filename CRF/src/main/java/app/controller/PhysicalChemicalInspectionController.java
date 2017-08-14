@@ -1,6 +1,7 @@
 package app.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,10 +61,27 @@ public class PhysicalChemicalInspectionController {
         return physicalChemicalInspectionService.getCompleteByPatientId(patientId);
     }
 
+    /**
+     * 上传图片
+     * 
+     * @param file
+     * @return
+     * @throws IOException
+     */
     @PostMapping(path = "/upload")
     public String savePhysicalImage(@RequestParam("file") MultipartFile file) throws IOException {
         physicalChemicalInspectionService.savePhysicalImage(file);
         return "" + file.hashCode();
+    }
+
+    @GetMapping(path = "/follow/{patientId}")
+    public List<PhysicalChemicalInspectionDTO> getFollowPhy(@PathVariable int patientId) {
+        return physicalChemicalInspectionService.getFollowPhy(patientId);
+    }
+
+    @GetMapping(path = "/default/{patientId}")
+    public PhysicalChemicalInspectionDTO getDefaultPhy(@PathVariable int patientId) {
+        return physicalChemicalInspectionService.getDefaultPhy(patientId);
     }
 
 

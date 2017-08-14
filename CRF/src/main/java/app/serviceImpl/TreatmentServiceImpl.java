@@ -1,6 +1,7 @@
-package app.serviceImpl;
+﻿package app.serviceImpl;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -212,6 +213,27 @@ public class TreatmentServiceImpl implements TreatmentService {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public List<TreatmentProgramsDTO> getFollowTreat(int patientId) {
+        if (!treatmentRepo.getFollowTreat(patientId).isEmpty()) {
+            List<TreatmentProgramsDTO> treatmentProgramsDTOs = new ArrayList<>();
+            List<TreatmentProgramsDO> treatmentProgramsDOs =
+                    treatmentRepo.getFollowTreat(patientId);
+            for (TreatmentProgramsDO treatmentProgramsDO : treatmentProgramsDOs) {
+                treatmentProgramsDTOs.add(convertToDto(treatmentProgramsDO));
+            }
+            return treatmentProgramsDTOs;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public TreatmentProgramsDTO getDefaultTreat(int patientId) {
+        return treatmentRepo.getDefaultTreat(patientId) != null
+                ? convertToDto(treatmentRepo.getDefaultTreat(patientId)) : null;
     }
 
     @Override

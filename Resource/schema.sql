@@ -104,6 +104,7 @@ create table liver_pathology(
     diagnosis int,#诊断(分期分级)
     remarks text,#备注
     complete boolean default false,#是否完成
+    choose boolean,
     primary key(id)
 );
 #骨密度
@@ -639,6 +640,34 @@ create table cases(
 	hospital_id int not null,
 	primary key(id)
 )
+
+#ishak评分
+create table ishak(
+    id int not null auto_increment,
+    patient_id int,
+    add_date date,
+    portal_area_inflammation int,#门脉区炎症
+    lobular_mobility int,#小叶内活动度
+    interface_inflammation int,#界面炎
+    confluent_necrosis int,#融合性坏死
+    fibrosis int,#纤维化评分
+    choose boolean,
+    complete boolean,
+    primary key(id)
+);
+
+#HAI评分
+create table hai(
+    id int not null auto_increment,
+    add_date date,
+    patient_id int,
+    portal_area_inflammation int,#门脉区炎症
+    lobular_mobility int,#小叶内活动度
+    interface_inflammation int,#界面炎
+    choose boolean,
+    complete boolean,
+    primary key(id)
+);
 
 
 

@@ -18,16 +18,16 @@ public class BoneDensityDO {
     private int id;
     private int patientId;
     private Date measuringTime;// 检测时间
-    private float lumbarSpine;// 腰椎
+    private Float lumbarSpine;// 腰椎
     @Column(name = "lumbar_spine_t")
     private int lumbarSpineT;// 腰椎T值
-    private float femoralNeck;// 股骨颈
+    private Float femoralNeck;// 股骨颈
     @Column(name = "femoral_neck_t")
     private int femoralNeckT;// 股骨颈T值
-    private float bigTrochanter;// 大粗隆
+    private Float bigTrochanter;// 大粗隆
     @Column(name = "big_trochanter_t")
     private int bigTrochanterT;// 大粗隆T值
-    private float fullHip;// 全髋
+    private Float fullHip;// 全髋
     @Column(name = "full_hip_t")
     private int fullHipT;// 全髋T值
     private int diagnosis;// 诊断
@@ -93,35 +93,35 @@ public class BoneDensityDO {
         this.measuringTime = measuringTime;
     }
 
-    public float getLumbarSpine() {
+    public Float getLumbarSpine() {
         return lumbarSpine;
     }
 
-    public void setLumbarSpine(float lumbarSpine) {
+    public void setLumbarSpine(Float lumbarSpine) {
         this.lumbarSpine = lumbarSpine;
     }
 
-    public float getFemoralNeck() {
+    public Float getFemoralNeck() {
         return femoralNeck;
     }
 
-    public void setFemoralNeck(float femoralNeck) {
+    public void setFemoralNeck(Float femoralNeck) {
         this.femoralNeck = femoralNeck;
     }
 
-    public float getBigTrochanter() {
+    public Float getBigTrochanter() {
         return bigTrochanter;
     }
 
-    public void setBigTrochanter(float bigTrochanter) {
+    public void setBigTrochanter(Float bigTrochanter) {
         this.bigTrochanter = bigTrochanter;
     }
 
-    public float getFullHip() {
+    public Float getFullHip() {
         return fullHip;
     }
 
-    public void setFullHip(float fullHip) {
+    public void setFullHip(Float fullHip) {
         this.fullHip = fullHip;
     }
 

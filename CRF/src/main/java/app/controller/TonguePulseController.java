@@ -1,5 +1,7 @@
 package app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,5 +54,15 @@ public class TonguePulseController {
     @GetMapping(path = "/complete/{patientId}")
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return tonguePulseService.getCompleteByPatientId(patientId);
+    }
+
+    @GetMapping(path = "/follow/{patientId}")
+    public List<TonguePulseDTO> getFollowTongue(@PathVariable int patientId) {
+        return tonguePulseService.getFollowTongue(patientId);
+    }
+
+    @GetMapping(path = "/default/{patientId}")
+    public TonguePulseDTO getDefaultTongue(@PathVariable int patientId) {
+        return tonguePulseService.getDefaultTongue(patientId);
     }
 }

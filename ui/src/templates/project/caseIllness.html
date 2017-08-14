@@ -3,17 +3,17 @@
     <div class="panel panel-default">
       <div class="panel-heading">项目的相关病例</div>
       <div class="panel-body">
-        <table class="table table-hover table-bordered">
+        <table class="table table-striped table-bordered table-hover">
           <thead>
             <tr>
-              <td>序号</td>
-              <td>病例名</td>
-              <td>病例性别</td>
-              <td>病例录入时间</td>
+              <th>序号</th>
+              <th>病例名</th>
+              <th>病例性别</th>
+              <th>病例录入时间</th>
             </tr>
           </thead>
-          <tbody ng-repeat="x in Illnesses">
-            <tr>
+          <tbody>
+            <tr ng-repeat="x in Illnesses" style="cursor: pointer;" ng-click="clickIll(x)">
               <td ng-if="$odd" style="background-color:#4ba8b3">{{$index+1}}</td>
               <td ng-if="$even" style="background-color:#f1f1f1">{{$index+1}}</td>
               <td ng-if="$odd" style="background-color:#4ba8b3">{{x.name}}</td>
