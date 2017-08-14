@@ -516,22 +516,4 @@ public class ConvertUtil {
         return messageDTO;
     }
 
-    public CaseDTO convertToCaseDTO(CaseDO caseDO) {
-        CaseDTO caseDTO = new CaseDTO();
-        caseDTO.setCaseCategory(caseDO.getCaseCategory());
-        caseDTO.setCaseName(caseDO.getCaseName());
-        caseDTO.setCreateTime(caseDO.getCreateTime());
-        caseDTO.setId(caseDO.getId());
-        return caseDTO;
-    }
-
-    public CaseDO convertToCaseDO(CaseDTO caseDTO) {
-        CaseDO caseDO = new CaseDO();
-        caseDO.setCaseCategory(caseDTO.getCaseCategory());
-        caseDO.setCaseName(caseDTO.getCaseName());
-        caseDO.setCreateTime(new Date());
-        return caseDO;
-    }
-
-
 }

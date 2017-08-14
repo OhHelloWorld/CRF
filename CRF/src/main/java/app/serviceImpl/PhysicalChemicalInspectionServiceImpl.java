@@ -51,6 +51,9 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Override
     public void savePhysicalImage(MultipartFile file) throws IOException {
+        if (!new File(localImagePath).exists()) {
+            new File(localImagePath).mkdir();
+        }
         File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
         try (FileOutputStream fos = new FileOutputStream(saveFile)) {
             fos.write(file.getBytes());

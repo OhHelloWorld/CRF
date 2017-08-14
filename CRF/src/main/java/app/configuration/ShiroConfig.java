@@ -9,7 +9,6 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -37,7 +36,7 @@ public class ShiroConfig {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setCacheManager(cacheManager);
         sessionManager.setDeleteInvalidSessions(true);
-        //sessionManager.setGlobalSessionTimeout(36000000);
+        // sessionManager.setGlobalSessionTimeout(36000000);
         sessionManager.setGlobalSessionTimeout(864000000);
         sessionManager.setSessionValidationSchedulerEnabled(true);
         return sessionManager;
@@ -45,7 +44,7 @@ public class ShiroConfig {
 
     @Bean
     public DefaultWebSecurityManager securityManager(EhCacheManager cacheManager,
-                                                     DefaultWebSessionManager sessionManager, UserRealm userRealm) {
+            DefaultWebSessionManager sessionManager, UserRealm userRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(userRealm);
         securityManager.setCacheManager(cacheManager);
@@ -55,7 +54,7 @@ public class ShiroConfig {
 
 
     @Bean
-    public UserRealm userRealm(){
+    public UserRealm userRealm() {
         UserRealm userRealm = new UserRealm();
         return userRealm;
     }
@@ -98,11 +97,6 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilterChainDefinitionMap(chains);
         return shiroFilterFactoryBean;
     }
-
-
-
-
-
 
 
 

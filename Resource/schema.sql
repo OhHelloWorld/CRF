@@ -79,6 +79,7 @@ create table physical_chemical_inspection(
     complete boolean default false,
     follow_up boolean,
     follow_up_date datetime,
+    image_url varchar(50);
     primary key(id)
 );
 
@@ -431,7 +432,7 @@ create table project(
     project_name varchar(50) not null,
     organizer varchar(30) not null,
     create_time datetime not null,
-    Introduction text not null,
+    introduction text not null,
     is_collect boolean default true,
     primary key(id)
 );
@@ -470,157 +471,6 @@ create table user_project_role(
     primary key(id)
 );
 
-#模块化生成的信息记录表
-create table information(
-    id int not null auto_increment,
-    information_name varchar(50) not null,
-    project_id int not null,
-    hospital_id int not null,
-    primary key(id)
-);
-
-#信息记录表_输入题关联表
-create table information_input(
-    id int not null auto_increment,
-    information_id int not null,
-    input_modular_id int not null,
-    primary key(id)
-);
-
-#信息记录表_文本输入题关联表
-create table information_bigInput(
-    id int not null auto_increment,
-    information_id int not null,
-    bigInput_modular_id int not null,
-    primary key(id)
-);
-
-#信息记录表_单选题关联表
-create table information_radio(
-    id int not null auto_increment,
-    information_id int not null,
-    radio_modular_id int not null,
-    primary key(id)
-);
-
-#信息记录表_多选题关联表
-create table information_multiSelect(
-    id int not null auto_increment,
-    information_id int not null,
-    multiSelect_modular_id int not null,
-    primary key(id)
-);
-
-#信息记录表_日期题关联表
-create table information_date(
-    id int not null auto_increment,
-    information_id int not null,
-    date_modular_id int not null,
-    primary key(id)
-);
-
-
-#输入题模块表
-create table input_modular(
-    id int not null auto_increment,
-    description varchar(100) not null,
-    input_length int,
-    input_limit int not null,
-    unit varchar(50),
-    primary key(id)
-);
-
-#文本输入题模块表
-create table bigInput_modular(
-    id int not null auto_increment,
-    description varchar(100) not null,
-    bigInput_length int,
-    bigInput_limit int not null,
-    primary key(id)
-);
-
-#单选题模块表
-create table radio_modular(
-    id int not null auto_increment,
-    description varchar(100) not null,
-    primary key(id)
-);
-
-#多选题模块表
-create table multiSelect_modular(
-    id int not null auto_increment,
-    description varchar(100) not null,
-    primary key(id)
-);
-
-#日期题模块表
-create table date_modular(
-    id int not null auto_increment,
-    description varchar(100) not null,
-    primary key(id)
-);
-
-#模块化生成的输入题的用户输入存储表
-create table patient_input_modular_entry(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    input_modular_id int not null,
-    input_data varchar(200) not null,
-    primary key(id)
-);
-
-#模块化生成的文本输入题的用户文本输入存储表
-create table patient_bigInput_modular_entry(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    input_modular_id int not null,
-    input_data varchar(255) not null,
-    primary key(id)
-);
-
-#模块化生成的单选题的用户选择存储表
-create table patient_radio_modular_entry(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    radio_modular_id int not null,
-    description varchar(100) not null,
-    status boolean,
-    primary key(id)
-);
-
-#模块化生成的多选题的用户选择存储表
-create table patient_multiSelect_modular_entry(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    radio_modular_id int not null,
-    description varchar(100) not null,
-    status boolean,
-    primary key(id)
-);
-
-#模块化生成的日期题的用户输入存储表
-create table patient_date_modular_entry(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    date_modular_id int not null,
-    date_data varchar(255) not null,
-    primary key(id)
-);
-
-
-#患者_信息记录表 关联表
-create table information_patient(
-    id int not null auto_increment,
-    patient_id int not null,
-    information_id int not null,
-    primary key(id)
-);
-
 #信息表
 create table message (
 	id int not null auto_increment,
@@ -629,17 +479,6 @@ create table message (
 	readed boolean default false,
 	primary key(id)
 );
-
-#病例
-create table cases(
-	id int not null auto_increment,
-	case_name varchar(100) not null,
-	case_category varchar(100) not null,
-	create_time datetime not null,
-	project_id int not null,
-	hospital_id int not null,
-	primary key(id)
-)
 
 #ishak评分
 create table ishak(
