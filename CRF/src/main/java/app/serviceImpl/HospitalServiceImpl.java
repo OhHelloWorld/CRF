@@ -7,6 +7,7 @@ import app.entities.HospitalDO;
 import app.repo.HospitalRepo;
 import app.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,9 @@ public class HospitalServiceImpl implements HospitalService {
     @Autowired
     private HospitalRepo hospitalRepo;
 
+    @Value("${local_image_path}")
+    private String localImagePath;
+
     @Override
     public PageDTO<HospitalDTO> getAllHospital(Pageable pageable) {
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
@@ -41,7 +45,7 @@ public class HospitalServiceImpl implements HospitalService {
 
     @Override
     public void saveImag(MultipartFile file) throws IOException {
-        File saveFile = new File("C:/image/", file.hashCode() + ".jpg");
+        File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
         try (FileOutputStream fos = new FileOutputStream(saveFile)) {
             fos.write(file.getBytes());
             fos.flush();

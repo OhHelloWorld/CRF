@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +22,9 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Autowired
     private PhysicalChemicalInspectionRepo pRepo;
+
+    @Value("${local_image_path}")
+    private String localImagePath;
 
     @Transactional
     public void savePhysicalChemicalInspection(PhysicalChemicalInspectionDTO pDto) {
@@ -47,7 +51,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Override
     public void savePhysicalImage(MultipartFile file) throws IOException {
-        File saveFile = new File("C:/image/", file.hashCode() + ".jpg");
+        File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
         try (FileOutputStream fos = new FileOutputStream(saveFile)) {
             fos.write(file.getBytes());
             fos.flush();

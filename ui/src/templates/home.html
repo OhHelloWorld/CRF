@@ -22,7 +22,7 @@
                               <p class="h3">{{information}}</p>
                          </div>
                          <div class="modal-footer">
-                              <button id="modalButton1" type="button" class="btn btn-primary" data-dismiss="modal">{{buttonContent}}</button>
+                              <button id="modalButton1" type="button" class="btn btn-primary" data-dismiss="modal" ng-show="buttonShow">{{buttonContent}}</button>
                          </div>
                     </div>
                </div>
@@ -36,7 +36,7 @@
             <div class="box-header">
               <form class="form-inline">
                 <span class="h3">患者总览</span>&nbsp<a ng-click="createExcel()"><span class="h4" style="cursor: pointer;">导出所有患者病例资料</span></a>
-                <span class="col-md-offset-5">
+                <span class="col-md-offset-4">
                 <input type="text" name="q" class="form-control form-inline" placeholder="请输入姓名或编号" ng-model="queryStr">
                   <button type="button" class="btn btn-flat" ng-click="query()"><i class="glyphicon glyphicon-search" style="color: #3C8DBC"></i>
                   </button>

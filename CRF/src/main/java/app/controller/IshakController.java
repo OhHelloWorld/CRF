@@ -18,11 +18,22 @@ public class IshakController {
     @Autowired
     private IshakService ishakService;
 
+    /**
+     * 保存ishak评分表内容
+     * 
+     * @param ishakDTO
+     */
     @PostMapping(path = "")
     public void saveIshak(@RequestBody IshakDTO ishakDTO) {
         ishakService.saveIshak(ishakDTO);
     }
 
+    /**
+     * 根据patientId得到ishak评分表内容
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/{patientId}")
     public IshakDTO getIshakByPatientId(@PathVariable int patientId) {
         return ishakService.getIshakByPatientId(patientId);

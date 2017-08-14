@@ -60,6 +60,11 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   $scope.Illnesses = [];
   searchIllness();
 
+  $scope.clickIll = function(x) {
+    sessionStorage.setItem('patientId', x.id);
+    window.open('/main.html#!/patientInfo');
+  };
+
   function searchIllness() {
     if (!$stateParams.project_searchInput) {
       $scope.url = '/api/case/' + localStorageService.get('project').id;

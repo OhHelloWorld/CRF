@@ -57,11 +57,23 @@ public class MedicinePrescriptionController {
         return medicinePrescriptionService.getCompleteByPatientId(patientId);
     }
 
+    /**
+     * 得到所有中药方剂随访表内容
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/follow/{patientId}")
     public List<ChineseMedicinePrescriptionDTO> getFollowMedicine(@PathVariable int patientId) {
         return medicinePrescriptionService.getFollowMedicine(patientId);
     }
 
+    /**
+     * 得到最新医院录入中药方剂内容
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/default/{patientId}")
     public ChineseMedicinePrescriptionDTO getDefaultMedicine(@PathVariable int patientId) {
         return medicinePrescriptionService.getDefaultMedicine(patientId);

@@ -56,11 +56,23 @@ public class FourDiagnosticInformationController {
         return fourDiagnosticInformationService.getCompleteByPatientId(patientId);
     }
 
+    /**
+     * 得到所有四诊信息的随访表信息
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/follow/{patientId}")
     public List<FourDiagnosticInformationDTO> getFollowFourDia(@PathVariable int patientId) {
         return fourDiagnosticInformationService.getFollowFourDia(patientId);
     }
 
+    /**
+     * 得到最新的医院录入表信息
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/default/{patientId}")
     public FourDiagnosticInformationDTO getDefaultFourDia(@PathVariable int patientId) {
         return fourDiagnosticInformationService.getDefaultFourDia(patientId);

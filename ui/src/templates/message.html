@@ -18,7 +18,7 @@
         <div class="col-xs-12">
           <div class="nav-tabs-custom">
             <div class="nav nav-tabs" style="background-color:#222d32;color:#b8c7ce;">
-              <h1 style="margin-left:12px;">系统消息</h1>
+              <h2 style="margin-left:1%;">系统消息</h2>
             </div>
             <div class="tab-content">
               <div class="project-content">
@@ -30,8 +30,8 @@
                         <div class="panel-body">
                           <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
-                              <tbody ng-repeat="x in messages">
-                                <tr ng-click="click_message(x)">
+                              <tbody>
+                                <tr ng-click="click_message(x)" ng-repeat="x in messages" style="cursor: pointer;">
                                   <td ng-if="$odd" style="background-color:#f1f1f1" ui-sref="readMessage"><i class="fa fa-envelope-o"></i></td>
                                   <td ng-if="$even" style="background-color:#4ba8b3" ui-sref="readMessage"><i class="fa fa-envelope-o"></i></td>
                                   <td ng-if="$odd" style="background-color:#f1f1f1" ui-sref="readMessage" class="mailbox-subject">邀请消息</td>

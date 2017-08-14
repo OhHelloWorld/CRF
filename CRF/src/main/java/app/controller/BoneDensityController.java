@@ -58,11 +58,23 @@ public class BoneDensityController {
         return boneDensityService.getCompleteByPatientId(patientId);
     }
 
+    /**
+     * 得到所有的随访骨密度表
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/follow/{patientId}")
     public List<BoneDensityDTO> getFollowBone(@PathVariable int patientId) {
         return boneDensityService.getFollowBone(patientId);
     }
 
+    /**
+     * 得到最新的医院录入表信息
+     * 
+     * @param patientId
+     * @return
+     */
     @GetMapping(path = "/default/{patientId}")
     public BoneDensityDTO getDefaultBone(@PathVariable int patientId) {
         return boneDensityService.getDefaultBone(patientId);

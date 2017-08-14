@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import app.entities.BoneDensityDO;
@@ -84,6 +85,9 @@ public class CreateAllExcel {
 
     @Autowired
     private FinalDiaSpeCirRepo finalDiaSpeCirRepo;
+
+    @Value("${excel_path}")
+    private String excelPath;
 
     public void createAllExcel() throws Exception {
         List<PatientDO> patientDOs = (List<PatientDO>) patientRepo.findAll();
@@ -1802,10 +1806,10 @@ public class CreateAllExcel {
 
         }
 
-        if (!new File("C:/hospitalExcel/").exists()) {
-            new File("C:/hospitalExcel/").mkdir();
+        if (!new File(excelPath).exists()) {
+            new File(excelPath).mkdir();
         }
-        FileOutputStream fileOut = new FileOutputStream("C:/hospitalExcel/patientInformation.xlsx");
+        FileOutputStream fileOut = new FileOutputStream(excelPath + "patientInformation.xlsx");
         wb.write(fileOut);
         fileOut.close();
     }

@@ -1,5 +1,6 @@
 package app.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -10,11 +11,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
+    @Value("${online_image_path}")
+    private String onlineImagePath;
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/hospital/image/**")
-                .addResourceLocations("file:C:/image/");
-        registry.addResourceHandler("/api/image/**").addResourceLocations("file:C:/image/");
+        registry.addResourceHandler("/hospital/image/**").addResourceLocations(onlineImagePath);
+        registry.addResourceHandler("/api/image/**").addResourceLocations(onlineImagePath);
 
     }
 

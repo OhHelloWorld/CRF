@@ -29,7 +29,7 @@ public class LoginController {
     private LoginService loginService;
 
     @GetMapping(path = "/login")
-    public UserDTO login(@RequestHeader("Authorization") String authValue){
+    public UserDTO login(@RequestHeader("Authorization") String authValue) {
         String creditial = authValue.split(" ")[1];
         String userNamePassword = new String(Base64.decodeBase64(creditial));
         String[] userNamePasswordArray = userNamePassword.split(":");
@@ -39,9 +39,9 @@ public class LoginController {
         Session session = subject.getSession();
         session.setAttribute("user", loginService.getUserDOByAccount(account));
         try {
-           UsernamePasswordToken token = new UsernamePasswordToken(account, password);
-           subject.login(token);
-           return loginService.getUserDTOByAccount(account);
+            UsernamePasswordToken token = new UsernamePasswordToken(account, password);
+            subject.login(token);
+            return loginService.getUserDTOByAccount(account);
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             throw new UnknownAccountException("账号尚未注册！");
