@@ -768,6 +768,11 @@ angular.module('patientOverview', ['main'])
             if (liver.portalAreaInflammation != 0) {
               $scope.portalAreaInflammation = liver.portalAreaInflammation - 1;
             } else {
+              $scope.portalAreaInflammation = '';
+            }
+            if (liver.lymphocytePlasmaCellInfiltration != 0) {
+              $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
+            } else {
               $scope.lymphocytePlasmaCellInfiltration = '';
             }
             if (liver.fibrousTissueHyperplasia != 0) {
