@@ -14,6 +14,8 @@ public interface UserService {
 
     UserDTO addUser(UserDTO userDTO);
 
+    void changePassword(UserDTO userDTO);
+
     List<UserDTO> getUserBySearchMsg(String msg);//根据搜索的用户名，真实姓名，账号找到用户
 
     PageDTO<UserDTO> getAllNormalUser(Pageable pageable);//得到所有普通用户

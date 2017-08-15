@@ -18,7 +18,7 @@ angular.module('treatment', ['chart.js', 'main'])
 
     function testfunction(testnumber) {
       $scope.labels.length = 0;
-      for(var a = 0; a <= testnumber; a++) {
+      for (var a = 0; a <= testnumber; a++) {
         $scope.labels.push(a);
       }
     }
@@ -52,71 +52,71 @@ angular.module('treatment', ['chart.js', 'main'])
     $scope.chartChange = function() {
       testfunction(1);
       switch ($scope.chartSelect) {
-      case '1':
-        {
-          getQdsDose();
-          break;
-        }
-      case '2':
-        {
-          getQdslDose();
-          break;
-        }
-      case '3':
-        {
-          getJjqDose();
-          break;
-        }
-      case '4':
-        {
-          getBdndDose();
-          break;
-        }
-      case '5':
-        {
-          getLcplDose();
-          break;
-        }
-      case '6':
-        {
-          getMtxDose();
-          break;
-        }
-      case '7':
-        {
-          getCysaDose();
-          break;
-        }
-      case '8':
-        {
-          getCtxDose();
-          break;
-        }
-      case '9':
-        {
-          getMtmkDose();
-          break;
-        }
-      case '10':
-        {
-          getQsxsDose();
-          break;
-        }
-      case '11':
-        {
-          getXqydDose();
-          break;
-        }
-      case '12':
-        {
-          getFnbtDose();
-          break;
-        }
-      case '13':
-        {
-          getBzbtDose();
-          break;
-        }
+        case '1':
+          {
+            getQdsDose();
+            break;
+          }
+        case '2':
+          {
+            getQdslDose();
+            break;
+          }
+        case '3':
+          {
+            getJjqDose();
+            break;
+          }
+        case '4':
+          {
+            getBdndDose();
+            break;
+          }
+        case '5':
+          {
+            getLcplDose();
+            break;
+          }
+        case '6':
+          {
+            getMtxDose();
+            break;
+          }
+        case '7':
+          {
+            getCysaDose();
+            break;
+          }
+        case '8':
+          {
+            getCtxDose();
+            break;
+          }
+        case '9':
+          {
+            getMtmkDose();
+            break;
+          }
+        case '10':
+          {
+            getQsxsDose();
+            break;
+          }
+        case '11':
+          {
+            getXqydDose();
+            break;
+          }
+        case '12':
+          {
+            getFnbtDose();
+            break;
+          }
+        case '13':
+          {
+            getBzbtDose();
+            break;
+          }
       }
     };
 
@@ -767,9 +767,9 @@ angular.module('treatment', ['chart.js', 'main'])
         //   $scope.data.push(s.split("$")[1]);
         // }
 
-        for(var i = 0; i < dat.length; i++) {
-          $scope.labels.push(dat[i].split("$")[0]);
-          $scope.data.push(dat[i].split("$")[1]);
+        for (var i = 0; i < dat.length; i++) {
+          $scope.labels.push(dat[i].split('$')[0]);
+          $scope.data.push(dat[i].split('$')[1]);
         }
 
         // $scope.data = response.data;

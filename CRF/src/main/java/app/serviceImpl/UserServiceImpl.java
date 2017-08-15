@@ -47,20 +47,28 @@ public class UserServiceImpl implements UserService {
         UserDO userDO = convertUtil.convertToUserDO(userDTO);
         passwordHelper.encrypUserPassword(userDO);
         userDO.setHospital(hospitalRepo.findOne(userDTO.getHospital().getId()));
-        if(userRepo.findByAccount(userDTO.getAccount()) == null) {
+        if (userRepo.findByAccount(userDTO.getAccount()) == null) {
             userDO.setSysRoleDO(sysRoleRepo.findOne(1L));
             userRepo.save(userDO);
             return convertUtil.convertToUserDTO(userDO);
-        }else {
+        } else {
             throw new RepeatAccountException("该账号已被注册");
         }
 
     }
 
     @Override
+    public void changePassword(UserDTO userDTO) {
+        UserDO userDO = userRepo.findOne(userDTO.getId());
+        userDO.setPassword(userDTO.getPassword());
+        passwordHelper.encrypUserPassword(userDO);
+        userRepo.save(userDO);
+    }
+
+    @Override
     public List<UserDTO> getUserBySearchMsg(String msg) {
         List<UserDTO> userDTOList = new ArrayList<>();
-        for(UserDO u : userRepo.findUserBySearchMsg(msg)) {
+        for (UserDO u : userRepo.findUserBySearchMsg(msg)) {
             userDTOList.add(convertUtil.convertToUserDTO(u));
         }
         return userDTOList;
@@ -78,12 +86,12 @@ public class UserServiceImpl implements UserService {
     public PageDTO<UserDTO> getPageDTO(Page<UserDO> page) {
         PageDTO<UserDTO> pageDTO = new PageDTO<>();
         List<UserDTO> caseDTOList = new ArrayList<>();
-        for(UserDO c : page.getContent()) {
+        for (UserDO c : page.getContent()) {
             caseDTOList.add(convertUtil.convertToUserDTO(c));
         }
         pageDTO.setTotalNumber(page.getTotalPages());
         pageDTO.setContent(caseDTOList);
-        return  pageDTO;
+        return pageDTO;
     }
 
     public PageDTO<UserDTO> getUserByRealName(String realName, Long projectId, Pageable pageable) {
