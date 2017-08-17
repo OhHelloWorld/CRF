@@ -479,8 +479,11 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = physicalChemicalInspection.whiteBloodCell;
       $scope.bilirubin = physicalChemicalInspection.bilirubin;
       $scope.ca199 = physicalChemicalInspection.ca199;
-      $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
-
+      if (physicalChemicalInspection.imageUrl) {
+        $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
+      }else{
+        $scope.image = undefined;
+      }
 
       $scope.totalBileAcidDate = formatDate(physicalChemicalInspection.totalBileAcidDate);
       $scope.liverFunctionAlbuminDate = formatDate(physicalChemicalInspection.liverFunctionAlbuminDate);

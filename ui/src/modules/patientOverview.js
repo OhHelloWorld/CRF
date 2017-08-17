@@ -2303,7 +2303,11 @@ angular.module('patientOverview', ['main'])
       $scope.whiteBloodCell = phyFollow.whiteBloodCell;
       $scope.bilirubin = phyFollow.bilirubin;
       $scope.ca199 = phyFollow.ca199;
-      $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
+      if (phyFollow.imageUrl) {
+        $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
+      }else{
+        $scope.image = undefined;
+      }
     };
 
     $scope.boneClick = function(boneFollow) {
