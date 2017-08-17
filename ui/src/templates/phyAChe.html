@@ -73,11 +73,19 @@
 
                       <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label">总胆汁酸：</label>
-
-                        <div class="col-sm-10">
+                        <div class="col-sm-4">
                           <div class="input-group">
                             <input type="text" class="form-control" ng-model="totalBileAcid">
                             <span class="input-group-addon">(0-15)μmol/l</span>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker1" ng-model="totalBileAcidDate">
                           </div>
                         </div>
                       </div>
@@ -85,10 +93,19 @@
                       <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label">铜蓝蛋白：</label>
 
-                        <div class="col-sm-10">
+                        <div class="col-sm-4">
                           <div class="input-group">
                             <input type="text" class="form-control" ng-model="copperProtein ">
                             <span class="input-group-addon">(22-58)mg/dl</span>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker2" ng-model="copperProteinDate">
                           </div>
                         </div>
                       </div>
@@ -109,103 +126,193 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">白蛋白</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionAlbumin">
                       <span class="input-group-addon">(35-52)g/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker3" ng-model="liverFunctionAlbuminDate">
+                          </div>
+                        </div>
                 </div>
 
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">球蛋白</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionGlobulin">
                       <span class="input-group-addon">20-35g/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker4" ng-model="liverFunctionGlobulinDate">
+                          </div>
+                        </div>
                 </div>
 
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">ALT</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionALT">
                       <span class="input-group-addon"><35IU/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker5" ng-model="liverFunctionALTDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">AST</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionAST">
                       <span class="input-group-addon"><35IU/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker6" ng-model="liverFunctionASTDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">GGT</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionGGT">
                       <span class="input-group-addon">(9-64)IU/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker7" ng-model="liverFunctionGGTDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">ALP</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionALP">
                       <span class="input-group-addon">(30-120)IU/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker8" ng-model="liverFunctionALPDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">总胆固醇</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionTotalCholesterol">
                       <span class="input-group-addon">(2.8-5.69)mmol/l</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker9" ng-model="liverFunctionTotalCholesterolDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">总胆红素</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionTotalBilirubin">
                       <span class="input-group-addon">(5-21)μmol/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker10" ng-model="liverFunctionTotalBilirubinDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">直接胆红素</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionDirectBilirubin">
                       <span class="input-group-addon"><3.4μmol/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker11" ng-model="liverFunctionDirectBilirubinDate">
+                          </div>
+                        </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">γ-球蛋白</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="liverFunctionRglobulin">
                       <span class="input-group-addon">(11.1-18.8)%</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker12" ng-model="liverFunctionRglobulinDate">
+                          </div>
+                        </div>
                 </div>
               </div>
               <!-- /.box-body -->
@@ -225,23 +332,41 @@
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">BUN</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="renalFunctionBUN">
                       <span class="input-group-addon">(2.8-7.2)mmol/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker13" ng-model="renalFunctionBUNDate">
+                          </div>
+                        </div>
                 </div>
 
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">Cr</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <div class="input-group">
                       <input type="text" class="form-control" ng-model="renalFunctionCr">
                       <span class="input-group-addon">(59-104)μmol/L</span>
                     </div>
                   </div>
+                  <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker14" ng-model="renalFunctionCrDate">
+                          </div>
+                        </div>
                 </div>
 
               </div>
@@ -260,22 +385,40 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">PT</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="clottingPT">
                           <span class="input-group-addon">(11-15)秒</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker15" ng-model="clottingPTDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">INR</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="clottingINR">
                           <span class="input-group-addon">(0.8-1.5)</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker16" ng-model="clottingINRDate">
+                          </div>
                       </div>
                     </div>
 
@@ -294,77 +437,140 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">RBC</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineRBC">
                           <span class="input-group-addon">(4.09-5.74)X10<sup>12</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker17" ng-model="bloodRoutineRBCDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Hb</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineHb">
                           <span class="input-group-addon">(131-172)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker18" ng-model="bloodRoutineHbDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">WBC</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineWBC">
                           <span class="input-group-addon">(3.97-9.15)X10<sup>9</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker19" ng-model="bloodRoutineWBCDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">中性粒细胞</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineNeutrophils">
                           <span class="input-group-addon">(2.0-7.0)X10<sup>9</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker20" ng-model="bloodRoutineNeutrophilsDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">淋巴细胞</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineLymphocytes">
                           <span class="input-group-addon">(0.8-4.0)X10<sup>9</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker21" ng-model="bloodRoutineLymphocytesDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">嗜酸性粒细胞</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutineEosinophils">
                           <span class="input-group-addon">(0.02-0.5)X10<sup>9</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker22" ng-model="bloodRoutineEosinophilsDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">血小板</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bloodRoutinePlatelets">
                           <span class="input-group-addon">(85-303)X10<sup>9</sup>/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker23" ng-model="bloodRoutinePlateletsDate">
+                          </div>
                       </div>
                     </div>
 
@@ -383,77 +589,140 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">抗线粒体抗体(AMA)</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesAMA">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker24" ng-model="liverDiseaseAutoantibodiesAMADate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">AMA-M2</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesAMAM2">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker25" ng-model="liverDiseaseAutoantibodiesAMAM2Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">抗平滑肌抗体</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker26" ng-model="liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">肝肾微粒体抗体</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker27" ng-model="liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">肝细胞溶质抗原</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesHepatocyteSoluteAntigen">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker28" ng-model="liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">可溶性肝-胰抗原</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker29" ng-model="liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">其他</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverDiseaseAutoantibodiesOther">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker30" ng-model="liverDiseaseAutoantibodiesOtherDate">
+                          </div>
                       </div>
                     </div>
 
@@ -472,88 +741,160 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">均质型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaHomogeneous">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker31" ng-model="anaHomogeneousDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">颗粒型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaParticle">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker32" ng-model="anaParticleDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">周边型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaPeripheral">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker33" ng-model="anaPeripheralDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">核仁型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaNucleolus">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker34" ng-model="anaNucleolusDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">核仁增强型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaNucleolusEnhancement">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker35" ng-model="anaNucleolusEnhancementDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">核点型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaNuclear">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker36" ng-model="anaNuclearDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">着丝点型</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaCentromere">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker37" ng-model="anaCentromereDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">其他</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="anaOther">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker38" ng-model="anaOtherDate">
+                          </div>
                       </div>
                     </div>
 
@@ -572,99 +913,180 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">igG</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgG">
                           <span class="input-group-addon">(7.2-16.9)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker39" ng-model="humoralImmunityIgGDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">igA</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgA">
                           <span class="input-group-addon">(0.69-3.82)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker40" ng-model="humoralImmunityIgADate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">igM</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgM">
                           <span class="input-group-addon">(0.63-2.8)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker41" ng-model="humoralImmunityIgMDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">免疫复合物</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityImmuneComplexf">
                           <span class="input-group-addon"><0.056</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker42" ng-model="humoralImmunityImmuneComplexfDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">补体C3</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityComplementC3">
                           <span class="input-group-addon">(0.85-1.9)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker43" ng-model="humoralImmunityComplementC3Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">补体C4</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityComplementC4">
                           <span class="input-group-addon">(0.12-0.36)g/L</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker44" ng-model="humoralImmunityComplementC4Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">igE</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityIgE">
                           <span class="input-group-addon"><120 IU/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker45" ng-model="humoralImmunityIgEDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">κ-轻链</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityKlightChain">
                           <span class="input-group-addon">(598-1320)mg/dl</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker46" ng-model="humoralImmunityKlightChainDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">λ-轻链</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="humoralImmunityNlightChain">
                           <span class="input-group-addon">(280-665)mg/dl</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker47" ng-model="humoralImmunityNlightChainDate">
+                          </div>
                       </div>
                     </div>
 
@@ -683,66 +1105,120 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD<sub>3</sub></label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD3">
                           <span class="input-group-addon">(64-73) %</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker48" ng-model="cellularImmunityCD3Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD<sub>4</sub><sup>+</sup></label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD4">
                           <span class="input-group-addon">(30-45) %</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker49" ng-model="cellularImmunityCD4Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD<sub>8</sub><sup>+</sup></label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD8">
                           <span class="input-group-addon">(21-30) %</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker50" ng-model="cellularImmunityCD8Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD56+16(NK)</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD56">
                           <span class="input-group-addon">(10-20) %</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker51" ng-model="cellularImmunityCD56Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD2</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD2">
                           <span class="input-group-addon">(65-80) %</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker52" ng-model="cellularImmunityCD2Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CD4/CD8</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="cellularImmunityCD4CD8">
                           <span class="input-group-addon">(1.1-2.3)</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker53" ng-model="cellularImmunityCD4CD8Date">
+                          </div>
                       </div>
                     </div>
 
@@ -815,22 +1291,40 @@
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Fibroscan值：</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverHardnessFibroscan">
                           <span class="input-group-addon"></span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker54" ng-model="liverHardnessFibroscanDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Fibrotest值：</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="liverHardnessFibrotest">
                           <span class="input-group-addon"></span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker55" ng-model="liverHardnessFibrotestDate">
+                          </div>
                       </div>
                     </div>
 
@@ -865,44 +1359,80 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">AFP</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="aFP">
                           <span class="input-group-addon"><8.78 ng/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker56" ng-model="aFPDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">癌胚抗原CEA</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="carcinoembryonicAntigenCEA">
                           <span class="input-group-addon"><5 ng/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker57" ng-model="carcinoembryonicAntigenCEADate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CA199</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="ca199">
                           <span class="input-group-addon"><39.0 U/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker58" ng-model="ca199Date">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">CA125</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="ca125">
                           <span class="input-group-addon"><35.0 U/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker59" ng-model="ca125Date">
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -920,66 +1450,120 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBsAg</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbsag">
                           <span class="input-group-addon">(0-0.05) IU/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker60" ng-model="hbsagDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBsAb</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbsab">
                           <span class="input-group-addon">(0-10) mlU/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker61" ng-model="hbsabDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBeAg</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbeag">
                           <span class="input-group-addon">(0-1) S/CO</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker62" ng-model="hbeagDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBeAb</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbeab">
                           <span class="input-group-addon">>1 S/CO</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker63" ng-model="hbeabDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBcAb</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbcab">
                           <span class="input-group-addon">(0-1) S/CO</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker64" ng-model="hbcabDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HBV-RNA</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hbvRna">
                           <span class="input-group-addon"><500 copies/ml</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker65" ng-model="hbvRnaDate">
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -997,22 +1581,40 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">抗HCV抗体</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="antiHCVantibody">
                           <span class="input-group-addon"><1 S/CO</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker66" ng-model="antiHCVantibodyDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">HCV-RNA</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="hcvRna">
                           <span class="input-group-addon"></span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker67" ng-model="hcvRnaDate">
+                          </div>
                       </div>
                     </div>
 
@@ -1032,44 +1634,80 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">蛋白质</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="protein">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker68" ng-model="proteinDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">红细胞</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="redBloodCell">
                           <span class="input-group-addon">(0-5) p/ul</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker69" ng-model="redBloodCellDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">白细胞</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="whiteBloodCell">
                           <span class="input-group-addon">(0-9)p/ul</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker70" ng-model="whiteBloodCellDate">
+                          </div>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">胆红素</label>
 
-                      <div class="col-sm-10">
+                      <div class="col-sm-4">
                         <div class="input-group">
                           <input type="text" class="form-control" ng-model="bilirubin">
                           <span class="input-group-addon">阴性</span>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-2 control-label">检查时间</label>
+                          <div class="input-group date col-md-3">
+                            <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker71" ng-model="bilirubinDate">
+                          </div>
                       </div>
                     </div>
                   </div>

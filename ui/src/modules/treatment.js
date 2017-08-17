@@ -120,60 +120,11 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     };
 
-    $('#datepicker1').datepicker({
-      autoclose: true
-    });
-    $('#datepicker2').datepicker({
-      autoclose: true
-    });
-    $('#datepicker3').datepicker({
-      autoclose: true
-    });
-    $('#datepicker4').datepicker({
-      autoclose: true
-    });
-    $('#datepicker5').datepicker({
-      autoclose: true
-    });
-    $('#datepicker6').datepicker({
-      autoclose: true
-    });
-    $('#datepicker7').datepicker({
-      autoclose: true
-    });
-    $('#datepicker8').datepicker({
-      autoclose: true
-    });
-    $('#datepicker9').datepicker({
-      autoclose: true
-    });
-    $('#datepicker10').datepicker({
-      autoclose: true
-    });
-    $('#datepicker11').datepicker({
-      autoclose: true
-    });
-    $('#datepicker12').datepicker({
-      autoclose: true
-    });
-    $('#datepicker13').datepicker({
-      autoclose: true
-    });
-    $('#datepicker14').datepicker({
-      autoclose: true
-    });
-    $('#datepicker15').datepicker({
-      autoclose: true
-    });
-    $('#datepicker16').datepicker({
-      autoclose: true
-    });
-    $('#datepicker17').datepicker({
-      autoclose: true
-    });
-    $('#datepicker18').datepicker({
-      autoclose: true
-    });
+    for (var j = 1; j<19; j++) {
+      $('#datepicker' + j).datepicker({
+        autoclose: true
+      });
+    }
 
     $scope.die = function() {
       if ($scope.dieOption == 'die') {

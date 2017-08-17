@@ -6,14 +6,14 @@ import app.dto.BoneDensityDTO;
 
 public interface BoneDensityService {
 
-    public void saveBoneDensity(BoneDensityDTO boneDensityDTO);
+    void saveBoneDensity(BoneDensityDTO boneDensityDTO);
 
-    public BoneDensityDTO getBoneDensity(int patientId);
+    BoneDensityDTO getBoneDensity(int patientId);
 
-    public boolean getCompleteByPatientId(int patientId);
+    boolean getCompleteByPatientId(int patientId);
 
-    public List<BoneDensityDTO> getFollowBone(int patientId);
+    List<BoneDensityDTO> getFollowBone(int patientId);
 
-    public BoneDensityDTO getDefaultBone(int patientId);
+    BoneDensityDTO getDefaultBone(int patientId);
 
 }

@@ -24,6 +24,12 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
   $('#datepicker').datepicker({
     autoclose: true
   });
+  for (var i = 1; i < 72; i++) {
+    $('#datepicker' + i).datepicker({
+      autoclose: true
+    });
+  }
+
 
   $scope.showSaveModal = function() {
     saveImg($scope.image);
@@ -113,6 +119,77 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = undefined;
       $scope.bilirubin = undefined;
       $scope.ca199 = undefined;
+      $scope.totalBileAcidDate = undefined;
+      $scope.liverFunctionAlbuminDate = undefined;
+      $scope.liverFunctionGlobulinDate = undefined;
+      $scope.liverFunctionALTDate = undefined;
+      $scope.liverFunctionASTDate = undefined;
+      $scope.liverFunctionGGTDate = undefined;
+      $scope.liverFunctionALPDate = undefined;
+      $scope.liverFunctionTotalCholesterolDate = undefined;
+      $scope.liverFunctionTotalBilirubinDate = undefined;
+      $scope.liverFunctionDirectBilirubinDate = undefined;
+      $scope.liverFunctionRglobulinDate = undefined;
+      $scope.renalFunctionBUNDate = undefined;
+      $scope.renalFunctionCrDate = undefined;
+      $scope.clottingPTDate = undefined;
+      $scope.clottingINRDate = undefined;
+      $scope.bloodRoutineRBCDate = undefined;
+      $scope.bloodRoutineHbDate = undefined;
+      $scope.bloodRoutineWBCDate = undefined;
+      $scope.bloodRoutineNeutrophilsDate = undefined;
+      $scope.bloodRoutineLymphocytesDate = undefined;
+      $scope.bloodRoutineEosinophilsDate = undefined;
+      $scope.bloodRoutinePlateletsDate = undefined;
+      $scope.liverDiseaseAutoantibodiesAMADate = undefined;
+      $scope.liverDiseaseAutoantibodiesAMAM2Date = undefined;
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = undefined;
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = undefined;
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = undefined;
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = undefined;
+      $scope.liverDiseaseAutoantibodiesOtherDate = undefined;
+      $scope.aNAHomogeneousDate = undefined;
+      $scope.aNAParticleDate = undefined;
+      $scope.aNAPeripheralDate = undefined;
+      $scope.aNANucleolusDate = undefined;
+      $scope.aNANucleolusEnhancementDate = undefined;
+      $scope.aNANuclearDate = undefined;
+      $scope.aNACentromereDate = undefined;
+      $scope.aNAOtherDate = undefined;
+      $scope.humoralImmunityIgGDate = undefined;
+      $scope.humoralImmunityIgADate = undefined;
+      $scope.humoralImmunityIgMDate = undefined;
+      $scope.humoralImmunityImmuneComplexfDate = undefined;
+      $scope.humoralImmunityComplementC3Date = undefined;
+      $scope.humoralImmunityComplementC4Date = undefined;
+      $scope.humoralImmunityIgEDate = undefined;
+      $scope.humoralImmunityKlightChainDate = undefined;
+      $scope.humoralImmunityNlightChainDate = undefined;
+      $scope.cellularImmunityCD3Date = undefined;
+      $scope.cellularImmunityCD4Date = undefined;
+      $scope.cellularImmunityCD8Date = undefined;
+      $scope.cellularImmunityCD56Date = undefined;
+      $scope.cellularImmunityCD2Date = undefined;
+      $scope.cellularImmunityCD4CD8Date = undefined;
+      $scope.liverHardnessFibroscanDate = undefined;
+      $scope.liverHardnessFibrotestDate = undefined;
+      $scope.copperProteinDate = undefined;
+      $scope.aFPDate = undefined;
+      $scope.carcinoembryonicAntigenCEADate = undefined;
+      $scope.ca125Date = undefined;
+      $scope.hbsagDate = undefined;
+      $scope.hbsabDate = undefined;
+      $scope.hbeagDate = undefined;
+      $scope.hbeabDate = undefined;
+      $scope.hbcabDate = undefined;
+      $scope.hbvRnaDate = undefined;
+      $scope.antiHCVantibodyDate = undefined;
+      $scope.hcvRnaDate = undefined;
+      $scope.proteinDate = undefined;
+      $scope.redBloodCellDate = undefined;
+      $scope.whiteBloodCellDate = undefined;
+      $scope.bilirubinDate = undefined;
+      $scope.ca199Date = undefined;
     } else {
       $scope.followDateShow = false;
       getPhy();
@@ -200,6 +277,78 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.followUp = $scope.follow;
     physicalChemicalInspection.followUpDate = new Date($scope.followUpDate);
     physicalChemicalInspection.imageUrl = $scope.imageName;
+
+    physicalChemicalInspection.totalBileAcidDate = new Date($scope.totalBileAcidDate);
+    physicalChemicalInspection.liverFunctionAlbuminDate = new Date($scope.liverFunctionAlbuminDate);
+    physicalChemicalInspection.liverFunctionGlobulinDate = new Date($scope.liverFunctionGlobulinDate);
+    physicalChemicalInspection.liverFunctionALTDate = new Date($scope.liverFunctionALTDate);
+    physicalChemicalInspection.liverFunctionASTDate = new Date($scope.liverFunctionASTDate);
+    physicalChemicalInspection.liverFunctionGGTDate = new Date($scope.liverFunctionGGTDate);
+    physicalChemicalInspection.liverFunctionALPDate = new Date($scope.liverFunctionALPDate);
+    physicalChemicalInspection.liverFunctionTotalCholesterolDate = new Date($scope.liverFunctionTotalCholesterolDate);
+    physicalChemicalInspection.liverFunctionTotalBilirubinDate = new Date($scope.liverFunctionTotalBilirubinDate);
+    physicalChemicalInspection.liverFunctionDirectBilirubinDate = new Date($scope.liverFunctionDirectBilirubinDate);
+    physicalChemicalInspection.liverFunctionRglobulinDate = new Date($scope.liverFunctionRglobulinDate);
+    physicalChemicalInspection.renalFunctionBUNDate = new Date($scope.renalFunctionBUNDate);
+    physicalChemicalInspection.renalFunctionCrDate = new Date($scope.renalFunctionCrDate);
+    physicalChemicalInspection.clottingPTDate = new Date($scope.clottingPTDate);
+    physicalChemicalInspection.clottingINRDate = new Date($scope.clottingINRDate);
+    physicalChemicalInspection.bloodRoutineRBCDate = new Date($scope.bloodRoutineRBCDate);
+    physicalChemicalInspection.bloodRoutineHbDate = new Date($scope.bloodRoutineHbDate);
+    physicalChemicalInspection.bloodRoutineWBCDate = new Date($scope.bloodRoutineWBCDate);
+    physicalChemicalInspection.bloodRoutineNeutrophilsDate = new Date($scope.bloodRoutineNeutrophilsDate);
+    physicalChemicalInspection.bloodRoutineLymphocytesDate = new Date($scope.bloodRoutineLymphocytesDate);
+    physicalChemicalInspection.bloodRoutineEosinophilsDate = new Date($scope.bloodRoutineEosinophilsDate);
+    physicalChemicalInspection.bloodRoutinePlateletsDate = new Date($scope.bloodRoutinePlateletsDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAMADate = new Date($scope.liverDiseaseAutoantibodiesAMADate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAMAM2Date = new Date($scope.liverDiseaseAutoantibodiesAMAM2Date);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = new Date($scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = new Date($scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = new Date($scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = new Date($scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesOtherDate = new Date($scope.liverDiseaseAutoantibodiesOtherDate);
+    physicalChemicalInspection.aNAHomogeneousDate = new Date($scope.anaHomogeneousDate);
+    physicalChemicalInspection.aNAParticleDate = new Date($scope.anaParticleDate);
+    physicalChemicalInspection.aNAPeripheralDate = new Date($scope.anaPeripheralDate);
+    physicalChemicalInspection.aNANucleolusDate = new Date($scope.anaNucleolusDate);
+    physicalChemicalInspection.aNANucleolusEnhancementDate = new Date($scope.anaNucleolusEnhancementDate);
+    physicalChemicalInspection.aNANuclearDate = new Date($scope.anaNuclearDate);
+    physicalChemicalInspection.aNACentromereDate = new Date($scope.anaCentromereDate);
+    physicalChemicalInspection.aNAOtherDate = new Date($scope.anaOtherDate);
+    physicalChemicalInspection.humoralImmunityIgGDate = new Date($scope.humoralImmunityIgGDate);
+    physicalChemicalInspection.humoralImmunityIgADate = new Date($scope.humoralImmunityIgADate);
+    physicalChemicalInspection.humoralImmunityIgMDate = new Date($scope.humoralImmunityIgMDate);
+    physicalChemicalInspection.humoralImmunityImmuneComplexfDate = new Date($scope.humoralImmunityImmuneComplexfDate);
+    physicalChemicalInspection.humoralImmunityComplementC3Date = new Date($scope.humoralImmunityComplementC3Date);
+    physicalChemicalInspection.humoralImmunityComplementC4Date = new Date($scope.humoralImmunityComplementC4Date);
+    physicalChemicalInspection.humoralImmunityIgEDate = new Date($scope.humoralImmunityIgEDate);
+    physicalChemicalInspection.humoralImmunityKlightChainDate = new Date($scope.humoralImmunityKlightChainDate);
+    physicalChemicalInspection.humoralImmunityNlightChainDate = new Date($scope.humoralImmunityNlightChainDate);
+    physicalChemicalInspection.cellularImmunityCD3Date = new Date($scope.cellularImmunityCD3Date);
+    physicalChemicalInspection.cellularImmunityCD4Date = new Date($scope.cellularImmunityCD4Date);
+    physicalChemicalInspection.cellularImmunityCD8Date = new Date($scope.cellularImmunityCD8Date);
+    physicalChemicalInspection.cellularImmunityCD56Date = new Date($scope.cellularImmunityCD56Date);
+    physicalChemicalInspection.cellularImmunityCD2Date = new Date($scope.cellularImmunityCD2Date);
+    physicalChemicalInspection.cellularImmunityCD4CD8Date = new Date($scope.cellularImmunityCD4CD8Date);
+    physicalChemicalInspection.liverHardnessFibroscanDate = new Date($scope.liverHardnessFibroscanDate);
+    physicalChemicalInspection.liverHardnessFibrotestDate = new Date($scope.liverHardnessFibrotestDate);
+    physicalChemicalInspection.copperProteinDate = new Date($scope.copperProteinDate);
+    physicalChemicalInspection.aFPDate = new Date($scope.aFPDate);
+    physicalChemicalInspection.carcinoembryonicAntigenCEADate = new Date($scope.carcinoembryonicAntigenCEADate);
+    physicalChemicalInspection.ca125Date = new Date($scope.ca125Date);
+    physicalChemicalInspection.hbsagDate = new Date($scope.hbsagDate);
+    physicalChemicalInspection.hbsabDate = new Date($scope.hbsabDate);
+    physicalChemicalInspection.hbeagDate = new Date($scope.hbeagDate);
+    physicalChemicalInspection.hbeabDate = new Date($scope.hbeabDate);
+    physicalChemicalInspection.hbcabDate = new Date($scope.hbcabDate);
+    physicalChemicalInspection.hbvRnaDate = new Date($scope.hbvRnaDate);
+    physicalChemicalInspection.antiHCVantibodyDate = new Date($scope.antiHCVantibodyDate);
+    physicalChemicalInspection.hcvRnaDate = new Date($scope.hcvRnaDate);
+    physicalChemicalInspection.proteinDate = new Date($scope.proteinDate);
+    physicalChemicalInspection.redBloodCellDate = new Date($scope.redBloodCellDate);
+    physicalChemicalInspection.whiteBloodCellDate = new Date($scope.whiteBloodCellDate);
+    physicalChemicalInspection.bilirubinDate = new Date($scope.bilirubinDate);
+    physicalChemicalInspection.ca199Date = new Date($scope.ca199Date);
 
 
     if (!$scope.cTMRI) {
@@ -332,6 +481,79 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.ca199 = physicalChemicalInspection.ca199;
       $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
 
+
+      $scope.totalBileAcidDate = formatDate(physicalChemicalInspection.totalBileAcidDate);
+      $scope.liverFunctionAlbuminDate = formatDate(physicalChemicalInspection.liverFunctionAlbuminDate);
+      $scope.liverFunctionGlobulinDate = formatDate(physicalChemicalInspection.liverFunctionGlobulinDate);
+      $scope.liverFunctionALTDate = formatDate(physicalChemicalInspection.liverFunctionALTDate);
+      $scope.liverFunctionASTDate = formatDate(physicalChemicalInspection.liverFunctionASTDate);
+      $scope.liverFunctionGGTDate = formatDate(physicalChemicalInspection.liverFunctionGGTDate);
+      $scope.liverFunctionALPDate = formatDate(physicalChemicalInspection.liverFunctionALPDate);
+      $scope.liverFunctionTotalCholesterolDate = formatDate(physicalChemicalInspection.liverFunctionTotalCholesterolDate);
+      $scope.liverFunctionTotalBilirubinDate = formatDate(physicalChemicalInspection.liverFunctionTotalBilirubinDate);
+      $scope.liverFunctionDirectBilirubinDate = formatDate(physicalChemicalInspection.liverFunctionDirectBilirubinDate);
+      $scope.liverFunctionRglobulinDate = formatDate(physicalChemicalInspection.liverFunctionRglobulinDate);
+      $scope.renalFunctionBUNDate = formatDate(physicalChemicalInspection.renalFunctionBUNDate);
+      $scope.renalFunctionCrDate = formatDate(physicalChemicalInspection.renalFunctionCrDate);
+      $scope.clottingPTDate = formatDate(physicalChemicalInspection.clottingPTDate);
+      $scope.clottingINRDate = formatDate(physicalChemicalInspection.clottingINRDate);
+      $scope.bloodRoutineRBCDate = formatDate(physicalChemicalInspection.bloodRoutineRBCDate);
+      $scope.bloodRoutineHbDate = formatDate(physicalChemicalInspection.bloodRoutineHbDate);
+      $scope.bloodRoutineWBCDate = formatDate(physicalChemicalInspection.bloodRoutineWBCDate);
+      $scope.bloodRoutineNeutrophilsDate = formatDate(physicalChemicalInspection.bloodRoutineNeutrophilsDate);
+      $scope.bloodRoutineLymphocytesDate = formatDate(physicalChemicalInspection.bloodRoutineLymphocytesDate);
+      $scope.bloodRoutineEosinophilsDate = formatDate(physicalChemicalInspection.bloodRoutineEosinophilsDate);
+      $scope.bloodRoutinePlateletsDate = formatDate(physicalChemicalInspection.bloodRoutinePlateletsDate);
+      $scope.liverDiseaseAutoantibodiesAMADate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAMADate);
+      $scope.liverDiseaseAutoantibodiesAMAM2Date = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAMAM2Date);
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate);
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate);
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate);
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate);
+      $scope.liverDiseaseAutoantibodiesOtherDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesOtherDate);
+      $scope.anaHomogeneousDate = formatDate(physicalChemicalInspection.aNAHomogeneousDate);
+      $scope.anaParticleDate = formatDate(physicalChemicalInspection.aNAParticleDate);
+      $scope.anaPeripheralDate = formatDate(physicalChemicalInspection.aNAPeripheralDate);
+      $scope.anaNucleolusDate = formatDate(physicalChemicalInspection.aNANucleolusDate);
+      $scope.anaNucleolusEnhancementDate = formatDate(physicalChemicalInspection.aNANucleolusEnhancementDate);
+      $scope.anaNuclearDate = formatDate(physicalChemicalInspection.aNANuclearDate);
+      $scope.anaCentromereDate = formatDate(physicalChemicalInspection.aNACentromereDate);
+      $scope.anaOtherDate = formatDate(physicalChemicalInspection.aNAOtherDate);
+      $scope.humoralImmunityIgGDate = formatDate(physicalChemicalInspection.humoralImmunityIgGDate);
+      $scope.humoralImmunityIgADate = formatDate(physicalChemicalInspection.humoralImmunityIgADate);
+      $scope.humoralImmunityIgMDate = formatDate(physicalChemicalInspection.humoralImmunityIgMDate);
+      $scope.humoralImmunityImmuneComplexfDate = formatDate(physicalChemicalInspection.humoralImmunityImmuneComplexfDate);
+      $scope.humoralImmunityComplementC3Date = formatDate(physicalChemicalInspection.humoralImmunityComplementC3Date);
+      $scope.humoralImmunityComplementC4Date = formatDate(physicalChemicalInspection.humoralImmunityComplementC4Date);
+      $scope.humoralImmunityIgEDate = formatDate(physicalChemicalInspection.humoralImmunityIgEDate);
+      $scope.humoralImmunityKlightChainDate = formatDate(physicalChemicalInspection.humoralImmunityKlightChainDate);
+      $scope.humoralImmunityNlightChainDate = formatDate(physicalChemicalInspection.humoralImmunityNlightChainDate);
+      $scope.cellularImmunityCD3Date = formatDate(physicalChemicalInspection.cellularImmunityCD3Date);
+      $scope.cellularImmunityCD4Date = formatDate(physicalChemicalInspection.cellularImmunityCD4Date);
+      $scope.cellularImmunityCD8Date = formatDate(physicalChemicalInspection.cellularImmunityCD8Date);
+      $scope.cellularImmunityCD56Date = formatDate(physicalChemicalInspection.cellularImmunityCD56Date);
+      $scope.cellularImmunityCD2Date = formatDate(physicalChemicalInspection.cellularImmunityCD2Date);
+      $scope.cellularImmunityCD4CD8Date = formatDate(physicalChemicalInspection.cellularImmunityCD4CD8Date);
+      $scope.liverHardnessFibroscanDate = formatDate(physicalChemicalInspection.liverHardnessFibroscanDate);
+      $scope.liverHardnessFibrotestDate = formatDate(physicalChemicalInspection.liverHardnessFibrotestDate);
+      $scope.copperProteinDate = formatDate(physicalChemicalInspection.copperProteinDate);
+      $scope.aFPDate = formatDate(physicalChemicalInspection.aFPDate);
+      $scope.carcinoembryonicAntigenCEADate = formatDate(physicalChemicalInspection.carcinoembryonicAntigenCEADate);
+      $scope.ca125Date = formatDate(physicalChemicalInspection.ca125Date);
+      $scope.hbsagDate = formatDate(physicalChemicalInspection.hbsagDate);
+      $scope.hbsabDate = formatDate(physicalChemicalInspection.hbsabDate);
+      $scope.hbeagDate = formatDate(physicalChemicalInspection.hbeagDate);
+      $scope.hbeabDate = formatDate(physicalChemicalInspection.hbeabDate);
+      $scope.hbcabDate = formatDate(physicalChemicalInspection.hbcabDate);
+      $scope.hbvRnaDate = formatDate(physicalChemicalInspection.hbvRnaDate);
+      $scope.antiHCVantibodyDate = formatDate(physicalChemicalInspection.antiHCVantibodyDate);
+      $scope.hcvRnaDate = formatDate(physicalChemicalInspection.hcvRnaDate);
+      $scope.proteinDate = formatDate(physicalChemicalInspection.proteinDate);
+      $scope.redBloodCellDate = formatDate(physicalChemicalInspection.redBloodCellDate);
+      $scope.whiteBloodCellDate = formatDate(physicalChemicalInspection.whiteBloodCellDate);
+      $scope.bilirubinDate = formatDate(physicalChemicalInspection.bilirubinDate);
+      $scope.ca199Date = formatDate(physicalChemicalInspection.ca199Date);
+
     });
   }
 
@@ -344,6 +566,16 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     }).then(function success(response) {
       $scope.imageName = response.data;
     });
+  }
+
+  function formatDate(myDate) {
+    if (myDate) {
+      var myTime = new Date(myDate);
+      return myTime.getFullYear() + '-' + (myTime.getMonth() + 1) + '-' + myTime.getDate();
+    } else {
+      return undefined;
+    }
+
   }
 
 }]);
