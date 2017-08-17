@@ -31,7 +31,7 @@ function buildUI() {
 }
 
 function buildWar() {
-  return exec('mvn.cmd', ['clean', 'install'], './CRF');
+  return exec('mvn.cmd', ['clean', 'install'], './server');
 }
 
 (async function build() {
