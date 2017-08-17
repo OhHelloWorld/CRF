@@ -1,4 +1,4 @@
-﻿package app.service;
+package app.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,5 +43,4 @@ public interface TreatmentService {
 
     public ArrayList<String> getQdsDate(int patientId);
 
-    public ArrayList<String> getQdsDate(int patientId);
 }

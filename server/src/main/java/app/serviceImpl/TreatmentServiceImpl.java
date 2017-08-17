@@ -1,4 +1,4 @@
-﻿package app.serviceImpl;
+package app.serviceImpl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -217,47 +217,6 @@ public class TreatmentServiceImpl implements TreatmentService {
     @Override
     public ArrayList<String> getQdsDate(int patientId) {
 
-//        int weekNum = treatmentRepo.getQdsDate(patientId);
-//
-//
-//        ArrayList<Date> listDate = new ArrayList<>();
-        String qds = new String();
-        return getStartTime(patientId, "qds");
-    }
-
-    /**
-     * 得到病人服用指定药物的起始时间
-     * @param patientId 病人id
-     * @param medicine 用药名称
-     * @return
-     */
-    public ArrayList<String> getStartTime(int patientId, String medicine) {
-        String medicineTime = medicine + "_time";
-        String startDate;
-        int weeks;
-        int dosage;
-        ArrayList<String> totals = new ArrayList<>();
-//        Date startDate = treatmentRepo.getStartTime(patientId ,medicineTime);
-        for(int i = 0; i < treatmentRepo.getStartTime(patientId).size(); i++){
-            startDate = treatmentRepo.getStartTime(patientId).get(i);
-            weeks = treatmentRepo.getQdsWeeks(startDate).get(i);
-            dosage = treatmentRepo.getQdsDosage(startDate).get(i);
-            totals.addAll(getTotalDate(startDate.split(" ")[0], weeks, dosage));
-        }
-        return totals;
-    }
-
-    /**
-     * 返回一个String列表，包含从头到尾的每天的日期。
-     * parameters startDate(其实日期)、weeks(治疗周数)
-     */
-    public ArrayList<String> getTotalDate(String startDate ,int weeks, int dosage){
-        ArrayList<String> totalDate = new ArrayList<>();
-    }
-
-    @Override
-    public ArrayList<String> getQdsDate(int patientId) {
-
         // int weekNum = treatmentRepo.getQdsDate(patientId);
         //
         //
@@ -303,21 +262,6 @@ public class TreatmentServiceImpl implements TreatmentService {
             e.printStackTrace();
         }
         for (int i = 1; i <= weeks * 7; i++) {
-            cal.add(Calendar.DATE, 1);
-            System.out.println(sdf.format(cal.getTime()));
-            totalDate.add(sdf.format(cal.getTime()) + "$" + dosage);
-        }
-        System.out.println(totalDate.toString());
-        return totalDate;
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar cal = Calendar.getInstance();
-        try {
-            cal.setTime(sdf.parse(startDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        for(int i = 1; i <= weeks * 7; i++) {
             cal.add(Calendar.DATE, 1);
             System.out.println(sdf.format(cal.getTime()));
             totalDate.add(sdf.format(cal.getTime()) + "$" + dosage);
