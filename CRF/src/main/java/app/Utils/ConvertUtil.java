@@ -481,7 +481,6 @@ public class ConvertUtil {
         hospitalDO.setId(hospitalDTO.getId());
         hospitalDO.setAddress(hospitalDTO.getAddress());
         hospitalDO.setAddressDetail(hospitalDTO.getAddressDetail());
-        hospitalDO.setImage_url(hospitalDTO.getImage_url());
         hospitalDO.setManageRange(hospitalDTO.getManageRange());
         hospitalDO.setSpecialMajor(hospitalDTO.getSpecialMajor());
         hospitalDO.setIntroduction(hospitalDTO.getIntroduction());
