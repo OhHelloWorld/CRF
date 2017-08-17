@@ -27,6 +27,10 @@ public class UserController {
         return userService.addUser(userDTO);
     }
 
+    @PostMapping(value = "/changePassword")
+    public void changePass(@RequestBody UserDTO userDTO) {
+        userService.changePassword(userDTO);
+    }
 
     @GetMapping(value = "")
     @ApiOperation(value = "得到所有普通用户")

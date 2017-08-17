@@ -1048,24 +1048,59 @@ public class CreateAllExcel {
 
             }
 
+            // 舌脉象
             if (tonguePulseDO != null) {
-                row.createCell(57)
-                        .setCellValue(tonguePulseDO.getTongue() + " 部位："
-                                + tonguePulseDO.getTonguePart().substring(1) + "-"
-                                + tonguePulseDO.getTonguePartialDescription());
-                row.createCell(58).setCellValue(tonguePulseDO.getTongueBody().substring(1));
-                row.createCell(59)
-                        .setCellValue(tonguePulseDO.getMossy().substring(1) + " 部位："
-                                + tonguePulseDO.getMossyPart().substring(1) + "-"
-                                + tonguePulseDO.getMossyPartialDescription());
-                row.createCell(60)
-                        .setCellValue(tonguePulseDO.getTongueColor().substring(1) + " 部位："
-                                + tonguePulseDO.getTongueColorPart().substring(1) + "-"
-                                + tonguePulseDO.getTongueColorPartialDescription());
-                row.createCell(61)
-                        .setCellValue(tonguePulseDO.getSublingualVaricoseVeins().substring(1));
-                row.createCell(62).setCellValue(tonguePulseDO.getLeftPulse().substring(1));
-                row.createCell(63).setCellValue(tonguePulseDO.getRightPulse().substring(1));
+                if (tonguePulseDO.getTonguePart().length() >= 2) {
+                    row.createCell(57)
+                            .setCellValue(tonguePulseDO.getTongue() + " 部位："
+                                    + tonguePulseDO.getTonguePart().substring(1) + "-"
+                                    + tonguePulseDO.getTonguePartialDescription());
+                } else {
+                    row.createCell(57).setCellValue(tonguePulseDO.getTongue());
+                }
+                if (tonguePulseDO.getTongueBody().length() >= 2) {
+                    row.createCell(58).setCellValue(tonguePulseDO.getTongueBody().substring(1));
+                } else {
+                    row.createCell(58).setCellValue("");
+                }
+                if (tonguePulseDO.getMossyPart().length() >= 2
+                        && tonguePulseDO.getMossy().length() >= 2) {
+                    row.createCell(59)
+                            .setCellValue(tonguePulseDO.getMossy().substring(1) + " 部位："
+                                    + tonguePulseDO.getMossyPart().substring(1) + "-"
+                                    + tonguePulseDO.getMossyPartialDescription());
+                } else if (tonguePulseDO.getMossyPart().length() >= 2) {
+                    row.createCell(59).setCellValue(tonguePulseDO.getMossy().substring(1));
+                } else {
+                    row.createCell(59).setCellValue("");
+                }
+                if (tonguePulseDO.getTongueColor().length() >= 2
+                        && tonguePulseDO.getTongueColorPart().length() >= 2) {
+                    row.createCell(60)
+                            .setCellValue(tonguePulseDO.getTongueColor().substring(1) + " 部位："
+                                    + tonguePulseDO.getTongueColorPart().substring(1) + "-"
+                                    + tonguePulseDO.getTongueColorPartialDescription());
+                } else if (tonguePulseDO.getTongueColorPart().length() >= 2) {
+                    row.createCell(60).setCellValue(tonguePulseDO.getTongueColor().substring(1));
+                } else {
+                    row.createCell(60).setCellValue("");
+                }
+                if (tonguePulseDO.getSublingualVaricoseVeins().length() >= 2) {
+                    row.createCell(61)
+                            .setCellValue(tonguePulseDO.getSublingualVaricoseVeins().substring(1));
+                } else {
+                    row.createCell(61).setCellValue("");
+                }
+                if (tonguePulseDO.getLeftPulse().length() >= 2) {
+                    row.createCell(62).setCellValue(tonguePulseDO.getLeftPulse().substring(1));
+                } else {
+                    row.createCell(62).setCellValue("");
+                }
+                if (tonguePulseDO.getRightPulse().length() >= 2) {
+                    row.createCell(63).setCellValue(tonguePulseDO.getRightPulse().substring(1));
+                } else {
+                    row.createCell(63).setCellValue("");
+                }
             }
 
             // 理化检查
@@ -1285,7 +1320,11 @@ public class CreateAllExcel {
 
             // 骨密度
             if (boneDensityDO != null) {
-                row.createCell(160).setCellValue(boneDensityDO.getLumbarSpine());
+                if (boneDensityDO.getLumbarSpine() != null) {
+                    row.createCell(160).setCellValue(boneDensityDO.getLumbarSpine());
+                } else {
+                    row.createCell(160).setCellValue("");
+                }
                 switch (boneDensityDO.getLumbarSpineT()) {
                     case 1:
                         row.createCell(161).setCellValue("未检测");
@@ -1302,7 +1341,11 @@ public class CreateAllExcel {
                     default:
                         break;
                 }
-                row.createCell(162).setCellValue(boneDensityDO.getFemoralNeck());
+                if (boneDensityDO.getFemoralNeck() != null) {
+                    row.createCell(162).setCellValue(boneDensityDO.getFemoralNeck());
+                } else {
+                    row.createCell(162).setCellValue("");
+                }
                 switch (boneDensityDO.getFemoralNeckT()) {
                     case 1:
                         row.createCell(163).setCellValue("未检测");
@@ -1319,7 +1362,11 @@ public class CreateAllExcel {
                     default:
                         break;
                 }
-                row.createCell(164).setCellValue(boneDensityDO.getBigTrochanter());
+                if (boneDensityDO.getBigTrochanter() != null) {
+                    row.createCell(164).setCellValue(boneDensityDO.getBigTrochanter());
+                } else {
+                    row.createCell(164).setCellValue("");
+                }
                 switch (boneDensityDO.getBigTrochanterT()) {
                     case 1:
                         row.createCell(165).setCellValue("未检测");
@@ -1336,7 +1383,11 @@ public class CreateAllExcel {
                     default:
                         break;
                 }
-                row.createCell(166).setCellValue(boneDensityDO.getFullHip());
+                if (boneDensityDO.getFullHip() != null) {
+                    row.createCell(166).setCellValue(boneDensityDO.getFullHip());
+                } else {
+                    row.createCell(166).setCellValue("");
+                }
                 switch (boneDensityDO.getFullHipT()) {
                     case 1:
                         row.createCell(167).setCellValue("未检测");
@@ -1369,7 +1420,11 @@ public class CreateAllExcel {
                     default:
                         break;
                 }
-                row.createCell(169).setCellValue(boneDensityDO.getRemarks());
+                if (boneDensityDO.getRemarks() != null) {
+                    row.createCell(169).setCellValue(boneDensityDO.getRemarks());
+                } else {
+                    row.createCell(169).setCellValue("");
+                }
             }
 
             // 简单AIH

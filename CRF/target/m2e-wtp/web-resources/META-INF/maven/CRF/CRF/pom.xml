@@ -3,7 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>CRF</groupId>
 	<artifactId>CRF</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>CRF Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -130,6 +133,7 @@
 										<include>src/**</include>
 									</includes>
 								</resource>
+
 							</resources>
 						</configuration>
 					</execution>

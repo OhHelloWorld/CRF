@@ -18,7 +18,7 @@ angular.module('treatment', ['chart.js', 'main'])
 
     function testfunction(testnumber) {
       $scope.labels.length = 0;
-      for(var a = 0; a <= testnumber; a++) {
+      for (var a = 0; a <= testnumber; a++) {
         $scope.labels.push(a);
       }
     }
@@ -52,128 +52,79 @@ angular.module('treatment', ['chart.js', 'main'])
     $scope.chartChange = function() {
       testfunction(1);
       switch ($scope.chartSelect) {
-      case '1':
-        {
-          getQdsDose();
-          break;
-        }
-      case '2':
-        {
-          getQdslDose();
-          break;
-        }
-      case '3':
-        {
-          getJjqDose();
-          break;
-        }
-      case '4':
-        {
-          getBdndDose();
-          break;
-        }
-      case '5':
-        {
-          getLcplDose();
-          break;
-        }
-      case '6':
-        {
-          getMtxDose();
-          break;
-        }
-      case '7':
-        {
-          getCysaDose();
-          break;
-        }
-      case '8':
-        {
-          getCtxDose();
-          break;
-        }
-      case '9':
-        {
-          getMtmkDose();
-          break;
-        }
-      case '10':
-        {
-          getQsxsDose();
-          break;
-        }
-      case '11':
-        {
-          getXqydDose();
-          break;
-        }
-      case '12':
-        {
-          getFnbtDose();
-          break;
-        }
-      case '13':
-        {
-          getBzbtDose();
-          break;
-        }
+        case '1':
+          {
+            getQdsDose();
+            break;
+          }
+        case '2':
+          {
+            getQdslDose();
+            break;
+          }
+        case '3':
+          {
+            getJjqDose();
+            break;
+          }
+        case '4':
+          {
+            getBdndDose();
+            break;
+          }
+        case '5':
+          {
+            getLcplDose();
+            break;
+          }
+        case '6':
+          {
+            getMtxDose();
+            break;
+          }
+        case '7':
+          {
+            getCysaDose();
+            break;
+          }
+        case '8':
+          {
+            getCtxDose();
+            break;
+          }
+        case '9':
+          {
+            getMtmkDose();
+            break;
+          }
+        case '10':
+          {
+            getQsxsDose();
+            break;
+          }
+        case '11':
+          {
+            getXqydDose();
+            break;
+          }
+        case '12':
+          {
+            getFnbtDose();
+            break;
+          }
+        case '13':
+          {
+            getBzbtDose();
+            break;
+          }
       }
     };
 
-    $('#datepicker1').datepicker({
-      autoclose: true
-    });
-    $('#datepicker2').datepicker({
-      autoclose: true
-    });
-    $('#datepicker3').datepicker({
-      autoclose: true
-    });
-    $('#datepicker4').datepicker({
-      autoclose: true
-    });
-    $('#datepicker5').datepicker({
-      autoclose: true
-    });
-    $('#datepicker6').datepicker({
-      autoclose: true
-    });
-    $('#datepicker7').datepicker({
-      autoclose: true
-    });
-    $('#datepicker8').datepicker({
-      autoclose: true
-    });
-    $('#datepicker9').datepicker({
-      autoclose: true
-    });
-    $('#datepicker10').datepicker({
-      autoclose: true
-    });
-    $('#datepicker11').datepicker({
-      autoclose: true
-    });
-    $('#datepicker12').datepicker({
-      autoclose: true
-    });
-    $('#datepicker13').datepicker({
-      autoclose: true
-    });
-    $('#datepicker14').datepicker({
-      autoclose: true
-    });
-    $('#datepicker15').datepicker({
-      autoclose: true
-    });
-    $('#datepicker16').datepicker({
-      autoclose: true
-    });
-    $('#datepicker17').datepicker({
-      autoclose: true
-    });
-    $('#datepicker18').datepicker({
-      autoclose: true
-    });
+    for (var j = 1; j<19; j++) {
+      $('#datepicker' + j).datepicker({
+        autoclose: true
+      });
+    }
 
     $scope.die = function() {
       if ($scope.dieOption == 'die') {
@@ -767,9 +718,9 @@ angular.module('treatment', ['chart.js', 'main'])
         //   $scope.data.push(s.split("$")[1]);
         // }
 
-        for(var i = 0; i < dat.length; i++) {
-          $scope.labels.push(dat[i].split("$")[0]);
-          $scope.data.push(dat[i].split("$")[1]);
+        for (var i = 0; i < dat.length; i++) {
+          $scope.labels.push(dat[i].split('$')[0]);
+          $scope.data.push(dat[i].split('$')[1]);
         }
 
         // $scope.data = response.data;

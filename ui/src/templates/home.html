@@ -55,7 +55,7 @@
                 <div class="col-sm-6"></div>
               </div><div class="row">
               <div class="col-sm-12">
-              <table id="example2" class="table table-bordered table-hover" role="grid" aria-describedby="example2_info">
+              <table id="example2" class="table table-bordered table-hover table-striped" role="grid" aria-describedby="example2_info">
                 <thead>
                 <tr role="row">
                   <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
@@ -66,7 +66,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients" ng-click="patientClick(patient)" class="info">
+                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients" ng-click="patientClick(patient)">
                   <td><span class="h5">{{patient.name}}</span></td>
                   <td><span class="h5">{{patient.identifier}}</span></td>
                   <td><span class="h5">{{patient.birthday | date:"yyyy-MM-dd"}}</span></td>
