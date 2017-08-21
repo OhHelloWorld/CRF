@@ -26,12 +26,12 @@ public class CaseServiceImpl implements CaseService {
     private ConvertUtil convertUtil;
 
     public PageDTO<PatientDTO> getCaseByProjectId(Long projectId, Long hospitalId,
-            Pageable pageable) {
+                                                  Pageable pageable) {
         return getPageDTO(caseRepo.findByProjectIdAndHospitalId(projectId, hospitalId, pageable));
     }
 
     public PageDTO<PatientDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName,
-            Pageable pageable) {
+                                                             Pageable pageable) {
         return getPageDTO(caseRepo.findByProjectIdAndCaseName(projectId, caseName, pageable));
     }
 

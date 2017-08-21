@@ -14,11 +14,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Value("${online_image_path}")
     private String onlineImagePath;
 
+    @Value("${online_excel_path}")
+    private String onlineExcelPath;
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/hospital/image/**").addResourceLocations(onlineImagePath);
         registry.addResourceHandler("/api/image/**").addResourceLocations(onlineImagePath);
-
+        registry.addResourceHandler("/excelDown/**").addResourceLocations(onlineExcelPath);
     }
 
 }

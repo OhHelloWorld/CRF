@@ -72,8 +72,10 @@ public class TreatmentServiceImpl implements TreatmentService {
         return treatmentProgramsDTO;
     }
 
-    private TreatmentProgramsDO convertToEntity(TreatmentProgramsDTO treatmentProgramsDTO) {
-        TreatmentProgramsDO treatmentProgramsDO = new TreatmentProgramsDO();
+    private TreatmentProgramsDO convertToEntity(TreatmentProgramsDTO treatmentProgramsDTO, TreatmentProgramsDO treatmentProgramsDO) {
+        if (treatmentProgramsDO == null) {
+            treatmentProgramsDO = new TreatmentProgramsDO();
+        }
         treatmentProgramsDO.setBdndDose(treatmentProgramsDTO.getBdndDose());
         treatmentProgramsDO.setBdndHeal(treatmentProgramsDTO.getBdndHeal());
         treatmentProgramsDO.setBdndTime(treatmentProgramsDTO.getBdndTime());
@@ -126,7 +128,7 @@ public class TreatmentServiceImpl implements TreatmentService {
 
     @Override
     public void saveTreatment(TreatmentProgramsDTO treatmentProgramsDTO) {
-        treatmentRepo.save(convertToEntity(treatmentProgramsDTO));
+        treatmentRepo.save(convertToEntity(treatmentProgramsDTO, null));
     }
 
     @Override
@@ -205,11 +207,16 @@ public class TreatmentServiceImpl implements TreatmentService {
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return treatmentRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            if(treatmentRepo.getCompleteByPatientId(patientId) != null){
+//                return treatmentRepo.getCompleteByPatientId(patientId);
+//            }else{
+//                return false;
+//            }
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return treatmentRepo.getCompleteByPatientId(patientId) != null ? treatmentRepo.getCompleteByPatientId(patientId):false;
     }
 
     @Override
@@ -244,11 +251,21 @@ public class TreatmentServiceImpl implements TreatmentService {
         return getStartTime(patientId, "qds");
     }
 
+    @Override
+    public TreatmentProgramsDTO getSingleFollowById(int id) {
+        return convertToDto(treatmentRepo.findOne(id));
+    }
+
+    @Override
+    public void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO) {
+        treatmentRepo.save(convertToEntity(treatmentProgramsDTO, treatmentRepo.findOne(treatmentProgramsDTO.getId())));
+    }
+
     /**
      * 得到病人服用指定药物的起始时间
-     * 
+     *
      * @param patientId 病人id
-     * @param medicine 用药名称
+     * @param medicine  用药名称
      * @return
      */
     public ArrayList<String> getStartTime(int patientId, String medicine) {

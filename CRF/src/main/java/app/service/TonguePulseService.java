@@ -11,14 +11,14 @@ public interface TonguePulseService {
      * 
      * @param tonguePulseDTO
      */
-    public void saveTonguePulse(TonguePulseDTO tonguePulseDTO);
+    void saveTonguePulse(TonguePulseDTO tonguePulseDTO);
 
     /**
      * 根据患者id得到舌脉象数据
      * 
      * @param patientId
      */
-    public TonguePulseDTO getTonguePulseByPatientId(int patientId);
+    TonguePulseDTO getTonguePulseByPatientId(int patientId);
 
     /**
      * 得到患者舌脉象数据填写情况
@@ -26,9 +26,13 @@ public interface TonguePulseService {
      * @param patientId
      * @return
      */
-    public boolean getCompleteByPatientId(int patientId);
+    boolean getCompleteByPatientId(int patientId);
 
-    public List<TonguePulseDTO> getFollowTongue(int patientId);
+    List<TonguePulseDTO> getFollowTongue(int patientId);
 
-    public TonguePulseDTO getDefaultTongue(int patientId);
+    TonguePulseDTO getDefaultTongue(int patientId);
+
+    TonguePulseDTO getSingleFollowTongueById(int id);
+
+    void updateTongue(TonguePulseDTO tonguePulseDTO);
 }

@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import app.dto.TreatmentProgramsDTO;
 import app.service.TreatmentService;
@@ -213,5 +208,15 @@ public class TreatmentController {
     @GetMapping(path = "/default/{patientId}")
     public TreatmentProgramsDTO getDefaultTreat(@PathVariable int patientId) {
         return treatmentService.getDefaultTreat(patientId);
+    }
+
+    @GetMapping(path = "/singleFollow/{id}")
+    public TreatmentProgramsDTO getSingleFollowById(@PathVariable int id){
+        return treatmentService.getSingleFollowById(id);
+    }
+
+    @PutMapping(path = "")
+    public void updateTreatment(@RequestBody TreatmentProgramsDTO treatmentProgramsDTO){
+        treatmentService.updateTreat(treatmentProgramsDTO);
     }
 }

@@ -138,24 +138,51 @@ angular.module('fourDiagnostic', [])
       } else {
         fourDiagnosticInformation.complete = true;
       }
-      $http({
-        method: 'POST',
-        url: '/api/fourDiagnosticInfor',
-        data: fourDiagnosticInformation
-      }).then(function success() {
-        isSave = true;
-        $scope.information = '保存成功！';
-        $scope.changeMenuStatus();
-        $('#infoModal').modal({
-          keyboard: true
+      if (!sessionStorage.getItem('followFourDiaId')) {
+        $http({
+          method: 'POST',
+          url: '/api/fourDiagnosticInfor',
+          data: fourDiagnosticInformation
+        }).then(function success() {
+          isSave = true;
+          $scope.information = '保存成功！';
+          $scope.changeMenuStatus();
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          $scope.information = '保存失败！';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      }, function fail() {
-        $scope.information = '保存失败！';
-        $('#infoModal').modal({
-          keyboard: true
+      } else {
+        fourDiagnosticInformation.id = sessionStorage.getItem('followFourDiaId');
+        fourDiagnosticInformation.followUp = true;
+        fourDiagnosticInformation.followUpDate = new Date($scope.followUpDate);
+        $http({
+          method: 'PUT',
+          url: '/api/fourDiagnosticInfor',
+          data: fourDiagnosticInformation
+        }).then(function success() {
+          isSave = true;
+          $scope.information = '保存成功！';
+          $scope.changeMenuStatus();
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          $scope.information = '保存失败！';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      });
+      }
     }
+
+    $scope.$on('$destroy', function() {
+      sessionStorage.removeItem('followFourDiaId');
+    });
 
     $scope.$watch('follow', function() {
       if ($scope.follow) {
@@ -197,9 +224,6 @@ angular.module('fourDiagnostic', [])
         $scope.liverPalm = undefined;
         $scope.abdominalVeins = undefined;
         $scope.yellowTumor = undefined;
-      } else {
-        $scope.followDateShow = false;
-        getFourDiaInfo();
       }
     });
 
@@ -212,48 +236,62 @@ angular.module('fourDiagnostic', [])
     }
 
     function getFourDiaInfo() {
-      $http({
-        method: 'GET',
-        url: '/api/fourDiagnosticInfor/' + sessionStorage.getItem('patientId')
-      }).then(function success(response) {
-        $scope.fatigue = response.data.fatigue;
-        $scope.skinItching = response.data.skinItching;
-        $scope.twoEyesDry = response.data.twoEyesDry;
-        $scope.blurredVision = response.data.blurredVision;
-        $scope.depression = response.data.depression;
-        $scope.irritability = response.data.irritability;
-        $scope.insomnia = response.data.insomnia;
-        $scope.easyWakeUp = response.data.easyWakeUp;
-        $scope.tinnitus = response.data.tinnitus;
-        $scope.dryMouth = response.data.dryMouth;
-        $scope.mouthPain = response.data.mouthPain;
-        $scope.badBreath = response.data.badBreath;
-        $scope.nausea = response.data.nausea;
-        $scope.belching = response.data.belching;
-        $scope.abdominalDistention = response.data.abdominalDistention;
-        $scope.flankPainStinging = response.data.flankPainStinging;
-        $scope.flankPainSwell = response.data.flankPainSwell;
-        $scope.flankPainDull = response.data.flankPainDull;
-        $scope.flankPainDiscomfort = response.data.flankPainDiscomfort;
-        $scope.anorexia = response.data.anorexia;
-        $scope.aphrodisiacCold = response.data.aphrodisiacCold;
-        $scope.limb = response.data.limb;
-        $scope.backacheFootSoft = response.data.backacheFootSoft;
-        $scope.handFootFanHot = response.data.handFootFanHot;
-        $scope.urineYellow = response.data.urineYellow;
-        $scope.constipation = response.data.constipation;
-        $scope.looseStools = response.data.looseStools;
-        $scope.perspiration = response.data.perspiration;
-        $scope.nightSweats = response.data.nightSweats;
-        $scope.lowerExtremityEdema = response.data.lowerExtremityEdema;
-        $scope.faceDull = response.data.faceDull;
-        $scope.eyeYellow = response.data.eyeYellow;
-        $scope.bodyYellow = response.data.bodyYellow;
-        $scope.spiderNevus = response.data.spiderNevus;
-        $scope.liverPalm = response.data.liverPalm;
-        $scope.abdominalVeins = response.data.abdominalVeins;
-        $scope.yellowTumor = response.data.yellowTumor;
-      });
+      if (!sessionStorage.getItem('followFourDiaId')) {
+        $http({
+          method: 'GET',
+          url: '/api/fourDiagnosticInfor/' + sessionStorage.getItem('patientId')
+        }).then(function success(response) {
+          giveResponseToScope(response);
+        });
+      } else {
+        $http({
+          method: 'GET',
+          url: '/api/fourDiagnosticInfor/singleFollow/' + sessionStorage.getItem('followFourDiaId')
+        }).then(function success(response) {
+          giveResponseToScope(response);
+        });
+      }
+    }
+
+    function giveResponseToScope(response) {
+      $scope.fatigue = response.data.fatigue;
+      $scope.skinItching = response.data.skinItching;
+      $scope.twoEyesDry = response.data.twoEyesDry;
+      $scope.blurredVision = response.data.blurredVision;
+      $scope.depression = response.data.depression;
+      $scope.irritability = response.data.irritability;
+      $scope.insomnia = response.data.insomnia;
+      $scope.easyWakeUp = response.data.easyWakeUp;
+      $scope.tinnitus = response.data.tinnitus;
+      $scope.dryMouth = response.data.dryMouth;
+      $scope.mouthPain = response.data.mouthPain;
+      $scope.badBreath = response.data.badBreath;
+      $scope.nausea = response.data.nausea;
+      $scope.belching = response.data.belching;
+      $scope.abdominalDistention = response.data.abdominalDistention;
+      $scope.flankPainStinging = response.data.flankPainStinging;
+      $scope.flankPainSwell = response.data.flankPainSwell;
+      $scope.flankPainDull = response.data.flankPainDull;
+      $scope.flankPainDiscomfort = response.data.flankPainDiscomfort;
+      $scope.anorexia = response.data.anorexia;
+      $scope.aphrodisiacCold = response.data.aphrodisiacCold;
+      $scope.limb = response.data.limb;
+      $scope.backacheFootSoft = response.data.backacheFootSoft;
+      $scope.handFootFanHot = response.data.handFootFanHot;
+      $scope.urineYellow = response.data.urineYellow;
+      $scope.constipation = response.data.constipation;
+      $scope.looseStools = response.data.looseStools;
+      $scope.perspiration = response.data.perspiration;
+      $scope.nightSweats = response.data.nightSweats;
+      $scope.lowerExtremityEdema = response.data.lowerExtremityEdema;
+      $scope.faceDull = response.data.faceDull;
+      $scope.eyeYellow = response.data.eyeYellow;
+      $scope.bodyYellow = response.data.bodyYellow;
+      $scope.spiderNevus = response.data.spiderNevus;
+      $scope.liverPalm = response.data.liverPalm;
+      $scope.abdominalVeins = response.data.abdominalVeins;
+      $scope.yellowTumor = response.data.yellowTumor;
+      $scope.followUpDate = response.data.followUpDate;
     }
 
     function getPatientInfo() {

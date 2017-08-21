@@ -3,12 +3,7 @@ package app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import app.dto.FourDiagnosticInformationDTO;
 import app.service.FourDiagnosticInformationService;
@@ -26,7 +21,7 @@ public class FourDiagnosticInformationController {
 
     /**
      * 存储四诊信息采集量化表
-     * 
+     *
      * @param fDto
      */
     @PostMapping(path = "")
@@ -36,7 +31,7 @@ public class FourDiagnosticInformationController {
 
     /**
      * 查找四诊信息采集量化数据
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -47,7 +42,7 @@ public class FourDiagnosticInformationController {
 
     /**
      * 根据患者Id查找四诊信息采集量化数据完成情况
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -58,7 +53,7 @@ public class FourDiagnosticInformationController {
 
     /**
      * 得到所有四诊信息的随访表信息
-     * 
+     *
      * @param patientId
      * @return
      */
@@ -67,14 +62,24 @@ public class FourDiagnosticInformationController {
         return fourDiagnosticInformationService.getFollowFourDia(patientId);
     }
 
+    @GetMapping(path = "/singleFollow/{id}")
+    public FourDiagnosticInformationDTO getSingleFollowById(@PathVariable int id) {
+        return fourDiagnosticInformationService.getSingleFollowById(id);
+    }
+
     /**
      * 得到最新的医院录入表信息
-     * 
+     *
      * @param patientId
      * @return
      */
     @GetMapping(path = "/default/{patientId}")
     public FourDiagnosticInformationDTO getDefaultFourDia(@PathVariable int patientId) {
         return fourDiagnosticInformationService.getDefaultFourDia(patientId);
+    }
+
+    @PutMapping(path = "")
+    public void updateFourDia(@RequestBody FourDiagnosticInformationDTO fourDiagnosticInformationDTO){
+        fourDiagnosticInformationService.updateFourDia(fourDiagnosticInformationDTO);
     }
 }

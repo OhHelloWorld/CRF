@@ -125,24 +125,49 @@ angular.module('tonguePulse', ['ui.checkbox', 'main'])
       tonguePulse.patientId = sessionStorage.getItem('patientId');
       tonguePulse.followUp = $scope.follow;
       tonguePulse.followUpDate = new Date($scope.followUpDate);
-      $http({
-        method: 'POST',
-        url: '/api/tonguePulse',
-        data: tonguePulse
-      }).then(function success() {
-        isSave = true;
-        $scope.information = '保存成功！';
-        $scope.changeMenuStatus();
-        $('#infoModal').modal({
-          keyboard: true
+      if (!sessionStorage.getItem('followTongueId')) {
+        $http({
+          method: 'POST',
+          url: '/api/tonguePulse',
+          data: tonguePulse
+        }).then(function success() {
+          isSave = true;
+          $scope.information = '保存成功！';
+          $scope.changeMenuStatus();
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          $scope.information = '保存失败！';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      }, function fail() {
-        $scope.information = '保存失败！';
-        $('#infoModal').modal({
-          keyboard: true
+      } else {
+        tonguePulse.followUp = true;
+        tonguePulse.followUpDate = new Date($scope.followUpDate);
+        tonguePulse.id = sessionStorage.getItem('followTongueId');
+        $http({
+          method: 'PUT',
+          url: '/api/tonguePulse',
+          data: tonguePulse
+        }).then(function success() {
+          $scope.information = '保存成功！';
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          $scope.information = '保存失败！';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      });
+      }
     };
+
+    $scope.$on('$destroy', function() {
+      sessionStorage.removeItem('followTongueId');
+    });
 
     $scope.save = function() {
       if (!($scope.cb1 || $scope.cb2 || $scope.cb3 || $scope.cb4 || $scope.cb5 || $scope.cb6 || $scope.cb7 || $scope.cb8) || !($scope.cb9 || $scope.cb10) || !($scope.cb11 || $scope.cb12 || $scope.cb13 || $scope.cb14 || $scope.cb15 || $scope.cb16 || $scope.cb17 || $scope.cb18) || !($scope.cb19 || $scope.cb20 || $scope.cb21 || $scope.cb22 || $scope.cb23 || $scope.cb24 || $scope.cb25 || $scope.cb26 || $scope.cb27 || $scope.cb28 || $scope.cb29 || $scope.cb30 || $scope.cb31) || !($scope.cb32 || $scope.cb33) || !($scope.cb34 || $scope.cb35 || $scope.cb36 || $scope.cb37 || $scope.cb38) || !($scope.cb39 || $scope.cb40) || !($scope.cb41 || $scope.cb42 || $scope.cb43) || !($scope.cb44 || $scope.cb45 || $scope.cb46 || $scope.cb47 || $scope.cb48 || $scope.cb49 || $scope.cb50 || $scope.cb51 || $scope.cb52 || $scope.cb53 || $scope.cb54 || $scope.cb55 || $scope.cb56 || $scope.cb57 || $scope.cb58) || !($scope.cb59 || $scope.cb60 || $scope.cb61 || $scope.cb62 || $scope.cb63 || $scope.cb64 || $scope.cb65 || $scope.cb66 || $scope.cb67 || $scope.cb68 || $scope.cb69 || $scope.cb70 || $scope.cb71 || $scope.cb72 || $scope.cb73)) {
@@ -205,6 +230,7 @@ angular.module('tonguePulse', ['ui.checkbox', 'main'])
     $scope.$watch('follow', function() {
       if ($scope.follow) {
         $scope.followDateShow = true;
+        $scope.followUpDate = undefined;
         $scope.cb1 = undefined;
         $scope.cb2 = undefined;
         $scope.cb3 = undefined;
@@ -284,289 +310,300 @@ angular.module('tonguePulse', ['ui.checkbox', 'main'])
         $scope.tongueDescription = undefined;
         $scope.mossyDes = undefined;
         $scope.tongueColorDes = undefined;
-      } else {
-        getTongueInfo();
-        $scope.followDateShow = false;
       }
     });
 
     function getTongueInfo() {
-      $http({
-        method: 'GET',
-        url: '/api/tonguePulse/' + sessionStorage.getItem('patientId')
-      }).then(function success(response) {
-        if (response.data.tongue) {
-          response.data.tongue.split(',').forEach(function(element) {
-            if (element == '淡红') {
-              $scope.cb1 = true;
-            }
-            if (element == '淡白') {
-              $scope.cb2 = true;
-            }
-            if (element == '淡紫') {
-              $scope.cb3 = true;
-            }
-            if (element == '红') {
-              $scope.cb4 = true;
-            }
-            if (element == '绛') {
-              $scope.cb5 = true;
-            }
-            if (element == '青') {
-              $scope.cb6 = true;
-            }
-            if (element == '紫暗') {
-              $scope.cb7 = true;
-            }
-            if (element == '瘀点瘀斑') {
-              $scope.cb8 = true;
-            }
-          });
-        }
-        if (response.data.tonguePart) {
-          response.data.tonguePart.split(',').forEach(function(element) {
-            if (element == '全舌') {
-              $scope.cb9 = true;
-            }
-            if (element == '局部') {
-              $scope.cb10 = true;
-            }
-          });
-        }
-        if (response.data.tonguePartialDescription) {
-          $scope.tongueShow = true;
-          $scope.tongueDescription = response.data.tonguePartialDescription;
-        }
-        if (response.data.tongueBody) {
-          response.data.tongueBody.split(',').forEach(function(element) {
-            if (element == '荣') {
-              $scope.cb11 = true;
-            }
-            if (element == '枯') {
-              $scope.cb12 = true;
-            }
-            if (element == '瘦') {
-              $scope.cb13 = true;
-            }
-            if (element == '胖') {
-              $scope.cb14 = true;
-            }
-            if (element == '齿痕') {
-              $scope.cb15 = true;
-            }
-            if (element == '点刺') {
-              $scope.cb16 = true;
-            }
-            if (element == '裂纹') {
-              $scope.cb17 = true;
-            }
-            if (element == '舌体瘀斑') {
-              $scope.cb18 = true;
-            }
-          });
-        }
-        if (response.data.mossy) {
-          response.data.mossy.split(',').forEach(function(element) {
-            if (element == '薄') {
-              $scope.cb19 = true;
-            }
-            if (element == '厚') {
-              $scope.cb20 = true;
-            }
-            if (element == '润') {
-              $scope.cb21 = true;
-            }
-            if (element == '少津') {
-              $scope.cb22 = true;
-            }
-            if (element == '燥') {
-              $scope.cb23 = true;
-            }
-            if (element == '糙') {
-              $scope.cb24 = true;
-            }
-            if (element == '焦') {
-              $scope.cb25 = true;
-            }
-            if (element == '枯') {
-              $scope.cb26 = true;
-            }
-            if (element == '腻') {
-              $scope.cb27 = true;
-            }
-            if (element == '腐') {
-              $scope.cb28 = true;
-            }
-            if (element == '剥') {
-              $scope.cb29 = true;
-            }
-            if (element == '类剥') {
-              $scope.cb30 = true;
-            }
-            if (element == '无苔') {
-              $scope.cb31 = true;
-            }
-          });
-        }
-        if (response.data.mossyPart) {
-          response.data.mossyPart.split(',').forEach(function(element) {
-            if (element == '全舌') {
-              $scope.cb32 = true;
-            }
-            if (element == '局部') {
-              $scope.cb33 = true;
-            }
-          });
-        }
-        if (response.data.mossyPartialDescription) {
-          $scope.mossyShow = true;
-          $scope.mossyDes = response.data.mossyPartialDescription;
-        }
-        if (response.data.tongueColor) {
-          response.data.tongueColor.split(',').forEach(function(element) {
-            if (element == '白') {
-              $scope.cb34 = true;
-            }
-            if (element == '略黄') {
-              $scope.cb35 = true;
-            }
-            if (element == '黄') {
-              $scope.cb36 = true;
-            }
-            if (element == '灰') {
-              $scope.cb37 = true;
-            }
-            if (element == '黑') {
-              $scope.cb38 = true;
-            }
-          });
-        }
-        if (response.data.tongueColorPart) {
-          response.data.tongueColorPart.split(',').forEach(function(element) {
-            if (element == '全舌') {
-              $scope.cb39 = true;
-            }
-            if (element == '局部') {
-              $scope.cb40 = true;
-            }
-          });
-        }
-        if (response.data.tongueColorPartialDescription) {
-          $scope.mossyShow = true;
-          $scope.mossyDes = response.data.tongueColorPartialDescription;
-        }
-        if (response.data.sublingualVaricoseVeins) {
-          response.data.sublingualVaricoseVeins.split(',').forEach(function(element) {
-            if (element == '正常') {
-              $scope.cb41 = true;
-            }
-            if (element == '轻微') {
-              $scope.cb42 = true;
-            }
-            if (element == '明显') {
-              $scope.cb43 = true;
-            }
-          });
-        }
-        if (response.data.leftPulse) {
-          response.data.leftPulse.split(',').forEach(function(element) {
-            if (element == '浮') {
-              $scope.cb44 = true;
-            }
-            if (element == '沉') {
-              $scope.cb45 = true;
-            }
-            if (element == '弦') {
-              $scope.cb46 = true;
-            }
-            if (element == '滑') {
-              $scope.cb47 = true;
-            }
-            if (element == '细') {
-              $scope.cb48 = true;
-            }
-            if (element == '数') {
-              $scope.cb49 = true;
-            }
-            if (element == '濡') {
-              $scope.cb50 = true;
-            }
-            if (element == '缓') {
-              $scope.cb51 = true;
-            }
-            if (element == '涩') {
-              $scope.cb52 = true;
-            }
-            if (element == '迟') {
-              $scope.cb53 = true;
-            }
-            if (element == '长') {
-              $scope.cb54 = true;
-            }
-            if (element == '短') {
-              $scope.cb55 = true;
-            }
-            if (element == '虚') {
-              $scope.cb56 = true;
-            }
-            if (element == '弱') {
-              $scope.cb57 = true;
-            }
-            if (element == '结代') {
-              $scope.cb58 = true;
-            }
-          });
-        }
-        if (response.data.rightPulse) {
-          response.data.rightPulse.split(',').forEach(function(element) {
-            if (element == '浮') {
-              $scope.cb59 = true;
-            }
-            if (element == '沉') {
-              $scope.cb60 = true;
-            }
-            if (element == '弦') {
-              $scope.cb61 = true;
-            }
-            if (element == '滑') {
-              $scope.cb62 = true;
-            }
-            if (element == '细') {
-              $scope.cb63 = true;
-            }
-            if (element == '数') {
-              $scope.cb64 = true;
-            }
-            if (element == '濡') {
-              $scope.cb65 = true;
-            }
-            if (element == '缓') {
-              $scope.cb66 = true;
-            }
-            if (element == '涩') {
-              $scope.cb67 = true;
-            }
-            if (element == '迟') {
-              $scope.cb68 = true;
-            }
-            if (element == '长') {
-              $scope.cb69 = true;
-            }
-            if (element == '短') {
-              $scope.cb70 = true;
-            }
-            if (element == '虚') {
-              $scope.cb71 = true;
-            }
-            if (element == '弱') {
-              $scope.cb72 = true;
-            }
-            if (element == '结代') {
-              $scope.cb73 = true;
-            }
-          });
-        }
-      });
+      if (!sessionStorage.getItem('followTongueId')) {
+        $http({
+          method: 'GET',
+          url: '/api/tonguePulse/' + sessionStorage.getItem('patientId')
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      } else {
+        $http({
+          method: 'GET',
+          url: '/api/tonguePulse/singleFollow/' + sessionStorage.getItem('followTongueId')
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      }
+    }
+
+    function giveResultToScope(response) {
+      $scope.followUpDate = new Date(response.data.followUpDate).getFullYear() + '-' + (new Date(response.data.followUpDate).getMonth() + 1) + '-' + new Date(response.data.followUpDate).getDate();
+      if (response.data.tongue) {
+        response.data.tongue.split(',').forEach(function(element) {
+          if (element == '淡红') {
+            $scope.cb1 = true;
+          }
+          if (element == '淡白') {
+            $scope.cb2 = true;
+          }
+          if (element == '淡紫') {
+            $scope.cb3 = true;
+          }
+          if (element == '红') {
+            $scope.cb4 = true;
+          }
+          if (element == '绛') {
+            $scope.cb5 = true;
+          }
+          if (element == '青') {
+            $scope.cb6 = true;
+          }
+          if (element == '紫暗') {
+            $scope.cb7 = true;
+          }
+          if (element == '瘀点瘀斑') {
+            $scope.cb8 = true;
+          }
+        });
+      }
+      if (response.data.tonguePart) {
+        response.data.tonguePart.split(',').forEach(function(element) {
+          if (element == '全舌') {
+            $scope.cb9 = true;
+          }
+          if (element == '局部') {
+            $scope.cb10 = true;
+          }
+        });
+      }
+      if (response.data.tonguePartialDescription) {
+        $scope.tongueShow = true;
+        $scope.tongueDescription = response.data.tonguePartialDescription;
+      }
+      if (response.data.tongueBody) {
+        response.data.tongueBody.split(',').forEach(function(element) {
+          if (element == '荣') {
+            $scope.cb11 = true;
+          }
+          if (element == '枯') {
+            $scope.cb12 = true;
+          }
+          if (element == '瘦') {
+            $scope.cb13 = true;
+          }
+          if (element == '胖') {
+            $scope.cb14 = true;
+          }
+          if (element == '齿痕') {
+            $scope.cb15 = true;
+          }
+          if (element == '点刺') {
+            $scope.cb16 = true;
+          }
+          if (element == '裂纹') {
+            $scope.cb17 = true;
+          }
+          if (element == '舌体瘀斑') {
+            $scope.cb18 = true;
+          }
+        });
+      }
+      if (response.data.mossy) {
+        response.data.mossy.split(',').forEach(function(element) {
+          if (element == '薄') {
+            $scope.cb19 = true;
+          }
+          if (element == '厚') {
+            $scope.cb20 = true;
+          }
+          if (element == '润') {
+            $scope.cb21 = true;
+          }
+          if (element == '少津') {
+            $scope.cb22 = true;
+          }
+          if (element == '燥') {
+            $scope.cb23 = true;
+          }
+          if (element == '糙') {
+            $scope.cb24 = true;
+          }
+          if (element == '焦') {
+            $scope.cb25 = true;
+          }
+          if (element == '枯') {
+            $scope.cb26 = true;
+          }
+          if (element == '腻') {
+            $scope.cb27 = true;
+          }
+          if (element == '腐') {
+            $scope.cb28 = true;
+          }
+          if (element == '剥') {
+            $scope.cb29 = true;
+          }
+          if (element == '类剥') {
+            $scope.cb30 = true;
+          }
+          if (element == '无苔') {
+            $scope.cb31 = true;
+          }
+        });
+      }
+      if (response.data.mossyPart) {
+        response.data.mossyPart.split(',').forEach(function(element) {
+          if (element == '全舌') {
+            $scope.cb32 = true;
+          }
+          if (element == '局部') {
+            $scope.cb33 = true;
+          }
+        });
+      }
+      if (response.data.mossyPartialDescription) {
+        $scope.mossyShow = true;
+        $scope.mossyDes = response.data.mossyPartialDescription;
+      }
+      if (response.data.tongueColor) {
+        response.data.tongueColor.split(',').forEach(function(element) {
+          if (element == '白') {
+            $scope.cb34 = true;
+          }
+          if (element == '略黄') {
+            $scope.cb35 = true;
+          }
+          if (element == '黄') {
+            $scope.cb36 = true;
+          }
+          if (element == '灰') {
+            $scope.cb37 = true;
+          }
+          if (element == '黑') {
+            $scope.cb38 = true;
+          }
+        });
+      }
+      if (response.data.tongueColorPart) {
+        response.data.tongueColorPart.split(',').forEach(function(element) {
+          if (element == '全舌') {
+            $scope.cb39 = true;
+          }
+          if (element == '局部') {
+            $scope.cb40 = true;
+          }
+        });
+      }
+      if (response.data.tongueColorPartialDescription) {
+        $scope.mossyShow = true;
+        $scope.mossyDes = response.data.tongueColorPartialDescription;
+      }
+      if (response.data.sublingualVaricoseVeins) {
+        response.data.sublingualVaricoseVeins.split(',').forEach(function(element) {
+          if (element == '正常') {
+            $scope.cb41 = true;
+          }
+          if (element == '轻微') {
+            $scope.cb42 = true;
+          }
+          if (element == '明显') {
+            $scope.cb43 = true;
+          }
+        });
+      }
+      if (response.data.leftPulse) {
+        response.data.leftPulse.split(',').forEach(function(element) {
+          if (element == '浮') {
+            $scope.cb44 = true;
+          }
+          if (element == '沉') {
+            $scope.cb45 = true;
+          }
+          if (element == '弦') {
+            $scope.cb46 = true;
+          }
+          if (element == '滑') {
+            $scope.cb47 = true;
+          }
+          if (element == '细') {
+            $scope.cb48 = true;
+          }
+          if (element == '数') {
+            $scope.cb49 = true;
+          }
+          if (element == '濡') {
+            $scope.cb50 = true;
+          }
+          if (element == '缓') {
+            $scope.cb51 = true;
+          }
+          if (element == '涩') {
+            $scope.cb52 = true;
+          }
+          if (element == '迟') {
+            $scope.cb53 = true;
+          }
+          if (element == '长') {
+            $scope.cb54 = true;
+          }
+          if (element == '短') {
+            $scope.cb55 = true;
+          }
+          if (element == '虚') {
+            $scope.cb56 = true;
+          }
+          if (element == '弱') {
+            $scope.cb57 = true;
+          }
+          if (element == '结代') {
+            $scope.cb58 = true;
+          }
+        });
+      }
+      if (response.data.rightPulse) {
+        response.data.rightPulse.split(',').forEach(function(element) {
+          if (element == '浮') {
+            $scope.cb59 = true;
+          }
+          if (element == '沉') {
+            $scope.cb60 = true;
+          }
+          if (element == '弦') {
+            $scope.cb61 = true;
+          }
+          if (element == '滑') {
+            $scope.cb62 = true;
+          }
+          if (element == '细') {
+            $scope.cb63 = true;
+          }
+          if (element == '数') {
+            $scope.cb64 = true;
+          }
+          if (element == '濡') {
+            $scope.cb65 = true;
+          }
+          if (element == '缓') {
+            $scope.cb66 = true;
+          }
+          if (element == '涩') {
+            $scope.cb67 = true;
+          }
+          if (element == '迟') {
+            $scope.cb68 = true;
+          }
+          if (element == '长') {
+            $scope.cb69 = true;
+          }
+          if (element == '短') {
+            $scope.cb70 = true;
+          }
+          if (element == '虚') {
+            $scope.cb71 = true;
+          }
+          if (element == '弱') {
+            $scope.cb72 = true;
+          }
+          if (element == '结代') {
+            $scope.cb73 = true;
+          }
+        });
+      }
     }
 
     function judge(status, number, tonguePulse) {

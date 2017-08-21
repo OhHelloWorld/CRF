@@ -17,7 +17,7 @@ public interface PhysicalChemicalInspectionRepo
 
     @Query(value = "select complete from physical_chemical_inspection where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
-    public boolean getCompleteByPatientId(int patientId);
+    public Boolean getCompleteByPatientId(int patientId);
 
     @Query(value = "select * from physical_chemical_inspection where follow_up = 1 and patient_id = ?1",
             nativeQuery = true)

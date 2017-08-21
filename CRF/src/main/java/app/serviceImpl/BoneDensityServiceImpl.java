@@ -17,8 +17,10 @@ public class BoneDensityServiceImpl implements BoneDensityService {
     @Autowired
     private BoneDensityRepo bRepo;
 
-    private BoneDensityDO convertToEntity(BoneDensityDTO boneDensityDTO) {
-        BoneDensityDO boneDensityDO = new BoneDensityDO();
+    private BoneDensityDO convertToEntity(BoneDensityDTO boneDensityDTO, BoneDensityDO boneDensityDO) {
+        if (boneDensityDO == null) {
+            boneDensityDO = new BoneDensityDO();
+        }
         if (boneDensityDTO.getBigTrochanter() != 0) {
             boneDensityDO.setBigTrochanter(boneDensityDTO.getBigTrochanter());
         } else {
@@ -76,7 +78,7 @@ public class BoneDensityServiceImpl implements BoneDensityService {
 
     @Override
     public void saveBoneDensity(BoneDensityDTO boneDensityDTO) {
-        bRepo.save(convertToEntity(boneDensityDTO));
+        bRepo.save(convertToEntity(boneDensityDTO, null));
     }
 
     @Override
@@ -90,11 +92,12 @@ public class BoneDensityServiceImpl implements BoneDensityService {
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return bRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return bRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return bRepo.getCompleteByPatientId(patientId) != null ? bRepo.getCompleteByPatientId(patientId) : false;
     }
 
     @Override
@@ -118,6 +121,16 @@ public class BoneDensityServiceImpl implements BoneDensityService {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public BoneDensityDTO getSingleFollowById(int id) {
+        return convertToDTO(bRepo.findOne(id));
+    }
+
+    @Override
+    public void updateBone(BoneDensityDTO boneDensityDTO) {
+        bRepo.save(convertToEntity(boneDensityDTO, bRepo.findOne(boneDensityDTO.getId())));
     }
 
 }

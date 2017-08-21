@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -76,14 +77,14 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void inviteUser(Long userId, Long projectId, String projectRoleId) {
+    public void inviteUser(Long userId, Long projectId, String inviteType) {
         MessageDO messageDO = new MessageDO();
         ProjectDO projectDO = projectRepo.findOne(projectId);
         messageDO.setContent(projectDO.getProjectName() + ": 项目向你发出邀请！");
         messageDO.setReceivedUserId(userId);
         messageDO.setRead(false);
         messageRepo.save(messageDO);
-        saveInvited(userId, projectId, projectRoleId);
+        saveInvited(userId, projectId, inviteType);
     }
 
     @Override
@@ -108,26 +109,32 @@ public class ProjectServiceImpl implements ProjectService {
         return projectUsersDTOS;
     }
 
-    public void saveInvited(Long userId, Long projectId, String projectRoleId) {
+    public void saveInvited(Long userId, Long projectId, String inviteType) {
         UserProjectRoleDO userProjectRoleDO = new UserProjectRoleDO();
         userProjectRoleDO.setProjectId(projectId);
         userProjectRoleDO
-                .setProjectRoleId(projectRoleRepo.findByProjectRoleName(projectRoleId).getId());
+                .setProjectRoleId(projectRoleRepo.findByProjectRoleName(inviteType).getId());
         userProjectRoleDO.setUserId(userId);
         userProjectRoleDO.setAccept(false);
 
         ProjectDO projectDO = projectRepo.findOne(projectId);
         UserDO userDO = userRepo.findOne(userId);
-        for (HospitalDO h : projectDO.getHospitalList()) {
-            if (h.getId() == userDO.getHospital().getId()) {
-                userProjectRoleRepo.save(userProjectRoleDO);
-                break;
-            } else {
-                projectDO.getHospitalList().add(userDO.getHospital());
-                projectRepo.save(projectDO);
-                userProjectRoleRepo.save(userProjectRoleDO);
-                break;
+        if (!projectDO.getHospitalList().isEmpty()) {
+            for (HospitalDO h : projectDO.getHospitalList()) {
+                if (h.getId() == userDO.getHospital().getId()) {
+                    userProjectRoleRepo.save(userProjectRoleDO);
+                    break;
+                } else {
+                    projectDO.getHospitalList().add(userDO.getHospital());
+                    projectRepo.save(projectDO);
+                    userProjectRoleRepo.save(userProjectRoleDO);
+                    break;
+                }
             }
+        } else {
+            projectDO.getHospitalList().add(userDO.getHospital());
+            projectRepo.save(projectDO);
+            userProjectRoleRepo.save(userProjectRoleDO);
         }
     }
 
@@ -165,6 +172,10 @@ public class ProjectServiceImpl implements ProjectService {
         UserProjectRoleDO userProjectRoleDO = userProjectRoleRepo.getRoleId(userId, projectId);
         userProjectRoleDO.setAccept(false);
         userProjectRoleRepo.delete(userProjectRoleDO);
+        ProjectDO projectDO = projectRepo.findOne(projectId);
+        projectDO.getHospitalList().remove(userRepo.findOne(userId).getHospital());
+        projectRepo.save(projectDO);
+
     }
 
     public PageDTO<UserDTO> getProjectUser(Long projectId, Pageable pageable) {

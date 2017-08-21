@@ -64,11 +64,12 @@ public class SimpleAIHServiceImpl implements SimpleAIHService {
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return simpleAIHRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return simpleAIHRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return simpleAIHRepo.getCompleteByPatientId(patientId)!=null?simpleAIHRepo.getCompleteByPatientId(patientId):false;
     }
 
 }

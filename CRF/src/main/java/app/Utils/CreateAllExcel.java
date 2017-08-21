@@ -1936,7 +1936,7 @@ public class CreateAllExcel {
         if (!new File(excelPath).exists()) {
             new File(excelPath).mkdir();
         }
-        FileOutputStream fileOut = new FileOutputStream(excelPath + "patientInformation.xlsx");
+        FileOutputStream fileOut = new FileOutputStream(excelPath + new UserMsgTool().getCurrentUser().getRealName() + "patientInformation.xlsx");
         wb.write(fileOut);
         fileOut.close();
     }

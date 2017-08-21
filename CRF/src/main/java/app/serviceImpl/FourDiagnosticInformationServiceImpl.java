@@ -21,7 +21,7 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
     @Transactional
     public void saveFourDiagnosticInformation(FourDiagnosticInformationDTO fDto) {
 
-        fRepo.save(convertToFourdiagnosticinformationDTO(fDto));
+        fRepo.save(convertToFourdiagnosticinfoDO(fDto,null));
     }
 
     public FourDiagnosticInformationDTO getFourDiagnosticInfoByPatientId(int patientId) {
@@ -35,16 +35,19 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
     }
 
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return fRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return fRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return fRepo.getCompleteByPatientId(patientId)!=null?fRepo.getCompleteByPatientId(patientId):false;
     }
 
-    private FourDiagnosticInformationDO convertToFourdiagnosticinformationDTO(
-            FourDiagnosticInformationDTO fDto) {
-        FourDiagnosticInformationDO fDo = new FourDiagnosticInformationDO();
+    private FourDiagnosticInformationDO convertToFourdiagnosticinfoDO(
+            FourDiagnosticInformationDTO fDto,FourDiagnosticInformationDO fDo){
+        if(fDo == null) {
+            fDo = new FourDiagnosticInformationDO();
+        }
         fDo.setAbdominalDistention(fDto.getAbdominalDistention());
         fDo.setAbdominalVeins(fDto.getAbdominalVeins());
         fDo.setAnorexia(fDto.getAnorexia());
@@ -157,5 +160,16 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
     public FourDiagnosticInformationDTO getDefaultFourDia(int patientId) {
         return fRepo.getDefaultFourDia(patientId) != null
                 ? convertToFourDiagnosticInfoDTO(fRepo.getDefaultFourDia(patientId)) : null;
+    }
+
+    @Override
+    public FourDiagnosticInformationDTO getSingleFollowById(int id) {
+        return convertToFourDiagnosticInfoDTO(fRepo.findOne(id));
+    }
+
+    @Override
+    public void updateFourDia(FourDiagnosticInformationDTO fourDiagnosticInformationDTO) {
+        FourDiagnosticInformationDO fourDiagnosticInformationDO = fRepo.findOne(fourDiagnosticInformationDTO.getId());
+        fRepo.save(convertToFourdiagnosticinfoDO(fourDiagnosticInformationDTO,fourDiagnosticInformationDO));
     }
 }

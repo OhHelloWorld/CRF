@@ -76,8 +76,6 @@ angular.module('boneDensity', ['main'])
         $scope.fullHipT = undefined;
         $scope.diagnosis = undefined;
         $scope.remarks = undefined;
-      } else {
-        get();
       }
     });
 
@@ -106,57 +104,100 @@ angular.module('boneDensity', ['main'])
       } else {
         boneDensity.complete = true;
       }
-      $http({
-        url: '/api/boneDensity',
-        method: 'POST',
-        data: boneDensity
-      }).then(function success() {
-        $scope.changeMenuStatus();
-        initializeModal();
-        $('#modalButton1').addClass('hide');
-        $('#modalButton2').addClass('hide');
-        $scope.information = '保存成功';
-        $('#infoModal').modal({
-          keyboard: true
+      if (!sessionStorage.getItem('followBoneId')) {
+        $http({
+          url: '/api/boneDensity',
+          method: 'POST',
+          data: boneDensity
+        }).then(function success() {
+          $scope.changeMenuStatus();
+          initializeModal();
+          $('#modalButton1').addClass('hide');
+          $('#modalButton2').addClass('hide');
+          $scope.information = '保存成功';
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          initializeModal();
+          $('#modalButton1').addClass('hide');
+          $('#modalButton2').addClass('hide');
+          $scope.information = '保存失败';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      }, function fail() {
-        initializeModal();
-        $('#modalButton1').addClass('hide');
-        $('#modalButton2').addClass('hide');
-        $scope.information = '保存失败';
-        $('#infoModal').modal({
-          keyboard: true
+      } else {
+        boneDensity.id = sessionStorage.getItem('followBoneId');
+        boneDensity.followUp = true;
+        boneDensity.followUpDate = new Date($scope.followUpDate);
+        $http({
+          url: '/api/boneDensity',
+          method: 'PUT',
+          data: boneDensity
+        }).then(function success() {
+          $scope.changeMenuStatus();
+          initializeModal();
+          $('#modalButton1').addClass('hide');
+          $('#modalButton2').addClass('hide');
+          $scope.information = '保存成功';
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        }, function fail() {
+          initializeModal();
+          $('#modalButton1').addClass('hide');
+          $('#modalButton2').addClass('hide');
+          $scope.information = '保存失败';
+          $('#infoModal').modal({
+            keyboard: true
+          });
         });
-      });
+      }
     }
 
     function get() {
-      $http({
-        method: 'GET',
-        url: '/api/boneDensity/' + sessionStorage.getItem('patientId'),
-      }).then(function success(response) {
-        var res = response.data;
-        if (!res.measuringTime) {
-          $scope.addDate = undefined;
-        } else {
-          var myDate = new Date(res.measuringTime);
-          $scope.addDate = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate();
-        }
-        $scope.lumbarSpine = res.lumbarSpine;
-        $scope.lumbarSpineT = res.lumbarSpineT;
-        $scope.femoralNeck = res.femoralNeck;
-        $scope.femoralNeckT = res.femoralNeckT;
-        $scope.bigTrochanter = res.bigTrochanter;
-        $scope.bigTrochanterT = res.bigTrochanterT;
-        $scope.fullHip = res.fullHip;
-        $scope.fullHipT = res.fullHipT;
-        $scope.diagnosis = res.diagnosis;
-        $scope.remarks = res.remarks;
-        //  $scope.followUp = boneDensity.followUp;
-        //  $scope.followUpDate =  boneDensity.followUpDate;
-      }, function fail() {
+      if (!sessionStorage.getItem('followBoneId')) {
+        $http({
+          method: 'GET',
+          url: '/api/boneDensity/' + sessionStorage.getItem('patientId'),
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      } else {
+        $http({
+          method: 'GET',
+          url: '/api/boneDensity/singleFollow/' + sessionStorage.getItem('followBoneId'),
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      }
+    }
 
-      });
+    $scope.$on('$destroy', function() {
+      sessionStorage.removeItem('followBoneId');
+    });
+
+    function giveResultToScope(response) {
+      var res = response.data;
+      if (!res.measuringTime) {
+        $scope.addDate = undefined;
+      } else {
+        var myDate = new Date(res.measuringTime);
+        $scope.addDate = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate();
+      }
+      $scope.lumbarSpine = res.lumbarSpine;
+      $scope.lumbarSpineT = res.lumbarSpineT;
+      $scope.femoralNeck = res.femoralNeck;
+      $scope.femoralNeckT = res.femoralNeckT;
+      $scope.bigTrochanter = res.bigTrochanter;
+      $scope.bigTrochanterT = res.bigTrochanterT;
+      $scope.fullHip = res.fullHip;
+      $scope.fullHipT = res.fullHipT;
+      $scope.diagnosis = res.diagnosis;
+      $scope.remarks = res.remarks;
+      //  $scope.followUp = boneDensity.followUp;
+      $scope.followUpDate = res.followUpDate;
     }
 
     function getPatientInfo() {

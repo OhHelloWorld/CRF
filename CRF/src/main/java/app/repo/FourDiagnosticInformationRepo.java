@@ -19,7 +19,7 @@ public interface FourDiagnosticInformationRepo
 
     @Query(value = "select complete from four_diagnostic_information where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
-    public boolean getCompleteByPatientId(int patientId);
+    public Boolean getCompleteByPatientId(int patientId);
 
     @Query(value = "select * from four_diagnostic_information where follow_up = 1 and patient_id = ?1",
             nativeQuery = true)

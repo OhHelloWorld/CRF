@@ -251,7 +251,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#fourMenuYes').addClass('hide');
           $('#fourMenuNo').removeClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -264,7 +264,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#tongueMenuNo').removeClass('hide');
           $('#tongueMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -277,7 +277,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#phyMenuNo').removeClass('hide');
           $('#phyMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -290,7 +290,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#boneMenuNo').removeClass('hide');
           $('#boneMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
 
 
@@ -309,8 +309,8 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
             $('#comAIHMenuNo').removeClass('hide');
             $('#comAIHMenuYes').addClass('hide');
           }
-        });
-      });
+        }).catch(function err() {});
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -323,7 +323,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#simAIHMenuNo').removeClass('hide');
           $('#simAIHMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -336,7 +336,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#finalDiagnosisMenuNo').removeClass('hide');
           $('#finalDiagnosisMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -349,7 +349,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#liverMenuNo').removeClass('hide');
           $('#liverMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -362,7 +362,7 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
           $('#treatMenuNo').removeClass('hide');
           $('#treatMenuYes').addClass('hide');
         }
-      });
+      }).catch(function err() {});
 
       $http({
         method: 'GET',
@@ -379,8 +379,8 @@ main.controller('mainController', ['$scope', '$http', '$rootScope', '$state', 'l
             $('#treatMenuNo').removeClass('hide');
             $('#treatMenuYes').addClass('hide');
           }
-        });
-      });
+        }).catch(function err() {});
+      }).catch(function err() {});
 
     }
   }

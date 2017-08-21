@@ -60,12 +60,14 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'l
       url: '/api/excel'
     }).then(function success() {
       $('#infoModal').modal('hide');
-      $scope.information = '信息已成功导出至"C:/hospitalExcel"文件夹下';
+      $scope.information = '导出成功';
       $scope.buttonShow = true;
       $scope.buttonContent = '确认';
       $('#infoModal').modal({
         keyboard: true
       });
+      var excelUrl = 'http://localhost:8080/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      window.open(excelUrl);
     }, function fail() {
       $('#infoModal').modal('hide');
       $scope.information = '导出出错，请稍候再试';
