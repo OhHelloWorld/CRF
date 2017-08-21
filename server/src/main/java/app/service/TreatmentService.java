@@ -44,4 +44,8 @@ public interface TreatmentService {
     public TreatmentProgramsDTO getDefaultTreat(int patientId);
 
     public ArrayList<String> getQdsDate(int patientId);
+
+    TreatmentProgramsDTO getSingleFollowById(int id);
+
+    void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO);
 }

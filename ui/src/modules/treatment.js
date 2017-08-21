@@ -120,7 +120,7 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     };
 
-    for (var j = 1; j<19; j++) {
+    for (var j = 1; j < 19; j++) {
       $('#datepicker' + j).datepicker({
         autoclose: true
       });
@@ -295,15 +295,6 @@ angular.module('treatment', ['chart.js', 'main'])
     };
 
     $scope.save = function() {
-      // if (($scope.qds2 || ($scope.qdsTime && $scope.qdsDose && $scope.qdsHeal)) && ($scope.qdsl2 || ($scope.qdslTime && $scope.qdslDose && $scope.qdslHeal)) && ($scope.jjq2 || ($scope.jjqTime && $scope.jjqDose && $scope.jjqHeal)) && ($scope.bdnd2 || ($scope.bdndTime && $scope.bdndDose && $scope.bdndHeal)) && ($scope.lcpl2 || ($scope.lcplTime && $scope.lcplDose && $scope.lcplHeal)) && ($scope.mtx2 || ($scope.mtxTime && $scope.mtxDose && $scope.mtxHeal)) && ($scope.cysa2 || ($scope.cysaTime && $scope.cysaDose && $scope.cysaHeal)) && ($scope.ctx2 || ($scope.ctxTime && $scope.ctxDose && $scope.ctxHeal)) && ($scope.mtmk2 || ($scope.mtmkTime && $scope.mtmkDose && $scope.mtmkHeal)) && ($scope.qsxs2 || ($scope.qsxsTime && $scope.qsxsDose && $scope.qsxsHeal)) && ($scope.xqyd2 || ($scope.xqydTime && $scope.xqydDose && $scope.xqydHeal)) && ($scope.fnbt2 || ($scope.fnbtTime && $scope.fnbtDose && $scope.fnbtHeal)) && ($scope.bzbt2 || ($scope.bzbtTime && $scope.bzbtDose && $scope.bzbtHeal)) && ($scope.gyz2 || $scope.gyzTime)) {
-      //   initializeModal();
-      //   $('#modalButton1').addClass('hide');
-      //   $scope.buttonContent2 = '确认';
-      //   $scope.information = '请填写完整';
-      //   $('#infoModal').modal({
-      //     keyboard: true
-      //   });
-      // } else {
       var judge = true;
       treatment.patientId = sessionStorage.getItem('patientId');
       treatment.qdsTime = new Date($scope.qdsTime);
@@ -367,23 +358,59 @@ angular.module('treatment', ['chart.js', 'main'])
       chineseMedicine.followUpDate = new Date($scope.followUpDate);
       chineseMedicine.complete = true;
 
-      $http({
-        method: 'POST',
-        url: '/api/treatment',
-        data: treatment
-      }).then(function success() {
-        judge = true;
-      }, function fail() {
-        judge = false;
-      });
+      if (!sessionStorage.getItem('followTreatId')) {
+        $http({
+          method: 'POST',
+          url: '/api/treatment',
+          data: treatment
+        }).then(function success() {
+          judge = true;
+        }, function fail() {
+          judge = false;
+        });
 
-      $http({
-        method: 'POST',
-        url: '/api/medicine',
-        data: chineseMedicine
-      }).then(function success() {
-        if (judge == true) {
-          $scope.changeMenuStatus();
+        $http({
+          method: 'POST',
+          url: '/api/medicine',
+          data: chineseMedicine
+        }).then(function success() {
+          if (judge == true) {
+            $scope.changeMenuStatus();
+            initializeModal();
+            $('#modalButton1').addClass('hide');
+            $('#modalButton2').addClass('hide');
+            // $scope.buttonContent2 = '确认';
+            $scope.information = '保存成功';
+            $('#infoModal').modal({
+              keyboard: true
+            });
+          } else {
+            initializeModal();
+            $('#modalButton1').addClass('hide');
+            $('#modalButton2').addClass('hide');
+            $scope.information = '保存失败';
+            $('#infoModal').modal({
+              keyboard: true
+            });
+          }
+        }, function fail() {
+          initializeModal();
+          $('#modalButton1').addClass('hide');
+          $scope.buttonContent2 = '确认';
+          $scope.information = '保存失败';
+          $('#infoModal').modal({
+            keyboard: true
+          });
+        });
+      } else {
+        treatment.id = sessionStorage.getItem('followTreatId');
+        treatment.followUp = true;
+        treatment.followUpDate = new Date($scope.followUpDate);
+        $http({
+          method: 'PUT',
+          url: '/api/treatment',
+          data: treatment
+        }).then(function success() {
           initializeModal();
           $('#modalButton1').addClass('hide');
           $('#modalButton2').addClass('hide');
@@ -392,200 +419,203 @@ angular.module('treatment', ['chart.js', 'main'])
           $('#infoModal').modal({
             keyboard: true
           });
-        } else {
+        }, function fail() {
           initializeModal();
           $('#modalButton1').addClass('hide');
-          $('#modalButton2').addClass('hide');
-          // $scope.buttonContent2 = '确认';
+          $scope.buttonContent2 = '确认';
           $scope.information = '保存失败';
           $('#infoModal').modal({
             keyboard: true
           });
-        }
-      }, function fail() {
-        initializeModal();
-        $('#modalButton1').addClass('hide');
-        $scope.buttonContent2 = '确认';
-        $scope.information = '保存失败';
-        $('#infoModal').modal({
-          keyboard: true
         });
-      });
-      // }
+      }
     };
 
 
     function getTreatment() {
-      $http({
-        method: 'GET',
-        url: '/api/treatment/' + sessionStorage.getItem('patientId')
-      }).then(function success(response) {
-        var res = response.data;
-        treatment.patientId = sessionStorage.getItem('patientId');
-        if (res.qdsTime) {
-          var date = new Date(res.qdsTime);
-          $scope.qdsTime = formatDate(date);
-          $scope.qdsDose = res.qdsDose;
-          $scope.qdsHeal = res.qdsHeal;
-          $scope.qds1 = false;
-          $scope.qds2 = true;
+      if (!sessionStorage.getItem('followTreatId')) {
+        $http({
+          method: 'GET',
+          url: '/api/treatment/' + sessionStorage.getItem('patientId')
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      } else {
+        $http({
+          method: 'GET',
+          url: '/api/treatment/singleFollow/' + sessionStorage.getItem('followTreatId')
+        }).then(function success(response) {
+          giveResultToScope(response);
+        });
+      }
+    }
+
+    function giveResultToScope(response) {
+      var res = response.data;
+      $scope.patientId = sessionStorage.getItem('patientId');
+      $scope.followUpDate = res.followUpDate;
+      if (res.qdsTime) {
+        var date = new Date(res.qdsTime);
+        $scope.qdsTime = formatDate(date);
+        $scope.qdsDose = res.qdsDose;
+        $scope.qdsHeal = res.qdsHeal;
+        $scope.qds1 = false;
+        $scope.qds2 = true;
+      } else {
+        $scope.qds1 = true;
+        $scope.qds2 = false;
+      }
+      if (res.qdslTime) {
+        date = new Date(res.qdslTime);
+        $scope.qdslTime = formatDate(date);
+        $scope.qdslDose = res.qdslDose;
+        $scope.qdslHeal = res.qdslHeal;
+        $scope.qdsl1 = false;
+        $scope.qdsl2 = true;
+      } else {
+        $scope.qdsl1 = true;
+        $scope.qdsl2 = false;
+      }
+      if (res.jjqTime) {
+        date = new Date(res.jjqTime);
+        $scope.jjqTime = formatDate(date);
+        $scope.jjqDose = res.jjqDose;
+        $scope.jjqHeal = res.jjqHeal;
+        $scope.jjq1 = false;
+        $scope.jjq2 = true;
+      } else {
+        $scope.jjq1 = true;
+        $scope.jjq2 = false;
+      }
+      if (res.bdndTime) {
+        date = new Date(res.bdndTime);
+        $scope.bdndTime = formatDate(date);
+        $scope.bdndDose = res.bdndDose;
+        $scope.bdndHeal = res.bdndHeal;
+        $scope.bdnd1 = false;
+        $scope.bdnd2 = true;
+      } else {
+        $scope.bdnd1 = true;
+        $scope.bdnd2 = false;
+      }
+      if (res.lcplTime) {
+        date = new Date(res.lcplTime);
+        $scope.lcplTime = formatDate(date);
+        $scope.lcplDose = res.lcplDose;
+        $scope.lcplHeal = res.lcplHeal;
+        $scope.lcpl1 = false;
+        $scope.lcpl2 = true;
+      } else {
+        $scope.lcpl1 = true;
+        $scope.lcpl2 = false;
+      }
+      if (res.mtxTime) {
+        date = new Date(res.mtxTime);
+        $scope.mtxTime = formatDate(date);
+        $scope.mtxDose = res.mtxDose;
+        $scope.mtxHeal = res.mtxHeal;
+        $scope.mtx1 = false;
+        $scope.mtx2 = true;
+      } else {
+        $scope.mtx1 = true;
+        $scope.mtx2 = false;
+      }
+      if (res.cysaTime) {
+        date = new Date(res.cysaTime);
+        $scope.cysaTime = formatDate(date);
+        $scope.cysaDose = res.cysaDose;
+        $scope.cysaHeal = res.cysaHeal;
+        $scope.cysa1 = false;
+        $scope.cysa2 = true;
+      } else {
+        $scope.cysa1 = true;
+        $scope.cysa2 = false;
+      }
+      if (res.ctxTime) {
+        date = new Date(res.ctxTime);
+        $scope.ctxTime = formatDate(date);
+        $scope.ctxDose = res.ctxDose;
+        $scope.ctxHeal = res.ctxHeal;
+        $scope.ctx1 = false;
+        $scope.ctx2 = true;
+      } else {
+        $scope.ctx1 = true;
+        $scope.ctx2 = false;
+      }
+      if (res.mtmkTime) {
+        date = new Date(res.mtmkTime);
+        $scope.mtmkTime = formatDate(date);
+        $scope.mtmkDose = res.mtmkDose;
+        $scope.mtmkHeal = res.mtmkHeal;
+        $scope.mtmk1 = false;
+        $scope.mtmk2 = true;
+      } else {
+        $scope.mtmk1 = true;
+        $scope.mtmk2 = false;
+      }
+      if (res.qsxsTime) {
+        date = new Date(res.qsxsTime);
+        $scope.qsxsTime = formatDate(date);
+        $scope.qsxsDose = res.qsxsDose;
+        $scope.qsxsHeal = res.qsxsHeal;
+        $scope.qsxs1 = false;
+        $scope.qsxs2 = true;
+      } else {
+        $scope.qsxs1 = true;
+        $scope.qsxs2 = false;
+      }
+      if (res.xqydTime) {
+        date = new Date(res.xqydTime);
+        $scope.xqydTime = formatDate(date);
+        $scope.xqydDose = res.xqydDose;
+        $scope.xqydHeal = res.xqydHeal;
+        $scope.xqyd1 = false;
+        $scope.xqyd2 = true;
+      } else {
+        $scope.xqyd1 = true;
+        $scope.xqyd2 = false;
+      }
+      if (res.fnbtTime) {
+        date = new Date(res.fnbtTime);
+        $scope.fnbtTime = formatDate(date);
+        $scope.fnbtDose = res.fnbtDose;
+        $scope.fnbtHeal = res.fnbtHeal;
+        $scope.fnbt1 = false;
+        $scope.fnbt2 = true;
+      } else {
+        $scope.fnbt1 = true;
+        $scope.fnbt2 = false;
+      }
+      if (res.bzbtTime) {
+        date = new Date(res.bzbtTime);
+        $scope.bzbtTime = formatDate(date);
+        $scope.bzbtDose = res.bzbtDose;
+        $scope.bzbtHeal = res.bzbtHeal;
+        $scope.bzbt1 = false;
+        $scope.bzbt2 = true;
+      } else {
+        $scope.bzbt1 = true;
+        $scope.bzbt2 = false;
+      }
+      if (res.gyzTime) {
+        date = new Date(res.gyzTime);
+        var date1 = new Date(res.gyzDetails);
+        $scope.gyzTime = formatDate(date);
+        $scope.gyzDetTime = formatDate(date1);
+        $scope.dieOption = res.gyzResult;
+        if (res.gyzResult == 'die') {
+          $scope.isDie = true;
+          $scope.gyzReason = res.gyzReason;
         } else {
-          $scope.qds1 = true;
-          $scope.qds2 = false;
-        }
-        if (res.qdslTime) {
-          date = new Date(res.qdslTime);
-          $scope.qdslTime = formatDate(date);
-          $scope.qdslDose = res.qdslDose;
-          $scope.qdslHeal = res.qdslHeal;
-          $scope.qdsl1 = false;
-          $scope.qdsl2 = true;
-        } else {
-          $scope.qdsl1 = true;
-          $scope.qdsl2 = false;
-        }
-        if (res.jjqTime) {
-          date = new Date(res.jjqTime);
-          $scope.jjqTime = formatDate(date);
-          $scope.jjqDose = res.jjqDose;
-          $scope.jjqHeal = res.jjqHeal;
-          $scope.jjq1 = false;
-          $scope.jjq2 = true;
-        } else {
-          $scope.jjq1 = true;
-          $scope.jjq2 = false;
-        }
-        if (res.bdndTime) {
-          date = new Date(res.bdndTime);
-          $scope.bdndTime = formatDate(date);
-          $scope.bdndDose = res.bdndDose;
-          $scope.bdndHeal = res.bdndHeal;
-          $scope.bdnd1 = false;
-          $scope.bdnd2 = true;
-        } else {
-          $scope.bdnd1 = true;
-          $scope.bdnd2 = false;
-        }
-        if (res.lcplTime) {
-          date = new Date(res.lcplTime);
-          $scope.lcplTime = formatDate(date);
-          $scope.lcplDose = res.lcplDose;
-          $scope.lcplHeal = res.lcplHeal;
-          $scope.lcpl1 = false;
-          $scope.lcpl2 = true;
-        } else {
-          $scope.lcpl1 = true;
-          $scope.lcpl2 = false;
-        }
-        if (res.mtxTime) {
-          date = new Date(res.mtxTime);
-          $scope.mtxTime = formatDate(date);
-          $scope.mtxDose = res.mtxDose;
-          $scope.mtxHeal = res.mtxHeal;
-          $scope.mtx1 = false;
-          $scope.mtx2 = true;
-        } else {
-          $scope.mtx1 = true;
-          $scope.mtx2 = false;
-        }
-        if (res.cysaTime) {
-          date = new Date(res.cysaTime);
-          $scope.cysaTime = formatDate(date);
-          $scope.cysaDose = res.cysaDose;
-          $scope.cysaHeal = res.cysaHeal;
-          $scope.cysa1 = false;
-          $scope.cysa2 = true;
-        } else {
-          $scope.cysa1 = true;
-          $scope.cysa2 = false;
-        }
-        if (res.ctxTime) {
-          date = new Date(res.ctxTime);
-          $scope.ctxTime = formatDate(date);
-          $scope.ctxDose = res.ctxDose;
-          $scope.ctxHeal = res.ctxHeal;
-          $scope.ctx1 = false;
-          $scope.ctx2 = true;
-        } else {
-          $scope.ctx1 = true;
-          $scope.ctx2 = false;
-        }
-        if (res.mtmkTime) {
-          date = new Date(res.mtmkTime);
-          $scope.mtmkTime = formatDate(date);
-          $scope.mtmkDose = res.mtmkDose;
-          $scope.mtmkHeal = res.mtmkHeal;
-          $scope.mtmk1 = false;
-          $scope.mtmk2 = true;
-        } else {
-          $scope.mtmk1 = true;
-          $scope.mtmk2 = false;
-        }
-        if (res.qsxsTime) {
-          date = new Date(res.qsxsTime);
-          $scope.qsxsTime = formatDate(date);
-          $scope.qsxsDose = res.qsxsDose;
-          $scope.qsxsHeal = res.qsxsHeal;
-          $scope.qsxs1 = false;
-          $scope.qsxs2 = true;
-        } else {
-          $scope.qsxs1 = true;
-          $scope.qsxs2 = false;
-        }
-        if (res.xqydTime) {
-          date = new Date(res.xqydTime);
-          $scope.xqydTime = formatDate(date);
-          $scope.xqydDose = res.xqydDose;
-          $scope.xqydHeal = res.xqydHeal;
-          $scope.xqyd1 = false;
-          $scope.xqyd2 = true;
-        } else {
-          $scope.xqyd1 = true;
-          $scope.xqyd2 = false;
-        }
-        if (res.fnbtTime) {
-          date = new Date(res.fnbtTime);
-          $scope.fnbtTime = formatDate(date);
-          $scope.fnbtDose = res.fnbtDose;
-          $scope.fnbtHeal = res.fnbtHeal;
-          $scope.fnbt1 = false;
-          $scope.fnbt2 = true;
-        } else {
-          $scope.fnbt1 = true;
-          $scope.fnbt2 = false;
-        }
-        if (res.bzbtTime) {
-          date = new Date(res.bzbtTime);
-          $scope.bzbtTime = formatDate(date);
-          $scope.bzbtDose = res.bzbtDose;
-          $scope.bzbtHeal = res.bzbtHeal;
-          $scope.bzbt1 = false;
-          $scope.bzbt2 = true;
-        } else {
-          $scope.bzbt1 = true;
-          $scope.bzbt2 = false;
-        }
-        if (res.gyzTime) {
-          date = new Date(res.gyzTime);
-          var date1 = new Date(res.gyzDetails);
-          $scope.gyzTime = formatDate(date);
-          $scope.gyzDetTime = formatDate(date1);
-          $scope.dieOption = res.gyzResult;
-          if (res.gyzResult == 'die') {
-            $scope.isDie = true;
-            $scope.gyzReason = res.gyzReason;
-          } else {
-            $scope.isDie = false;
-          }
-          $scope.gyz1 = false;
-          $scope.gyz2 = true;
-        } else {
-          $scope.gyz1 = true;
-          $scope.gyz2 = false;
           $scope.isDie = false;
         }
-
-      });
+        $scope.gyz1 = false;
+        $scope.gyz2 = true;
+      } else {
+        $scope.gyz1 = true;
+        $scope.gyz2 = false;
+        $scope.isDie = false;
+      }
     }
 
     function getChineseMedicine() {
@@ -668,10 +698,6 @@ angular.module('treatment', ['chart.js', 'main'])
         $scope.bProprietaryMedicineTime = undefined;
         $scope.bProprietaryMedicineName = undefined;
         $scope.bProprietaryMedicineHeal = undefined;
-      } else {
-        $scope.followDateShow = false;
-        getTreatment();
-        getChineseMedicine();
       }
     });
 

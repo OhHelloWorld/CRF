@@ -2,8 +2,8 @@ import angular from 'angular';
 import '../entries/main.js';
 
 angular.module('patientOverview', ['main'])
-  .controller('patientOverviewController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
-    if (sessionStorage.getItem('patient')) {
+  .controller('patientOverviewController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+    if (sessionStorage.getItem('patientId')) {
       loginStatus();
       getPatientInfo();
       getFourDiagnostic();
@@ -34,6 +34,31 @@ angular.module('patientOverview', ['main'])
         window.location.href = '/login.html';
       }
     }
+
+    $scope.updateFourDia = function() {
+      sessionStorage.setItem('followFourDiaId', $scope.fourDiaFollow.id);
+      $state.go('fourDiagnostic');
+    };
+
+    $scope.updateTongue = function() {
+      sessionStorage.setItem('followTongueId', $scope.tongueFollow.id);
+      $state.go('tonguePulse');
+    };
+
+    $scope.updatePhy = function() {
+      sessionStorage.setItem('followPhyId', $scope.phyFollow.id);
+      $state.go('phyAChe');
+    };
+
+    $scope.updateBone = function() {
+      sessionStorage.setItem('followBoneId', $scope.boneFollow.id);
+      $state.go('boneDensity');
+    };
+
+    $scope.updateTreat = function() {
+      sessionStorage.setItem('followTreatId', $scope.treatFollow.id);
+      $state.go('treatment');
+    };
 
     function getFourDiagnostic() {
       $http({
@@ -730,7 +755,11 @@ angular.module('patientOverview', ['main'])
         $scope.whiteBloodCell = phy.whiteBloodCell;
         $scope.bilirubin = phy.bilirubin;
         $scope.ca199 = phy.ca199;
-        $scope.image = '/api/image/' + phy.imageUrl + '.jpg';
+        if (phy.imageUrl) {
+          $scope.image = '/api/image/' + phy.imageUrl + '.jpg';
+        }else{
+          $scope.image = undefined;
+        }
 
         $scope.totalBileAcidDate = formatDate(phy.totalBileAcidDate);
         $scope.liverFunctionAlbuminDate = formatDate(phy.liverFunctionAlbuminDate);
@@ -1626,22 +1655,29 @@ angular.module('patientOverview', ['main'])
     }
 
     $scope.fourDiaDefault = function() {
+      $scope.isFourDiaFollow = false;
       getFourDiagnostic();
     };
     $scope.tongueDefault = function() {
+      $scope.isTongueFollow = false;
       getTonguePulse();
     };
     $scope.phyDefault = function() {
+      $scope.isPhyFollow = false;
       getPhyAChe();
     };
     $scope.boneDefault = function() {
+      $scope.isBoneFollow = false;
       getBone();
     };
     $scope.treatDefault = function() {
+      $scope.isTreatFollow = false;
       getTreatment();
     };
 
     $scope.fourDiaClick = function(fourDiaFollow) {
+      $scope.isFourDiaFollow = true;
+      $scope.fourDiaFollow = fourDiaFollow;
       switch (fourDiaFollow.fatigue) {
         case 0:
           $scope.fatigue = '无';
@@ -2199,6 +2235,8 @@ angular.module('patientOverview', ['main'])
     };
 
     $scope.tongueClick = function(tongueFollow) {
+      $scope.isTongueFollow = true;
+      $scope.tongueFollow = tongueFollow;
       $scope.tongue = tongueFollow.tongue;
       $scope.tonguePart = tongueFollow.tonguePart;
       $scope.tonguePartialDescription = tongueFollow.tonguePartialDescription;
@@ -2215,6 +2253,8 @@ angular.module('patientOverview', ['main'])
     };
 
     $scope.phyClick = function(phyFollow) {
+      $scope.isPhyFollow = true;
+      $scope.phyFollow = phyFollow;
       $scope.totalBileAcid = phyFollow.totalBileAcid;
       $scope.liverFunctionAlbumin = phyFollow.liverFunctionAlbumin;
       $scope.liverFunctionGlobulin = phyFollow.liverFunctionGlobulin;
@@ -2313,6 +2353,8 @@ angular.module('patientOverview', ['main'])
     };
 
     $scope.boneClick = function(boneFollow) {
+      $scope.isBoneFollow = true;
+      $scope.boneFollow = boneFollow;
       $scope.lumbarSpine = boneFollow.lumbarSpine;
       switch (boneFollow.lumbarSpineT) {
         case 1:
@@ -2375,22 +2417,24 @@ angular.module('patientOverview', ['main'])
       }
       switch (boneFollow.diagnosis) {
         case 1:
-          $scope.diagnosis = '骨量正常';
+          $scope.boneDiagnosis = '骨量正常';
           break;
         case 2:
-          $scope.diagnosis = '骨量减少';
+          $scope.boneDiagnosis = '骨量减少';
           break;
         case 3:
-          $scope.diagnosis = '骨质疏松';
+          $scope.boneDiagnosis = '骨质疏松';
           break;
         case 4:
-          $scope.diagnosis = '严重骨质疏松';
+          $scope.boneDiagnosis = '严重骨质疏松';
           break;
       }
       $scope.remarks = boneFollow.remarks;
     };
 
     $scope.treatClick = function(treatFollow) {
+      $scope.isTreatFollow = true;
+      $scope.treatFollow = treatFollow;
       $scope.qdsTime = treatFollow.qdsTime;
       $scope.qdsDose = treatFollow.qdsDose;
       $scope.qdsHeal = treatFollow.qdsHeal;

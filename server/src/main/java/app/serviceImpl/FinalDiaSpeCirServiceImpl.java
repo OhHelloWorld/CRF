@@ -52,10 +52,11 @@ public class FinalDiaSpeCirServiceImpl implements FinalDiaSpeCirService {
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return fdscRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return fdscRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return fdscRepo.getCompleteByPatientId(patientId)!=null?fdscRepo.getCompleteByPatientId(patientId):false;
     }
 }

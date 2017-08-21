@@ -95,11 +95,12 @@ public class MedicinePrescriptionzServiceImpl implements MedicinePrescriptionSer
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return medicinePrescriptionRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return medicinePrescriptionRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return medicinePrescriptionRepo.getCompleteByPatientId(patientId)!=null?medicinePrescriptionRepo.getCompleteByPatientId(patientId):false;
     }
 
     @Override

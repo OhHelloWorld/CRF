@@ -28,7 +28,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Transactional
     public void savePhysicalChemicalInspection(PhysicalChemicalInspectionDTO pDto) {
-        pRepo.save(convertToPhysicalChemicalInspectionDO(pDto));
+        pRepo.save(convertToPhysicalChemicalInspectionDO(pDto, null));
     }
 
     @Override
@@ -42,11 +42,12 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return pRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return pRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return pRepo.getCompleteByPatientId(patientId)!=null?pRepo.getCompleteByPatientId(patientId):false;
     }
 
     @Override
@@ -64,8 +65,10 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
     }
 
     private PhysicalChemicalInspectionDO convertToPhysicalChemicalInspectionDO(
-            PhysicalChemicalInspectionDTO pDto) {
-        PhysicalChemicalInspectionDO pDo = new PhysicalChemicalInspectionDO();
+            PhysicalChemicalInspectionDTO pDto, PhysicalChemicalInspectionDO pDo) {
+        if (pDo == null) {
+            pDo = new PhysicalChemicalInspectionDO();
+        }
         pDo.setANACentromere(pDto.getANACentromere());
         pDo.setANAHomogeneous(pDto.getANAHomogeneous());
         pDo.setANANuclear(pDto.getANANuclear());
@@ -232,6 +235,7 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
 
     private PhysicalChemicalInspectionDTO convertToPhysicalDTO(PhysicalChemicalInspectionDO pDo) {
         PhysicalChemicalInspectionDTO pDto = new PhysicalChemicalInspectionDTO();
+        pDto.setId(pDo.getId());
         pDto.setANACentromere(pDo.getANACentromere());
         pDto.setANAHomogeneous(pDo.getANAHomogeneous());
         pDto.setANANuclear(pDo.getANANuclear());
@@ -416,6 +420,16 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
     public PhysicalChemicalInspectionDTO getDefaultPhy(int patientId) {
         return pRepo.getDefaultPhy(patientId) != null
                 ? convertToPhysicalDTO(pRepo.getDefaultPhy(patientId)) : null;
+    }
+
+    @Override
+    public PhysicalChemicalInspectionDTO getSinleFollowById(int id) {
+        return convertToPhysicalDTO(pRepo.findOne(id));
+    }
+
+    @Override
+    public void updatePhysical(PhysicalChemicalInspectionDTO physicalChemicalInspectionDTO) {
+        pRepo.save(convertToPhysicalChemicalInspectionDO(physicalChemicalInspectionDTO, pRepo.findOne(physicalChemicalInspectionDTO.getId())));
     }
 
 }

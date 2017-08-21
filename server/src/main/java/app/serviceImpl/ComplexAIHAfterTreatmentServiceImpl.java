@@ -85,11 +85,12 @@ public class ComplexAIHAfterTreatmentServiceImpl implements ComplexAIHAfterTreat
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return complexAIHAfterTreatmentRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return complexAIHAfterTreatmentRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return complexAIHAfterTreatmentRepo.getCompleteByPatientId(patientId) !=null? complexAIHAfterTreatmentRepo.getCompleteByPatientId(patientId) : false;
     }
 
 }

@@ -12,7 +12,7 @@ public interface CaseService {
     PageDTO<PatientDTO> getCaseByProjectId(Long projectId, Long hospitalId, Pageable pageable);
 
     PageDTO<PatientDTO> getCaseByProjectIdAndCaseName(Long projectId, String caseName,
-            Pageable pageable);
+                                                      Pageable pageable);
 
     PageDTO<PatientDTO> getCaseByProjectId(Long projectId, Pageable pageable);
 }

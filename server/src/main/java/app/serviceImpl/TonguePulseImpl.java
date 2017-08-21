@@ -20,7 +20,7 @@ public class TonguePulseImpl implements TonguePulseService {
 
     @Transactional
     public void saveTonguePulse(TonguePulseDTO tonguePulseDTO) {
-        tonguePulseRepo.save(convertToTonguePulseDO(tonguePulseDTO));
+        tonguePulseRepo.save(convertToTonguePulseDO(tonguePulseDTO,null));
     }
 
     public TonguePulseDTO getTonguePulseByPatientId(int patientId) {
@@ -32,15 +32,18 @@ public class TonguePulseImpl implements TonguePulseService {
     }
 
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return tonguePulseRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return tonguePulseRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return tonguePulseRepo.getCompleteByPatientId(patientId) != null ? tonguePulseRepo.getCompleteByPatientId(patientId) : false;
     }
 
-    private TonguePulseDO convertToTonguePulseDO(TonguePulseDTO tonguePulseDTO) {
-        TonguePulseDO tonguePulseDO = new TonguePulseDO();
+    private TonguePulseDO convertToTonguePulseDO(TonguePulseDTO tonguePulseDTO,TonguePulseDO tonguePulseDO) {
+        if(tonguePulseDO == null) {
+            tonguePulseDO = new TonguePulseDO();
+        }
         tonguePulseDO.setComplete(tonguePulseDTO.isComplete());
         tonguePulseDO.setLeftPulse(tonguePulseDTO.getLeftPulse());
         tonguePulseDO.setMossy(tonguePulseDTO.getMossy());
@@ -103,6 +106,16 @@ public class TonguePulseImpl implements TonguePulseService {
     public TonguePulseDTO getDefaultTongue(int patientId) {
         return tonguePulseRepo.getDefaultTongue(patientId) != null
                 ? convertToTonguePulseDTO(tonguePulseRepo.getDefaultTongue(patientId)) : null;
+    }
+
+    @Override
+    public TonguePulseDTO getSingleFollowTongueById(int id) {
+        return convertToTonguePulseDTO(tonguePulseRepo.findOne(id));
+    }
+
+    @Override
+    public void updateTongue(TonguePulseDTO tonguePulseDTO) {
+        tonguePulseRepo.save(convertToTonguePulseDO(tonguePulseDTO,tonguePulseRepo.findOne(tonguePulseDTO.getId())));
     }
 
 }

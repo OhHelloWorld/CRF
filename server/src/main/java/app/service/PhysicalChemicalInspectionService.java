@@ -22,7 +22,7 @@ public interface PhysicalChemicalInspectionService {
      * @param patientId
      * @return
      */
-    public PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId);
+    PhysicalChemicalInspectionDTO getPhysicalByPatientId(int patientId);
 
     /**
      * 得到患者理化测量数据填写情况
@@ -30,11 +30,15 @@ public interface PhysicalChemicalInspectionService {
      * @param patientId
      * @return
      */
-    public boolean getCompleteByPatientId(int patientId);
+    boolean getCompleteByPatientId(int patientId);
 
-    public void savePhysicalImage(MultipartFile file) throws IOException;
+    void savePhysicalImage(MultipartFile file) throws IOException;
 
-    public List<PhysicalChemicalInspectionDTO> getFollowPhy(int patientId);
+    List<PhysicalChemicalInspectionDTO> getFollowPhy(int patientId);
 
-    public PhysicalChemicalInspectionDTO getDefaultPhy(int patientId);
+    PhysicalChemicalInspectionDTO getDefaultPhy(int patientId);
+
+    PhysicalChemicalInspectionDTO getSinleFollowById(int id);
+
+    void updatePhysical(PhysicalChemicalInspectionDTO physicalChemicalInspectionDTO);
 }

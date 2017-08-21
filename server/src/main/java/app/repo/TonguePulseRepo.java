@@ -17,7 +17,7 @@ public interface TonguePulseRepo extends CrudRepository<TonguePulseDO, Integer> 
 
     @Query(value = "select complete from tongue_pulse where patient_id=?1 order by id desc limit 1",
             nativeQuery = true)
-    public boolean getCompleteByPatientId(int patientId);
+    public Boolean getCompleteByPatientId(int patientId);
 
     @Query(value = "select * from tongue_pulse where follow_up = 1 and patient_id = ?1",
             nativeQuery = true)

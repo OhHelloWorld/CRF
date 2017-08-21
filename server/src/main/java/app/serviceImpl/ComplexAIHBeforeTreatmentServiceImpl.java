@@ -83,11 +83,12 @@ public class ComplexAIHBeforeTreatmentServiceImpl implements ComplexAIHBeforeTre
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-        try {
-            return complexAIHBeforeTreatmentRepo.getCompleteByPatientId(patientId);
-        } catch (Exception e) {
-            return false;
-        }
+//        try {
+//            return complexAIHBeforeTreatmentRepo.getCompleteByPatientId(patientId);
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return complexAIHBeforeTreatmentRepo.getCompleteByPatientId(patientId)!=null?complexAIHBeforeTreatmentRepo.getCompleteByPatientId(patientId):false;
     }
 
 }

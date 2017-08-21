@@ -16,4 +16,7 @@ public interface BoneDensityService {
 
     BoneDensityDTO getDefaultBone(int patientId);
 
+    BoneDensityDTO getSingleFollowById(int id);
+
+    void updateBone(BoneDensityDTO boneDensityDTO);
 }
