@@ -298,6 +298,7 @@ homePage.controller('homePageController', ['$base64', '$scope', '$http', '$rootS
       method: 'GET',
       url: '/api/logout'
     }).then(function successCallback() {
+      localStorageService.set('user',null);
       window.location.href = '/login.html';
     }, function failCallback() {
 

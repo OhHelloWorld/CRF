@@ -22,6 +22,10 @@ login.config(['localStorageServiceProvider', function(localStorageServiceProvide
 
 login.controller('loginController', ['$scope', '$http', '$base64', 'localStorageService', function($scope, $http, $base64, localStorageService) {
 
+  if (localStorageService.get('user')) {
+    window.location.href = '/homePage.html';
+  }
+
   $('input').iCheck({
     checkboxClass: 'icheckbox_square-blue',
     radioClass: 'iradio_square-blue',
@@ -49,5 +53,4 @@ login.controller('loginController', ['$scope', '$http', '$base64', 'localStorage
       $('#justModal').modal('show');
     });
   };
-
 }]);

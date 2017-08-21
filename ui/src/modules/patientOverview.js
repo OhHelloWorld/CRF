@@ -3,19 +3,21 @@ import '../entries/main.js';
 
 angular.module('patientOverview', ['main'])
   .controller('patientOverviewController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
-    loginStatus();
-    getPatientInfo();
-    getFourDiagnostic();
-    getTonguePulse();
-    getPhyAChe();
-    getLiverPhy();
-    getBone();
-    getSimpleAIH();
-    getComplexAIHBeforeTreatment();
-    getComplexAIHAfterTreatment();
-    getTreatment();
-    getMedicine();
-    getFinal();
+    if (sessionStorage.getItem('patient')) {
+      loginStatus();
+      getPatientInfo();
+      getFourDiagnostic();
+      getTonguePulse();
+      getPhyAChe();
+      getLiverPhy();
+      getBone();
+      getSimpleAIH();
+      getComplexAIHBeforeTreatment();
+      getComplexAIHAfterTreatment();
+      getTreatment();
+      getMedicine();
+      getFinal();
+    }
 
     function getPatientInfo() {
       $http({
@@ -2305,7 +2307,7 @@ angular.module('patientOverview', ['main'])
       $scope.ca199 = phyFollow.ca199;
       if (phyFollow.imageUrl) {
         $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
-      }else{
+      } else {
         $scope.image = undefined;
       }
     };

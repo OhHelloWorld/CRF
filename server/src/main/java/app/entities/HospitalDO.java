@@ -16,8 +16,8 @@ public class HospitalDO {
 
     private String hospitalName;//医院名字
 
-    @OneToMany(mappedBy = "hospital")
-    private List<UserDO> userList;//一个医院对应多个用户
+//    @OneToMany(mappedBy = "hospital")
+//    private List<UserDO> userList;//一个医院对应多个用户
 
     @ManyToMany
     @JoinTable(
@@ -64,14 +64,14 @@ public class HospitalDO {
         this.hospitalName = hospitalName;
     }
 
-    public List<UserDO> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<UserDO> userList) {
-        this.userList = userList;
-    }
-
+//    public List<UserDO> getUserList() {
+//        return userList;
+//    }
+//
+//    public void setUserList(List<UserDO> userList) {
+//        this.userList = userList;
+//    }
+//
     public List<ProjectDO> getProjectList() {
         return projectList;
     }
