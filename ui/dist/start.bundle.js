@@ -13082,7 +13082,8 @@ angular.module('ui.router.state')
 })(window, window.angular);
 
 /***/ }),
-/* 15 */
+/* 15 */,
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
@@ -13573,7 +13574,7 @@ module.exports = Color;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13651,7 +13652,7 @@ return af;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13715,7 +13716,7 @@ return arDz;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13779,7 +13780,7 @@ return arKw;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13910,7 +13911,7 @@ return arLy;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13975,7 +13976,7 @@ return arMa;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14085,7 +14086,7 @@ return arSa;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14149,7 +14150,7 @@ return arTn;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14296,7 +14297,7 @@ return ar;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14406,7 +14407,7 @@ return az;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14545,7 +14546,7 @@ return be;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14640,7 +14641,7 @@ return bg;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14764,7 +14765,7 @@ return bn;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14888,7 +14889,7 @@ return bo;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15001,7 +15002,7 @@ return br;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15149,7 +15150,7 @@ return bs;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15242,7 +15243,7 @@ return ca;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15419,7 +15420,7 @@ return cs;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15487,7 +15488,7 @@ return cv;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15573,7 +15574,7 @@ return cy;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15638,7 +15639,7 @@ return da;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15722,7 +15723,7 @@ return deAt;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15805,7 +15806,7 @@ return deCh;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15888,7 +15889,7 @@ return de;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15993,7 +15994,7 @@ return dv;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16098,7 +16099,7 @@ return el;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16170,7 +16171,7 @@ return enAu;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16238,7 +16239,7 @@ return enCa;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16310,7 +16311,7 @@ return enGb;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16382,7 +16383,7 @@ return enIe;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16454,7 +16455,7 @@ return enNz;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16532,7 +16533,7 @@ return eo;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16619,7 +16620,7 @@ return esDo;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16707,7 +16708,7 @@ return es;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16792,7 +16793,7 @@ return et;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16863,7 +16864,7 @@ return eu;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16975,7 +16976,7 @@ return fa;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17087,7 +17088,7 @@ return fi;
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17152,7 +17153,7 @@ return fo;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17231,7 +17232,7 @@ return frCa;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17314,7 +17315,7 @@ return frCh;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17402,7 +17403,7 @@ return fr;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17482,7 +17483,7 @@ return fy;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17563,7 +17564,7 @@ return gd;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17645,7 +17646,7 @@ return gl;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17772,7 +17773,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17876,7 +17877,7 @@ return he;
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18005,7 +18006,7 @@ return hi;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18155,7 +18156,7 @@ return hr;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18269,7 +18270,7 @@ return hu;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18369,7 +18370,7 @@ return hyAm;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18457,7 +18458,7 @@ return id;
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18589,7 +18590,7 @@ return is;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18664,7 +18665,7 @@ return it;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18749,7 +18750,7 @@ return ja;
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18837,7 +18838,7 @@ return jv;
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18931,7 +18932,7 @@ return ka;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19023,7 +19024,7 @@ return kk;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19086,7 +19087,7 @@ return km;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19217,7 +19218,7 @@ return kn;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19291,7 +19292,7 @@ return ko;
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19384,7 +19385,7 @@ return ky;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19526,7 +19527,7 @@ return lb;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19601,7 +19602,7 @@ return lo;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19723,7 +19724,7 @@ return lt;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19825,7 +19826,7 @@ return lv;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19941,7 +19942,7 @@ return me;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20010,7 +20011,7 @@ return mi;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20105,7 +20106,7 @@ return mk;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20191,7 +20192,7 @@ return ml;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20355,7 +20356,7 @@ return mr;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20443,7 +20444,7 @@ return msMy;
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20530,7 +20531,7 @@ return ms;
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20631,7 +20632,7 @@ return my;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20699,7 +20700,7 @@ return nb;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20827,7 +20828,7 @@ return ne;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20920,7 +20921,7 @@ return nlBe;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21013,7 +21014,7 @@ return nl;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21078,7 +21079,7 @@ return nn;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21207,7 +21208,7 @@ return paIn;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21319,7 +21320,7 @@ return pl;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21385,7 +21386,7 @@ return ptBr;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21455,7 +21456,7 @@ return pt;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21535,7 +21536,7 @@ return ro;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21723,7 +21724,7 @@ return ru;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21826,7 +21827,7 @@ return sd;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21892,7 +21893,7 @@ return se;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21968,7 +21969,7 @@ return si;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22123,7 +22124,7 @@ return sk;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22290,7 +22291,7 @@ return sl;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22365,7 +22366,7 @@ return sq;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22480,7 +22481,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22595,7 +22596,7 @@ return sr;
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22689,7 +22690,7 @@ return ss;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22763,7 +22764,7 @@ return sv;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22827,7 +22828,7 @@ return sw;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22962,7 +22963,7 @@ return ta;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23056,7 +23057,7 @@ return te;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23129,7 +23130,7 @@ return tet;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23201,7 +23202,7 @@ return th;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23268,7 +23269,7 @@ return tlPh;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23393,7 +23394,7 @@ return tlh;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23488,7 +23489,7 @@ return tr;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23584,7 +23585,7 @@ return tzl;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23647,7 +23648,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23710,7 +23711,7 @@ return tzm;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23866,7 +23867,7 @@ return uk;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23970,7 +23971,7 @@ return ur;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24033,7 +24034,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24096,7 +24097,7 @@ return uz;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24180,7 +24181,7 @@ return vi;
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24253,7 +24254,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24318,7 +24319,7 @@ return yo;
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24434,7 +24435,7 @@ return zhCn;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24544,7 +24545,7 @@ return zhHk;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24653,14 +24654,13 @@ return zhTw;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(182);
 module.exports = 'ngFileUpload';
 
 /***/ }),
-/* 132 */,
 /* 133 */,
 /* 134 */,
 /* 135 */
@@ -35784,7 +35784,7 @@ module.exports = function(Chart) {
 /* global document: false */
 
 
-var color = __webpack_require__(15);
+var color = __webpack_require__(16);
 
 module.exports = function(Chart) {
 	// Global Chart helpers object for utility methods and classes
@@ -42908,236 +42908,236 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 16,
-	"./af.js": 16,
-	"./ar": 23,
-	"./ar-dz": 17,
-	"./ar-dz.js": 17,
-	"./ar-kw": 18,
-	"./ar-kw.js": 18,
-	"./ar-ly": 19,
-	"./ar-ly.js": 19,
-	"./ar-ma": 20,
-	"./ar-ma.js": 20,
-	"./ar-sa": 21,
-	"./ar-sa.js": 21,
-	"./ar-tn": 22,
-	"./ar-tn.js": 22,
-	"./ar.js": 23,
-	"./az": 24,
-	"./az.js": 24,
-	"./be": 25,
-	"./be.js": 25,
-	"./bg": 26,
-	"./bg.js": 26,
-	"./bn": 27,
-	"./bn.js": 27,
-	"./bo": 28,
-	"./bo.js": 28,
-	"./br": 29,
-	"./br.js": 29,
-	"./bs": 30,
-	"./bs.js": 30,
-	"./ca": 31,
-	"./ca.js": 31,
-	"./cs": 32,
-	"./cs.js": 32,
-	"./cv": 33,
-	"./cv.js": 33,
-	"./cy": 34,
-	"./cy.js": 34,
-	"./da": 35,
-	"./da.js": 35,
-	"./de": 38,
-	"./de-at": 36,
-	"./de-at.js": 36,
-	"./de-ch": 37,
-	"./de-ch.js": 37,
-	"./de.js": 38,
-	"./dv": 39,
-	"./dv.js": 39,
-	"./el": 40,
-	"./el.js": 40,
-	"./en-au": 41,
-	"./en-au.js": 41,
-	"./en-ca": 42,
-	"./en-ca.js": 42,
-	"./en-gb": 43,
-	"./en-gb.js": 43,
-	"./en-ie": 44,
-	"./en-ie.js": 44,
-	"./en-nz": 45,
-	"./en-nz.js": 45,
-	"./eo": 46,
-	"./eo.js": 46,
-	"./es": 48,
-	"./es-do": 47,
-	"./es-do.js": 47,
-	"./es.js": 48,
-	"./et": 49,
-	"./et.js": 49,
-	"./eu": 50,
-	"./eu.js": 50,
-	"./fa": 51,
-	"./fa.js": 51,
-	"./fi": 52,
-	"./fi.js": 52,
-	"./fo": 53,
-	"./fo.js": 53,
-	"./fr": 56,
-	"./fr-ca": 54,
-	"./fr-ca.js": 54,
-	"./fr-ch": 55,
-	"./fr-ch.js": 55,
-	"./fr.js": 56,
-	"./fy": 57,
-	"./fy.js": 57,
-	"./gd": 58,
-	"./gd.js": 58,
-	"./gl": 59,
-	"./gl.js": 59,
-	"./gom-latn": 60,
-	"./gom-latn.js": 60,
-	"./he": 61,
-	"./he.js": 61,
-	"./hi": 62,
-	"./hi.js": 62,
-	"./hr": 63,
-	"./hr.js": 63,
-	"./hu": 64,
-	"./hu.js": 64,
-	"./hy-am": 65,
-	"./hy-am.js": 65,
-	"./id": 66,
-	"./id.js": 66,
-	"./is": 67,
-	"./is.js": 67,
-	"./it": 68,
-	"./it.js": 68,
-	"./ja": 69,
-	"./ja.js": 69,
-	"./jv": 70,
-	"./jv.js": 70,
-	"./ka": 71,
-	"./ka.js": 71,
-	"./kk": 72,
-	"./kk.js": 72,
-	"./km": 73,
-	"./km.js": 73,
-	"./kn": 74,
-	"./kn.js": 74,
-	"./ko": 75,
-	"./ko.js": 75,
-	"./ky": 76,
-	"./ky.js": 76,
-	"./lb": 77,
-	"./lb.js": 77,
-	"./lo": 78,
-	"./lo.js": 78,
-	"./lt": 79,
-	"./lt.js": 79,
-	"./lv": 80,
-	"./lv.js": 80,
-	"./me": 81,
-	"./me.js": 81,
-	"./mi": 82,
-	"./mi.js": 82,
-	"./mk": 83,
-	"./mk.js": 83,
-	"./ml": 84,
-	"./ml.js": 84,
-	"./mr": 85,
-	"./mr.js": 85,
-	"./ms": 87,
-	"./ms-my": 86,
-	"./ms-my.js": 86,
-	"./ms.js": 87,
-	"./my": 88,
-	"./my.js": 88,
-	"./nb": 89,
-	"./nb.js": 89,
-	"./ne": 90,
-	"./ne.js": 90,
-	"./nl": 92,
-	"./nl-be": 91,
-	"./nl-be.js": 91,
-	"./nl.js": 92,
-	"./nn": 93,
-	"./nn.js": 93,
-	"./pa-in": 94,
-	"./pa-in.js": 94,
-	"./pl": 95,
-	"./pl.js": 95,
-	"./pt": 97,
-	"./pt-br": 96,
-	"./pt-br.js": 96,
-	"./pt.js": 97,
-	"./ro": 98,
-	"./ro.js": 98,
-	"./ru": 99,
-	"./ru.js": 99,
-	"./sd": 100,
-	"./sd.js": 100,
-	"./se": 101,
-	"./se.js": 101,
-	"./si": 102,
-	"./si.js": 102,
-	"./sk": 103,
-	"./sk.js": 103,
-	"./sl": 104,
-	"./sl.js": 104,
-	"./sq": 105,
-	"./sq.js": 105,
-	"./sr": 107,
-	"./sr-cyrl": 106,
-	"./sr-cyrl.js": 106,
-	"./sr.js": 107,
-	"./ss": 108,
-	"./ss.js": 108,
-	"./sv": 109,
-	"./sv.js": 109,
-	"./sw": 110,
-	"./sw.js": 110,
-	"./ta": 111,
-	"./ta.js": 111,
-	"./te": 112,
-	"./te.js": 112,
-	"./tet": 113,
-	"./tet.js": 113,
-	"./th": 114,
-	"./th.js": 114,
-	"./tl-ph": 115,
-	"./tl-ph.js": 115,
-	"./tlh": 116,
-	"./tlh.js": 116,
-	"./tr": 117,
-	"./tr.js": 117,
-	"./tzl": 118,
-	"./tzl.js": 118,
-	"./tzm": 120,
-	"./tzm-latn": 119,
-	"./tzm-latn.js": 119,
-	"./tzm.js": 120,
-	"./uk": 121,
-	"./uk.js": 121,
-	"./ur": 122,
-	"./ur.js": 122,
-	"./uz": 124,
-	"./uz-latn": 123,
-	"./uz-latn.js": 123,
-	"./uz.js": 124,
-	"./vi": 125,
-	"./vi.js": 125,
-	"./x-pseudo": 126,
-	"./x-pseudo.js": 126,
-	"./yo": 127,
-	"./yo.js": 127,
-	"./zh-cn": 128,
-	"./zh-cn.js": 128,
-	"./zh-hk": 129,
-	"./zh-hk.js": 129,
-	"./zh-tw": 130,
-	"./zh-tw.js": 130
+	"./af": 17,
+	"./af.js": 17,
+	"./ar": 24,
+	"./ar-dz": 18,
+	"./ar-dz.js": 18,
+	"./ar-kw": 19,
+	"./ar-kw.js": 19,
+	"./ar-ly": 20,
+	"./ar-ly.js": 20,
+	"./ar-ma": 21,
+	"./ar-ma.js": 21,
+	"./ar-sa": 22,
+	"./ar-sa.js": 22,
+	"./ar-tn": 23,
+	"./ar-tn.js": 23,
+	"./ar.js": 24,
+	"./az": 25,
+	"./az.js": 25,
+	"./be": 26,
+	"./be.js": 26,
+	"./bg": 27,
+	"./bg.js": 27,
+	"./bn": 28,
+	"./bn.js": 28,
+	"./bo": 29,
+	"./bo.js": 29,
+	"./br": 30,
+	"./br.js": 30,
+	"./bs": 31,
+	"./bs.js": 31,
+	"./ca": 32,
+	"./ca.js": 32,
+	"./cs": 33,
+	"./cs.js": 33,
+	"./cv": 34,
+	"./cv.js": 34,
+	"./cy": 35,
+	"./cy.js": 35,
+	"./da": 36,
+	"./da.js": 36,
+	"./de": 39,
+	"./de-at": 37,
+	"./de-at.js": 37,
+	"./de-ch": 38,
+	"./de-ch.js": 38,
+	"./de.js": 39,
+	"./dv": 40,
+	"./dv.js": 40,
+	"./el": 41,
+	"./el.js": 41,
+	"./en-au": 42,
+	"./en-au.js": 42,
+	"./en-ca": 43,
+	"./en-ca.js": 43,
+	"./en-gb": 44,
+	"./en-gb.js": 44,
+	"./en-ie": 45,
+	"./en-ie.js": 45,
+	"./en-nz": 46,
+	"./en-nz.js": 46,
+	"./eo": 47,
+	"./eo.js": 47,
+	"./es": 49,
+	"./es-do": 48,
+	"./es-do.js": 48,
+	"./es.js": 49,
+	"./et": 50,
+	"./et.js": 50,
+	"./eu": 51,
+	"./eu.js": 51,
+	"./fa": 52,
+	"./fa.js": 52,
+	"./fi": 53,
+	"./fi.js": 53,
+	"./fo": 54,
+	"./fo.js": 54,
+	"./fr": 57,
+	"./fr-ca": 55,
+	"./fr-ca.js": 55,
+	"./fr-ch": 56,
+	"./fr-ch.js": 56,
+	"./fr.js": 57,
+	"./fy": 58,
+	"./fy.js": 58,
+	"./gd": 59,
+	"./gd.js": 59,
+	"./gl": 60,
+	"./gl.js": 60,
+	"./gom-latn": 61,
+	"./gom-latn.js": 61,
+	"./he": 62,
+	"./he.js": 62,
+	"./hi": 63,
+	"./hi.js": 63,
+	"./hr": 64,
+	"./hr.js": 64,
+	"./hu": 65,
+	"./hu.js": 65,
+	"./hy-am": 66,
+	"./hy-am.js": 66,
+	"./id": 67,
+	"./id.js": 67,
+	"./is": 68,
+	"./is.js": 68,
+	"./it": 69,
+	"./it.js": 69,
+	"./ja": 70,
+	"./ja.js": 70,
+	"./jv": 71,
+	"./jv.js": 71,
+	"./ka": 72,
+	"./ka.js": 72,
+	"./kk": 73,
+	"./kk.js": 73,
+	"./km": 74,
+	"./km.js": 74,
+	"./kn": 75,
+	"./kn.js": 75,
+	"./ko": 76,
+	"./ko.js": 76,
+	"./ky": 77,
+	"./ky.js": 77,
+	"./lb": 78,
+	"./lb.js": 78,
+	"./lo": 79,
+	"./lo.js": 79,
+	"./lt": 80,
+	"./lt.js": 80,
+	"./lv": 81,
+	"./lv.js": 81,
+	"./me": 82,
+	"./me.js": 82,
+	"./mi": 83,
+	"./mi.js": 83,
+	"./mk": 84,
+	"./mk.js": 84,
+	"./ml": 85,
+	"./ml.js": 85,
+	"./mr": 86,
+	"./mr.js": 86,
+	"./ms": 88,
+	"./ms-my": 87,
+	"./ms-my.js": 87,
+	"./ms.js": 88,
+	"./my": 89,
+	"./my.js": 89,
+	"./nb": 90,
+	"./nb.js": 90,
+	"./ne": 91,
+	"./ne.js": 91,
+	"./nl": 93,
+	"./nl-be": 92,
+	"./nl-be.js": 92,
+	"./nl.js": 93,
+	"./nn": 94,
+	"./nn.js": 94,
+	"./pa-in": 95,
+	"./pa-in.js": 95,
+	"./pl": 96,
+	"./pl.js": 96,
+	"./pt": 98,
+	"./pt-br": 97,
+	"./pt-br.js": 97,
+	"./pt.js": 98,
+	"./ro": 99,
+	"./ro.js": 99,
+	"./ru": 100,
+	"./ru.js": 100,
+	"./sd": 101,
+	"./sd.js": 101,
+	"./se": 102,
+	"./se.js": 102,
+	"./si": 103,
+	"./si.js": 103,
+	"./sk": 104,
+	"./sk.js": 104,
+	"./sl": 105,
+	"./sl.js": 105,
+	"./sq": 106,
+	"./sq.js": 106,
+	"./sr": 108,
+	"./sr-cyrl": 107,
+	"./sr-cyrl.js": 107,
+	"./sr.js": 108,
+	"./ss": 109,
+	"./ss.js": 109,
+	"./sv": 110,
+	"./sv.js": 110,
+	"./sw": 111,
+	"./sw.js": 111,
+	"./ta": 112,
+	"./ta.js": 112,
+	"./te": 113,
+	"./te.js": 113,
+	"./tet": 114,
+	"./tet.js": 114,
+	"./th": 115,
+	"./th.js": 115,
+	"./tl-ph": 116,
+	"./tl-ph.js": 116,
+	"./tlh": 117,
+	"./tlh.js": 117,
+	"./tr": 118,
+	"./tr.js": 118,
+	"./tzl": 119,
+	"./tzl.js": 119,
+	"./tzm": 121,
+	"./tzm-latn": 120,
+	"./tzm-latn.js": 120,
+	"./tzm.js": 121,
+	"./uk": 122,
+	"./uk.js": 122,
+	"./ur": 123,
+	"./ur.js": 123,
+	"./uz": 125,
+	"./uz-latn": 124,
+	"./uz-latn.js": 124,
+	"./uz.js": 125,
+	"./vi": 126,
+	"./vi.js": 126,
+	"./x-pseudo": 127,
+	"./x-pseudo.js": 127,
+	"./yo": 128,
+	"./yo.js": 128,
+	"./zh-cn": 129,
+	"./zh-cn.js": 129,
+	"./zh-hk": 130,
+	"./zh-hk.js": 130,
+	"./zh-tw": 131,
+	"./zh-tw.js": 131
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -48778,6 +48778,78 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('patientOverview', ['main
       $scope.bilirubin = phy.bilirubin;
       $scope.ca199 = phy.ca199;
       $scope.image = '/api/image/' + phy.imageUrl + '.jpg';
+
+      $scope.totalBileAcidDate = formatDate(phy.totalBileAcidDate);
+      $scope.liverFunctionAlbuminDate = formatDate(phy.liverFunctionAlbuminDate);
+      $scope.liverFunctionGlobulinDate = formatDate(phy.liverFunctionGlobulinDate);
+      $scope.liverFunctionALTDate = formatDate(phy.liverFunctionALTDate);
+      $scope.liverFunctionASTDate = formatDate(phy.liverFunctionASTDate);
+      $scope.liverFunctionGGTDate = formatDate(phy.liverFunctionGGTDate);
+      $scope.liverFunctionALPDate = formatDate(phy.liverFunctionALPDate);
+      $scope.liverFunctionTotalCholesterolDate = formatDate(phy.liverFunctionTotalCholesterolDate);
+      $scope.liverFunctionTotalBilirubinDate = formatDate(phy.liverFunctionTotalBilirubinDate);
+      $scope.liverFunctionDirectBilirubinDate = formatDate(phy.liverFunctionDirectBilirubinDate);
+      $scope.liverFunctionRglobulinDate = formatDate(phy.liverFunctionRglobulinDate);
+      $scope.renalFunctionBUNDate = formatDate(phy.renalFunctionBUNDate);
+      $scope.renalFunctionCrDate = formatDate(phy.renalFunctionCrDate);
+      $scope.clottingPTDate = formatDate(phy.clottingPTDate);
+      $scope.clottingINRDate = formatDate(phy.clottingINRDate);
+      $scope.bloodRoutineRBCDate = formatDate(phy.bloodRoutineRBCDate);
+      $scope.bloodRoutineHbDate = formatDate(phy.bloodRoutineHbDate);
+      $scope.bloodRoutineWBCDate = formatDate(phy.bloodRoutineWBCDate);
+      $scope.bloodRoutineNeutrophilsDate = formatDate(phy.bloodRoutineNeutrophilsDate);
+      $scope.bloodRoutineLymphocytesDate = formatDate(phy.bloodRoutineLymphocytesDate);
+      $scope.bloodRoutineEosinophilsDate = formatDate(phy.bloodRoutineEosinophilsDate);
+      $scope.bloodRoutinePlateletsDate = formatDate(phy.bloodRoutinePlateletsDate);
+      $scope.liverDiseaseAutoantibodiesAMADate = formatDate(phy.liverDiseaseAutoantibodiesAMADate);
+      $scope.liverDiseaseAutoantibodiesAMAM2Date = formatDate(phy.liverDiseaseAutoantibodiesAMAM2Date);
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = formatDate(phy.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate);
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = formatDate(phy.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate);
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = formatDate(phy.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate);
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = formatDate(phy.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate);
+      $scope.liverDiseaseAutoantibodiesOtherDate = formatDate(phy.liverDiseaseAutoantibodiesOtherDate);
+      $scope.anaHomogeneousDate = formatDate(phy.aNAHomogeneousDate);
+      $scope.anaParticleDate = formatDate(phy.aNAParticleDate);
+      $scope.anaPeripheralDate = formatDate(phy.aNAPeripheralDate);
+      $scope.anaNucleolusDate = formatDate(phy.aNANucleolusDate);
+      $scope.anaNucleolusEnhancementDate = formatDate(phy.aNANucleolusEnhancementDate);
+      $scope.anaNuclearDate = formatDate(phy.aNANuclearDate);
+      $scope.anaCentromereDate = formatDate(phy.aNACentromereDate);
+      $scope.anaOtherDate = formatDate(phy.aNAOtherDate);
+      $scope.humoralImmunityIgGDate = formatDate(phy.humoralImmunityIgGDate);
+      $scope.humoralImmunityIgADate = formatDate(phy.humoralImmunityIgADate);
+      $scope.humoralImmunityIgMDate = formatDate(phy.humoralImmunityIgMDate);
+      $scope.humoralImmunityImmuneComplexfDate = formatDate(phy.humoralImmunityImmuneComplexfDate);
+      $scope.humoralImmunityComplementC3Date = formatDate(phy.humoralImmunityComplementC3Date);
+      $scope.humoralImmunityComplementC4Date = formatDate(phy.humoralImmunityComplementC4Date);
+      $scope.humoralImmunityIgEDate = formatDate(phy.humoralImmunityIgEDate);
+      $scope.humoralImmunityKlightChainDate = formatDate(phy.humoralImmunityKlightChainDate);
+      $scope.humoralImmunityNlightChainDate = formatDate(phy.humoralImmunityNlightChainDate);
+      $scope.cellularImmunityCD3Date = formatDate(phy.cellularImmunityCD3Date);
+      $scope.cellularImmunityCD4Date = formatDate(phy.cellularImmunityCD4Date);
+      $scope.cellularImmunityCD8Date = formatDate(phy.cellularImmunityCD8Date);
+      $scope.cellularImmunityCD56Date = formatDate(phy.cellularImmunityCD56Date);
+      $scope.cellularImmunityCD2Date = formatDate(phy.cellularImmunityCD2Date);
+      $scope.cellularImmunityCD4CD8Date = formatDate(phy.cellularImmunityCD4CD8Date);
+      $scope.liverHardnessFibroscanDate = formatDate(phy.liverHardnessFibroscanDate);
+      $scope.liverHardnessFibrotestDate = formatDate(phy.liverHardnessFibrotestDate);
+      $scope.copperProteinDate = formatDate(phy.copperProteinDate);
+      $scope.aFPDate = formatDate(phy.aFPDate);
+      $scope.carcinoembryonicAntigenCEADate = formatDate(phy.carcinoembryonicAntigenCEADate);
+      $scope.ca125Date = formatDate(phy.ca125Date);
+      $scope.hbsagDate = formatDate(phy.hbsagDate);
+      $scope.hbsabDate = formatDate(phy.hbsabDate);
+      $scope.hbeagDate = formatDate(phy.hbeagDate);
+      $scope.hbeabDate = formatDate(phy.hbeabDate);
+      $scope.hbcabDate = formatDate(phy.hbcabDate);
+      $scope.hbvRnaDate = formatDate(phy.hbvRnaDate);
+      $scope.antiHCVantibodyDate = formatDate(phy.antiHCVantibodyDate);
+      $scope.hcvRnaDate = formatDate(phy.hcvRnaDate);
+      $scope.proteinDate = formatDate(phy.proteinDate);
+      $scope.redBloodCellDate = formatDate(phy.redBloodCellDate);
+      $scope.whiteBloodCellDate = formatDate(phy.whiteBloodCellDate);
+      $scope.bilirubinDate = formatDate(phy.bilirubinDate);
+      $scope.ca199Date = formatDate(phy.ca199Date);
     });
 
     $http({
@@ -48786,6 +48858,15 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('patientOverview', ['main
     }).then(function success(response) {
       $scope.phyFollowList = response.data;
     });
+  }
+
+  function formatDate(myDate) {
+    if (myDate) {
+      var myTime = new Date(myDate);
+      return myTime.getFullYear() + '-' + (myTime.getMonth() + 1) + '-' + myTime.getDate();
+    } else {
+      return undefined;
+    }
   }
 
   function getLiverPhy() {
@@ -48816,6 +48897,11 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('patientOverview', ['main
           }
           if (liver.portalAreaInflammation != 0) {
             $scope.portalAreaInflammation = liver.portalAreaInflammation - 1;
+          } else {
+            $scope.portalAreaInflammation = '';
+          }
+          if (liver.lymphocytePlasmaCellInfiltration != 0) {
+            $scope.lymphocytePlasmaCellInfiltration = liver.lymphocytePlasmaCellInfiltration - 1;
           } else {
             $scope.lymphocytePlasmaCellInfiltration = '';
           }
@@ -50258,7 +50344,11 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('patientOverview', ['main
     $scope.whiteBloodCell = phyFollow.whiteBloodCell;
     $scope.bilirubin = phyFollow.bilirubin;
     $scope.ca199 = phyFollow.ca199;
-    $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
+    if (phyFollow.imageUrl) {
+      $scope.image = '/api/image/' + phyFollow.imageUrl + '.jpg';
+    } else {
+      $scope.image = undefined;
+    }
   };
 
   $scope.boneClick = function (boneFollow) {
@@ -50415,7 +50505,7 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('patientOverview', ['main
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entries_main_js__ = __webpack_require__(7);
 
@@ -50444,6 +50534,11 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
   $('#datepicker').datepicker({
     autoclose: true
   });
+  for (var i = 1; i < 72; i++) {
+    $('#datepicker' + i).datepicker({
+      autoclose: true
+    });
+  }
 
   $scope.showSaveModal = function () {
     saveImg($scope.image);
@@ -50533,6 +50628,77 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = undefined;
       $scope.bilirubin = undefined;
       $scope.ca199 = undefined;
+      $scope.totalBileAcidDate = undefined;
+      $scope.liverFunctionAlbuminDate = undefined;
+      $scope.liverFunctionGlobulinDate = undefined;
+      $scope.liverFunctionALTDate = undefined;
+      $scope.liverFunctionASTDate = undefined;
+      $scope.liverFunctionGGTDate = undefined;
+      $scope.liverFunctionALPDate = undefined;
+      $scope.liverFunctionTotalCholesterolDate = undefined;
+      $scope.liverFunctionTotalBilirubinDate = undefined;
+      $scope.liverFunctionDirectBilirubinDate = undefined;
+      $scope.liverFunctionRglobulinDate = undefined;
+      $scope.renalFunctionBUNDate = undefined;
+      $scope.renalFunctionCrDate = undefined;
+      $scope.clottingPTDate = undefined;
+      $scope.clottingINRDate = undefined;
+      $scope.bloodRoutineRBCDate = undefined;
+      $scope.bloodRoutineHbDate = undefined;
+      $scope.bloodRoutineWBCDate = undefined;
+      $scope.bloodRoutineNeutrophilsDate = undefined;
+      $scope.bloodRoutineLymphocytesDate = undefined;
+      $scope.bloodRoutineEosinophilsDate = undefined;
+      $scope.bloodRoutinePlateletsDate = undefined;
+      $scope.liverDiseaseAutoantibodiesAMADate = undefined;
+      $scope.liverDiseaseAutoantibodiesAMAM2Date = undefined;
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = undefined;
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = undefined;
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = undefined;
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = undefined;
+      $scope.liverDiseaseAutoantibodiesOtherDate = undefined;
+      $scope.aNAHomogeneousDate = undefined;
+      $scope.aNAParticleDate = undefined;
+      $scope.aNAPeripheralDate = undefined;
+      $scope.aNANucleolusDate = undefined;
+      $scope.aNANucleolusEnhancementDate = undefined;
+      $scope.aNANuclearDate = undefined;
+      $scope.aNACentromereDate = undefined;
+      $scope.aNAOtherDate = undefined;
+      $scope.humoralImmunityIgGDate = undefined;
+      $scope.humoralImmunityIgADate = undefined;
+      $scope.humoralImmunityIgMDate = undefined;
+      $scope.humoralImmunityImmuneComplexfDate = undefined;
+      $scope.humoralImmunityComplementC3Date = undefined;
+      $scope.humoralImmunityComplementC4Date = undefined;
+      $scope.humoralImmunityIgEDate = undefined;
+      $scope.humoralImmunityKlightChainDate = undefined;
+      $scope.humoralImmunityNlightChainDate = undefined;
+      $scope.cellularImmunityCD3Date = undefined;
+      $scope.cellularImmunityCD4Date = undefined;
+      $scope.cellularImmunityCD8Date = undefined;
+      $scope.cellularImmunityCD56Date = undefined;
+      $scope.cellularImmunityCD2Date = undefined;
+      $scope.cellularImmunityCD4CD8Date = undefined;
+      $scope.liverHardnessFibroscanDate = undefined;
+      $scope.liverHardnessFibrotestDate = undefined;
+      $scope.copperProteinDate = undefined;
+      $scope.aFPDate = undefined;
+      $scope.carcinoembryonicAntigenCEADate = undefined;
+      $scope.ca125Date = undefined;
+      $scope.hbsagDate = undefined;
+      $scope.hbsabDate = undefined;
+      $scope.hbeagDate = undefined;
+      $scope.hbeabDate = undefined;
+      $scope.hbcabDate = undefined;
+      $scope.hbvRnaDate = undefined;
+      $scope.antiHCVantibodyDate = undefined;
+      $scope.hcvRnaDate = undefined;
+      $scope.proteinDate = undefined;
+      $scope.redBloodCellDate = undefined;
+      $scope.whiteBloodCellDate = undefined;
+      $scope.bilirubinDate = undefined;
+      $scope.ca199Date = undefined;
     } else {
       $scope.followDateShow = false;
       getPhy();
@@ -50619,6 +50785,78 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     physicalChemicalInspection.followUp = $scope.follow;
     physicalChemicalInspection.followUpDate = new Date($scope.followUpDate);
     physicalChemicalInspection.imageUrl = $scope.imageName;
+
+    physicalChemicalInspection.totalBileAcidDate = new Date($scope.totalBileAcidDate);
+    physicalChemicalInspection.liverFunctionAlbuminDate = new Date($scope.liverFunctionAlbuminDate);
+    physicalChemicalInspection.liverFunctionGlobulinDate = new Date($scope.liverFunctionGlobulinDate);
+    physicalChemicalInspection.liverFunctionALTDate = new Date($scope.liverFunctionALTDate);
+    physicalChemicalInspection.liverFunctionASTDate = new Date($scope.liverFunctionASTDate);
+    physicalChemicalInspection.liverFunctionGGTDate = new Date($scope.liverFunctionGGTDate);
+    physicalChemicalInspection.liverFunctionALPDate = new Date($scope.liverFunctionALPDate);
+    physicalChemicalInspection.liverFunctionTotalCholesterolDate = new Date($scope.liverFunctionTotalCholesterolDate);
+    physicalChemicalInspection.liverFunctionTotalBilirubinDate = new Date($scope.liverFunctionTotalBilirubinDate);
+    physicalChemicalInspection.liverFunctionDirectBilirubinDate = new Date($scope.liverFunctionDirectBilirubinDate);
+    physicalChemicalInspection.liverFunctionRglobulinDate = new Date($scope.liverFunctionRglobulinDate);
+    physicalChemicalInspection.renalFunctionBUNDate = new Date($scope.renalFunctionBUNDate);
+    physicalChemicalInspection.renalFunctionCrDate = new Date($scope.renalFunctionCrDate);
+    physicalChemicalInspection.clottingPTDate = new Date($scope.clottingPTDate);
+    physicalChemicalInspection.clottingINRDate = new Date($scope.clottingINRDate);
+    physicalChemicalInspection.bloodRoutineRBCDate = new Date($scope.bloodRoutineRBCDate);
+    physicalChemicalInspection.bloodRoutineHbDate = new Date($scope.bloodRoutineHbDate);
+    physicalChemicalInspection.bloodRoutineWBCDate = new Date($scope.bloodRoutineWBCDate);
+    physicalChemicalInspection.bloodRoutineNeutrophilsDate = new Date($scope.bloodRoutineNeutrophilsDate);
+    physicalChemicalInspection.bloodRoutineLymphocytesDate = new Date($scope.bloodRoutineLymphocytesDate);
+    physicalChemicalInspection.bloodRoutineEosinophilsDate = new Date($scope.bloodRoutineEosinophilsDate);
+    physicalChemicalInspection.bloodRoutinePlateletsDate = new Date($scope.bloodRoutinePlateletsDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAMADate = new Date($scope.liverDiseaseAutoantibodiesAMADate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAMAM2Date = new Date($scope.liverDiseaseAutoantibodiesAMAM2Date);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = new Date($scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = new Date($scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = new Date($scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = new Date($scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate);
+    physicalChemicalInspection.liverDiseaseAutoantibodiesOtherDate = new Date($scope.liverDiseaseAutoantibodiesOtherDate);
+    physicalChemicalInspection.aNAHomogeneousDate = new Date($scope.anaHomogeneousDate);
+    physicalChemicalInspection.aNAParticleDate = new Date($scope.anaParticleDate);
+    physicalChemicalInspection.aNAPeripheralDate = new Date($scope.anaPeripheralDate);
+    physicalChemicalInspection.aNANucleolusDate = new Date($scope.anaNucleolusDate);
+    physicalChemicalInspection.aNANucleolusEnhancementDate = new Date($scope.anaNucleolusEnhancementDate);
+    physicalChemicalInspection.aNANuclearDate = new Date($scope.anaNuclearDate);
+    physicalChemicalInspection.aNACentromereDate = new Date($scope.anaCentromereDate);
+    physicalChemicalInspection.aNAOtherDate = new Date($scope.anaOtherDate);
+    physicalChemicalInspection.humoralImmunityIgGDate = new Date($scope.humoralImmunityIgGDate);
+    physicalChemicalInspection.humoralImmunityIgADate = new Date($scope.humoralImmunityIgADate);
+    physicalChemicalInspection.humoralImmunityIgMDate = new Date($scope.humoralImmunityIgMDate);
+    physicalChemicalInspection.humoralImmunityImmuneComplexfDate = new Date($scope.humoralImmunityImmuneComplexfDate);
+    physicalChemicalInspection.humoralImmunityComplementC3Date = new Date($scope.humoralImmunityComplementC3Date);
+    physicalChemicalInspection.humoralImmunityComplementC4Date = new Date($scope.humoralImmunityComplementC4Date);
+    physicalChemicalInspection.humoralImmunityIgEDate = new Date($scope.humoralImmunityIgEDate);
+    physicalChemicalInspection.humoralImmunityKlightChainDate = new Date($scope.humoralImmunityKlightChainDate);
+    physicalChemicalInspection.humoralImmunityNlightChainDate = new Date($scope.humoralImmunityNlightChainDate);
+    physicalChemicalInspection.cellularImmunityCD3Date = new Date($scope.cellularImmunityCD3Date);
+    physicalChemicalInspection.cellularImmunityCD4Date = new Date($scope.cellularImmunityCD4Date);
+    physicalChemicalInspection.cellularImmunityCD8Date = new Date($scope.cellularImmunityCD8Date);
+    physicalChemicalInspection.cellularImmunityCD56Date = new Date($scope.cellularImmunityCD56Date);
+    physicalChemicalInspection.cellularImmunityCD2Date = new Date($scope.cellularImmunityCD2Date);
+    physicalChemicalInspection.cellularImmunityCD4CD8Date = new Date($scope.cellularImmunityCD4CD8Date);
+    physicalChemicalInspection.liverHardnessFibroscanDate = new Date($scope.liverHardnessFibroscanDate);
+    physicalChemicalInspection.liverHardnessFibrotestDate = new Date($scope.liverHardnessFibrotestDate);
+    physicalChemicalInspection.copperProteinDate = new Date($scope.copperProteinDate);
+    physicalChemicalInspection.aFPDate = new Date($scope.aFPDate);
+    physicalChemicalInspection.carcinoembryonicAntigenCEADate = new Date($scope.carcinoembryonicAntigenCEADate);
+    physicalChemicalInspection.ca125Date = new Date($scope.ca125Date);
+    physicalChemicalInspection.hbsagDate = new Date($scope.hbsagDate);
+    physicalChemicalInspection.hbsabDate = new Date($scope.hbsabDate);
+    physicalChemicalInspection.hbeagDate = new Date($scope.hbeagDate);
+    physicalChemicalInspection.hbeabDate = new Date($scope.hbeabDate);
+    physicalChemicalInspection.hbcabDate = new Date($scope.hbcabDate);
+    physicalChemicalInspection.hbvRnaDate = new Date($scope.hbvRnaDate);
+    physicalChemicalInspection.antiHCVantibodyDate = new Date($scope.antiHCVantibodyDate);
+    physicalChemicalInspection.hcvRnaDate = new Date($scope.hcvRnaDate);
+    physicalChemicalInspection.proteinDate = new Date($scope.proteinDate);
+    physicalChemicalInspection.redBloodCellDate = new Date($scope.redBloodCellDate);
+    physicalChemicalInspection.whiteBloodCellDate = new Date($scope.whiteBloodCellDate);
+    physicalChemicalInspection.bilirubinDate = new Date($scope.bilirubinDate);
+    physicalChemicalInspection.ca199Date = new Date($scope.ca199Date);
 
     if (!$scope.cTMRI) {
       physicalChemicalInspection.ctmri = -1;
@@ -50747,7 +50985,83 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
       $scope.whiteBloodCell = physicalChemicalInspection.whiteBloodCell;
       $scope.bilirubin = physicalChemicalInspection.bilirubin;
       $scope.ca199 = physicalChemicalInspection.ca199;
-      $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
+      if (physicalChemicalInspection.imageUrl) {
+        $scope.image = '/api/image/' + physicalChemicalInspection.imageUrl + '.jpg';
+      } else {
+        $scope.image = undefined;
+      }
+
+      $scope.totalBileAcidDate = formatDate(physicalChemicalInspection.totalBileAcidDate);
+      $scope.liverFunctionAlbuminDate = formatDate(physicalChemicalInspection.liverFunctionAlbuminDate);
+      $scope.liverFunctionGlobulinDate = formatDate(physicalChemicalInspection.liverFunctionGlobulinDate);
+      $scope.liverFunctionALTDate = formatDate(physicalChemicalInspection.liverFunctionALTDate);
+      $scope.liverFunctionASTDate = formatDate(physicalChemicalInspection.liverFunctionASTDate);
+      $scope.liverFunctionGGTDate = formatDate(physicalChemicalInspection.liverFunctionGGTDate);
+      $scope.liverFunctionALPDate = formatDate(physicalChemicalInspection.liverFunctionALPDate);
+      $scope.liverFunctionTotalCholesterolDate = formatDate(physicalChemicalInspection.liverFunctionTotalCholesterolDate);
+      $scope.liverFunctionTotalBilirubinDate = formatDate(physicalChemicalInspection.liverFunctionTotalBilirubinDate);
+      $scope.liverFunctionDirectBilirubinDate = formatDate(physicalChemicalInspection.liverFunctionDirectBilirubinDate);
+      $scope.liverFunctionRglobulinDate = formatDate(physicalChemicalInspection.liverFunctionRglobulinDate);
+      $scope.renalFunctionBUNDate = formatDate(physicalChemicalInspection.renalFunctionBUNDate);
+      $scope.renalFunctionCrDate = formatDate(physicalChemicalInspection.renalFunctionCrDate);
+      $scope.clottingPTDate = formatDate(physicalChemicalInspection.clottingPTDate);
+      $scope.clottingINRDate = formatDate(physicalChemicalInspection.clottingINRDate);
+      $scope.bloodRoutineRBCDate = formatDate(physicalChemicalInspection.bloodRoutineRBCDate);
+      $scope.bloodRoutineHbDate = formatDate(physicalChemicalInspection.bloodRoutineHbDate);
+      $scope.bloodRoutineWBCDate = formatDate(physicalChemicalInspection.bloodRoutineWBCDate);
+      $scope.bloodRoutineNeutrophilsDate = formatDate(physicalChemicalInspection.bloodRoutineNeutrophilsDate);
+      $scope.bloodRoutineLymphocytesDate = formatDate(physicalChemicalInspection.bloodRoutineLymphocytesDate);
+      $scope.bloodRoutineEosinophilsDate = formatDate(physicalChemicalInspection.bloodRoutineEosinophilsDate);
+      $scope.bloodRoutinePlateletsDate = formatDate(physicalChemicalInspection.bloodRoutinePlateletsDate);
+      $scope.liverDiseaseAutoantibodiesAMADate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAMADate);
+      $scope.liverDiseaseAutoantibodiesAMAM2Date = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAMAM2Date);
+      $scope.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate);
+      $scope.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate);
+      $scope.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate);
+      $scope.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate);
+      $scope.liverDiseaseAutoantibodiesOtherDate = formatDate(physicalChemicalInspection.liverDiseaseAutoantibodiesOtherDate);
+      $scope.anaHomogeneousDate = formatDate(physicalChemicalInspection.aNAHomogeneousDate);
+      $scope.anaParticleDate = formatDate(physicalChemicalInspection.aNAParticleDate);
+      $scope.anaPeripheralDate = formatDate(physicalChemicalInspection.aNAPeripheralDate);
+      $scope.anaNucleolusDate = formatDate(physicalChemicalInspection.aNANucleolusDate);
+      $scope.anaNucleolusEnhancementDate = formatDate(physicalChemicalInspection.aNANucleolusEnhancementDate);
+      $scope.anaNuclearDate = formatDate(physicalChemicalInspection.aNANuclearDate);
+      $scope.anaCentromereDate = formatDate(physicalChemicalInspection.aNACentromereDate);
+      $scope.anaOtherDate = formatDate(physicalChemicalInspection.aNAOtherDate);
+      $scope.humoralImmunityIgGDate = formatDate(physicalChemicalInspection.humoralImmunityIgGDate);
+      $scope.humoralImmunityIgADate = formatDate(physicalChemicalInspection.humoralImmunityIgADate);
+      $scope.humoralImmunityIgMDate = formatDate(physicalChemicalInspection.humoralImmunityIgMDate);
+      $scope.humoralImmunityImmuneComplexfDate = formatDate(physicalChemicalInspection.humoralImmunityImmuneComplexfDate);
+      $scope.humoralImmunityComplementC3Date = formatDate(physicalChemicalInspection.humoralImmunityComplementC3Date);
+      $scope.humoralImmunityComplementC4Date = formatDate(physicalChemicalInspection.humoralImmunityComplementC4Date);
+      $scope.humoralImmunityIgEDate = formatDate(physicalChemicalInspection.humoralImmunityIgEDate);
+      $scope.humoralImmunityKlightChainDate = formatDate(physicalChemicalInspection.humoralImmunityKlightChainDate);
+      $scope.humoralImmunityNlightChainDate = formatDate(physicalChemicalInspection.humoralImmunityNlightChainDate);
+      $scope.cellularImmunityCD3Date = formatDate(physicalChemicalInspection.cellularImmunityCD3Date);
+      $scope.cellularImmunityCD4Date = formatDate(physicalChemicalInspection.cellularImmunityCD4Date);
+      $scope.cellularImmunityCD8Date = formatDate(physicalChemicalInspection.cellularImmunityCD8Date);
+      $scope.cellularImmunityCD56Date = formatDate(physicalChemicalInspection.cellularImmunityCD56Date);
+      $scope.cellularImmunityCD2Date = formatDate(physicalChemicalInspection.cellularImmunityCD2Date);
+      $scope.cellularImmunityCD4CD8Date = formatDate(physicalChemicalInspection.cellularImmunityCD4CD8Date);
+      $scope.liverHardnessFibroscanDate = formatDate(physicalChemicalInspection.liverHardnessFibroscanDate);
+      $scope.liverHardnessFibrotestDate = formatDate(physicalChemicalInspection.liverHardnessFibrotestDate);
+      $scope.copperProteinDate = formatDate(physicalChemicalInspection.copperProteinDate);
+      $scope.aFPDate = formatDate(physicalChemicalInspection.aFPDate);
+      $scope.carcinoembryonicAntigenCEADate = formatDate(physicalChemicalInspection.carcinoembryonicAntigenCEADate);
+      $scope.ca125Date = formatDate(physicalChemicalInspection.ca125Date);
+      $scope.hbsagDate = formatDate(physicalChemicalInspection.hbsagDate);
+      $scope.hbsabDate = formatDate(physicalChemicalInspection.hbsabDate);
+      $scope.hbeagDate = formatDate(physicalChemicalInspection.hbeagDate);
+      $scope.hbeabDate = formatDate(physicalChemicalInspection.hbeabDate);
+      $scope.hbcabDate = formatDate(physicalChemicalInspection.hbcabDate);
+      $scope.hbvRnaDate = formatDate(physicalChemicalInspection.hbvRnaDate);
+      $scope.antiHCVantibodyDate = formatDate(physicalChemicalInspection.antiHCVantibodyDate);
+      $scope.hcvRnaDate = formatDate(physicalChemicalInspection.hcvRnaDate);
+      $scope.proteinDate = formatDate(physicalChemicalInspection.proteinDate);
+      $scope.redBloodCellDate = formatDate(physicalChemicalInspection.redBloodCellDate);
+      $scope.whiteBloodCellDate = formatDate(physicalChemicalInspection.whiteBloodCellDate);
+      $scope.bilirubinDate = formatDate(physicalChemicalInspection.bilirubinDate);
+      $scope.ca199Date = formatDate(physicalChemicalInspection.ca199Date);
     });
   }
 
@@ -50760,6 +51074,15 @@ phyAChe.controller('phyACheController', ['$scope', '$http', '$rootScope', '$stat
     }).then(function success(response) {
       $scope.imageName = response.data;
     });
+  }
+
+  function formatDate(myDate) {
+    if (myDate) {
+      var myTime = new Date(myDate);
+      return myTime.getFullYear() + '-' + (myTime.getMonth() + 1) + '-' + myTime.getDate();
+    } else {
+      return undefined;
+    }
   }
 }]);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
@@ -52012,60 +52335,11 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('treatment', ['chart.js',
     }
   };
 
-  $('#datepicker1').datepicker({
-    autoclose: true
-  });
-  $('#datepicker2').datepicker({
-    autoclose: true
-  });
-  $('#datepicker3').datepicker({
-    autoclose: true
-  });
-  $('#datepicker4').datepicker({
-    autoclose: true
-  });
-  $('#datepicker5').datepicker({
-    autoclose: true
-  });
-  $('#datepicker6').datepicker({
-    autoclose: true
-  });
-  $('#datepicker7').datepicker({
-    autoclose: true
-  });
-  $('#datepicker8').datepicker({
-    autoclose: true
-  });
-  $('#datepicker9').datepicker({
-    autoclose: true
-  });
-  $('#datepicker10').datepicker({
-    autoclose: true
-  });
-  $('#datepicker11').datepicker({
-    autoclose: true
-  });
-  $('#datepicker12').datepicker({
-    autoclose: true
-  });
-  $('#datepicker13').datepicker({
-    autoclose: true
-  });
-  $('#datepicker14').datepicker({
-    autoclose: true
-  });
-  $('#datepicker15').datepicker({
-    autoclose: true
-  });
-  $('#datepicker16').datepicker({
-    autoclose: true
-  });
-  $('#datepicker17').datepicker({
-    autoclose: true
-  });
-  $('#datepicker18').datepicker({
-    autoclose: true
-  });
+  for (var j = 1; j < 19; j++) {
+    $('#datepicker' + j).datepicker({
+      autoclose: true
+    });
+  }
 
   $scope.die = function () {
     if ($scope.dieOption == 'die') {
@@ -52657,8 +52931,8 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('treatment', ['chart.js',
       // }
 
       for (var i = 0; i < dat.length; i++) {
-        $scope.labels.push(dat[i].split("$")[0]);
-        $scope.data.push(dat[i].split("$")[1]);
+        $scope.labels.push(dat[i].split('$')[0]);
+        $scope.data.push(dat[i].split('$')[1]);
       }
 
       // $scope.data = response.data;
@@ -52879,7 +53153,7 @@ module.exports = "<section class=\"content-header\">\r\n  <h1 class=\" text-cent
 /* 220 */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"content-header\">\r\n  <h1>\r\n    首页\r\n  </h1>\r\n  <ol class=\"breadcrumb\">\r\n    <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i>首页</a></li>\r\n  </ol>\r\n</section>\r\n  <div  ng-app=\"home\" ng-controller=\"homeController\">\r\n\r\n  <!--模态框-->\r\n  <div id=\"infoModal\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n               <div class=\"modal-dialog\" role=\"document\">\r\n                    <div class=\"modal-content\">\r\n                         <div class=\"modal-header\">\r\n                              <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\r\n                                   aria-label=\"Close\">\r\n                                   <span aria-hidden=\"true\">&times;</span>\r\n                              </button>\r\n                         </div>\r\n                         <div class=\"modal-body\">\r\n                              <p class=\"h3\">{{information}}</p>\r\n                         </div>\r\n                         <div class=\"modal-footer\">\r\n                              <button id=\"modalButton1\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" ng-show=\"buttonShow\">{{buttonContent}}</button>\r\n                         </div>\r\n                    </div>\r\n               </div>\r\n     </div>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row-fluid\">\r\n        <div class=\"span12\">\r\n          <div >\r\n          <br>\r\n            <div class=\"box\">\r\n            <div class=\"box-header\">\r\n              <form class=\"form-inline\">\r\n                <span class=\"h3\">患者总览</span>&nbsp<a ng-click=\"createExcel()\"><span class=\"h4\" style=\"cursor: pointer;\">导出所有患者病例资料</span></a>\r\n                <span class=\"col-md-offset-4\">\r\n                <input type=\"text\" name=\"q\" class=\"form-control form-inline\" placeholder=\"请输入姓名或编号\" ng-model=\"queryStr\">\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"query()\"><i class=\"glyphicon glyphicon-search\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"all()\"><i class=\"glyphicon glyphicon-th-list\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"addPatient()\"><i class=\"fa fa-fw fa-plus\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  </span>\r\n              </form>\r\n            </div>\r\n            <!-- /.box-header -->\r\n            <div class=\"box-body\">\r\n              <div id=\"example2_wrapper\" class=\"dataTables_wrapper form-inline dt-bootstrap\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-6\"></div>\r\n                <div class=\"col-sm-6\"></div>\r\n              </div><div class=\"row\">\r\n              <div class=\"col-sm-12\">\r\n              <table id=\"example2\" class=\"table table-bordered table-hover\" role=\"grid\" aria-describedby=\"example2_info\">\r\n                <thead>\r\n                <tr role=\"row\">\r\n                  <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"Rendering engine: activate to sort column descending\">姓名</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Browser: activate to sort column ascending\">编号</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Platform(s): activate to sort column ascending\">生日</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Platform(s): activate to sort column ascending\">性别</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Engine version: activate to sort column ascending\">采集信息状态</th>\r\n                </tr>\r\n                </thead>\r\n                <tbody>\r\n                <tr role=\"row\" style=\"cursor:pointer\" ng-repeat=\"patient in patients\" ng-click=\"patientClick(patient)\" class=\"info\">\r\n                  <td><span class=\"h5\">{{patient.name}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.identifier}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.birthday | date:\"yyyy-MM-dd\"}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.gender}}</span></td>\r\n                  <td ng-switch=\"patient.complete\"><span class=\"h5\" ng-switch-when=\"true\">已完成<span class=\"glyphicon glyphicon-ok\" style=\"color:green\"></span></span>\r\n                  <span class=\"h5\" ng-switch-when=\"false\">未完成<span class=\"glyphicon glyphicon-pencil\" style=\"color:blue\"></span></td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-7\">\r\n                  <div class=\"page ng-hide col-md-offset-5\" my-directive\r\n                    url={{url}} get-data=\"patients\"></div>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n            </div>\r\n            <!-- /.box-body -->\r\n          </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n";
+module.exports = "<section class=\"content-header\">\r\n  <h1>\r\n    首页\r\n  </h1>\r\n  <ol class=\"breadcrumb\">\r\n    <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i>首页</a></li>\r\n  </ol>\r\n</section>\r\n  <div  ng-app=\"home\" ng-controller=\"homeController\">\r\n\r\n  <!--模态框-->\r\n  <div id=\"infoModal\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n               <div class=\"modal-dialog\" role=\"document\">\r\n                    <div class=\"modal-content\">\r\n                         <div class=\"modal-header\">\r\n                              <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\r\n                                   aria-label=\"Close\">\r\n                                   <span aria-hidden=\"true\">&times;</span>\r\n                              </button>\r\n                         </div>\r\n                         <div class=\"modal-body\">\r\n                              <p class=\"h3\">{{information}}</p>\r\n                         </div>\r\n                         <div class=\"modal-footer\">\r\n                              <button id=\"modalButton1\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" ng-show=\"buttonShow\">{{buttonContent}}</button>\r\n                         </div>\r\n                    </div>\r\n               </div>\r\n     </div>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row-fluid\">\r\n        <div class=\"span12\">\r\n          <div >\r\n          <br>\r\n            <div class=\"box\">\r\n            <div class=\"box-header\">\r\n              <form class=\"form-inline\">\r\n                <span class=\"h3\">患者总览</span>&nbsp<a ng-click=\"createExcel()\"><span class=\"h4\" style=\"cursor: pointer;\">导出所有患者病例资料</span></a>\r\n                <span class=\"col-md-offset-4\">\r\n                <input type=\"text\" name=\"q\" class=\"form-control form-inline\" placeholder=\"请输入姓名或编号\" ng-model=\"queryStr\">\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"query()\"><i class=\"glyphicon glyphicon-search\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"all()\"><i class=\"glyphicon glyphicon-th-list\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  <button type=\"button\" class=\"btn btn-flat\" ng-click=\"addPatient()\"><i class=\"fa fa-fw fa-plus\" style=\"color: #3C8DBC\"></i>\r\n                  </button>\r\n                  </span>\r\n              </form>\r\n            </div>\r\n            <!-- /.box-header -->\r\n            <div class=\"box-body\">\r\n              <div id=\"example2_wrapper\" class=\"dataTables_wrapper form-inline dt-bootstrap\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-6\"></div>\r\n                <div class=\"col-sm-6\"></div>\r\n              </div><div class=\"row\">\r\n              <div class=\"col-sm-12\">\r\n              <table id=\"example2\" class=\"table table-bordered table-hover table-striped\" role=\"grid\" aria-describedby=\"example2_info\">\r\n                <thead>\r\n                <tr role=\"row\">\r\n                  <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"Rendering engine: activate to sort column descending\">姓名</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Browser: activate to sort column ascending\">编号</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Platform(s): activate to sort column ascending\">生日</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Platform(s): activate to sort column ascending\">性别</th>\r\n                  <th class=\"sorting\" tabindex=\"0\" aria-controls=\"example2\" rowspan=\"1\" colspan=\"1\" aria-label=\"Engine version: activate to sort column ascending\">采集信息状态</th>\r\n                </tr>\r\n                </thead>\r\n                <tbody>\r\n                <tr role=\"row\" style=\"cursor:pointer\" ng-repeat=\"patient in patients\" ng-click=\"patientClick(patient)\">\r\n                  <td><span class=\"h5\">{{patient.name}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.identifier}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.birthday | date:\"yyyy-MM-dd\"}}</span></td>\r\n                  <td><span class=\"h5\">{{patient.gender}}</span></td>\r\n                  <td ng-switch=\"patient.complete\"><span class=\"h5\" ng-switch-when=\"true\">已完成<span class=\"glyphicon glyphicon-ok\" style=\"color:green\"></span></span>\r\n                  <span class=\"h5\" ng-switch-when=\"false\">未完成<span class=\"glyphicon glyphicon-pencil\" style=\"color:blue\"></span></td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-7\">\r\n                  <div class=\"page ng-hide col-md-offset-5\" my-directive\r\n                    url={{url}} get-data=\"patients\"></div>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n            </div>\r\n            <!-- /.box-body -->\r\n          </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n";
 
 /***/ }),
 /* 221 */,
@@ -52901,13 +53175,13 @@ module.exports = "<section class=\"content-header\">\r\n  <h1 class=\"text-cente
 /* 227 */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"content-header\">\r\n  <h1 class=\" text-center\">\r\n     患者病例总览  \r\n  </h1>\r\n  <ol class=\"breadcrumb\">\r\n    <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i>首页</a></li>\r\n    <li class=\"active\">患者病例总览</li>\r\n  </ol>\r\n</section>\r\n<div ng-app=\"patientOverview\" ng-controller=\"patientOverviewController\">\r\n\t<u class=\"h4 col-md-offset-9\">患者：{{patientName}}</u>\r\n  \t<br>\r\n  <u class=\"h4 col-md-offset-9\">病理号：{{patientNumber}}</u>\r\n  <br/>\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">四诊信息</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <!-- <ul class=\"col-md-2\"  style=\"cursor: pointer;\">\r\n                <li><a ng-click=\"followFirst()\"><span class=\"h4\">医院录入表</span></a></li>\r\n                <li><a ng-repeat = \"fourDiaFollow in fourDiaFollowList\" ng-click=\"fourDiaClick(fourDiaFollow)\"><span class=\"h4\">随访表{{fourDiaFollow.id}}</span></a></li>\r\n              </ul> -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"fourDiaDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"fourDiaFollow in fourDiaFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"fourDiaClick(fourDiaFollow)\">随访表{{fourDiaFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped table-bordered table-hover\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>乏力</td>\r\n                  <td>\r\n                  {{fatigue}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>皮肤瘙痒</td>\r\n                  <td>\r\n                    {{skinItching}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>两目干涩</td>\r\n                  <td>\r\n                    {{twoEyesDry}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>视物模糊</td>\r\n                  <td>\r\n                    {{blurredVision}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>抑郁</td>\r\n                  <td>\r\n                    {{depression}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>烦躁易怒</td>\r\n                  <td>\r\n                    {{irritability}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>失眠</td>\r\n                  <td>\r\n                    {{insomnia}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>易醒</td>\r\n                  <td>\r\n                    {{easyWakeUp}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>耳鸣</td>\r\n                  <td>\r\n                    {{tinnitus}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>口干</td>\r\n                  <td>\r\n                    {{dryMouth}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>口苦</td>\r\n                  <td>\r\n                    {{mouthPain}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>口臭</td>\r\n                  <td>\r\n                    {{badBreath}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>恶心</td>\r\n                  <td>\r\n                    {{nausea}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>嗳气</td>\r\n                  <td>\r\n                    {{belching}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>脘腹胀满</td>\r\n                  <td>\r\n                    {{abdominalDistention}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>胁肋痛-刺痛</td>\r\n                  <td>\r\n                    {{flankPainStinging}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>胁肋痛-胀痛</td>\r\n                  <td>\r\n                    {{flankPainSwell}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>胁肋痛-隐痛</td>\r\n                  <td>\r\n                    {{flankPainDull}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>19</td>\r\n                  <td>胁肋痛-不适</td>\r\n                  <td>\r\n                    {{flankPainDiscomfort}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>20</td>\r\n                  <td>纳差</td>\r\n                  <td>\r\n                    {{anorexia}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>21</td>\r\n                  <td>畏寒肢冷</td>\r\n                  <td>\r\n                    {{aphrodisiacCold}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>22</td>\r\n                  <td>肢体困重</td>\r\n                  <td>\r\n                    {{limb}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>23</td>\r\n                  <td>腰痠脚软</td>\r\n                  <td>\r\n                    {{backacheFootSoft}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>24</td>\r\n                  <td>手足烦热</td>\r\n                  <td>\r\n                    {{handFootFanHot}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>25</td>\r\n                  <td>尿黄</td>\r\n                  <td>\r\n                    {{urineYellow}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>26</td>\r\n                  <td>便秘</td>\r\n                  <td>\r\n                    {{constipation}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>27</td>\r\n                  <td>便溏</td>\r\n                  <td>\r\n                    {{looseStools}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>28</td>\r\n                  <td>自汗</td>\r\n                  <td>\r\n                    {{perspiration}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>29</td>\r\n                  <td>盗汗</td>\r\n                  <td>\r\n                    {{nightSweats}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>30</td>\r\n                  <td>下肢水肿</td>\r\n                  <td>\r\n                    {{lowerExtremityEdema}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>31</td>\r\n                  <td>面晦暗</td>\r\n                  <td>\r\n                    {{faceDull}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>32</td>\r\n                  <td>身黄</td>\r\n                  <td>\r\n                    {{eyeYellow}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>33</td>\r\n                  <td>蜘蛛痣数量</td>\r\n                  <td>\r\n                    {{spiderNevus}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>34</td>\r\n                  <td>肝掌</td>\r\n                  <td>\r\n                    {{liverPalm}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>35</td>\r\n                  <td>腹壁脉络曲张</td>\r\n                  <td>\r\n                    {{abdominalVeins}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>36</td>\r\n                  <td>黄色瘤</td>\r\n                  <td>\r\n                    {{yellowTumor}}\r\n                  </td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n  \r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">舌脉象</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"tongueDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"tongueFollow in tongueFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"tongueClick(tongueFollow)\">随访表{{tongueFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>舌质及部位</td>\r\n                  <td>{{tongue.substring(1)}} 部位：{{tonguePart.substring(1)}}-{{tonguePartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>舌体</td>\r\n                  <td>{{tongueBody.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>苔质及部位</td>\r\n                  <td>{{mossy.substring(1)}} 部位：{{mossyPart.substring(1)}}-{{mossyPartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>舌苔色及部位</td>\r\n                  <td>{{tongueColor.substring(1)}} 部位：{{tongueColorPart.substring(1)}}-{{tongueColorPartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>舌下静脉曲张</td>\r\n                  <td>{{sublingualVaricoseVeins.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>左脉象</td>\r\n                  <td>{{leftPulse.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>右脉象</td>\r\n                  <td>{{rightPulse.substring(1)}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n  \r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">理化检查</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"phyDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"phyFollow in phyFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"phyClick(phyFollow)\">随访表{{phyFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>总胆汁酸</td>\r\n                  <td>{{totalBileAcid}} μmol/l</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>铜蓝蛋白</td>\r\n                  <td>{{copperProtein}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>肝功能-白蛋白</td>\r\n                  <td>{{liverFunctionAlbumin}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>肝功能-球蛋白</td>\r\n                  <td>{{liverFunctionGlobulin}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>肝功能-ALT</td>\r\n                  <td>{{liverFunctionALT}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝功能-AST</td>\r\n                  <td>{{liverFunctionAST}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>肝功能-GGT</td>\r\n                  <td>{{liverFunctionGGT}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>肝功能--ALP</td>\r\n                  <td>{{liverFunctionALP}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>肝功能-总胆固醇</td>\r\n                  <td>{{liverFunctionTotalCholesterol}} mmol/l</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝功能-总胆红素</td>\r\n                  <td>{{liverFunctionTotalBilirubin}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>肝功能-直接胆红素</td>\r\n                  <td>{{liverFunctionDirectBilirubin}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>肝功能-γ球蛋白</td>\r\n                  <td>{{liverFunctionRglobulin}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>肾功能-BUN</td>\r\n                  <td>{{renalFunctionBUN}} mmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>肾功能-Cr</td>\r\n                  <td>{{renalFunctionCr}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>凝血-PT</td>\r\n                  <td>{{clottingPT}} 秒</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>凝血-INR</td>\r\n                  <td>{{clottingINR}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>血常规-RBC</td>\r\n                  <td>{{bloodRoutineRBC}} X10<sup>12</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>血常规-HB</td>\r\n                  <td>{{bloodRoutineHb}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>19</td>\r\n                  <td>血常规-WBC</td>\r\n                  <td>{{bloodRoutineWBC}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>20</td>\r\n                  <td>血常规-中性粒细胞</td>\r\n                  <td>{{bloodRoutineNeutrophils}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>21</td>\r\n                  <td>血常规-淋巴细胞</td>\r\n                  <td>{{bloodRoutineLymphocytes}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>22</td>\r\n                  <td>血常规-嗜酸性粒细胞</td>\r\n                  <td>{{bloodRoutineEosinophils}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>23</td>\r\n                  <td>血常规-血小板</td>\r\n                  <td>{{bloodRoutinePlatelets}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>24</td>\r\n                  <td>肝病自身抗体-AMA</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMA}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>25</td>\r\n                  <td>肝病自身抗体-AMA-M2</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMAM2}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>26</td>\r\n                  <td>肝病自身抗体-抗平滑肌抗体</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>27</td>\r\n                  <td>肝病自身抗体-肝肾微粒体抗体</td>\r\n                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>28</td>\r\n                  <td>肝病自身抗体-肝细胞溶质抗原</td>\r\n                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigen}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>29</td>\r\n                  <td>肝病自身抗体-可溶性肝-胰抗原</td>\r\n                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>30</td>\r\n                  <td>肝病自身抗体-其他</td>\r\n                  <td>{{liverDiseaseAutoantibodiesOther}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>31</td>\r\n                  <td>ANA-均质型</td>\r\n                  <td>{{ANAHomogeneous}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>32</td>\r\n                  <td>ANA-颗粒型</td>\r\n                  <td>{{ANAParticle}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>33</td>\r\n                  <td>ANA-周边型</td>\r\n                  <td>{{ANAPeripheral}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>34</td>\r\n                  <td>ANA-核仁型</td>\r\n                  <td>{{ANANucleolus}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>35</td>\r\n                  <td>ANA-核仁增强型</td>\r\n                  <td>{{ANANucleolusEnhancement}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>36</td>\r\n                  <td>ANA-核点型</td>\r\n                  <td>{{ANANuclear}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>37</td>\r\n                  <td>ANA-着丝点型</td>\r\n                  <td>{{ANACentromere}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>38</td>\r\n                  <td>ANA-其他</td>\r\n                  <td>{{ANAOther}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>39</td>\r\n                  <td>体液免疫-IgG</td>\r\n                  <td>{{humoralImmunityIgG}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>40</td>\r\n                  <td>体液免疫-IgA</td>\r\n                  <td>{{humoralImmunityIgA}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>41</td>\r\n                  <td>体液免疫-IgM</td>\r\n                  <td>{{humoralImmunityIgM}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>42</td>\r\n                  <td>体液免疫-免疫复合物</td>\r\n                  <td>{{humoralImmunityImmuneComplexf}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>43</td>\r\n                  <td>体液免疫-补体C3</td>\r\n                  <td>{{humoralImmunityComplementC3}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>44</td>\r\n                  <td>体液免疫-补体C4</td>\r\n                  <td>{{humoralImmunityComplementC4}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>45</td>\r\n                  <td>体液免疫-IgE</td>\r\n                  <td>{{humoralImmunityIgE}} IU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>46</td>\r\n                  <td>体液免疫-k-轻链</td>\r\n                  <td>{{humoralImmunityKlightChain}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>47</td>\r\n                  <td>体液免疫-λ-轻链</td>\r\n                  <td>{{humoralImmunityNlightChain}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>48</td>\r\n                  <td>细胞免疫-CD<sub>3</sub></td>\r\n                  <td>{{cellularImmunityCD3}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>49</td>\r\n                  <td>细胞免疫-CD<sub>4</sub><sup>+</sup></td>\r\n                  <td>{{cellularImmunityCD4}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>50</td>\r\n                  <td>细胞免疫-CD<sub>8</sub><sup>+</sup></td>\r\n                  <td>{{cellularImmunityCD8}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>51</td>\r\n                  <td>细胞免疫-CD56+16(NK)</td>\r\n                  <td>{{cellularImmunityCD56}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>52</td>\r\n                  <td>细胞免疫-CD2</td>\r\n                  <td>{{cellularImmunityCD2}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>53</td>\r\n                  <td>细胞免疫-CD4/CD8</td>\r\n                  <td>{{cellularImmunityCD4CD8}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>54</td>\r\n                  <td>风湿免疫相关抗体</td>\r\n                  <td>{{rheumaticImmuneRelatedAntibodies}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>55</td>\r\n                  <td>腹部超声CT/MRI</td>\r\n                  <td>{{CTMRI}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>56</td>\r\n                  <td>肝脏硬度检查值-Fibroscan值</td>\r\n                  <td>{{liverHardnessFibroscan}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>57</td>\r\n                  <td>肝脏硬度检查值-Fibrotest值</td>\r\n                  <td>{{liverHardnessFibrotest}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>58</td>\r\n                  <td>肝穿刺病理检查</td>\r\n                  <td>{{liverPuncturePathology}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>59</td>\r\n                  <td>肿瘤标记物-afp</td>\r\n                  <td>{{aFP}}  ng/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>60</td>\r\n                  <td>肿瘤标记物-癌胚抗原CEA</td>\r\n                  <td>{{carcinoembryonicAntigenCEA}}  ng/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>61</td>\r\n                  <td>肿瘤标记物-ca199</td>\r\n                  <td>{{ca199}} U/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>62</td>\r\n                  <td>肿瘤标记物-ca125</td>\r\n                  <td>{{ca125}} U/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>63</td>\r\n                  <td>乙肝-hbsag</td>\r\n                  <td>{{hbsag}}  IU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>64</td>\r\n                  <td>乙肝-hbsab</td>\r\n                  <td>{{hbsab}} mlU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>65</td>\r\n                  <td>乙肝-hbeag</td>\r\n                  <td>{{hbeag}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>66</td>\r\n                  <td>乙肝-hbeab</td>\r\n                  <td>{{hbeab}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>67</td>\r\n                  <td>乙肝-hbcab</td>\r\n                  <td>{{hbcab}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>68</td>\r\n                  <td>乙肝-HBV-RNA</td>\r\n                  <td>{{hbvRna}} copies/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>69</td>\r\n                  <td>丙肝-抗HCV抗体</td>\r\n                  <td>{{antiHCVantibody}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>70</td>\r\n                  <td>丙肝-HCV-RNA</td>\r\n                  <td>{{hcvRna}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>71</td>\r\n                  <td>尿液分析-红细胞</td>\r\n                  <td>{{redBloodCell}} p/ul</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>72</td>\r\n                  <td>尿液分析-白细胞</td>\r\n                  <td>{{whiteBloodCell}} p/ul</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>73</td>\r\n                  <td>尿液分析-胆红素</td>\r\n                  <td>{{bilirubin}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>74</td>\r\n                  <td>尿液分析-蛋白质</td>\r\n                  <td>{{protein}}</td>\r\n                </tr>\r\n            </div>\r\n            </tbody>\r\n            </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">肝脏病理学检查</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\" ng-show=\"gsShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>小叶内炎症</td>\r\n                  <td>{{inflammationLeaflets}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>界面型肝炎</td>\r\n                  <td>{{interfacialInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>汇管区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>淋巴细胞浆细胞浸润</td>\r\n                  <td>{{lymphocytePlasmaCellInfiltration}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>纤维组织增生</td>\r\n                  <td>{{fibrousTissueHyperplasia}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>胆管炎症/损伤</td>\r\n                  <td>{{inflammationBileDuct}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>肝细胞脂肪变性</td>\r\n                  <td>{{hepatocellularSteatosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>玫瑰花结样改变</td>\r\n                  <td>{{roseSample}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>HBsAg染色</td>\r\n                  <td>{{hbsAg}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>HBcAg染色</td>\r\n                  <td>{{hbcAg}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>HCV染色</td>\r\n                  <td>{{hcv}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>其他</td>\r\n                  <td>{{other}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>诊断(分期分级)</td>\r\n                  <td>{{diagnosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>备注</td>\r\n                  <td>{{remarks}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n              <div class=\"box-body no-padding\" ng-show=\"ishakShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>门脉区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>小叶内活动度</td>\r\n                  <td>{{lobularMobility}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>界面炎</td>\r\n                  <td>{{interfaceInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>融合性坏死</td>\r\n                  <td>{{confluentNecrosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>纤维化评分</td>\r\n                  <td>{{fibrosis}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n              <div class=\"box-body no-padding\" ng-show=\"haiShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>门脉区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>小叶内活动度</td>\r\n                  <td>{{lobularMobility}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>界面炎</td>\r\n                  <td>{{interfaceInflammation}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">骨密度</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"boneDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"boneFollow in boneFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"boneClick(boneFollow)\">随访表{{boneFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>腰椎1-4 骨密度</td>\r\n                  <td>{{lumbarSpine}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>腰椎1-4 T值</td>\r\n                  <td>{{lumbarSpineT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>股骨颈 骨密度</td>\r\n                  <td>{{femoralNeck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>股骨颈 T值</td>\r\n                  <td>{{femoralNeckT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>大粗隆 骨密度</td>\r\n                  <td>{{bigTrochanter}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>大粗隆 T值</td>\r\n                  <td>{{bigTrochanterT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>全髋 骨密度</td>\r\n                  <td>{{fullHip}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>全髋 T值</td>\r\n                  <td>{{fullHipT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>诊断</td>\r\n                  <td>{{boneDiagnosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>备注 何时发生何部位的骨折</td>\r\n                  <td>{{remarks}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">简化AIH</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>ANA或SMA</td>\r\n                  <td>{{anasma1}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>ANA/SMA</td>\r\n                  <td>{{anasma2}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>Anti-LKM-l</td>\r\n                  <td>{{antiLkm}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>Anti-SLA</td>\r\n                  <td>{{antiSla}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>IgG</td>\r\n                  <td>{{igG}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝组织学</td>\r\n                  <td>{{liver}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>排除病毒性肝炎</td>\r\n                  <td>{{eliminateViralHepatitis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>评分</td>\r\n                  <td>{{result}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">复杂AIH（治疗前）</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-4\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>性别</td>\r\n                  <td>{{woman}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>药物史</td>\r\n                  <td>{{historyDrugs}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>\r\n                  <td>{{aLPAST}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>平均酒精摄入量</td>\r\n                  <td>{{alcoholIntake}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>血清球蛋白或IgG与正常值的比值</td>\r\n                  <td>{{serumGlobulinNormal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝脏组织学检查</td>\r\n                  <td>{{liverCheck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>其他免疫疾病</td>\r\n                  <td>{{otherImmuneDiseases}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>ANA,SMA或LKM-l</td>\r\n                  <td>{{ana}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>AMA阳性</td>\r\n                  <td>{{amaPositive}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝炎病毒标志物</td>\r\n                  <td>{{hepatitisVirusMarkers}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>其他可用的参数</td>\r\n                  <td>{{otherAvailableParameters}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>评分</td>\r\n                  <td>{{beforeScore}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>结论</td>\r\n                  <td>{{beforeResult}}</td>\r\n                </tr>\r\n                </tbody>\r\n                </table>\r\n                </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">复杂AIH（治疗后）</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-4\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>性别</td>\r\n                  <td>{{woman}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>药物史</td>\r\n                  <td>{{historyDrugs}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>\r\n                  <td>{{aLPAST}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>平均酒精摄入量</td>\r\n                  <td>{{alcoholIntake}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>血清球蛋白或IgG与正常值的比值</td>\r\n                  <td>{{serumGlobulinNormal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝脏组织学检查</td>\r\n                  <td>{{liverCheck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>其他免疫疾病</td>\r\n                  <td>{{otherImmuneDiseases}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>ANA,SMA或LKM-l</td>\r\n                  <td>{{ana}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>AMA阳性</td>\r\n                  <td>{{amaPositive}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝炎病毒标志物</td>\r\n                  <td>{{hepatitisVirusMarkers}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>其他可用的参数</td>\r\n                  <td>{{otherAvailableParameters}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>对治疗的反应</td>\r\n                  <td>{{responseTreatment}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>评分</td>\r\n                  <td>{{afterScore}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>结论</td>\r\n                  <td>{{afterResult}}</td>\r\n                </tr>\r\n                </tbody>\r\n                </table>\r\n                </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">治疗方案</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"treatDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"treatFollow in treatFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"treatClick(treatFollow)\">随访表{{treatFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>药名</th>\r\n                  <th>开始用药时间</th>\r\n                  <th>日剂量（g/日）</th>\r\n                  <th>疗程（天）</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>强的松</td>\r\n                  <td>{{qdsTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qdsDose}}</td>\r\n                  <td>{{qdsHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>强的松龙</td>\r\n                  <td>{{qdslTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qdslDose}}</td>\r\n                  <td>{{qdslHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>甲基强的松龙</td>\r\n                  <td>{{jjqTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{jjqDose}}</td>\r\n                  <td>{{jjqHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>布地奈德</td>\r\n                  <td>{{bdndTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{bdndDose}}</td>\r\n                  <td>{{bdndHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>硫锉嘌呤</td>\r\n                  <td>{{lcplTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{lcplDose}}</td>\r\n                  <td>{{lcplHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>免疫抑制剂-MTX</td>\r\n                  <td>{{mtxTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{mtxDose}}</td>\r\n                  <td>{{mtxHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>免疫抑制剂-CysA</td>\r\n                  <td>{{cysaTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{cysaDose}}</td>\r\n                  <td>{{cysaHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>免疫抑制剂-CTX</td>\r\n                  <td>{{ctxTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{ctxDose}}</td>\r\n                  <td>{{ctxHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>吗替麦考酚酯</td>\r\n                  <td>{{mtmkTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{mtmkDose}}</td>\r\n                  <td>{{mtmkHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>秋水仙素</td>\r\n                  <td>{{qsxsTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qsxsDose}}</td>\r\n                  <td>{{qsxsHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>熊去氧胆酸</td>\r\n                  <td>{{xqydTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{xqydDose}}</td>\r\n                  <td>{{xqydHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>非诺贝特</td>\r\n                  <td>{{fnbtTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{fnbtDose}}</td>\r\n                  <td>{{fnbtHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>苯扎贝特</td>\r\n                  <td>{{bzbtTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{bzbtDose}}</td>\r\n                  <td>{{bzbtHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>肝移植</td>\r\n                  <td>{{gyzTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td></td>\r\n                  <td></td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>肝移植详情</td>\r\n                  <td>{{gyzDetails | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>肝移植结果:{{gyzResult}}</td>\r\n                  <td>{{gyzReason}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">中药方剂</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"medicineDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"medicineFollow in medicineFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"medicineClick(medicineFollow)\">随访表{{medicineFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>类别</th>\r\n                  <th>开始服药时间</th>\r\n                  <th>描述</th>\r\n                  <th>疗程</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>中药方剂</td>\r\n                  <td>{{chineseMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{chineseMedicineFormulasDose}}</td>\r\n                  <td>{{chineseMedicineHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>中成药1</td>\r\n                  <td>{{aProprietaryMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>描述：{{aProprietaryMedicineName}}</td>\r\n                  <td>{{aProprietaryMedicineHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>中成药2</td>\r\n                  <td>{{bProprietaryMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>描述：{{bProprietaryMedicineName}}</td>\r\n                  <td>{{bProprietaryMedicineHeal}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">最后诊断和特殊情况</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>PBC临床分期</td>\r\n                  <td>{{pbcClinicalStage}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>AIH临床分期</td>\r\n                  <td>{{aihClinicalStage}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>特殊情况</td>\r\n                  <td>{{special}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">腹部超声/CT/MRI 图片</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div style=\"text-align: center;\">\r\n              <img ngf-src=\"image\" width=\"500\" height=\"500\">\r\n              </div>\r\n            </div>\r\n  </div>\r\n</div>";
+module.exports = "<section class=\"content-header\">\r\n  <h1 class=\" text-center\">\r\n     患者病例总览  \r\n  </h1>\r\n  <ol class=\"breadcrumb\">\r\n    <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i>首页</a></li>\r\n    <li class=\"active\">患者病例总览</li>\r\n  </ol>\r\n</section>\r\n<div ng-app=\"patientOverview\" ng-controller=\"patientOverviewController\">\r\n\t<u class=\"h4 col-md-offset-9\">患者：{{patientName}}</u>\r\n  \t<br>\r\n  <u class=\"h4 col-md-offset-9\">病理号：{{patientNumber}}</u>\r\n  <br/>\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">四诊信息</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <!-- <ul class=\"col-md-2\"  style=\"cursor: pointer;\">\r\n                <li><a ng-click=\"followFirst()\"><span class=\"h4\">医院录入表</span></a></li>\r\n                <li><a ng-repeat = \"fourDiaFollow in fourDiaFollowList\" ng-click=\"fourDiaClick(fourDiaFollow)\"><span class=\"h4\">随访表{{fourDiaFollow.id}}</span></a></li>\r\n              </ul> -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"fourDiaDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"fourDiaFollow in fourDiaFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"fourDiaClick(fourDiaFollow)\">随访表{{fourDiaFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped table-bordered table-hover\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>乏力</td>\r\n                  <td>\r\n                  {{fatigue}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>皮肤瘙痒</td>\r\n                  <td>\r\n                    {{skinItching}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>两目干涩</td>\r\n                  <td>\r\n                    {{twoEyesDry}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>视物模糊</td>\r\n                  <td>\r\n                    {{blurredVision}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>抑郁</td>\r\n                  <td>\r\n                    {{depression}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>烦躁易怒</td>\r\n                  <td>\r\n                    {{irritability}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>失眠</td>\r\n                  <td>\r\n                    {{insomnia}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>易醒</td>\r\n                  <td>\r\n                    {{easyWakeUp}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>耳鸣</td>\r\n                  <td>\r\n                    {{tinnitus}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>口干</td>\r\n                  <td>\r\n                    {{dryMouth}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>口苦</td>\r\n                  <td>\r\n                    {{mouthPain}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>口臭</td>\r\n                  <td>\r\n                    {{badBreath}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>恶心</td>\r\n                  <td>\r\n                    {{nausea}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>嗳气</td>\r\n                  <td>\r\n                    {{belching}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>脘腹胀满</td>\r\n                  <td>\r\n                    {{abdominalDistention}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>胁肋痛-刺痛</td>\r\n                  <td>\r\n                    {{flankPainStinging}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>胁肋痛-胀痛</td>\r\n                  <td>\r\n                    {{flankPainSwell}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>胁肋痛-隐痛</td>\r\n                  <td>\r\n                    {{flankPainDull}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>19</td>\r\n                  <td>胁肋痛-不适</td>\r\n                  <td>\r\n                    {{flankPainDiscomfort}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>20</td>\r\n                  <td>纳差</td>\r\n                  <td>\r\n                    {{anorexia}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>21</td>\r\n                  <td>畏寒肢冷</td>\r\n                  <td>\r\n                    {{aphrodisiacCold}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>22</td>\r\n                  <td>肢体困重</td>\r\n                  <td>\r\n                    {{limb}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>23</td>\r\n                  <td>腰痠脚软</td>\r\n                  <td>\r\n                    {{backacheFootSoft}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>24</td>\r\n                  <td>手足烦热</td>\r\n                  <td>\r\n                    {{handFootFanHot}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>25</td>\r\n                  <td>尿黄</td>\r\n                  <td>\r\n                    {{urineYellow}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>26</td>\r\n                  <td>便秘</td>\r\n                  <td>\r\n                    {{constipation}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>27</td>\r\n                  <td>便溏</td>\r\n                  <td>\r\n                    {{looseStools}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>28</td>\r\n                  <td>自汗</td>\r\n                  <td>\r\n                    {{perspiration}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>29</td>\r\n                  <td>盗汗</td>\r\n                  <td>\r\n                    {{nightSweats}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>30</td>\r\n                  <td>下肢水肿</td>\r\n                  <td>\r\n                    {{lowerExtremityEdema}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>31</td>\r\n                  <td>面晦暗</td>\r\n                  <td>\r\n                    {{faceDull}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>32</td>\r\n                  <td>身黄</td>\r\n                  <td>\r\n                    {{eyeYellow}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>33</td>\r\n                  <td>蜘蛛痣数量</td>\r\n                  <td>\r\n                    {{spiderNevus}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>34</td>\r\n                  <td>肝掌</td>\r\n                  <td>\r\n                    {{liverPalm}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>35</td>\r\n                  <td>腹壁脉络曲张</td>\r\n                  <td>\r\n                    {{abdominalVeins}}\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                  <td>36</td>\r\n                  <td>黄色瘤</td>\r\n                  <td>\r\n                    {{yellowTumor}}\r\n                  </td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n  \r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">舌脉象</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"tongueDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"tongueFollow in tongueFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"tongueClick(tongueFollow)\">随访表{{tongueFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>舌质及部位</td>\r\n                  <td>{{tongue.substring(1)}} 部位：{{tonguePart.substring(1)}}-{{tonguePartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>舌体</td>\r\n                  <td>{{tongueBody.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>苔质及部位</td>\r\n                  <td>{{mossy.substring(1)}} 部位：{{mossyPart.substring(1)}}-{{mossyPartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>舌苔色及部位</td>\r\n                  <td>{{tongueColor.substring(1)}} 部位：{{tongueColorPart.substring(1)}}-{{tongueColorPartialDescription}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>舌下静脉曲张</td>\r\n                  <td>{{sublingualVaricoseVeins.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>左脉象</td>\r\n                  <td>{{leftPulse.substring(1)}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>右脉象</td>\r\n                  <td>{{rightPulse.substring(1)}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n  \r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">理化检查</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"phyDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"phyFollow in phyFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"phyClick(phyFollow)\">随访表{{phyFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th class=\"col-md-3\">检查时间</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>总胆汁酸</td>\r\n                  <td>{{totalBileAcidDate}}</td>\r\n                  <td>{{totalBileAcid}} μmol/l</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>铜蓝蛋白</td>\r\n                  <td>{{copperProteinDate}}</td>\r\n                  <td>{{copperProtein}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>肝功能-白蛋白</td>\r\n                  <td>{{liverFunctionAlbuminDate}}</td>\r\n                  <td>{{liverFunctionAlbumin}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>肝功能-球蛋白</td>\r\n                  <td>{{liverFunctionGlobulinDate}}</td>\r\n                  <td>{{liverFunctionGlobulin}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>肝功能-ALT</td>\r\n                  <td>{{liverFunctionALTDate}}</td>\r\n                  <td>{{liverFunctionALT}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝功能-AST</td>\r\n                  <td>{{liverFunctionASTDate}}</td>\r\n                  <td>{{liverFunctionAST}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>肝功能-GGT</td>\r\n                  <td>{{liverFunctionGGTDate}}</td>\r\n                  <td>{{liverFunctionGGT}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>肝功能--ALP</td>\r\n                  <td>{{liverFunctionALPDate}}</td>\r\n                  <td>{{liverFunctionALP}} IU/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>肝功能-总胆固醇</td>\r\n                  <td>{{liverFunctionTotalCholesterolDate}}</td>\r\n                  <td>{{liverFunctionTotalCholesterol}} mmol/l</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝功能-总胆红素</td>\r\n                  <td>{{liverFunctionTotalBilirubinDate}}</td>\r\n                  <td>{{liverFunctionTotalBilirubin}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>肝功能-直接胆红素</td>\r\n                  <td>{{liverFunctionDirectBilirubinDate}}</td>\r\n                  <td>{{liverFunctionDirectBilirubin}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>肝功能-γ球蛋白</td>\r\n                  <td>{{liverFunctionRglobulinDate}}</td>\r\n                  <td>{{liverFunctionRglobulin}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>肾功能-BUN</td>\r\n                  <td>{{renalFunctionBUNDate}}</td>\r\n                  <td>{{renalFunctionBUN}} mmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>肾功能-Cr</td>\r\n                  <td>{{renalFunctionCrDate}}</td>\r\n                  <td>{{renalFunctionCr}} μmol/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>凝血-PT</td>\r\n                  <td>{{clottingPTDate}}</td>\r\n                  <td>{{clottingPT}} 秒</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>凝血-INR</td>\r\n                  <td>{{clottingINRDate}}</td>\r\n                  <td>{{clottingINR}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>血常规-RBC</td>\r\n                  <td>{{bloodRoutineRBCDate}}</td>\r\n                  <td>{{bloodRoutineRBC}} X10<sup>12</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>血常规-HB</td>\r\n                  <td>{{bloodRoutineHbDate}}</td>\r\n                  <td>{{bloodRoutineHb}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>19</td>\r\n                  <td>血常规-WBC</td>\r\n                  <td>{{bloodRoutineWBCDate}}</td>\r\n                  <td>{{bloodRoutineWBC}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>20</td>\r\n                  <td>血常规-中性粒细胞</td>\r\n                  <td>{{bloodRoutineNeutrophilsDate}}</td>\r\n                  <td>{{bloodRoutineNeutrophils}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>21</td>\r\n                  <td>血常规-淋巴细胞</td>\r\n                  <td>{{bloodRoutineLymphocytesDate}}</td>\r\n                  <td>{{bloodRoutineLymphocytes}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>22</td>\r\n                  <td>血常规-嗜酸性粒细胞</td>\r\n                  <td>{{bloodRoutineEosinophilsDate}}</td>\r\n                  <td>{{bloodRoutineEosinophils}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>23</td>\r\n                  <td>血常规-血小板</td>\r\n                  <td>{{bloodRoutinePlateletsDate}}</td>\r\n                  <td>{{bloodRoutinePlatelets}} X10<sup>9</sup>/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>24</td>\r\n                  <td>肝病自身抗体-AMA</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMADate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMA}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>25</td>\r\n                  <td>肝病自身抗体-AMA-M2</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMAM2Date}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAMAM2}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>26</td>\r\n                  <td>肝病自身抗体-抗平滑肌抗体</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>27</td>\r\n                  <td>肝病自身抗体-肝肾微粒体抗体</td>\r\n                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>28</td>\r\n                  <td>肝病自身抗体-肝细胞溶质抗原</td>\r\n                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesHepatocyteSoluteAntigen}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>29</td>\r\n                  <td>肝病自身抗体-可溶性肝-胰抗原</td>\r\n                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>30</td>\r\n                  <td>肝病自身抗体-其他</td>\r\n                  <td>{{liverDiseaseAutoantibodiesOtherDate}}</td>\r\n                  <td>{{liverDiseaseAutoantibodiesOther}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>31</td>\r\n                  <td>ANA-均质型</td>\r\n                  <td>{{anaHomogeneousDate}}</td>\r\n                  <td>{{ANAHomogeneous}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>32</td>\r\n                  <td>ANA-颗粒型</td>\r\n                  <td>{{anaParticleDate}}</td>\r\n                  <td>{{ANAParticle}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>33</td>\r\n                  <td>ANA-周边型</td>\r\n                  <td>{{anaPeripheralDate}}</td>\r\n                  <td>{{ANAPeripheral}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>34</td>\r\n                  <td>ANA-核仁型</td>\r\n                  <td>{{anaNucleolusDate}}</td>\r\n                  <td>{{ANANucleolus}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>35</td>\r\n                  <td>ANA-核仁增强型</td>\r\n                  <td>{{anaNucleolusEnhancementDate}}</td>\r\n                  <td>{{ANANucleolusEnhancement}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>36</td>\r\n                  <td>ANA-核点型</td>\r\n                  <td>{{anaNuclearDate}}</td>\r\n                  <td>{{ANANuclear}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>37</td>\r\n                  <td>ANA-着丝点型</td>\r\n                  <td>{{anaCentromereDate}}</td>\r\n                  <td>{{ANACentromere}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>38</td>\r\n                  <td>ANA-其他</td>\r\n                  <td>{{anaOtherDate}}</td>\r\n                  <td>{{ANAOther}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>39</td>\r\n                  <td>体液免疫-IgG</td>\r\n                  <td>{{humoralImmunityIgGDate}}</td>\r\n                  <td>{{humoralImmunityIgG}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>40</td>\r\n                  <td>体液免疫-IgA</td>\r\n                  <td>{{humoralImmunityIgADate}}</td>\r\n                  <td>{{humoralImmunityIgA}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>41</td>\r\n                  <td>体液免疫-IgM</td>\r\n                  <td>{{humoralImmunityIgMDate}}</td>\r\n                  <td>{{humoralImmunityIgM}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>42</td>\r\n                  <td>体液免疫-免疫复合物</td>\r\n                  <td>{{humoralImmunityImmuneComplexfDate}}</td>\r\n                  <td>{{humoralImmunityImmuneComplexf}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>43</td>\r\n                  <td>体液免疫-补体C3</td>\r\n                  <td>{{humoralImmunityComplementC3Date}}</td>\r\n                  <td>{{humoralImmunityComplementC3}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>44</td>\r\n                  <td>体液免疫-补体C4</td>\r\n                  <td>{{humoralImmunityComplementC4Date}}</td>\r\n                  <td>{{humoralImmunityComplementC4}} g/L</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>45</td>\r\n                  <td>体液免疫-IgE</td>\r\n                  <td>{{humoralImmunityIgEDate}}</td>\r\n                  <td>{{humoralImmunityIgE}} IU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>46</td>\r\n                  <td>体液免疫-k-轻链</td>\r\n                  <td>{{humoralImmunityKlightChainDate}}</td>\r\n                  <td>{{humoralImmunityKlightChain}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>47</td>\r\n                  <td>体液免疫-λ-轻链</td>\r\n                  <td>{{humoralImmunityNlightChainDate}}</td>\r\n                  <td>{{humoralImmunityNlightChain}} mg/dl</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>48</td>\r\n                  <td>细胞免疫-CD<sub>3</sub></td>\r\n                  <td>{{cellularImmunityCD3Date}}</td>\r\n                  <td>{{cellularImmunityCD3}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>49</td>\r\n                  <td>细胞免疫-CD<sub>4</sub><sup>+</sup></td>\r\n                  <td>{{cellularImmunityCD4Date}}</td>\r\n                  <td>{{cellularImmunityCD4}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>50</td>\r\n                  <td>细胞免疫-CD<sub>8</sub><sup>+</sup></td>\r\n                  <td>{{cellularImmunityCD8Date}}</td>\r\n                  <td>{{cellularImmunityCD8}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>51</td>\r\n                  <td>细胞免疫-CD56+16(NK)</td>\r\n                  <td>{{cellularImmunityCD56Date}}</td>\r\n                  <td>{{cellularImmunityCD56}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>52</td>\r\n                  <td>细胞免疫-CD2</td>\r\n                  <td>{{cellularImmunityCD2Date}}</td>\r\n                  <td>{{cellularImmunityCD2}} %</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>53</td>\r\n                  <td>细胞免疫-CD4/CD8</td>\r\n                  <td>{{cellularImmunityCD4CD8Date}}</td>\r\n                  <td>{{cellularImmunityCD4CD8}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>54</td>\r\n                  <td>风湿免疫相关抗体</td>\r\n                  <td>{{rheumaticImmuneRelatedAntibodiesDate}}</td>\r\n                  <td>{{rheumaticImmuneRelatedAntibodies}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>55</td>\r\n                  <td>腹部超声CT/MRI</td>\r\n                  <td></td>\r\n                  <td>{{CTMRI}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>56</td>\r\n                  <td>肝脏硬度检查值-Fibroscan值</td>\r\n                  <td>{{liverHardnessFibroscanDate}}</td>\r\n                  <td>{{liverHardnessFibroscan}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>57</td>\r\n                  <td>肝脏硬度检查值-Fibrotest值</td>\r\n                  <td>{{liverHardnessFibrotestDate}}</td>\r\n                  <td>{{liverHardnessFibrotest}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>58</td>\r\n                  <td>肝穿刺病理检查</td>\r\n                  <td>{{liverPuncturePathologyDate}}</td>\r\n                  <td>{{liverPuncturePathology}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>59</td>\r\n                  <td>肿瘤标记物-afp</td>\r\n                  <td>{{aFPDate}}</td>\r\n                  <td>{{aFP}}  ng/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>60</td>\r\n                  <td>肿瘤标记物-癌胚抗原CEA</td>\r\n                  <td>{{carcinoembryonicAntigenCEADate}}</td>\r\n                  <td>{{carcinoembryonicAntigenCEA}}  ng/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>61</td>\r\n                  <td>肿瘤标记物-ca199</td>\r\n                  <td>{{ca199Date}}</td>\r\n                  <td>{{ca199}} U/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>62</td>\r\n                  <td>肿瘤标记物-ca125</td>\r\n                  <td>{{ca125Date}}</td>\r\n                  <td>{{ca125}} U/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>63</td>\r\n                  <td>乙肝-hbsag</td>\r\n                  <td>{{hbsagDate}}</td>\r\n                  <td>{{hbsag}}  IU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>64</td>\r\n                  <td>乙肝-hbsab</td>\r\n                  <td>{{hbsabDate}}</td>\r\n                  <td>{{hbsab}} mlU/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>65</td>\r\n                  <td>乙肝-hbeag</td>\r\n                  <td>{{hbeagDate}}</td>\r\n                  <td>{{hbeag}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>66</td>\r\n                  <td>乙肝-hbeab</td>\r\n                  <td>{{hbeabDate}}</td>\r\n                  <td>{{hbeab}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>67</td>\r\n                  <td>乙肝-hbcab</td>\r\n                  <td>{{hbcabDate}}</td>\r\n                  <td>{{hbcab}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>68</td>\r\n                  <td>乙肝-HBV-RNA</td>\r\n                  <td>{{hbvRnaDate}}</td>\r\n                  <td>{{hbvRna}} copies/ml</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>69</td>\r\n                  <td>丙肝-抗HCV抗体</td>\r\n                  <td>{{antiHCVantibodyDate}}</td>\r\n                  <td>{{antiHCVantibody}} S/CO</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>70</td>\r\n                  <td>丙肝-HCV-RNA</td>\r\n                  <td>{{hcvRnaDate}}</td>\r\n                  <td>{{hcvRna}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>71</td>\r\n                  <td>尿液分析-红细胞</td>\r\n                  <td>{{redBloodCellDate}}</td>\r\n                  <td>{{redBloodCell}} p/ul</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>72</td>\r\n                  <td>尿液分析-白细胞</td>\r\n                  <td>{{whiteBloodCellDate}}</td>\r\n                  <td>{{whiteBloodCell}} p/ul</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>73</td>\r\n                  <td>尿液分析-胆红素</td>\r\n                  <td>{{bilirubinDate}}</td>\r\n                  <td>{{bilirubin}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>74</td>\r\n                  <td>尿液分析-蛋白质</td>\r\n                  <td>{{proteinDate}}</td>\r\n                  <td>{{protein}}</td>\r\n                </tr>\r\n            </div>\r\n            </tbody>\r\n            </table>\r\n            </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">肝脏病理学检查</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\" ng-show=\"gsShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>小叶内炎症</td>\r\n                  <td>{{inflammationLeaflets}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>界面型肝炎</td>\r\n                  <td>{{interfacialInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>汇管区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>淋巴细胞浆细胞浸润</td>\r\n                  <td>{{lymphocytePlasmaCellInfiltration}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>纤维组织增生</td>\r\n                  <td>{{fibrousTissueHyperplasia}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>胆管炎症/损伤</td>\r\n                  <td>{{inflammationBileDuct}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>肝细胞脂肪变性</td>\r\n                  <td>{{hepatocellularSteatosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>玫瑰花结样改变</td>\r\n                  <td>{{roseSample}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>HBsAg染色</td>\r\n                  <td>{{hbsAg}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>HBcAg染色</td>\r\n                  <td>{{hbcAg}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>HCV染色</td>\r\n                  <td>{{hcv}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>其他</td>\r\n                  <td>{{other}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>诊断(分期分级)</td>\r\n                  <td>{{diagnosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>备注</td>\r\n                  <td>{{remarks}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n              <div class=\"box-body no-padding\" ng-show=\"ishakShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>门脉区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>小叶内活动度</td>\r\n                  <td>{{lobularMobility}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>界面炎</td>\r\n                  <td>{{interfaceInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>融合性坏死</td>\r\n                  <td>{{confluentNecrosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>纤维化评分</td>\r\n                  <td>{{fibrosis}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n              <div class=\"box-body no-padding\" ng-show=\"haiShow\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>门脉区炎症</td>\r\n                  <td>{{portalAreaInflammation}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>小叶内活动度</td>\r\n                  <td>{{lobularMobility}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>界面炎</td>\r\n                  <td>{{interfaceInflammation}}</td>\r\n                </tr>\r\n              </tbody>\r\n              </table>\r\n              </div>\r\n\r\n\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">骨密度</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"boneDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"boneFollow in boneFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"boneClick(boneFollow)\">随访表{{boneFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>腰椎1-4 骨密度</td>\r\n                  <td>{{lumbarSpine}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>腰椎1-4 T值</td>\r\n                  <td>{{lumbarSpineT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>股骨颈 骨密度</td>\r\n                  <td>{{femoralNeck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>股骨颈 T值</td>\r\n                  <td>{{femoralNeckT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>大粗隆 骨密度</td>\r\n                  <td>{{bigTrochanter}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>大粗隆 T值</td>\r\n                  <td>{{bigTrochanterT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>全髋 骨密度</td>\r\n                  <td>{{fullHip}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>全髋 T值</td>\r\n                  <td>{{fullHipT}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>诊断</td>\r\n                  <td>{{boneDiagnosis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>备注 何时发生何部位的骨折</td>\r\n                  <td>{{remarks}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">简化AIH</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>ANA或SMA</td>\r\n                  <td>{{anasma1}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>ANA/SMA</td>\r\n                  <td>{{anasma2}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>Anti-LKM-l</td>\r\n                  <td>{{antiLkm}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>Anti-SLA</td>\r\n                  <td>{{antiSla}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>IgG</td>\r\n                  <td>{{igG}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝组织学</td>\r\n                  <td>{{liver}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>排除病毒性肝炎</td>\r\n                  <td>{{eliminateViralHepatitis}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>评分</td>\r\n                  <td>{{result}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">复杂AIH（治疗前）</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-4\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>性别</td>\r\n                  <td>{{woman}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>药物史</td>\r\n                  <td>{{historyDrugs}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>\r\n                  <td>{{aLPAST}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>平均酒精摄入量</td>\r\n                  <td>{{alcoholIntake}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>血清球蛋白或IgG与正常值的比值</td>\r\n                  <td>{{serumGlobulinNormal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝脏组织学检查</td>\r\n                  <td>{{liverCheck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>其他免疫疾病</td>\r\n                  <td>{{otherImmuneDiseases}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>ANA,SMA或LKM-l</td>\r\n                  <td>{{ana}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>AMA阳性</td>\r\n                  <td>{{amaPositive}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝炎病毒标志物</td>\r\n                  <td>{{hepatitisVirusMarkers}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>其他可用的参数</td>\r\n                  <td>{{otherAvailableParameters}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>评分</td>\r\n                  <td>{{beforeScore}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>结论</td>\r\n                  <td>{{beforeResult}}</td>\r\n                </tr>\r\n                </tbody>\r\n                </table>\r\n                </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">复杂AIH（治疗后）</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-4\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>性别</td>\r\n                  <td>{{woman}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>药物史</td>\r\n                  <td>{{historyDrugs}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>ALP(正常上限的倍数):AST(或ALT)(正常上限的倍数)</td>\r\n                  <td>{{aLPAST}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>平均酒精摄入量</td>\r\n                  <td>{{alcoholIntake}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>血清球蛋白或IgG与正常值的比值</td>\r\n                  <td>{{serumGlobulinNormal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>肝脏组织学检查</td>\r\n                  <td>{{liverCheck}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>其他免疫疾病</td>\r\n                  <td>{{otherImmuneDiseases}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>ANA,SMA或LKM-l</td>\r\n                  <td>{{ana}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>AMA阳性</td>\r\n                  <td>{{amaPositive}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>肝炎病毒标志物</td>\r\n                  <td>{{hepatitisVirusMarkers}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>其他可用的参数</td>\r\n                  <td>{{otherAvailableParameters}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>对治疗的反应</td>\r\n                  <td>{{responseTreatment}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>评分</td>\r\n                  <td>{{afterScore}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>结论</td>\r\n                  <td>{{afterResult}}</td>\r\n                </tr>\r\n                </tbody>\r\n                </table>\r\n                </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">治疗方案</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"treatDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"treatFollow in treatFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"treatClick(treatFollow)\">随访表{{treatFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>药名</th>\r\n                  <th>开始用药时间</th>\r\n                  <th>日剂量（g/日）</th>\r\n                  <th>疗程（天）</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>强的松</td>\r\n                  <td>{{qdsTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qdsDose}}</td>\r\n                  <td>{{qdsHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>强的松龙</td>\r\n                  <td>{{qdslTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qdslDose}}</td>\r\n                  <td>{{qdslHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>甲基强的松龙</td>\r\n                  <td>{{jjqTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{jjqDose}}</td>\r\n                  <td>{{jjqHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>4</td>\r\n                  <td>布地奈德</td>\r\n                  <td>{{bdndTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{bdndDose}}</td>\r\n                  <td>{{bdndHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>5</td>\r\n                  <td>硫锉嘌呤</td>\r\n                  <td>{{lcplTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{lcplDose}}</td>\r\n                  <td>{{lcplHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>6</td>\r\n                  <td>免疫抑制剂-MTX</td>\r\n                  <td>{{mtxTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{mtxDose}}</td>\r\n                  <td>{{mtxHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>7</td>\r\n                  <td>免疫抑制剂-CysA</td>\r\n                  <td>{{cysaTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{cysaDose}}</td>\r\n                  <td>{{cysaHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>8</td>\r\n                  <td>免疫抑制剂-CTX</td>\r\n                  <td>{{ctxTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{ctxDose}}</td>\r\n                  <td>{{ctxHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>9</td>\r\n                  <td>吗替麦考酚酯</td>\r\n                  <td>{{mtmkTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{mtmkDose}}</td>\r\n                  <td>{{mtmkHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>10</td>\r\n                  <td>秋水仙素</td>\r\n                  <td>{{qsxsTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{qsxsDose}}</td>\r\n                  <td>{{qsxsHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>11</td>\r\n                  <td>熊去氧胆酸</td>\r\n                  <td>{{xqydTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{xqydDose}}</td>\r\n                  <td>{{xqydHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>12</td>\r\n                  <td>非诺贝特</td>\r\n                  <td>{{fnbtTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{fnbtDose}}</td>\r\n                  <td>{{fnbtHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>13</td>\r\n                  <td>苯扎贝特</td>\r\n                  <td>{{bzbtTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{bzbtDose}}</td>\r\n                  <td>{{bzbtHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>14</td>\r\n                  <td>肝移植</td>\r\n                  <td>{{gyzTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td></td>\r\n                  <td></td>\r\n                </tr>\r\n                <tr>\r\n                  <td>15</td>\r\n                  <td>肝移植详情</td>\r\n                  <td>{{gyzDetails | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>肝移植结果:{{gyzResult}}</td>\r\n                  <td>{{gyzReason}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">中药方剂</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"btn-group-vertical col-md-2\" role=\"group\">\r\n                <button ng-click=\"medicineDefault()\" class=\"btn btn-primary btn-sm\">医院录入表</button>\r\n                <br/>\r\n                <button ng-repeat=\"medicineFollow in medicineFollowList\" class=\"btn btn-primary btn-sm\" ng-click=\"medicineClick(medicineFollow)\">随访表{{medicineFollow.followUpDate | date:\"yyyy-MM-dd\"}}</button>\r\n              </div>\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th>序号</th>\r\n                  <th>类别</th>\r\n                  <th>开始服药时间</th>\r\n                  <th>描述</th>\r\n                  <th>疗程</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>16</td>\r\n                  <td>中药方剂</td>\r\n                  <td>{{chineseMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>{{chineseMedicineFormulasDose}}</td>\r\n                  <td>{{chineseMedicineHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>17</td>\r\n                  <td>中成药1</td>\r\n                  <td>{{aProprietaryMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>描述：{{aProprietaryMedicineName}}</td>\r\n                  <td>{{aProprietaryMedicineHeal}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>18</td>\r\n                  <td>中成药2</td>\r\n                  <td>{{bProprietaryMedicineTime | date:\"yyyy-MM-dd\"}}</td>\r\n                  <td>描述：{{bProprietaryMedicineName}}</td>\r\n                  <td>{{bProprietaryMedicineHeal}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-primary direct-chat direct-chat-primary\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">最后诊断和特殊情况</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div class=\"box-body no-padding\">\r\n              <table class=\"table table-striped\">\r\n                <tbody>\r\n                <tr class=\"info\">\r\n                  <th class=\"col-md-2\">序号</th>\r\n                  <th class=\"col-md-3\">调查项</th>\r\n                  <th>结果</th>\r\n                </tr>\r\n                <tr>\r\n                  <td>1</td>\r\n                  <td>PBC临床分期</td>\r\n                  <td>{{pbcClinicalStage}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>2</td>\r\n                  <td>AIH临床分期</td>\r\n                  <td>{{aihClinicalStage}}</td>\r\n                </tr>\r\n                <tr>\r\n                  <td>3</td>\r\n                  <td>特殊情况</td>\r\n                  <td>{{special}}</td>\r\n                </tr>\r\n                </tbody>\r\n              </table>\r\n              </div>\r\n            </div>\r\n  </div>\r\n\r\n  <div class=\"box box-success direct-chat direct-chat-success\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">腹部超声/CT/MRI 图片</h3>\r\n              <div class=\"box-tools pull-right\">\r\n                <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-plus\"></i><span class=\"h4\">查看</span>\r\n                </button>\r\n              </div>\r\n            </div>\r\n            <div class=\"box-body\" style=\"display: none;\">\r\n              <!-- 显示数据 -->\r\n              <div style=\"text-align: center;\">\r\n              <img ngf-src=\"image\" width=\"500\" height=\"500\">\r\n              </div>\r\n            </div>\r\n  </div>\r\n</div>";
 
 /***/ }),
 /* 228 */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"content-header\">\r\n  <h1 class=\"text-center\">\r\n    理化检查结果\r\n  </h1><br>\r\n  <ol class=\"breadcrumb\">\r\n  </ol>\r\n</section>\r\n<div  ng-app=\"phyAChe\" ng-controller=\"phyACheController\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row-fluid\">\r\n      <div class=\"span12\">\r\n      <u class=\"h4 col-md-offset-9\">患者：{{patientName}}</u>\r\n      <br>\r\n      <u class=\"h4 col-md-offset-9\">病理号：{{patientNumber}}</u>\r\n      <form class=\"form-inline col-md-offset-9\">\r\n          <div class=\"form-group\">\r\n               <u class=\"h4\">随访</u><checkbox ng-model=\"follow\"></checkbox>\r\n                <div class=\"input-group date\" ng-show=\"followDateShow\">\r\n                  <div class=\"input-group-addon\">\r\n                    <i class=\"fa fa-calendar\"></i>\r\n                  </div>\r\n                  <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker\" ng-model=\"followUpDate\">\r\n                </div>\r\n          </div>\r\n          </form>\r\n        <div>\r\n\r\n\r\n          <!-- 内容放这里 -->\r\n          <div class=\"col-md-3\">\r\n          <div class=\"box box-solid\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">分类</h3>\r\n            </div>\r\n            <div class=\"box-body no-padding\">\r\n              <ul class=\"nav nav-pills nav-stacked\" style=\"cursor:pointer\">\r\n                <li class=\"active\"><a ng-click=\"addTabActive('#tab_1', '总胆汁酸')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> </a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_2', '肝功能')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝功能</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_3', '肾功能')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肾功能</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_4', '凝血')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 凝血</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_5', '血常规')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 血常规</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_6', '肝病自身抗体')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝病自身抗体</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_7', 'ANA')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> ANA</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_8', '体液免疫')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 体液免疫</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_9', '细胞免疫')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 细胞免疫</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_14', '肿瘤标记物')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肿瘤标记物</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_15', '乙肝五项+定量')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 乙肝五项+定量</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_16', '丙肝抗体+定量')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 丙肝抗体+定量</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_17', '尿液分析')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 尿液分析</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_10', '风湿免疫相关抗体')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 风湿免疫相关抗体</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_11', '腹部超声')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 腹部超声/CT/MRI</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_12', '肝脏硬度检测值')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝脏硬度检测值</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_13', '肝穿刺病理检查')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝穿刺病理检查</a></li>\r\n              </ul>\r\n            </div>\r\n            <!-- /.box-body -->\r\n          </div>\r\n          </div>\r\n\r\n\r\n          <!-- 显示部分==>肝功能 -->\r\n\r\n          <div class=\"col-md-9\">\r\n            <div class=\"box box-primary\">\r\n              <div class=\"box-header with-border\">\r\n                <h3 class=\"text-center\" ng-bind=\"tabTitle\"></h3>\r\n\r\n                <!-- 各种tab -->\r\n              <div class=\"tab-content\">\r\n                <div class=\"tab-pane active\" id=\"tab_1\">\r\n                  <form class=\"form-horizontal\">\r\n                    <div class=\"box-body\">\r\n\r\n                      <div class=\"form-group\">\r\n                        <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆汁酸：</label>\r\n\r\n                        <div class=\"col-sm-10\">\r\n                          <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" ng-model=\"totalBileAcid\">\r\n                            <span class=\"input-group-addon\">(0-15)μmol/l</span>\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n\r\n                      <div class=\"form-group\">\r\n                        <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">铜蓝蛋白：</label>\r\n\r\n                        <div class=\"col-sm-10\">\r\n                          <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" ng-model=\"copperProtein \">\r\n                            <span class=\"input-group-addon\">(22-58)mg/dl</span>\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n\r\n                    </div>\r\n                    <div class=\"box-footer\">\r\n\r\n                      <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n\r\n                <div class=\"tab-content\">\r\n              <div class=\"tab-pane\" id=\"tab_2\">\r\n                <form class=\"form-horizontal\">\r\n              <div class=\"box-body\">\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">白蛋白</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionAlbumin\">\r\n                      <span class=\"input-group-addon\">(35-52)g/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">球蛋白</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionGlobulin\">\r\n                      <span class=\"input-group-addon\">20-35g/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">ALT</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionALT\">\r\n                      <span class=\"input-group-addon\"><35IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AST</label>\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionAST\">\r\n                      <span class=\"input-group-addon\"><35IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">GGT</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionGGT\">\r\n                      <span class=\"input-group-addon\">(9-64)IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">ALP</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionALP\">\r\n                      <span class=\"input-group-addon\">(30-120)IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆固醇</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionTotalCholesterol\">\r\n                      <span class=\"input-group-addon\">(2.8-5.69)mmol/l</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆红素</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionTotalBilirubin\">\r\n                      <span class=\"input-group-addon\">(5-21)μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">直接胆红素</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionDirectBilirubin\">\r\n                      <span class=\"input-group-addon\"><3.4μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">γ-球蛋白</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionRglobulin\">\r\n                      <span class=\"input-group-addon\">(11.1-18.8)%</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <!-- /.box-body -->\r\n              <div class=\"box-footer\">\r\n\r\n                <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n              </div>\r\n              <!-- /.box-footer -->\r\n            </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_3\">\r\n\r\n                <form class=\"form-horizontal\">\r\n                <div class=\"box-body\">\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">BUN</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"renalFunctionBUN\">\r\n                      <span class=\"input-group-addon\">(2.8-7.2)mmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Cr</label>\r\n\r\n                  <div class=\"col-sm-10\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"renalFunctionCr\">\r\n                      <span class=\"input-group-addon\">(59-104)μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n              </div>\r\n              <div class=\"box-footer\">\r\n\r\n                <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n              </div>\r\n              <!-- /.box-footer -->\r\n            </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_4\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">PT</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"clottingPT\">\r\n                          <span class=\"input-group-addon\">(11-15)秒</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">INR</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"clottingINR\">\r\n                          <span class=\"input-group-addon\">(0.8-1.5)</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_5\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">RBC</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineRBC\">\r\n                          <span class=\"input-group-addon\">(4.09-5.74)X10<sup>12</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Hb</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineHb\">\r\n                          <span class=\"input-group-addon\">(131-172)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">WBC</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineWBC\">\r\n                          <span class=\"input-group-addon\">(3.97-9.15)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">中性粒细胞</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineNeutrophils\">\r\n                          <span class=\"input-group-addon\">(2.0-7.0)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">淋巴细胞</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineLymphocytes\">\r\n                          <span class=\"input-group-addon\">(0.8-4.0)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">嗜酸性粒细胞</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineEosinophils\">\r\n                          <span class=\"input-group-addon\">(0.02-0.5)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">血小板</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutinePlatelets\">\r\n                          <span class=\"input-group-addon\">(85-303)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_6\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗线粒体抗体(AMA)</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAMA\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AMA-M2</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAMAM2\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗平滑肌抗体</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">肝肾微粒体抗体</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">肝细胞溶质抗原</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesHepatocyteSoluteAntigen\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">可溶性肝-胰抗原</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">其他</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesOther\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_7\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">均质型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaHomogeneous\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">颗粒型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaParticle\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">周边型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaPeripheral\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核仁型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNucleolus\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核仁增强型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNucleolusEnhancement\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核点型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNuclear\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">着丝点型</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaCentromere\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">其他</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaOther\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_8\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igG</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgG\">\r\n                          <span class=\"input-group-addon\">(7.2-16.9)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igA</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgA\">\r\n                          <span class=\"input-group-addon\">(0.69-3.82)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igM</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgM\">\r\n                          <span class=\"input-group-addon\">(0.63-2.8)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">免疫复合物</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityImmuneComplexf\">\r\n                          <span class=\"input-group-addon\"><0.056</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">补体C3</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityComplementC3\">\r\n                          <span class=\"input-group-addon\">(0.85-1.9)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">补体C4</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityComplementC4\">\r\n                          <span class=\"input-group-addon\">(0.12-0.36)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igE</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgE\">\r\n                          <span class=\"input-group-addon\"><120 IU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">κ-轻链</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityKlightChain\">\r\n                          <span class=\"input-group-addon\">(598-1320)mg/dl</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">λ-轻链</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityNlightChain\">\r\n                          <span class=\"input-group-addon\">(280-665)mg/dl</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_9\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>3</sub></label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD3\">\r\n                          <span class=\"input-group-addon\">(64-73) %</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>4</sub><sup>+</sup></label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD4\">\r\n                          <span class=\"input-group-addon\">(30-45) %</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>8</sub><sup>+</sup></label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD8\">\r\n                          <span class=\"input-group-addon\">(21-30) %</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD56+16(NK)</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD56\">\r\n                          <span class=\"input-group-addon\">(10-20) %</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD2</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD2\">\r\n                          <span class=\"input-group-addon\">(65-80) %</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD4/CD8</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD4CD8\">\r\n                          <span class=\"input-group-addon\">(1.1-2.3)</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_10\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <!-- textarea -->\r\n                  <div class=\"form-group\">\r\n                    <!-- <label>Textarea</label> -->\r\n                    <textarea class=\"form-control\" rows=\"6\" ng-model=\"rheumaticImmuneRelatedAntibodies\"></textarea>\r\n                  </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_11\">\r\n                <form class=\"form-group\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"0\"><span class=\"h5\">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"1\"><span class=\"h5\">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"2\"><span class=\"h5\">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"3\"><span class=\"h5\">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"4\"><span class=\"h5\">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                      <button class=\"btn btn-info\" ngf-select=\"\" ng-model=\"image\" name=\"file\" ngf-pattern=\"'image/*'\" ngf-accept=\"'image/*'\" ngf-min-height=\"100\" ngf-resize=\"{width: 500, height: 500}\">上传图片资料</button>\r\n                      <img ngf-src=\"image\" id=\"blah2\" width=\"500\" height=\"200\" class=\"img-box\">\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_12\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Fibroscan值：</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverHardnessFibroscan\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Fibrotest值：</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverHardnessFibrotest\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_13\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <!-- textarea -->\r\n                  <div class=\"form-group\">\r\n                    <!-- <label>Textarea</label> -->\r\n                    <textarea class=\"form-control\" rows=\"6\" ng-model=\"liverPuncturePathology\"></textarea>\r\n                  </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n              <div class=\"tab-pane\" id=\"tab_14\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AFP</label>\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"aFP\">\r\n                          <span class=\"input-group-addon\"><8.78 ng/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">癌胚抗原CEA</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"carcinoembryonicAntigenCEA\">\r\n                          <span class=\"input-group-addon\"><5 ng/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CA199</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"ca199\">\r\n                          <span class=\"input-group-addon\"><39.0 U/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CA125</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"ca125\">\r\n                          <span class=\"input-group-addon\"><35.0 U/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_15\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBsAg</label>\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbsag\">\r\n                          <span class=\"input-group-addon\">(0-0.05) IU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBsAb</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbsab\">\r\n                          <span class=\"input-group-addon\">(0-10) mlU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBeAg</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbeag\">\r\n                          <span class=\"input-group-addon\">(0-1) S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBeAb</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbeab\">\r\n                          <span class=\"input-group-addon\">>1 S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBcAb</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbcab\">\r\n                          <span class=\"input-group-addon\">(0-1) S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBV-RNA</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbvRna\">\r\n                          <span class=\"input-group-addon\"><500 copies/ml</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_16\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗HCV抗体</label>\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"antiHCVantibody\">\r\n                          <span class=\"input-group-addon\"><1 S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HCV-RNA</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hcvRna\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_17\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">蛋白质</label>\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"protein\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">红细胞</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"redBloodCell\">\r\n                          <span class=\"input-group-addon\">(0-5) p/ul</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">白细胞</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"whiteBloodCell\">\r\n                          <span class=\"input-group-addon\">(0-9)p/ul</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">胆红素</label>\r\n\r\n                      <div class=\"col-sm-10\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bilirubin\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n<!--\r\n              <input type=\"button\" value=\"修改问题\">\r\n              <input type=\"button\" value=\"查看问题历史\">\r\n              <input type=\"button\" value=\"查看质疑历史\">\r\n              <input type=\"button\" value=\"提出质疑\">\r\n              <input type=\"button\" value=\"回应质疑\"> -->\r\n\r\n\r\n              <!-- /.tab-pane -->\r\n\r\n            </div>\r\n\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"modal fade\" id=\"saveModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n              <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span></button>\r\n                <h4 class=\"modal-title\"></h4>\r\n                </div>\r\n              <div class=\"modal-body\">\r\n                <p ng-bind=\"modalContent\">&hellip;</p>\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default pull-left\" data-dismiss=\"modal\">取消</button>\r\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"saveSomeMessage()\">确认保存</button>\r\n              </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"modal fade\" id=\"justModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n              <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span></button>\r\n                <h4 class=\"modal-title\"></h4>\r\n                </div>\r\n              <div class=\"modal-body\">\r\n                <p ng-bind=\"justModalContent\" class=\"h3\">&hellip;</p>\r\n              </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
+module.exports = "<section class=\"content-header\">\r\n  <h1 class=\"text-center\">\r\n    理化检查结果\r\n  </h1><br>\r\n  <ol class=\"breadcrumb\">\r\n  </ol>\r\n</section>\r\n<div  ng-app=\"phyAChe\" ng-controller=\"phyACheController\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row-fluid\">\r\n      <div class=\"span12\">\r\n      <u class=\"h4 col-md-offset-9\">患者：{{patientName}}</u>\r\n      <br>\r\n      <u class=\"h4 col-md-offset-9\">病理号：{{patientNumber}}</u>\r\n      <form class=\"form-inline col-md-offset-9\">\r\n          <div class=\"form-group\">\r\n               <u class=\"h4\">随访</u><checkbox ng-model=\"follow\"></checkbox>\r\n                <div class=\"input-group date\" ng-show=\"followDateShow\">\r\n                  <div class=\"input-group-addon\">\r\n                    <i class=\"fa fa-calendar\"></i>\r\n                  </div>\r\n                  <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker\" ng-model=\"followUpDate\">\r\n                </div>\r\n          </div>\r\n          </form>\r\n        <div>\r\n\r\n\r\n          <!-- 内容放这里 -->\r\n          <div class=\"col-md-3\">\r\n          <div class=\"box box-solid\">\r\n            <div class=\"box-header with-border\">\r\n              <h3 class=\"box-title\">分类</h3>\r\n            </div>\r\n            <div class=\"box-body no-padding\">\r\n              <ul class=\"nav nav-pills nav-stacked\" style=\"cursor:pointer\">\r\n                <li class=\"active\"><a ng-click=\"addTabActive('#tab_1', '总胆汁酸')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> </a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_2', '肝功能')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝功能</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_3', '肾功能')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肾功能</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_4', '凝血')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 凝血</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_5', '血常规')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 血常规</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_6', '肝病自身抗体')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝病自身抗体</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_7', 'ANA')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> ANA</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_8', '体液免疫')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 体液免疫</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_9', '细胞免疫')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 细胞免疫</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_14', '肿瘤标记物')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肿瘤标记物</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_15', '乙肝五项+定量')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 乙肝五项+定量</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_16', '丙肝抗体+定量')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 丙肝抗体+定量</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_17', '尿液分析')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 尿液分析</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_10', '风湿免疫相关抗体')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 风湿免疫相关抗体</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_11', '腹部超声')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 腹部超声/CT/MRI</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_12', '肝脏硬度检测值')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝脏硬度检测值</a></li>\r\n                <li><a ng-click=\"addTabActive('#tab_13', '肝穿刺病理检查')\" data-toggle=\"tab\"><i class=\"fa fa-file-text-o\"></i> 肝穿刺病理检查</a></li>\r\n              </ul>\r\n            </div>\r\n            <!-- /.box-body -->\r\n          </div>\r\n          </div>\r\n\r\n\r\n          <!-- 显示部分==>肝功能 -->\r\n\r\n          <div class=\"col-md-9\">\r\n            <div class=\"box box-primary\">\r\n              <div class=\"box-header with-border\">\r\n                <h3 class=\"text-center\" ng-bind=\"tabTitle\"></h3>\r\n\r\n                <!-- 各种tab -->\r\n              <div class=\"tab-content\">\r\n                <div class=\"tab-pane active\" id=\"tab_1\">\r\n                  <form class=\"form-horizontal\">\r\n                    <div class=\"box-body\">\r\n\r\n                      <div class=\"form-group\">\r\n                        <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆汁酸：</label>\r\n                        <div class=\"col-sm-4\">\r\n                          <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" ng-model=\"totalBileAcid\">\r\n                            <span class=\"input-group-addon\">(0-15)μmol/l</span>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker1\" ng-model=\"totalBileAcidDate\">\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n\r\n                      <div class=\"form-group\">\r\n                        <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">铜蓝蛋白：</label>\r\n\r\n                        <div class=\"col-sm-4\">\r\n                          <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" ng-model=\"copperProtein \">\r\n                            <span class=\"input-group-addon\">(22-58)mg/dl</span>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker2\" ng-model=\"copperProteinDate\">\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n\r\n                    </div>\r\n                    <div class=\"box-footer\">\r\n\r\n                      <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n\r\n                <div class=\"tab-content\">\r\n              <div class=\"tab-pane\" id=\"tab_2\">\r\n                <form class=\"form-horizontal\">\r\n              <div class=\"box-body\">\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">白蛋白</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionAlbumin\">\r\n                      <span class=\"input-group-addon\">(35-52)g/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker3\" ng-model=\"liverFunctionAlbuminDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">球蛋白</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionGlobulin\">\r\n                      <span class=\"input-group-addon\">20-35g/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker4\" ng-model=\"liverFunctionGlobulinDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">ALT</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionALT\">\r\n                      <span class=\"input-group-addon\"><35IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker5\" ng-model=\"liverFunctionALTDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AST</label>\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionAST\">\r\n                      <span class=\"input-group-addon\"><35IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker6\" ng-model=\"liverFunctionASTDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">GGT</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionGGT\">\r\n                      <span class=\"input-group-addon\">(9-64)IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker7\" ng-model=\"liverFunctionGGTDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">ALP</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionALP\">\r\n                      <span class=\"input-group-addon\">(30-120)IU/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker8\" ng-model=\"liverFunctionALPDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆固醇</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionTotalCholesterol\">\r\n                      <span class=\"input-group-addon\">(2.8-5.69)mmol/l</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker9\" ng-model=\"liverFunctionTotalCholesterolDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">总胆红素</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionTotalBilirubin\">\r\n                      <span class=\"input-group-addon\">(5-21)μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker10\" ng-model=\"liverFunctionTotalBilirubinDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">直接胆红素</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionDirectBilirubin\">\r\n                      <span class=\"input-group-addon\"><3.4μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker11\" ng-model=\"liverFunctionDirectBilirubinDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">γ-球蛋白</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"liverFunctionRglobulin\">\r\n                      <span class=\"input-group-addon\">(11.1-18.8)%</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker12\" ng-model=\"liverFunctionRglobulinDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n              </div>\r\n              <!-- /.box-body -->\r\n              <div class=\"box-footer\">\r\n\r\n                <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n              </div>\r\n              <!-- /.box-footer -->\r\n            </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_3\">\r\n\r\n                <form class=\"form-horizontal\">\r\n                <div class=\"box-body\">\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">BUN</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"renalFunctionBUN\">\r\n                      <span class=\"input-group-addon\">(2.8-7.2)mmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker13\" ng-model=\"renalFunctionBUNDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Cr</label>\r\n\r\n                  <div class=\"col-sm-4\">\r\n                    <div class=\"input-group\">\r\n                      <input type=\"text\" class=\"form-control\" ng-model=\"renalFunctionCr\">\r\n                      <span class=\"input-group-addon\">(59-104)μmol/L</span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker14\" ng-model=\"renalFunctionCrDate\">\r\n                          </div>\r\n                        </div>\r\n                </div>\r\n\r\n              </div>\r\n              <div class=\"box-footer\">\r\n\r\n                <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n              </div>\r\n              <!-- /.box-footer -->\r\n            </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_4\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">PT</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"clottingPT\">\r\n                          <span class=\"input-group-addon\">(11-15)秒</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker15\" ng-model=\"clottingPTDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">INR</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"clottingINR\">\r\n                          <span class=\"input-group-addon\">(0.8-1.5)</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker16\" ng-model=\"clottingINRDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_5\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">RBC</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineRBC\">\r\n                          <span class=\"input-group-addon\">(4.09-5.74)X10<sup>12</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker17\" ng-model=\"bloodRoutineRBCDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Hb</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineHb\">\r\n                          <span class=\"input-group-addon\">(131-172)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker18\" ng-model=\"bloodRoutineHbDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">WBC</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineWBC\">\r\n                          <span class=\"input-group-addon\">(3.97-9.15)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker19\" ng-model=\"bloodRoutineWBCDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">中性粒细胞</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineNeutrophils\">\r\n                          <span class=\"input-group-addon\">(2.0-7.0)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker20\" ng-model=\"bloodRoutineNeutrophilsDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">淋巴细胞</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineLymphocytes\">\r\n                          <span class=\"input-group-addon\">(0.8-4.0)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker21\" ng-model=\"bloodRoutineLymphocytesDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">嗜酸性粒细胞</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutineEosinophils\">\r\n                          <span class=\"input-group-addon\">(0.02-0.5)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker22\" ng-model=\"bloodRoutineEosinophilsDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">血小板</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bloodRoutinePlatelets\">\r\n                          <span class=\"input-group-addon\">(85-303)X10<sup>9</sup>/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker23\" ng-model=\"bloodRoutinePlateletsDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_6\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗线粒体抗体(AMA)</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAMA\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker24\" ng-model=\"liverDiseaseAutoantibodiesAMADate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AMA-M2</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAMAM2\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker25\" ng-model=\"liverDiseaseAutoantibodiesAMAM2Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗平滑肌抗体</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesAntiSmoothMuscleAntibody\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker26\" ng-model=\"liverDiseaseAutoantibodiesAntiSmoothMuscleAntibodyDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">肝肾微粒体抗体</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesLiverKidneyMicrosomalAntibodies\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker27\" ng-model=\"liverDiseaseAutoantibodiesLiverKidneyMicrosomalbodiesDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">肝细胞溶质抗原</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesHepatocyteSoluteAntigen\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker28\" ng-model=\"liverDiseaseAutoantibodiesHepatocyteSoluteAntigenDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">可溶性肝-胰抗原</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesSolubleLiverPancreaticAntigen\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker29\" ng-model=\"liverDiseaseAutoantibodiesSolubleLiverPancreaticgenDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">其他</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverDiseaseAutoantibodiesOther\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker30\" ng-model=\"liverDiseaseAutoantibodiesOtherDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_7\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">均质型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaHomogeneous\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker31\" ng-model=\"anaHomogeneousDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">颗粒型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaParticle\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker32\" ng-model=\"anaParticleDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">周边型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaPeripheral\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker33\" ng-model=\"anaPeripheralDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核仁型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNucleolus\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker34\" ng-model=\"anaNucleolusDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核仁增强型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNucleolusEnhancement\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker35\" ng-model=\"anaNucleolusEnhancementDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">核点型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaNuclear\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker36\" ng-model=\"anaNuclearDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">着丝点型</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaCentromere\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker37\" ng-model=\"anaCentromereDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">其他</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"anaOther\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker38\" ng-model=\"anaOtherDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_8\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igG</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgG\">\r\n                          <span class=\"input-group-addon\">(7.2-16.9)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker39\" ng-model=\"humoralImmunityIgGDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igA</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgA\">\r\n                          <span class=\"input-group-addon\">(0.69-3.82)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker40\" ng-model=\"humoralImmunityIgADate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igM</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgM\">\r\n                          <span class=\"input-group-addon\">(0.63-2.8)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker41\" ng-model=\"humoralImmunityIgMDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">免疫复合物</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityImmuneComplexf\">\r\n                          <span class=\"input-group-addon\"><0.056</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker42\" ng-model=\"humoralImmunityImmuneComplexfDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">补体C3</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityComplementC3\">\r\n                          <span class=\"input-group-addon\">(0.85-1.9)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker43\" ng-model=\"humoralImmunityComplementC3Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">补体C4</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityComplementC4\">\r\n                          <span class=\"input-group-addon\">(0.12-0.36)g/L</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker44\" ng-model=\"humoralImmunityComplementC4Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">igE</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityIgE\">\r\n                          <span class=\"input-group-addon\"><120 IU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker45\" ng-model=\"humoralImmunityIgEDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">κ-轻链</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityKlightChain\">\r\n                          <span class=\"input-group-addon\">(598-1320)mg/dl</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker46\" ng-model=\"humoralImmunityKlightChainDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">λ-轻链</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"humoralImmunityNlightChain\">\r\n                          <span class=\"input-group-addon\">(280-665)mg/dl</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker47\" ng-model=\"humoralImmunityNlightChainDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_9\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>3</sub></label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD3\">\r\n                          <span class=\"input-group-addon\">(64-73) %</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker48\" ng-model=\"cellularImmunityCD3Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>4</sub><sup>+</sup></label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD4\">\r\n                          <span class=\"input-group-addon\">(30-45) %</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker49\" ng-model=\"cellularImmunityCD4Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD<sub>8</sub><sup>+</sup></label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD8\">\r\n                          <span class=\"input-group-addon\">(21-30) %</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker50\" ng-model=\"cellularImmunityCD8Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD56+16(NK)</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD56\">\r\n                          <span class=\"input-group-addon\">(10-20) %</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker51\" ng-model=\"cellularImmunityCD56Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD2</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD2\">\r\n                          <span class=\"input-group-addon\">(65-80) %</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker52\" ng-model=\"cellularImmunityCD2Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CD4/CD8</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"cellularImmunityCD4CD8\">\r\n                          <span class=\"input-group-addon\">(1.1-2.3)</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker53\" ng-model=\"cellularImmunityCD4CD8Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_10\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <!-- textarea -->\r\n                  <div class=\"form-group\">\r\n                    <!-- <label>Textarea</label> -->\r\n                    <textarea class=\"form-control\" rows=\"6\" ng-model=\"rheumaticImmuneRelatedAntibodies\"></textarea>\r\n                  </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_11\">\r\n                <form class=\"form-group\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"0\"><span class=\"h5\">0分：肝表面光滑，边缘锐，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"1\"><span class=\"h5\">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"2\"><span class=\"h5\">2分：肝表面光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"3\"><span class=\"h5\">3分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰；</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                    <li>\r\n                      <input type=\"radio\" name=\"r3\" ng-model=\"cTMRI\" ng-value=\"4\"><span class=\"h5\">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状（或斑片状），肝缘钝化，肝内血管狭窄或粗细不等。</span><span class=\"col-md-offset-1\">&nbsp</span>\r\n                    </li>\r\n                      <hr style=\"border : 1px dashed #3C8DBC;\" />\r\n                      <button class=\"btn btn-info\" ngf-select=\"\" ng-model=\"image\" name=\"file\" ngf-pattern=\"'image/*'\" ngf-accept=\"'image/*'\" ngf-min-height=\"100\" ngf-resize=\"{width: 500, height: 500}\">上传图片资料</button>\r\n                      <img ngf-src=\"image\" id=\"blah2\" width=\"500\" height=\"200\" class=\"img-box\">\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_12\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Fibroscan值：</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverHardnessFibroscan\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker54\" ng-model=\"liverHardnessFibroscanDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Fibrotest值：</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"liverHardnessFibrotest\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker55\" ng-model=\"liverHardnessFibrotestDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n              <!-- /.tab-pane -->\r\n              <div class=\"tab-pane\" id=\"tab_13\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n\r\n                    <!-- textarea -->\r\n                  <div class=\"form-group\">\r\n                    <!-- <label>Textarea</label> -->\r\n                    <textarea class=\"form-control\" rows=\"6\" ng-model=\"liverPuncturePathology\"></textarea>\r\n                  </div>\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n              <div class=\"tab-pane\" id=\"tab_14\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">AFP</label>\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"aFP\">\r\n                          <span class=\"input-group-addon\"><8.78 ng/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker56\" ng-model=\"aFPDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">癌胚抗原CEA</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"carcinoembryonicAntigenCEA\">\r\n                          <span class=\"input-group-addon\"><5 ng/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker57\" ng-model=\"carcinoembryonicAntigenCEADate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CA199</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"ca199\">\r\n                          <span class=\"input-group-addon\"><39.0 U/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker58\" ng-model=\"ca199Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">CA125</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"ca125\">\r\n                          <span class=\"input-group-addon\"><35.0 U/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker59\" ng-model=\"ca125Date\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_15\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBsAg</label>\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbsag\">\r\n                          <span class=\"input-group-addon\">(0-0.05) IU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker60\" ng-model=\"hbsagDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBsAb</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbsab\">\r\n                          <span class=\"input-group-addon\">(0-10) mlU/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker61\" ng-model=\"hbsabDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBeAg</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbeag\">\r\n                          <span class=\"input-group-addon\">(0-1) S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker62\" ng-model=\"hbeagDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBeAb</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbeab\">\r\n                          <span class=\"input-group-addon\">>1 S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker63\" ng-model=\"hbeabDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBcAb</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbcab\">\r\n                          <span class=\"input-group-addon\">(0-1) S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker64\" ng-model=\"hbcabDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HBV-RNA</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hbvRna\">\r\n                          <span class=\"input-group-addon\"><500 copies/ml</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker65\" ng-model=\"hbvRnaDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_16\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">抗HCV抗体</label>\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"antiHCVantibody\">\r\n                          <span class=\"input-group-addon\"><1 S/CO</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker66\" ng-model=\"antiHCVantibodyDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">HCV-RNA</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"hcvRna\">\r\n                          <span class=\"input-group-addon\"></span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker67\" ng-model=\"hcvRnaDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n\r\n\r\n\r\n              <div class=\"tab-pane\" id=\"tab_17\">\r\n                <form class=\"form-horizontal\">\r\n                  <div class=\"box-body\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">蛋白质</label>\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"protein\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker68\" ng-model=\"proteinDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">红细胞</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"redBloodCell\">\r\n                          <span class=\"input-group-addon\">(0-5) p/ul</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker69\" ng-model=\"redBloodCellDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">白细胞</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"whiteBloodCell\">\r\n                          <span class=\"input-group-addon\">(0-9)p/ul</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker70\" ng-model=\"whiteBloodCellDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                      <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">胆红素</label>\r\n\r\n                      <div class=\"col-sm-4\">\r\n                        <div class=\"input-group\">\r\n                          <input type=\"text\" class=\"form-control\" ng-model=\"bilirubin\">\r\n                          <span class=\"input-group-addon\">阴性</span>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <label class=\"col-xs-2 control-label\">检查时间</label>\r\n                          <div class=\"input-group date col-md-3\">\r\n                            <div class=\"input-group-addon\">\r\n                            <i class=\"fa fa-calendar\"></i>\r\n                            </div>\r\n                            <input type=\"text\" class=\"form-control pull-right\" id=\"datepicker71\" ng-model=\"bilirubinDate\">\r\n                          </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"box-footer\">\r\n\r\n                    <button type=\"submit\" class=\"btn btn-info pull-right\" ng-click=\"showSaveModal()\">整体保存</button>\r\n                  </div>\r\n                </form>\r\n              </div>\r\n<!--\r\n              <input type=\"button\" value=\"修改问题\">\r\n              <input type=\"button\" value=\"查看问题历史\">\r\n              <input type=\"button\" value=\"查看质疑历史\">\r\n              <input type=\"button\" value=\"提出质疑\">\r\n              <input type=\"button\" value=\"回应质疑\"> -->\r\n\r\n\r\n              <!-- /.tab-pane -->\r\n\r\n            </div>\r\n\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"modal fade\" id=\"saveModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n              <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span></button>\r\n                <h4 class=\"modal-title\"></h4>\r\n                </div>\r\n              <div class=\"modal-body\">\r\n                <p ng-bind=\"modalContent\">&hellip;</p>\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default pull-left\" data-dismiss=\"modal\">取消</button>\r\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"saveSomeMessage()\">确认保存</button>\r\n              </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"modal fade\" id=\"justModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\r\n            <div class=\"modal-dialog\" role=\"document\">\r\n              <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span></button>\r\n                <h4 class=\"modal-title\"></h4>\r\n                </div>\r\n              <div class=\"modal-body\">\r\n                <p ng-bind=\"justModalContent\" class=\"h3\">&hellip;</p>\r\n              </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 229 */,
@@ -56212,7 +56486,7 @@ module.exports = function(Chart) {
 "use strict";
 
 
-var color = __webpack_require__(15);
+var color = __webpack_require__(16);
 
 module.exports = function(Chart) {
 
@@ -56340,7 +56614,7 @@ module.exports = function(Chart) {
 /* global document: false */
 
 
-var color = __webpack_require__(15);
+var color = __webpack_require__(16);
 
 module.exports = function(Chart) {
 	// Global Chart helpers object for utility methods and classes

@@ -12661,6 +12661,178 @@ angular.module('ui.router.state')
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+(function() {
+    'use strict';
+
+    /*
+     * Encapsulation of Nick Galbreath's base64.js library for AngularJS
+     * Original notice included below
+     */
+
+    /*
+     * Copyright (c) 2010 Nick Galbreath
+     * http://code.google.com/p/stringencoders/source/browse/#svn/trunk/javascript
+     *
+     * Permission is hereby granted, free of charge, to any person
+     * obtaining a copy of this software and associated documentation
+     * files (the "Software"), to deal in the Software without
+     * restriction, including without limitation the rights to use,
+     * copy, modify, merge, publish, distribute, sublicense, and/or sell
+     * copies of the Software, and to permit persons to whom the
+     * Software is furnished to do so, subject to the following
+     * conditions:
+     *
+     * The above copyright notice and this permission notice shall be
+     * included in all copies or substantial portions of the Software.
+     *
+     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+     * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+     * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+     * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+     * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+     * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     * OTHER DEALINGS IN THE SOFTWARE.
+     */
+
+    /* base64 encode/decode compatible with window.btoa/atob
+     *
+     * window.atob/btoa is a Firefox extension to convert binary data (the "b")
+     * to base64 (ascii, the "a").
+     *
+     * It is also found in Safari and Chrome.  It is not available in IE.
+     *
+     * if (!window.btoa) window.btoa = base64.encode
+     * if (!window.atob) window.atob = base64.decode
+     *
+     * The original spec's for atob/btoa are a bit lacking
+     * https://developer.mozilla.org/en/DOM/window.atob
+     * https://developer.mozilla.org/en/DOM/window.btoa
+     *
+     * window.btoa and base64.encode takes a string where charCodeAt is [0,255]
+     * If any character is not [0,255], then an exception is thrown.
+     *
+     * window.atob and base64.decode take a base64-encoded string
+     * If the input length is not a multiple of 4, or contains invalid characters
+     *   then an exception is thrown.
+     */
+
+    angular.module('base64', []).constant('$base64', (function() {
+
+        var PADCHAR = '=';
+
+        var ALPHA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+        function getbyte64(s,i) {
+            var idx = ALPHA.indexOf(s.charAt(i));
+            if (idx == -1) {
+                throw "Cannot decode base64";
+            }
+            return idx;
+        }
+
+        function decode(s) {
+            // convert to string
+            s = "" + s;
+            var pads, i, b10;
+            var imax = s.length;
+            if (imax == 0) {
+                return s;
+            }
+
+            if (imax % 4 != 0) {
+                throw "Cannot decode base64";
+            }
+
+            pads = 0;
+            if (s.charAt(imax -1) == PADCHAR) {
+                pads = 1;
+                if (s.charAt(imax -2) == PADCHAR) {
+                    pads = 2;
+                }
+                // either way, we want to ignore this last block
+                imax -= 4;
+            }
+
+            var x = [];
+            for (i = 0; i < imax; i += 4) {
+                b10 = (getbyte64(s,i) << 18) | (getbyte64(s,i+1) << 12) |
+                    (getbyte64(s,i+2) << 6) | getbyte64(s,i+3);
+                x.push(String.fromCharCode(b10 >> 16, (b10 >> 8) & 0xff, b10 & 0xff));
+            }
+
+            switch (pads) {
+                case 1:
+                    b10 = (getbyte64(s,i) << 18) | (getbyte64(s,i+1) << 12) | (getbyte64(s,i+2) << 6);
+                    x.push(String.fromCharCode(b10 >> 16, (b10 >> 8) & 0xff));
+                    break;
+                case 2:
+                    b10 = (getbyte64(s,i) << 18) | (getbyte64(s,i+1) << 12);
+                    x.push(String.fromCharCode(b10 >> 16));
+                    break;
+            }
+            return x.join('');
+        }
+
+        function getbyte(s,i) {
+            var x = s.charCodeAt(i);
+            if (x > 255) {
+                throw "INVALID_CHARACTER_ERR: DOM Exception 5";
+            }
+            return x;
+        }
+
+        function encode(s) {
+            if (arguments.length != 1) {
+                throw "SyntaxError: Not enough arguments";
+            }
+
+            var i, b10;
+            var x = [];
+
+            // convert to string
+            s = "" + s;
+
+            var imax = s.length - s.length % 3;
+
+            if (s.length == 0) {
+                return s;
+            }
+            for (i = 0; i < imax; i += 3) {
+                b10 = (getbyte(s,i) << 16) | (getbyte(s,i+1) << 8) | getbyte(s,i+2);
+                x.push(ALPHA.charAt(b10 >> 18));
+                x.push(ALPHA.charAt((b10 >> 12) & 0x3F));
+                x.push(ALPHA.charAt((b10 >> 6) & 0x3f));
+                x.push(ALPHA.charAt(b10 & 0x3f));
+            }
+            switch (s.length - imax) {
+                case 1:
+                    b10 = getbyte(s,i) << 16;
+                    x.push(ALPHA.charAt(b10 >> 18) + ALPHA.charAt((b10 >> 12) & 0x3F) +
+                        PADCHAR + PADCHAR);
+                    break;
+                case 2:
+                    b10 = (getbyte(s,i) << 16) | (getbyte(s,i+1) << 8);
+                    x.push(ALPHA.charAt(b10 >> 18) + ALPHA.charAt((b10 >> 12) & 0x3F) +
+                        ALPHA.charAt((b10 >> 6) & 0x3f) + PADCHAR);
+                    break;
+            }
+            return x.join('');
+        }
+
+        return {
+            encode: encode,
+            decode: decode
+        };
+    })());
+
+})();
+
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
@@ -13151,7 +13323,7 @@ module.exports = Color;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13229,7 +13401,7 @@ return af;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13293,7 +13465,7 @@ return arDz;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13357,7 +13529,7 @@ return arKw;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13488,7 +13660,7 @@ return arLy;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13553,7 +13725,7 @@ return arMa;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13663,7 +13835,7 @@ return arSa;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13727,7 +13899,7 @@ return arTn;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13874,7 +14046,7 @@ return ar;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13984,7 +14156,7 @@ return az;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14123,7 +14295,7 @@ return be;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14218,7 +14390,7 @@ return bg;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14342,7 +14514,7 @@ return bn;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14466,7 +14638,7 @@ return bo;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14579,7 +14751,7 @@ return br;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14727,7 +14899,7 @@ return bs;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14820,7 +14992,7 @@ return ca;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14997,7 +15169,7 @@ return cs;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15065,7 +15237,7 @@ return cv;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15151,7 +15323,7 @@ return cy;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15216,7 +15388,7 @@ return da;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15300,7 +15472,7 @@ return deAt;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15383,7 +15555,7 @@ return deCh;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15466,7 +15638,7 @@ return de;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15571,7 +15743,7 @@ return dv;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15676,7 +15848,7 @@ return el;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15748,7 +15920,7 @@ return enAu;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15816,7 +15988,7 @@ return enCa;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15888,7 +16060,7 @@ return enGb;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15960,7 +16132,7 @@ return enIe;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16032,7 +16204,7 @@ return enNz;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16110,7 +16282,7 @@ return eo;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16197,7 +16369,7 @@ return esDo;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16285,7 +16457,7 @@ return es;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16370,7 +16542,7 @@ return et;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16441,7 +16613,7 @@ return eu;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16553,7 +16725,7 @@ return fa;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16665,7 +16837,7 @@ return fi;
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16730,7 +16902,7 @@ return fo;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16809,7 +16981,7 @@ return frCa;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16892,7 +17064,7 @@ return frCh;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16980,7 +17152,7 @@ return fr;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17060,7 +17232,7 @@ return fy;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17141,7 +17313,7 @@ return gd;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17223,7 +17395,7 @@ return gl;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17350,7 +17522,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17454,7 +17626,7 @@ return he;
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17583,7 +17755,7 @@ return hi;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17733,7 +17905,7 @@ return hr;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17847,7 +18019,7 @@ return hu;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17947,7 +18119,7 @@ return hyAm;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18035,7 +18207,7 @@ return id;
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18167,7 +18339,7 @@ return is;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18242,7 +18414,7 @@ return it;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18327,7 +18499,7 @@ return ja;
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18415,7 +18587,7 @@ return jv;
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18509,7 +18681,7 @@ return ka;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18601,7 +18773,7 @@ return kk;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18664,7 +18836,7 @@ return km;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18795,7 +18967,7 @@ return kn;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18869,7 +19041,7 @@ return ko;
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18962,7 +19134,7 @@ return ky;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19104,7 +19276,7 @@ return lb;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19179,7 +19351,7 @@ return lo;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19301,7 +19473,7 @@ return lt;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19403,7 +19575,7 @@ return lv;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19519,7 +19691,7 @@ return me;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19588,7 +19760,7 @@ return mi;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19683,7 +19855,7 @@ return mk;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19769,7 +19941,7 @@ return ml;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19933,7 +20105,7 @@ return mr;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20021,7 +20193,7 @@ return msMy;
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20108,7 +20280,7 @@ return ms;
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20209,7 +20381,7 @@ return my;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20277,7 +20449,7 @@ return nb;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20405,7 +20577,7 @@ return ne;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20498,7 +20670,7 @@ return nlBe;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20591,7 +20763,7 @@ return nl;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20656,7 +20828,7 @@ return nn;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20785,7 +20957,7 @@ return paIn;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20897,7 +21069,7 @@ return pl;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20963,7 +21135,7 @@ return ptBr;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21033,7 +21205,7 @@ return pt;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21113,7 +21285,7 @@ return ro;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21301,7 +21473,7 @@ return ru;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21404,7 +21576,7 @@ return sd;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21470,7 +21642,7 @@ return se;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21546,7 +21718,7 @@ return si;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21701,7 +21873,7 @@ return sk;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21868,7 +22040,7 @@ return sl;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21943,7 +22115,7 @@ return sq;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22058,7 +22230,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22173,7 +22345,7 @@ return sr;
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22267,7 +22439,7 @@ return ss;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22341,7 +22513,7 @@ return sv;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22405,7 +22577,7 @@ return sw;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22540,7 +22712,7 @@ return ta;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22634,7 +22806,7 @@ return te;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22707,7 +22879,7 @@ return tet;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22779,7 +22951,7 @@ return th;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22846,7 +23018,7 @@ return tlPh;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22971,7 +23143,7 @@ return tlh;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23066,7 +23238,7 @@ return tr;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23162,7 +23334,7 @@ return tzl;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23225,7 +23397,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23288,7 +23460,7 @@ return tzm;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23444,7 +23616,7 @@ return uk;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23548,7 +23720,7 @@ return ur;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23611,7 +23783,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23674,7 +23846,7 @@ return uz;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23758,7 +23930,7 @@ return vi;
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23831,7 +24003,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23896,7 +24068,7 @@ return yo;
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24012,7 +24184,7 @@ return zhCn;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24122,7 +24294,7 @@ return zhHk;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24231,14 +24403,13 @@ return zhTw;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(182);
 module.exports = 'ngFileUpload';
 
 /***/ }),
-/* 132 */,
 /* 133 */,
 /* 134 */,
 /* 135 */
@@ -35362,7 +35533,7 @@ module.exports = function(Chart) {
 /* global document: false */
 
 
-var color = __webpack_require__(15);
+var color = __webpack_require__(16);
 
 module.exports = function(Chart) {
 	// Global Chart helpers object for utility methods and classes
@@ -42486,236 +42657,236 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 16,
-	"./af.js": 16,
-	"./ar": 23,
-	"./ar-dz": 17,
-	"./ar-dz.js": 17,
-	"./ar-kw": 18,
-	"./ar-kw.js": 18,
-	"./ar-ly": 19,
-	"./ar-ly.js": 19,
-	"./ar-ma": 20,
-	"./ar-ma.js": 20,
-	"./ar-sa": 21,
-	"./ar-sa.js": 21,
-	"./ar-tn": 22,
-	"./ar-tn.js": 22,
-	"./ar.js": 23,
-	"./az": 24,
-	"./az.js": 24,
-	"./be": 25,
-	"./be.js": 25,
-	"./bg": 26,
-	"./bg.js": 26,
-	"./bn": 27,
-	"./bn.js": 27,
-	"./bo": 28,
-	"./bo.js": 28,
-	"./br": 29,
-	"./br.js": 29,
-	"./bs": 30,
-	"./bs.js": 30,
-	"./ca": 31,
-	"./ca.js": 31,
-	"./cs": 32,
-	"./cs.js": 32,
-	"./cv": 33,
-	"./cv.js": 33,
-	"./cy": 34,
-	"./cy.js": 34,
-	"./da": 35,
-	"./da.js": 35,
-	"./de": 38,
-	"./de-at": 36,
-	"./de-at.js": 36,
-	"./de-ch": 37,
-	"./de-ch.js": 37,
-	"./de.js": 38,
-	"./dv": 39,
-	"./dv.js": 39,
-	"./el": 40,
-	"./el.js": 40,
-	"./en-au": 41,
-	"./en-au.js": 41,
-	"./en-ca": 42,
-	"./en-ca.js": 42,
-	"./en-gb": 43,
-	"./en-gb.js": 43,
-	"./en-ie": 44,
-	"./en-ie.js": 44,
-	"./en-nz": 45,
-	"./en-nz.js": 45,
-	"./eo": 46,
-	"./eo.js": 46,
-	"./es": 48,
-	"./es-do": 47,
-	"./es-do.js": 47,
-	"./es.js": 48,
-	"./et": 49,
-	"./et.js": 49,
-	"./eu": 50,
-	"./eu.js": 50,
-	"./fa": 51,
-	"./fa.js": 51,
-	"./fi": 52,
-	"./fi.js": 52,
-	"./fo": 53,
-	"./fo.js": 53,
-	"./fr": 56,
-	"./fr-ca": 54,
-	"./fr-ca.js": 54,
-	"./fr-ch": 55,
-	"./fr-ch.js": 55,
-	"./fr.js": 56,
-	"./fy": 57,
-	"./fy.js": 57,
-	"./gd": 58,
-	"./gd.js": 58,
-	"./gl": 59,
-	"./gl.js": 59,
-	"./gom-latn": 60,
-	"./gom-latn.js": 60,
-	"./he": 61,
-	"./he.js": 61,
-	"./hi": 62,
-	"./hi.js": 62,
-	"./hr": 63,
-	"./hr.js": 63,
-	"./hu": 64,
-	"./hu.js": 64,
-	"./hy-am": 65,
-	"./hy-am.js": 65,
-	"./id": 66,
-	"./id.js": 66,
-	"./is": 67,
-	"./is.js": 67,
-	"./it": 68,
-	"./it.js": 68,
-	"./ja": 69,
-	"./ja.js": 69,
-	"./jv": 70,
-	"./jv.js": 70,
-	"./ka": 71,
-	"./ka.js": 71,
-	"./kk": 72,
-	"./kk.js": 72,
-	"./km": 73,
-	"./km.js": 73,
-	"./kn": 74,
-	"./kn.js": 74,
-	"./ko": 75,
-	"./ko.js": 75,
-	"./ky": 76,
-	"./ky.js": 76,
-	"./lb": 77,
-	"./lb.js": 77,
-	"./lo": 78,
-	"./lo.js": 78,
-	"./lt": 79,
-	"./lt.js": 79,
-	"./lv": 80,
-	"./lv.js": 80,
-	"./me": 81,
-	"./me.js": 81,
-	"./mi": 82,
-	"./mi.js": 82,
-	"./mk": 83,
-	"./mk.js": 83,
-	"./ml": 84,
-	"./ml.js": 84,
-	"./mr": 85,
-	"./mr.js": 85,
-	"./ms": 87,
-	"./ms-my": 86,
-	"./ms-my.js": 86,
-	"./ms.js": 87,
-	"./my": 88,
-	"./my.js": 88,
-	"./nb": 89,
-	"./nb.js": 89,
-	"./ne": 90,
-	"./ne.js": 90,
-	"./nl": 92,
-	"./nl-be": 91,
-	"./nl-be.js": 91,
-	"./nl.js": 92,
-	"./nn": 93,
-	"./nn.js": 93,
-	"./pa-in": 94,
-	"./pa-in.js": 94,
-	"./pl": 95,
-	"./pl.js": 95,
-	"./pt": 97,
-	"./pt-br": 96,
-	"./pt-br.js": 96,
-	"./pt.js": 97,
-	"./ro": 98,
-	"./ro.js": 98,
-	"./ru": 99,
-	"./ru.js": 99,
-	"./sd": 100,
-	"./sd.js": 100,
-	"./se": 101,
-	"./se.js": 101,
-	"./si": 102,
-	"./si.js": 102,
-	"./sk": 103,
-	"./sk.js": 103,
-	"./sl": 104,
-	"./sl.js": 104,
-	"./sq": 105,
-	"./sq.js": 105,
-	"./sr": 107,
-	"./sr-cyrl": 106,
-	"./sr-cyrl.js": 106,
-	"./sr.js": 107,
-	"./ss": 108,
-	"./ss.js": 108,
-	"./sv": 109,
-	"./sv.js": 109,
-	"./sw": 110,
-	"./sw.js": 110,
-	"./ta": 111,
-	"./ta.js": 111,
-	"./te": 112,
-	"./te.js": 112,
-	"./tet": 113,
-	"./tet.js": 113,
-	"./th": 114,
-	"./th.js": 114,
-	"./tl-ph": 115,
-	"./tl-ph.js": 115,
-	"./tlh": 116,
-	"./tlh.js": 116,
-	"./tr": 117,
-	"./tr.js": 117,
-	"./tzl": 118,
-	"./tzl.js": 118,
-	"./tzm": 120,
-	"./tzm-latn": 119,
-	"./tzm-latn.js": 119,
-	"./tzm.js": 120,
-	"./uk": 121,
-	"./uk.js": 121,
-	"./ur": 122,
-	"./ur.js": 122,
-	"./uz": 124,
-	"./uz-latn": 123,
-	"./uz-latn.js": 123,
-	"./uz.js": 124,
-	"./vi": 125,
-	"./vi.js": 125,
-	"./x-pseudo": 126,
-	"./x-pseudo.js": 126,
-	"./yo": 127,
-	"./yo.js": 127,
-	"./zh-cn": 128,
-	"./zh-cn.js": 128,
-	"./zh-hk": 129,
-	"./zh-hk.js": 129,
-	"./zh-tw": 130,
-	"./zh-tw.js": 130
+	"./af": 17,
+	"./af.js": 17,
+	"./ar": 24,
+	"./ar-dz": 18,
+	"./ar-dz.js": 18,
+	"./ar-kw": 19,
+	"./ar-kw.js": 19,
+	"./ar-ly": 20,
+	"./ar-ly.js": 20,
+	"./ar-ma": 21,
+	"./ar-ma.js": 21,
+	"./ar-sa": 22,
+	"./ar-sa.js": 22,
+	"./ar-tn": 23,
+	"./ar-tn.js": 23,
+	"./ar.js": 24,
+	"./az": 25,
+	"./az.js": 25,
+	"./be": 26,
+	"./be.js": 26,
+	"./bg": 27,
+	"./bg.js": 27,
+	"./bn": 28,
+	"./bn.js": 28,
+	"./bo": 29,
+	"./bo.js": 29,
+	"./br": 30,
+	"./br.js": 30,
+	"./bs": 31,
+	"./bs.js": 31,
+	"./ca": 32,
+	"./ca.js": 32,
+	"./cs": 33,
+	"./cs.js": 33,
+	"./cv": 34,
+	"./cv.js": 34,
+	"./cy": 35,
+	"./cy.js": 35,
+	"./da": 36,
+	"./da.js": 36,
+	"./de": 39,
+	"./de-at": 37,
+	"./de-at.js": 37,
+	"./de-ch": 38,
+	"./de-ch.js": 38,
+	"./de.js": 39,
+	"./dv": 40,
+	"./dv.js": 40,
+	"./el": 41,
+	"./el.js": 41,
+	"./en-au": 42,
+	"./en-au.js": 42,
+	"./en-ca": 43,
+	"./en-ca.js": 43,
+	"./en-gb": 44,
+	"./en-gb.js": 44,
+	"./en-ie": 45,
+	"./en-ie.js": 45,
+	"./en-nz": 46,
+	"./en-nz.js": 46,
+	"./eo": 47,
+	"./eo.js": 47,
+	"./es": 49,
+	"./es-do": 48,
+	"./es-do.js": 48,
+	"./es.js": 49,
+	"./et": 50,
+	"./et.js": 50,
+	"./eu": 51,
+	"./eu.js": 51,
+	"./fa": 52,
+	"./fa.js": 52,
+	"./fi": 53,
+	"./fi.js": 53,
+	"./fo": 54,
+	"./fo.js": 54,
+	"./fr": 57,
+	"./fr-ca": 55,
+	"./fr-ca.js": 55,
+	"./fr-ch": 56,
+	"./fr-ch.js": 56,
+	"./fr.js": 57,
+	"./fy": 58,
+	"./fy.js": 58,
+	"./gd": 59,
+	"./gd.js": 59,
+	"./gl": 60,
+	"./gl.js": 60,
+	"./gom-latn": 61,
+	"./gom-latn.js": 61,
+	"./he": 62,
+	"./he.js": 62,
+	"./hi": 63,
+	"./hi.js": 63,
+	"./hr": 64,
+	"./hr.js": 64,
+	"./hu": 65,
+	"./hu.js": 65,
+	"./hy-am": 66,
+	"./hy-am.js": 66,
+	"./id": 67,
+	"./id.js": 67,
+	"./is": 68,
+	"./is.js": 68,
+	"./it": 69,
+	"./it.js": 69,
+	"./ja": 70,
+	"./ja.js": 70,
+	"./jv": 71,
+	"./jv.js": 71,
+	"./ka": 72,
+	"./ka.js": 72,
+	"./kk": 73,
+	"./kk.js": 73,
+	"./km": 74,
+	"./km.js": 74,
+	"./kn": 75,
+	"./kn.js": 75,
+	"./ko": 76,
+	"./ko.js": 76,
+	"./ky": 77,
+	"./ky.js": 77,
+	"./lb": 78,
+	"./lb.js": 78,
+	"./lo": 79,
+	"./lo.js": 79,
+	"./lt": 80,
+	"./lt.js": 80,
+	"./lv": 81,
+	"./lv.js": 81,
+	"./me": 82,
+	"./me.js": 82,
+	"./mi": 83,
+	"./mi.js": 83,
+	"./mk": 84,
+	"./mk.js": 84,
+	"./ml": 85,
+	"./ml.js": 85,
+	"./mr": 86,
+	"./mr.js": 86,
+	"./ms": 88,
+	"./ms-my": 87,
+	"./ms-my.js": 87,
+	"./ms.js": 88,
+	"./my": 89,
+	"./my.js": 89,
+	"./nb": 90,
+	"./nb.js": 90,
+	"./ne": 91,
+	"./ne.js": 91,
+	"./nl": 93,
+	"./nl-be": 92,
+	"./nl-be.js": 92,
+	"./nl.js": 93,
+	"./nn": 94,
+	"./nn.js": 94,
+	"./pa-in": 95,
+	"./pa-in.js": 95,
+	"./pl": 96,
+	"./pl.js": 96,
+	"./pt": 98,
+	"./pt-br": 97,
+	"./pt-br.js": 97,
+	"./pt.js": 98,
+	"./ro": 99,
+	"./ro.js": 99,
+	"./ru": 100,
+	"./ru.js": 100,
+	"./sd": 101,
+	"./sd.js": 101,
+	"./se": 102,
+	"./se.js": 102,
+	"./si": 103,
+	"./si.js": 103,
+	"./sk": 104,
+	"./sk.js": 104,
+	"./sl": 105,
+	"./sl.js": 105,
+	"./sq": 106,
+	"./sq.js": 106,
+	"./sr": 108,
+	"./sr-cyrl": 107,
+	"./sr-cyrl.js": 107,
+	"./sr.js": 108,
+	"./ss": 109,
+	"./ss.js": 109,
+	"./sv": 110,
+	"./sv.js": 110,
+	"./sw": 111,
+	"./sw.js": 111,
+	"./ta": 112,
+	"./ta.js": 112,
+	"./te": 113,
+	"./te.js": 113,
+	"./tet": 114,
+	"./tet.js": 114,
+	"./th": 115,
+	"./th.js": 115,
+	"./tl-ph": 116,
+	"./tl-ph.js": 116,
+	"./tlh": 117,
+	"./tlh.js": 117,
+	"./tr": 118,
+	"./tr.js": 118,
+	"./tzl": 119,
+	"./tzl.js": 119,
+	"./tzm": 121,
+	"./tzm-latn": 120,
+	"./tzm-latn.js": 120,
+	"./tzm.js": 121,
+	"./uk": 122,
+	"./uk.js": 122,
+	"./ur": 123,
+	"./ur.js": 123,
+	"./uz": 125,
+	"./uz-latn": 124,
+	"./uz-latn.js": 124,
+	"./uz.js": 125,
+	"./vi": 126,
+	"./vi.js": 126,
+	"./x-pseudo": 127,
+	"./x-pseudo.js": 127,
+	"./yo": 128,
+	"./yo.js": 128,
+	"./zh-cn": 129,
+	"./zh-cn.js": 129,
+	"./zh-hk": 130,
+	"./zh-hk.js": 130,
+	"./zh-tw": 131,
+	"./zh-tw.js": 131
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -47485,7 +47656,7 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('default', []).controller
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng_file_upload__);
 
 
@@ -48059,7 +48230,7 @@ module.exports = "<!-- Content Wrapper. Contains page content -->\r\n  <div clas
 /* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div>\r\n\t<br/>\r\n  <div style=\"text-align: center\"><img src=\"" + __webpack_require__(292) + "\" height=\"50%\" width=\"60%\" /></div>\r\n  <div style=\"text-align: center\"><span class=\"h4\">上海深蓝医学科技有限公司</span></div>\r\n  <br/>\r\n  <div class=\"col-md-offset-1\" style=\"margin-top: 15%\">\r\n  <span class=\"h4\">合作医院</span>\r\n  <span><a href=\"http://www.navyblue.cn/\" target=\"_blank\"><span class=\"h4\">上海市解放军第八五医院</span></a><span class=\"h4\"> |</span>\r\n  <a href=\"http://www.navyblue.cn/\" target=\"_blank\"><span class=\"h4\">上海市曙光医院</span></a>\r\n  </span>\r\n  </div>\r\n</div>";
+module.exports = "<div>\r\n\t<br/>\r\n  <div style=\"text-align: center\"><img src=\"" + __webpack_require__(292) + "\" height=\"50%\" width=\"60%\" /></div>\r\n  <div style=\"text-align: center\"><span class=\"h4\">上海深蓝医学科技有限公司</span></div>\r\n  <br/>\r\n  <div class=\"col-md-offset-1\" style=\"margin-top: 15%\">\r\n  <span class=\"h4\">合作医院</span>\r\n  <span><a href=\"http://www.navyblue.cn/\" target=\"_blank\"><span class=\"h4\">上海市解放军第八五医院</span></a><!-- <span class=\"h4\"> |</span>\r\n  <a href=\"http://www.navyblue.cn/\" target=\"_blank\"><span class=\"h4\">上海市曙光医院</span></a> -->\r\n  </span>\r\n  </div>\r\n</div>";
 
 /***/ }),
 /* 218 */,
@@ -48068,7 +48239,7 @@ module.exports = "<div>\r\n\t<br/>\r\n  <div style=\"text-align: center\"><img s
 /* 221 */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Content Wrapper. Contains page content -->\r\n  <div class=\"project\">\r\n    <!-- Content Header (Page header) -->\r\n    <section class=\"content-header\">\r\n      <h1>\r\n        \r\n        <small> </small>\r\n      </h1>\r\n      <ol class=\"breadcrumb\">\r\n        <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> 首页</a></li>\r\n        <li class=\"active\">医院信息</li>\r\n      </ol>\r\n    </section>\r\n\r\n    <!-- Main content -->\r\n    <section class=\"content\">\r\n      <div class=\"row\">\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"nav-tabs-custom\">\r\n            <div class=\"nav nav-tabs\" style=\"background-color:#222d32;color:#b8c7ce;\">\r\n              <h3 style=\"margin-left:1%;\">医院信息</h3>\r\n            </div>\r\n            <div class=\"tab-content\">\r\n              <div class=\"project-content\">\r\n                <section class=\"body\">\r\n                  <div class=\"inviteDefault\">\r\n                    <div class=\"box box-primary\">\r\n                      <div class=\"panel panel-default panel-chart\" style=\"min-height:700px;\">\r\n                        <div class=\"panel-heading\">基本信息</div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>医院名称：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_name\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>所在地区：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_address\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>详细地址：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_addressDetail\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>联系电话：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_telephone\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>特色专科：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_specialMajor\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>经营范围：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_manageRange\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-12\">\r\n                              <div class=\"col col-md-1\">\r\n                                <strong>简介：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-11\">\r\n                                <textarea type=\"text\" class=\"form-control\" ng-model=\"hospital_troducution\"></textarea>\r\n                              </div>                             \r\n                            </div>\r\n                   \r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-12\">\r\n                              <div class=\"col col-md-2\">\r\n                                <strong>公司图片：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-10\">\r\n                                <img ngf-src=\"image\" id=\"blah2\" alt= \"\" width=\"500\" height=\"200\" class=\"img-box\"/>\r\n                                <button class=\"btn btn-primary\"\r\n\t\t\t                      ngf-select=\"\" ng-model=\"image\" name=\"file\" ngf-pattern=\"'image/*'\"\r\n\t\t\t                      ngf-accept=\"'image/*'\"  ngf-min-height=\"100\" ngf-resize=\"{width: 500, height: 500}\"\r\n\t\t\t                      ng-disabled=\"disabled\" style=\"margin-bottom: 0px;border-radius:3px;height:30px;\">选择上传</button>\r\n                              </div>                        \r\n                            </div>\r\n                          \r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"form-group\" style=\"margin-top: 20px;margin-bottom: 25px;\">\r\n                            <div class=\"col col-sm-12\">\r\n                              <div class=\"col col-sm-6 text-center\">\r\n                                <button data-toggle=\"modal\" data-target=\"#remove_projectModal\" class=\"btn btn-lg btn-default\" style=\"color:red;\">删除医院</button>\r\n                              </div>\r\n                              <div class=\"col col-sm-6\">\r\n                                <button type=\"button\" class=\"btn btn-lg btn-primary\" ng-click=\"submitReview()\">确定修改</button>\r\n                              </div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </section>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  </div>\r\n  <!-- /.content-wrapper -->\r\n<!-- 模态框（Modal） -->\r\n<div class=\"modal fade\" id=\"remove_projectModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">删除医院</h4>\r\n            </div>\r\n            <div class=\"modal-body\">你正在删除医院</div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">关闭</button>\r\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"delete_hospital()\">确定删除</button>\r\n            </div>\r\n        </div><!-- /.modal-content -->\r\n    </div><!-- /.modal -->\r\n</div>\r\n\r\n<!--模态框-->\r\n  <div id=\"messageModal1\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n               <div class=\"modal-dialog\" role=\"document\">\r\n                    <div class=\"modal-content\">\r\n                         <div class=\"modal-header\">\r\n                              <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\r\n                                   aria-label=\"Close\">\r\n                                   <span aria-hidden=\"true\">&times;</span>\r\n                              </button>\r\n                         </div>\r\n                         <div class=\"modal-body\">\r\n                              <p class=\"h3\">{{alertMessage1}}</p>\r\n                         </div>\r\n                         <div class=\"modal-footer\">\r\n                              <button id=\"modalButton2\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">确定</button>\r\n                         </div>\r\n                    </div>\r\n               </div>\r\n     </div>\r\n";
+module.exports = "<!-- Content Wrapper. Contains page content -->\r\n  <div class=\"project\">\r\n    <!-- Content Header (Page header) -->\r\n    <section class=\"content-header\">\r\n      <h1>\r\n        \r\n        <small> </small>\r\n      </h1>\r\n      <ol class=\"breadcrumb\">\r\n        <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> 首页</a></li>\r\n        <li class=\"active\">医院信息</li>\r\n      </ol>\r\n    </section>\r\n\r\n    <!-- Main content -->\r\n    <section class=\"content\">\r\n      <div class=\"row\">\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"nav-tabs-custom\">\r\n            <div class=\"nav nav-tabs\" style=\"background-color:#222d32;color:#b8c7ce;\">\r\n              <h3 style=\"margin-left:1%;\">医院信息</h3>\r\n            </div>\r\n            <div class=\"tab-content\">\r\n              <div class=\"project-content\">\r\n                <section class=\"body\">\r\n                  <div class=\"inviteDefault\">\r\n                    <div class=\"box box-primary\">\r\n                      <div class=\"panel panel-default panel-chart\" style=\"min-height:700px;\">\r\n                        <div class=\"panel-heading\">基本信息</div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>医院名称：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_name\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>所在地区：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_address\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>详细地址：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_addressDetail\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>联系电话：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_telephone\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>特色专科：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_specialMajor\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                            <div class=\"col col-md-6\">\r\n                              <div class=\"col col-md-3\">\r\n                                <strong>经营范围：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-9\">\r\n                                <input type=\"text\" class=\"form-control\" ng-model=\"hospital_manageRange\"></input>\r\n                              </div>                             \r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-12\">\r\n                              <div class=\"col col-md-1\">\r\n                                <strong>简介：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-11\">\r\n                                <textarea type=\"text\" class=\"form-control\" ng-model=\"hospital_troducution\"></textarea>\r\n                              </div>                             \r\n                            </div>\r\n                   \r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"col col-md-12\">\r\n                            <div class=\"col col-md-12\">\r\n                              <div class=\"col col-md-2\">\r\n                                <strong>公司图片：</strong>\r\n                              </div>\r\n                              <div class=\"col col-md-10\">\r\n                                <img ngf-src=\"image\" id=\"blah2\" alt= \"\" width=\"500\" height=\"200\" class=\"img-box\"/>\r\n                                <button class=\"btn btn-primary\"\r\n\t\t\t                      ngf-select=\"\" ng-model=\"image\" name=\"file\" ngf-pattern=\"'image/*'\"\r\n\t\t\t                      ngf-accept=\"'image/*'\" ngf-resize=\"{width: 500, height: 500}\"\r\n\t\t\t                      ng-disabled=\"disabled\" style=\"margin-bottom: 0px;border-radius:3px;height:30px;\">选择上传</button>\r\n                              </div>                        \r\n                            </div>\r\n                          \r\n                          </div>\r\n                        </div>\r\n                        <div class=\"panel-body\">\r\n                          <div class=\"form-group\" style=\"margin-top: 20px;margin-bottom: 25px;\">\r\n                            <div class=\"col col-sm-12\">\r\n                              <div class=\"col col-sm-6 text-center\">\r\n                                <button data-toggle=\"modal\" data-target=\"#remove_projectModal\" class=\"btn btn-lg btn-default\" style=\"color:red;\">删除医院</button>\r\n                              </div>\r\n                              <div class=\"col col-sm-6\">\r\n                                <button type=\"button\" class=\"btn btn-lg btn-primary\" ng-click=\"submitReview()\">确定修改</button>\r\n                              </div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </section>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  </div>\r\n  <!-- /.content-wrapper -->\r\n<!-- 模态框（Modal） -->\r\n<div class=\"modal fade\" id=\"remove_projectModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">删除医院</h4>\r\n            </div>\r\n            <div class=\"modal-body\">你正在删除医院</div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">关闭</button>\r\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"delete_hospital()\">确定删除</button>\r\n            </div>\r\n        </div><!-- /.modal-content -->\r\n    </div><!-- /.modal -->\r\n</div>\r\n\r\n<!--模态框-->\r\n  <div id=\"messageModal1\" class=\"modal\" tabindex=\"-1\" role=\"dialog\">\r\n               <div class=\"modal-dialog\" role=\"document\">\r\n                    <div class=\"modal-content\">\r\n                         <div class=\"modal-header\">\r\n                              <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\r\n                                   aria-label=\"Close\">\r\n                                   <span aria-hidden=\"true\">&times;</span>\r\n                              </button>\r\n                         </div>\r\n                         <div class=\"modal-body\">\r\n                              <p class=\"h3\">{{alertMessage1}}</p>\r\n                         </div>\r\n                         <div class=\"modal-footer\">\r\n                              <button id=\"modalButton2\" type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">确定</button>\r\n                         </div>\r\n                    </div>\r\n               </div>\r\n     </div>\r\n";
 
 /***/ }),
 /* 222 */,
@@ -48162,7 +48333,7 @@ module.exports = "  <div class=\"project\">\r\n    <!-- Content Header (Page hea
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_bootstrap_dist_css_bootstrap_css__ = __webpack_require__(4);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_bootstrap_dist_css_bootstrap_css__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_bootstrap_dist_css_bootstrap_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_bootstrap_dist_css_bootstrap_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_bootstrap_dist_js_bootstrap_min_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_bootstrap_dist_js_bootstrap_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_bootstrap_dist_js_bootstrap_min_js__);
@@ -48184,24 +48355,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__lib_css_css_fullcalendar_fullcalendar_print_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__lib_css_css_fullcalendar_fullcalendar_print_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_css_js_fullcalendar_fullcalendar_min_js__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__lib_css_js_fullcalendar_fullcalendar_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__lib_css_js_fullcalendar_fullcalendar_min_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng_file_upload__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_project_js__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_default_js__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__modules_invite_js__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__modules_projectSetting_js__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__modules_message_js__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__modules_create_hospital_js__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__modules_update_hospital_js__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__modules_hospital_js__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__modules_readMessage_js__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__modules_createProject_js__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_ui_router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_angular_ui_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_local_storage__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_base64__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular_base64___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular_base64__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng_file_upload__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_ng_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_project_js__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__modules_default_js__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__modules_invite_js__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__modules_projectSetting_js__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__modules_message_js__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__modules_create_hospital_js__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__modules_update_hospital_js__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__modules_hospital_js__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__modules_readMessage_js__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__modules_createProject_js__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_ui_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular_ui_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angular_local_storage__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angular_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_angular_local_storage__);
 
 
 
@@ -48232,7 +48405,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var homePage = __WEBPACK_IMPORTED_MODULE_22_angular___default.a.module('homePage', [__WEBPACK_IMPORTED_MODULE_23_angular_ui_router___default.a, __WEBPACK_IMPORTED_MODULE_24_angular_local_storage___default.a, __WEBPACK_IMPORTED_MODULE_11_ng_file_upload___default.a, 'default', 'project', 'invite', 'projectSetting', 'message', 'readMessage', 'createHospital', 'updateHospital', 'hospital', 'createProject']);
+
+var homePage = __WEBPACK_IMPORTED_MODULE_23_angular___default.a.module('homePage', [__WEBPACK_IMPORTED_MODULE_24_angular_ui_router___default.a, __WEBPACK_IMPORTED_MODULE_25_angular_local_storage___default.a, __WEBPACK_IMPORTED_MODULE_12_ng_file_upload___default.a, 'base64', 'default', 'project', 'invite', 'projectSetting', 'message', 'readMessage', 'createHospital', 'updateHospital', 'hospital', 'createProject']);
 
 homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -48276,7 +48450,9 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
     controller: 'projectDefaultController'
   }).state('project.projectCase', {
     url: '/projectCase',
-    params: { 'project_searchInput': null },
+    params: {
+      'project_searchInput': null
+    },
     template: __webpack_require__(231),
     controller: 'projectCaseController'
   }).state('project.hospitalDefault', {
@@ -48300,7 +48476,7 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
   localStorageServiceProvider.setPrefix('login').setStorageType('sessionStorage').setNotify(true, true);
 }]);
 
-homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function ($scope, $http, $rootScope, $state, localStorageService) {
+homePage.controller('homePageController', ['$base64', '$scope', '$http', '$rootScope', '$state', 'localStorageService', function ($base64, $scope, $http, $rootScope, $state, localStorageService) {
   loginStatus();
   getMessageInfos();
   $scope.user = localStorageService.get('user');
@@ -48313,9 +48489,45 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   $scope.digustPermissions = [];
   $scope.settingPermissions = [];
 
+  $scope.changePass = function () {
+    $('#changePassModal').modal({
+      keyboard: true
+    });
+  };
+
+  $scope.confirmChangePass = function () {
+    var authKey = $base64.encode($scope.user.account + ':' + $scope.oldPassword);
+    $http({
+      method: 'GET',
+      url: '/api/login',
+      headers: {
+        'Authorization': 'Basic ' + authKey
+      }
+    }).then(function success() {
+      if ($scope.newPasswordAgain != $scope.newPassword) {
+        alert('两次密码输入不一致');
+      } else {
+        var newUser = {};
+        newUser.id = $scope.user.id;
+        newUser.password = $scope.newPassword;
+        $http({
+          method: 'POST',
+          url: '/api/users/changePassword',
+          data: newUser
+        }).then(function success() {
+          $scope.sign_out();
+        }, function fail() {
+          alert('修改密码失败');
+        });
+      }
+    }, function fail() {
+      alert('旧密码错误');
+    });
+  };
+
   /**
-  *获取未读邀请消息
-  */
+   *获取未读邀请消息
+   */
   function getMessageInfos() {
     $http({
       method: 'GET',
@@ -48327,17 +48539,17 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   }
 
   /**
-  *进入单个未读信息
-  */
+   *进入单个未读信息
+   */
   $scope.clickMessage = function (messageInfo) {
     localStorageService.set('message', messageInfo);
   };
 
   /**
-  *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）
-  */
+   *对每个项目下的权限进行判断，（邀请，调整项目表，项目设置）
+   */
   function projectListPermission() {
-    __WEBPACK_IMPORTED_MODULE_22_angular___default.a.forEach($scope.projects, function (data, index) {
+    __WEBPACK_IMPORTED_MODULE_23_angular___default.a.forEach($scope.projects, function (data, index) {
       if (data.currentUserPermissionInProject.contains('邀请')) {
         $scope.invitePermissions[index] = true;
       } else {
@@ -48357,10 +48569,10 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   }
 
   /**
-  *对系统的的权限进行判断，（普通用户，管理员）
-  */
+   *对系统的的权限进行判断，（普通用户，管理员）
+   */
   function sysPermission() {
-    __WEBPACK_IMPORTED_MODULE_22_angular___default.a.forEach(localStorageService.get('sysPermissions'), function (data) {
+    __WEBPACK_IMPORTED_MODULE_23_angular___default.a.forEach(localStorageService.get('sysPermissions'), function (data) {
       if (data.sysPermissionName === '医院信息') {
         $scope.hospitalPermission = true;
       }
@@ -48389,8 +48601,8 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   };
 
   /**
-  *对是否登录进入首页进行判断，（未登录跳回登陆页面）
-  */
+   *对是否登录进入首页进行判断，（未登录跳回登陆页面）
+   */
   function loginStatus() {
     if (!localStorageService.get('user')) {
       window.location.href = '/login.html';
@@ -48398,8 +48610,8 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   }
 
   /**
-  *请求得到该用户的所有项目
-  */
+   *请求得到该用户的所有项目
+   */
   function getProjectList() {
     $http({
       method: 'GET',
@@ -48411,12 +48623,12 @@ homePage.controller('homePageController', ['$scope', '$http', '$rootScope', '$st
   }
 
   /**
-  *过滤用户每个项目下的权限
-  */
+   *过滤用户每个项目下的权限
+   */
   function getProjectPermission() {
-    __WEBPACK_IMPORTED_MODULE_22_angular___default.a.forEach($scope.projects, function (data) {
+    __WEBPACK_IMPORTED_MODULE_23_angular___default.a.forEach($scope.projects, function (data) {
       var projectPermissionName = [];
-      __WEBPACK_IMPORTED_MODULE_22_angular___default.a.forEach(data.currentUserPermissionInProject, function (permission_data) {
+      __WEBPACK_IMPORTED_MODULE_23_angular___default.a.forEach(data.currentUserPermissionInProject, function (permission_data) {
         projectPermissionName.push(permission_data.projectPermissionName);
       });
       data.currentUserPermissionInProject = projectPermissionName;
@@ -48443,6 +48655,7 @@ Array.prototype.contains = function (obj) {
   }
   return false;
 };
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 243 */,

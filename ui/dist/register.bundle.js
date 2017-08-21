@@ -1,6 +1,13 @@
 webpackJsonp([5],{
 
-/***/ 132:
+/***/ 134:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 15:
 /***/ (function(module, exports) {
 
 (function() {
@@ -173,13 +180,6 @@ webpackJsonp([5],{
 
 /***/ }),
 
-/***/ 134:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -193,7 +193,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_css_css_AdminLTE_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__lib_css_css_AdminLTE_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_css_blue_css__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_css_blue_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__lib_css_blue_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_base64__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_base64__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_base64___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_base64__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular__);
