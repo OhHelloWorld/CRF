@@ -554,7 +554,14 @@ angular
 
 /***/ }),
 
-/***/ 132:
+/***/ 134:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 15:
 /***/ (function(module, exports) {
 
 (function() {
@@ -727,13 +734,6 @@ angular
 
 /***/ }),
 
-/***/ 134:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -869,7 +869,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_js_icheck_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__lib_js_icheck_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_css_blue_css__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_css_blue_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__lib_css_blue_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_base64__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_base64__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_base64___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_base64__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular__);

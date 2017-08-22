@@ -1,6 +1,6 @@
 package app.serviceImpl;
 
-import app.Utils.DoConvertToDto;
+import app.Utils.ConvertUtil;
 import app.dto.FinalDiagnosisSpecialCircumstancesDTO;
 import app.entities.FinalDiagnosisSpecialCircumstancesDO;
 import app.repo.FinalDiaSpeCirRepo;
@@ -17,7 +17,7 @@ public class FinalDiaSpeCirServiceImpl implements FinalDiaSpeCirService {
     @Autowired
     private FinalDiaSpeCirRepo fdscRepo;
 
-    private DoConvertToDto doConvertToDtoUtil = new DoConvertToDto();
+    private ConvertUtil converUtil = new ConvertUtil();
 
     @Override
     public void saveFinalDiagnosisSpecialCircumstances(
@@ -44,7 +44,7 @@ public class FinalDiaSpeCirServiceImpl implements FinalDiaSpeCirService {
     @Override
     public FinalDiagnosisSpecialCircumstancesDTO getInformation(Long id) {
         if (fdscRepo.getInformation(id) != null) {
-            return doConvertToDtoUtil.finalDSCDoConvertToDto(fdscRepo.getInformation(id));
+            return converUtil.finalDSCDoConvertToDto(fdscRepo.getInformation(id));
         } else {
             return null;
         }
