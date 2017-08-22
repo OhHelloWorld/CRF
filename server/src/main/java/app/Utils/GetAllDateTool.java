@@ -27,14 +27,16 @@ public class GetAllDateTool {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        totalDate.add(sdf.format(cal.getTime()) + "$" + dosage);
         for (int i = 1; i <= weeks * 7; i++) {
             cal.add(Calendar.DATE, 1);
-            System.out.println(sdf.format(cal.getTime()));
             totalDate.add(sdf.format(cal.getTime()) + "$" + dosage);
         }
         System.out.println(totalDate.toString());
         return totalDate;
     }
+
+
 
 
 }

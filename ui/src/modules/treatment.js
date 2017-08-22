@@ -16,15 +16,9 @@ angular.module('treatment', ['chart.js', 'main'])
     getTreatment();
     getChineseMedicine();
 
-    function testfunction(testnumber) {
-      $scope.labels.length = 0;
-      for (var a = 0; a <= testnumber; a++) {
-        $scope.labels.push(a);
-      }
-    }
     var dateArray = [];
     var dosageArray = [];
-    $scope.labels = ['疗程一', '疗程二', '疗程三', '疗程四', '疗程五', '疗程六', '疗程七'];
+    $scope.labels = [];
     $scope.series = ['日剂量'];
     $scope.data = [
       [0, 0, 0, 0, 0, 0, 0]
@@ -50,7 +44,7 @@ angular.module('treatment', ['chart.js', 'main'])
       }
     }
     $scope.chartChange = function() {
-      testfunction(1);
+      // testfunction(1);
       switch ($scope.chartSelect) {
         case '1':
           {
@@ -735,22 +729,20 @@ angular.module('treatment', ['chart.js', 'main'])
     function getQdsDose() {
       $http({
         method: 'GET',
-        url: '/api/treatment/getQdsDate/' + sessionStorage.getItem('patientId')
+        url: '/api/treatment/qds/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
         var dat = response.data;
+        dateXS(dat);
+      });
+    }
 
-        // for(var s : dat) {
-        //   $scope.labels.push(s.split("$")[0]);
-        //   $scope.data.push(s.split("$")[1]);
-        // }
-
+    function dateXS(dat){
+      $scope.labels.length = 0;
+        $scope.data.length = 0;
         for (var i = 0; i < dat.length; i++) {
           $scope.labels.push(dat[i].split('$')[0]);
           $scope.data.push(dat[i].split('$')[1]);
         }
-
-        // $scope.data = response.data;
-      });
     }
 
     function getQdslDose() {
@@ -758,7 +750,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/qdsl/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -767,7 +760,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/jjq/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -776,7 +770,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/bdnd/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -785,7 +780,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/lcpl/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -794,7 +790,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/mtx/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -803,7 +800,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/cysa/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -812,7 +810,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/ctx/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -821,7 +820,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/mtmk/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -830,7 +830,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/qsxs/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -839,7 +840,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/xqyd/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -848,7 +850,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/fnbt/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 
@@ -857,7 +860,8 @@ angular.module('treatment', ['chart.js', 'main'])
         method: 'GET',
         url: '/api/treatment/bzbt/' + sessionStorage.getItem('patientId')
       }).then(function success(response) {
-        $scope.data = response.data;
+        var dat = response.data;
+        dateXS(dat);
       });
     }
 

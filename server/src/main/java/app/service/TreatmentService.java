@@ -11,39 +11,37 @@ public interface TreatmentService {
 
     public TreatmentProgramsDTO getTreatment(int patientId);
 
-    public List<Float> getQdsDose(int patientId);
+    public List<String> getQdsDose(int patientId);
 
-    public List<Float> getQdslDose(int patientId);
+    public ArrayList<String> getQdslDose(int patientId);
 
-    public List<Float> getJjqDose(int patientId);
+    public List<String> getJjqDose(int patientId);
 
-    public List<Float> getBdndDose(int patientId);
+    public List<String> getBdndDose(int patientId);
 
-    public List<Float> getLcplDose(int patientId);
+    public List<String> getLcplDose(int patientId);
 
-    public List<Float> getMtxDose(int patientId);
+    public List<String> getMtxDose(int patientId);
 
-    public List<Float> getCysaDose(int patientId);
+    public List<String> getCysaDose(int patientId);
 
-    public List<Float> getCtxDose(int patientId);
+    public List<String> getCtxDose(int patientId);
 
-    public List<Float> getMtmkDose(int patientId);
+    public List<String> getMtmkDose(int patientId);
 
-    public List<Float> getQsxsDose(int patientId);
+    public List<String> getQsxsDose(int patientId);
 
-    public List<Float> getXqydDose(int patientId);
+    public List<String> getXqydDose(int patientId);
 
-    public List<Float> getFnbtDose(int patientId);
+    public List<String> getFnbtDose(int patientId);
 
-    public List<Float> getBzbtDose(int patientId);
+    public List<String> getBzbtDose(int patientId);
 
     public boolean getCompleteByPatientId(int patientId);
 
     public List<TreatmentProgramsDTO> getFollowTreat(int patientId);
 
     public TreatmentProgramsDTO getDefaultTreat(int patientId);
-
-    public ArrayList<String> getQdsDate(int patientId);
 
     TreatmentProgramsDTO getSingleFollowById(int id);
 
