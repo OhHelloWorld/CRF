@@ -3,8 +3,12 @@ package app.serviceImpl;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import app.Utils.ConvertUtil;
+import app.Utils.GetAllDateTool;
+import app.Utils.GetColumnContentByColumn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,204 +23,101 @@ public class TreatmentServiceImpl implements TreatmentService {
     @Autowired
     private TreatmentRepo treatmentRepo;
 
-    private TreatmentProgramsDTO convertToDto(TreatmentProgramsDO treatmentProgramsDO) {
-        TreatmentProgramsDTO treatmentProgramsDTO = new TreatmentProgramsDTO();
-        treatmentProgramsDTO.setBdndDose(treatmentProgramsDO.getBdndDose());
-        treatmentProgramsDTO.setBdndHeal(treatmentProgramsDO.getBdndHeal());
-        treatmentProgramsDTO.setBdndTime(treatmentProgramsDO.getBdndTime());
-        treatmentProgramsDTO.setComplete(treatmentProgramsDO.isComplete());
-        treatmentProgramsDTO.setCtxDose(treatmentProgramsDO.getCtxDose());
-        treatmentProgramsDTO.setCtxHeal(treatmentProgramsDO.getCtxHeal());
-        treatmentProgramsDTO.setCtxTime(treatmentProgramsDO.getCtxTime());
-        treatmentProgramsDTO.setCysaDose(treatmentProgramsDO.getCysaDose());
-        treatmentProgramsDTO.setCysaHeal(treatmentProgramsDO.getCysaHeal());
-        treatmentProgramsDTO.setCysaTime(treatmentProgramsDO.getCysaTime());
-        treatmentProgramsDTO.setFnbtDose(treatmentProgramsDO.getFnbtDose());
-        treatmentProgramsDTO.setFnbtHeal(treatmentProgramsDO.getFnbtHeal());
-        treatmentProgramsDTO.setFnbtTime(treatmentProgramsDO.getFnbtTime());
-        treatmentProgramsDTO.setFollowUp(treatmentProgramsDO.isFollowUp());
-        treatmentProgramsDTO.setFollowUpDate(treatmentProgramsDO.getFollowUpDate());
-        treatmentProgramsDTO.setGyzDetails(treatmentProgramsDO.getGyzDetails());
-        treatmentProgramsDTO.setGyzReason(treatmentProgramsDO.getGyzReason());
-        treatmentProgramsDTO.setGyzResult(treatmentProgramsDO.getGyzResult());
-        treatmentProgramsDTO.setGyzTime(treatmentProgramsDO.getGyzTime());
-        treatmentProgramsDTO.setId(treatmentProgramsDO.getId());
-        treatmentProgramsDTO.setJjqDose(treatmentProgramsDO.getJjqDose());
-        treatmentProgramsDTO.setJjqHeal(treatmentProgramsDO.getJjqHeal());
-        treatmentProgramsDTO.setJjqTime(treatmentProgramsDO.getJjqTime());
-        treatmentProgramsDTO.setLcplDose(treatmentProgramsDO.getLcplDose());
-        treatmentProgramsDTO.setLcplHeal(treatmentProgramsDO.getLcplHeal());
-        treatmentProgramsDTO.setLcplTime(treatmentProgramsDO.getLcplTime());
-        treatmentProgramsDTO.setMtmkDose(treatmentProgramsDO.getMtmkDose());
-        treatmentProgramsDTO.setMtmkHeal(treatmentProgramsDO.getMtxHeal());
-        treatmentProgramsDTO.setMtmkTime(treatmentProgramsDO.getMtmkTime());
-        treatmentProgramsDTO.setMtxTime(treatmentProgramsDO.getMtxTime());
-        treatmentProgramsDTO.setMtxDose(treatmentProgramsDO.getMtxDose());
-        treatmentProgramsDTO.setMtxHeal(treatmentProgramsDO.getMtxHeal());
-        treatmentProgramsDTO.setPatientId(treatmentProgramsDO.getPatientId());
-        treatmentProgramsDTO.setQdsDose(treatmentProgramsDO.getQdsDose());
-        treatmentProgramsDTO.setQdsHeal(treatmentProgramsDO.getQdsHeal());
-        treatmentProgramsDTO.setQdsTime(treatmentProgramsDO.getQdsTime());
-        treatmentProgramsDTO.setQdslDose(treatmentProgramsDO.getQdslDose());
-        treatmentProgramsDTO.setQdslHeal(treatmentProgramsDO.getQdslHeal());
-        treatmentProgramsDTO.setQdslTime(treatmentProgramsDO.getQdslTime());
-        treatmentProgramsDTO.setQsxsDose(treatmentProgramsDO.getQsxsDose());
-        treatmentProgramsDTO.setQsxsHeal(treatmentProgramsDO.getQsxsHeal());
-        treatmentProgramsDTO.setQsxsTime(treatmentProgramsDO.getQsxsTime());
-        treatmentProgramsDTO.setXqydDose(treatmentProgramsDO.getXqydDose());
-        treatmentProgramsDTO.setXqydHeal(treatmentProgramsDO.getXqydHeal());
-        treatmentProgramsDTO.setXqydTime(treatmentProgramsDO.getXqydTime());
-        treatmentProgramsDTO.setBzbtTime(treatmentProgramsDO.getBzbtTime());
-        treatmentProgramsDTO.setBzbtDose(treatmentProgramsDO.getBzbtDose());
-        treatmentProgramsDTO.setBzbtHeal(treatmentProgramsDO.getBzbtHeal());
-        return treatmentProgramsDTO;
-    }
+    @Autowired
+    private GetAllDateTool getAllDateTool;
 
-    private TreatmentProgramsDO convertToEntity(TreatmentProgramsDTO treatmentProgramsDTO, TreatmentProgramsDO treatmentProgramsDO) {
-        if (treatmentProgramsDO == null) {
-            treatmentProgramsDO = new TreatmentProgramsDO();
-        }
-        treatmentProgramsDO.setBdndDose(treatmentProgramsDTO.getBdndDose());
-        treatmentProgramsDO.setBdndHeal(treatmentProgramsDTO.getBdndHeal());
-        treatmentProgramsDO.setBdndTime(treatmentProgramsDTO.getBdndTime());
-        treatmentProgramsDO.setComplete(treatmentProgramsDTO.isComplete());
-        treatmentProgramsDO.setCtxDose(treatmentProgramsDTO.getCtxDose());
-        treatmentProgramsDO.setCtxHeal(treatmentProgramsDTO.getCtxHeal());
-        treatmentProgramsDO.setCtxTime(treatmentProgramsDTO.getCtxTime());
-        treatmentProgramsDO.setCysaDose(treatmentProgramsDTO.getCysaDose());
-        treatmentProgramsDO.setCysaHeal(treatmentProgramsDTO.getCysaHeal());
-        treatmentProgramsDO.setCysaTime(treatmentProgramsDTO.getCysaTime());
-        treatmentProgramsDO.setFnbtDose(treatmentProgramsDTO.getFnbtDose());
-        treatmentProgramsDO.setFnbtHeal(treatmentProgramsDTO.getFnbtHeal());
-        treatmentProgramsDO.setFnbtTime(treatmentProgramsDTO.getFnbtTime());
-        treatmentProgramsDO.setFollowUp(treatmentProgramsDTO.isFollowUp());
-        treatmentProgramsDO.setFollowUpDate(treatmentProgramsDTO.getFollowUpDate());
-        treatmentProgramsDO.setGyzDetails(treatmentProgramsDTO.getGyzDetails());
-        treatmentProgramsDO.setGyzReason(treatmentProgramsDTO.getGyzReason());
-        treatmentProgramsDO.setGyzResult(treatmentProgramsDTO.getGyzResult());
-        treatmentProgramsDO.setGyzTime(treatmentProgramsDTO.getGyzTime());
-        treatmentProgramsDO.setJjqDose(treatmentProgramsDTO.getJjqDose());
-        treatmentProgramsDO.setJjqHeal(treatmentProgramsDTO.getJjqHeal());
-        treatmentProgramsDO.setJjqTime(treatmentProgramsDTO.getJjqTime());
-        treatmentProgramsDO.setLcplDose(treatmentProgramsDTO.getLcplDose());
-        treatmentProgramsDO.setLcplHeal(treatmentProgramsDTO.getLcplHeal());
-        treatmentProgramsDO.setLcplTime(treatmentProgramsDTO.getLcplTime());
-        treatmentProgramsDO.setMtmkDose(treatmentProgramsDTO.getMtmkDose());
-        treatmentProgramsDO.setMtmkHeal(treatmentProgramsDTO.getMtmkHeal());
-        treatmentProgramsDO.setMtmkTime(treatmentProgramsDTO.getMtmkTime());
-        treatmentProgramsDO.setPatientId(treatmentProgramsDTO.getPatientId());
-        treatmentProgramsDO.setQdsDose(treatmentProgramsDTO.getQdsDose());
-        treatmentProgramsDO.setQdsHeal(treatmentProgramsDTO.getQdsHeal());
-        treatmentProgramsDO.setQdsTime(treatmentProgramsDTO.getQdsTime());
-        treatmentProgramsDO.setQdslDose(treatmentProgramsDTO.getQdslDose());
-        treatmentProgramsDO.setQdslHeal(treatmentProgramsDTO.getQdslHeal());
-        treatmentProgramsDO.setQdslTime(treatmentProgramsDTO.getQdslTime());
-        treatmentProgramsDO.setQsxsDose(treatmentProgramsDTO.getQsxsDose());
-        treatmentProgramsDO.setQsxsHeal(treatmentProgramsDTO.getQsxsHeal());
-        treatmentProgramsDO.setQsxsTime(treatmentProgramsDTO.getQsxsTime());
-        treatmentProgramsDO.setXqydDose(treatmentProgramsDTO.getXqydDose());
-        treatmentProgramsDO.setXqydHeal(treatmentProgramsDTO.getXqydHeal());
-        treatmentProgramsDO.setXqydTime(treatmentProgramsDTO.getXqydTime());
-        treatmentProgramsDO.setBzbtTime(treatmentProgramsDTO.getBzbtTime());
-        treatmentProgramsDO.setBzbtDose(treatmentProgramsDTO.getBzbtDose());
-        treatmentProgramsDO.setBzbtHeal(treatmentProgramsDTO.getBzbtHeal());
-        treatmentProgramsDO.setMtxTime(treatmentProgramsDTO.getMtxTime());
-        treatmentProgramsDO.setMtxDose(treatmentProgramsDTO.getMtxDose());
-        treatmentProgramsDO.setMtxHeal(treatmentProgramsDTO.getMtxHeal());
-        return treatmentProgramsDO;
-    }
+    @Autowired
+    private ConvertUtil convertUtil;
+
+    @Autowired
+    private GetColumnContentByColumn getColumnContentByColumn;
 
     @Override
     public void saveTreatment(TreatmentProgramsDTO treatmentProgramsDTO) {
-        treatmentRepo.save(convertToEntity(treatmentProgramsDTO, null));
+        treatmentRepo.save(convertUtil.tpDTOconvertToTpEntity(treatmentProgramsDTO));
     }
 
     @Override
     public TreatmentProgramsDTO getTreatment(int patientId) {
         if (treatmentRepo.getTreatment(patientId) != null) {
-            return convertToDto(treatmentRepo.getTreatment(patientId));
+            return convertUtil.tpDOconvertToTpDto(treatmentRepo.getTreatment(patientId));
         } else {
             return null;
         }
     }
 
     @Override
-    public List<Float> getQdsDose(int patientId) {
-        return treatmentRepo.getQdsDose(patientId);
+    public List<String> getQdsDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qds");
     }
 
     @Override
-    public List<Float> getQdslDose(int patientId) {
-        return treatmentRepo.getQdslDose(patientId);
+    public ArrayList<String> getQdslDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qdsl");
     }
 
     @Override
-    public List<Float> getJjqDose(int patientId) {
-        return treatmentRepo.getJjqDose(patientId);
+    public List<String> getJjqDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "jjq");
     }
 
     @Override
-    public List<Float> getBdndDose(int patientId) {
-        return treatmentRepo.getBdndDose(patientId);
+    public List<String> getBdndDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "bdnd");
     }
 
     @Override
-    public List<Float> getLcplDose(int patientId) {
-        return treatmentRepo.getLcplDose(patientId);
+    public List<String> getLcplDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "lcpl");
     }
 
     @Override
-    public List<Float> getMtxDose(int patientId) {
-        return treatmentRepo.getMtxDose(patientId);
+    public List<String> getMtxDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "mtx");
     }
 
     @Override
-    public List<Float> getCysaDose(int patientId) {
-        return treatmentRepo.getCysaDose(patientId);
+    public List<String> getCysaDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "cysa");
     }
 
     @Override
-    public List<Float> getCtxDose(int patientId) {
-        return treatmentRepo.getCtxDose(patientId);
+    public List<String> getCtxDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId ,"ctx");
     }
 
     @Override
-    public List<Float> getMtmkDose(int patientId) {
-        return treatmentRepo.getMtmkDose(patientId);
+    public List<String> getMtmkDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "mtmk");
     }
 
     @Override
-    public List<Float> getQsxsDose(int patientId) {
-        return treatmentRepo.getQsxsDose(patientId);
+    public List<String> getQsxsDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qsxs");
     }
 
     @Override
-    public List<Float> getXqydDose(int patientId) {
-        return treatmentRepo.getXqydDose(patientId);
+    public List<String> getXqydDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "xqyd");
     }
 
     @Override
-    public List<Float> getFnbtDose(int patientId) {
-        return treatmentRepo.getFnbtDose(patientId);
+    public List<String> getFnbtDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "fnbt");
     }
 
     @Override
-    public List<Float> getBzbtDose(int patientId) {
-        return treatmentRepo.getBzbtDose(patientId);
+    public List<String> getBzbtDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "bzbt");
     }
 
     @Override
     public boolean getCompleteByPatientId(int patientId) {
-//        try {
-//            if(treatmentRepo.getCompleteByPatientId(patientId) != null){
-//                return treatmentRepo.getCompleteByPatientId(patientId);
-//            }else{
-//                return false;
-//            }
-//        } catch (Exception e) {
-//            return false;
-//        }
-        return treatmentRepo.getCompleteByPatientId(patientId) != null ? treatmentRepo.getCompleteByPatientId(patientId):false;
+        try {
+            return treatmentRepo.getCompleteByPatientId(patientId);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
@@ -226,7 +127,7 @@ public class TreatmentServiceImpl implements TreatmentService {
             List<TreatmentProgramsDO> treatmentProgramsDOs =
                     treatmentRepo.getFollowTreat(patientId);
             for (TreatmentProgramsDO treatmentProgramsDO : treatmentProgramsDOs) {
-                treatmentProgramsDTOs.add(convertToDto(treatmentProgramsDO));
+                treatmentProgramsDTOs.add(convertUtil.tpDOconvertToTpDto(treatmentProgramsDO));
             }
             return treatmentProgramsDTOs;
         } else {
@@ -237,73 +138,17 @@ public class TreatmentServiceImpl implements TreatmentService {
     @Override
     public TreatmentProgramsDTO getDefaultTreat(int patientId) {
         return treatmentRepo.getDefaultTreat(patientId) != null
-                ? convertToDto(treatmentRepo.getDefaultTreat(patientId)) : null;
-    }
-
-    @Override
-    public ArrayList<String> getQdsDate(int patientId) {
-
-        // int weekNum = treatmentRepo.getQdsDate(patientId);
-        //
-        //
-        // ArrayList<Date> listDate = new ArrayList<>();
-        String qds = new String();
-        return getStartTime(patientId, "qds");
+                ? convertUtil.tpDOconvertToTpDto(treatmentRepo.getDefaultTreat(patientId)) : null;
     }
 
     @Override
     public TreatmentProgramsDTO getSingleFollowById(int id) {
-        return convertToDto(treatmentRepo.findOne(id));
+        return null;
     }
 
     @Override
     public void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO) {
-        treatmentRepo.save(convertToEntity(treatmentProgramsDTO, treatmentRepo.findOne(treatmentProgramsDTO.getId())));
-    }
 
-    /**
-     * 得到病人服用指定药物的起始时间
-     *
-     * @param patientId 病人id
-     * @param medicine  用药名称
-     * @return
-     */
-    public ArrayList<String> getStartTime(int patientId, String medicine) {
-        String medicineTime = medicine + "_time";
-        String startDate;
-        int weeks;
-        int dosage;
-        ArrayList<String> totals = new ArrayList<>();
-        // Date startDate = treatmentRepo.getStartTime(patientId ,medicineTime);
-        for (int i = 0; i < treatmentRepo.getStartTime(patientId).size(); i++) {
-            startDate = treatmentRepo.getStartTime(patientId).get(i);
-            weeks = treatmentRepo.getQdsWeeks(startDate).get(i);
-            dosage = treatmentRepo.getQdsDosage(startDate).get(i);
-            totals.addAll(getTotalDate(startDate.split(" ")[0], weeks, dosage));
-        }
-        return totals;
-    }
-
-    /**
-     * 返回一个String列表，包含从头到尾的每天的日期。 parameters startDate(其实日期)、weeks(治疗周数)
-     */
-    public ArrayList<String> getTotalDate(String startDate, int weeks, int dosage) {
-        ArrayList<String> totalDate = new ArrayList<>();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar cal = Calendar.getInstance();
-        try {
-            cal.setTime(sdf.parse(startDate));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        for (int i = 1; i <= weeks * 7; i++) {
-            cal.add(Calendar.DATE, 1);
-            System.out.println(sdf.format(cal.getTime()));
-            totalDate.add(sdf.format(cal.getTime()) + "$" + dosage);
-        }
-        System.out.println(totalDate.toString());
-        return totalDate;
     }
 
 }

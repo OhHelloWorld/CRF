@@ -17,7 +17,7 @@ public interface PatientRepo extends CrudRepository<PatientDO, Integer> {
     @Query(value = "select complete from patient where id=?1", nativeQuery = true)
     public boolean getCompleteById(int id);
 
-    @Query(value = "select * from patient where project_id =?1 and project_id = 1 order by id and ?#{#pageable}", nativeQuery = true)
+    @Query(value = "select * from patient where project_id = 1 order by id and ?#{#pageable}", nativeQuery = true)
     public Page<PatientDO> getAll(Pageable pageable);
 
     @Query(value = "select * from patient where (name like %?1% or identifier like %?1%) and project_id = 1 order by ?#{#pageable}",
