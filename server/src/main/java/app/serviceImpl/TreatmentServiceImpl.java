@@ -47,68 +47,68 @@ public class TreatmentServiceImpl implements TreatmentService {
     }
 
     @Override
-    public List<Float> getQdsDose(int patientId) {
-        return treatmentRepo.getQdsDose(patientId);
+    public List<String> getQdsDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qds");
     }
 
     @Override
-    public List<Float> getQdslDose(int patientId) {
-        return treatmentRepo.getQdslDose(patientId);
+    public ArrayList<String> getQdslDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qdsl");
     }
 
     @Override
-    public List<Float> getJjqDose(int patientId) {
-        return treatmentRepo.getJjqDose(patientId);
+    public List<String> getJjqDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "jjq");
     }
 
     @Override
-    public List<Float> getBdndDose(int patientId) {
-        return treatmentRepo.getBdndDose(patientId);
+    public List<String> getBdndDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "bdnd");
     }
 
     @Override
-    public List<Float> getLcplDose(int patientId) {
-        return treatmentRepo.getLcplDose(patientId);
+    public List<String> getLcplDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "lcpl");
     }
 
     @Override
-    public List<Float> getMtxDose(int patientId) {
-        return treatmentRepo.getMtxDose(patientId);
+    public List<String> getMtxDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "mtx");
     }
 
     @Override
-    public List<Float> getCysaDose(int patientId) {
-        return treatmentRepo.getCysaDose(patientId);
+    public List<String> getCysaDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "cysa");
     }
 
     @Override
-    public List<Float> getCtxDose(int patientId) {
-        return treatmentRepo.getCtxDose(patientId);
+    public List<String> getCtxDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId ,"ctx");
     }
 
     @Override
-    public List<Float> getMtmkDose(int patientId) {
-        return treatmentRepo.getMtmkDose(patientId);
+    public List<String> getMtmkDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "mtmk");
     }
 
     @Override
-    public List<Float> getQsxsDose(int patientId) {
-        return treatmentRepo.getQsxsDose(patientId);
+    public List<String> getQsxsDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "qsxs");
     }
 
     @Override
-    public List<Float> getXqydDose(int patientId) {
-        return treatmentRepo.getXqydDose(patientId);
+    public List<String> getXqydDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "xqyd");
     }
 
     @Override
-    public List<Float> getFnbtDose(int patientId) {
-        return treatmentRepo.getFnbtDose(patientId);
+    public List<String> getFnbtDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "fnbt");
     }
 
     @Override
-    public List<Float> getBzbtDose(int patientId) {
-        return treatmentRepo.getBzbtDose(patientId);
+    public List<String> getBzbtDose(int patientId) {
+        return getColumnContentByColumn.getStartTimes(patientId, "bzbt");
     }
 
     @Override
@@ -142,11 +142,6 @@ public class TreatmentServiceImpl implements TreatmentService {
     }
 
     @Override
-    public ArrayList<String> getQdsDate(int patientId) {
-        return getStartTime(patientId, "qds");
-    }
-
-    @Override
     public TreatmentProgramsDTO getSingleFollowById(int id) {
         return null;
     }
@@ -154,34 +149,6 @@ public class TreatmentServiceImpl implements TreatmentService {
     @Override
     public void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO) {
 
-    }
-
-    /**
-     * 得到病人服用指定药物的起始时间
-     * @param patientId 病人id
-     * @param medicine 用药名称
-     * @return
-     */
-    public ArrayList<String> getStartTime(int patientId, String medicine) {
-        String medicineTime = medicine + "_time";
-        String medicineHeal = medicine + "_heal";
-        String medicineName = medicine + "_dose";
-        String startDate;
-        int weeks;
-        float dosage;
-        ArrayList<String> totals = new ArrayList<>();
-//         Date startDate = treatmentRepo.getStartTime(patientId ,medicineTime);
-//        for (int i = 0; i < treatmentRepo.getStartTime(patientId).size(); i++) {
-//            startDate = treatmentRepo.getStartTime(patientId).get(i);
-//            weeks = treatmentRepo.getQdsWeeks(startDate).get(i);
-//            dosage = treatmentRepo.getQdsDosage(startDate).get(i);
-//            totals.addAll(getAllDateTool.getTotalDate(startDate.split(" ")[0], weeks, dosage));
-//        }
-        startDate = getColumnContentByColumn.getStartTime(patientId, medicineTime);
-        weeks = getColumnContentByColumn.getQdsWeeks(startDate, medicineTime, medicineHeal);
-        dosage = getColumnContentByColumn.getQdsDosage(startDate, medicineName, medicineTime);
-        totals.addAll(getAllDateTool.getTotalDate(startDate.split(" ")[0], weeks, dosage));
-        return totals;
     }
 
 }

@@ -48,7 +48,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/qds/{patientId}")
-    public List<Float> getQdsDose(@PathVariable int patientId) {
+    public List<String> getQdsDose(@PathVariable int patientId) {
         return treatmentService.getQdsDose(patientId);
     }
 
@@ -59,7 +59,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/qdsl/{patientId}")
-    public List<Float> getQdslDose(@PathVariable int patientId) {
+    public ArrayList<String> getQdslDose(@PathVariable int patientId) {
         return treatmentService.getQdslDose(patientId);
     }
 
@@ -70,7 +70,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/jjq/{patientId}")
-    public List<Float> getJjqDose(@PathVariable int patientId) {
+    public List<String> getJjqDose(@PathVariable int patientId) {
         return treatmentService.getJjqDose(patientId);
     }
 
@@ -81,7 +81,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/bdnd/{patientId}")
-    public List<Float> getBdndDose(@PathVariable int patientId) {
+    public List<String> getBdndDose(@PathVariable int patientId) {
         return treatmentService.getBdndDose(patientId);
     }
 
@@ -92,7 +92,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/lcpl/{patientId}")
-    public List<Float> getLcplDose(@PathVariable int patientId) {
+    public List<String> getLcplDose(@PathVariable int patientId) {
         return treatmentService.getLcplDose(patientId);
     }
 
@@ -103,7 +103,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/mtx/{patientId}")
-    public List<Float> getMtxDose(@PathVariable int patientId) {
+    public List<String> getMtxDose(@PathVariable int patientId) {
         return treatmentService.getMtxDose(patientId);
     }
 
@@ -114,7 +114,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/cysa/{patientId}")
-    public List<Float> getCysaDose(@PathVariable int patientId) {
+    public List<String> getCysaDose(@PathVariable int patientId) {
         return treatmentService.getCysaDose(patientId);
     }
 
@@ -125,7 +125,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/ctx/{patientId}")
-    public List<Float> getCtxDose(@PathVariable int patientId) {
+    public List<String> getCtxDose(@PathVariable int patientId) {
         return treatmentService.getCtxDose(patientId);
     }
 
@@ -136,7 +136,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/mtmk/{patientId}")
-    public List<Float> getMtmkDose(@PathVariable int patientId) {
+    public List<String> getMtmkDose(@PathVariable int patientId) {
         return treatmentService.getMtmkDose(patientId);
     }
 
@@ -147,7 +147,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/qsxs/{patientId}")
-    public List<Float> getQsxsDose(@PathVariable int patientId) {
+    public List<String> getQsxsDose(@PathVariable int patientId) {
         return treatmentService.getQsxsDose(patientId);
     }
 
@@ -158,7 +158,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/xqyd/{patientId}")
-    public List<Float> getXqydDose(@PathVariable int patientId) {
+    public List<String> getXqydDose(@PathVariable int patientId) {
         return treatmentService.getXqydDose(patientId);
     }
 
@@ -169,7 +169,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/fnbt/{patientId}")
-    public List<Float> getFnbtDose(@PathVariable int patientId) {
+    public List<String> getFnbtDose(@PathVariable int patientId) {
         return treatmentService.getFnbtDose(patientId);
     }
 
@@ -180,7 +180,7 @@ public class TreatmentController {
      * @return
      */
     @GetMapping(path = "/bzbt/{patientId}")
-    public List<Float> getBzbtDose(@PathVariable int patientId) {
+    public List<String> getBzbtDose(@PathVariable int patientId) {
         return treatmentService.getBzbtDose(patientId);
     }
 
@@ -193,11 +193,6 @@ public class TreatmentController {
     @GetMapping(path = "/complete/{patientId}")
     public boolean getCompleteByPatientId(@PathVariable int patientId) {
         return treatmentService.getCompleteByPatientId(patientId);
-    }
-
-    @GetMapping(path = "/getQdsDate/{patientId}")
-    public ArrayList<String> getQdsDate(@PathVariable int patientId) {
-        return treatmentService.getQdsDate(patientId);
     }
 
     @GetMapping(path = "/follow/{patientId}")
