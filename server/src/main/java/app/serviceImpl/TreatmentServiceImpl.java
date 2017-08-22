@@ -146,6 +146,16 @@ public class TreatmentServiceImpl implements TreatmentService {
         return getStartTime(patientId, "qds");
     }
 
+    @Override
+    public TreatmentProgramsDTO getSingleFollowById(int id) {
+        return null;
+    }
+
+    @Override
+    public void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO) {
+
+    }
+
     /**
      * 得到病人服用指定药物的起始时间
      * @param patientId 病人id
