@@ -49,7 +49,7 @@ angular.module('invite', [LocalStorageModule])
       console.log();
       $http({
         method: 'POST',
-        url: '/api/projects/Inv?userId=' + inviteUserId + '&projectId=' + localStorageService.get('project').id + '&inviteType=' + localStorageService.get('type')
+        url: '/api/projects/Inv?userId=' + inviteUserId + '&hostId=' + localStorageService.get('user').id + '&projectId=' + localStorageService.get('project').id + '&inviteType=' + localStorageService.get('type')
       }).then(function() {
         setTimeout(function() {
           $state.go('invite');

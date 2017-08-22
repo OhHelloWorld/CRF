@@ -16,7 +16,8 @@ public interface UserProjectRoleRepo extends CrudRepository<UserProjectRoleDO, L
 
     List<UserProjectRoleDO> findByProjectId(Long projectId);
 
-
+    @Query(value = "select user_id from user_project_role where project_id = ?1 and accept = 1",nativeQuery = true)
+    List<Integer> getUserIdByProjectId(int projectId);
 
 
 }

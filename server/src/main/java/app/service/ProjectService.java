@@ -20,7 +20,7 @@ public interface ProjectService {
 
     ProjectDTO updateProject(ProjectDTO projectDTO);// 更新项目1
 
-    void inviteUser(Long userId, Long projectId, String projectRoleId);// 邀请用户进项目
+    void inviteUser(Long userId, Long hostId, Long projectId, String projectRoleId);// 邀请用户进项目
 
     List<HospitalDTO> getProjectHospitalList(Long projectId);// 得到项目的医院列表
 

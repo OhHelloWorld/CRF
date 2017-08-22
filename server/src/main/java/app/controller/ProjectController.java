@@ -86,9 +86,9 @@ public class ProjectController {
 
     @PostMapping(value = "/Inv")
     @ApiOperation(value = "发送邀请")
-    public void sendInvited(@RequestParam Long userId, @RequestParam Long projectId,
+    public void sendInvited(@RequestParam Long userId,@RequestParam Long hostId,@RequestParam Long projectId,
             @RequestParam String inviteType) {
-        projectService.inviteUser(userId, projectId, inviteType);
+        projectService.inviteUser(userId, hostId,projectId, inviteType);
     }
 
     @PostMapping(value = "/rejectInv")

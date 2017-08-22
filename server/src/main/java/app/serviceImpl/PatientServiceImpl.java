@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import app.repo.MessageRepo;
+import app.repo.UserProjectRoleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,7 +32,7 @@ import app.service.TonguePulseService;
 import app.service.TreatmentService;
 
 /**
- * @author Administrator ����serviceImpl
+ * @author Administrator PatientServiceImpl
  */
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -71,6 +73,9 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     private TreatmentService treatmentService;
 
+    @Autowired
+    private UserProjectRoleRepo userProjectRoleRepo;
+
     @Transactional
     public int savePatientGeneralInformation(PatientDTO patientDTO) {
         return patientRepo.save(convertToPatientDO(patientDTO)).getId();
@@ -93,6 +98,7 @@ public class PatientServiceImpl implements PatientService {
         }
     }
 
+    @Override
     public PageDTO<PatientDTO> getAllPatient(Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
         Page<PatientDO> patientDOs = patientRepo.getAll(pageable);
@@ -186,7 +192,7 @@ public class PatientServiceImpl implements PatientService {
                         && physicalService.getCompleteByPatientId(patientDO.getId())
                         && boneDensityService.getCompleteByPatientId(patientDO.getId())
                         && complexAIHBeforeTreatmentService
-                                .getCompleteByPatientId(patientDO.getId())
+                        .getCompleteByPatientId(patientDO.getId())
                         && complexAIHAfterTreatmentService.getCompleteByPatientId(patientDO.getId())
                         && finalDiaSpeCirService.getCompleteByPatientId(patientDO.getId())
                         && liverPathologyService.getCompleteByPatientId(patientDO.getId())

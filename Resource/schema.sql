@@ -419,10 +419,18 @@ create table tongue_pulse(
 create table patient(
     id int not null auto_increment,
     identifier varchar(50),
+    abbreviation varchar(10),#患者姓名拼音缩写
     name varchar(20),
     gender varchar(5),
     height float(5,2),
     weight float(5,2),
+    department varchar(50),#科室
+    admission_date Date,#入院日期
+    discharge_date Date,#出院日期
+    hospitalized_date Date,#住院号
+    hospitalized_department varchar(50),#住院科室
+    hospitalized_age int,#住院年龄
+    career varchar(50),#职业
     smoke boolean,
     drink boolean,
     family_history varchar(20),
@@ -540,15 +548,6 @@ create table user_project_role(
     project_role_id int not null,
     accept boolean,
     primary key(id)
-);
-
-#信息表
-create table message (
-	id int not null auto_increment,
-	content text not null,
-	received_user_id int not null,
-	readed boolean default false,
-	primary key(id)
 );
 
 #ishak评分

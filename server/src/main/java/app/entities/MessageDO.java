@@ -16,6 +16,8 @@ public class MessageDO {
 
     private String content;
 
+    private Long hostId;
+
     @Column(name = "received_user_id")
     private Long receivedUserId;
 
@@ -52,5 +54,13 @@ public class MessageDO {
 
     public void setRead(boolean read) {
         this.read = read;
+    }
+
+    public Long getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(Long hostId) {
+        this.hostId = hostId;
     }
 }

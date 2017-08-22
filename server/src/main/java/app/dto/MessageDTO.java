@@ -11,6 +11,8 @@ public class MessageDTO {
 
     private Long received_user_id;
 
+    private Long hostId;
+
     private boolean status;
 
     public Long getId() {
@@ -43,5 +45,13 @@ public class MessageDTO {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Long getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(Long hostId) {
+        this.hostId = hostId;
     }
 }

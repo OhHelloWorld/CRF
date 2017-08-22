@@ -77,11 +77,12 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void inviteUser(Long userId, Long projectId, String inviteType) {
+    public void inviteUser(Long userId, Long hostId,Long projectId, String inviteType) {
         MessageDO messageDO = new MessageDO();
         ProjectDO projectDO = projectRepo.findOne(projectId);
-        messageDO.setContent(projectDO.getProjectName() + ": 项目向你发出邀请！");
+        messageDO.setContent(projectDO.getProjectName() + ": 项目,"+userRepo.findOne(hostId).getRealName()+"向你发出邀请！");
         messageDO.setReceivedUserId(userId);
+        messageDO.setHostId(hostId);
         messageDO.setRead(false);
         messageRepo.save(messageDO);
         saveInvited(userId, projectId, inviteType);
