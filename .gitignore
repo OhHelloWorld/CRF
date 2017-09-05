@@ -1,15 +1,11 @@
-.dist
+dist
 .idea
 .eslintcache
-/CRF/.idea/
-/ui/.idea/
 target
 .project
-.dist
 .classpath
 .settings
 node_modules
 bin
 *.orig
 *.log
-/Resource/
