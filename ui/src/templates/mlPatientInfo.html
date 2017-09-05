@@ -1,0 +1,297 @@
+<section class="content-header">
+  <h1 class="text-center">
+    患者一般资料
+  </h1><br>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">患者资料</li>
+  </ol>
+</section>
+  <div  ng-app="mlPatientInfo" ng-controller="mlPatientInfoController">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">基本信息</h3>
+              </div>
+                <div class="box-body">
+                  <form role="form">
+                <!-- 姓名字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">姓名</i>
+                    </div>
+                    <input class="form-control" ng-model="name" data-toggle="popover" data-placement="top">
+                  </div>
+                </div>
+                <!-- 性别字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">姓名拼音缩写</i>
+                    </div>
+                    <input class="form-control" tabindex="0" data-toggle="popover" data-placement="top" ng-model="abbreviation">
+                  </div>
+                </div>
+                <!-- 出生年月 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">出生日期</i>
+                    </div>
+                    <input class="form-control pull-right" id="birthday" ng-model="birthday" >
+                  </div>
+                </div>
+                <!-- 民族字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 民族 &ensp; &#8197; </i>
+                    </div>
+                    <input class="form-control" ng-model="nation">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="box-header with-border">
+                <!-- 体重字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">体重(kg)</i>
+                    </div>
+                    <input class="form-control" ng-model="weight" data-toggle="popover" data-placement="top">
+                  </div>
+                </div>
+                <!-- 身高字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">身高(cm)</i>
+                    </div>
+                    <input class="form-control" ng-model="height" tabindex="0" data-toggle="popover" data-placement="top">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &emsp; 性别 &emsp; </i>
+                    </div>
+                    <select ng-model="gender" class="form-control">
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- 文化程度字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">职业</i>
+                    </div>
+                    <input class="form-control" ng-model = "career">
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-header with-border">
+                <!-- 医院 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">医院</i>
+                    </div>
+                    <input class="form-control" ng-model="investigateHospital">
+                  </div>
+                </div>
+                <!-- 科室 -->
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &emsp; 科室 &emsp; </i>
+                    </div>
+                    <input class="form-control" ng-model="department">
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-header with-border">
+                <!-- 联系电话字段 -->
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">  &ensp; &ensp; 入院日期 &ensp; </i>
+                    </div>
+                    <input class="form-control" id="admissionDate" ng-model="admissionDate">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">  &ensp; &ensp; 入院时年龄 &ensp; </i>
+                    </div>
+                    <input class="form-control" ng-model="hospitalizedAge">
+                  </div>
+                </div>
+                <!-- 就诊时病程医院 -->
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">&#8197; &#8197; 出院日期&#8197; &#8197; </i>
+                    </div>
+                    <input class="form-control" id="dischargeDate" ng-model="dischargeDate">
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-header with-border">
+                <!-- 初次诊断年龄字段 -->
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;">住院号</i>
+                    </div>
+                    <input class="form-control" ng-model="hospitalizedNumber">
+                  </div>
+                </div>
+                <!-- 初次诊断年月医院 -->
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 住院科室</i>
+                    </div>
+                    <input class="form-control" type="text" ng-model="hospitalizedDepartment">
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">入院诊断</h3>
+              </div>
+              <div class="box-body" id="intoHos">
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 入院诊断</i>
+                    </div>
+                    <input class="form-control" ng-model="intoDiagnosis">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 诊断时间</i>
+                    </div>
+                    <input class="form-control" id="intoDiagnosisDate" ng-model="intoDiagnosisDate">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary col-md-offset-5" ng-click="addIntoHos()">新增</button>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">出院诊断</h3>
+              </div>
+              <div class="box-body">
+                <div class="box-body" id="outHos">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 出院诊断</i>
+                    </div>
+                    <input class="form-control" type="text" ng-model="outDiagnosis">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 诊断时间</i>
+                    </div>
+                    <input class="form-control" id="outDiagnosisDate" ng-model="outDiagnosisDate">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary col-md-offset-5" ng-click="addOutHos()">新增</button>
+              </div>
+            </div>
+          </div>
+
+
+        <span class="col-md-offset-10">&nbsp</span>
+          <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
+          <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
+
+          <!-- 下一步按钮模态框 -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                  <p class="h3">保存成功</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="existModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+              <div class="modal-body">
+                <p>您确定要放弃编辑退出吗？&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" ng-click="exsitEdit()">退出编辑</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+              <div class="modal-body">
+                <p ng-bind="justModalContent">&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

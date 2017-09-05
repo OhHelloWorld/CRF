@@ -28,14 +28,14 @@ public interface PatientService {
      * @param id
      * @return
      */
-    public boolean getCompleteById(int id);
+    public Boolean getCompleteById(int id);
 
     /**
      * 得到所有患者的一般资料
      * 
      * @return
      */
-    public PageDTO<PatientDTO> getAllPatient(Pageable pageable);
+    public PageDTO<PatientDTO> getAllPatient(int projectId,Pageable pageable);
 
     /**
      * 编辑患者的一般资料
@@ -51,6 +51,6 @@ public interface PatientService {
      * @param pageable
      * @return
      */
-    public PageDTO<PatientDTO> getPatientByQueryStr(String queryStr, Pageable pageable);
+    public PageDTO<PatientDTO> getPatientByQueryStr(int projectId ,String queryStr, Pageable pageable);
 
 }

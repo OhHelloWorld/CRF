@@ -67,9 +67,9 @@ public class PatientController {
      * 
      * @return
      */
-    @GetMapping(path = "")
-    public PageDTO<PatientDTO> getAllPatient(@PageableDefault(value = 10) Pageable pageable) {
-        return patientService.getAllPatient(pageable);
+    @GetMapping(path = "/project/{projectId}")
+    public PageDTO<PatientDTO> getAllPatient(@PathVariable int projectId,@PageableDefault(value = 10) Pageable pageable) {
+        return patientService.getAllPatient(projectId,pageable);
     }
 
     /**
@@ -79,10 +79,10 @@ public class PatientController {
      * @param pageable
      * @return
      */
-    @GetMapping(path = "/q")
-    public PageDTO<PatientDTO> getPatientByQueryStr(@RequestParam("queryStr") String queryStr,
+    @GetMapping(path = "/{projectId}/q")
+    public PageDTO<PatientDTO> getPatientByQueryStr(@PathVariable int projectId,@RequestParam("queryStr") String queryStr,
             @PageableDefault(value = 15) Pageable pageable) {
-        return patientService.getPatientByQueryStr(queryStr, pageable);
+        return patientService.getPatientByQueryStr(projectId,queryStr, pageable);
     }
 
 }

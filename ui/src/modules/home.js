@@ -9,7 +9,7 @@ var home = angular.module('home', [uiBootstrap, 'page', 'main']);
 
 home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'localStorageService', function($scope, $http, $rootScope, $state, localStorageService) {
   loginStatus();
-  $scope.url = '/api/patient';
+  $scope.url = '/api/patient/project/1';
   $scope.changeMenuStatus();
   $scope.patientClick = function(patient) {
     sessionStorage.setItem('patientId', patient.id);
@@ -19,11 +19,11 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'l
   };
 
   $scope.query = function() {
-    $scope.url = '/api/patient/q?queryStr=' + $scope.queryStr;
+    $scope.url = '/api/patient/1/q?queryStr=' + $scope.queryStr;
   };
 
   $scope.all = function() {
-    $scope.url = '/api/patient';
+    $scope.url = '/api/patient/project/1';
   };
 
   $scope.addPatient = function() {

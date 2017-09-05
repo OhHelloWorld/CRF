@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html ng-app="medicineLiverMain">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <title>深蓝医学信息录入系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1"> -->
+  <!-- <link rel="shortcut icon" src="../lib/images/favicon.ico"> -->
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="shortcut icon" href="http://www.navyblue.cn/img/favicon.ico?ver=1">
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-controller="medicineLiverMainController">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="main.html" class="logo">
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-mini"><b>深蓝</b></span>
+      <span class="logo-lg">深蓝医学信息录入系统</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <!-- <div class="input-group"> -->
+          <!-- <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span> -->
+          <a href="http://www.sh85yy.com/index.html" style="cursor: pointer;" target="_blank"><img src="../lib/images/navyblueLogo2.jpg" width="100%"/></a> 
+        <!-- </div> -->
+      </form>
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <!-- <ul class="sidebar-menu" id="sidebarMenu" ng-repeat="project in projects"> -->
+      <ul class="sidebar-menu" id="sidebarMenu">
+        <!-- Optionally, you can add icons to the links -->
+            <li id="li1" class="active"><a ui-sref="mlHome" ng-click="mlHomeClick()" style="cursor:pointer"><i class="glyphicon glyphicon-home"></i><span class="h4">首页</span></a></li>
+            <li id="li2"><a ui-sref="mlPatientInfo" ng-click="mlPatientMenuClick()" style="cursor:pointer"><i class="glyphicon glyphicon-book"></i><span class="h4">患者资料</span></a></li>
+            <li id="li12"><a ui-sref="mlPatientOverview" ng-click="mlPatientMenuClick1()" style="cursor:pointer"><i class="glyphicon glyphicon-book"></i><span class="h4">患者病例总览</span></a></li>
+            
+            <li id="li3"><a id="a_disease_history" style="cursor:pointer" ng-click="diseaseHistoryClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">既往疾病史<span id="diseaseHistoryMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="diseaseHistoryMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+            
+            <li id="li4"><a id="a_allergy" style="cursor:pointer" ng-click="allergyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">既往过敏史<span id="allergyMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="allergyMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></a></li>
+            
+            <li id="li5"><a id="a_drink" style="cursor:pointer" ng-click="drinkClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">饮酒状况<span id="drinkMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="drinkMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+            
+            <li id="li6"><a id="a_drug_history" style="cursor:pointer" ng-click="drugHistoryClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">可疑药物用药史<span id="drugHistoryMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="drugHistoryMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+            
+            <li id="li7"><a id="a_symptoms" style="cursor:pointer" ng-click="symptomsClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">症状体征<span id="symptomsMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="symptomsMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+            
+            <li class="treeview" style="cursor: pointer;">
+              <a><i class="fa fa-folder"></i> <span class="h4">实验室检查</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li id="li8"><a id="a_first_abnormal_examination" style="cursor:pointer" ng-click="firstAbnormalExaminationClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">首次异常的生化检查<span id="firstAbnormalExaminationMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="firstAbnormalExaminationMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+            
+                <li id="li9"><a id="a_hospital_abnormal_examination" style="cursor:pointer" ng-click="hospitalAbnormalExaminationClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">所有住院生化检查<span id="hospitalAbnormalExaminationMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="hospitalAbnormalExaminationMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+                
+                <li id="li10"><a id="a_exclude_other" style="cursor:pointer" ng-click="excludeOtherClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">排除其他肝脏疾病<span id="excludeOtherMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="excludeOtherMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+                
+                <li id="li11"><a id="a_routine_blood" style="cursor:pointer" ng-click="routineBloodClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">血常规<span id="routineBloodMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="routineBloodMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+              </ul>
+            </li>
+
+            <li id="li12"><a id="a_imaging_endoscopy" style="cursor:pointer" ng-click="imagingEndoscopyClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">影像学和内窥镜检查<span id="imagingEndoscopyMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="imagingEndoscopyMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+            <li id="li13"><a id="a_liver_histological" style="cursor:pointer" ng-click="liverHistologicalClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">肝脏组织学检查<span id="liverHistologicalMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="liverHistologicalMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+            <li id="li14"><a id="a_liver_injury" style="cursor:pointer" ng-click="liverInjuryClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">药物性肝损伤严重程度<span id="liverInjuryMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="liverInjuryMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+            <li id="li15"><a id="a_ml_treatment" style="cursor:pointer" ng-click="mlTreatmentClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">治疗措施<span id="mlTreatmentMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="mlTreatmentMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+            <li id="li16"><a id="a_disease_outcome" style="cursor:pointer" ng-click="diseaseOutcomeClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">疾病转归<span id="diseaseOutcomeMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="diseaseOutcomeMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+
+            <li id="li17"><a id="a_biological_samples" style="cursor:pointer" ng-click="biologicalSamplesClick()" data-toggle="popover" data-trigger="focus" data-content="请选择患者再填写，谢谢合作" data-placement="bottom"><i class="glyphicon glyphicon-edit"></i><span class="h4">生物样本留置<span id="biologicalSamplesMenuYes" class="glyphicon glyphicon-ok hide" style="color: green" ng-cloak></span><span id="biologicalSamplesMenuNo" class="glyphicon glyphicon-edit hide" style="color: #3C8DBC" ng-cloak></span></span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div data-ui-view=""></div>
+    </section>
+    <!-- /.content -->
+  </div>
+
+
+</div>
+
+
+
+</body>
+</html>

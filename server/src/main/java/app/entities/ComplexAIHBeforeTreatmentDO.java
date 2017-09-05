@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "complex_AIH_before_treatment")
+@Table(name = "complex_aih_before_treatment")
 public class ComplexAIHBeforeTreatmentDO {
 
     @Id

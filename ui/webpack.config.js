@@ -20,7 +20,8 @@ module.exports = {
     homePage: __dirname + '/src/entries/homePage.js',
     hospitalDetail: __dirname + '/src/entries/hospitalDetail.js',
     hospitalIllness: __dirname + '/src/entries/hospitalIllness.js',
-    register: __dirname + '/src/entries/register.js'
+    register: __dirname + '/src/entries/register.js',
+    medicineLiverMain:__dirname + '/src/entries/medicineLiverMain.js'
   },
   output: {
     path: __dirname + '/dist',
@@ -102,6 +103,11 @@ module.exports = {
       chunks: ['vendor', 'hospitalIllness'],
       filename: __dirname + '/dist/hospitalIllness.html',
       template: './src/entries/hospitalIllness.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'medicineLiverMain'],
+      filename: __dirname + '/dist/medicineLiverMain.html',
+      template: './src/entries/medicineLiverMain.html'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

@@ -150,6 +150,7 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'l
     patient.gender = $scope.gender;
     patient.height = $scope.height;
     patient.nation = $scope.nation;
+    console.log($scope.birthday);
     if ($scope.birthday) {
       patient.birthday = formatDateFromBack($scope.birthday);
     }

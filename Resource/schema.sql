@@ -427,7 +427,7 @@ create table patient(
     department varchar(50),#科室
     admission_date Date,#入院日期
     discharge_date Date,#出院日期
-    hospitalized_date Date,#住院号
+    hospitalized_number varchar(50),#住院号
     hospitalized_department varchar(50),#住院科室
     hospitalized_age int,#住院年龄
     career varchar(50),#职业

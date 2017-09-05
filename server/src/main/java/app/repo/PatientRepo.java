@@ -12,16 +12,16 @@ import app.entities.PatientDO;
 public interface PatientRepo extends CrudRepository<PatientDO, Integer> {
 
     @Query(value = "select * from patient where id=?1", nativeQuery = true)
-    public PatientDO getPatientInformationById(int id);
+    PatientDO getPatientInformationById(int id);
 
     @Query(value = "select complete from patient where id=?1", nativeQuery = true)
-    public boolean getCompleteById(int id);
+    Boolean getCompleteById(int id);
 
-    @Query(value = "select * from patient where project_id = 1 order by id and ?#{#pageable}", nativeQuery = true)
-    public Page<PatientDO> getAll(Pageable pageable);
+    @Query(value = "select * from patient where project_id = ?1 order by id and ?#{#pageable}", nativeQuery = true)
+    Page<PatientDO> getAll(int patientId,Pageable pageable);
 
-    @Query(value = "select * from patient where (name like %?1% or identifier like %?1%) and project_id = 1 order by ?#{#pageable}",
+    @Query(value = "select * from patient where (name like %?2% or identifier like %?2%) and project_id = ?1 order by ?#{#pageable}",
             nativeQuery = true)
-    public Page<PatientDO> getPatientByQueryStr(String queryStr, Pageable pageable);
+    Page<PatientDO> getPatientByQueryStr(int projectId,String queryStr, Pageable pageable);
 
 }

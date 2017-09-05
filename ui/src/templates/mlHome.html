@@ -1,0 +1,96 @@
+<section class="content-header">
+  <h1>
+    首页
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+  </ol>
+</section>
+  <div  ng-app="mlHome" ng-controller="mlHomeController">
+
+  <!--模态框-->
+  <div id="infoModal" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">{{information}}</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button id="modalButton1" type="button" class="btn btn-primary" data-dismiss="modal" ng-show="buttonShow">{{buttonContent}}</button>
+                         </div>
+                    </div>
+               </div>
+     </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <div >
+          <br>
+            <div class="box">
+            <div class="box-header">
+              <form class="form-inline">
+                <span class="h3">患者总览</span>&nbsp<a ng-click="createExcel()"><span class="h4" style="cursor: pointer;">导出所有患者病例资料</span></a>
+                <span class="col-md-offset-4">
+                <input type="text" name="q" class="form-control form-inline" placeholder="请输入姓名或编号" ng-model="queryStr">
+                  <button type="button" class="btn btn-flat" ng-click="query()"><i class="glyphicon glyphicon-search" style="color: #3C8DBC"></i>
+                  </button>
+                  <button type="button" class="btn btn-flat" ng-click="all()"><i class="glyphicon glyphicon-th-list" style="color: #3C8DBC"></i>
+                  </button>
+                  <button type="button" class="btn btn-flat" ng-click="addPatient()"><i class="fa fa-fw fa-plus" style="color: #3C8DBC"></i>
+                  </button>
+                  </span>
+              </form>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6"></div>
+              </div><div class="row">
+              <div class="col-sm-12">
+              <table id="example2" class="table table-bordered table-hover table-striped" role="grid" aria-describedby="example2_info">
+                <thead>
+                <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">姓名</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">编号</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">生日</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">性别</th>
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">采集信息状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr role="row" style="cursor:pointer" ng-repeat="patient in patients" ng-click="mlPatientClick(patient)">
+                  <td><span class="h5">{{patient.name}}</span></td>
+                  <td><span class="h5">{{patient.identifier}}</span></td>
+                  <td><span class="h5">{{patient.birthday | date:"yyyy-MM-dd"}}</span></td>
+                  <td><span class="h5">{{patient.gender}}</span></td>
+                  <td ng-switch="patient.complete"><span class="h5" ng-switch-when="true">已完成<span class="glyphicon glyphicon-ok" style="color:green"></span></span>
+                  <span class="h5" ng-switch-when="false">未完成<span class="glyphicon glyphicon-pencil" style="color:blue"></span></td>
+                </tr>
+                </tbody>
+              </table>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="page ng-hide col-md-offset-5" my-directive
+                    url={{url}} get-data="patients"></div>
+                </div>
+
+              </div>
+            </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
