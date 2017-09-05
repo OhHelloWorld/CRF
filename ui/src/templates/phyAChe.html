@@ -14,16 +14,16 @@
       <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
       <form class="form-inline col-md-offset-9">
           <div class="form-group">
-               <u class="h4">随访</u><checkbox ng-model="follow"></checkbox>
-                <div class="input-group date" ng-show="followDateShow">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
-                </div>
+            <u class="h4">随访</u><checkbox ng-model="follow"></checkbox>
+            <div class="input-group date" ng-show="followDateShow">
+              <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+            </div>
           </div>
-          </form>
-        <div>
+      </form>
+    </div>
 
 
           <!-- 内容放这里 -->
@@ -34,7 +34,7 @@
             </div>
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked" style="cursor:pointer">
-                <li class="active"><a ng-click="addTabActive('#tab_1', '总胆汁酸')" data-toggle="tab"><i class="fa fa-file-text-o"></i> </a></li>
+                <li class="active"><a ng-click="addTabActive('#tab_1', '总胆汁酸')" data-toggle="tab"><i class="fa fa-file-text-o"></i>总胆汁酸</a></li>
                 <li><a ng-click="addTabActive('#tab_2', '肝功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肝功能</a></li>
                 <li><a ng-click="addTabActive('#tab_3', '肾功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能</a></li>
                 <li><a ng-click="addTabActive('#tab_4', '凝血')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血</a></li>
@@ -1717,15 +1717,6 @@
                   </div>
                 </form>
               </div>
-<!--
-              <input type="button" value="修改问题">
-              <input type="button" value="查看问题历史">
-              <input type="button" value="查看质疑历史">
-              <input type="button" value="提出质疑">
-              <input type="button" value="回应质疑"> -->
-
-
-              <!-- /.tab-pane -->
 
             </div>
 

@@ -10,7 +10,6 @@ import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
 import '../../node_modules/chart.js';
 import '../../node_modules/angular-chart.js';
-// import '../../node_modules/bootstrap/js/modal.js';
 import '../../node_modules/angular-bootstrap-checkbox';
 
 import '../modules/mlHome.js';
