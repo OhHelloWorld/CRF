@@ -85,11 +85,11 @@ create table medicine_liver_suspected_drug_detail(
 	medication_method varchar(50),#用药方法
 	dose varchar(10),#日剂量
 	begin_date Date,#开始日期
-	drug_withdrawal int,#是否停药
+	drug_withdrawal varchar(50),#是否停药
 	drug_withdrawal_date Date,#停药日期
-	decrement int,#是否减量
-	drug_exposure int,#既往该药暴露史
-	exposure_liver_damage int,#既往暴露引起肝损
+	decrement varchar(50),#是否减量
+	drug_exposure varchar(50),#既往该药暴露史
+	exposure_liver_damage varchar(50),#既往暴露引起肝损
 	primary key(id)
 );
 

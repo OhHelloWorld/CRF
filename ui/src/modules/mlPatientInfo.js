@@ -50,10 +50,10 @@ angular.module('mlPatientInfo', [])
       });
     };
 
-    if (sessionStorage.getItem('patientId')) {
+    if (sessionStorage.getItem('mlPatientId')) {
       $http({
         method: 'GET',
-        url: '/api/patient/' + sessionStorage.getItem('patientId')
+        url: '/api/patient/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
 
@@ -164,7 +164,7 @@ angular.module('mlPatientInfo', [])
           diagnosisDate: new Date($scope.outDiagnosisDateObj[j + 1])
         });
       }
-      if (!sessionStorage.getItem('patientId')) {
+      if (!sessionStorage.getItem('mlPatientId')) {
         $http({
           method: 'POST',
           url: '/api/patient',
@@ -173,7 +173,7 @@ angular.module('mlPatientInfo', [])
           $('#myModal').modal();
         });
       } else {
-        patient.id = sessionStorage.getItem('patientId');
+        patient.id = sessionStorage.getItem('mlPatientId');
         $http({
           method: 'PUT',
           url: '/api/patient',

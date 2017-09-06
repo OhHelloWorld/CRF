@@ -13,7 +13,7 @@ public class MedicineLiverSuspectedDrugDO {
     private int id;
     private int patientId;
     private boolean complete;
-    @OneToMany(mappedBy = "medicineLiverSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "medicineLiverSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MedicineLiverSuspectedDrugDetailDO> medicineLiverSuspectedDrugDetailDOS;
 
     public int getId() {

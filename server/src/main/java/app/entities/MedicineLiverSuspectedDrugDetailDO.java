@@ -12,22 +12,22 @@ public class MedicineLiverSuspectedDrugDetailDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "medicine_liver_suspected_drug_id")
     private MedicineLiverSuspectedDrugDO medicineLiverSuspectedDrugDO;
     private String genericName;//通用名
     private String tradeName;//商品名
     private String treatComplaint;//治疗疾病
-    private String medication_method;//用药方法
+    private String medicationMethod;//用药方法
     private String dose;//日剂量
     private Date beginDate;//开始日期
-    private int drugWithdrawal;//是否停药
+    private String drugWithdrawal;//是否停药
     @Column(name = "drug_with_drawal_date")
     private Date drugWithdrawalDate;//停药日期
-    private int decrement;//是否减量
-    private int drugExposure;//既往该药暴露史
+    private String decrement;//是否减量
+    private String drugExposure;//既往该药暴露史
     @Column(name = "exposure_liver_damage")
-    private int exposureLiverDamage;//既往暴露引起肝损
+    private String exposureLiverDamage;//既往暴露引起肝损
 
     public int getId() {
         return id;
@@ -69,12 +69,12 @@ public class MedicineLiverSuspectedDrugDetailDO {
         this.treatComplaint = treatComplaint;
     }
 
-    public String getMedication_method() {
-        return medication_method;
+    public String getMedicationMethod() {
+        return medicationMethod;
     }
 
-    public void setMedication_method(String medication_method) {
-        this.medication_method = medication_method;
+    public void setMedicationMethod(String medicationMethod) {
+        this.medicationMethod = medicationMethod;
     }
 
     public String getDose() {
@@ -93,11 +93,19 @@ public class MedicineLiverSuspectedDrugDetailDO {
         this.beginDate = beginDate;
     }
 
-    public int getDrugWithdrawal() {
+    public String getTradeName() {
+        return tradeName;
+    }
+
+    public void setTradeName(String tradeName) {
+        this.tradeName = tradeName;
+    }
+
+    public String getDrugWithdrawal() {
         return drugWithdrawal;
     }
 
-    public void setDrugWithdrawal(int drugWithdrawal) {
+    public void setDrugWithdrawal(String drugWithdrawal) {
         this.drugWithdrawal = drugWithdrawal;
     }
 
@@ -109,27 +117,27 @@ public class MedicineLiverSuspectedDrugDetailDO {
         this.drugWithdrawalDate = drugWithdrawalDate;
     }
 
-    public int getDecrement() {
+    public String getDecrement() {
         return decrement;
     }
 
-    public void setDecrement(int decrement) {
+    public void setDecrement(String decrement) {
         this.decrement = decrement;
     }
 
-    public int getDrugExposure() {
+    public String getDrugExposure() {
         return drugExposure;
     }
 
-    public void setDrugExposure(int drugExposure) {
+    public void setDrugExposure(String drugExposure) {
         this.drugExposure = drugExposure;
     }
 
-    public int getExposureLiverDamage() {
+    public String getExposureLiverDamage() {
         return exposureLiverDamage;
     }
 
-    public void setExposureLiverDamage(int exposureLiverDamage) {
+    public void setExposureLiverDamage(String exposureLiverDamage) {
         this.exposureLiverDamage = exposureLiverDamage;
     }
 }

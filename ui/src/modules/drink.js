@@ -52,31 +52,30 @@ angular.module('drink', [])
 
     $scope.save = function() {
       drink.medicineLiverDrinkDetailDTOS = [];
-      drink.otherHistory = $scope.otherHistory;
-      drink.pastDisease = $scope.pastDisease;
+      drink.drinkHistory = $scope.drinkHistory;
       drink.patientId = sessionStorage.getItem('mlPatientId');
       drink.complete = true;
 
       drink.medicineLiverDrinkDetailDTOS.push({
-        diseaseName: $scope.diseaseName,
-        existence: $scope.existence,
-        id: $scope.detailId,
-        diagnosisDate: new Date($scope.diagnosisDate),
-        crueDate: new Date($scope.crueDate)
+        drinkType: $scope.drinkType,
+        drinkQuantity: $scope.drinkQuantity,
+        drinkLife:$scope.drinkLife,
+        proof:$scope.proof
+        // id: $scope.detailId,
       });
       drink.projectId = 2;
       for (var i = 0; i < count; i++) {
         drink.medicineLiverDrinkDetailDTOS.push({
-          id: ($scope.detailIdObj[i + 1]),
-          diseaseName: ($scope.diseaseNameObj[i + 1]),
-          existence: ($scope.existenceObj[i + 1]),
-          diagnosisDate: new Date($scope.diagnosisDateObj[i + 1]),
-          crueDate: new Date($scope.crueDateObj[i + 1])
+          // id: ($scope.detailIdObj[i + 1]),
+          drinkType: ($scope.drinkTypeObj[i + 1]),
+          drinkQuantity: ($scope.drinkQuantityObj[i + 1]),
+          drinkLife:($scope.drinkLifeObj[i+1]),
+          proof:($scope.proofObj[i+1])
         });
       }
       $http({
         method: 'POST',
-        url: '/api/mldrink',
+        url: '/api/mlDrink',
         data: drink
       }).then(function success() {
         $('#myModal').modal();

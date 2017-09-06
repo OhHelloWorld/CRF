@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(path = "/api/mlDiseaseHistory")
-public class mlDiseaseHistory {
+public class MlDiseaseHistoryController {
 
     @Autowired
     private MlDiseaseHistoryService mlDiseaseHistoryService;

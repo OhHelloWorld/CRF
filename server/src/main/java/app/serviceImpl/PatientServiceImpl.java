@@ -103,11 +103,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PageDTO<PatientDTO> getAllPatient(int patientId, Pageable pageable) {
+    public PageDTO<PatientDTO> getAllPatient(int projectId, Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
-        Page<PatientDO> patientDOs = patientRepo.getAll(patientId, pageable);
-        for (PatientDO patientDO : patientDOs) {
-            patientDTOs.add(convertToPatientDTO(patientDO));
+        Page<PatientDO> patientDOs = patientRepo.getAll(projectId,new UserMsgTool().getCurrentUser().getHospital().getId(),pageable);
+        if(patientDOs.hasContent() && patientDOs != null) {
+            for (PatientDO patientDO : patientDOs) {
+                patientDTOs.add(convertToPatientDTO(patientDO));
+            }
         }
         PageDTO<PatientDTO> pageDTO = new PageDTO<>();
         pageDTO.setContent(patientDTOs);
