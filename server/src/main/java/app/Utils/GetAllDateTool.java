@@ -1,9 +1,7 @@
 package app.Utils;
 
-import com.sun.xml.internal.ws.developer.Serialization;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.PersistenceUnit;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
