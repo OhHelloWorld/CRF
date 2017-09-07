@@ -11,10 +11,10 @@ public class MedicineLiverTreatmentDetailDTO {
     private int medicineLiverTreatmentId;
     private String genericName;//通用名
     private String tradeName;//商品名
-    private String method;//用药方法
+    private String detailMethod;//用药方法
     private String dose;//日剂量
-    private Date startDate;//开始日期
-    private Date endDate;//结束日期
+    private Date detailStartDate;//开始日期
+    private Date detailEndDate;//结束日期
 
     public int getId() {
         return id;
@@ -48,12 +48,12 @@ public class MedicineLiverTreatmentDetailDTO {
         this.tradeName = tradeName;
     }
 
-    public String getMethod() {
-        return method;
+    public String getDetailMethod() {
+        return detailMethod;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setDetailMethod(String detailMethod) {
+        this.detailMethod = detailMethod;
     }
 
     public String getDose() {
@@ -64,19 +64,19 @@ public class MedicineLiverTreatmentDetailDTO {
         this.dose = dose;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getDetailStartDate() {
+        return detailStartDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setDetailStartDate(Date detailStartDate) {
+        this.detailStartDate = detailStartDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Date getDetailEndDate() {
+        return detailEndDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setDetailEndDate(Date detailEndDate) {
+        this.detailEndDate = detailEndDate;
     }
 }

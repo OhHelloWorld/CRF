@@ -242,8 +242,8 @@ public class PatientServiceImpl implements PatientService {
 //            dischargeDiagnosisDTO.setDiagnosis(dischargeDiagnosisDO.getDiagnosis());
 //            dischargeDiagnosisDTOS.add(dischargeDiagnosisDTO);
 //        }
-        patientDTO.setAdmissionDiagnosisDTOS(admissionDiagnosisDTOS);
-        patientDTO.setDischargeDiagnosisDTOS(dischargeDiagnosisDTOS);
+//        patientDTO.setAdmissionDiagnosisDTOS(admissionDiagnosisDTOS);
+//        patientDTO.setDischargeDiagnosisDTOS(dischargeDiagnosisDTOS);
         if (patientDO.getProjectId() == 1) {
             patientDTO.setComplete(
                     patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())

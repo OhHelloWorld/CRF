@@ -53,7 +53,7 @@ angular.module('mlPatientInfo', [])
     if (sessionStorage.getItem('mlPatientId')) {
       $http({
         method: 'GET',
-        url: '/api/patient/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
 
@@ -167,7 +167,7 @@ angular.module('mlPatientInfo', [])
       if (!sessionStorage.getItem('mlPatientId')) {
         $http({
           method: 'POST',
-          url: '/api/patient',
+          url: '/api/mlPatient',
           data: patient
         }).then(function success() {
           $('#myModal').modal();
@@ -176,7 +176,7 @@ angular.module('mlPatientInfo', [])
         patient.id = sessionStorage.getItem('mlPatientId');
         $http({
           method: 'PUT',
-          url: '/api/patient',
+          url: '/api/mlPatient',
           data: patient
         }).then(function success() {
           $('#myModal').modal();

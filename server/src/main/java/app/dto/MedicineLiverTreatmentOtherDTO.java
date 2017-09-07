@@ -11,8 +11,8 @@ public class MedicineLiverTreatmentOtherDTO {
     private int medicineLiverTreatmentId;
     private String method;//治疗措施
     private String methodDetail;//治疗措施详述
-    private Date startDate;//开始日期
-    private Date endDate;//结束日期
+    private Date otherStartDate;//开始日期
+    private Date otherEndDate;//结束日期
 
     public int getId() {
         return id;
@@ -46,19 +46,19 @@ public class MedicineLiverTreatmentOtherDTO {
         this.methodDetail = methodDetail;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getOtherStartDate() {
+        return otherStartDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setOtherStartDate(Date otherStartDate) {
+        this.otherStartDate = otherStartDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Date getOtherEndDate() {
+        return otherEndDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setOtherEndDate(Date otherEndDate) {
+        this.otherEndDate = otherEndDate;
     }
 }
