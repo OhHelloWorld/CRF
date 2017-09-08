@@ -191,10 +191,10 @@ create table medicine_liver_symptoms_other(
 	id int not null auto_increment,
 	medicine_liver_symptoms_id int,
 	name varchar(50),#其他体征名
-	description int,#表现
+	description varchar(50),#表现
 	begin_date Date,#出现时间
 	disappear_date Date,#消失时间
-	discharge_symptoms int,#出院表现
+	discharge_symptoms varchar(50),#出院表现
 	primary key(id)
 );
 

@@ -13,8 +13,8 @@ public class CRFApplication extends SpringBootServletInitializer {
 		SpringApplication.run(CRFApplication.class, args);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(CRFApplication.class);
-	}
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//		return builder.sources(CRFApplication.class);
+//	}
 }
