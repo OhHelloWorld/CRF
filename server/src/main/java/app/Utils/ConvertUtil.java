@@ -643,4 +643,44 @@ public class ConvertUtil {
         return treatmentProgramsDO;
     }
 
+    public MedicineLiverFirstAbnormalExaminationDTO mlfaeConvertoDTO(MedicineLiverFirstAbnormalExaminationDO mdo) {
+        MedicineLiverFirstAbnormalExaminationDTO mdto = new MedicineLiverFirstAbnormalExaminationDTO();
+        mdto.setAlt(mdo.getAlt());
+        mdto.setAst(mdo.getAst());
+        mdto.setGgt(mdo.getGgt());
+        mdto.setAlp(mdo.getAlp());
+        mdto.setBileAcid(mdo.getBileAcid());
+        mdto.setTbil(mdo.getTbil());
+        mdto.setDbil(mdo.getDbil());
+        mdto.setPt(mdo.getPt());
+        mdto.setAlb(mdo.getAlb());
+        mdto.setScr(mdo.getScr());
+        mdto.setBun(mdo.getBun());
+        mdto.setPlasmaGlucose(mdo.getPlasmaGlucose());
+        mdto.setTp(mdo.getTp());
+        mdto.setInr(mdo.getInr());
+        mdto.setAfp(mdo.getAfp());
+        return mdto;
+    }
+
+    public MedicineLiverFirstAbnormalExaminationDO mlfaeConverToDO(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO) {
+        MedicineLiverFirstAbnormalExaminationDO mDO = new MedicineLiverFirstAbnormalExaminationDO();
+        mDO.setAlt(mlfaeDTO.getAlt());
+        mDO.setAst(mlfaeDTO.getAst());
+        mDO.setGgt(mlfaeDTO.getGgt());
+        mDO.setAlp(mlfaeDTO.getAlp());
+        mDO.setBileAcid(mlfaeDTO.getBileAcid());
+        mDO.setTbil(mlfaeDTO.getTbil());
+        mDO.setDbil(mlfaeDTO.getDbil());
+        mDO.setPt(mlfaeDTO.getPt());
+        mDO.setAlb(mlfaeDTO.getAlb());
+        mDO.setScr(mlfaeDTO.getScr());
+        mDO.setBun(mlfaeDTO.getBun());
+        mDO.setPlasmaGlucose(mlfaeDTO.getPlasmaGlucose());
+        mDO.setTp(mlfaeDTO.getTp());
+        mDO.setInr(mlfaeDTO.getInr());
+        mDO.setAfp(mlfaeDTO.getAfp());
+        return mDO;
+    }
+
 }

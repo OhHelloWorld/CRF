@@ -3,6 +3,7 @@ package app.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
@@ -22,6 +23,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/hospital/image/**").addResourceLocations(onlineImagePath);
         registry.addResourceHandler("/api/image/**").addResourceLocations(onlineImagePath);
         registry.addResourceHandler("/excelDown/**").addResourceLocations(onlineExcelPath);
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("forward:/login.html");
     }
 
 }

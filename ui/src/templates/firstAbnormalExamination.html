@@ -36,11 +36,11 @@
 					</div>
 					<div class="box-body no-padding">
 						<ul class="nav nav-pills nav-stacked" style="cursor:pointer">
-							<li class="active"><a ng-click="addTabActive('#tab_1', '总胆汁酸')" data-toggle="tab"><i class="fa fa-file-text-o"></i>肝脏生化检查</a></li>
-							<li><a ng-click="addTabActive('#tab_2', '肝功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能检查</a></li>
-							<li><a ng-click="addTabActive('#tab_3', '肾功能')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 血糖检查</a></li>
-							<li><a ng-click="addTabActive('#tab_4', '凝血')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血功能检查</a></li>
-							<li><a ng-click="addTabActive('#tab_5', '血常规')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肿瘤标志物</a></li>
+							<li class="active"><a ng-click="addTabActive('#tab_1', '肝脏生化检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i>肝脏生化检查</a></li>
+							<li><a ng-click="addTabActive('#tab_2', '肾功能检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能检查</a></li>
+							<li><a ng-click="addTabActive('#tab_3', '血糖检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 血糖检查</a></li>
+							<li><a ng-click="addTabActive('#tab_4', '凝血功能检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血功能检查</a></li>
+							<li><a ng-click="addTabActive('#tab_5', '肿瘤标志物')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肿瘤标志物</a></li>
 						</ul>
 					</div>
 				</div>
@@ -51,119 +51,264 @@
 			<div class="col-md-9">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<h3 class="text-center" ng-bind="tabTitle"></h3>
+						<h3 class="col-md-3 box-title" ng-bind="titleName"></h3>
 
-						<!-- 各种tab -->
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab_1">
-								<form class="form-horizontal">
-									<div class="box-body">
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">谷丙转氨酶（ALT）</label>
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model="">
-													<span class="input-group-addon">IU/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">谷草转氨酶（AST）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">IU/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">谷氨酰转肽酶（GGT）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">IU/L</span>
-												</div>
-											</div>
-										</div>
-
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">碱性磷酸酶（ALP或AKP）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">IU/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">胆汁酸</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">umol/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">总胆红素（TBIL）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">umol/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">直接胆红素（结合胆红素，DBIL）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">umol/L</span>
-												</div>
-											</div>
-										</div>
-										
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-2 control-label">总蛋白（TP）</label>
-
-											<div class="col-sm-4">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model=" ">
-													<span class="input-group-addon">g/L</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputPassword3" class="col-sm-4 control-label">白蛋白（ALB）</label>
-
-											<div class="col-sm-8">
-												<div class="input-group">
-													<input type="text" class="form-control" ng-model="">
-													<span class="input-group-addon">g/L</span>
-												</div>
-											</div>
-										</div>
-
-									</div>
-									<div class="box-footer">
-										<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
-									</div>
-								</form>
+						<div class="col-md-offset-6 form-group">
+							<label class="col-xs-3 control-label">检查时间</label>
+							<div class="input-group date col-md-8">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="text" class="form-control pull-right" id="datepicker1" ng-model="totalBileAcidDate">
 							</div>
+						</div>
+					</div>
+					<!-- 各种tab -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab_1">
+							<form class="form-horizontal">
+								<div class="box-body">
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">谷丙转氨酶（ALT）</label>
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="alt">
+												<span class="input-group-addon">IU/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">谷草转氨酶（AST）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="ast">
+												<span class="input-group-addon">IU/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">谷氨酰转肽酶（GGT）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="ggt">
+												<span class="input-group-addon">IU/L</span>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">碱性磷酸酶（ALP或AKP）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="alp">
+												<span class="input-group-addon">IU/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">胆汁酸</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="bileAcid">
+												<span class="input-group-addon">umol/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">总胆红素（TBIL）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="tbil">
+												<span class="input-group-addon">umol/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">直接胆红素（结合胆红素，DBIL）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="dbil">
+												<span class="input-group-addon">umol/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">总蛋白（TP）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="tp">
+												<span class="input-group-addon">g/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">白蛋白（ALB）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="alb">
+												<span class="input-group-addon">g/L</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="tab-content">
+						<div class="tab-pane" id="tab_2">
+							<form class="form-horizontal">
+								<div class="box-body">
+
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">血清肌酐（Scr）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="scr">
+												<span class="input-group-addon">umol/L</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">血清尿素氮（BUN）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="bun">
+												<span class="input-group-addon">mmol/L</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+					<div class="tab-content">
+						<div class="tab-pane" id="tab_3">
+							<form class="form-horizontal">
+								<div class="box-body">
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">空腹血糖</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="plasmaGlucose">
+												<span class="input-group-addon">mmol/L</span>
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="tab-content">
+						<div class="tab-pane" id="tab_4">
+							<form class="form-horizontal">
+								<div class="box-body">
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">凝血酶原时间（PT）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="pt">
+												<span class="input-group-addon">秒</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">凝血酶原标准化比值（INR）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="inr">
+												<span class="input-group-addon">/</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="tab-content">
+						<div class="tab-pane" id="tab_5">
+							<form class="form-horizontal">
+								<div class="box-body">
+
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-3 control-label">甲胎蛋白（AFP）</label>
+
+										<div class="col-sm-8">
+											<div class="input-group">
+												<input type="text" class="form-control" ng-model="afp">
+												<span class="input-group-addon">ug/L</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- 模态框 -->
+			<div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="modal-body">
+							<p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
 						</div>
 					</div>
 				</div>
