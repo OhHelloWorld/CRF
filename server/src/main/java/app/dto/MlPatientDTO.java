@@ -7,10 +7,11 @@ import java.util.List;
 /**
  * @author Administrator PatientDTO
  */
-public class PatientDTO {
+public class MlPatientDTO {
 
     private int id;
     private String identifier;
+    private String abbreviation;//患者姓名拼音缩写
     private String name;
     private String gender;
     private String nation;
@@ -18,6 +19,13 @@ public class PatientDTO {
     private float weight;
     private boolean smoke;
     private boolean drink;
+    private String department;//科室
+    private Date admissionDate;//入院日期
+    private Date dischargeDate;//出院日期
+    private String hospitalizedNumber;//住院号
+    private String hospitalizedDepartment;//住院科室
+    private int hospitalizedAge;//住院年龄
+    private String career;//职业
     private String familyHistory;
     private Date birthday;
     private int bmi;
@@ -35,6 +43,9 @@ public class PatientDTO {
     private boolean complete;
     private Long hospitalId;
     private Long projectId;
+    private List<AdmissionDiagnosisDTO> admissionDiagnosisDTOS;
+    private List<DischargeDiagnosisDTO> dischargeDiagnosisDTOS;
+
 
     public int getId() {
         return id;
@@ -66,6 +77,70 @@ public class PatientDTO {
 
     public void setIdentifier(String identifier) {
         this.identifier = identifier;
+    }
+
+    public String getHospitalizedNumber() {
+        return hospitalizedNumber;
+    }
+
+    public void setHospitalizedNumber(String hospitalizedNumber) {
+        this.hospitalizedNumber = hospitalizedNumber;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public Date getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(Date admissionDate) {
+        this.admissionDate = admissionDate;
+    }
+
+    public Date getDischargeDate() {
+        return dischargeDate;
+    }
+
+    public void setDischargeDate(Date dischargeDate) {
+        this.dischargeDate = dischargeDate;
+    }
+
+    public String getHospitalizedDepartment() {
+        return hospitalizedDepartment;
+    }
+
+    public void setHospitalizedDepartment(String hospitalizedDepartment) {
+        this.hospitalizedDepartment = hospitalizedDepartment;
+    }
+
+    public int getHospitalizedAge() {
+        return hospitalizedAge;
+    }
+
+    public void setHospitalizedAge(int hospitalizedAge) {
+        this.hospitalizedAge = hospitalizedAge;
+    }
+
+    public String getCareer() {
+        return career;
+    }
+
+    public void setCareer(String career) {
+        this.career = career;
     }
 
     public String getName() {
@@ -242,6 +317,22 @@ public class PatientDTO {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public List<AdmissionDiagnosisDTO> getAdmissionDiagnosisDTOS() {
+        return admissionDiagnosisDTOS;
+    }
+
+    public void setAdmissionDiagnosisDTOS(List<AdmissionDiagnosisDTO> admissionDiagnosisDTOS) {
+        this.admissionDiagnosisDTOS = admissionDiagnosisDTOS;
+    }
+
+    public List<DischargeDiagnosisDTO> getDischargeDiagnosisDTOS() {
+        return dischargeDiagnosisDTOS;
+    }
+
+    public void setDischargeDiagnosisDTOS(List<DischargeDiagnosisDTO> dischargeDiagnosisDTOS) {
+        this.dischargeDiagnosisDTOS = dischargeDiagnosisDTOS;
     }
 
     @Override

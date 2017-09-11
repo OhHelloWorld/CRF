@@ -78,11 +78,11 @@
 //
 //    @Override
 //    public void saveDrugHistory(MedicineLiverSuspectedDrugDTO medicineLiverSuspectedDrugDTO) {
-//
+//        mlDrugHistoryRepo.save(convertToEntity(medicineLiverSuspectedDrugDTO));
 //    }
 //
 //    @Override
 //    public MedicineLiverSuspectedDrugDTO getDrugByPatientId(int mlPatientId) {
-//        return null;
+//        return mlDrugHistoryRepo.getMlDrugByPatientId(mlPatientId) !=null?convertToDTO(mlDrugHistoryRepo.getMlDrugByPatientId(mlPatientId)):null;
 //    }
 //}

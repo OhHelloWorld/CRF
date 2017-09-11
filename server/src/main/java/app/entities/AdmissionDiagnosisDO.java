@@ -12,8 +12,8 @@
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private int id;
 //    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = "patient_id")
-//    private PatientDO patientDO;
+//    @JoinColumn(name = "medicine_liver_patient_id")
+//    private MlPatientDO mlPatientDO;
 //    private String diagnosis;
 //    private Date diagnosisDate;
 //
@@ -25,12 +25,12 @@
 //        this.id = id;
 //    }
 //
-//    public PatientDO getPatientDO() {
-//        return patientDO;
+//    public MlPatientDO getMlPatientDO() {
+//        return mlPatientDO;
 //    }
 //
-//    public void setPatientDO(PatientDO patientDO) {
-//        this.patientDO = patientDO;
+//    public void setMlPatientDO(MlPatientDO MlpatientDO) {
+//        this.mlPatientDO = mlPatientDO;
 //    }
 //
 //    public String getDiagnosis() {

@@ -49,23 +49,6 @@ patientInfo.controller('patientInfoController', ['$scope', '$http', '$state', 'l
     autoclose: true
   });
 
-
-  //姓名失焦事件
-  // $scope.judgeName = function() {
-  //   if ($scope.name == undefined || $scope.name == '') {
-  //     $('#inputName').removeAttr('data-content');
-  //     $('#inputName').attr('data-content', '不能为空');
-  //     $('#inputName').popover('show');
-  //   } else if ($scope.name.length < 2 || $scope.name.length > 10) {
-  //     $('#inputName').removeAttr('data-content');
-  //     $('#inputName').attr('data-content', '长度不符合要求');
-  //     $('#inputName').popover('show');
-  //   } else {
-  //     $('#inputName').removeAttr('data-content');
-  //     $('#inputName').attr('data-content', '');
-  //   }
-  // };
-
   $scope.$watch('height', function() {
     if ($scope.weight && $scope.height) {
       $scope.bmi = ($scope.weight) / ($scope.height / 100 * $scope.height / 100);

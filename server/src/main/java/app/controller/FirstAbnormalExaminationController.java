@@ -3,9 +3,8 @@ package app.controller;
 import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
 import app.service.FirstAbnormalExaminationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by 10210 on 2017/9/7.
@@ -17,13 +16,13 @@ public class FirstAbnormalExaminationController {
     @Autowired
     private FirstAbnormalExaminationService firstAbnormalExaminationService;
 
-    @PostMapping(path = "/")
-    public void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDto) {
+    @PostMapping(value = "/")
+    public void addMsg(@RequestBody MedicineLiverFirstAbnormalExaminationDTO mlfaeDto) {
         firstAbnormalExaminationService.addMsg(mlfaeDto);
     }
 
-//    @GetMapping(path = "/")
-//    public void addMsgByPID(MedicineLiverFirstAbnormalExaminationDO mlfaeDo) {
-//
-//    }
+    @GetMapping(value = "/{pId}")
+    public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(@PathVariable Long pId) {
+        return firstAbnormalExaminationService.getMsgByPID(pId);
+    }
 }

@@ -36,11 +36,11 @@
 					</div>
 					<div class="box-body no-padding">
 						<ul class="nav nav-pills nav-stacked" style="cursor:pointer">
-							<li class="active"><a ng-click="addTabActive('#tab_1', '肝脏生化检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i>肝脏生化检查</a></li>
-							<li><a ng-click="addTabActive('#tab_2', '肾功能检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能检查</a></li>
-							<li><a ng-click="addTabActive('#tab_3', '血糖检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 血糖检查</a></li>
-							<li><a ng-click="addTabActive('#tab_4', '凝血功能检查')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血功能检查</a></li>
-							<li><a ng-click="addTabActive('#tab_5', '肿瘤标志物')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肿瘤标志物</a></li>
+							<li class="active"><a ng-click="addTabActive('#tab_1', '肝脏生化检查', '#tab1Date')" data-toggle="tab"><i class="fa fa-file-text-o"></i>肝脏生化检查</a></li>
+							<li><a ng-click="addTabActive('#tab_2', '肾功能检查', '#tab2Date')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肾功能检查</a></li>
+							<li><a ng-click="addTabActive('#tab_3', '血糖检查', '#tab3Date')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 血糖检查</a></li>
+							<li><a ng-click="addTabActive('#tab_4', '凝血功能检查', '#tab4Date')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 凝血功能检查</a></li>
+							<li><a ng-click="addTabActive('#tab_5', '肿瘤标志物', '#tab5Date')" data-toggle="tab"><i class="fa fa-file-text-o"></i> 肿瘤标志物</a></li>
 						</ul>
 					</div>
 				</div>
@@ -53,15 +53,56 @@
 					<div class="box-header with-border">
 						<h3 class="col-md-3 box-title" ng-bind="titleName"></h3>
 
-						<div class="col-md-offset-6 form-group">
+						<div class="col-md-offset-6 form-group 1" id="tab1Date">
 							<label class="col-xs-3 control-label">检查时间</label>
 							<div class="input-group date col-md-8">
 								<div class="input-group-addon">
 									<i class="fa fa-calendar"></i>
 								</div>
-								<input type="text" class="form-control pull-right" id="datepicker1" ng-model="totalBileAcidDate">
+								<input type="text" class="form-control pull-right" id="datepicker1" ng-model="tab1CheckDate">
 							</div>
 						</div>
+
+						<div class="col-md-offset-6 form-group 1 hide" id="tab2Date">
+							<label class="col-xs-3 control-label">检查时间</label>
+							<div class="input-group date col-md-8">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="text" class="form-control pull-right" id="datepicker2" ng-model="tab2CheckDate">
+							</div>
+						</div>
+
+						<div class="col-md-offset-6 form-group 1 hide" id="tab3Date">
+							<label class="col-xs-3 control-label">检查时间</label>
+							<div class="input-group date col-md-8">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="text" class="form-control pull-right" id="datepicker3" ng-model="tab3CheckDate">
+							</div>
+						</div>
+
+						<div class="col-md-offset-6 form-group 1 hide" id="tab4Date">
+							<label class="col-xs-3 control-label">检查时间</label>
+							<div class="input-group date col-md-8">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="text" class="form-control pull-right" id="datepicker4" ng-model="tab4CheckDate">
+							</div>
+						</div>
+
+						<div class="col-md-offset-6 form-group 1 hide" id="tab5Date">
+							<label class="col-xs-3 control-label">检查时间</label>
+							<div class="input-group date col-md-8">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="text" class="form-control pull-right" id="datepicker5" ng-model="tab5CheckDate">
+							</div>
+						</div>
+
 					</div>
 					<!-- 各种tab -->
 					<div class="tab-content">
@@ -228,9 +269,9 @@
 											</div>
 										</div>
 									</div>
-
-
 								</div>
+
+
 								<div class="box-footer">
 									<button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">整体保存</button>
 								</div>
@@ -313,10 +354,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
 		</div>
 	</div>
 </div>

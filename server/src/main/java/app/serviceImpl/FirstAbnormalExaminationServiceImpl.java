@@ -1,6 +1,7 @@
 package app.serviceImpl;
 
 import app.Utils.ConvertUtil;
+import app.Utils.GetColumnContentByColumn;
 import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
 import app.entities.MedicineLiverFirstAbnormalExaminationDO;
 import app.repo.FirstAbnormalExaminationRepo;
@@ -24,5 +25,10 @@ public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExamina
     public void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO) {
         MedicineLiverFirstAbnormalExaminationDO mlfaeDO = convertUtil.mlfaeConverToDO(mlfaeDTO);
         firstAbnormalExaminationRepo.save(mlfaeDO);
+    }
+
+    @Override
+    public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId) {
+        return convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getMsgByPID(pId));
     }
 }

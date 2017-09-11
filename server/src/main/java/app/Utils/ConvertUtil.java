@@ -647,6 +647,11 @@ public class ConvertUtil {
         MedicineLiverFirstAbnormalExaminationDTO mdto = new MedicineLiverFirstAbnormalExaminationDTO();
         mdto.setAlt(mdo.getAlt());
         mdto.setAst(mdo.getAst());
+        mdto.setTab1CheckDate(mdo.getTab1CheckDate());
+        mdto.setTab2CheckDate(mdo.getTab2CheckDate());
+        mdto.setTab3CheckDate(mdo.getTab3CheckDate());
+        mdto.setTab4CheckDate(mdo.getTab4CheckDate());
+        mdto.setTab5CheckDate(mdo.getTab5CheckDate());
         mdto.setGgt(mdo.getGgt());
         mdto.setAlp(mdo.getAlp());
         mdto.setBileAcid(mdo.getBileAcid());
@@ -665,6 +670,12 @@ public class ConvertUtil {
 
     public MedicineLiverFirstAbnormalExaminationDO mlfaeConverToDO(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO) {
         MedicineLiverFirstAbnormalExaminationDO mDO = new MedicineLiverFirstAbnormalExaminationDO();
+        mDO.setPatientId(mlfaeDTO.getPatientId());
+        mDO.setTab1CheckDate(mlfaeDTO.getTab1CheckDate());
+        mDO.setTab2CheckDate(mlfaeDTO.getTab2CheckDate());
+        mDO.setTab3CheckDate(mlfaeDTO.getTab3CheckDate());
+        mDO.setTab4CheckDate(mlfaeDTO.getTab4CheckDate());
+        mDO.setTab5CheckDate(mlfaeDTO.getTab5CheckDate());
         mDO.setAlt(mlfaeDTO.getAlt());
         mDO.setAst(mlfaeDTO.getAst());
         mDO.setGgt(mlfaeDTO.getGgt());

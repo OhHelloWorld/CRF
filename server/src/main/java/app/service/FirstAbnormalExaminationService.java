@@ -1,6 +1,7 @@
 package app.service;
 
 import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
@@ -9,4 +10,6 @@ import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
 public interface FirstAbnormalExaminationService {
 
     public void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO);
+
+    public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId);
 }

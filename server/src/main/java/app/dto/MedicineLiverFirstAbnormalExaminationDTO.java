@@ -9,6 +9,11 @@ public class MedicineLiverFirstAbnormalExaminationDTO {
 
     private int id;
     private int patientId;
+    private Date tab1CheckDate;//肝脏生化检查时间
+    private Date tab2CheckDate;//肾功能检查时间
+    private Date tab3CheckDate;//血糖检查时间
+    private Date tab4CheckDate;//凝血功能检查时间
+    private Date tab5CheckDate;//肿瘤标志物
     private String alt;
     private Date altDate;
     private String ast;
@@ -313,4 +318,45 @@ public class MedicineLiverFirstAbnormalExaminationDTO {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+
+    public Date getTab1CheckDate() {
+        return tab1CheckDate;
+    }
+
+    public void setTab1CheckDate(Date tab1CheckDate) {
+        this.tab1CheckDate = tab1CheckDate;
+    }
+
+    public Date getTab2CheckDate() {
+        return tab2CheckDate;
+    }
+
+    public void setTab2CheckDate(Date tab2CheckDate) {
+        this.tab2CheckDate = tab2CheckDate;
+    }
+
+    public Date getTab3CheckDate() {
+        return tab3CheckDate;
+    }
+
+    public void setTab3CheckDate(Date tab3CheckDate) {
+        this.tab3CheckDate = tab3CheckDate;
+    }
+
+    public Date getTab4CheckDate() {
+        return tab4CheckDate;
+    }
+
+    public void setTab4CheckDate(Date tab4CheckDate) {
+        this.tab4CheckDate = tab4CheckDate;
+    }
+
+    public Date getTab5CheckDate() {
+        return tab5CheckDate;
+    }
+
+    public void setTab5CheckDate(Date tab5CheckDate) {
+        this.tab5CheckDate = tab5CheckDate;
+    }
 }
+

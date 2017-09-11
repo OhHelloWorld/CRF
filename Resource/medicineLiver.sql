@@ -1,7 +1,31 @@
+#药肝患者表
+create table medicine_liver_patient(
+    id int not null auto_increment,
+    identifier varchar(50),
+    abbreviation varchar(10),#患者姓名拼音缩写
+    name varchar(20),
+    gender varchar(5),
+    height float(5,2),
+    weight float(5,2),
+    department varchar(50),#科室
+    admission_date Date,#入院日期
+    discharge_date Date,#出院日期
+    hospitalized_number varchar(50),#住院号
+    hospitalized_department varchar(50),#住院科室
+    hospitalized_age int,#住院年龄
+    career varchar(50),#职业
+    nation varchar(20),
+    birthday datetime,
+    complete boolean,
+    hospital_id long,
+    project_id long,
+    primary key(id)
+);
+
 #入院诊断
 create table admission_diagnosis(
 	id int not null auto_increment,
-	patient_id int,
+	medicine_liver_patient_id int,
 	diagnosis varchar(100),
 	diagnosis_date Date,
 	primary key(id)
@@ -10,7 +34,7 @@ create table admission_diagnosis(
 #出院诊断
 create table discharge_diagnosis(
 	id int not null auto_increment,
-	patient_id int,
+	medicine_liver_patient_id int,
 	diagnosis varchar(100),
 	diagnosis_date Date,
 	primary key(id)
@@ -167,10 +191,10 @@ create table medicine_liver_symptoms_other(
 	id int not null auto_increment,
 	medicine_liver_symptoms_id int,
 	name varchar(50),#其他体征名
-	description int,#表现
+	description varchar(50),#表现
 	begin_date Date,#出现时间
 	disappear_date Date,#消失时间
-	discharge_symptoms int,#出院表现
+	discharge_symptoms varchar(50),#出院表现
 	primary key(id)
 );
 
@@ -182,7 +206,12 @@ create table medicine_liver_first_abnormal_examination(
 	alt_date Date,
 	ast varchar(20),
 	ast_date Date,
-	ggt varchar(20),
+    tab1_check_date Date,#肝脏生化检查时间
+	tab2_check_date Date,#肾功能检查时间
+    tab3_check_date Date,#血糖检查时间
+    tab4_check_date Date,#凝血功能检查时间
+    tab5_check_date Date,#肿瘤标志物检查时间
+    ggt varchar(20),
 	ggt_date Date,
 	alp varchar(20),
 	alp_date Date,
@@ -396,7 +425,7 @@ create table medicine_liver_treatment_detail(
 	medicine_liver_treatment_id int,
 	generic_name varchar(50),#通用名
 	trade_name varchar(50),#商品名
-	method varchar(50),#用药方法
+	detail_method varchar(50),#用药方法
 	dose varchar(50),#日剂量
 	start_date Date,#开始日期
 	end_date Date,#结束日期

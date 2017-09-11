@@ -10,10 +10,10 @@ public class MedicineLiverSymptomsOtherDTO {
     private int id;
     private int medicineLiverSymptomsId;
     private String name;//其他体征名
-    private int description;//表现
+    private String description;//表现
     private Date beginDate;//出现时间
     private Date disappearDate;//消失时间
-    private int dischargeSymptoms;//出院表现
+    private String dischargeSymptoms;//出院表现
 
     public int getId() {
         return id;
@@ -39,12 +39,20 @@ public class MedicineLiverSymptomsOtherDTO {
         this.name = name;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(int description) {
+    public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDischargeSymptoms() {
+        return dischargeSymptoms;
+    }
+
+    public void setDischargeSymptoms(String dischargeSymptoms) {
+        this.dischargeSymptoms = dischargeSymptoms;
     }
 
     public Date getBeginDate() {
@@ -63,11 +71,4 @@ public class MedicineLiverSymptomsOtherDTO {
         this.disappearDate = disappearDate;
     }
 
-    public int getDischargeSymptoms() {
-        return dischargeSymptoms;
-    }
-
-    public void setDischargeSymptoms(int dischargeSymptoms) {
-        this.dischargeSymptoms = dischargeSymptoms;
-    }
 }

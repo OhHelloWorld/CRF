@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class AdmissionDiagnosisDTO {
     private int id;
-    private int patientId;
+    private int mlPatientId;
     private String diagnosis;
     private Date diagnosisDate;
 
@@ -19,12 +19,12 @@ public class AdmissionDiagnosisDTO {
         this.id = id;
     }
 
-    public int getPatientId() {
-        return patientId;
+    public int getMlPatientId() {
+        return mlPatientId;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
+    public void setMlPatientId(int mlPatientId) {
+        this.mlPatientId = mlPatientId;
     }
 
     public String getDiagnosis() {
