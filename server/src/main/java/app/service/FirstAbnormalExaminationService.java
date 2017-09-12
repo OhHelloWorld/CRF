@@ -1,7 +1,10 @@
 package app.service;
 
 import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 
 /**
@@ -12,4 +15,6 @@ public interface FirstAbnormalExaminationService {
     public void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO);
 
     public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId);
+
+    public List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(Long pId);
 }

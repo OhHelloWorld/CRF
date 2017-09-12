@@ -9,6 +9,9 @@ import app.service.FirstAbnormalExaminationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by 10210 on 2017/9/7.
  */
@@ -30,5 +33,15 @@ public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExamina
     @Override
     public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId) {
         return convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getMsgByPID(pId));
+    }
+
+    @Override
+    public List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(Long pId) {
+        List<MedicineLiverFirstAbnormalExaminationDTO> mDTOlist = new ArrayList<>();
+        for(MedicineLiverFirstAbnormalExaminationDO mDO: firstAbnormalExaminationRepo.getAllMlfaeData(pId)) {
+            mDTOlist.add(convertUtil.mlfaeConvertoDTO(mDO));
+        }
+        mDTOlist.remove(0);
+        return mDTOlist;
     }
 }
