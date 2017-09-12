@@ -48,25 +48,27 @@ angular.module('firstAbnormalExamination', [])
       return unixTimestamp.getFullYear() + '-' + (unixTimestamp.getMonth() + 1) + '-' + unixTimestamp.getDate();
     }
 
+    //检查日期字段需要满足的情况
+    function checkDate( condition1) {
+      if (!condition1) {
+        return condition1;
+      } else {
+        if (condition1.includes('-')) {
+          return condition1;
+        } else {
+          return formatDateFromBack(condition1);
+        }
+      }
+    }
 
     $scope.showSaveModal = function() {
       var allData = {};
       allData.patientId = sessionStorage.getItem('mlPatientId');
-      if ($scope.tab1CheckDate){
-        allData.tab1CheckDate = formatDateFromBack($scope.tab1CheckDate);
-      }
-      if ($scope.tab2CheckDate) {
-        allData.tab2CheckDate = formatDateFromBack($scope.tab2CheckDate);
-      }
-      if ($scope.tab3CheckDate) {
-        allData.tab3CheckDate = formatDateFromBack($scope.tab3CheckDate);
-      }
-      if ($scope.tab4CheckDate) {
-        allData.tab4CheckDate = formatDateFromBack($scope.tab4CheckDate);
-      }
-      if ($scope.tab5CheckDate) {
-        allData.tab5CheckDate = formatDateFromBack($scope.tab5CheckDate);
-      }
+      allData.tab1CheckDate = checkDate($scope.tab1CheckDate);
+      allData.tab2CheckDate = checkDate($scope.tab2CheckDate);
+      allData.tab3CheckDate = checkDate($scope.tab3CheckDate);
+      allData.tab4CheckDate = checkDate($scope.tab4CheckDate);
+      allData.tab5CheckDate = checkDate($scope.tab5CheckDate);
       allData.alt = $scope.alt;
       allData.ast = $scope.ast;
       allData.ggt = $scope.ggt;
@@ -82,12 +84,16 @@ angular.module('firstAbnormalExamination', [])
       allData.pt = $scope.pt;
       allData.inr = $scope.inr;
       allData.afp = $scope.afp;
+      console.log(allData);
       $http({
         method: 'POST',
         url: '/api/mlfae/',
         data: allData
       }).then(function(){
         $scope.justModalContent = '操作成功';
+        $('#justModal').modal('show');
+      }, function() {
+        $scope.justModalContent = '操作失败';
         $('#justModal').modal('show');
       });
     };
