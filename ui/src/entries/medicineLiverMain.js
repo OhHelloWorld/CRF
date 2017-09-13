@@ -1,16 +1,21 @@
 'use strict';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../lib/css/css/AdminLTE.min.css';
 import '../lib/css/css/skins/skin-blue.min.css';
-import '../lib/css/js/app.min.js';
+import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import '../lib/css/css/slimScroll/jquery.slimscroll.min.js';
+import '../lib/js/fastclick.js';
 import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
 import '../../node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js';
 import '../../node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js';
 import '../../node_modules/chart.js';
-import '../../node_modules/angular-chart.js';
 import '../../node_modules/angular-bootstrap-checkbox';
+import '../../node_modules/angular-chart.js';
+import '../lib/css/js/app.min.js';
+import '../lib/css/js/demo.js';
+
+
 
 import '../modules/mlHome.js';
 import '../modules/mlPatientInfo.js';

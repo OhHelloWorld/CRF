@@ -37,10 +37,10 @@ homePage.config(['$stateProvider', '$urlRouterProvider', 'localStorageServicePro
   $urlRouterProvider.when('', '/default');
 
   $stateProvider.state('default', {
-      url: '/default',
-      template: require('../templates/default.html'),
-      controller: 'defaultController'
-    })
+    url: '/default',
+    template: require('../templates/default.html'),
+    controller: 'defaultController'
+  })
     .state('message', {
       url: '/message',
       template: require('../templates/message.html'),

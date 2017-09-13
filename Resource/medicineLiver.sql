@@ -207,7 +207,12 @@ create table medicine_liver_first_abnormal_examination(
 	alt_date Date,
 	ast varchar(20),
 	ast_date Date,
-	ggt varchar(20),
+    tab1_check_date Date,#肝脏生化检查时间
+	tab2_check_date Date,#肾功能检查时间
+    tab3_check_date Date,#血糖检查时间
+    tab4_check_date Date,#凝血功能检查时间
+    tab5_check_date Date,#肿瘤标志物检查时间
+    ggt varchar(20),
 	ggt_date Date,
 	alp varchar(20),
 	alp_date Date,
