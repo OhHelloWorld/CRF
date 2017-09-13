@@ -91,7 +91,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 是否停药</i>
                     </div>
-                    <input class="form-control" ng-model="drugWithdrawal">
+                    <input type="text" class="form-control" ng-model="drugWithDrawal">
                   </div>
                 </div>
 
@@ -100,7 +100,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 停药日期</i>
                     </div>
-                    <input class="form-control pull-right" id="drugWithdrawalDate" ng-model="drugWithdrawalDate" >
+                    <input type="text" class="form-control pull-right" id="drugWithdrawalDate" ng-model="drugWithDrawalDate" >
                   </div>
                 </div>
 
@@ -109,7 +109,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 是否减量</i>
                     </div>
-                    <input class="form-control" ng-model="decrement">
+                    <input type="text" class="form-control" ng-model="decrement">
                   </div>
                 </div>
 
@@ -118,7 +118,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 既往该药暴露史</i>
                     </div>
-                    <input class="form-control" ng-model="drugExposure">
+                    <input type="text" class="form-control" ng-model="drugExposure">
                   </div>
                 </div>
 
@@ -127,11 +127,13 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i>
                     </div>
-                    <input class="form-control" ng-model="exposureLiverDamage">
+                    <input type="text" class="form-control" ng-model="exposureLiverDamage">
                   </div>
                 </div>
               </div>
-              <button class="btn btn-primary col-md-offset-5" ng-click="addDrug()">新增</button>
+              <button class="btn btn-default col-md-offset-5" ng-click="addDrug()">
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+              </button>
 </div>
 </div>
 		  <span class="col-md-offset-10">&nbsp</span>

@@ -7,11 +7,29 @@
     <li class="active">症状体征</li>
   </ol>
 </section>
-<div ng-app="allergyHistory" ng-controller="allergyHistoryController">
-
-
 <div ng-model="symptoms" ng-controller="symptomsController">
-	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+	
+  <!--模态框-->
+  <div id="myModal" class="modal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                         </div>
+                         <div class="modal-body">
+                              <p class="h3">保存成功</p>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                         </div>
+                    </div>
+               </div>
+     </div>
+
+  <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
   <br>
   <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
       <br>
@@ -120,31 +138,15 @@
       	</tr>
 
       	<tr>
-      		<td>恶心</td>
-      		<td>
-      			<input type="radio" name="nausea" ng-model="nausea" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="nausea" ng-model="nausea" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="nausea" ng-model="nausea" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="nausea" ng-model="nausea" ng-value=4><span class="h5">不详</span></span>
-        	</td>
-      		<td>
-      			<input class="form-control" id="datepicker11" ng-model="nauseaBeginDate">
-      		</td>
-      		<td>
-      			<input class="form-control" id="datepicker12" ng-model="nauseaDisappearDate">
-      		</td>
-      		<td>
-      			<input type="radio" name="nauseaDischarge" ng-model="nauseaDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="nauseaDischarge" ng-model="nauseaDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="nauseaDischarge" ng-model="nauseaDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="nauseaDischarge" ng-model="nauseaDischarge" ng-value=4><span class="h5">不详</span></span>
-      		</td>
-      	</tr>
-
-      	<tr>
       		<td>呕吐</td>
       		<td>
       			<input type="radio" name="vomit" ng-model="vomit" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="vomit" ng-model="vomit" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="vomit" ng-model="vomit" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="vomit" ng-model="vomit" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker13" ng-model="vomitBeginDate">
+      			<input class="form-control" id="datepicker11" ng-model="vomitBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker14" ng-model="vomitDisappearDate">
+      			<input class="form-control" id="datepicker12" ng-model="vomitDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="vomitDischarge" ng-model="vomitDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="vomitDischarge" ng-model="vomitDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="vomitDischarge" ng-model="vomitDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="vomitDischarge" ng-model="vomitDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -157,10 +159,10 @@
       			<input type="radio" name="gingivalBleeding" ng-model="gingivalBleeding" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="gingivalBleeding" ng-model="gingivalBleeding" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="gingivalBleeding" ng-model="gingivalBleeding" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="gingivalBleeding" ng-model="gingivalBleeding" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker15" ng-model="gingivalBleedingBeginDate">
+      			<input class="form-control" id="datepicker13" ng-model="gingivalBleedingBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker16" ng-model="gingivalBleedingDisappearDate">
+      			<input class="form-control" id="datepicker14" ng-model="gingivalBleedingDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="gingivalBleedingDischarge" ng-model="gingivalBleedingDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="gingivalBleedingDischarge" ng-model="gingivalBleedingDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="gingivalBleedingDischarge" ng-model="gingivalBleedingDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="gingivalBleedingDischarge" ng-model="gingivalBleedingDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -173,10 +175,10 @@
       			<input type="radio" name="epistaxis" ng-model="epistaxis" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="epistaxis" ng-model="epistaxis" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="epistaxis" ng-model="epistaxis" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="epistaxis" ng-model="epistaxis" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker17" ng-model="epistaxisBeginDate">
+      			<input class="form-control" id="datepicker15" ng-model="epistaxisBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker18" ng-model="epistaxisDisappearDate">
+      			<input class="form-control" id="datepicker16" ng-model="epistaxisDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="epistaxisDischarge" ng-model="epistaxisDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="epistaxisDischarge" ng-model="epistaxisDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="epistaxisDischarge" ng-model="epistaxisDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="epistaxisDischarge" ng-model="epistaxisDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -189,10 +191,10 @@
       			<input type="radio" name="liverPain" ng-model="liverPain" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="liverPain" ng-model="liverPain" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="liverPain" ng-model="liverPain" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="liverPain" ng-model="liverPain" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker19" ng-model="liverPainBeginDate">
+      			<input class="form-control" id="datepicker17" ng-model="liverPainBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker20" ng-model="liverPainDisappearDate">
+      			<input class="form-control" id="datepicker18" ng-model="liverPainDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="liverPainDischarge" ng-model="liverPainDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="liverPainDischarge" ng-model="liverPainDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="liverPainDischarge" ng-model="liverPainDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="liverPainDischarge" ng-model="liverPainDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -205,10 +207,10 @@
       			<input type="radio" name="hepatomegaly" ng-model="hepatomegaly" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="hepatomegaly" ng-model="hepatomegaly" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="hepatomegaly" ng-model="hepatomegaly" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="hepatomegaly" ng-model="hepatomegaly" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker21" ng-model="hepatomegalyBeginDate">
+      			<input class="form-control" id="datepicker19" ng-model="hepatomegalyBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker22" ng-model="hepatomegalyDisappearDate">
+      			<input class="form-control" id="datepicker20" ng-model="hepatomegalyDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="hepatomegalyDischarge" ng-model="hepatomegalyDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="hepatomegalyDischarge" ng-model="hepatomegalyDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="hepatomegalyDischarge" ng-model="hepatomegalyDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="hepatomegalyDischarge" ng-model="hepatomegalyDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -221,10 +223,10 @@
       			<input type="radio" name="splenomegaly" ng-model="splenomegaly" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="splenomegaly" ng-model="splenomegaly" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="splenomegaly" ng-model="splenomegaly" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="splenomegaly" ng-model="splenomegaly" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker23" ng-model="splenomegalyBeginDate">
+      			<input class="form-control" id="datepicker21" ng-model="splenomegalyBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker24" ng-model="splenomegalyDisappearDate">
+      			<input class="form-control" id="datepicker22" ng-model="splenomegalyDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="splenomegalyDischarge" ng-model="splenomegalyDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="splenomegalyDischarge" ng-model="splenomegalyDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="splenomegalyDischarge" ng-model="splenomegalyDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="splenomegalyDischarge" ng-model="splenomegalyDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -237,10 +239,10 @@
       			<input type="radio" name="fever" ng-model="fever" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="fever" ng-model="fever" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="fever" ng-model="fever" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="fever" ng-model="fever" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker25" ng-model="feverBeginDate">
+      			<input class="form-control" id="datepicker23" ng-model="feverBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker26" ng-model="feverDisappearDate">
+      			<input class="form-control" id="datepicker24" ng-model="feverDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="feverDischarge" ng-model="feverDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="feverDischarge" ng-model="feverDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="feverDischarge" ng-model="feverDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="feverDischarge" ng-model="feverDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -253,10 +255,10 @@
       			<input type="radio" name="rash" ng-model="rash" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="rash" ng-model="rash" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="rash" ng-model="rash" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="rash" ng-model="rash" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker27" ng-model="rashBeginDate">
+      			<input class="form-control" id="datepicker25" ng-model="rashBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker28" ng-model="rashDisappearDate">
+      			<input class="form-control" id="datepicker26" ng-model="rashDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="rashDischarge" ng-model="rashDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="rashDischarge" ng-model="rashDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="rashDischarge" ng-model="rashDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="rashDischarge" ng-model="rashDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -269,10 +271,10 @@
       			<input type="radio" name="arthralgia" ng-model="arthralgia" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="arthralgia" ng-model="arthralgia" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="arthralgia" ng-model="arthralgia" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="arthralgia" ng-model="arthralgia" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker29" ng-model="arthralgiaBeginDate">
+      			<input class="form-control" id="datepicker27" ng-model="arthralgiaBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker30" ng-model="arthralgiaDisappearDate">
+      			<input class="form-control" id="datepicker28" ng-model="arthralgiaDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="arthralgiaDischarge" ng-model="arthralgiaDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="arthralgiaDischarge" ng-model="arthralgiaDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="arthralgiaDischarge" ng-model="arthralgiaDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="arthralgiaDischarge" ng-model="arthralgiaDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -285,10 +287,10 @@
       			<input type="radio" name="skinItch" ng-model="skinItch" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="skinItch" ng-model="skinItch" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="skinItch" ng-model="skinItch" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="skinItch" ng-model="skinItch" ng-value=4><span class="h5">不详</span></span>
         	</td>
       		<td>
-      			<input class="form-control" id="datepicker31" ng-model="skinItchBeginDate">
+      			<input class="form-control" id="datepicker29" ng-model="skinItchBeginDate">
       		</td>
       		<td>
-      			<input class="form-control" id="datepicker32" ng-model="skinItchDisappearDate">
+      			<input class="form-control" id="datepicker30" ng-model="skinItchDisappearDate">
       		</td>
       		<td>
       			<input type="radio" name="skinItchDischarge" ng-model="skinItchDischarge" ng-value=1><span class="h5">轻度</span><span><input type="radio" name="skinItchDischarge" ng-model="skinItchDischarge" ng-value=2><span class="h5">中度</span></span><span><input type="radio" name="skinItchDischarge" ng-model="skinItchDischarge" ng-value=3><span class="h5">重度</span></span><span><input type="radio" name="skinItchDischarge" ng-model="skinItchDischarge" ng-value=4><span class="h5">不详</span></span>
@@ -311,7 +313,9 @@
       		</td>
       	</tr>
       </table>
-      <button class="btn btn-primary col-md-offset-5" ng-click="addSymptoms()">新增</button>
+      <button class="btn btn-default col-md-offset-5" ng-click="addSymptoms()">
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+      </button>
       </div>
       <span class="col-md-offset-10">&nbsp</span>
       <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp

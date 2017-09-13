@@ -13,6 +13,7 @@ create table medicine_liver_patient(
     hospitalized_number varchar(50),#住院号
     hospitalized_department varchar(50),#住院科室
     hospitalized_age int,#住院年龄
+    hospital varchar(50),
     career varchar(50),#职业
     nation varchar(20),
     birthday datetime,
@@ -104,13 +105,13 @@ create table medicine_liver_suspected_drug_detail(
 	id int not null auto_increment,
 	medicine_liver_suspected_drug_id int,
 	generic_name varchar(50),#通用名
-	trede_name varchar(50),#商品名
+	trade_name varchar(50),#商品名
 	treat_complaint varchar(50),#治疗疾病
 	medication_method varchar(50),#用药方法
 	dose varchar(10),#日剂量
 	begin_date Date,#开始日期
-	drug_withdrawal varchar(50),#是否停药
-	drug_withdrawal_date Date,#停药日期
+	drug_with_drawal varchar(50),#是否停药
+	drug_with_drawal_date Date,#停药日期
 	decrement varchar(50),#是否减量
 	drug_exposure varchar(50),#既往该药暴露史
 	exposure_liver_damage varchar(50),#既往暴露引起肝损
@@ -422,8 +423,8 @@ create table medicine_liver_treatment_detail(
 	trade_name varchar(50),#商品名
 	detail_method varchar(50),#用药方法
 	dose varchar(50),#日剂量
-	start_date Date,#开始日期
-	end_date Date,#结束日期
+	detail_start_date Date,#开始日期
+	detail_end_date Date,#结束日期
 	primary key(id)
 );
 
@@ -433,8 +434,8 @@ create table medicine_liver_treatment_other(
 	medicine_liver_treatment_id int,
 	method varchar(50),#治疗措施
 	method_detail varchar(100),#治疗措施详述
-	start_date Date,#开始日期
-	end_date Date,#结束日期
+	other_start_date Date,#开始日期
+	other_end_date Date,#结束日期
 	primary key(id)
 );
 
@@ -442,16 +443,16 @@ create table medicine_liver_treatment_other(
 create table medicine_liver_disease_outcome(
 	id int not null auto_increment,
 	patient_id int,
-	outcome int,#疾病转归
+	outcome varchar(50),#疾病转归
 	complete boolean,
-	primary key(id)
+	primarymedicine_liver_disease_outcome key(id)
 );
 
 #生物样本留置
 create table medicine_liver_biological_samples(
 	id int not null auto_increment,
 	patient_id int,
-	biological_samples int,#是否留置
+	biological_samples varchar(50),#是否留置
 	complete boolean,
 	primary key(id)
 );

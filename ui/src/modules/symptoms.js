@@ -2,6 +2,8 @@ import angular from 'angular';
 
 angular.module('symptoms', [])
   .controller('symptomsController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
+    getMlPatient();
+
     var mlSymptoms = {};
     $scope.nameObj = {};
     $scope.descriptionObj = {};
@@ -9,11 +11,20 @@ angular.module('symptoms', [])
     $scope.disappearDateObj = {};
     $scope.dischargeSymptomsObj = {};
     $scope.medicineLiverSymptomsOtherDTOs = [];
-    for (var i = 1; i <= 32; i++) {
+    for (var i = 1; i <= 30; i++) {
       $('#datepicker' + i).datepicker({
         autoclose: true
       });
     }
+
+    $('#beginDate').datepicker({
+      autoclose:true
+    });
+
+    $('#disappearDate').datepicker({
+      autoclose:true
+    });
+
     var count = 0;
 
     $scope.addSymptoms = function() {
@@ -98,7 +109,7 @@ angular.module('symptoms', [])
         $scope.skinItch = data.skinItch;
         $scope.skinItchBeginDate = showDate(new Date(data.skinItchBeginDate));
         $scope.skinItchDisappearDate = showDate(new Date(data.skinItchDisappearDate));
-        $scope.skinItchDischarge = showDate(new Date(data.skinItchDischarge));
+        $scope.skinItchDischarge = data.skinItchDischarge;
         $scope.complete = data.complete;
 
         if (data.medicineLiverSymptomsOtherDTOs.length != 0) {
@@ -124,8 +135,8 @@ angular.module('symptoms', [])
           $scope.descriptionObj[i] = data.medicineLiverSymptomsOtherDTOs[i].description;
           $scope.dischargeSymptomsObj[i] = data.medicineLiverSymptomsOtherDTOs[i].dischargeSymptoms;
 
-          $scope.beginDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).beginDate));
-          $scope.disappearDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).disappearDate));
+          $scope.beginDateObj[i] = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).beginDate));
+          $scope.disappearDateObj[i] = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).disappearDate));
         }
       });
     }
@@ -193,7 +204,7 @@ angular.module('symptoms', [])
       mlSymptoms.skinItch = $scope.skinItch;
       mlSymptoms.skinItchBeginDate = new Date($scope.skinItchBeginDate);
       mlSymptoms.skinItchDisappearDate = new Date($scope.skinItchDisappearDate);
-      mlSymptoms.skinItchDischarge = new Date($scope.skinItchDischarge);
+      mlSymptoms.skinItchDischarge = $scope.skinItchDischarge;
       mlSymptoms.complete = true;
 
       mlSymptoms.medicineLiverSymptomsOtherDTOs.push({
@@ -224,5 +235,16 @@ angular.module('symptoms', [])
 
     function showDate(date) {
       return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
+    function getMlPatient() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        var data2 = response.data;
+        $scope.patientName = data2.name;
+        $scope.patientNumber = data2.identifier;
+      });
     }
   }]);

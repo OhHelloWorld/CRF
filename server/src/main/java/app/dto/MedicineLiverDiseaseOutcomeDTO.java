@@ -7,7 +7,7 @@ public class MedicineLiverDiseaseOutcomeDTO {
 
     private int id;
     private int patientId;
-    private int outcome;//疾病转归
+    private String outcome;//疾病转归
     private boolean complete;
 
     public int getId() {
@@ -26,11 +26,11 @@ public class MedicineLiverDiseaseOutcomeDTO {
         this.patientId = patientId;
     }
 
-    public int getOutcome() {
+    public String getOutcome() {
         return outcome;
     }
 
-    public void setOutcome(int outcome) {
+    public void setOutcome(String outcome) {
         this.outcome = outcome;
     }
 

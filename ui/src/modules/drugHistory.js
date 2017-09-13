@@ -2,6 +2,8 @@ import angular from 'angular';
 
 angular.module('drugHistory', [])
   .controller('drugHistoryController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
+
+    getMlPatient();
     var drugHistory = {};
     $scope.genericNameObj = {};
     $scope.tradeNameObj = {};
@@ -25,7 +27,7 @@ angular.module('drugHistory', [])
 
     $scope.addDrug = function() {
       count += 1;
-      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗疾病</i></div><input class="form-control" ng-model="treatComplaintObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="medicationMethodObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control pull-right" id="beginDate' + count + '" ng-model="beginDateObj[' + count + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否停药</i></div><input class="form-control" ng-model="drugWithdrawalObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 停药日期</i></div><input class="form-control pull-right" id="drugWithdrawalDate' + count + '" ng-model="drugWithdrawalDateObj[' + count + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否减量</i></div><input class="form-control" ng-model="decrementObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往该药暴露史</i></div><input class="form-control" ng-model="drugExposureObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i></div><input class="form-control" ng-model="exposureLiverDamageObj[' + count + ']"></div></div>';
+      var template = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗疾病</i></div><input class="form-control" ng-model="treatComplaintObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="medicationMethodObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control pull-right" id="beginDate' + count + '" ng-model="beginDateObj[' + count + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否停药</i></div><input type="text" class="form-control" ng-model="drugWithdrawalObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 停药日期</i></div><input class="form-control pull-right" id="drugWithdrawalDate' + count + '" ng-model="drugWithdrawalDateObj[' + count + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否减量</i></div><input type="text" class="form-control" ng-model="decrementObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往该药暴露史</i></div><input type="text" class="form-control" ng-model="drugExposureObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i></div><input type="text" class="form-control" ng-model="exposureLiverDamageObj[' + count + ']"></div></div>';
       var compileFn = $compile(template);
       var dom = compileFn($scope);
       dom.appendTo('#drug');
@@ -52,20 +54,20 @@ angular.module('drugHistory', [])
           $scope.treatComplaint = data.medicineLiverSuspectedDrugDetailDTOS[0].treatComplaint;
           $scope.dose = data.medicineLiverSuspectedDrugDetailDTOS[0].dose;
           $scope.medicationMethod = data.medicineLiverSuspectedDrugDetailDTOS[0].medicationMethod;
-          (function(data) {
-            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].beginDate);
-            $scope.beginDate = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
-            var drugWithdrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithdrawalDate);
-            $scope.drugWithdrawalDate = drugWithdrawalDate.getFullYear() + '-' + (drugWithdrawalDate.getMonth + 1) + '-' + drugWithdrawalDate.getDate();
-          })(data);
-          $scope.drugWithdrawal = data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithdrawal;
+          $scope.drugWithDrawal = data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithDrawal;
           $scope.decrement = data.medicineLiverSuspectedDrugDetailDTOS[0].decrement;
           $scope.drugExposure = data.medicineLiverSuspectedDrugDetailDTOS[0].drugExposure;
           $scope.exposureLiverDamage = data.medicineLiverSuspectedDrugDetailDTOS[0].exposureLiverDamage;
+          (function(data) {
+            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].beginDate);
+            $scope.beginDate = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
+            var drugWithDrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithDrawalDate);
+            $scope.drugWithDrawalDate = drugWithDrawalDate.getFullYear() + '-' + (drugWithDrawalDate.getMonth() + 1) + '-' + drugWithDrawalDate.getDate();
+          })(data);
         }
 
         for (var i = 1; i < data.medicineLiverSuspectedDrugDetailDTOS.length; i++) {
-          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗疾病</i></div><input class="form-control" ng-model="treatComplaintObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="medicationMethodObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control pull-right" id="beginDate' + i + '" ng-model="beginDateObj[' + i + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否停药</i></div><input class="form-control" ng-model="drugWithdrawalObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 停药日期</i></div><input class="form-control pull-right" id="drugWithdrawalDate' + i + '" ng-model="drugWithdrawalDateObj[' + i + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否减量</i></div><input class="form-control" ng-model="decrementObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往该药暴露史</i></div><input class="form-control" ng-model="drugExposureObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i></div><input class="form-control" ng-model="exposureLiverDamageObj[' + i + ']"></div></div>';
+          var template = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗疾病</i></div><input class="form-control" ng-model="treatComplaintObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="medicationMethodObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control pull-right" id="beginDate' + i + '" ng-model="beginDateObj[' + i + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否停药</i></div><input class="form-control" ng-model="drugWithdrawalObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 停药日期</i></div><input class="form-control pull-right" id="drugWithdrawalDate' + i + '" ng-model="drugWithdrawalDateObj[' + i + ']" ></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否减量</i></div><input class="form-control" ng-model="decrementObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往该药暴露史</i></div><input class="form-control" ng-model="drugExposureObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i></div><input class="form-control" ng-model="exposureLiverDamageObj[' + i + ']"></div></div>';
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#drug');
@@ -80,16 +82,16 @@ angular.module('drugHistory', [])
           $scope.treatComplaintObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].treatComplaint;
           $scope.doseObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].dose;
           $scope.medicationMethodObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].medicationMethod;
-          (function(data) {
-            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].beginDate);
-            $scope.beginDateObj[i] = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
-            var drugWithdrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithdrawalDate);
-            $scope.drugWithdrawalDateObj[i] = drugWithdrawalDate.getFullYear() + '-' + (drugWithdrawalDate.getMonth + 1) + '-' + drugWithdrawalDate.getDate();
-          })(data);
-          $scope.drugWithdrawalObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithdrawal;
+          $scope.drugWithdrawalObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithDrawal;
           $scope.decrementObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].decrement;
           $scope.drugExposureObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].drugExposure;
           $scope.exposureLiverDamageObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].exposureLiverDamage;
+          (function(data) {
+            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].beginDate);
+            $scope.beginDateObj[i] = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
+            var drugWithDrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithDrawalDate);
+            $scope.drugWithdrawalDateObj[i] = drugWithDrawalDate.getFullYear() + '-' + (drugWithDrawalDate.getMonth() + 1) + '-' + drugWithDrawalDate.getDate();
+          })(data);
         }
       });
     }
@@ -106,13 +108,12 @@ angular.module('drugHistory', [])
         medicationMethod: $scope.medicationMethod,
         dose: $scope.dose,
         beginDate: new Date($scope.beginDate),
-        drugWithdrawal: $scope.drugWithdrawal,
-        drugWithdrawalDate: new Date($scope.drugWithdrawalDate),
+        drugWithDrawal: $scope.drugWithDrawal,
+        drugWithDrawalDate: new Date($scope.drugWithDrawalDate),
         decrement: $scope.decrement,
         drugExposure: $scope.drugExposure,
         exposureLiverDamage: $scope.exposureLiverDamage
       });
-      drugHistory.projectId = 2;
       for (var i = 0; i < count; i++) {
         drugHistory.medicineLiverSuspectedDrugDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
@@ -122,8 +123,8 @@ angular.module('drugHistory', [])
           medicationMethod: $scope.medicationMethodObj[i + 1],
           dose: $scope.doseObj[i + 1],
           beginDate: new Date($scope.beginDateObj[i + 1]),
-          drugWithdrawal: $scope.drugWithdrawalObj[i + 1],
-          drugWithdrawalDate: new Date($scope.drugWithdrawalDateObj[i + 1]),
+          drugWithDrawal: $scope.drugWithdrawalObj[i + 1],
+          drugWithDrawalDate: new Date($scope.drugWithdrawalDateObj[i + 1]),
           decrement: $scope.decrementObj[i + 1],
           drugExposure: $scope.drugExposureObj[i + 1],
           exposureLiverDamage: $scope.exposureLiverDamageObj[i + 1]
@@ -137,4 +138,15 @@ angular.module('drugHistory', [])
         $('#myModal').modal();
       });
     };
+
+    function getMlPatient() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        var data2 = response.data;
+        $scope.patientName = data2.name;
+        $scope.patientNumber = data2.identifier;
+      });
+    }
   }]);

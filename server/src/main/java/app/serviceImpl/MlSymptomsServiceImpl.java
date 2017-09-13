@@ -170,6 +170,7 @@ public class MlSymptomsServiceImpl implements MlSymptomsService {
         medicineLiverSymptomsDO.setSkinItchBeginDate(medicineLiverSymptomsDTO.getSkinItchBeginDate());
         medicineLiverSymptomsDO.setSkinItchDisappearDate(medicineLiverSymptomsDTO.getSkinItchDisappearDate());
         medicineLiverSymptomsDO.setSkinItchDischarge(medicineLiverSymptomsDTO.getSkinItchDischarge());
+        medicineLiverSymptomsDO.setPatientId(medicineLiverSymptomsDTO.getPatientId());
 
         List<MedicineLiverSymptomsOtherDO> medicineLiverSymptomsOtherDOS = new ArrayList<>();
         List<MedicineLiverSymptomsOtherDTO> medicineLiverSymptomsOtherDTOS = medicineLiverSymptomsDTO.getMedicineLiverSymptomsOtherDTOs();

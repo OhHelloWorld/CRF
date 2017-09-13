@@ -6,7 +6,7 @@ import '../entries/medicineLiverMain.js';
 angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
   .controller('mlHomeController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
     loginStatus();
-    $scope.url = '/api/patient/project/2';
+    $scope.url = '/api/mlPatient/project/2';
     $scope.mlChangeMenuStatus();
     $scope.mlPatientClick = function(patient) {
       sessionStorage.setItem('mlPatientId', patient.id);
@@ -16,11 +16,11 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
     };
 
     $scope.query = function() {
-      $scope.url = '/api/patient/2/q?queryStr=' + $scope.queryStr;
+      $scope.url = '/api/mlPatient/2/q?queryStr=' + $scope.queryStr;
     };
 
     $scope.all = function() {
-      $scope.url = '/api/patient/project/2';
+      $scope.url = '/api/mlPatient/project/2';
     };
 
     $scope.addPatient = function() {

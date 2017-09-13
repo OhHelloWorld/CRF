@@ -7,7 +7,7 @@ public class MedicineLiverBiologicalSamplesDTO {
 
     private int id;
     private int patientId;
-    private int biologicalSamples;//是否留置
+    private String biologicalSamples;//是否留置
     private boolean complete;
 
     public int getId() {
@@ -26,11 +26,11 @@ public class MedicineLiverBiologicalSamplesDTO {
         this.patientId = patientId;
     }
 
-    public int getBiologicalSamples() {
+    public String getBiologicalSamples() {
         return biologicalSamples;
     }
 
-    public void setBiologicalSamples(int biologicalSamples) {
+    public void setBiologicalSamples(String biologicalSamples) {
         this.biologicalSamples = biologicalSamples;
     }
 

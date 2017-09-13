@@ -2,6 +2,8 @@ import angular from 'angular';
 
 angular.module('drink', [])
   .controller('drinkController', ['$scope', '$http', '$state', 'localStorageService','$compile', function($scope, $http, $state, localStorageService,$compile) {
+    getMlPatient();
+
     var drink = {};
     $scope.drinkTypeObj = {};
     $scope.drinkQuantityObj = {};
@@ -33,7 +35,9 @@ angular.module('drink', [])
         if (data.medicineLiverDrinkDetailDTOS.length != 0) {
           $scope.drinkType = data.medicineLiverDrinkDetailDTOS[0].drinkType;
           $scope.drinkQuantity = data.medicineLiverDrinkDetailDTOS[0].drinkQuantity;
-          $scope.detailId = data.medicineLiverDrinkDetailDTOS[0].id;
+          $scope.drinkLife = data.medicineLiverDrinkDetailDTOS[0].drinkLife;
+          $scope.proof = data.medicineLiverDrinkDetailDTOS[0].proof;
+          // $scope.detailId = data.medicineLiverDrinkDetailDTOS[0].id;
         }
 
         for (var i = 1; i < data.medicineLiverDrinkDetailDTOS.length; i++) {
@@ -63,7 +67,6 @@ angular.module('drink', [])
         proof:$scope.proof
         // id: $scope.detailId,
       });
-      drink.projectId = 2;
       for (var i = 0; i < count; i++) {
         drink.medicineLiverDrinkDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
@@ -81,4 +84,19 @@ angular.module('drink', [])
         $('#myModal').modal();
       });
     };
+
+    $scope.layout = function(){
+      $state.go('mlHome');
+    };
+
+    function getMlPatient() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        var data2 = response.data;
+        $scope.patientName = data2.name;
+        $scope.patientNumber = data2.identifier;
+      });
+    }
   }]);

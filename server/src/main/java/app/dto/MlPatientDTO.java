@@ -17,8 +17,6 @@ public class MlPatientDTO {
     private String nation;
     private float height;
     private float weight;
-    private boolean smoke;
-    private boolean drink;
     private String department;//科室
     private Date admissionDate;//入院日期
     private Date dischargeDate;//出院日期
@@ -26,20 +24,8 @@ public class MlPatientDTO {
     private String hospitalizedDepartment;//住院科室
     private int hospitalizedAge;//住院年龄
     private String career;//职业
-    private String familyHistory;
     private Date birthday;
-    private int bmi;
-    private String degreeOfEducation;
-    private Date firstTimeLiverInjury;
-    private String investigateHospital;
-    private String telephone;
-    private String durationOfVisit;
-    private Long firstVisitAge;
-    private Date firstVisitTime;
-    private String smokeDrinkFamHis;
-    private boolean concurrentAutoDisease;
-    private Date concurrentAutoDate;
-    private boolean conAutoDisFirstOrNot;
+    private String hospital;
     private boolean complete;
     private Long hospitalId;
     private Long projectId;
@@ -77,6 +63,14 @@ public class MlPatientDTO {
 
     public void setIdentifier(String identifier) {
         this.identifier = identifier;
+    }
+
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
     }
 
     public String getHospitalizedNumber() {
@@ -183,132 +177,12 @@ public class MlPatientDTO {
         this.weight = weight;
     }
 
-    public boolean isSmoke() {
-        return smoke;
-    }
-
-    public void setSmoke(boolean smoke) {
-        this.smoke = smoke;
-    }
-
-    public boolean isDrink() {
-        return drink;
-    }
-
-    public void setDrink(boolean drink) {
-        this.drink = drink;
-    }
-
-    public String getFamilyHistory() {
-        return familyHistory;
-    }
-
-    public void setFamilyHistory(String familyHistory) {
-        this.familyHistory = familyHistory;
-    }
-
     public Date getBirthday() {
         return birthday;
     }
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }
-
-    public int getBmi() {
-        return bmi;
-    }
-
-    public void setBmi(int bmi) {
-        this.bmi = bmi;
-    }
-
-    public String getDegreeOfEducation() {
-        return degreeOfEducation;
-    }
-
-    public void setDegreeOfEducation(String degreeOfEducation) {
-        this.degreeOfEducation = degreeOfEducation;
-    }
-
-    public Date getFirstTimeLiverInjury() {
-        return firstTimeLiverInjury;
-    }
-
-    public void setFirstTimeLiverInjury(Date firstTimeLiverInjury) {
-        this.firstTimeLiverInjury = firstTimeLiverInjury;
-    }
-
-    public String getInvestigateHospital() {
-        return investigateHospital;
-    }
-
-    public void setInvestigateHospital(String investigateHospital) {
-        this.investigateHospital = investigateHospital;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getDurationOfVisit() {
-        return durationOfVisit;
-    }
-
-    public void setDurationOfVisit(String durationOfVisit) {
-        this.durationOfVisit = durationOfVisit;
-    }
-
-    public Long getFirstVisitAge() {
-        return firstVisitAge;
-    }
-
-    public void setFirstVisitAge(Long firstVisitAge) {
-        this.firstVisitAge = firstVisitAge;
-    }
-
-    public Date getFirstVisitTime() {
-        return firstVisitTime;
-    }
-
-    public void setFirstVisitTime(Date firstVisitTime) {
-        this.firstVisitTime = firstVisitTime;
-    }
-
-    public String getSmokeDrinkFamHis() {
-        return smokeDrinkFamHis;
-    }
-
-    public void setSmokeDrinkFamHis(String smokeDrinkFamHis) {
-        this.smokeDrinkFamHis = smokeDrinkFamHis;
-    }
-
-    public boolean isConcurrentAutoDisease() {
-        return concurrentAutoDisease;
-    }
-
-    public void setConcurrentAutoDisease(boolean concurrentAutoDisease) {
-        this.concurrentAutoDisease = concurrentAutoDisease;
-    }
-
-    public Date getConcurrentAutoDate() {
-        return concurrentAutoDate;
-    }
-
-    public void setConcurrentAutoDate(Date concurrentAutoDate) {
-        this.concurrentAutoDate = concurrentAutoDate;
-    }
-
-    public boolean isConAutoDisFirstOrNot() {
-        return conAutoDisFirstOrNot;
-    }
-
-    public void setConAutoDisFirstOrNot(boolean conAutoDisFirstOrNot) {
-        this.conAutoDisFirstOrNot = conAutoDisFirstOrNot;
     }
 
     public boolean isComplete() {
@@ -335,19 +209,19 @@ public class MlPatientDTO {
         this.dischargeDiagnosisDTOS = dischargeDiagnosisDTOS;
     }
 
-    @Override
-    public String toString() {
-        return "PatientDTO{" + "id=" + id + ", identifier='" + identifier + '\'' + ", name='" + name
-                + '\'' + ", gender='" + gender + '\'' + ", nation=" + nation + ", height=" + height
-                + ", weight=" + weight + ", smoke=" + smoke + ", drink=" + drink
-                + ", familyHistory=" + familyHistory + ", birthday=" + birthday + ", bmi=" + bmi
-                + ", degreeOfEducation='" + degreeOfEducation + '\'' + ", firstTimeLiverInjury='"
-                + firstTimeLiverInjury + '\'' + ", investigateHospital='" + investigateHospital
-                + '\'' + ", telephone='" + telephone + '\'' + ", durationOfVisit='"
-                + durationOfVisit + '\'' + ", firstVisitAge=" + firstVisitAge + ", firstVisitTime="
-                + firstVisitTime + ", smokeDrinkFamHis='" + smokeDrinkFamHis + '\''
-                + ", concurrentAutoDisease='" + concurrentAutoDisease + '\''
-                + ", concurrentAutoDate=" + concurrentAutoDate + ", conAutoDisFirstOrNot="
-                + conAutoDisFirstOrNot + ", complete=" + complete + '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "PatientDTO{" + "id=" + id + ", identifier='" + identifier + '\'' + ", name='" + name
+//                + '\'' + ", gender='" + gender + '\'' + ", nation=" + nation + ", height=" + height
+//                + ", weight=" + weight + ", smoke=" + smoke + ", drink=" + drink
+//                + ", familyHistory=" + familyHistory + ", birthday=" + birthday + ", bmi=" + bmi
+//                + ", degreeOfEducation='" + degreeOfEducation + '\'' + ", firstTimeLiverInjury='"
+//                + firstTimeLiverInjury + '\'' + ", investigateHospital='" + investigateHospital
+//                + '\'' + ", telephone='" + telephone + '\'' + ", durationOfVisit='"
+//                + durationOfVisit + '\'' + ", firstVisitAge=" + firstVisitAge + ", firstVisitTime="
+//                + firstVisitTime + ", smokeDrinkFamHis='" + smokeDrinkFamHis + '\''
+//                + ", concurrentAutoDisease='" + concurrentAutoDisease + '\''
+//                + ", concurrentAutoDate=" + concurrentAutoDate + ", conAutoDisFirstOrNot="
+//                + conAutoDisFirstOrNot + ", complete=" + complete + '}';
+//    }
 }

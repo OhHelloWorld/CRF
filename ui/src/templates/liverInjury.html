@@ -1,1 +1,112 @@
-<div ng-model="liverInjury" ng-controller="liverInjuryController"><p>这是药肝肝脏损伤</p></div>
+<section class="content-header">
+  <h1 class=" text-center">
+     药肝严重程度
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">药肝严重程度</li>
+  </ol>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                  <p class="h3">保存成功</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+              </div>
+            </div>
+</div>
+
+<div ng-model="liverInjury" ng-controller="liverInjuryController">
+	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+  <br>
+  <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+      <br>
+      <div class="box box-info">
+      <div class="box-header with-border">
+              <h3 class="box-title">是否有腹水</h3>
+      </div>
+      
+      <div class="box-body">
+        <input type="radio" name="ascites" ng-model="ascites" ng-value=1><span class="h4">是</span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="ascites" ng-model="ascites" ng-value=2><span class="h4">否</span>
+        </span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="ascites" ng-model="ascites" ng-value=3><span class="h4">未知</span>
+        </span>
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">是否有肝性脑病</h3>
+      </div>
+      <div class="box-body">
+        <input type="radio" name="hepaticEncephalopathy" ng-model="hepaticEncephalopathy" ng-value=1><span class="h4">是</span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="hepaticEncephalopathy" ng-model="hepaticEncephalopathy" ng-value=2><span class="h4">否</span>
+        </span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="hepaticEncephalopathy" ng-model="hepaticEncephalopathy" ng-value=3><span class="h4">未知</span>
+        </span>
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">是否有延长INR（否.5）或者凝血时间（>3秒正常时间以上）</h3>
+      </div>
+      <div class="box-body">
+        <input type="radio" name="extendInr" ng-model="extendInr" ng-value=1><span class="h4">是</span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="extendInr" ng-model="extendInr" ng-value=2><span class="h4">否</span>
+        </span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="extendInr" ng-model="extendInr" ng-value=3><span class="h4">未知</span>
+        </span>
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等</h3>
+      </div>
+      <div class="box-body">
+        <input type="radio" name="failure" ng-model="failure" ng-value=1><span class="h4">是</span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="failure" ng-model="failure" ng-value=2><span class="h4">否</span>
+        </span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="failure" ng-model="failure" ng-value=3><span class="h4">未知</span>
+        </span>
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">由于肝损伤的原因，患者住院时间是否延长</h3>
+      </div>
+      <div class="box-body">
+        <input type="radio" name="extendHospitalStay" ng-model="extendHospitalStay" ng-value=1><span class="h4">是</span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="extendHospitalStay" ng-model="extendHospitalStay" ng-value=2><span class="h4">否</span>
+        </span>
+        <span class="col-md-offset-1">
+          <input type="radio" name="extendHospitalStay" ng-model="extendHospitalStay" ng-value=3><span class="h4">未知</span>
+        </span>
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">使用Hepatox网站上的RUCAM评分</h3>
+      </div>
+      <div class="box-body">
+        <input type="text" class="form-control" ng-model="rucam">
+      </div>
+      </div>
+      <div class="col-md-offset-9">
+      <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
+      <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
+      </div>
+</div>
