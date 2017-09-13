@@ -9,175 +9,210 @@
 <div ng-app="hospitalAbnormalExamination" ng-controller="hospitalAbnormalExaminationController">
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span12">
-        <u class="h4 col-md-offset-9">患者：</u>
-        <br>
-        <u class="h4 col-md-offset-9">病理号：</u>
-        <form class="form-inline col-md-offset-9">
-          <div class="form-group">
-            <u class="h4">随访</u>
-            <checkbox ng-model="follow"></checkbox>
-            <div class="input-group date" ng-show="followDateShow">
-              <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+
+      <section class="content">
+
+        <div class="span12">
+          <u class="h4 col-md-offset-9">患者：</u>
+          <br>
+          <u class="h4 col-md-offset-9">病理号：</u>
+          <form class="form-inline col-md-offset-9">
+            <div class="form-group">
+              <u class="h4">随访</u>
+              <checkbox ng-model="follow"></checkbox>
+              <div class="input-group date" ng-show="followDateShow">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
               </div>
-              <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+            </div>
+          </form>
+        </div>
+
+
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">肝脏生化检查：</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style=" text-align: -webkit-center;">检查日期</th>
+                  <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
+                  <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
+                  <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
+                  <th style=" text-align: -webkit-center;">碱性磷酸酶(ALP)(IU/L)</th>
+                  <th style=" text-align: -webkit-center;">胆汁酸(umol/L)</th>
+                  <th style=" text-align: -webkit-center;">总胆红素(TBIL)(umol/L)</th>
+                  <th style=" text-align: -webkit-center;">直接胆红素(结合，DBIL)(umol/L)</th>
+                  <th style=" text-align: -webkit-center;">总蛋白(TP)(g/L)</th>
+                  <th style=" text-align: -webkit-center;">白蛋白(ALB)(g/L)</th>
+                </tr>
+              </thead>
+              <tbody ng-repeat="mlfae in mlfaes">
+                <tr>
+                  <td height="38px" ng-bind="mlfae.tab1CheckDate" style=" text-align: -webkit-center;"></td>
+                  <td height="38px" ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.ggt" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.alp" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.bileAcid" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.tbil" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.dbil" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.tp" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" ng-bind="mlfae.alb" style=" text-align: -webkit-center; "></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm no-margin pull-right">
+              <li><a ng-click="">&laquo;</a></li>
+              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
+              <li><a ng-click="">&raquo;</a></li>
+            </ul>
+          </div>
+
+
+        <div class="box">
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">肾功能检查</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example1" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
+                      <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="mlfae in mlfaes">
+                    <tr>
+                      <td height="38px" ng-bind="mlfae.tab2CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
+                      <td height="38px" ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </form>
-      </div>
 
 
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">血糖检查</h3>
+              </div>
+              <div class="box-body">
+                <table id="example3" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="mlfae in mlfaes">
+                    <tr>
+                      <td height="38px" ng-bind="mlfae.tab3CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" ng-bind="mlfae.plasmaGlucose" style=" text-align: -webkit-center; "></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
-
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">肝脏生化检查：</h3>
+          <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm no-margin pull-right">
+              <li><a ng-click="">&laquo;</a></li>
+              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
+              <li><a ng-click="">&raquo;</a></li>
+            </ul>
+          </div>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <table id="example2" class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style=" text-align: -webkit-center;">检查日期</th>
-                <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
-                <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
-                <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
-                <th style=" text-align: -webkit-center;">碱性磷酸酶(ALP)(IU/L)</th>
-                <th style=" text-align: -webkit-center;">胆汁酸(umol/L)</th>
-                <th style=" text-align: -webkit-center;">总胆红素(TBIL)(umol/L)</th>
-                <th style=" text-align: -webkit-center;">直接胆红素(结合，DBIL)(umol/L)</th>
-                <th style=" text-align: -webkit-center;">总蛋白(TP)(g/L)</th>
-                <th style=" text-align: -webkit-center;">白蛋白(ALB)(g/L)</th>
-              </tr>
-            </thead>
-            <tbody ng-repeat="mlfae in mlfaes">
-              <tr>
-                <td ng-bind="mlfae.tab1CheckDate" style=" text-align: -webkit-center;"></td>
-                <td ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.ggt" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.alp" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.bileAcid" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.tbil" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.dbil" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.tp" style=" text-align: -webkit-center; "></td>
-                <td ng-bind="mlfae.alb" style=" text-align: -webkit-center; "></td>
-              </tr>
-            </tbody>
-            
-          </table>
-        </div>
-        <!-- /.box-body -->
-      </div>
+        
 
-      <div class="col-md-6">
         <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">肾功能检查</h3>
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">凝血功能检查</h3>
+              </div>
+              <div class="box-body">
+                <table id="example4" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
+                      <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="mlfae in mlfaes">
+                    <tr>
+                      <td height="38px" ng-bind="mlfae.tab4CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" ng-bind="mlfae.pt" style=" text-align: -webkit-center; "></td>
+                      <td height="38px" ng-bind="mlfae.inr" style=" text-align: -webkit-center; "></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th style=" text-align: -webkit-center;">检查日期</th>
-                  <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
-                  <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
-                </tr>
-              </thead>
-              <tbody ng-repeat="mlfae in mlfaes">
-                <tr>
-                  <td ng-bind="mlfae.tab2CheckDate" style=" text-align: -webkit-center;"></td>
-                  <td ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
-                  <td ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
-                </tr>
-              </tbody>
-            </table>
+
+
+
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">肿瘤标志物</h3>
+              </div>
+              <div class="box-body">
+                <table id="example5" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="mlfae in mlfaes">
+                    <tr>
+                      <td height="38px" ng-bind="mlfae.tab5CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" ng-bind="mlfae.afp" style=" text-align: -webkit-center; "></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm no-margin pull-right">
+              <li><a ng-click="">&laquo;</a></li>
+              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
+              <li><a ng-click="">&raquo;</a></li>
+            </ul>
           </div>
         </div>
-      </div>
 
 
-      <div class="col-md-6">
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">血糖检查</h3>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th style=" text-align: -webkit-center;">检查日期</th>
-                  <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
-                </tr>
-              </thead>
-              <tbody ng-repeat="mlfae in mlfaes">
-                <tr>
-                  <td ng-bind="mlfae.tab3CheckDate" style=" text-align: -webkit-center;"></td>
-                  <td ng-bind="mlfae.plasmaGlucose" style=" text-align: -webkit-center; "></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+
         </div>
-      </div>
-
-
-      <div class="col-md-6">
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">凝血功能检查</h3>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th style=" text-align: -webkit-center;">检查日期</th>
-                  <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
-                  <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
-                </tr>
-              </thead>
-              <tbody ng-repeat="mlfae in mlfaes">
-                <tr>
-                  <td ng-bind="mlfae.tab4CheckDate" style=" text-align: -webkit-center;"></td>                  
-                  <td ng-bind="mlfae.pt" style=" text-align: -webkit-center; "></td>
-                  <td ng-bind="mlfae.inr" style=" text-align: -webkit-center; "></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-6">
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">肿瘤标志物</h3>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th style=" text-align: -webkit-center;">检查日期</th>
-                  <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
-                </tr>
-              </thead>
-              <tbody ng-repeat="mlfae in mlfaes">
-                <tr>
-                  <td ng-bind="mlfae.tab5CheckDate" style=" text-align: -webkit-center;"></td>                  
-                  <td ng-bind="mlfae.afp" style=" text-align: -webkit-center; "></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
 </div>
+</div>
+
+
+
+
+
+

@@ -645,6 +645,8 @@ public class ConvertUtil {
 
     public MedicineLiverFirstAbnormalExaminationDTO mlfaeConvertoDTO(MedicineLiverFirstAbnormalExaminationDO mdo) {
         MedicineLiverFirstAbnormalExaminationDTO mdto = new MedicineLiverFirstAbnormalExaminationDTO();
+        mdto.setId(mdo.getId());
+        mdto.setPatientId(mdo.getPatientId());
         mdto.setAlt(mdo.getAlt());
         mdto.setAst(mdo.getAst());
         mdto.setTab1CheckDate(mdo.getTab1CheckDate());
@@ -670,6 +672,7 @@ public class ConvertUtil {
 
     public MedicineLiverFirstAbnormalExaminationDO mlfaeConverToDO(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO) {
         MedicineLiverFirstAbnormalExaminationDO mDO = new MedicineLiverFirstAbnormalExaminationDO();
+        mDO.setId(mlfaeDTO.getId());
         mDO.setPatientId(mlfaeDTO.getPatientId());
         mDO.setTab1CheckDate(mlfaeDTO.getTab1CheckDate());
         mDO.setTab2CheckDate(mlfaeDTO.getTab2CheckDate());
