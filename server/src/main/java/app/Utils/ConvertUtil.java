@@ -697,4 +697,174 @@ public class ConvertUtil {
         return mDO;
     }
 
+    public MedicineLiverExcludeOtherDO excludeConverToDO(MedicineLiverExcludeOtherDTO mDTO){
+        MedicineLiverExcludeOtherDO mDO = new MedicineLiverExcludeOtherDO();
+        mDO.setPatientId(mDTO.getPatientId());
+        mDO.setAntiHav(mDTO.getAntiHav());
+        mDO.setAntiHavDate(mDTO.getAntiHavDate());
+        mDO.setHbvdna(mDTO.getHbvdna());
+        mDO.setHbvdnaDate(mDTO.getHbvdnaDate());
+        mDO.setAntihcv(mDTO.getAntihcv());
+        mDO.setAntihcvDate(mDTO.getAntihcvDate());
+        mDO.setHcvrna(mDTO.getHcvrna());
+        mDO.setHcvrnaDate(mDTO.getHcvrnaDate());
+        mDO.setMononucleosis(mDTO.getMononucleosis());
+        mDO.setMononucleosisDate(mDTO.getMononucleosisDate());
+        mDO.setRheumatoid(mDTO.getRheumatoid());
+        mDO.setCeruloplasmin(mDTO.getCeruloplasmin());
+        mDO.setHepatitisBFiveDate(mDTO.getHepatitisBFiveDate());
+        mDO.setHbsag(mDTO.getHbsag());
+        mDO.setHbsab(mDTO.getHbsab());
+        mDO.setHbcab(mDTO.getHbcab());
+        mDO.setHbeag(mDTO.getHbeag());
+        mDO.setHbeab(mDTO.getHbeab());
+        mDO.setAutoimmuneAntibodyDate(mDTO.getAutoimmuneAntibodyDate());
+        mDO.setAna(mDTO.getAna());
+        mDO.setAma(mDTO.getAma());
+        mDO.setAmam2(mDTO.getAmam2());
+        mDO.setSma(mDTO.getSma());
+        mDO.setLkm(mDTO.getLkm());
+        mDO.setOtherVirusCheckDate(mDTO.getOtherVirusCheckDate());
+        mDO.setCytomegalovirus(mDTO.getCytomegalovirus());
+        mDO.setEbviruses(mDTO.getEbviruses());
+        mDO.setHerpesSimplex(mDTO.getHerpesSimplex());
+        mDO.setCeruloplasminDate(mDTO.getCeruloplasminDate());
+        mDO.setRheumatoidDate(mDTO.getRheumatoidDate());
+        return mDO;
+    }
+
+    public MedicineLiverExcludeOtherDTO excludeConverToDTO(MedicineLiverExcludeOtherDO mDO) {
+        MedicineLiverExcludeOtherDTO mDTO = new MedicineLiverExcludeOtherDTO();
+        mDTO.setId(mDO.getId());
+        mDTO.setPatientId(mDO.getPatientId());
+        mDTO.setAntiHav(mDO.getAntiHav());
+        mDTO.setAntiHavDate(mDO.getAntiHavDate());
+        mDTO.setHbvdna(mDO.getHbvdna());
+        mDTO.setHbvdnaDate(mDO.getHbvdnaDate());
+        mDTO.setAntihcv(mDO.getAntihcv());
+        mDTO.setAntihcvDate(mDO.getAntihcvDate());
+        mDTO.setHcvrna(mDO.getHcvrna());
+        mDTO.setHcvrnaDate(mDO.getHcvrnaDate());
+        mDTO.setMononucleosis(mDO.getMononucleosis());
+        mDTO.setMononucleosisDate(mDO.getMononucleosisDate());
+        mDTO.setRheumatoid(mDO.getRheumatoid());
+        mDTO.setCeruloplasmin(mDO.getCeruloplasmin());
+        mDTO.setHepatitisBFiveDate(mDO.getHepatitisBFiveDate());
+        mDTO.setHbsag(mDO.getHbsag());
+        mDTO.setHbsab(mDO.getHbsab());
+        mDTO.setHbcab(mDO.getHbcab());
+        mDTO.setHbeag(mDO.getHbeag());
+        mDTO.setHbeab(mDO.getHbeab());
+        mDTO.setAutoimmuneAntibodyDate(mDO.getAutoimmuneAntibodyDate());
+        mDTO.setAna(mDO.getAna());
+        mDTO.setAma(mDO.getAma());
+        mDTO.setAmam2(mDO.getAmam2());
+        mDTO.setSma(mDO.getSma());
+        mDTO.setLkm(mDO.getLkm());
+        mDTO.setOtherVirusCheckDate(mDO.getOtherVirusCheckDate());
+        mDTO.setCytomegalovirus(mDO.getCytomegalovirus());
+        mDTO.setEbviruses(mDO.getEbviruses());
+        mDTO.setHerpesSimplex(mDO.getHerpesSimplex());
+        mDTO.setCeruloplasminDate(mDO.getCeruloplasminDate());
+        mDTO.setRheumatoidDate(mDO.getRheumatoidDate());
+        return mDTO;
+    }
+
+    public MedicineLiverRoutineBloodDO routineConverToDO(MedicineLiverRoutineBloodDTO mDTO) {
+        MedicineLiverRoutineBloodDO mDO = new MedicineLiverRoutineBloodDO();
+        mDO.setPatientId(mDTO.getPatientId());
+        mDO.setRoutineBloodDate(mDTO.getRoutineBloodDate());
+        mDO.setWbc(mDTO.getWbc());
+        mDO.setHb(mDTO.getHb());
+        mDO.setPlt(mDTO.getPlt());
+        mDO.setNeutrophil(mDTO.getNeutrophil());
+        mDO.setEosinophil(mDTO.getEosinophil());
+        mDO.setTotalHemoglobin(mDTO.getTotalHemoglobin());
+        return mDO;
+    }
+
+    public MedicineLiverRoutineBloodDTO routineConverToDTO(MedicineLiverRoutineBloodDO mDO) {
+        MedicineLiverRoutineBloodDTO mDTO = new MedicineLiverRoutineBloodDTO();
+        mDTO.setId(mDO.getId());
+        mDTO.setPatientId(mDO.getPatientId());
+        mDTO.setRoutineBloodDate(mDO.getRoutineBloodDate());
+        mDTO.setWbc(mDO.getWbc());
+        mDTO.setHb(mDO.getHb());
+        mDTO.setPlt(mDO.getPlt());
+        mDTO.setNeutrophil(mDO.getNeutrophil());
+        mDTO.setEosinophil(mDO.getEosinophil());
+        mDTO.setTotalHemoglobin(mDO.getTotalHemoglobin());
+        return mDTO;
+    }
+
+    public MedicineLiverImagingEndoscopyDO mlieConverToDO(MedicineLiverImagingEndoscopyDTO mDTO) {
+        MedicineLiverImagingEndoscopyDO mDO = new MedicineLiverImagingEndoscopyDO();
+        mDO.setPatientId(mDTO.getPatientId());
+        mDO.setErcp(mDTO.getErcp());
+        mDO.setErcpDate(mDTO.getErcpDate());
+        mDO.setErcpBiliaryTract(mDTO.getErcpBiliaryTract());
+        mDO.setErcpEsophagealGastricVarices(mDTO.getErcpEsophagealGastricVarices());
+        mDO.setMrcp(mDTO.getMrcp());
+        mDO.setMrcpDate(mDTO.getMrcpDate());
+        mDO.setMrcpBiliaryTract(mDTO.getMrcpBiliaryTract());
+        mDO.setMrcpEsophagealGastricVarices(mDTO.getMrcpEsophagealGastricVarices());
+        mDO.setLiverBultrasound(mDTO.getLiverBultrasound());
+        mDO.setLiverBultrasoundDate(mDTO.getLiverBultrasoundDate());
+        mDO.setLiverBultrasoundBiliaryTract(mDTO.getLiverBultrasoundBiliaryTract());
+        mDO.setLiverBultrasoundEsophagealGastricVarices(mDTO.getLiverBultrasoundEsophagealGastricVarices());
+        mDO.setLiverCt(mDTO.getLiverCt());
+        mDO.setLiverCtDate(mDTO.getLiverCtDate());
+        mDO.setLiverCtBiliaryTract(mDTO.getLiverCtBiliaryTract());
+        mDO.setLiverCtEsophagealGastricVarices(mDTO.getLiverCtEsophagealGastricVarices());
+        mDO.setFibroscan(mDTO.getFibroscan());
+        mDO.setFibroscanDate(mDTO.getFibroscanDate());
+        mDO.setFibroscanBiliaryTract(mDTO.getFibroscanBiliaryTract());
+        mDO.setFibroscan_esophageal_gastric_varices(mDTO.getFibroscan_esophageal_gastric_varices());
+        mDO.setLiverMri(mDTO.getLiverMri());
+        mDO.setLiverMriDate(mDTO.getLiverMriDate());
+        mDO.setLiverMriBiliaryTract(mDTO.getLiverMriBiliaryTract());
+        mDO.setLiverMriEsophagealGastricVarices(mDTO.getLiverMriEsophagealGastricVarices());
+        mDO.setGastroscope(mDTO.getGastroscope());
+        mDO.setGastroscopeDate(mDTO.getGastroscopeDate());
+        mDO.setGastroscopeBiliaryTract(mDTO.getGastroscopeBiliaryTract());
+        mDO.setGastroscopeEsophagealGastricVarices(mDTO.getGastroscopeEsophagealGastricVarices());
+        return mDO;
+    }
+
+    public MedicineLiverImagingEndoscopyDTO mlieConverToDTO(MedicineLiverImagingEndoscopyDO mDO) {
+        MedicineLiverImagingEndoscopyDTO mDTO = new MedicineLiverImagingEndoscopyDTO();
+        mDTO.setId(mDO.getId());
+        mDTO.setPatientId(mDO.getPatientId());
+        mDTO.setErcp(mDO.getErcp());
+        mDTO.setErcpDate(mDO.getErcpDate());
+        mDTO.setErcpBiliaryTract(mDO.getErcpBiliaryTract());
+        mDTO.setErcpEsophagealGastricVarices(mDO.getErcpEsophagealGastricVarices());
+        mDTO.setMrcp(mDO.getMrcp());
+        mDTO.setMrcpDate(mDO.getMrcpDate());
+        mDTO.setMrcpBiliaryTract(mDO.getMrcpBiliaryTract());
+        mDTO.setMrcpEsophagealGastricVarices(mDO.getMrcpEsophagealGastricVarices());
+        mDTO.setLiverBultrasound(mDO.getLiverBultrasound());
+        mDTO.setLiverBultrasoundDate(mDO.getLiverBultrasoundDate());
+        mDTO.setLiverBultrasoundBiliaryTract(mDO.getLiverBultrasoundBiliaryTract());
+        mDTO.setLiverBultrasoundEsophagealGastricVarices(mDO.getLiverBultrasoundEsophagealGastricVarices());
+        mDTO.setLiverCt(mDO.getLiverCt());
+        mDTO.setLiverCtDate(mDO.getLiverCtDate());
+        mDTO.setLiverCtBiliaryTract(mDO.getLiverCtBiliaryTract());
+        mDTO.setLiverCtEsophagealGastricVarices(mDO.getLiverCtEsophagealGastricVarices());
+        mDTO.setFibroscan(mDO.getFibroscan());
+        mDTO.setFibroscanDate(mDO.getFibroscanDate());
+        mDTO.setFibroscanBiliaryTract(mDO.getFibroscanBiliaryTract());
+        mDTO.setFibroscan_esophageal_gastric_varices(mDO.getFibroscan_esophageal_gastric_varices());
+        mDTO.setLiverMri(mDO.getLiverMri());
+        mDTO.setLiverMriDate(mDO.getLiverMriDate());
+        mDTO.setLiverMriBiliaryTract(mDO.getLiverMriBiliaryTract());
+        mDTO.setLiverMriEsophagealGastricVarices(mDO.getLiverMriEsophagealGastricVarices());
+        mDTO.setGastroscope(mDO.getGastroscope());
+        mDTO.setGastroscopeDate(mDO.getGastroscopeDate());
+        mDTO.setGastroscopeBiliaryTract(mDO.getGastroscopeBiliaryTract());
+        mDTO.setGastroscopeEsophagealGastricVarices(mDO.getGastroscopeEsophagealGastricVarices());
+        return mDTO;
+    }
+
+
 }

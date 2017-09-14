@@ -30,17 +30,16 @@
         </form>
       </div>
 
-      <!-- 其他病毒检测 -->
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title col-md-4">其他病毒检测</h3>
+            <h3 class="box-title col-md-4">血常规</h3>
             <div class="box-title col-md-8" >
               <label class="col-md-5 h5" style=" text-align: -webkit-right; ">检查时间: </label>
               <div class="input-group date col-md-7">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control pull-right" id="datepicker1" ng-model="tab1CheckDate">
+                <input type="text" class="form-control pull-right" style=" text-align: -webkit-center; " id="datepicker1" ng-model="routineBloodDate">
               </div>
             </div>
           </div>
@@ -48,46 +47,78 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style=" text-align: -webkit-center;">项目</th>
+                  <th style="width: 45%;text-align: -webkit-center;">项目</th>
                   <th style=" text-align: -webkit-center;">单位</th>                  
-                  <th style=" text-align: -webkit-center;">结果</th>
+                  <th style="width: 25%;text-align: -webkit-center;">结果</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">白细胞总数（WBC）</td>
                   <td height="38px" style=" text-align: -webkit-center; ">×10^9/L</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="wbc">
+                  </td>
                 </tr>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">血红蛋白（Hb）</td>
                   <td height="38px" style=" text-align: -webkit-center; ">g/L</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="hb">
+                  </td>
                 </tr>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">总血红蛋白浓度</td>
                   <td height="38px" style=" text-align: -webkit-center; ">g/dL</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;"  ng-model="totalHemoglobin">
+                  </td>
                 </tr>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">血小板（PLT）</td>
                   <td height="38px" style=" text-align: -webkit-center; ">×10^9/L</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="plt">
+                  </td>
                 </tr>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">中性粒细胞计数（N）</td>
                   <td height="38px" style=" text-align: -webkit-center; ">%</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="neutrophil">
+                  </td>
                 </tr>
                 <tr>
                   <td height="38px" style=" text-align: -webkit-center; ">嗜酸性粒细胞计数（E）</td>
                   <td height="38px" style=" text-align: -webkit-center; ">%</td>
-                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="eosinophil">
+                  </td>
                 </tr>
               </tbody>
             </table>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info pull-right" ng-click="test()">保存</button>
+            </div>
           </div>
         </div>
+
+        <!-- 模态框 -->
+        <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
     
     </div>
   </div>

@@ -1,1 +1,400 @@
-<div ng-model="imagingEndoscopy" ng-controller="imagingEndoscopyController"><p>这是药肝内窥镜</p></div>
+<section class="content-header">
+  <h1 class="text-center">
+     影像学和内窥镜检查
+  </h1><br>
+  <ol class="breadcrumb">
+  </ol>
+</section>
+
+
+
+<div ng-app="imagingEndoscopy" ng-controller="imagingEndoscopyController">
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+
+      <div class="span12">
+        <u class="h4 col-md-offset-9">患者：</u>
+        <br>
+        <u class="h4 col-md-offset-9">病理号：</u>
+        <form class="form-inline col-md-offset-9">
+          <div class="form-group">
+            <u class="h4">随访</u>
+            <checkbox ng-model="follow"></checkbox>
+            <div class="input-group date" ng-show="followDateShow">
+              <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title col-md-4">影像学和内窥镜检查</h3>
+          </div>
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style="text-align: -webkit-center;">检查项目</th>
+                  <th style="width: 12%;text-align: -webkit-center;">检查日期</th>                  
+                  <th style="width: 40%;text-align: -webkit-center;">检查结果：</th>
+                  <th style="text-align: -webkit-center;">排除胆道疾病</th>
+                  <th style="text-align: -webkit-center;">排除食管胃底静脉曲张</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">肝脏B超</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker1" ng-model="liverBultrasoundDate">
+                  </td>
+                  <td height="38px">
+                    <li>
+                      <input type="radio" name="r3" ng-model="liverBultrasound" ng-value="0"><span class="h5">0分：肝表面光滑，边缘锐，血管走向清晰</span>
+                      <span class="col-md-offset-1">&nbsp</span>
+                    </li>
+                    <li>
+                      <input type="radio" name="r3" ng-model="liverBultrasound" ng-value="1"><span class="h5">1分：肝表面光滑，回声增粗、增强、分布尚均匀，血管走向清晰</span>
+                      <span class="col-md-offset-1">&nbsp</span>
+                    </li>
+                    <li>
+                      <input type="radio" name="r3" ng-model="liverBultrasound" ng-value="2"><span class="h5">2分：肝表面欠光滑，边缘变钝，回声增粗、增强且分布不均匀，血管走向尚清晰</span>
+                      <span class="col-md-offset-1">&nbsp</span>
+                    </li>
+                    <li>
+                      <input type="radio" name="r3" ng-model="liverBultrasound" ng-value="3"><span class="h5">3分：肝表面粗糙、不规则，回声增密、增粗、增强且分布不均匀，血管走向欠清晰</span>
+                      <span class="col-md-offset-1">&nbsp</span>
+                    </li>
+                    <li>
+                      <input type="radio" name="r3" ng-model="liverBultrasound" ng-value="4"><span class="h5">4分：肝表面呈波浪状（或锯齿状），肝回声增粗、增强且分布不均匀、呈结节状(或斑片状)，肝缘钝化，肝内血管狭窄或粗细不等。</span>
+                      <span class="col-md-offset-1">&nbsp</span>
+                    </li>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundBiliaryTract" ng-model="liverBultrasoundBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundBiliaryTract" ng-model="liverBultrasoundBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundBiliaryTract" ng-model="liverBultrasoundBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundEsophagealGastricVarices" ng-model="liverBultrasoundEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundEsophagealGastricVarices" ng-model="liverBultrasoundEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverBultrasoundEsophagealGastricVarices" ng-model="liverBultrasoundEsophagealGastricVaricesliverBultrasoundEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">肝脏CT</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker2" ng-model="liverCtDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="liverCt">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtBiliaryTract" ng-model="liverCtBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtBiliaryTract" ng-model="liverCtBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtBiliaryTract" ng-model="liverCtBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtEsophagealGastricVarices" ng-model="liverCtEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtEsophagealGastricVarices" ng-model="liverCtEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverCtEsophagealGastricVarices" ng-model="liverCtEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">肝脏MRI</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker3" ng-model="liverMriDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="liverMri">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriBiliaryTract" ng-model="liverMriBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriBiliaryTract" ng-model="liverMriBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriBiliaryTract" ng-model="liverMriBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriEsophagealGastricVarices" ng-model="liverMriEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriEsophagealGastricVarices" ng-model="liverMriEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="liverMriEsophagealGastricVarices" ng-model="liverMriEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">Fibroscan</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker4" ng-model="fibroscanDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="fibroscan">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscanBiliaryTract" ng-model="fibroscanBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscanBiliaryTract" ng-model="fibroscanBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscanBiliaryTract" ng-model="fibroscanBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscan_esophageal_gastric_varices" ng-model="fibroscan_esophageal_gastric_varices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscan_esophageal_gastric_varices" ng-model="fibroscan_esophageal_gastric_varices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="fibroscan_esophageal_gastric_varices" ng-model="fibroscan_esophageal_gastric_varices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">ERCP</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker5" ng-model="ercpDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ercp">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpBiliaryTract" ng-model="ercpBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpBiliaryTract" ng-model="ercpBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpBiliaryTract" ng-model="ercpBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpEsophagealGastricVarices" ng-model="ercpEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpEsophagealGastricVarices" ng-model="ercpEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="ercpEsophagealGastricVarices" ng-model="ercpEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">MRCP</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker6" ng-model="mrcpDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="mrcp">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpBiliaryTract" ng-model="mrcpBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpBiliaryTract" ng-model="mrcpBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpBiliaryTract" ng-model="mrcpBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpEsophagealGastricVarices" ng-model="mrcpEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpEsophagealGastricVarices" ng-model="mrcpEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="mrcpEsophagealGastricVarices" ng-model="mrcpEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">胃镜</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" 
+                    id="datepicker7" ng-model="gastroscopeDate">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="gastroscope">
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeBiliaryTract" ng-model="gastroscopeBiliaryTract" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeBiliaryTract" ng-model="gastroscopeBiliaryTract" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeBiliaryTract" ng-model="gastroscopeBiliaryTract" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td height="38px" style=" text-align: -webkit-center; ">
+                    <div class="box-body" style=" height: 25px; ">
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeEsophagealGastricVarices" ng-model="gastroscopeEsophagealGastricVarices" ng-value=1>
+                      <span class="h5">是</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeEsophagealGastricVarices" ng-model="gastroscopeEsophagealGastricVarices" ng-value=2>
+                      <span class="h5">否</span>
+                      </span>
+                      <span class="col-md-offset-1">
+                      <input type="radio" name="gastroscopeEsophagealGastricVarices" ng-model="gastroscopeEsophagealGastricVarices" ng-value=3>
+                      <span class="h5">不适用</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+      
+              </tbody>
+            </table>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info pull-right" ng-click="test()">保存</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+      <!-- 模态框 -->
+      <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              <p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

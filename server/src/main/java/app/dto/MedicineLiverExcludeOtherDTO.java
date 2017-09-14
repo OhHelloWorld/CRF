@@ -12,15 +12,10 @@ public class MedicineLiverExcludeOtherDTO {
     private int antiHav;
     private Date antiHavDate;
     private int hbsag;
-    private Date hbsagDate;
     private int hbsab;
-    private Date hbsabDate;
     private int hbcab;
-    private int hbcabDate;
     private int hbeag;
-    private Date hbeagDate;
     private int hbeab;
-    private Date hbeabDate;
     private int hbvdna;
     private Date hbvdnaDate;
     private int antihcv;
@@ -30,25 +25,20 @@ public class MedicineLiverExcludeOtherDTO {
     private int Mononucleosis;
     private Date MononucleosisDate;//单核细胞增多症检查日期
     private int ana;
-    private Date anaDate;
     private int ama;
-    private Date amaDate;
     private int amam2;
-    private Date amam2Date;
     private int sma;
-    private Date smaDate;
     private int lkm;
-    private Date lkmDate;
     private int rheumatoid;//类风湿因子
     private Date rheumatoidDate;//类风湿因子检查日期
     private int ceruloplasmin;//铜蓝蛋白
     private Date ceruloplasminDate;//铜蓝蛋白检查日期
     private int cytomegalovirus;//巨细胞病毒
-    private Date cytomegalovirusDate;//巨细胞病毒检查日期
     private int ebviruses;//EB病毒
-    private Date ebvirusesDate;//EB病毒检查日期
     private int herpesSimplex;//单纯疱疹病毒
-    private Date herpesSimplexDate;//单纯疱疹病毒检查日期
+    private Date hepatitisBFiveDate;//乙肝五项日期
+    private Date autoimmuneAntibodyDate;//自身免疫抗体日期
+    private Date otherVirusCheckDate;//其他病毒检测时间
     private String remark;
     private boolean complete;
 
@@ -92,28 +82,12 @@ public class MedicineLiverExcludeOtherDTO {
         this.hbsag = hbsag;
     }
 
-    public Date getHbsagDate() {
-        return hbsagDate;
-    }
-
-    public void setHbsagDate(Date hbsagDate) {
-        this.hbsagDate = hbsagDate;
-    }
-
     public int getHbsab() {
         return hbsab;
     }
 
     public void setHbsab(int hbsab) {
         this.hbsab = hbsab;
-    }
-
-    public Date getHbsabDate() {
-        return hbsabDate;
-    }
-
-    public void setHbsabDate(Date hbsabDate) {
-        this.hbsabDate = hbsabDate;
     }
 
     public int getHbcab() {
@@ -124,14 +98,6 @@ public class MedicineLiverExcludeOtherDTO {
         this.hbcab = hbcab;
     }
 
-    public int getHbcabDate() {
-        return hbcabDate;
-    }
-
-    public void setHbcabDate(int hbcabDate) {
-        this.hbcabDate = hbcabDate;
-    }
-
     public int getHbeag() {
         return hbeag;
     }
@@ -140,28 +106,12 @@ public class MedicineLiverExcludeOtherDTO {
         this.hbeag = hbeag;
     }
 
-    public Date getHbeagDate() {
-        return hbeagDate;
-    }
-
-    public void setHbeagDate(Date hbeagDate) {
-        this.hbeagDate = hbeagDate;
-    }
-
     public int getHbeab() {
         return hbeab;
     }
 
     public void setHbeab(int hbeab) {
         this.hbeab = hbeab;
-    }
-
-    public Date getHbeabDate() {
-        return hbeabDate;
-    }
-
-    public void setHbeabDate(Date hbeabDate) {
-        this.hbeabDate = hbeabDate;
     }
 
     public int getHbvdna() {
@@ -236,28 +186,12 @@ public class MedicineLiverExcludeOtherDTO {
         this.ana = ana;
     }
 
-    public Date getAnaDate() {
-        return anaDate;
-    }
-
-    public void setAnaDate(Date anaDate) {
-        this.anaDate = anaDate;
-    }
-
     public int getAma() {
         return ama;
     }
 
     public void setAma(int ama) {
         this.ama = ama;
-    }
-
-    public Date getAmaDate() {
-        return amaDate;
-    }
-
-    public void setAmaDate(Date amaDate) {
-        this.amaDate = amaDate;
     }
 
     public int getAmam2() {
@@ -268,14 +202,6 @@ public class MedicineLiverExcludeOtherDTO {
         this.amam2 = amam2;
     }
 
-    public Date getAmam2Date() {
-        return amam2Date;
-    }
-
-    public void setAmam2Date(Date amam2Date) {
-        this.amam2Date = amam2Date;
-    }
-
     public int getSma() {
         return sma;
     }
@@ -284,28 +210,12 @@ public class MedicineLiverExcludeOtherDTO {
         this.sma = sma;
     }
 
-    public Date getSmaDate() {
-        return smaDate;
-    }
-
-    public void setSmaDate(Date smaDate) {
-        this.smaDate = smaDate;
-    }
-
     public int getLkm() {
         return lkm;
     }
 
     public void setLkm(int lkm) {
         this.lkm = lkm;
-    }
-
-    public Date getLkmDate() {
-        return lkmDate;
-    }
-
-    public void setLkmDate(Date lkmDate) {
-        this.lkmDate = lkmDate;
     }
 
     public int getRheumatoid() {
@@ -348,28 +258,12 @@ public class MedicineLiverExcludeOtherDTO {
         this.cytomegalovirus = cytomegalovirus;
     }
 
-    public Date getCytomegalovirusDate() {
-        return cytomegalovirusDate;
-    }
-
-    public void setCytomegalovirusDate(Date cytomegalovirusDate) {
-        this.cytomegalovirusDate = cytomegalovirusDate;
-    }
-
     public int getEbviruses() {
         return ebviruses;
     }
 
     public void setEbviruses(int ebviruses) {
         this.ebviruses = ebviruses;
-    }
-
-    public Date getEbvirusesDate() {
-        return ebvirusesDate;
-    }
-
-    public void setEbvirusesDate(Date ebvirusesDate) {
-        this.ebvirusesDate = ebvirusesDate;
     }
 
     public int getHerpesSimplex() {
@@ -380,12 +274,28 @@ public class MedicineLiverExcludeOtherDTO {
         this.herpesSimplex = herpesSimplex;
     }
 
-    public Date getHerpesSimplexDate() {
-        return herpesSimplexDate;
+    public Date getHepatitisBFiveDate() {
+        return hepatitisBFiveDate;
     }
 
-    public void setHerpesSimplexDate(Date herpesSimplexDate) {
-        this.herpesSimplexDate = herpesSimplexDate;
+    public void setHepatitisBFiveDate(Date hepatitisBFiveDate) {
+        this.hepatitisBFiveDate = hepatitisBFiveDate;
+    }
+
+    public Date getAutoimmuneAntibodyDate() {
+        return autoimmuneAntibodyDate;
+    }
+
+    public void setAutoimmuneAntibodyDate(Date autoimmuneAntibodyDate) {
+        this.autoimmuneAntibodyDate = autoimmuneAntibodyDate;
+    }
+
+    public Date getOtherVirusCheckDate() {
+        return otherVirusCheckDate;
+    }
+
+    public void setOtherVirusCheckDate(Date otherVirusCheckDate) {
+        this.otherVirusCheckDate = otherVirusCheckDate;
     }
 
     public String getRemark() {
