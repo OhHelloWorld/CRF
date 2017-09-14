@@ -288,15 +288,10 @@ create table medicine_liver_exclude_other(
 	anti_hav int,
 	anti_hav_date Date,
 	hbsag int,
-	hbsag_date Date,
 	hbsab int,
-	hbsab_date Date,
 	hbcab int,
-	hbcab_date Date,
 	hbeag int,
-	hbeag_date Date,
 	hbeab int,
-	hbeab_date Date,
 	hbvdna int,
 	hbvdna_date Date,
 	antihcv int,
@@ -306,25 +301,20 @@ create table medicine_liver_exclude_other(
 	Mononucleosis int,#单核细胞增多症
 	Mononucleosis_date Date,#单核细胞增多症检查日期
 	ana int,
-	ana_date Date,
 	ama int,
-	ama_date Date,
 	amam2 int,
-	amam2_date Date,
 	sma int,
-	sma_date Date,
 	lkm int,
-	lkm_date Date,
 	rheumatoid int,#类风湿因子
 	rheumatoid_date Date,#类风湿因子检查日期
 	ceruloplasmin int,#铜蓝蛋白
 	ceruloplasmin_date Date,#铜蓝蛋白检查日期
 	cytomegalovirus int,#巨细胞病毒
-	cytomegalovirus_date Date,#巨细胞病毒检查日期
 	ebviruses int,#EB病毒
-	ebviruses_date Date,#EB病毒检查日期
 	herpes_simplex int,#单纯疱疹病毒
-	herpes_simplex_date Date,#单纯疱疹病毒检查日期
+    hepatitis_b_five_date Date,#乙肝五项日期
+    autoimmune_antibody_date Date,#自身免疫抗体日期
+    other_virus_check_date Date,#其他病毒检测时间
 	remark varchar(200),
 	complete boolean,
 	primary key(id)	

@@ -13,14 +13,14 @@ public class MedicineLiverImagingEndoscopyDO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int patientId;
-    private int liverBultrasound;//肝脏B超
+    private int liverBultrasound;//肝脏B超检查结果
     @Column(name = "liver_bultrasound_date")
     private Date liverBultrasoundDate;//肝脏B超检查日期
     @Column(name = "liver_bultrasound_biliary_tract")
     private int liverBultrasoundBiliaryTract;//肝脏B超排除胆道疾病
     @Column(name = "liver_bultrasound_esophageal_gastric_varices")
     private int liverBultrasoundEsophagealGastricVarices;//肝脏B超排除食管胃底静脉曲张
-    private String liverCt;//肝脏CT
+    private String liverCt;//肝脏CT检查结果
     @Column(name = "liver_ct_date")
     private Date liverCtDate;//肝脏CT检查日期
     @Column(name = "liver_ct_biliary_tract")
@@ -34,17 +34,17 @@ public class MedicineLiverImagingEndoscopyDO {
     private int liverMriBiliaryTract;//肝脏MRI排除胆道疾病
     @Column(name = "liver_mri_esophageal_gastric_varices")
     private int liverMriEsophagealGastricVarices;//肝脏MRI排除食管胃底静脉曲张
-    private String fibroscan;//Fibroscan
+    private String fibroscan;//Fibroscan检查结果
     private Date fibroscanDate;//Fibroscan检查日期
     @Column(name = "fibroscan_biliary_tract")
     private int fibroscanBiliaryTract;//Fibroscan排除胆道疾病
     @Column(name = "fibroscan_esophageal_gastric_varices")
     private int fibroscan_esophageal_gastric_varices;//Fibroscan排除食管胃底静脉曲张
-    private String ercp;//ERCP
+    private String ercp;//ERCP检查结果
     private Date ercpDate;//ERCP检查日期
     private int ercpBiliaryTract;//ERCP排除胆道疾病
     private int ercpEsophagealGastricVarices;//ERCP排除食管胃底静脉曲张
-    private String mrcp;//MRCP
+    private String mrcp;//MRCP检查结果
     private Date mrcpDate;//MRCP检查日期
     @Column(name = "mrcp_biliary_tract")
     private int mrcpBiliaryTract;//MRCP排除胆道疾病
