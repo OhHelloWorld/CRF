@@ -5,6 +5,9 @@ import org.springframework.data.domain.Pageable;
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
 
+import java.util.Date;
+import java.util.Set;
+
 public interface PatientService {
 
     /**
@@ -52,5 +55,13 @@ public interface PatientService {
      * @return
      */
     public PageDTO<PatientDTO> getPatientByQueryStr(int projectId ,String queryStr, Pageable pageable);
+
+    /**
+     * 得到所有随访的日期Set
+     * @param patientId
+     * @return
+     */
+    public Set<Date> getFollowDate(int patientId);
+
 
 }

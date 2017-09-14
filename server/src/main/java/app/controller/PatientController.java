@@ -10,6 +10,9 @@ import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.service.PatientService;
 
+import java.util.Date;
+import java.util.Set;
+
 /**
  * @author Administrator
  * @category 患者信息
@@ -83,6 +86,11 @@ public class PatientController {
     public PageDTO<PatientDTO> getPatientByQueryStr(@PathVariable int projectId,@RequestParam("queryStr") String queryStr,
             @PageableDefault(value = 15) Pageable pageable) {
         return patientService.getPatientByQueryStr(projectId,queryStr, pageable);
+    }
+
+    @GetMapping(path = "/followDate/{patientId}")
+    public Set<Date> getFollowDate(@PathVariable int patientId){
+        return patientService.getFollowDate(patientId);
     }
 
 }

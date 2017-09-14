@@ -125,4 +125,9 @@ public class MedicinePrescriptionzServiceImpl implements MedicinePrescriptionSer
                 ? convertToDto(medicinePrescriptionRepo.getDefaultMedicine(patientId)) : null;
     }
 
+    @Override
+    public ChineseMedicinePrescriptionDTO getFollowChineseByDate(String date) {
+        return medicinePrescriptionRepo.getFollowChineseByDate(date)!=null?convertToDto(medicinePrescriptionRepo.getFollowChineseByDate(date)):null;
+    }
+
 }

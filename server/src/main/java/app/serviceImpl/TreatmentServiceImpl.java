@@ -151,4 +151,9 @@ public class TreatmentServiceImpl implements TreatmentService {
 
     }
 
+    @Override
+    public TreatmentProgramsDTO getFollowTreatByDate(String date) {
+        return treatmentRepo.getFollowTreatByDate(date)!=null?convertUtil.tpDOconvertToTpDto(treatmentRepo.getFollowTreatByDate(date)):null;
+    }
+
 }
