@@ -10,7 +10,6 @@
   <div class="container-fluid">
     <div class="row-fluid">
 
-      <section class="content">
 
         <div class="span12">
           <u class="h4 col-md-offset-9">患者：</u>
@@ -32,15 +31,15 @@
 
 
         <div class="box">
-          <div class="box-header with-border">
-            <h3 class="box-title">肝脏生化检查：</h3>
+          <div class="box-header" style="text-align: -webkit-center;">
+            <h3 class="box-title">肝脏生化检查</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style=" text-align: -webkit-center;">检查日期</th>
+                  <th style=" text-align: -webkit-center;"  width="10%">检查日期</th>
                   <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
                   <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
                   <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
@@ -54,7 +53,7 @@
               </thead>
               <tbody ng-repeat="mlfae in mlfaes">
                 <tr>
-                  <td height="38px" ng-bind="mlfae.tab1CheckDate" style=" text-align: -webkit-center;"></td>
+                  <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab1CheckDate | date: "yyyy-MM-dd"}}</td>
                   <td height="38px" ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
                   <td height="38px" ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
                   <td height="38px" ng-bind="mlfae.ggt" style=" text-align: -webkit-center; "></td>
@@ -81,7 +80,7 @@
         <div class="box">
           <div class="col-md-6">
             <div class="box">
-              <div class="box-header">
+              <div class="box-header" style="text-align: -webkit-center;">
                 <h3 class="box-title">肾功能检查</h3>
               </div>
               <!-- /.box-header -->
@@ -89,14 +88,14 @@
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
                       <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
                     </tr>
                   </thead>
                   <tbody ng-repeat="mlfae in mlfaes">
                     <tr>
-                      <td height="38px" ng-bind="mlfae.tab2CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab2CheckDate | date: "yyyy-MM-dd"}}</td>
                       <td height="38px" ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
                       <td height="38px" ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
                     </tr>
@@ -109,20 +108,20 @@
 
           <div class="col-md-6">
             <div class="box">
-              <div class="box-header">
+              <div class="box-header" style="text-align: -webkit-center;">
                 <h3 class="box-title">血糖检查</h3>
               </div>
               <div class="box-body">
                 <table id="example3" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
                     </tr>
                   </thead>
                   <tbody ng-repeat="mlfae in mlfaes">
                     <tr>
-                      <td height="38px" ng-bind="mlfae.tab3CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab3CheckDate | date: "yyyy-MM-dd"}}</td>
                       <td height="38px" ng-bind="mlfae.plasmaGlucose" style=" text-align: -webkit-center; "></td>
                     </tr>
                   </tbody>
@@ -144,21 +143,21 @@
         <div class="box">
           <div class="col-md-6">
             <div class="box">
-              <div class="box-header">
+              <div class="box-header" style="text-align: -webkit-center;">
                 <h3 class="box-title">凝血功能检查</h3>
               </div>
               <div class="box-body">
                 <table id="example4" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
                       <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
                     </tr>
                   </thead>
                   <tbody ng-repeat="mlfae in mlfaes">
                     <tr>
-                      <td height="38px" ng-bind="mlfae.tab4CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab4CheckDate | date: "yyyy-MM-dd"}}</td>
                       <td height="38px" ng-bind="mlfae.pt" style=" text-align: -webkit-center; "></td>
                       <td height="38px" ng-bind="mlfae.inr" style=" text-align: -webkit-center; "></td>
                     </tr>
@@ -172,20 +171,20 @@
 
           <div class="col-md-6">
             <div class="box">
-              <div class="box-header">
+              <div class="box-header" style="text-align: -webkit-center;">
                 <h3 class="box-title">肿瘤标志物</h3>
               </div>
               <div class="box-body">
                 <table id="example5" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
                     </tr>
                   </thead>
                   <tbody ng-repeat="mlfae in mlfaes">
                     <tr>
-                      <td height="38px" ng-bind="mlfae.tab5CheckDate" style=" text-align: -webkit-center;"></td>
+                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab5CheckDate | date: "yyyy-MM-dd"}}</td>
                       <td height="38px" ng-bind="mlfae.afp" style=" text-align: -webkit-center; "></td>
                     </tr>
                   </tbody>
