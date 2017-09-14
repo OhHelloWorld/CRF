@@ -106,6 +106,12 @@ angular.module('mlTreatment', [])
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#treatmentDetail');
+          $('#detailStartDate' + detailCount).datepicker({
+            autoclose: true
+          });
+          $('#detailEndDate' + detailCount).datepicker({
+            autoclose: true
+          });
           $scope.genericNameObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).genericName;
           $scope.tradeNameObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).tradeName;
           $scope.detailMethodObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).detailMethod;
@@ -123,6 +129,12 @@ angular.module('mlTreatment', [])
           var compileFn1 = $compile(template1);
           var dom1 = compileFn1($scope);
           dom1.appendTo('#treatmentOther');
+          $('#otherStartDate' + otherCount).datepicker({
+            autoclose: true
+          });
+          $('#otherEndDate' + otherCount).datepicker({
+            autoclose: true
+          });
           $scope.methodObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).method;
           $scope.methodDetailObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).methodDetail;
           (function(data) {
@@ -174,10 +186,10 @@ angular.module('mlTreatment', [])
       for (var j = 0; j < otherCount; j++) {
         mlTreatment.medicineLiverTreatmentOtherDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
-          method: $scope.methodObj[j+1],
-          methodDetail: $scope.methodDetailObj[j+1],
-          otherStartDate: new Date($scope.otherStartDateObj[j+1]),
-          otherEndDate: new Date($scope.otherEndDateObj[j+1])
+          method: $scope.methodObj[j + 1],
+          methodDetail: $scope.methodDetailObj[j + 1],
+          otherStartDate: new Date($scope.otherStartDateObj[j + 1]),
+          otherEndDate: new Date($scope.otherEndDateObj[j + 1])
         });
       }
       $http({

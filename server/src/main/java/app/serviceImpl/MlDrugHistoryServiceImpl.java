@@ -4,7 +4,9 @@ import app.dto.MedicineLiverSuspectedDrugDTO;
 import app.dto.MedicineLiverSuspectedDrugDetailDTO;
 import app.entities.MedicineLiverSuspectedDrugDO;
 import app.entities.MedicineLiverSuspectedDrugDetailDO;
+import app.repo.MlDrinkDetailRepo;
 import app.repo.MlDrugHistoryRepo;
+import app.service.MlCompleteService;
 import app.service.MlDrugHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +18,13 @@ import java.util.List;
  * Created by Administrator on 2017/9/6 0006.
  */
 @Service
-public class MlDrugHistoryServiceImpl implements MlDrugHistoryService {
+public class MlDrugHistoryServiceImpl implements MlDrugHistoryService ,MlCompleteService{
 
     @Autowired
     private MlDrugHistoryRepo mlDrugHistoryRepo;
+
+    @Autowired
+    private MlDrinkDetailRepo mlDrinkDetailRepo;
 
     private MedicineLiverSuspectedDrugDTO convertToDTO(MedicineLiverSuspectedDrugDO medicineLiverSuspectedDrugDO) {
         MedicineLiverSuspectedDrugDTO medicineLiverSuspectedDrugDTO = new MedicineLiverSuspectedDrugDTO();
@@ -58,6 +63,9 @@ public class MlDrugHistoryServiceImpl implements MlDrugHistoryService {
         medicineLiverSuspectedDrugDO.setPatientId(medicineLiverSuspectedDrugDTO.getPatientId());
         List<MedicineLiverSuspectedDrugDetailDO> medicineLiverSuspectedDrugDetailDOS = new ArrayList<>();
         List<MedicineLiverSuspectedDrugDetailDTO> medicineLiverSuspectedDrugDetailDTOS = medicineLiverSuspectedDrugDTO.getMedicineLiverSuspectedDrugDetailDTOS();
+        if(medicineLiverSuspectedDrugDTO.getId() != 0) {
+            mlDrinkDetailRepo.deleteDrinkDetailByDId(medicineLiverSuspectedDrugDTO.getId());
+        }
         if(!medicineLiverSuspectedDrugDetailDTOS.isEmpty() && medicineLiverSuspectedDrugDetailDTOS != null){
             for(MedicineLiverSuspectedDrugDetailDTO medicineLiverSuspectedDrugDetailDTO:medicineLiverSuspectedDrugDetailDTOS){
                 MedicineLiverSuspectedDrugDetailDO medicineLiverSuspectedDrugDetailDO = new MedicineLiverSuspectedDrugDetailDO();
@@ -88,5 +96,10 @@ public class MlDrugHistoryServiceImpl implements MlDrugHistoryService {
     @Override
     public MedicineLiverSuspectedDrugDTO getDrugByPatientId(int mlPatientId) {
         return mlDrugHistoryRepo.getMlDrugByPatientId(mlPatientId) !=null?convertToDTO(mlDrugHistoryRepo.getMlDrugByPatientId(mlPatientId)):null;
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlDrugHistoryRepo.getCompleteByPatientId(mlPatientId);
     }
 }

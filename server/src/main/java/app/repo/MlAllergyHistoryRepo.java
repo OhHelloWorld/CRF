@@ -12,5 +12,6 @@ public interface MlAllergyHistoryRepo extends CrudRepository<MedicineLiverAllerg
     @Query(value = "select * from medicine_liver_allergy_history where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverAllergyHistoryDO getAllergyHistoryByPatientId(int mlPatientId);
 
-
+    @Query(value = "select complete from medicine_liver_allergy_history where patient_id = ?1 order by id limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

@@ -11,4 +11,7 @@ public interface MlBiologicalSamplesRepo extends CrudRepository<MedicineLiverBio
 
     @Query(value = "select * from medicine_liver_biological_samples where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverBiologicalSamplesDO getMlBiologicalByPatientId(int mlPatientId);
+
+    @Query(value = "select complete from medicine_liver_biological_samples where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

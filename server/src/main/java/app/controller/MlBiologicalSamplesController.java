@@ -2,7 +2,9 @@ package app.controller;
 
 import app.dto.MedicineLiverBiologicalSamplesDTO;
 import app.service.MlBiologicalSamplesService;
+import app.service.MlCompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -15,9 +17,18 @@ public class MlBiologicalSamplesController {
     @Autowired
     private MlBiologicalSamplesService mlBiologicalSamplesService;
 
+    @Autowired
+    @Qualifier("mlBiologicalSamplesServiceImpl")
+    private MlCompleteService mlCompleteService;
+
     @PostMapping(path = "")
     public void saveBiologicalSamples(@RequestBody MedicineLiverBiologicalSamplesDTO medicineLiverBiologicalSamplesDTO){
         mlBiologicalSamplesService.saveBiologicalSamples(medicineLiverBiologicalSamplesDTO);
+    }
+
+    @GetMapping(path = "/complete/{mlPatientId}")
+    public Boolean getCompleteByPatientId(@PathVariable  int mlPatientId){
+        return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 
     @GetMapping(path = "/{mlPatientId}")

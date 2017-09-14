@@ -356,7 +356,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
     if (sessionStorage.getItem('mlPatientId')) {
       $http({
         method: 'GET',
-        url: '/api/diseaseHistory/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlDiseaseHistory/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#diseaseHistoryMenuNo').addClass('hide');
@@ -369,7 +369,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/allergyHistory/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlAllergyHistory/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#allergyMenuYes').removeClass('hide');
@@ -382,7 +382,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/drink/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlDrink/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#drinkMenuYes').removeClass('hide');
@@ -395,7 +395,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/drugHistory/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlDrug/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#drugHistoryMenuYes').removeClass('hide');
@@ -410,7 +410,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/symptoms/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlSymptoms/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#symptomsMenuYes').removeClass('hide');
@@ -488,7 +488,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/liverHistological/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlLiverHistological/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#liverHistologicalMenuYes').removeClass('hide');
@@ -527,7 +527,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
       
       $http({
         method: 'GET',
-        url: '/api/biologicalSamples/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlBiologicalSamples/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#biologicalSamplesMenuYes').removeClass('hide');
@@ -535,6 +535,19 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
         } else {
           $('#biologicalSamplesMenuNo').removeClass('hide');
           $('#biologicalSamplesMenuYes').addClass('hide');
+        }
+      }).catch(function err() {});
+
+      $http({
+        method: 'GET',
+        url: '/api/mlLiverInjury/complete/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        if (response.data) {
+          $('#liverInjuryMenuYes').removeClass('hide');
+          $('#liverInjuryMenuNo').addClass('hide');
+        } else {
+          $('#liverInjuryMenuNo').removeClass('hide');
+          $('#liverInjuryMenuYes').addClass('hide');
         }
       }).catch(function err() {});
 

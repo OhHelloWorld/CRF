@@ -2,6 +2,7 @@ package app.controller;
 
 import app.dto.MedicineLiverAllergyHistoryDTO;
 import app.service.MlAllergyHistoryService;
+import app.service.MlCompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +15,21 @@ import org.springframework.web.bind.annotation.*;
 public class MlAllergyHistoryController {
 
     @Autowired
-    @Qualifier(value = "mlAllergyHistoryServiceImpl")
     private MlAllergyHistoryService mlAllergyHistoryService;
+
+    @Autowired
+    @Qualifier("mlAllergyHistoryServiceImpl")
+    private MlCompleteService mlCompleteService;
+
 
     @PostMapping(path = "")
     public void saveAllergyHistory(@RequestBody  MedicineLiverAllergyHistoryDTO medicineLiverAllergyHistoryDTO){
         mlAllergyHistoryService.saveAllergyHistory(medicineLiverAllergyHistoryDTO);
+    }
+
+    @GetMapping(path = "/complete/{mlPatientId}")
+    public Boolean getCompleteByPatientId(@PathVariable  int mlPatientId){
+        return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 
     @GetMapping(path = "/{mlPatientId}")

@@ -11,4 +11,7 @@ public interface MlLiverInjuryRepo extends CrudRepository<MedicineLiverLiverInju
 
     @Query(value = "select * from medicine_liver_liver_injury where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverLiverInjuryDO getMlLiverInjuryByPatientId(int mlPatientId);
+
+    @Query(value = "select complete from medicine_liver_liver_injury where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

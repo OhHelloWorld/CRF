@@ -11,4 +11,7 @@ public interface MlSymptomsRepo extends CrudRepository<MedicineLiverSymptomsDO,I
 
     @Query(value = "select * from medicine_liver_symptoms where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverSymptomsDO getMlSysptomsByPatientId(int mlPatient);
+
+    @Query(value = "select complete from medicine_liver_symptoms where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatient);
 }

@@ -9,8 +9,9 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface MlDiseaseHistoryRepo extends CrudRepository<MedicineLiverDiseaseHistoryDO,Integer>{
 
-    @Query(value = "select * from medicine_liver_disease_history where patient_id=?1 order by patient_id desc limit 1",nativeQuery = true)
+    @Query(value = "select * from medicine_liver_disease_history where patient_id=?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverDiseaseHistoryDO getMlDiseaseHistoryByPatientId(int mlPatientId);
 
-
+    @Query(value = "select complete from medicine_liver_disease_history where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }
