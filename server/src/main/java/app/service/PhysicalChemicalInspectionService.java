@@ -41,4 +41,6 @@ public interface PhysicalChemicalInspectionService {
     PhysicalChemicalInspectionDTO getSinleFollowById(int id);
 
     void updatePhysical(PhysicalChemicalInspectionDTO physicalChemicalInspectionDTO);
+
+    PhysicalChemicalInspectionDTO getFollowPhyByDate(String date);
 }

@@ -3,6 +3,7 @@ package app.service;
 import java.util.List;
 
 import app.dto.FourDiagnosticInformationDTO;
+import app.entities.FourDiagnosticInformationDO;
 
 public interface FourDiagnosticInformationService {
 
@@ -36,4 +37,7 @@ public interface FourDiagnosticInformationService {
     FourDiagnosticInformationDTO getSingleFollowById(int id);
 
     void updateFourDia(FourDiagnosticInformationDTO fourDiagnosticInformationDTO);
+
+    FourDiagnosticInformationDTO getFollowFourByDate(String date);
+
 }

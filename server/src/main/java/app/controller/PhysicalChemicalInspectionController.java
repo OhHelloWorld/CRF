@@ -88,5 +88,10 @@ public class PhysicalChemicalInspectionController {
         physicalChemicalInspectionService.updatePhysical(physicalChemicalInspectionDTO);
     }
 
+    @GetMapping(path = "/follow")
+    public PhysicalChemicalInspectionDTO getFollowPhyByDate(@RequestParam String date){
+        return physicalChemicalInspectionService.getFollowPhyByDate(date);
+    }
+
 
 }

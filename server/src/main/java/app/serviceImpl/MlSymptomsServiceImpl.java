@@ -4,7 +4,9 @@ import app.dto.MedicineLiverSymptomsDTO;
 import app.dto.MedicineLiverSymptomsOtherDTO;
 import app.entities.MedicineLiverSymptomsDO;
 import app.entities.MedicineLiverSymptomsOtherDO;
+import app.repo.MlSymptomsOtherRepo;
 import app.repo.MlSymptomsRepo;
+import app.service.MlCompleteService;
 import app.service.MlSymptomsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +18,13 @@ import java.util.List;
  * Created by Administrator on 2017/9/8 0008.
  */
 @Service
-public class MlSymptomsServiceImpl implements MlSymptomsService {
+public class MlSymptomsServiceImpl implements MlSymptomsService ,MlCompleteService{
 
     @Autowired
     private MlSymptomsRepo mlSymptomsRepo;
+
+    @Autowired
+    private MlSymptomsOtherRepo mlSymptomsOtherRepo;
 
     private MedicineLiverSymptomsDTO convertToDTO(MedicineLiverSymptomsDO medicineLiverSymptomsDO) {
         MedicineLiverSymptomsDTO medicineLiverSymptomsDTO = new MedicineLiverSymptomsDTO();
@@ -174,6 +179,10 @@ public class MlSymptomsServiceImpl implements MlSymptomsService {
 
         List<MedicineLiverSymptomsOtherDO> medicineLiverSymptomsOtherDOS = new ArrayList<>();
         List<MedicineLiverSymptomsOtherDTO> medicineLiverSymptomsOtherDTOS = medicineLiverSymptomsDTO.getMedicineLiverSymptomsOtherDTOs();
+        if(medicineLiverSymptomsDTO.getId() != 0){
+            mlSymptomsOtherRepo.deleteSymptomsOtherBySId(medicineLiverSymptomsDTO.getId());
+        }
+
         if (!medicineLiverSymptomsOtherDTOS.isEmpty() && medicineLiverSymptomsOtherDTOS != null) {
             for (MedicineLiverSymptomsOtherDTO medicineLiverSymptomsOtherDTO : medicineLiverSymptomsOtherDTOS) {
                 MedicineLiverSymptomsOtherDO medicineLiverSymptomsOtherDO = new MedicineLiverSymptomsOtherDO();
@@ -198,5 +207,10 @@ public class MlSymptomsServiceImpl implements MlSymptomsService {
     @Override
     public void saveMlSymptoms(MedicineLiverSymptomsDTO medicineLiverSymptomsDTO) {
         mlSymptomsRepo.save(convertToEntity(medicineLiverSymptomsDTO));
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlSymptomsRepo.getCompleteByPatientId(mlPatientId);
     }
 }

@@ -11,4 +11,7 @@ public interface MlLiverHistologicalRepo extends CrudRepository<MedicineLiverLiv
 
     @Query(value = "select * from medicine_liver_liver_histological where patient_id =?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverLiverHistologicalDO getMlLiverHistologicalByPatientId(int mlPatientId);
+
+    @Query(value = "select complete from medicine_liver_liver_histological where patient_id =?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

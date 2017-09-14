@@ -11,5 +11,4 @@ public interface MlDiseaseHistoryService {
 
     void saveMlDiseaseHistory(MedicineLiverDiseaseHistoryDTO diseaseHistoryDTO);
 
-    void updateMlDiseaseHistory(MedicineLiverDiseaseHistoryDTO diseaseHistoryDTO);
 }

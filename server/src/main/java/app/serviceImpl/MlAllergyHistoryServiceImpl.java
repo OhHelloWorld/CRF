@@ -4,6 +4,7 @@ import app.dto.MedicineLiverAllergyHistoryDTO;
 import app.entities.MedicineLiverAllergyHistoryDO;
 import app.repo.MlAllergyHistoryRepo;
 import app.service.MlAllergyHistoryService;
+import app.service.MlCompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
  * Created by Administrator on 2017/9/12 0012.
  */
 @Service
-public class MlAllergyHistoryServiceImpl implements MlAllergyHistoryService{
+public class MlAllergyHistoryServiceImpl implements MlAllergyHistoryService,MlCompleteService{
 
     @Autowired
     private MlAllergyHistoryRepo mlAllergyHistoryRepo;
@@ -42,5 +43,10 @@ public class MlAllergyHistoryServiceImpl implements MlAllergyHistoryService{
     @Override
     public MedicineLiverAllergyHistoryDTO getAllergyByPatientId(int mlPatientId) {
         return mlAllergyHistoryRepo.getAllergyHistoryByPatientId(mlPatientId) != null ? convertToDTO(mlAllergyHistoryRepo.getAllergyHistoryByPatientId(mlPatientId)) : null;
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlAllergyHistoryRepo.getCompleteByPatientId(mlPatientId);
     }
 }

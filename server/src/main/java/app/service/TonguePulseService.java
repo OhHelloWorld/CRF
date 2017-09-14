@@ -35,4 +35,6 @@ public interface TonguePulseService {
     TonguePulseDTO getSingleFollowTongueById(int id);
 
     void updateTongue(TonguePulseDTO tonguePulseDTO);
+
+    TonguePulseDTO getFollowTongueByDate(String date);
 }
