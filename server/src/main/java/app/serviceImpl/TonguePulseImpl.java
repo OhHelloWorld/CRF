@@ -32,11 +32,6 @@ public class TonguePulseImpl implements TonguePulseService {
     }
 
     public boolean getCompleteByPatientId(int patientId) {
-//        try {
-//            return tonguePulseRepo.getCompleteByPatientId(patientId);
-//        } catch (Exception e) {
-//            return false;
-//        }
         return tonguePulseRepo.getCompleteByPatientId(patientId) != null ? tonguePulseRepo.getCompleteByPatientId(patientId) : false;
     }
 
@@ -116,6 +111,11 @@ public class TonguePulseImpl implements TonguePulseService {
     @Override
     public void updateTongue(TonguePulseDTO tonguePulseDTO) {
         tonguePulseRepo.save(convertToTonguePulseDO(tonguePulseDTO,tonguePulseRepo.findOne(tonguePulseDTO.getId())));
+    }
+
+    @Override
+    public TonguePulseDTO getFollowTongueByDate(String date) {
+        return tonguePulseRepo.getFollowTongueByDate(date)!=null ? convertToTonguePulseDTO(tonguePulseRepo.getFollowTongueByDate(date)):null;
     }
 
 }

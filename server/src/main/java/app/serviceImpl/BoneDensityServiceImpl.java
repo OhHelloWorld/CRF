@@ -134,4 +134,9 @@ public class BoneDensityServiceImpl implements BoneDensityService {
         bRepo.save(convertToEntity(boneDensityDTO, bRepo.findOne(boneDensityDTO.getId())));
     }
 
+    @Override
+    public BoneDensityDTO getFollowBoneByDate(String date) {
+        return bRepo.getFollowBoneByDate(date) != null?convertToDTO(bRepo.getFollowBoneByDate(date)):null;
+    }
+
 }

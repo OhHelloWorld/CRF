@@ -70,4 +70,9 @@ public class TonguePulseController {
     public void updateTongue(@RequestBody TonguePulseDTO tonguePulseDTO){
         tonguePulseService.updateTongue(tonguePulseDTO);
     }
+
+    @GetMapping(path= "/follow")
+    public TonguePulseDTO getFollowTongueByDate(@RequestParam String date){
+        return tonguePulseService.getFollowTongueByDate(date);
+    }
 }

@@ -6,7 +6,10 @@ import app.dto.MedicineLiverTreatmentOtherDTO;
 import app.entities.MedicineLiverTreatmentDO;
 import app.entities.MedicineLiverTreatmentDetailDO;
 import app.entities.MedicineLiverTreatmentOtherDO;
+import app.repo.MlTreatmentDetailRepo;
+import app.repo.MlTreatmentOtherRepo;
 import app.repo.MlTreatmentRepo;
+import app.service.MlCompleteService;
 import app.service.MlTreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,10 +21,16 @@ import java.util.List;
  * Created by Administrator on 2017/9/12 0012.
  */
 @Service
-public class MlTreatmentServiceImpl implements MlTreatmentService{
+public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteService{
 
     @Autowired
     private MlTreatmentRepo mlTreatmentRepo;
+
+    @Autowired
+    private MlTreatmentOtherRepo mlTreatmentOtherRepo;
+
+    @Autowired
+    private MlTreatmentDetailRepo mlTreatmentDetailRepo;
 
     private MedicineLiverTreatmentDTO convertToDTO(MedicineLiverTreatmentDO medicineLiverTreatmentDO){
         MedicineLiverTreatmentDTO medicineLiverTreatmentDTO = new MedicineLiverTreatmentDTO();
@@ -74,6 +83,11 @@ public class MlTreatmentServiceImpl implements MlTreatmentService{
         List<MedicineLiverTreatmentDetailDO> medicineLiverTreatmentDetailDOS = new ArrayList<>();
         List<MedicineLiverTreatmentOtherDO> medicineLiverTreatmentOtherDOS = new ArrayList<>();
 
+        if(medicineLiverTreatmentDTO.getId()!=0){
+            mlTreatmentDetailRepo.deleteTreatmentDetailByTId(medicineLiverTreatmentDTO.getId());
+            mlTreatmentOtherRepo.deleteTreatmentOtherByTId(medicineLiverTreatmentDTO.getId());
+        }
+
         List<MedicineLiverTreatmentDetailDTO> medicineLiverTreatmentDetailDTOS = medicineLiverTreatmentDTO.getMedicineLiverTreatmentDetailDTOS();
         if(!medicineLiverTreatmentDetailDTOS.isEmpty() && medicineLiverTreatmentDetailDTOS != null){
             for(MedicineLiverTreatmentDetailDTO medicineLiverTreatmentDetailDTO : medicineLiverTreatmentDetailDTOS) {
@@ -115,5 +129,10 @@ public class MlTreatmentServiceImpl implements MlTreatmentService{
     @Override
     public MedicineLiverTreatmentDTO getTreatmentByPatientId(int mlPatientId) {
         return mlTreatmentRepo.getTreatByPatientId(mlPatientId) != null?convertToDTO(mlTreatmentRepo.getTreatByPatientId(mlPatientId)):null;
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlTreatmentRepo.getCompleteByPatientId(mlPatientId);
     }
 }

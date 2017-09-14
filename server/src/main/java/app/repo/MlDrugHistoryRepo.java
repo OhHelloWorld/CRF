@@ -12,4 +12,6 @@ public interface MlDrugHistoryRepo extends CrudRepository<MedicineLiverSuspected
     @Query(value = "select * from medicine_liver_suspected_drug where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverSuspectedDrugDO getMlDrugByPatientId(int mlPatientId);
 
+    @Query(value = "select complete from medicine_liver_suspected_drug where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

@@ -172,4 +172,9 @@ public class FourDiagnosticInformationServiceImpl implements FourDiagnosticInfor
         FourDiagnosticInformationDO fourDiagnosticInformationDO = fRepo.findOne(fourDiagnosticInformationDTO.getId());
         fRepo.save(convertToFourdiagnosticinfoDO(fourDiagnosticInformationDTO,fourDiagnosticInformationDO));
     }
+
+    @Override
+    public FourDiagnosticInformationDTO getFollowFourByDate(String date) {
+        return fRepo.getFollowFourByDate(date)!=null?convertToFourDiagnosticInfoDTO(fRepo.getFollowFourByDate(date)):null;
+    }
 }

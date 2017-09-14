@@ -3,6 +3,7 @@ package app.service;
 import java.util.List;
 
 import app.dto.BoneDensityDTO;
+import app.entities.BoneDensityDO;
 
 public interface BoneDensityService {
 
@@ -19,4 +20,6 @@ public interface BoneDensityService {
     BoneDensityDTO getSingleFollowById(int id);
 
     void updateBone(BoneDensityDTO boneDensityDTO);
+
+    BoneDensityDTO getFollowBoneByDate(String date);
 }

@@ -3,6 +3,7 @@ package app.serviceImpl;
 import app.dto.MedicineLiverLiverInjuryDTO;
 import app.entities.MedicineLiverLiverInjuryDO;
 import app.repo.MlLiverInjuryRepo;
+import app.service.MlCompleteService;
 import app.service.MlLiverInjuryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
  * Created by Administrator on 2017/9/11 0011.
  */
 @Service
-public class MlLiverInjuryServiceImpl implements MlLiverInjuryService{
+public class MlLiverInjuryServiceImpl implements MlLiverInjuryService,MlCompleteService{
 
     @Autowired
     private MlLiverInjuryRepo mlLiverInjuryRepo;
@@ -50,5 +51,10 @@ public class MlLiverInjuryServiceImpl implements MlLiverInjuryService{
     @Override
     public MedicineLiverLiverInjuryDTO getMlLiverInjuryByPatientId(int mlPatientId) {
         return mlLiverInjuryRepo.getMlLiverInjuryByPatientId(mlPatientId)!=null?convertToDTO(mlLiverInjuryRepo.getMlLiverInjuryByPatientId(mlPatientId)):null;
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlLiverInjuryRepo.getCompleteByPatientId(mlPatientId);
     }
 }

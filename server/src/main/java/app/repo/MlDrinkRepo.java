@@ -11,4 +11,7 @@ public interface MlDrinkRepo extends CrudRepository<MedicineLiverDrinkDO,Integer
 
     @Query(value = "select * from medicine_liver_drink where patient_id=?1 order by id desc limit 1",nativeQuery = true)
     MedicineLiverDrinkDO getMlDrinkByPatientId(int mlPatientId);
+
+    @Query(value = "select complete from medicine_liver_drink where patient_id=?1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

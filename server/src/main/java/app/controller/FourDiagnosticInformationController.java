@@ -82,4 +82,9 @@ public class FourDiagnosticInformationController {
     public void updateFourDia(@RequestBody FourDiagnosticInformationDTO fourDiagnosticInformationDTO){
         fourDiagnosticInformationService.updateFourDia(fourDiagnosticInformationDTO);
     }
+
+    @GetMapping(path = "/follow")
+    public FourDiagnosticInformationDTO getFollowFourByDate(@RequestParam  String date){
+        return fourDiagnosticInformationService.getFollowFourByDate(date);
+    }
 }

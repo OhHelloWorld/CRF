@@ -8,33 +8,35 @@ angular.module('liverHistological', [])
     var mlLiverHistological = {};
 
     $('#liverHistologicalDate').datepicker({
-      autoclose:true
+      autoclose: true
     });
 
-    $scope.save = function(){
+    $scope.save = function() {
       mlLiverHistological.patientId = sessionStorage.getItem('mlPatientId');
       mlLiverHistological.liverHistologicalResult = $scope.liverHistologicalResult;
       mlLiverHistological.liverHistologicalDate = new Date($scope.liverHistologicalDate);
       mlLiverHistological.complete = true;
 
       $http({
-        method:'POST',
-        url:'/api/mlLiverHistological',
-        data:mlLiverHistological
-      }).then(function success(){
+        method: 'POST',
+        url: '/api/mlLiverHistological',
+        data: mlLiverHistological
+      }).then(function success() {
         $('#myModal').modal();
       });
     };
 
-    function getLiverHistological(){
+    function getLiverHistological() {
       $http({
-        method:'GET',
-        url:'/api/mlLiverHistological/'+sessionStorage.getItem('mlPatientId')
-      }).then(function success(response){
+        method: 'GET',
+        url: '/api/mlLiverHistological/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
         var data = response.data;
         $scope.liverHistologicalResult = data.liverHistologicalResult;
-        var date = new Date(data.liverHistologicalDate);
-        $scope.liverHistologicalDate = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+        if (data.liverHistologicalDate) {
+          var date = new Date(data.liverHistologicalDate);
+          $scope.liverHistologicalDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+        }
         $scope.complete = data.complete;
       });
     }

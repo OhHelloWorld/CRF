@@ -214,4 +214,9 @@ public class TreatmentController {
     public void updateTreatment(@RequestBody TreatmentProgramsDTO treatmentProgramsDTO){
         treatmentService.updateTreat(treatmentProgramsDTO);
     }
+
+    @GetMapping(path = "/follow")
+    public TreatmentProgramsDTO getFollowTreatByDate(@RequestParam String date){
+        return treatmentService.getFollowTreatByDate(date);
+    }
 }

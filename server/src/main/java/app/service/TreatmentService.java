@@ -46,4 +46,6 @@ public interface TreatmentService {
     TreatmentProgramsDTO getSingleFollowById(int id);
 
     void updateTreat(TreatmentProgramsDTO treatmentProgramsDTO);
+
+    TreatmentProgramsDTO getFollowTreatByDate(String date);
 }

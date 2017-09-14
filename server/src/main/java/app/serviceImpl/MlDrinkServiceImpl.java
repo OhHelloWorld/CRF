@@ -4,7 +4,9 @@ import app.dto.MedicineLiverDrinkDTO;
 import app.dto.MedicineLiverDrinkDetailDTO;
 import app.entities.MedicineLiverDrinkDO;
 import app.entities.MedicineLiverDrinkDetailDO;
+import app.repo.MlDrinkDetailRepo;
 import app.repo.MlDrinkRepo;
+import app.service.MlCompleteService;
 import app.service.MlDrinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +18,13 @@ import java.util.List;
  * Created by Administrator on 2017/9/5 0005.
  */
 @Service
-public class MlDrinkServiceImpl implements MlDrinkService{
+public class MlDrinkServiceImpl implements MlDrinkService,MlCompleteService{
 
     @Autowired
     private MlDrinkRepo mlDrinkRepo;
+
+    @Autowired
+    private MlDrinkDetailRepo mlDrinkDetailRepo;
 
     private MedicineLiverDrinkDTO convertToDTO(MedicineLiverDrinkDO medicineLiverDrinkDO){
         MedicineLiverDrinkDTO medicineLiverDrinkDTO = new MedicineLiverDrinkDTO();
@@ -52,6 +57,7 @@ public class MlDrinkServiceImpl implements MlDrinkService{
         medicineLiverDrinkDO.setPatientId(medicineLiverDrinkDTO.getPatientId());
         List<MedicineLiverDrinkDetailDO> medicineLiverDrinkDetailDOS = new ArrayList<>();
         List<MedicineLiverDrinkDetailDTO> medicineLiverDrinkDetailDTOS = medicineLiverDrinkDTO.getMedicineLiverDrinkDetailDTOS();
+        mlDrinkDetailRepo.deleteDrinkDetailByDId(medicineLiverDrinkDTO.getId());
         if(!medicineLiverDrinkDetailDTOS.isEmpty() && medicineLiverDrinkDetailDTOS != null){
             for(MedicineLiverDrinkDetailDTO medicineLiverDrinkDetailDTO : medicineLiverDrinkDetailDTOS){
                 MedicineLiverDrinkDetailDO medicineLiverDrinkDetailDO = new MedicineLiverDrinkDetailDO();
@@ -75,5 +81,10 @@ public class MlDrinkServiceImpl implements MlDrinkService{
     @Override
     public void saveMlDrink(MedicineLiverDrinkDTO mlDrink) {
         mlDrinkRepo.save(convertToEntity(mlDrink));
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return mlDrinkRepo.getCompleteByPatientId(mlPatientId);
     }
 }

@@ -2,6 +2,7 @@ package app.controller;
 
 import java.util.List;
 
+import app.entities.BoneDensityDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -82,5 +83,10 @@ public class BoneDensityController {
     @PutMapping(path = "")
     public void updateBone(@RequestBody BoneDensityDTO boneDensityDTO){
         boneDensityService.updateBone(boneDensityDTO);
+    }
+
+    @GetMapping(path = "/follow")
+    public BoneDensityDTO getFollowBoneByDate(@RequestParam String date){
+        return boneDensityService.getFollowBoneByDate(date);
     }
 }

@@ -1,8 +1,10 @@
 package app.controller;
 
 import app.dto.MedicineLiverTreatmentDTO;
+import app.service.MlCompleteService;
 import app.service.MlTreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -15,9 +17,18 @@ public class MlTreatmentController {
     @Autowired
     private MlTreatmentService mlTreatmentService;
 
+    @Autowired
+    @Qualifier("mlTreatmentServiceImpl")
+    private MlCompleteService mlCompleteService;
+
     @PostMapping(path = "")
     public void saveMlTreatment(@RequestBody MedicineLiverTreatmentDTO medicineLiverTreatmentDTO){
         mlTreatmentService.saveMlTreatment(medicineLiverTreatmentDTO);
+    }
+
+    @GetMapping(path = "/complete/{mlPatientId}")
+    public Boolean getCompleteByPatientId(@PathVariable  int mlPatientId){
+        return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 
     @GetMapping(path = "/{mlPatientId}")

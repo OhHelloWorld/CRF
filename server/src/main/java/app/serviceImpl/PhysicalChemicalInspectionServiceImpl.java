@@ -432,4 +432,9 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         pRepo.save(convertToPhysicalChemicalInspectionDO(physicalChemicalInspectionDTO, pRepo.findOne(physicalChemicalInspectionDTO.getId())));
     }
 
+    @Override
+    public PhysicalChemicalInspectionDTO getFollowPhyByDate(String date) {
+        return pRepo.getFollowPhyByDate(date)!=null?convertToPhysicalDTO(pRepo.getFollowPhyByDate(date)):null;
+    }
+
 }

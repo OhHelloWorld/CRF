@@ -88,7 +88,6 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDO.setHeight(mlPatientDTO.getHeight());
         mlPatientDO.setName(mlPatientDTO.getName());
         mlPatientDO.setWeight(mlPatientDTO.getWeight());
-        mlPatientDO.setComplete(mlPatientDTO.isComplete());
         mlPatientDO.setBirthday(mlPatientDTO.getBirthday());
         mlPatientDO.setAbbreviation(mlPatientDTO.getAbbreviation());
         mlPatientDO.setDepartment(mlPatientDTO.getDepartment());
