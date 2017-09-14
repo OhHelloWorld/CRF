@@ -1,1 +1,97 @@
-<div ng-model="routineBlood" ng-controller="routineBloodController"><p>这是药肝血常规</p></div>
+<section class="content-header">
+  <h1 class="text-center">
+     实验室检查--血常规
+  </h1><br>
+  <ol class="breadcrumb">
+  </ol>
+</section>
+
+<div ng-app="routineBlood" ng-controller="routineBloodController">
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+
+
+      <div class="span12">
+        <u class="h4 col-md-offset-9">患者：</u>
+        <br>
+        <u class="h4 col-md-offset-9">病理号：</u>
+        <form class="form-inline col-md-offset-9">
+          <div class="form-group">
+            <u class="h4">随访</u>
+            <checkbox ng-model="follow"></checkbox>
+            <div class="input-group date" ng-show="followDateShow">
+              <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <input type="text" class="form-control pull-right" id="datepicker" ng-model="followUpDate">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- 其他病毒检测 -->
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title col-md-4">其他病毒检测</h3>
+            <div class="box-title col-md-8" >
+              <label class="col-md-5 h5" style=" text-align: -webkit-right; ">检查时间: </label>
+              <div class="input-group date col-md-7">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker1" ng-model="tab1CheckDate">
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style=" text-align: -webkit-center;">项目</th>
+                  <th style=" text-align: -webkit-center;">单位</th>                  
+                  <th style=" text-align: -webkit-center;">结果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">白细胞总数（WBC）</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">×10^9/L</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">血红蛋白（Hb）</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">g/L</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">总血红蛋白浓度</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">g/dL</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">血小板（PLT）</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">×10^9/L</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">中性粒细胞计数（N）</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">%</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+                <tr>
+                  <td height="38px" style=" text-align: -webkit-center; ">嗜酸性粒细胞计数（E）</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">%</td>
+                  <td height="38px" style=" text-align: -webkit-center; "></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
