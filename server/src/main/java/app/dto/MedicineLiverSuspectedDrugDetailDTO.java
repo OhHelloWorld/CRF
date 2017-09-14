@@ -14,8 +14,8 @@ public class MedicineLiverSuspectedDrugDetailDTO {
     private String medicationMethod;//用药方法
     private String dose;//日剂量
     private Date beginDate;//开始日期
-    private String drugWithdrawal;//是否停药
-    private Date drugWithdrawalDate;//停药日期
+    private String drugWithDrawal;//是否停药
+    private Date drugWithDrawalDate;//停药日期
     private String decrement;//是否减量
     private String drugExposure;//既往该药暴露史
     private String exposureLiverDamage;//既往暴露引起肝损
@@ -92,20 +92,20 @@ public class MedicineLiverSuspectedDrugDetailDTO {
         this.tradeName = tradeName;
     }
 
-    public String getDrugWithdrawal() {
-        return drugWithdrawal;
+    public String getDrugWithDrawal() {
+        return drugWithDrawal;
     }
 
-    public void setDrugWithdrawal(String drugWithdrawal) {
-        this.drugWithdrawal = drugWithdrawal;
+    public void setDrugWithDrawal(String drugWithDrawal) {
+        this.drugWithDrawal = drugWithDrawal;
     }
 
-    public Date getDrugWithdrawalDate() {
-        return drugWithdrawalDate;
+    public Date getDrugWithDrawalDate() {
+        return drugWithDrawalDate;
     }
 
-    public void setDrugWithdrawalDate(Date drugWithdrawalDate) {
-        this.drugWithdrawalDate = drugWithdrawalDate;
+    public void setDrugWithDrawalDate(Date drugWithDrawalDate) {
+        this.drugWithDrawalDate = drugWithDrawalDate;
     }
 
     public String getDecrement() {

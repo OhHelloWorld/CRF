@@ -11,7 +11,7 @@
 	
 
   <!--模态框-->
-  <div id="infoModal" class="modal" tabindex="-1" role="dialog">
+  <div id="myModal" class="modal" tabindex="-1" role="dialog">
                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                          <div class="modal-header">
@@ -21,11 +21,10 @@
                               </button>
                          </div>
                          <div class="modal-body">
-                              <p class="h3">{{information}}</p>
+                              <p class="h3">保存成功</p>
                          </div>
                          <div class="modal-footer">
-                              <button id="modalButton1" type="button" class="btn btn-default" data-dismiss="modal">{{buttonContent1}}</button>
-                              <button id="modalButton2" type="button" class="btn btn-primary" data-dismiss="modal" ng-click="confirm()">{{buttonContent2}}</button>
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
                          </div>
                     </div>
                </div>
@@ -41,18 +40,18 @@
               <h3 class="box-title">既往过敏史</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="Tvalue1" ng-model="lumbarSpineT" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=1><span class="h4">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="Tvalue1" ng-model="lumbarSpineT" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=2><span class="h4">有</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="Tvalue1" ng-model="lumbarSpineT" ng-value=3><span class="h4">不详</span>
+          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=3><span class="h4">不详</span>
         </span>
       </div>
       <div class="box-body">
       <div class="input-group col-md-5">
                 <span class="input-group-addon">过敏原（过敏物质）</span>
-                <input type="text" class="form-control" ng-model="lumbarSpine">
+                <input type="text" class="form-control" ng-model="allergen">
       </div>
       </div>
       </div>

@@ -2,6 +2,7 @@ import angular from 'angular';
 
 angular.module('diseaseHistory', [])
   .controller('diseaseHistoryController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
+
     $('#diagnosisDate').datepicker({
       autoclose: true
     });
@@ -15,6 +16,9 @@ angular.module('diseaseHistory', [])
     $scope.existenceObj = {};
     $scope.detailIdObj = {};
     $scope.medicineLiverDiseaseHistoryDetailDTOS = [];
+
+    getMlPatient();
+
     $scope.$watch('otherHistory', function() {
       if ($scope.otherHistory == 1) {
         $scope.diseaseShow = false;
@@ -48,18 +52,22 @@ angular.module('diseaseHistory', [])
         count = data.medicineLiverDiseaseHistoryDetailDTOS.length - 1;
         $scope.otherHistory = data.otherHistory;
         $scope.pastDisease = data.pastDisease;
-
         (function(data) {
           if (data.medicineLiverDiseaseHistoryDetailDTOS.length != 0) {
-            var diagnosisDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate);
-            var crueDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate);
-            $scope.diagnosisDate = diagnosisDate.getFullYear() + '-' + (diagnosisDate.getMonth() + 1) + '-' + diagnosisDate.getDate();
-            $scope.crueDate = crueDate.getFullYear() + '-' + (crueDate.getMonth() + 1) + '-' + crueDate.getDate();
+            if (data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate != null) {
+              var diagnosisDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate);
+              $scope.diagnosisDate = diagnosisDate.getFullYear() + '-' + (diagnosisDate.getMonth() + 1) + '-' + diagnosisDate.getDate();
+            }
+            if (data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate != null) {
+              var crueDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate);
+              $scope.crueDate = crueDate.getFullYear() + '-' + (crueDate.getMonth() + 1) + '-' + crueDate.getDate();
+            }
+
           }
         })(data);
 
         if (data.medicineLiverDiseaseHistoryDetailDTOS.length != 0) {
-          $scope.diseaseName = data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisName;
+          $scope.diseaseName = data.medicineLiverDiseaseHistoryDetailDTOS[0].diseaseName;
           $scope.existence = data.medicineLiverDiseaseHistoryDetailDTOS[0].existence;
           $scope.detailId = data.medicineLiverDiseaseHistoryDetailDTOS[0].id;
         }
@@ -75,7 +83,7 @@ angular.module('diseaseHistory', [])
           $('#crueDate' + i).datepicker({
             autoclose: true
           });
-          $scope.diagnosisNameObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).diagnosisName;
+          $scope.diseaseNameObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).diseaseName;
           $scope.existenceObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).existence;
           $scope.detailIdObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS[i])).id;
           var diagnosisDate = new Date(((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).diagnosisDate);
@@ -118,4 +126,19 @@ angular.module('diseaseHistory', [])
         $('#myModal').modal();
       });
     };
+
+    $scope.layout = function() {
+      $state.go('mlHome');
+    };
+
+    function getMlPatient() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        var data = response.data;
+        $scope.patientName = data.name;
+        $scope.patientNumber = data.identifier;
+      });
+    }
   }]);

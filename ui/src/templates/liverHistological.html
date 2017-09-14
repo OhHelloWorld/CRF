@@ -1,1 +1,53 @@
-<div ng-model="liverHistological" ng-controller="liverHistologicalController"><p>这是药肝肝脏组织学</p></div>
+<section class="content-header">
+  <h1 class=" text-center">
+     肝脏组织学检查
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">肝脏组织学检查</li>
+  </ol>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                  <p class="h3">保存成功</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+              </div>
+            </div>
+</div>
+
+<div ng-model="liverHistological" ng-controller="liverHistologicalController">
+	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+  <br>
+  <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+      <br>
+      <div class="box box-info">
+      <div class="box-header with-border">
+              <h3 class="box-title">检查日期</h3>
+      </div>
+      <div class="box-body">
+        	<input type="text" id="liverHistologicalDate" ng-model="liverHistologicalDate" class="form-control">
+      </div>
+
+      <div class="box-header with-border">
+              <h3 class="box-title">检查结果（结论参见“肝脏组织学检查结果参考”）</h3>
+      </div>
+      <div class="box-body">
+        	<input type="textarea" ng-model="liverHistologicalResult" class="form-control">
+      </div>
+      </div>
+      <div class="col-md-offset-9 ">
+      <input type="button" class="btn btn-primary" ng-click="save()" value="保存">&nbsp
+      <input type="button" class="btn btn-primary" ng-click="layout()" value="退出">
+      </div>
+</div>

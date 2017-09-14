@@ -2,6 +2,7 @@ import angular from 'angular';
 
 angular.module('mlTreatment', [])
   .controller('mlTreatmentController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
+    getMlPatient();
     var mlTreatment = {};
 
     $scope.genericNameObj = {};
@@ -37,28 +38,28 @@ angular.module('mlTreatment', [])
 
     $scope.addDetail = function() {
       detailCount += 1;
-      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="detailMethodObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="detailStartDate' + detailCount + '" ng-model="detailStartDateObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="detailEndDate' + detailCount + '" ng-model="detailEndDateObj[' + detailCount + ']"></div></div>';
+      var template = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="detailMethodObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="detailStartDate' + detailCount + '" ng-model="detailStartDateObj[' + detailCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="detailEndDate' + detailCount + '" ng-model="detailEndDateObj[' + detailCount + ']"></div></div>';
       var compileFn = $compile(template);
       var dom = compileFn($scope);
       dom.appendTo('#treatmentDetail');
       $('#detailStartDate' + detailCount).datepicker({
         autoclose: true
       });
-      $('#detailStartDate' + detailCount).datepicker({
+      $('#detailEndDate' + detailCount).datepicker({
         autoclose: true
       });
     };
 
     $scope.addOther = function() {
       otherCount += 1;
-      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施</i></div><input class="form-control" ng-model="methodObj[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施详述</i></div><input class="form-control" ng-model="methodDetail[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="otherStartDate' + otherCount + '" ng-model="otherStartDateObj[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="otherEndDate' + otherCount + '" ng-model="otherEndDateObj[' + otherCount + ']"></div></div>';
+      var template = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施</i></div><input class="form-control" ng-model="methodObj[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施详述</i></div><input type="text" class="form-control" ng-model="methodDetailObj[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="otherStartDate' + otherCount + '" ng-model="otherStartDateObj[' + otherCount + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="otherEndDate' + otherCount + '" ng-model="otherEndDateObj[' + otherCount + ']"></div></div>';
       var compileFn = $compile(template);
       var dom = compileFn($scope);
-      dom.appendTo('#treatmentDetail');
-      $('#detailStartDate' + detailCount).datepicker({
+      dom.appendTo('#treatmentOther');
+      $('#otherStartDate' + otherCount).datepicker({
         autoclose: true
       });
-      $('#detailStartDate' + detailCount).datepicker({
+      $('#otherEndDate' + otherCount).datepicker({
         autoclose: true
       });
     };
@@ -83,7 +84,7 @@ angular.module('mlTreatment', [])
           $scope.dose = data.medicineLiverTreatmentDetailDTOS[0].dose;
           (function(data) {
             var detailStartDate = new Date(data.medicineLiverTreatmentDetailDTOS[0].detailStartDate);
-            var detailEndDate = new Date(data.medicineLiverTreatmentOtherDTOS[0].detailEndDate);
+            var detailEndDate = new Date(data.medicineLiverTreatmentDetailDTOS[0].detailEndDate);
             $scope.detailStartDate = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
             $scope.detailEndDate = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
           })(data);
@@ -101,7 +102,7 @@ angular.module('mlTreatment', [])
         }
 
         for (var i = 1; i < data.medicineLiverTreatmentDetailDTOS.length; i++) {
-          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="detailMethodObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="detailStartDate' + i + '" ng-model="detailStartDateObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="detailEndDate' + i + '" ng-model="detailEndDateObj[' + i + ']"></div></div>';
+          var template = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 通用名</i></div><input class="form-control" ng-model="genericNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 商品名</i></div><input class="form-control" ng-model="tradeNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 用药方法</i></div><input class="form-control" ng-model="detailMethodObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 日剂量</i></div><input class="form-control" ng-model="doseObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="detailStartDate' + i + '" ng-model="detailStartDateObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="detailEndDate' + i + '" ng-model="detailEndDateObj[' + i + ']"></div></div>';
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#treatmentDetail');
@@ -118,17 +119,17 @@ angular.module('mlTreatment', [])
         }
 
         for (var j = 1; j < data.medicineLiverTreatmentOtherDTOS.length; j++) {
-          var template1 = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施</i></div><input class="form-control" ng-model="methodObj[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施详述</i></div><input class="form-control" ng-model="methodDetail[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="otherStartDate' + j + '" ng-model="otherStartDateObj[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="otherEndDate' + j + '" ng-model="otherEndDateObj[' + j + ']"></div></div>';
+          var template1 = '<div class="col-md-12">&nbsp</div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施</i></div><input class="form-control" ng-model="methodObj[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治疗措施详述</i></div><input class="form-control" ng-model="methodDetailObj[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 开始日期</i></div><input class="form-control" id="otherStartDate' + j + '" ng-model="otherStartDateObj[' + j + ']"></div></div><div class="col-sm-3"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 结束日期</i></div><input class="form-control" id="otherEndDate' + j + '" ng-model="otherEndDateObj[' + j + ']"></div></div>';
           var compileFn1 = $compile(template1);
           var dom1 = compileFn1($scope);
           dom1.appendTo('#treatmentOther');
-          $scope.methodObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).method;
-          $scope.methodDetailObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).methodDetail;
+          $scope.methodObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).method;
+          $scope.methodDetailObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).methodDetail;
           (function(data) {
-            var otherStartDate = new Date(((data.medicineLiverTreatmentOtherDTOS[i])).otherStartDate);
-            var otherEndDate = new Date(((data.medicineLiverTreatmentOtherDTOS[i])).otherEndDate);
-            $scope.otherStartDateObj[i] = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
-            $scope.otherEndDateObj[i] = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
+            var otherStartDate = new Date(((data.medicineLiverTreatmentOtherDTOS[j])).otherStartDate);
+            var otherEndDate = new Date(((data.medicineLiverTreatmentOtherDTOS[j])).otherEndDate);
+            $scope.otherStartDateObj[j] = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
+            $scope.otherEndDateObj[j] = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
           })(data);
         }
       });
@@ -174,7 +175,7 @@ angular.module('mlTreatment', [])
         mlTreatment.medicineLiverTreatmentOtherDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
           method: $scope.methodObj[j+1],
-          methodDetail: $scope.methodDetail[j+1],
+          methodDetail: $scope.methodDetailObj[j+1],
           otherStartDate: new Date($scope.otherStartDateObj[j+1]),
           otherEndDate: new Date($scope.otherEndDateObj[j+1])
         });
@@ -187,4 +188,15 @@ angular.module('mlTreatment', [])
         $('#myModal').modal();
       });
     };
+
+    function getMlPatient() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        var data2 = response.data;
+        $scope.patientName = data2.name;
+        $scope.patientNumber = data2.identifier;
+      });
+    }
   }]);

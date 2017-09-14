@@ -7,7 +7,7 @@ public class MedicineLiverAllergyHistoryDTO {
 
     private int id;
     private int patientId;
-    private int allergy_history;//既往过敏史
+    private int allergyHistory;//既往过敏史
     private String allergen;//过敏原
     private boolean complete;
 
@@ -27,12 +27,12 @@ public class MedicineLiverAllergyHistoryDTO {
         this.patientId = patientId;
     }
 
-    public int getAllergy_history() {
-        return allergy_history;
+    public int getAllergyHistory() {
+        return allergyHistory;
     }
 
-    public void setAllergy_history(int allergy_history) {
-        this.allergy_history = allergy_history;
+    public void setAllergyHistory(int allergyHistory) {
+        this.allergyHistory = allergyHistory;
     }
 
     public String getAllergen() {

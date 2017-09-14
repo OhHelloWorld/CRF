@@ -12,7 +12,7 @@ public class MedicineLiverSymptomsOtherDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.MERGE})
     @JoinColumn(name = "medicine_liver_symptoms_id")
     private MedicineLiverSymptomsDO medicineLiverSymptomsDO;
     private String name;//其他体征名
