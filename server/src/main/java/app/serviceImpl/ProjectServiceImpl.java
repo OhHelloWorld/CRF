@@ -240,14 +240,25 @@ public class ProjectServiceImpl implements ProjectService {
     public List<Integer> getProjectData(Long projectId) {
         List<Integer> projectDataList = new ArrayList<>();
         Long currentHospitalId = new UserMsgTool().getCurrentUser().getHospital().getId();
-        projectDataList.add(projectRepo.getMan(projectId));
-        projectDataList.add(projectRepo.getWoman(projectId));
-        projectDataList.add(projectRepo.getSaveCount(projectId));
-        projectDataList.add(projectRepo.getPushCount(projectId));
-        projectDataList.add(projectRepo.getAllCount(projectId));
-        projectDataList.add(projectRepo.getHospitalCount(projectId, currentHospitalId));
-        projectDataList.add(projectRepo.getHospitalMan(projectId, currentHospitalId));
-        projectDataList.add(projectRepo.getHospitalWoman(projectId, currentHospitalId));
+        if(projectId == 1) {
+            projectDataList.add(projectRepo.getMan(projectId));
+            projectDataList.add(projectRepo.getWoman(projectId));
+            projectDataList.add(projectRepo.getSaveCount(projectId));
+            projectDataList.add(projectRepo.getPushCount(projectId));
+            projectDataList.add(projectRepo.getAllCount(projectId));
+            projectDataList.add(projectRepo.getHospitalCount(projectId, currentHospitalId));
+            projectDataList.add(projectRepo.getHospitalMan(projectId, currentHospitalId));
+            projectDataList.add(projectRepo.getHospitalWoman(projectId, currentHospitalId));
+        }else if(projectId == 2){
+            projectDataList.add(projectRepo.getMlMan(projectId));
+            projectDataList.add(projectRepo.getMlWoman(projectId));
+            projectDataList.add(projectRepo.getMlSaveCount(projectId));
+            projectDataList.add(projectRepo.getMlPushCount(projectId));
+            projectDataList.add(projectRepo.getMlAllCount(projectId));
+            projectDataList.add(projectRepo.getMlHospitalCount(projectId, currentHospitalId));
+            projectDataList.add(projectRepo.getMlHospitalMan(projectId, currentHospitalId));
+            projectDataList.add(projectRepo.getMlHospitalWoman(projectId, currentHospitalId));
+        }
         return projectDataList;
     }
 

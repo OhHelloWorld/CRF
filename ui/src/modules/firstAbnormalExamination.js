@@ -2,7 +2,7 @@ import angular from 'angular';
 
 angular.module('firstAbnormalExamination', [])
   .controller('firstAbnormalExaminationController', ['$scope', '$http', function ($scope, $http) {
-
+    getPatientInfo();
     $scope.titleName = '肝脏生化检查';
 
     $('#datepicker1').datepicker({
@@ -133,6 +133,16 @@ angular.module('firstAbnormalExamination', [])
       $scope.inr = responseData.inr;
       $scope.afp = responseData.afp;
     });
+
+    function getPatientInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        $scope.patientName = response.data.name;
+        $scope.patientNumber = response.data.identifier;
+      });
+    }
 
 
   }]);
