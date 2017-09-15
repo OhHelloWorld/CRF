@@ -44,4 +44,5 @@ public class FirstAbnormalExaminationController {
     public List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(@PathVariable Long pId) {
         return firstAbnormalExaminationService.getAllMlfaeData(pId);
     }
+
 }
