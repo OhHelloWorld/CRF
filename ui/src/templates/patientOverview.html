@@ -326,9 +326,9 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-1">调查项</th>
-                  <th class="col-md-2">结果<a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateTongue()" ng-show="isTongueFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a></th>
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">调查项</th>
+                  <th>结果<a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateTongue()" ng-show="isTongueFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a></th>
                 </tr>
                 <tr>
                   <td>1</td>
@@ -1578,16 +1578,16 @@
 
   <div ng-if="show2">
     <div class="btn-group-vertical col-md-2" role="group">
-                <!-- <button ng-click="inputClick()" class="btn btn-primary btn-sm">医院录入表</button>
-                <br/> -->
                 <div class="list-group" >
                 <button ng-repeat="followDate in followDateList" class="list-group-item" ng-click="followClick(followDate)">随访表{{followDate | date:"yyyy-MM-dd"}}</button>
                 </div>
     </div>
     <div class="box-body no-padding">
           <div>
+
             <table class="table table-striped table-bordered table-hover" ng-if="showFourDiaFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showFourDiaFollow"><span class="h4">[四诊信息]</span></div>
                 <tr class="info">
                   <th class="col-md-2">序号</th>
                   <th class="col-md-3">调查项</th>
@@ -1851,10 +1851,11 @@
 
             <table class="table table-striped" ng-if="showTongueFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showTongueFollow"><span class="h4">[舌脉象]</span></div>
                 <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-1">调查项</th>
-                  <th class="col-md-2">结果</th>
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">调查项</th>
+                  <th>结果</th>
                 </tr>
                 <tr>
                   <td>1</td>
@@ -1897,6 +1898,7 @@
 
             <table class="table table-striped" ng-if="showPhyFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showPhyFollow"><span class="h4">[理化检查]</span></div>
                 <tr class="info">
                   <th class="col-md-2">序号</th>
                   <th class="col-md-3">调查项</th>
@@ -2353,6 +2355,7 @@
 
             <table class="table table-striped" ng-if="showBoneFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showBoneFollow"><span class="h4">[骨密度]</span></div>
                 <tr class="info">
                   <th class="col-md-2">序号</th>
                   <th class="col-md-3">调查项</th>
@@ -2414,12 +2417,13 @@
             
             <table class="table table-striped" ng-if="showTreatFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showTreatFollow"><span class="h4">[治疗方案]</span></div>
                 <tr class="info">
-                  <th>序号</th>
-                  <th>药名</th>
-                  <th>开始用药时间</th>
-                  <th>日剂量（g/日）</th>
-                  <th>疗程（天）</th>
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">药名</th>
+                  <th class="col-md-3">开始用药时间</th>
+                  <th class="col-md-3">日剂量（g/日）</th>
+                  <th class="col-md-3">疗程（天）</th>
                 </tr>
                 <tr>
                   <td>1</td>
@@ -2532,12 +2536,13 @@
 
             <table class="table table-striped" ng-if="showChineseFollow">
                 <tbody>
+                <div class="col-md-12" style="text-align: left" ng-if="showChineseFollow"><span class="h4">[中药方剂 ]</span></div>
                 <tr class="info">
-                  <th>序号</th>
-                  <th>类别</th>
-                  <th>开始服药时间</th>
-                  <th>描述</th>
-                  <th>疗程</th>
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-3">类别</th>
+                  <th class="col-md-3">开始服药时间</th>
+                  <th class="col-md-3">描述</th>
+                  <th class="col-md-3">疗程</th>
                 </tr>
                 <tr>
                   <td>16</td>

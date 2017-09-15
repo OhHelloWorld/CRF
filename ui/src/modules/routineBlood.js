@@ -2,7 +2,7 @@ import angular from 'angular';
 
 angular.module('routineBlood', [])
   .controller('routineBloodController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-
+    getPatientInfo();
     $('#datepicker1').datepicker({
       autoclose: true
     });
@@ -86,6 +86,16 @@ angular.module('routineBlood', [])
       $scope.justModalContent = '数据获取异常';
       $('#justModal').modal('show');
     });
+
+    function getPatientInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        $scope.patientName = response.data.name;
+        $scope.patientNumber = response.data.identifier;
+      });
+    }
 
 
   }]);

@@ -2,7 +2,7 @@ import angular from 'angular';
 
 angular.module('hospitalAbnormalExamination', [])
   .controller('hospitalAbnormalExaminationController', ['$scope', '$http', function($scope, $http) {
-
+    getPatientInfo();
     $scope.pageNum = 1;
     $scope.pageNums = [];
     var allData = {};
@@ -45,5 +45,15 @@ angular.module('hospitalAbnormalExamination', [])
         $scope.mlfaes.push(allData[a-1]);
       }
     };
+
+    function getPatientInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        $scope.patientName = response.data.name;
+        $scope.patientNumber = response.data.identifier;
+      });
+    }
 
   }]);

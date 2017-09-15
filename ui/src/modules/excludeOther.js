@@ -2,7 +2,7 @@ import angular from 'angular';
 
 angular.module('excludeOther', [])
   .controller('excludeOtherController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
-
+    getPatientInfo();
     $('#datepicker1').datepicker({
       autoclose: true
     });
@@ -162,7 +162,15 @@ angular.module('excludeOther', [])
       $('#justModal').modal('show');
     });
 
-
+    function getPatientInfo() {
+      $http({
+        method: 'GET',
+        url: '/api/mlPatient/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        $scope.patientName = response.data.name;
+        $scope.patientNumber = response.data.identifier;
+      });
+    }
 
   }]);
 
