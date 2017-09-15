@@ -84,7 +84,6 @@ angular.module('firstAbnormalExamination', [])
       allData.pt = $scope.pt;
       allData.inr = $scope.inr;
       allData.afp = $scope.afp;
-      console.log(allData);
       $http({
         method: 'POST',
         url: '/api/mlfae/',
