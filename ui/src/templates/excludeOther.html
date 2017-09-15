@@ -244,6 +244,9 @@
               </tr>
             </tbody>
           </table>
+          <div class="box-footer">
+            <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">保存</button>
+          </div>
         </div>
       </div>
 
@@ -261,7 +264,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div>
-              <input type="text" class="form-control pull-right" id="datepicker8" ng-model="tab1CheckDate">
+              <input type="text" class="form-control pull-right" id="datepicker8" ng-model="hepatitisBFiveDate">
             </div>
           </div>
         </div>
@@ -302,19 +305,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                          <input type="radio" name="hbsab" ng-model="hbsab" ng-value=1>
                           <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                          <input type="radio" name="hbsab" ng-model="hbsab" ng-value=2>
                           <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                          <input type="radio" name="hbsab" ng-model="hbsab" ng-value=3>
                           <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                          <input type="radio" name="hbsab" ng-model="hbsab" ng-value=4>
                           <span class="h5">不详</span>
                       </span>
                     </div>
@@ -325,19 +328,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                          <input type="radio" name="hbcab" ng-model="hbcab" ng-value=1>
                           <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                          <input type="radio" name="hbcab" ng-model="hbcab" ng-value=2>
                           <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                          <input type="radio" name="hbcab" ng-model="hbcab" ng-value=3>
                           <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                          <input type="radio" name="hbcab" ng-model="hbcab" ng-value=4>
                           <span class="h5">不详</span>
                       </span>
                     </div>
@@ -348,19 +351,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                          <input type="radio" name="hbeag" ng-model="hbeag" ng-value=1>
                           <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                          <input type="radio" name="hbeag" ng-model="hbeag" ng-value=2>
                           <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                          <input type="radio" name="hbeag" ng-model="hbeag" ng-value=3>
                           <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                          <input type="radio" name="hbeag" ng-model="hbeag" ng-value=4>
                           <span class="h5">不详</span>
                       </span>
                     </div>
@@ -371,19 +374,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                          <input type="radio" name="hbeab" ng-model="hbeab" ng-value=1>
                           <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                          <input type="radio" name="hbeab" ng-model="hbeab" ng-value=2>
                           <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                          <input type="radio" name="hbeab" ng-model="hbeab" ng-value=3>
                           <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                          <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                          <input type="radio" name="hbeab" ng-model="hbeab" ng-value=4>
                           <span class="h5">不详</span>
                       </span>
                     </div>
@@ -391,6 +394,9 @@
                 </tr>
               </tbody>
             </table>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">保存</button>
+            </div>
           </div>
         </div>
       </div>
@@ -405,7 +411,7 @@
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control pull-right" id="datepicker9" ng-model="tab1CheckDate">
+                <input type="text" class="form-control pull-right" id="datepicker9" ng-model="autoimmuneAntibodyDate">
               </div>
             </div>
           </div>
@@ -413,121 +419,121 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style=" text-align: -webkit-center;">检查内容</th>
+                  <th style="text-align: -webkit-center;width: 40%;">检查内容</th>
                   <th style=" text-align: -webkit-center;">结果</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center; ">HBsAg</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">抗核抗体(ANA)</td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="ana" ng-model="ana" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="ana" ng-model="ana" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="ana" ng-model="ana" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="ana" ng-model="ana" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center; ">HBsAb</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">抗线粒体抗体(AMA)</td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="ama" ng-model="ama" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="ama" ng-model="ama" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="ama" ng-model="ama" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="ama" ng-model="ama" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center; ">HBcAb</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">抗线粒体抗体M2型(AMA-M2)</td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="amam2" ng-model="amam2" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="amam2" ng-model="amam2" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="amam2" ng-model="amam2" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="amam2" ng-model="amam2" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center; ">HBeAg</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">抗平滑肌抗体(SMA)</td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="drinkHistory" ng-model="sma" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="sma" ng-model="sma" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="sma" ng-model="sma" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="sma" ng-model="sma" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center; ">HBeAb</td>
+                  <td height="38px" style=" text-align: -webkit-center; ">肝肾线粒体抗体(LKM)</td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="lkm" ng-model="lkm" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="lkm" ng-model="lkm" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="lkm" ng-model="lkm" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="lkm" ng-model="lkm" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
@@ -535,6 +541,9 @@
                 </tr>
               </tbody>
             </table>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">保存</button>
+            </div>
           </div>
         </div>
       </div>
@@ -550,7 +559,7 @@
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control pull-right" id="datepicker10" ng-model="tab1CheckDate">
+                <input type="text" class="form-control pull-right" id="datepicker10" ng-model="otherVirusCheckDate">
               </div>
             </div>
           </div>
@@ -568,19 +577,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="cytomegalovirus" ng-model="cytomegalovirus" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="cytomegalovirus" ng-model="cytomegalovirus" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="cytomegalovirus" ng-model="cytomegalovirus" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="cytomegalovirus" ng-model="cytomegalovirus" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
@@ -591,19 +600,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
+                            <input type="radio" name="ebviruses" ng-model="ebviruses" ng-value=1>
                             <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="ebviruses" ng-model="ebviruses" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="ebviruses" ng-model="ebviruses" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="ebviruses" ng-model="ebviruses" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
@@ -614,19 +623,19 @@
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=1>
-                            <span class="h5">阴性</span>
+                        <input type="radio" name="herpesSimplex" ng-model="herpesSimplex" ng-value=1>
+                        <span class="h5">阴性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=2>
+                            <input type="radio" name="herpesSimplex" ng-model="herpesSimplex" ng-value=2>
                             <span class="h5">阳性</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=3>
+                            <input type="radio" name="herpesSimplex" ng-model="herpesSimplex" ng-value=3>
                             <span class="h5">未做</span>
                       </span>
                       <span class="col-md-offset-1">
-                            <input type="radio" name="drinkHistory" ng-model="drinkHistory" ng-value=4>
+                            <input type="radio" name="herpesSimplex" ng-model="herpesSimplex" ng-value=4>
                             <span class="h5">不详</span>
                       </span>
                     </div>
@@ -634,10 +643,31 @@
                 </tr>
               </tbody>
             </table>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info pull-right" ng-click="showSaveModal()">保存</button>
+            </div>
           </div>
         </div>
       </div>
-    
+
+
+
+      <!-- 模态框 -->
+      <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              <p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
