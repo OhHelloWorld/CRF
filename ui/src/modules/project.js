@@ -39,6 +39,7 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   //得到该项目的所有医院
   $scope.url = '/api/projects/' + localStorageService.get('project').id + '/hospital';
 
+
   /**
    *点击某个项目的某家医院，将其数据序列化到本地库中
    */

@@ -137,6 +137,14 @@ homePage.controller('homePageController', ['$base64', '$scope', '$http', '$rootS
     });
   };
 
+  $scope.intoProject = function(project){
+    if(project.id == 1){
+      window.open('main.html');
+    }else if(project.id == 2){
+      window.open('medicineLiverMain.html');
+    }
+  };
+
   $scope.confirmChangePass = function() {
     var authKey = $base64.encode($scope.user.account + ':' + $scope.oldPassword);
     $http({
@@ -235,6 +243,7 @@ homePage.controller('homePageController', ['$base64', '$scope', '$http', '$rootS
    */
   $scope.click_project = function(project) {
     localStorageService.set('project', project);
+    $state.go('project');
   };
 
   /**

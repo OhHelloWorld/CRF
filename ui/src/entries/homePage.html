@@ -162,9 +162,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </form>
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" id="sidebarMenu">
-        <li>
+        <!-- <li>
           <a ui_sref="createProject"><i class="fa fa-folder-open"></i><span class="h4">创建项目</span></a>
-        </li>
+        </li> -->
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview" ng-if="hospitalPermission" style="cursor: pointer;">
           <a><i class="fa fa-folder"></i> <span class="h4">医院信息</span>
@@ -189,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="treeview-menu">
             <li class="active" ng-if="invitePermissions[$index]" ><a ui-sref="invite"><i class="fa fa-user-plus"></i><span class="h4">邀请</span></a>
             </li>
-            <li class="active" ng-if="digustPermissions[$index]" ><a href="main.html" target="view_window"><i class="fa fa-wrench"></i><span class="h4">编辑项目相关内容</span></a>
+            <li class="active" ng-if="digustPermissions[$index]" ><a ng-click="intoProject(project)" target="view_window"><i class="fa fa-wrench"></i><span class="h4">编辑项目相关内容</span></a>
             </li>
             <li class="active" ng-if="settingPermissions[$index]" ><a ui-sref="projectSetting"><i class="fa fa-gear"></i><span class="h4">项目设置</span></a>
             </li>

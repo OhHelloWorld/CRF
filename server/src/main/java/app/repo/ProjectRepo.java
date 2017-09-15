@@ -50,5 +50,36 @@ public interface ProjectRepo extends CrudRepository<ProjectDO, Long> {
     @Query(value = "select count(*) from patient where project_id = ?1 and hospital_id=?2 and gender like '%女%'",
             nativeQuery = true)
     int getHospitalWoman(Long projectId, Long hospitalId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where gender like '%男%' and project_id=?1",
+            nativeQuery = true)
+    int getMlMan(Long projectId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where gender like '%女%' and project_id=?1",
+            nativeQuery = true)
+    int getMlWoman(Long projectId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where complete = 1 and project_id = ?1",
+            nativeQuery = true)
+    int getMlSaveCount(Long projectId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where complete = 0 and project_id = ?1",
+            nativeQuery = true)
+    int getMlPushCount(Long projectId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where project_id = ?1", nativeQuery = true)
+    int getMlAllCount(Long projectId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where project_id = ?1 and hospital_id=?2",
+            nativeQuery = true)
+    int getMlHospitalCount(Long projectId, Long hospitalId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where project_id = ?1 and hospital_id=?2 and gender like '%男%'",
+            nativeQuery = true)
+    int getMlHospitalMan(Long projectId, Long hospitalId);
+
+    @Query(value = "select count(*) from medicine_liver_patient where project_id = ?1 and hospital_id=?2 and gender like '%女%'",
+            nativeQuery = true)
+    int getMlHospitalWoman(Long projectId, Long hospitalId);
 }
 
