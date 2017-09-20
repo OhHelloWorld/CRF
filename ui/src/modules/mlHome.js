@@ -10,7 +10,6 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
     $scope.mlChangeMenuStatus();
     $scope.mlPatientClick = function(patient) {
       sessionStorage.setItem('mlPatientId', patient.id);
-      $scope.mlPatientMenuClick();
       location.reload('true');
       $state.go('mlPatientInfo');
     };

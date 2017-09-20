@@ -1,8 +1,10 @@
 import angular from 'angular';
+import '../entries/medicineLiverMain.js';
 
-angular.module('mlPatientInfo', [])
+angular.module('mlPatientInfo', ['medicineLiverMain'])
   .controller('mlPatientInfoController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
     var patient = {};
+    $scope.mlPatientMenuClick();
     $scope.intoDiagnosisObj = {};
     $scope.intoDiagnosisDateObj = {};
     $scope.admissIdObj = {};
