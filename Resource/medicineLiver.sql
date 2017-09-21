@@ -239,6 +239,7 @@ create table medicine_liver_first_abnormal_examination(
 	afp varchar(20),
 	afp_date Date,
 	remark varchar(200),#备注
+    first boolean,
 	complete boolean,
 	primary key(id)
 );
@@ -324,6 +325,7 @@ create table medicine_liver_exclude_other(
 create table medicine_liver_routine_blood(
 	id int not null auto_increment,
 	patient_id int,
+    routine_blood_date Date,
 	wbc varchar(20),
 	wbc_date Date,
 	plt varchar(20),

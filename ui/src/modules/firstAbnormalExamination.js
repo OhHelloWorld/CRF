@@ -84,6 +84,8 @@ angular.module('firstAbnormalExamination', [])
       allData.pt = $scope.pt;
       allData.inr = $scope.inr;
       allData.afp = $scope.afp;
+      allData.first = true;
+      allData.complete = true;
       $http({
         method: 'POST',
         url: '/api/mlfae/',
@@ -99,7 +101,7 @@ angular.module('firstAbnormalExamination', [])
 
     $http({
       methods: 'GET',
-      url: '/api/mlfae/' + sessionStorage.getItem('mlPatientId')
+      url: '/api/mlfae/first/' + sessionStorage.getItem('mlPatientId')
     }).then(function(response) {
       var responseData = response.data;
       if(responseData.tab1CheckDate){

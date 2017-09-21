@@ -84,7 +84,7 @@ angular.module('imagingEndoscopy', [])
       allDate.fibroscan = $scope.fibroscan;
       allDate.fibroscanDate = checkDate($scope.fibroscanDate);
       allDate.fibroscanBiliaryTract = $scope.fibroscanBiliaryTract;
-      allDate.fibroscan_esophageal_gastric_varices = $scope.fibroscan_esophageal_gastric_varices;
+      allDate.fibroscanEsophagealGastricVarices = $scope.fibroscanEsophagealGastricVarices;
 
       allDate.ercp = $scope.ercp;
       allDate.ercpDate = checkDate($scope.ercpDate);
@@ -157,9 +157,6 @@ angular.module('imagingEndoscopy', [])
       $scope.gastroscopeBiliaryTract = allData.gastroscopeBiliaryTract;
       $scope.gastroscopeEsophagealGastricVarices = allData.gastroscopeEsophagealGastricVarices;
 
-    }, function () {
-      $scope.justModalContent = '数据获取异常';
-      $('#justModal').modal('show');
     });
 
 

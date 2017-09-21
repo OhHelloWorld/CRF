@@ -22,8 +22,8 @@ public class MedicineLiverExcludeOtherDTO {
     private Date antihcvDate;
     private int hcvrna;
     private Date hcvrnaDate;
-    private int Mononucleosis;
-    private Date MononucleosisDate;//单核细胞增多症检查日期
+    private int mononucleosis;
+    private Date mononucleosisDate;//单核细胞增多症检查日期
     private int ana;
     private int ama;
     private int amam2;
@@ -163,19 +163,19 @@ public class MedicineLiverExcludeOtherDTO {
     }
 
     public int getMononucleosis() {
-        return Mononucleosis;
+        return mononucleosis;
     }
 
     public void setMononucleosis(int mononucleosis) {
-        Mononucleosis = mononucleosis;
+        this.mononucleosis = mononucleosis;
     }
 
     public Date getMononucleosisDate() {
-        return MononucleosisDate;
+        return mononucleosisDate;
     }
 
     public void setMononucleosisDate(Date mononucleosisDate) {
-        MononucleosisDate = mononucleosisDate;
+        this.mononucleosisDate = mononucleosisDate;
     }
 
     public int getAna() {

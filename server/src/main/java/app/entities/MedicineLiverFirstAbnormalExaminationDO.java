@@ -56,6 +56,7 @@ public class MedicineLiverFirstAbnormalExaminationDO {
     private String afp;
     private Date afpDate;
     private String remark;//备注
+    private boolean first;
     private boolean complete;
 
     public int getId() {
@@ -96,6 +97,14 @@ public class MedicineLiverFirstAbnormalExaminationDO {
 
     public void setAltDate(Date altDate) {
         this.altDate = altDate;
+    }
+
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 
     public String getAst() {

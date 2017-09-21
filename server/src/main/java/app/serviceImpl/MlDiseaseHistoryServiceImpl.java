@@ -59,6 +59,7 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         medicineLiverDiseaseHistoryDTO.setOtherHistory(medicineLiverDiseaseHistoryDO.getOtherHistory());
         medicineLiverDiseaseHistoryDTO.setPastDisease(medicineLiverDiseaseHistoryDO.getPastDisease());
         medicineLiverDiseaseHistoryDTO.setPatientId(medicineLiverDiseaseHistoryDO.getPatientId());
+        medicineLiverDiseaseHistoryDTO.setId(medicineLiverDiseaseHistoryDO.getId());
         List<MedicineLiverDiseaseHistoryDetailDTO> medicineLiverDiseaseHistoryDetailDTOS = new ArrayList<>();
         List<MedicineLiverDiseaseHistoryDetailDO> medicineLiverDiseaseHistoryDetailDOS = medicineLiverDiseaseHistoryDO.getMedicineLiverDiseaseHistoryDetailDOS();
         if (!medicineLiverDiseaseHistoryDetailDOS.isEmpty() && medicineLiverDiseaseHistoryDetailDOS != null) {
@@ -69,6 +70,7 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
                 medicineLiverDiseaseHistoryDetailDTO.setDiseaseName(medicineLiverDiseaseHistoryDetailDO.getDiseaseName());
                 medicineLiverDiseaseHistoryDetailDTO.setExistence(medicineLiverDiseaseHistoryDetailDO.getExistence());
                 medicineLiverDiseaseHistoryDetailDTO.setMedicineLiverDiseaseHistoryId(medicineLiverDiseaseHistoryDetailDO.getMedicineLiverDiseaseHistoryDO().getId());
+                medicineLiverDiseaseHistoryDetailDTO.setId(medicineLiverDiseaseHistoryDetailDO.getId());
                 medicineLiverDiseaseHistoryDetailDTOS.add(medicineLiverDiseaseHistoryDetailDTO);
             }
         }

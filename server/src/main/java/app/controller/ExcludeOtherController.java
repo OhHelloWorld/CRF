@@ -3,7 +3,9 @@ package app.controller;
 import app.dto.MedicineLiverExcludeOtherDTO;
 import app.entities.MedicineLiverExcludeOtherDO;
 import app.service.ExcludeOtherService;
+import app.service.MlCompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -18,6 +20,10 @@ public class ExcludeOtherController {
     @Autowired
     private ExcludeOtherService excludeOtherService;
 
+    @Autowired
+    @Qualifier("excludeOtherServiceImpl")
+    private MlCompleteService mlCompleteService;
+
     @PostMapping(value = "/")
     public void addExcludeOther(@RequestBody MedicineLiverExcludeOtherDTO medicineLiverExcludeOtherDTO){
         excludeOtherService.addExcludeOther(medicineLiverExcludeOtherDTO);
@@ -26,5 +32,10 @@ public class ExcludeOtherController {
     @GetMapping(value = "/{pId}")
     public MedicineLiverExcludeOtherDTO getByPatientId(@PathVariable Long pId) {
         return excludeOtherService.getByPatientId(pId);
+    }
+
+    @GetMapping(value = "/complete/{mlPatientId}")
+    public Boolean getCompleteByPatientId(@PathVariable int mlPatientId){
+        return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 }

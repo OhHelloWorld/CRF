@@ -41,7 +41,7 @@ import uiRouter from 'angular-ui-router';
 
 import LocalStorageModule from 'angular-local-storage';
 
-var medicineLiverMain = angular.module('medicineLiverMain', [uiRouter, LocalStorageModule,'mlHome','mlPatientInfo','diseaseHistory','allergyHistory','drink','drugHistory','symptoms','firstAbnormalExamination','hospitalAbnormalExamination','excludeOther','routineBlood','imagingEndoscopy','liverHistological','liverInjury','mlTreatment','diseaseOutcome','biologicalSamples']);
+var medicineLiverMain = angular.module('medicineLiverMain', [uiRouter, LocalStorageModule,'mlHome','mlPatientInfo','diseaseHistory','allergyHistory','drink','drugHistory','symptoms','firstAbnormalExamination','hospitalAbnormalExamination','excludeOther','routineBlood','imagingEndoscopy','liverHistological','liverInjury','mlTreatment','diseaseOutcome','biologicalSamples','mlPatientOverview']);
 
 medicineLiverMain.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
@@ -423,33 +423,37 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/firstAbnormalExamination/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/mlfae/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#firstAbnormalExaminationMenuYes').removeClass('hide');
-          $('#firstAbnormalExaminationMenuNo').addClass('hide');
-        } else {
-          $('#firstAbnormalExaminationMenuNo').removeClass('hide');
-          $('#firstAbnormalExaminationMenuYes').addClass('hide');
-        }
-      }).catch(function err() {});
-
-      $http({
-        method: 'GET',
-        url: '/api/hospitalAbnormalExamination/complete/' + sessionStorage.getItem('mlPatientId')
-      }).then(function success(response) {
-        if (response.data) {
           $('#hospitalAbnormalExaminationMenuYes').removeClass('hide');
+          $('#firstAbnormalExaminationMenuNo').addClass('hide');
           $('#hospitalAbnormalExaminationMenuNo').addClass('hide');
         } else {
+          $('#firstAbnormalExaminationMenuNo').removeClass('hide');
           $('#hospitalAbnormalExaminationMenuNo').removeClass('hide');
+          $('#firstAbnormalExaminationMenuYes').addClass('hide');
           $('#hospitalAbnormalExaminationMenuYes').addClass('hide');
         }
       }).catch(function err() {});
 
+      // $http({
+      //   method: 'GET',
+      //   url: '/api/hospitalAbnormalExamination/complete/' + sessionStorage.getItem('mlPatientId')
+      // }).then(function success(response) {
+      //   if (response.data) {
+      //     $('#hospitalAbnormalExaminationMenuYes').removeClass('hide');
+      //     $('#hospitalAbnormalExaminationMenuNo').addClass('hide');
+      //   } else {
+      //     $('#hospitalAbnormalExaminationMenuNo').removeClass('hide');
+      //     $('#hospitalAbnormalExaminationMenuYes').addClass('hide');
+      //   }
+      // }).catch(function err() {});
+
       $http({
         method: 'GET',
-        url: '/api/imagingEndoscopy/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/iesc/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#imagingEndoscopyMenuYes').removeClass('hide');
@@ -462,7 +466,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
       $http({
         method: 'GET',
-        url: '/api/excludeOther/complete/' + sessionStorage.getItem('mlPatientId')
+        url: '/api/exclude/complete/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         if (response.data) {
           $('#excludeOtherMenuYes').removeClass('hide');

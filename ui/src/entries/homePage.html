@@ -181,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </li>
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview" ng-repeat="project in projects" style="cursor: pointer">
-          <a ui-sref="project.projectDefault" ng-click="click_project(project)"><i class="fa fa-folder"></i> <span class="h4">{{project.projectName}}</span>
+          <a ui-sref="project.projectDefault" ng-click="click_project(project)"><i class="fa fa-folder"></i> <span class="h4" ng-cloak>{{project.projectName}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

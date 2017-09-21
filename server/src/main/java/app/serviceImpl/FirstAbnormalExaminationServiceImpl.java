@@ -6,6 +6,7 @@ import app.dto.MedicineLiverFirstAbnormalExaminationDTO;
 import app.entities.MedicineLiverFirstAbnormalExaminationDO;
 import app.repo.FirstAbnormalExaminationRepo;
 import app.service.FirstAbnormalExaminationService;
+import app.service.MlCompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * Created by 10210 on 2017/9/7.
  */
 @Service
-public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExaminationService{
+public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExaminationService,MlCompleteService{
 
     @Autowired
     private ConvertUtil convertUtil;
@@ -43,5 +44,15 @@ public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExamina
         }
         mDTOlist.remove(0);
         return mDTOlist;
+    }
+
+    @Override
+    public MedicineLiverFirstAbnormalExaminationDTO getHosData(int mlpatientId) {
+        return firstAbnormalExaminationRepo.getHosData(mlpatientId)!=null?convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getHosData(mlpatientId)):null;
+    }
+
+    @Override
+    public Boolean getCompleteByPatient(int mlPatientId) {
+        return firstAbnormalExaminationRepo.getCompleteByPatientId(mlPatientId)!=null?firstAbnormalExaminationRepo.getCompleteByPatientId(mlPatientId):false;
     }
 }

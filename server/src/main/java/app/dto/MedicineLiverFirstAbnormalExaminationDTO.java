@@ -45,6 +45,7 @@ public class MedicineLiverFirstAbnormalExaminationDTO {
     private String afp;
     private Date afpDate;
     private String remark;//备注
+    private boolean first;
     private boolean complete;
 
     public int getId() {
@@ -69,6 +70,14 @@ public class MedicineLiverFirstAbnormalExaminationDTO {
 
     public void setAlt(String alt) {
         this.alt = alt;
+    }
+
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 
     public Date getAltDate() {

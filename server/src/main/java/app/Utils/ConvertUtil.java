@@ -694,6 +694,8 @@ public class ConvertUtil {
         mDO.setTp(mlfaeDTO.getTp());
         mDO.setInr(mlfaeDTO.getInr());
         mDO.setAfp(mlfaeDTO.getAfp());
+        mDO.setFirst(mlfaeDTO.isFirst());
+        mDO.setComplete(mlfaeDTO.isComplete());
         return mDO;
     }
 
@@ -730,6 +732,7 @@ public class ConvertUtil {
         mDO.setHerpesSimplex(mDTO.getHerpesSimplex());
         mDO.setCeruloplasminDate(mDTO.getCeruloplasminDate());
         mDO.setRheumatoidDate(mDTO.getRheumatoidDate());
+        mDO.setComplete(mDTO.isComplete());
         return mDO;
     }
 
@@ -780,6 +783,7 @@ public class ConvertUtil {
         mDO.setNeutrophil(mDTO.getNeutrophil());
         mDO.setEosinophil(mDTO.getEosinophil());
         mDO.setTotalHemoglobin(mDTO.getTotalHemoglobin());
+        mDO.setComplete(mDTO.isComplete());
         return mDO;
     }
 
@@ -819,7 +823,7 @@ public class ConvertUtil {
         mDO.setFibroscan(mDTO.getFibroscan());
         mDO.setFibroscanDate(mDTO.getFibroscanDate());
         mDO.setFibroscanBiliaryTract(mDTO.getFibroscanBiliaryTract());
-        mDO.setFibroscan_esophageal_gastric_varices(mDTO.getFibroscan_esophageal_gastric_varices());
+        mDO.setFibroscanEsophagealGastricVarices(mDTO.getFibroscanEsophagealGastricVarices());
         mDO.setLiverMri(mDTO.getLiverMri());
         mDO.setLiverMriDate(mDTO.getLiverMriDate());
         mDO.setLiverMriBiliaryTract(mDTO.getLiverMriBiliaryTract());
@@ -828,6 +832,7 @@ public class ConvertUtil {
         mDO.setGastroscopeDate(mDTO.getGastroscopeDate());
         mDO.setGastroscopeBiliaryTract(mDTO.getGastroscopeBiliaryTract());
         mDO.setGastroscopeEsophagealGastricVarices(mDTO.getGastroscopeEsophagealGastricVarices());
+        mDO.setComplete(mDTO.isComplete());
         return mDO;
     }
 
@@ -854,7 +859,7 @@ public class ConvertUtil {
         mDTO.setFibroscan(mDO.getFibroscan());
         mDTO.setFibroscanDate(mDO.getFibroscanDate());
         mDTO.setFibroscanBiliaryTract(mDO.getFibroscanBiliaryTract());
-        mDTO.setFibroscan_esophageal_gastric_varices(mDO.getFibroscan_esophageal_gastric_varices());
+        mDTO.setFibroscanEsophagealGastricVarices(mDO.getFibroscanEsophagealGastricVarices());
         mDTO.setLiverMri(mDO.getLiverMri());
         mDTO.setLiverMriDate(mDO.getLiverMriDate());
         mDTO.setLiverMriBiliaryTract(mDO.getLiverMriBiliaryTract());

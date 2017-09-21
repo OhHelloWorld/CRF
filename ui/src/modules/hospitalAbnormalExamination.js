@@ -74,7 +74,7 @@ angular.module('hospitalAbnormalExamination', [])
     //请求所有数据，计算出总页数。
     $http({
       method: 'GET',
-      url: 'api/mlfae/all/' + sessionStorage.getItem('mlPatientId')
+      url: 'api/mlfae/all/nofirst/' + sessionStorage.getItem('mlPatientId')
     }).then(function(response) {
       allData = response.data;
       configPage();
@@ -180,6 +180,8 @@ angular.module('hospitalAbnormalExamination', [])
       allDatc.pt = $scope.pt;
       allDatc.inr = $scope.inr;
       allDatc.afp = $scope.afp;
+      allDatc.first = false;
+      allDatc.complete = true;
       $http({
         method: 'POST',
         url: '/api/mlfae/',

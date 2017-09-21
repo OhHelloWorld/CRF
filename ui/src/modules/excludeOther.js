@@ -97,6 +97,7 @@ angular.module('excludeOther', [])
       allData.cytomegalovirus = $scope.cytomegalovirus;
       allData.ebviruses = $scope.ebviruses;
       allData.herpesSimplex = $scope.herpesSimplex;
+      allData.complete = true;
       allData.antiHavDate = checkDate($scope.antiHavDate);
       allData.hbvdnaDate = checkDate($scope.hbvdnaDate);
       allData.antihcvDate = checkDate($scope.antihcvDate);
@@ -157,9 +158,6 @@ angular.module('excludeOther', [])
       $scope.hepatitisBFiveDate = checkToPre(getData.hepatitisBFiveDate);
       $scope.autoimmuneAntibodyDate = checkToPre(getData.autoimmuneAntibodyDate);
       $scope.otherVirusCheckDate = checkToPre(getData.otherVirusCheckDate);
-    }, function() {
-      $scope.justModalContent = '取数据异常';
-      $('#justModal').modal('show');
     });
 
     function getPatientInfo() {

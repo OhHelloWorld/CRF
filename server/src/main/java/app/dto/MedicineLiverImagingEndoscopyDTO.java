@@ -25,7 +25,7 @@ public class MedicineLiverImagingEndoscopyDTO {
     private String fibroscan;//Fibroscan
     private Date fibroscanDate;//Fibroscan检查日期
     private int fibroscanBiliaryTract;//Fibroscan排除胆道疾病
-    private int fibroscan_esophageal_gastric_varices;//Fibroscan排除食管胃底静脉曲张
+    private int fibroscanEsophagealGastricVarices;//Fibroscan排除食管胃底静脉曲张
     private String ercp;//ERCP
     private Date ercpDate;//ERCP检查日期
     private int ercpBiliaryTract;//ERCP排除胆道疾病
@@ -176,12 +176,12 @@ public class MedicineLiverImagingEndoscopyDTO {
         this.fibroscanBiliaryTract = fibroscanBiliaryTract;
     }
 
-    public int getFibroscan_esophageal_gastric_varices() {
-        return fibroscan_esophageal_gastric_varices;
+    public int getFibroscanEsophagealGastricVarices() {
+        return fibroscanEsophagealGastricVarices;
     }
 
-    public void setFibroscan_esophageal_gastric_varices(int fibroscan_esophageal_gastric_varices) {
-        this.fibroscan_esophageal_gastric_varices = fibroscan_esophageal_gastric_varices;
+    public void setFibroscanEsophagealGastricVarices(int fibroscanEsophagealGastricVarices) {
+        this.fibroscanEsophagealGastricVarices = fibroscanEsophagealGastricVarices;
     }
 
     public String getErcp() {

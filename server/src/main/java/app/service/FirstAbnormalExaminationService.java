@@ -17,4 +17,6 @@ public interface FirstAbnormalExaminationService {
     public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId);
 
     public List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(Long pId);
+
+    public MedicineLiverFirstAbnormalExaminationDTO getHosData(int mlpatientId);
 }

@@ -82,9 +82,6 @@ angular.module('routineBlood', [])
       $scope.plt = allData.plt;
       $scope.neutrophil = allData.neutrophil;
       $scope.eosinophil = allData.eosinophil;
-    }, function() {
-      $scope.justModalContent = '数据获取异常';
-      $('#justModal').modal('show');
     });
 
     function getPatientInfo() {
