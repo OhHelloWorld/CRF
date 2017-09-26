@@ -66,7 +66,9 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'l
       $('#infoModal').modal({
         keyboard: true
       });
-      var excelUrl = 'http://sggb.navyblue.cn/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      // var excelUrl = 'http://sggb.navyblue.cn/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      var excelUrl = 'localhost:8080/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      console.log(excelUrl);
       window.open(excelUrl);
     }, function fail() {
       $('#infoModal').modal('hide');

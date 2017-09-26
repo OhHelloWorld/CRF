@@ -1,6 +1,8 @@
 package app.serviceImpl;
 
+import app.Utils.CreateAllExcelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import app.Utils.CreateAllExcel;
@@ -15,7 +17,8 @@ public class CreateExcelServiceImpl implements CreateExcelService {
     private CreateFourDiaExcel createFourDiaExcel;
 
     @Autowired
-    private CreateAllExcel creaetAllExcel;
+    @Qualifier("createAllExcel")
+    private CreateAllExcelInterface creaetAllExcel;
 
     @Autowired
     private FourDiagnosticInformationRepo fourDiaRepo;
