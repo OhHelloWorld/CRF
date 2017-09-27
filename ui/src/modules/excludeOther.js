@@ -3,6 +3,7 @@ import angular from 'angular';
 angular.module('excludeOther', [])
   .controller('excludeOtherController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
     getPatientInfo();
+    getExclude();
     $('#datepicker1').datepicker({
       autoclose: true
     });
@@ -66,22 +67,22 @@ angular.module('excludeOther', [])
 
     //后台数据检查后显示
     function checkToPre(condition2) {
-      if(!condition2){
+      if (!condition2) {
         return condition2;
-      }else{
+      } else {
         return toPre(condition2);
       }
     }
 
 
-    $scope.showSaveModal = function () {
+    $scope.showSaveModal = function() {
       var allData = {};
       allData.patientId = sessionStorage.getItem('mlPatientId');
       allData.antiHav = $scope.antiHav;
       allData.hbvdna = $scope.hbvdna;
       allData.antihcv = $scope.antihcv;
       allData.hcvrna = $scope.hcvrna;
-      allData.mononucleosis = $scope.Mononucleosis;
+      allData.mononucleosis = $scope.mononucleosis;
       allData.rheumatoid = $scope.rheumatoid;
       allData.ceruloplasmin = $scope.ceruloplasmin;
       allData.hbsag = $scope.hbsag;
@@ -102,7 +103,7 @@ angular.module('excludeOther', [])
       allData.hbvdnaDate = checkDate($scope.hbvdnaDate);
       allData.antihcvDate = checkDate($scope.antihcvDate);
       allData.hcvrnaDate = checkDate($scope.hcvrnaDate);
-      allData.mononucleosisDate = checkDate($scope.MononucleosisDate);
+      allData.mononucleosisDate = checkDate($scope.mononucleosisDate);
       allData.rheumatoidDate = checkDate($scope.rheumatoidDate);
       allData.ceruloplasminDate = checkDate($scope.ceruloplasminDate);
       allData.hepatitisBFiveDate = checkDate($scope.hepatitisBFiveDate);
@@ -112,53 +113,134 @@ angular.module('excludeOther', [])
         method: 'POST',
         url: '/api/exclude/',
         data: allData
-      }).then(function () {
+      }).then(function() {
         $scope.justModalContent = '操作成功';
         $('#justModal').modal('show');
-      }, function () {
+      }, function() {
         $scope.justModalContent = '操作失败';
         $('#justModal').modal('show');
       });
     };
 
 
-    $http({
-      method: 'GET',
-      url: 'api/exclude/' + sessionStorage.getItem('mlPatientId')
-    }).then(function(response) {
-      var getData ={};
-      getData = response.data;
-      $scope.antiHav = getData.antiHav;
-      $scope.hbvdna = getData.hbvdna;
-      $scope.antihcv = getData.antihcv;
-      $scope.hcvrna = getData.hcvrna;
-      $scope.Mononucleosis = getData.mononucleosis;
-      $scope.rheumatoid = getData.rheumatoid;
-      $scope.ceruloplasmin = getData.ceruloplasmin;
-      $scope.hbsag = getData.hbsag;
-      $scope.hbsab = getData.hbsab;
-      $scope.hbcab = getData.hbcab;
-      $scope.hbeag = getData.hbeag;
-      $scope.hbeab = getData.hbeab;
-      $scope.ana = getData.ana;
-      $scope.ama = getData.ama;
-      $scope.amam2 = getData.amam2;
-      $scope.sma = getData.sma;
-      $scope.lkm = getData.lkm;
-      $scope.cytomegalovirus = getData.cytomegalovirus;
-      $scope.ebviruses = getData.ebviruses;
-      $scope.herpesSimplex = getData.herpesSimplex;
-      $scope.antiHavDate = checkToPre(getData.antiHavDate);
-      $scope.hbvdnaDate = checkToPre(getData.hbvdnaDate);
-      $scope.antihcvDate = checkToPre(getData.antihcvDate);
-      $scope.hcvrnaDate = checkToPre(getData.hcvrnaDate);
-      $scope.MononucleosisDate = checkToPre(getData.mononucleosisDate);
-      $scope.rheumatoidDate = checkToPre(getData.rheumatoidDate);
-      $scope.ceruloplasminDate = checkToPre(getData.ceruloplasminDate);
-      $scope.hepatitisBFiveDate = checkToPre(getData.hepatitisBFiveDate);
-      $scope.autoimmuneAntibodyDate = checkToPre(getData.autoimmuneAntibodyDate);
-      $scope.otherVirusCheckDate = checkToPre(getData.otherVirusCheckDate);
-    });
+    function getExclude() {
+      $http({
+        method: 'GET',
+        url: 'api/exclude/' + sessionStorage.getItem('mlPatientId')
+      }).then(function(response) {
+        var getData = response.data;
+        if (getData.antiHav) {
+          $scope.antiHav = getData.antiHav;
+        } else {
+          $scope.antiHav = 1;
+        }
+        if (getData.hbvdna) {
+          $scope.hbvdna = getData.hbvdna;
+        } else {
+          $scope.hbvdna = 1;
+        }
+        if (getData.antihcv) {
+          $scope.antihcv = getData.antihcv;
+        } else {
+          $scope.antihcv = 1;
+        }
+        if (getData.hcvrna) {
+          $scope.hcvrna = getData.hcvrna;
+        } else {
+          $scope.hcvrna = 1;
+        }
+        if (getData.mononucleosis) {
+          $scope.mononucleosis = getData.mononucleosis;
+        } else {
+          $scope.mononucleosis = 1;
+        }
+        if (getData.rheumatoid) {
+          $scope.rheumatoid = getData.rheumatoid;
+        } else {
+          $scope.rheumatoid = 1;
+        }
+        if (getData.ceruloplasmin) {
+          $scope.ceruloplasmin = getData.ceruloplasmin;
+        } else {
+          $scope.ceruloplasmin = 1;
+        }
+        if (getData.hbsag) {
+          $scope.hbsag = getData.hbsag;
+        } else {
+          $scope.hbsag = 1;
+        }
+        if (getData.hbsab) {
+          $scope.hbsab = getData.hbsab;
+        } else {
+          $scope.hbsab = 1;
+        }
+        if (getData.hbcab) {
+          $scope.hbcab = getData.hbcab;
+        } else {
+          $scope.hbcab = 1;
+        }
+        if (getData.hbeag) {
+          $scope.hbeag = getData.hbeag;
+        } else {
+          $scope.hbeag = 1;
+        }
+        if (getData.hbeab) {
+          $scope.hbeab = getData.hbeab;
+        } else {
+          $scope.hbeab = 1;
+        }
+        if (getData.ana) {
+          $scope.ana = getData.ana;
+        } else {
+          $scope.ana = 1;
+        }
+        if (getData.ama) {
+          $scope.ama = getData.ama;
+        } else {
+          $scope.ama = 1;
+        }
+        if (getData.amam2) {
+          $scope.amam2 = getData.amam2;
+        } else {
+          $scope.amam2 = 1;
+        }
+        if (getData.sma) {
+          $scope.sma = getData.sma;
+        } else {
+          $scope.sma = 1;
+        }
+        if (getData.lkm) {
+          $scope.lkm = getData.lkm;
+        } else {
+          $scope.lkm = 1;
+        }
+        if (getData.cytomegalovirus) {
+          $scope.cytomegalovirus = getData.cytomegalovirus;
+        } else {
+          $scope.cytomegalovirus = 1;
+        }
+        if (getData.ebviruses) {
+          $scope.ebviruses = getData.ebviruses;
+        } else {
+          $scope.ebviruses = 1;
+        }
+        if (getData.herpesSimplex) {
+          $scope.herpesSimplex = getData.herpesSimplex;
+        } else {
+          $scope.herpesSimplex = 1;
+        }
+        $scope.antiHavDate = checkToPre(getData.antiHavDate);
+        $scope.hbvdnaDate = checkToPre(getData.hbvdnaDate);
+        $scope.antihcvDate = checkToPre(getData.antihcvDate);
+        $scope.hcvrnaDate = checkToPre(getData.hcvrnaDate);
+        $scope.mononucleosisDate = checkToPre(getData.mononucleosisDate);
+        $scope.rheumatoidDate = checkToPre(getData.rheumatoidDate);
+        $scope.ceruloplasminDate = checkToPre(getData.ceruloplasminDate);
+        $scope.hepatitisBFiveDate = checkToPre(getData.hepatitisBFiveDate);
+        $scope.autoimmuneAntibodyDate = checkToPre(getData.autoimmuneAntibodyDate);
+        $scope.otherVirusCheckDate = checkToPre(getData.otherVirusCheckDate);
+      });
+    }
 
     function getPatientInfo() {
       $http({
@@ -171,6 +253,3 @@ angular.module('excludeOther', [])
     }
 
   }]);
-
-
-

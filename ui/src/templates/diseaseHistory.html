@@ -82,12 +82,15 @@
                     <input class="form-control" id="crueDate" ng-model="crueDate">
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 目前是否仍然存在</i>
+                      <i style="font-style: inherit;"> &ensp; 是否仍然存在</i>
                     </div>
-                    <input class="form-control" ng-model="existence">
+                    <select ng-model="existence" class="form-control">
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                    </select>
                   </div>
                 </div>
               </div>

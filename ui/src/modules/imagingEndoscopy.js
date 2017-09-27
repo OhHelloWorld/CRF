@@ -63,7 +63,7 @@ angular.module('imagingEndoscopy', [])
       }
     }
     $scope.test = function() {
-      
+
       var allDate = {};
       allDate.patientId = sessionStorage.getItem('mlPatientId');
       allDate.liverBultrasoundDate = checkDate($scope.liverBultrasoundDate);
@@ -104,10 +104,10 @@ angular.module('imagingEndoscopy', [])
         method: 'POST',
         url: '/api/iesc/',
         data: allDate
-      }).then(function () {
+      }).then(function() {
         $scope.justModalContent = '操作成功';
         $('#justModal').modal('show');
-      }, function () {
+      }, function() {
         $scope.justModalContent = '操作失败';
         $('#justModal').modal('show');
       });
@@ -124,38 +124,91 @@ angular.module('imagingEndoscopy', [])
 
       $scope.liverBultrasound = allData.liverBultrasound;
       $scope.liverBultrasoundDate = checkToPre(allData.liverBultrasoundDate);
-      $scope.liverBultrasoundBiliaryTract = allData.liverBultrasoundBiliaryTract;
-      $scope.liverBultrasoundEsophagealGastricVarices = allData.liverBultrasoundEsophagealGastricVarices;
-
+      if (allData.liverBultrasoundBiliaryTract) {
+        $scope.liverBultrasoundBiliaryTract = allData.liverBultrasoundBiliaryTract;
+      } else {
+        $scope.liverBultrasoundBiliaryTract = 1;
+      }
+      if (allData.liverBultrasoundEsophagealGastricVarices) {
+        $scope.liverBultrasoundEsophagealGastricVarices = allData.liverBultrasoundEsophagealGastricVarices;
+      } else {
+        $scope.liverBultrasoundEsophagealGastricVarices = 1;
+      }
       $scope.liverCt = allData.liverCt;
       $scope.liverCtDate = checkToPre(allData.liverCtDate);
-      $scope.liverCtBiliaryTract = allData.liverCtBiliaryTract;
-      $scope.liverCtEsophagealGastricVarices = allData.liverCtEsophagealGastricVarices;
-
+      if (allData.liverCtBiliaryTract) {
+        $scope.liverCtBiliaryTract = allData.liverCtBiliaryTract;
+      } else {
+        $scope.liverCtBiliaryTract = 1;
+      }
+      if (allData.liverCtEsophagealGastricVarices) {
+        $scope.liverCtEsophagealGastricVarices = allData.liverCtEsophagealGastricVarices;
+      } else {
+        $scope.liverCtEsophagealGastricVarices = 1;
+      }
       $scope.liverMri = allData.liverMri;
       $scope.liverMriDate = checkToPre(allData.liverMriDate);
-      $scope.liverMriBiliaryTract = allData.liverMriBiliaryTract;
-      $scope.liverMriEsophagealGastricVarices = allData.liverMriEsophagealGastricVarices;
-
+      if (allData.liverMriBiliaryTract) {
+        $scope.liverMriBiliaryTract = allData.liverMriBiliaryTract;
+      } else {
+        $scope.liverMriBiliaryTract = 1;
+      }
+      if (allData.liverMriEsophagealGastricVarices) {
+        $scope.liverMriEsophagealGastricVarices = allData.liverMriEsophagealGastricVarices;
+      } else {
+        $scope.liverMriEsophagealGastricVarices = 1;
+      }
       $scope.fibroscan = allData.fibroscan;
       $scope.fibroscanDate = checkToPre(allData.fibroscanDate);
-      $scope.fibroscanBiliaryTract = allData.fibroscanBiliaryTract;
-      $scope.fibroscan_esophageal_gastric_varices = allData.fibroscan_esophageal_gastric_varices;
+      if (allData.fibroscanBiliaryTract) {
+        $scope.fibroscanBiliaryTract = allData.fibroscanBiliaryTract;
+      } else {
+        $scope.fibroscanBiliaryTract = 1;
+      }
+      if ($scope.fibroscanEsophagealGastricVarices) {
+        $scope.fibroscanEsophagealGastricVarices = allData.fibroscanEsophagealGastricVarices;
+      } else {
+        $scope.fibroscanEsophagealGastricVarices = 1;
+      }
 
       $scope.ercp = allData.ercp;
       $scope.ercpDate = checkToPre(allData.ercpDate);
-      $scope.ercpBiliaryTract = allData.ercpBiliaryTract;
-      $scope.ercpEsophagealGastricVarices = allData.ercpEsophagealGastricVarices;
+      if (allData.ercpBiliaryTract) {
+        $scope.ercpBiliaryTract = allData.ercpBiliaryTract;
+      } else {
+        $scope.ercpBiliaryTract = 1;
+      }
+      if (allData.ercpEsophagealGastricVarices) {
+        $scope.ercpEsophagealGastricVarices = allData.ercpEsophagealGastricVarices;
+      } else {
+        $scope.ercpEsophagealGastricVarices = 1;
+      }
 
       $scope.mrcp = allData.mrcp;
       $scope.mrcpDate = checkToPre(allData.mrcpDate);
-      $scope.mrcpBiliaryTract = allData.mrcpBiliaryTract;
-      $scope.mrcpEsophagealGastricVarices = allData.mrcpEsophagealGastricVarices;
+      if (allData.mrcpBiliaryTract) {
+        $scope.mrcpBiliaryTract = allData.mrcpBiliaryTract;
+      } else {
+        $scope.mrcpBiliaryTract = 1;
+      }
+      if (allData.mrcpEsophagealGastricVarices) {
+        $scope.mrcpEsophagealGastricVarices = allData.mrcpEsophagealGastricVarices;
+      } else {
+        $scope.mrcpEsophagealGastricVarices = 1;
+      }
 
       $scope.gastroscope = allData.gastroscope;
       $scope.gastroscopeDate = checkToPre(allData.gastroscopeDate);
-      $scope.gastroscopeBiliaryTract = allData.gastroscopeBiliaryTract;
-      $scope.gastroscopeEsophagealGastricVarices = allData.gastroscopeEsophagealGastricVarices;
+      if (allData.gastroscopeBiliaryTract) {
+        $scope.gastroscopeBiliaryTract = allData.gastroscopeBiliaryTract;
+      } else {
+        $scope.gastroscopeBiliaryTract = 1;
+      }
+      if (allData.gastroscopeEsophagealGastricVarices) {
+        $scope.gastroscopeEsophagealGastricVarices = allData.gastroscopeEsophagealGastricVarices;
+      } else {
+        $scope.gastroscopeEsophagealGastricVarices = 1;
+      }
 
     });
 

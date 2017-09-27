@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 angular.module('drink', [])
-  .controller('drinkController', ['$scope', '$http', '$state', 'localStorageService','$compile', function($scope, $http, $state, localStorageService,$compile) {
+  .controller('drinkController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
     getMlPatient();
 
     var drink = {};
@@ -16,7 +16,7 @@ angular.module('drink', [])
 
     $scope.addDrink = function() {
       count += 1;
-      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒种类</i></div><input class="form-control" ng-model="drinkTypeObj['+count+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒数量（毫升/天）</i></div><input class="form-control" ng-model="drinkQuantityObj['+count+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒年限（年）</i></div><input class="form-control" ng-model="drinkLifeObj['+count+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 酒精度数（度）</i></div><input class="form-control" ng-model="proofObj['+count+']"></div></div>';
+      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒种类</i></div><select ng-model="drinkTypeObj[' + count + ']" class="form-control"><option value="1">白酒</option><option value="2">黄酒</option><option value="3">啤酒</option><option value="4">葡萄酒</option><option value="5">其他</option><option value="6">不详</option></select></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒数量（毫升/天）</i></div><input class="form-control" ng-model="drinkQuantityObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒年限（年）</i></div><input class="form-control" ng-model="drinkLifeObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 酒精度数（度）</i></div><input class="form-control" ng-model="proofObj[' + count + ']"></div></div>';
       var compileFn = $compile(template);
       var dom = compileFn($scope);
       dom.appendTo('#drink');
@@ -41,7 +41,7 @@ angular.module('drink', [])
         }
 
         for (var i = 1; i < data.medicineLiverDrinkDetailDTOS.length; i++) {
-          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒种类</i></div><input class="form-control" ng-model="drinkTypeObj['+i+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒数量（毫升/天）</i></div><input class="form-control" ng-model="drinkQuantityObj['+i+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒年限（年）</i></div><input class="form-control" ng-model="drinkLifeObj['+i+']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 酒精度数（度）</i></div><input class="form-control" ng-model="proofObj['+i+']"></div></div>';
+          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒种类</i></div><select ng-model="drinkTypeObj[' + i + ']" class="form-control"><option value="1">白酒</option><option value="2">黄酒</option><option value="3">啤酒</option><option value="4">葡萄酒</option><option value="5">其他</option><option value="6">不详</option></select></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒数量（毫升/天）</i></div><input class="form-control" ng-model="drinkQuantityObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 饮酒年限（年）</i></div><input class="form-control" ng-model="drinkLifeObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 酒精度数（度）</i></div><input class="form-control" ng-model="proofObj[' + i + ']"></div></div>';
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#drink');
@@ -63,17 +63,17 @@ angular.module('drink', [])
       drink.medicineLiverDrinkDetailDTOS.push({
         drinkType: $scope.drinkType,
         drinkQuantity: $scope.drinkQuantity,
-        drinkLife:$scope.drinkLife,
-        proof:$scope.proof
-        // id: $scope.detailId,
+        drinkLife: $scope.drinkLife,
+        proof: $scope.proof
+          // id: $scope.detailId,
       });
       for (var i = 0; i < count; i++) {
         drink.medicineLiverDrinkDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
           drinkType: ($scope.drinkTypeObj[i + 1]),
           drinkQuantity: ($scope.drinkQuantityObj[i + 1]),
-          drinkLife:($scope.drinkLifeObj[i+1]),
-          proof:($scope.proofObj[i+1])
+          drinkLife: ($scope.drinkLifeObj[i + 1]),
+          proof: ($scope.proofObj[i + 1])
         });
       }
       $http({
@@ -85,7 +85,7 @@ angular.module('drink', [])
       });
     };
 
-    $scope.layout = function(){
+    $scope.layout = function() {
       $state.go('mlHome');
     };
 

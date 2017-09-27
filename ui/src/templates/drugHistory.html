@@ -32,7 +32,7 @@
   <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
       <br>
       <div class="box box-info">
-<div class="box-body">
+      <div class="box-body">
               <div class="box-header with-border">
                 <h3 class="box-title">详情</h3>
               </div>
@@ -66,7 +66,21 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 用药方法</i>
                     </div>
-                    <input class="form-control" ng-model="medicationMethod">
+                    <select class="form-control" ng-model="medicationMethod">
+                      <option value="1">口服</option>
+                      <option value="2">皮下注射</option>
+                      <option value="3">直肠给药</option>
+                      <option value="4">滴注</option>
+                      <option value="5">鼻腔给药</option>
+                      <option value="6">吸入给药</option>
+                      <option value="7">静脉注射</option>
+                      <option value="8">局部给药</option>
+                      <option value="9">肌肉注射</option>
+                      <option value="10">静脉滴注</option>
+                      <option value="11">雾化吸入</option>
+                      <option value="12">其他</option>
+                      <option value="13">不详</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-sm-3">
@@ -91,7 +105,11 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 是否停药</i>
                     </div>
-                    <input type="text" class="form-control" ng-model="drugWithDrawal">
+                    <select class="form-control" ng-model="drugWithDrawal">
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                      <option value="3">不详</option>
+                    </select>
                   </div>
                 </div>
 
@@ -109,7 +127,11 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 是否减量</i>
                     </div>
-                    <input type="text" class="form-control" ng-model="decrement">
+                    <select class="form-control" ng-model="decrement">
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                      <option value="3">不详</option>
+                    </select>
                   </div>
                 </div>
 
@@ -118,7 +140,11 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 既往该药暴露史</i>
                     </div>
-                    <input type="text" class="form-control" ng-model="drugExposure">
+                    <select class="form-control" ng-model="drugExposure">
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                      <option value="3">不详</option>
+                    </select>
                   </div>
                 </div>
 
@@ -127,7 +153,11 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i>
                     </div>
-                    <input type="text" class="form-control" ng-model="exposureLiverDamage">
+                    <select class="form-control" ng-model="exposureLiverDamage">
+                      <option value="1">是</option>
+                      <option value="2">否</option>
+                      <option value="3">未知</option>
+                    </select>
                   </div>
                 </div>
               </div>

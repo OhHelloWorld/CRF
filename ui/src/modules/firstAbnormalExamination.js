@@ -1,10 +1,9 @@
 import angular from 'angular';
 
 angular.module('firstAbnormalExamination', [])
-  .controller('firstAbnormalExaminationController', ['$scope', '$http', function ($scope, $http) {
+  .controller('firstAbnormalExaminationController', ['$scope', '$http', function($scope, $http) {
     getPatientInfo();
-    $scope.titleName = '肝脏生化检查';
-
+    getFirstData();
     $('#datepicker1').datepicker({
       autoclose: true
     });
@@ -25,14 +24,6 @@ angular.module('firstAbnormalExamination', [])
       autoclose: true
     });
 
-    $scope.addTabActive = function (str1, str2, str3) {
-      $('.tab-pane').removeClass('active');
-      $(str1).addClass('active');
-      $scope.titleName = str2;
-      $('.1').addClass('hide');
-      $(str3).removeClass('hide');
-    };
-
     // 06/14/2017 ==> 2017-06-14
     function formatDateFromBack(date) {
       var dateArr = date.split('/');
@@ -42,14 +33,8 @@ angular.module('firstAbnormalExamination', [])
       return year + '-' + month + '-' + day;
     }
 
-    //毫秒转换年月日
-    function toPre(date) {
-      var unixTimestamp = new Date(date);
-      return unixTimestamp.getFullYear() + '-' + (unixTimestamp.getMonth() + 1) + '-' + unixTimestamp.getDate();
-    }
-
     //检查日期字段需要满足的情况
-    function checkDate( condition1) {
+    function checkDate(condition1) {
       if (!condition1) {
         return condition1;
       } else {
@@ -61,36 +46,38 @@ angular.module('firstAbnormalExamination', [])
       }
     }
 
+
+    //保存数据
     $scope.showSaveModal = function() {
-      var allData = {};
-      allData.patientId = sessionStorage.getItem('mlPatientId');
-      allData.tab1CheckDate = checkDate($scope.tab1CheckDate);
-      allData.tab2CheckDate = checkDate($scope.tab2CheckDate);
-      allData.tab3CheckDate = checkDate($scope.tab3CheckDate);
-      allData.tab4CheckDate = checkDate($scope.tab4CheckDate);
-      allData.tab5CheckDate = checkDate($scope.tab5CheckDate);
-      allData.alt = $scope.alt;
-      allData.ast = $scope.ast;
-      allData.ggt = $scope.ggt;
-      allData.alp = $scope.alp;
-      allData.bileAcid = $scope.bileAcid; 
-      allData.tbil = $scope.tbil;
-      allData.dbil = $scope.dbil;
-      allData.tp = $scope.tp;
-      allData.alb = $scope.alb; 
-      allData.scr = $scope.scr;
-      allData.bun = $scope.bun;
-      allData.plasmaGlucose = $scope.plasmaGlucose;
-      allData.pt = $scope.pt;
-      allData.inr = $scope.inr;
-      allData.afp = $scope.afp;
-      allData.first = true;
-      allData.complete = true;
+      var allDatc = {};
+      allDatc.patientId = sessionStorage.getItem('mlPatientId');
+      allDatc.tab1CheckDate = checkDate($scope.tab1CheckDate);
+      allDatc.tab2CheckDate = checkDate($scope.tab2CheckDate);
+      allDatc.tab3CheckDate = checkDate($scope.tab3CheckDate);
+      allDatc.tab4CheckDate = checkDate($scope.tab4CheckDate);
+      allDatc.tab5CheckDate = checkDate($scope.tab5CheckDate);
+      allDatc.alt = $scope.alt;
+      allDatc.ast = $scope.ast;
+      allDatc.ggt = $scope.ggt;
+      allDatc.alp = $scope.alp;
+      allDatc.bileAcid = $scope.bileAcid;
+      allDatc.tbil = $scope.tbil;
+      allDatc.dbil = $scope.dbil;
+      allDatc.tp = $scope.tp;
+      allDatc.alb = $scope.alb;
+      allDatc.scr = $scope.scr;
+      allDatc.bun = $scope.bun;
+      allDatc.plasmaGlucose = $scope.plasmaGlucose;
+      allDatc.pt = $scope.pt;
+      allDatc.inr = $scope.inr;
+      allDatc.afp = $scope.afp;
+      allDatc.first = false;
+      allDatc.complete = true;
       $http({
         method: 'POST',
         url: '/api/mlfae/',
-        data: allData
-      }).then(function(){
+        data: allDatc
+      }).then(function() {
         $scope.justModalContent = '操作成功';
         $('#justModal').modal('show');
       }, function() {
@@ -99,42 +86,41 @@ angular.module('firstAbnormalExamination', [])
       });
     };
 
-    $http({
-      methods: 'GET',
-      url: '/api/mlfae/first/' + sessionStorage.getItem('mlPatientId')
-    }).then(function(response) {
-      var responseData = response.data;
-      if(responseData.tab1CheckDate){
-        $scope.tab1CheckDate = toPre(responseData.tab1CheckDate);
+    function getFirstData() {
+      if (sessionStorage.getItem('mlPatientId')) {
+        $http({
+          url: '/api/mlfae/first/' + sessionStorage.getItem('mlPatientId'),
+          method: 'GET'
+        }).then(function success(response) {
+          var data = response.data;
+          var tab1CheckDate = new Date(data.tab1CheckDate);
+          var tab2CheckDate = new Date(data.tab2CheckDate);
+          var tab3CheckDate = new Date(data.tab3CheckDate);
+          var tab4CheckDate = new Date(data.tab4CheckDate);
+          var tab5CheckDate = new Date(data.tab5CheckDate);
+          $scope.tab1CheckDate = tab1CheckDate.getFullYear()+'-'+(tab1CheckDate.getMonth()+1)+'-'+tab1CheckDate.getDate();
+          $scope.tab2CheckDate = tab2CheckDate.getFullYear()+'-'+(tab2CheckDate.getMonth()+1)+'-'+tab2CheckDate.getDate();
+          $scope.tab3CheckDate = tab3CheckDate.getFullYear()+'-'+(tab3CheckDate.getMonth()+1)+'-'+tab3CheckDate.getDate();
+          $scope.tab4CheckDate = tab4CheckDate.getFullYear()+'-'+(tab4CheckDate.getMonth()+1)+'-'+tab4CheckDate.getDate();
+          $scope.tab5CheckDate = tab5CheckDate.getFullYear()+'-'+(tab5CheckDate.getMonth()+1)+'-'+tab5CheckDate.getDate();
+          $scope.alt = data.alt;
+          $scope.ast = data.ast;
+          $scope.ggt = data.ggt;
+          $scope.alp = data.alp;
+          $scope.bileAcid = data.bileAcid;
+          $scope.tbil = data.tbil;
+          $scope.dbil = data.dbil;
+          $scope.tp = data.tp;
+          $scope.alb = data.alb;
+          $scope.scr = data.scr;
+          $scope.bun = data.bun;
+          $scope.plasmaGlucose = data.plasmaGlucose;
+          $scope.pt = data.pt;
+          $scope.inr = data.inr;
+          $scope.afp = data.afp;
+        });
       }
-      if (responseData.tab2CheckDate) {
-        $scope.tab2CheckDate = toPre(responseData.tab2CheckDate);
-      }
-      if (responseData.tab3CheckDate) {
-        $scope.tab3CheckDate = toPre(responseData.tab3CheckDate);
-      }
-      if (responseData.tab4CheckDate) {
-        $scope.tab4CheckDate = toPre(responseData.tab4CheckDate);
-      }
-      if (responseData.tab5CheckDate) {
-        $scope.tab5CheckDate = toPre(responseData.tab5CheckDate);
-      }
-      $scope.alt = responseData.alt;
-      $scope.ast = responseData.ast;
-      $scope.ggt = responseData.ggt;
-      $scope.alp = responseData.alp;
-      $scope.bileAcid = responseData.bileAcid;
-      $scope.tbil = responseData.tbil;
-      $scope.dbil = responseData.dbil;
-      $scope.tp = responseData.tp;
-      $scope.alb = responseData.alb;
-      $scope.scr = responseData.scr;
-      $scope.bun = responseData.bun;
-      $scope.plasmaGlucose = responseData.plasmaGlucose;
-      $scope.pt = responseData.pt;
-      $scope.inr = responseData.inr;
-      $scope.afp = responseData.afp;
-    });
+    }
 
     function getPatientInfo() {
       $http({

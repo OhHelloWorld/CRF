@@ -70,7 +70,21 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 用药方法</i>
                     </div>
-                    <input class="form-control" ng-model="detailMethod">
+                    <select ng-model="detailMethod" class="form-control">
+                      <option value="1">口服</option>
+                      <option value="2">皮下注射</option>
+                      <option value="3">直肠给药</option>
+                      <option value="4">滴注</option>
+                      <option value="5">鼻腔给药</option>
+                      <option value="6">吸入给药</option>
+                      <option value="7">静脉注射</option>
+                      <option value="8">局部给药</option>
+                      <option value="9">肌肉注射</option>
+                      <option value="10">静脉滴注</option>
+                      <option value="11">雾化吸入</option>
+                      <option value="12">其他</option>
+                      <option value="13">不详</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-sm-3">

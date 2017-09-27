@@ -58,7 +58,7 @@ create table medicine_liver_disease_history_detail(
 	disease_name varchar(50),#疾病名称
 	diagnosis_date Date,#发作/诊断日期
 	crue_date Date,#治愈日期
-	existence varchar(50),#是否仍然存在
+	existence varchar(10),#是否仍然存在
 	primary key(id)
 );
 
@@ -85,7 +85,7 @@ create table medicine_liver_drink(
 create table medicine_liver_drink_detail(
 	id int not null auto_increment,
 	medicine_liver_drink_id int,
-	drink_type varchar(10),#饮酒种类
+	drink_type varchar(20),#饮酒种类
 	drink_quantity varchar(10),#饮酒数量
 	drink_life varchar(10),#饮酒年限
 	proof varchar(10),#酒精精度
@@ -442,7 +442,7 @@ create table medicine_liver_disease_outcome(
 	patient_id int,
 	outcome varchar(50),#疾病转归
 	complete boolean,
-	primarymedicine_liver_disease_outcome key(id)
+	primary key(id)
 );
 
 #生物样本留置

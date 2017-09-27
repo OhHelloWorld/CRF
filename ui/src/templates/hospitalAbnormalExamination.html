@@ -17,12 +17,6 @@
           <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
         </div>
 
-        <div>
-          <button type="button" class="btn btn-info pull-primary" ng-click="checkModel('#checkModel')">数据总览</button>
-          <button type="button" class="btn btn-info pull-primary" ng-click="checkModel('#inputModel')">新增数据</button>
-          <button type="button" class="btn btn-info pull-primary col-md-offset-9" ng-click="showSaveModal()" id="saveButton">整体保存</button>        
-        </div>
-
         <div class="box">
           <div class="box-header" style="text-align: -webkit-center;">
             <h3 class="box-title">肝脏生化检查</h3>
@@ -44,70 +38,47 @@
                   <th style=" text-align: -webkit-center;">白蛋白(ALB)(g/L)</th>
                 </tr>
               </thead>
-              <tbody ng-repeat="mlfae in mlfaes" id="checkModel1">
+              <tbody>
                 <tr>
-                  <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab1CheckDate | date: "yyyy-MM-dd"}}</td>
-                  <td height="38px" ng-bind="mlfae.alt" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.ast" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.ggt" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.alp" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.bileAcid" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.tbil" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.dbil" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.tp" style=" text-align: -webkit-center; "></td>
-                  <td height="38px" ng-bind="mlfae.alb" style=" text-align: -webkit-center; "></td>
-                </tr>
-              </tbody>
-              <tbody id="inputModel1">
-                <tr>
-                  <td height="38px" style=" text-align: -webkit-center;">
+                  <td style="text-align: -webkit-center;">
                     <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
                      id="datepicker1" ng-model="tab1CheckDate">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alt">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ast">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ggt">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alp">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="bileAcid">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tbil">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="dbil">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tp">
                   </td>
-                  <td height="38px" style=" text-align: -webkit-center; ">
+                  <td style=" text-align: -webkit-center; ">
                     <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alb">
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-
-          <div class="box-footer clearfix">
-            <ul class="pagination pagination-sm no-margin pull-right">
-              
-              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
-              
-            </ul>
-          </div>
         </div>
 
 
 
-        <div class="box">
           <div class="col-md-6">
             <div class="box">
               <div class="box-header" style="text-align: -webkit-center;">
@@ -115,7 +86,7 @@
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
@@ -123,14 +94,7 @@
                       <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
                     </tr>
                   </thead>
-                  <tbody ng-repeat="mlfae in mlfaes" id="checkModel2">
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab2CheckDate | date: "yyyy-MM-dd"}}</td>
-                      <td height="38px" ng-bind="mlfae.scr" style=" text-align: -webkit-center; "></td>
-                      <td height="38px" ng-bind="mlfae.bun" style=" text-align: -webkit-center; "></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="inputModel2">
+                  <tbody>
                     <tr>
                       <td height="38px" style=" text-align: -webkit-center;">
                         <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
@@ -156,20 +120,14 @@
                 <h3 class="box-title">血糖检查</h3>
               </div>
               <div class="box-body">
-                <table id="example3" class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
                     </tr>
                   </thead>
-                  <tbody ng-repeat="mlfae in mlfaes" id="checkModel3">
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab3CheckDate | date: "yyyy-MM-dd"}}</td>
-                      <td height="38px" ng-bind="mlfae.plasmaGlucose" style=" text-align: -webkit-center; "></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="inputModel3">
+                  <tbody>
                     <tr>
                       <td height="38px" style=" text-align: -webkit-center;">
                         <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
@@ -184,14 +142,6 @@
               </div>
             </div>
           </div>
-
-          <div class="box-footer clearfix">
-            <ul class="pagination pagination-sm no-margin pull-right">
-              
-              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
-              
-            </ul>
-          </div>
         </div>
         
 
@@ -202,7 +152,7 @@
                 <h3 class="box-title">凝血功能检查</h3>
               </div>
               <div class="box-body">
-                <table id="example4" class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
@@ -210,14 +160,7 @@
                       <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
                     </tr>
                   </thead>
-                  <tbody ng-repeat="mlfae in mlfaes" id="checkModel4">
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab4CheckDate | date: "yyyy-MM-dd"}}</td>
-                      <td height="38px" ng-bind="mlfae.pt" style=" text-align: -webkit-center; "></td>
-                      <td height="38px" ng-bind="mlfae.inr" style=" text-align: -webkit-center; "></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="inputModel4">
+                  <tbody>
                     <tr>
                       <td height="38px" style=" text-align: -webkit-center;">
                         <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
@@ -244,20 +187,14 @@
                 <h3 class="box-title">肿瘤标志物</h3>
               </div>
               <div class="box-body">
-                <table id="example5" class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
                       <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
                     </tr>
                   </thead>
-                  <tbody ng-repeat="mlfae in mlfaes" id="checkModel5">
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">{{mlfae.tab5CheckDate | date: "yyyy-MM-dd"}}</td>
-                      <td height="38px" ng-bind="mlfae.afp" style=" text-align: -webkit-center; "></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="inputModel5">
+                  <tbody>
                     <tr>
                       <td height="38px" style=" text-align: -webkit-center;">
                         <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
@@ -272,15 +209,8 @@
               </div>
             </div>
           </div>
-
-          <div class="box-footer clearfix">
-            <ul class="pagination pagination-sm no-margin pull-right">
-              
-              <li ng-repeat="pageNum in pageNums"><a ng-click="testFun(pageNum)" ng-bind="pageNum"></a></li>
-              
-            </ul>
-          </div>
         </div>
+        <button type="button" class="btn btn-primary col-md-offset-10" ng-click="showSaveModal()">整体保存</button>       
 
         
         <!-- 模态框 -->
