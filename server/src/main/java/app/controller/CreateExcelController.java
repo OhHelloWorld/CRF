@@ -27,10 +27,18 @@ public class CreateExcelController {
     }
 
     /**
-     * 打印所有录入情况Excel表
+     * 打印所有自免肝录入情况Excel表
      */
     @PostMapping(path = "")
     public void createAllExcel() {
         createExcelService.createAllExcel();
+    }
+
+    /**
+     * 打印所有药肝录入情况Excel表
+     */
+    @PostMapping(path = "/ml")
+    public void mlCreateExcel(){
+        createExcelService.createMlAllExcel();
     }
 }

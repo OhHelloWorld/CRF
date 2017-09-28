@@ -2,7 +2,9 @@ package app.service;
 
 public interface CreateExcelService {
 
-    public void createFourDiaExcel(int fourDiaId);
+    void createFourDiaExcel(int fourDiaId);
 
-    public void createAllExcel();
+    void createAllExcel();
+
+    void createMlAllExcel();
 }

@@ -65,7 +65,7 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
       });
       $http({
         method: 'POST',
-        url: '/api/excel'
+        url: '/api/excel/ml'
       }).then(function success() {
         $('#infoModal').modal('hide');
         $scope.information = '导出成功';
@@ -74,7 +74,7 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
         $('#infoModal').modal({
           keyboard: true
         });
-        var excelUrl = 'http://localhost:8080/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+        var excelUrl = 'http://localhost:8080/excelDown/' + localStorageService.get('user').realName + 'medicineLiver.xlsx';
         window.open(excelUrl);
       }, function fail() {
         $('#infoModal').modal('hide');

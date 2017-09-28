@@ -1,11 +1,10 @@
 package app.serviceImpl;
 
-import app.Utils.CreateAllExcelInterface;
+import app.Utils.CreateAllExcel;
+import app.Utils.MlCreateAllExcel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import app.Utils.CreateAllExcel;
 import app.Utils.CreateFourDiaExcel;
 import app.repo.FourDiagnosticInformationRepo;
 import app.service.CreateExcelService;
@@ -17,8 +16,10 @@ public class CreateExcelServiceImpl implements CreateExcelService {
     private CreateFourDiaExcel createFourDiaExcel;
 
     @Autowired
-    @Qualifier("createAllExcel")
-    private CreateAllExcelInterface creaetAllExcel;
+    private CreateAllExcel creaetAllExcel;
+
+    @Autowired
+    private MlCreateAllExcel mlCreateAllExcel;
 
     @Autowired
     private FourDiagnosticInformationRepo fourDiaRepo;
@@ -36,6 +37,15 @@ public class CreateExcelServiceImpl implements CreateExcelService {
     public void createAllExcel() {
         try {
             creaetAllExcel.createAllExcel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void createMlAllExcel() {
+        try {
+            mlCreateAllExcel.createAllExcel();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -42,7 +42,7 @@ import app.repo.TonguePulseRepo;
 import app.repo.TreatmentRepo;
 
 @Component
-public class CreateAllExcel implements CreateAllExcelInterface{
+public class CreateAllExcel{
 
     @Autowired
     private PatientRepo patientRepo;
