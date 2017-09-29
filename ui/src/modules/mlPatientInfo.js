@@ -29,8 +29,8 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
       autoclose: true
     });
 
-    var intoHosCount = 1;
-    var outHosCount = 1;
+    var intoHosCount = 0;
+    var outHosCount = 0;
 
     $scope.addIntoHos = function() {
       intoHosCount += 1;
@@ -61,8 +61,6 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
       }).then(function success(response) {
         var data = response.data;
 
-        intoHosCount = data.admissionDiagnosisDTOS.length;
-        outHosCount = data.dischargeDiagnosisDTOS.length;
         $scope.name = data.name;
         $scope.abbreviation = data.abbreviation;
         $scope.identifier = data.identifier;
@@ -71,16 +69,26 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           var admissionDate = new Date(data.admissionDate);
           var dischargeDate = new Date(data.dischargeDate);
           if (data.admissionDiagnosisDTOS.length != 0) {
+            if (data.admissionDiagnosisDTOS.length == 1) {
+              intoHosCount = 0;
+            } else {
+              intoHosCount = data.admissionDiagnosisDTOS.length - 1;
+            }
             var intoDiagnosisDate = new Date(data.admissionDiagnosisDTOS[0].diagnosisDate);
             $scope.intoDiagnosisDate = intoDiagnosisDate.getFullYear() + '-' + (intoDiagnosisDate.getMonth() + 1) + '-' + intoDiagnosisDate.getDate();
-          }else{
-            intoHosCount = 1;
+          } else {
+            intoHosCount = 0;
           }
           if (data.dischargeDiagnosisDTOS.length != 0) {
+            if (data.dischargeDiagnosisDTOS.length == 1) {
+              outHosCount = 0;
+            } else {
+              outHosCount = data.dischargeDiagnosisDTOS.length - 1;
+            }
             var outDiagnosisDate = new Date(data.dischargeDiagnosisDTOS[0].diagnosisDate);
             $scope.outDiagnosisDate = outDiagnosisDate.getFullYear() + '-' + (outDiagnosisDate.getMonth() + 1) + '-' + outDiagnosisDate.getDate();
-          }else{
-            outHosCount = 1;
+          } else {
+            outHosCount = 0;
           }
           $scope.birthday = birthday.getFullYear() + '-' + (birthday.getMonth() + 1) + '-' + birthday.getDate();
           $scope.admissionDate = admissionDate.getFullYear() + '-' + (admissionDate.getMonth() + 1) + '-' + admissionDate.getDate();
@@ -119,7 +127,6 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           var dynamicDate1 = new Date(((data.admissionDiagnosisDTOS)[i]).diagnosisDate);
           $scope.intoDiagnosisDateObj[i] = dynamicDate1.getFullYear() + '-' + (dynamicDate1.getMonth() + 1) + '-' + dynamicDate1.getDate();
         }
-
         for (var j = 1; j < data.dischargeDiagnosisDTOS.length; j++) {
           var template2 = '<div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 出院诊断</i></div><input class="form-control" type="text" ng-model="outDiagnosisObj[' + j + ']"></div></div><div class="col-sm-6"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 诊断时间</i></div><input id="outDiagnosisDate' + j + '" class="form-control" ng-model="outDiagnosisDateObj[' + j + ']"></div></div>';
           var compileFn2 = $compile(template2);
@@ -137,6 +144,8 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
     }
 
     $scope.save = function() {
+      console.log('into:' + intoHosCount);
+      console.log('out:' + outHosCount);
       patient.admissionDiagnosisDTOS = [];
       patient.dischargeDiagnosisDTOS = [];
       patient.name = $scope.name;
@@ -167,15 +176,14 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
         diagnosisDate: new Date($scope.outDiagnosisDate)
       });
       patient.projectId = 2;
-      console.log(intoHosCount,outHosCount);
-      for (var i = 1; i < intoHosCount; i++) {
+      for (var i = 1; i <= intoHosCount; i++) {
         patient.admissionDiagnosisDTOS.push({
           id: judge($scope.admissIdObj[i]),
-          diagnosis: ($scope.intoDiagnosisObj[i]),
+          diagnosis: $scope.intoDiagnosisObj[i],
           diagnosisDate: new Date($scope.intoDiagnosisDateObj[i])
         });
       }
-      for (var j = 1; j < outHosCount; j++) {
+      for (var j = 1; j <= outHosCount; j++) {
         patient.dischargeDiagnosisDTOS.push({
           id: judge($scope.dischargeIdObj[j]),
           diagnosis: ($scope.outDiagnosisObj[j]),
