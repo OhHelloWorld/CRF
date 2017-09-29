@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by 10210 on 2017/9/7.
+ * 第一次异常检查
  */
 @RestController
 @RequestMapping(path = "/api/mlfae")
@@ -51,11 +52,21 @@ public class FirstAbnormalExaminationController {
         return firstAbnormalExaminationService.getAllMlfaeData(pId);
     }
 
+    /**
+     * 根据患者ID得到该表完成情况
+     * @param mlPatientId
+     * @return
+     */
     @GetMapping(value = "/complete/{mlPatientId}")
     public Boolean getCompleteByPatientId(@PathVariable int mlPatientId){
         return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 
+    /**
+     * 根据患者ID得到 所有异常检查 数据
+     * @param mlPatientId
+     * @return
+     */
     @GetMapping(path = "/hos/{mlPatientId}")
     public MedicineLiverFirstAbnormalExaminationDTO getHosData(@PathVariable int mlPatientId){
         return firstAbnormalExaminationService.getHosData(mlPatientId);

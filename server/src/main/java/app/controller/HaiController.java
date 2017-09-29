@@ -11,6 +11,9 @@ import app.dto.HaiDTO;
 import app.service.HaiService;
 
 
+/**
+ * HAI评分
+ */
 @RestController
 @RequestMapping(path = "/api/hai")
 public class HaiController {

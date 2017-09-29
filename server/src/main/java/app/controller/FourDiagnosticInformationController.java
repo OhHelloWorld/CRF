@@ -62,6 +62,11 @@ public class FourDiagnosticInformationController {
         return fourDiagnosticInformationService.getFollowFourDia(patientId);
     }
 
+    /**
+     * 根据ID得到某次随访数据
+     * @param id
+     * @return
+     */
     @GetMapping(path = "/singleFollow/{id}")
     public FourDiagnosticInformationDTO getSingleFollowById(@PathVariable int id) {
         return fourDiagnosticInformationService.getSingleFollowById(id);
@@ -78,11 +83,20 @@ public class FourDiagnosticInformationController {
         return fourDiagnosticInformationService.getDefaultFourDia(patientId);
     }
 
+    /**
+     * 跟新四诊信息
+     * @param fourDiagnosticInformationDTO
+     */
     @PutMapping(path = "")
     public void updateFourDia(@RequestBody FourDiagnosticInformationDTO fourDiagnosticInformationDTO){
         fourDiagnosticInformationService.updateFourDia(fourDiagnosticInformationDTO);
     }
 
+    /**
+     * 根据日期得到随访数据
+     * @param date
+     * @return
+     */
     @GetMapping(path = "/follow")
     public FourDiagnosticInformationDTO getFollowFourByDate(@RequestParam  String date){
         return fourDiagnosticInformationService.getFollowFourByDate(date);

@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by 52400 on 2017/6/30.
+ * 消息
  */
 @RestController
 @RequestMapping(path = "/api/message")

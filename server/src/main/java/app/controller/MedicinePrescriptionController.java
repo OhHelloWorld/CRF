@@ -74,6 +74,11 @@ public class MedicinePrescriptionController {
         return medicinePrescriptionService.getDefaultMedicine(patientId);
     }
 
+    /**
+     * 根据日期得到随访数据
+     * @param date
+     * @return
+     */
     @GetMapping(path = "/follow")
     public ChineseMedicinePrescriptionDTO getFollowChineseByDate(@RequestParam  String date){
         return medicinePrescriptionService.getFollowChineseByDate(date);

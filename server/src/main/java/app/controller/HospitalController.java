@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * Created by 52400 on 2017/6/21.
+ * 医院
  */
 
 @RestController
@@ -56,6 +57,10 @@ public class HospitalController {
         return hospitalService.updateHospital(hospitalDTO);
     }
 
+    /**
+     * 删除某个医院
+     * @param hospitalId
+     */
     @DeleteMapping(value = "/{hospitalId}")
     public void deleteHospital(@PathVariable Long hospitalId) {
         hospitalService.deleteHospital(hospitalId);

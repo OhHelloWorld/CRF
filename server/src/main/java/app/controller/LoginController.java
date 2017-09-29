@@ -1,9 +1,5 @@
 package app.controller;
 
-/**
- * Created by 10210 on 2017/6/7.
- */
-
 import app.dto.UserDTO;
 import app.service.LoginService;
 import io.swagger.annotations.Api;
@@ -19,7 +15,10 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.tomcat.util.codec.binary.Base64;
 
 
-
+/**
+ * Created by 10210 on 2017/6/7.
+ * 登录
+ */
 @RestController
 @RequestMapping(path = "/api")
 @Api(value = "登陆")
@@ -28,6 +27,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    /**
+     * 登录验证
+     * @param authValue
+     * @return
+     */
     @GetMapping(path = "/login")
     public UserDTO login(@RequestHeader("Authorization") String authValue) {
         String creditial = authValue.split(" ")[1];
@@ -55,6 +59,9 @@ public class LoginController {
 
     }
 
+    /**
+     * 登出
+     */
     @GetMapping(path = "/logout")
     public void logout() {
         Subject subject = SecurityUtils.getSubject();

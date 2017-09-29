@@ -75,16 +75,30 @@ public class BoneDensityController {
         return boneDensityService.getDefaultBone(patientId);
     }
 
+    /**
+     * 根据id得到骨密度随访对象
+     * @param id
+     * @return
+     */
     @GetMapping(path = "/singleFollow/{id}")
     public BoneDensityDTO getSingleFollowById(@PathVariable int id){
         return boneDensityService.getSingleFollowById(id);
     }
 
+    /**
+     * 骨密度更新
+     * @param boneDensityDTO
+     */
     @PutMapping(path = "")
     public void updateBone(@RequestBody BoneDensityDTO boneDensityDTO){
         boneDensityService.updateBone(boneDensityDTO);
     }
 
+    /**
+     * 根据日期找到某天的骨密度随访记录
+     * @param date
+     * @return
+     */
     @GetMapping(path = "/follow")
     public BoneDensityDTO getFollowBoneByDate(@RequestParam String date){
         return boneDensityService.getFollowBoneByDate(date);

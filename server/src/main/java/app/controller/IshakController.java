@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dto.IshakDTO;
 import app.service.IshakService;
 
+/**
+ * ishak评分
+ */
 @RestController
 @RequestMapping(path = "/api/ishak")
 public class IshakController {

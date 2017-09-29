@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.service.CreateExcelService;
 
-
+/**
+ * 创建病例Excel表
+ */
 @RestController
 @RequestMapping(path = "/api/excel")
 public class CreateExcelController {

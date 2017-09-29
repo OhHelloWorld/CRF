@@ -18,13 +18,24 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Component
 @Aspect
+
+/**
+ * 切面统一异常管理与请求方法URL显示
+ *
+ */
 public class UnifiedExceptionHandle {
 
-    Logger logger = LoggerFactory.getLogger(UnifiedExceptionHandle.class);
+    private Logger logger = LoggerFactory.getLogger(UnifiedExceptionHandle.class);
 
+    /**
+     * 切入点定义
+     */
     @Pointcut(value = "execution(* app..*.*(..))")
     public void point(){}
 
+    /**
+     * 织入切面前置方法
+     */
     @Before("point()")
     public void before(){
         if(RequestContextHolder.getRequestAttributes() != null) {
@@ -33,6 +44,9 @@ public class UnifiedExceptionHandle {
         }
     }
 
+    /**
+     * 织入切面异常处理方法
+     */
     @AfterThrowing("point()")
     public void exceptionHandle(){
         logger.info("error");
