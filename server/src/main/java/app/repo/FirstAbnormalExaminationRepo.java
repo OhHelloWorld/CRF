@@ -15,16 +15,19 @@ public interface FirstAbnormalExaminationRepo extends CrudRepository<MedicineLiv
 
     @Query(value = "select * from medicine_liver_first_abnormal_examination " +
             "where patient_id = ?1 and first = 1 order by id desc limit 1", nativeQuery = true)
-    public MedicineLiverFirstAbnormalExaminationDO getMsgByPID(Long pId);
+    MedicineLiverFirstAbnormalExaminationDO getMsgByPID(Long pId);
 
     @Query(value = "select * from medicine_liver_first_abnormal_examination " +
             " where patient_id=?1 and first = 0", nativeQuery = true)
-    public List<MedicineLiverFirstAbnormalExaminationDO> getAllMlfaeData(Long pId);
+    List<MedicineLiverFirstAbnormalExaminationDO> getAllMlfaeData(Long pId);
 
-    @Query(value = "select complete from medicine_liver_first_abnormal_examination where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
-    public Boolean getCompleteByPatientId(int mlPatientId);
+    @Query(value = "select complete from medicine_liver_first_abnormal_examination where patient_id = ?1 and first = 1 order by id desc limit 1",nativeQuery = true)
+    Boolean getCompleteByPatientId(int mlPatientId);
 
     @Query(value = "select * from medicine_liver_first_abnormal_examination where patient_id = ?1 and first = 0 order by id desc limit 1",nativeQuery = true)
-    public MedicineLiverFirstAbnormalExaminationDO getHosData(int mlPatientId);
+    MedicineLiverFirstAbnormalExaminationDO getHosData(int mlPatientId);
+
+    @Query(value = "select complete from medicine_liver_first_abnormal_examination where patient_id = ?1 and first = 0 order by id desc limit 1",nativeQuery = true)
+    Boolean getHosCompleteByPatientId(int mlPatientId);
 
 }

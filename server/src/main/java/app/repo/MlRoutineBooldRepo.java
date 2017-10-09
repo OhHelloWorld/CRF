@@ -12,8 +12,8 @@ public interface MlRoutineBooldRepo extends CrudRepository<MedicineLiverRoutineB
 
     @Query(value = "select * from medicine_liver_routine_blood where patient_id = ?1" +
             " order by id desc limit 1;", nativeQuery = true)
-    public MedicineLiverRoutineBloodDO getRoutineByPid(Long pId);
+    MedicineLiverRoutineBloodDO getRoutineByPid(Long pId);
 
     @Query(value = "select complete from medicine_liver_routine_blood where patient_id = ?1 order by id desc limit 1",nativeQuery = true)
-    public Boolean getCompleteByPatientId(int mlPatientId);
+    Boolean getCompleteByPatientId(int mlPatientId);
 }

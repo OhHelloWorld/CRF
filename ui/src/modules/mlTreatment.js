@@ -71,13 +71,15 @@ angular.module('mlTreatment', [])
       }).then(function success(response) {
         var data = response.data;
 
-        detailCount = data.medicineLiverTreatmentDetailDTOS.length - 1;
-        otherCount = data.medicineLiverTreatmentOtherDTOS.length - 1;
-
         $scope.treatment = data.treatment;
         $scope.complete = data.complete;
 
         if (data.medicineLiverTreatmentDetailDTOS.length != 0) {
+          if(data.medicineLiverTreatmentDetailDTOS.length == 1){
+            detailCount = 1;
+          }else{
+            detailCount = data.medicineLiverTreatmentDetailDTOS.length - 1;
+          }
           $scope.genericName = data.medicineLiverTreatmentDetailDTOS[0].genericName;
           $scope.tradeName = data.medicineLiverTreatmentDetailDTOS[0].tradeName;
           $scope.detailMethod = data.medicineLiverTreatmentDetailDTOS[0].detailMethod;
@@ -88,9 +90,16 @@ angular.module('mlTreatment', [])
             $scope.detailStartDate = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
             $scope.detailEndDate = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
           })(data);
+        }else{
+          detailCount = 0;
         }
 
         if (data.medicineLiverTreatmentOtherDTOS.length != 0) {
+          if(data.medicineLiverTreatmentOtherDTOS == 1){
+            otherCount = 0;
+          }else{
+            otherCount = data.medicineLiverTreatmentOtherDTOS.length - 1;
+          }
           $scope.method = data.medicineLiverTreatmentOtherDTOS[0].method;
           $scope.methodDetail = data.medicineLiverTreatmentOtherDTOS[0].methodDetail;
           (function(data) {
@@ -99,6 +108,8 @@ angular.module('mlTreatment', [])
             $scope.otherStartDate = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
             $scope.otherEndDate = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
           })(data);
+        }else{
+          otherCount = 0;
         }
 
         for (var i = 1; i < data.medicineLiverTreatmentDetailDTOS.length; i++) {
@@ -171,25 +182,25 @@ angular.module('mlTreatment', [])
         otherEndDate: new Date($scope.otherEndDate)
       });
 
-      for (var i = 0; i < detailCount; i++) {
+      for (var i = 1; i <= detailCount; i++) {
         mlTreatment.medicineLiverTreatmentDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
-          genericName: $scope.genericNameObj[i + 1],
-          tradeName: $scope.tradeNameObj[i + 1],
-          detailMethod: $scope.detailMethodObj[i + 1],
-          dose: $scope.doseObj[i + 1],
-          detailStartDate: new Date($scope.detailStartDateObj[i + 1]),
-          detailEndDate: new Date($scope.detailEndDateObj[i + 1])
+          genericName: $scope.genericNameObj[i],
+          tradeName: $scope.tradeNameObj[i],
+          detailMethod: $scope.detailMethodObj[i],
+          dose: $scope.doseObj[i],
+          detailStartDate: new Date($scope.detailStartDateObj[i]),
+          detailEndDate: new Date($scope.detailEndDateObj[i])
         });
       }
 
-      for (var j = 0; j < otherCount; j++) {
+      for (var j = 1; j <= otherCount; j++) {
         mlTreatment.medicineLiverTreatmentOtherDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
-          method: $scope.methodObj[j + 1],
-          methodDetail: $scope.methodDetailObj[j + 1],
-          otherStartDate: new Date($scope.otherStartDateObj[j + 1]),
-          otherEndDate: new Date($scope.otherEndDateObj[j + 1])
+          method: $scope.methodObj[j],
+          methodDetail: $scope.methodDetailObj[j],
+          otherStartDate: new Date($scope.otherStartDateObj[j]),
+          otherEndDate: new Date($scope.otherEndDateObj[j])
         });
       }
       $http({

@@ -49,11 +49,15 @@ angular.module('diseaseHistory', [])
         url: '/api/mlDiseaseHistory/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
-        count = data.medicineLiverDiseaseHistoryDetailDTOS.length - 1;
         $scope.otherHistory = data.otherHistory;
         $scope.pastDisease = data.pastDisease;
         (function(data) {
           if (data.medicineLiverDiseaseHistoryDetailDTOS.length != 0) {
+            if(data.medicineLiverDiseaseHistoryDetailDTOS.length == 1){
+              count = 0;
+            }else{
+              count = data.medicineLiverDiseaseHistoryDetailDTOS.length - 1;
+            }
             if (data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate != null) {
               var diagnosisDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate);
               $scope.diagnosisDate = diagnosisDate.getFullYear() + '-' + (diagnosisDate.getMonth() + 1) + '-' + diagnosisDate.getDate();
@@ -62,7 +66,8 @@ angular.module('diseaseHistory', [])
               var crueDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate);
               $scope.crueDate = crueDate.getFullYear() + '-' + (crueDate.getMonth() + 1) + '-' + crueDate.getDate();
             }
-
+          }else{
+            count = 0;
           }
         })(data);
 
@@ -108,14 +113,13 @@ angular.module('diseaseHistory', [])
         diagnosisDate: new Date($scope.diagnosisDate),
         crueDate: new Date($scope.crueDate)
       });
-      diseaseHistory.projectId = 2;
-      for (var i = 0; i < count; i++) {
+      for (var i = 1; i <= count; i++) {
         diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
-          id: ($scope.detailIdObj[i + 1]),
-          diseaseName: ($scope.diseaseNameObj[i + 1]),
-          existence: ($scope.existenceObj[i + 1]),
-          diagnosisDate: new Date($scope.diagnosisDateObj[i + 1]),
-          crueDate: new Date($scope.crueDateObj[i + 1])
+          id: ($scope.detailIdObj[i]),
+          diseaseName: ($scope.diseaseNameObj[i]),
+          existence: ($scope.existenceObj[i]),
+          diagnosisDate: new Date($scope.diagnosisDateObj[i]),
+          crueDate: new Date($scope.crueDateObj[i])
         });
       }
       $http({

@@ -47,7 +47,6 @@ angular.module('symptoms', [])
         url: '/api/mlSymptoms/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
-        count = data.medicineLiverSymptomsOtherDTOs.length - 1;
 
         $scope.liverInjury = data.liverInjury;
         $scope.weak = data.weak;
@@ -113,11 +112,18 @@ angular.module('symptoms', [])
         $scope.complete = data.complete;
 
         if (data.medicineLiverSymptomsOtherDTOs.length != 0) {
+          if(data.medicineLiverSymptomsOtherDTOs.length == 1){
+            count = 0;
+          }else{
+            count = data.medicineLiverSymptomsOtherDTOs.length - 1; 
+          }
           $scope.name = data.medicineLiverSymptomsOtherDTOs[0].name;
           $scope.description = data.medicineLiverSymptomsOtherDTOs[0].description;
           $scope.beginDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).beginDate));
           $scope.disappearDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).disappearDate));
           $scope.dischargeSymptoms = data.medicineLiverSymptomsOtherDTOs[0].dischargeSymptoms;
+        }else{
+          count = 0;
         }
 
         for (var i = 1; i < data.medicineLiverSymptomsOtherDTOs.length; i++) {
@@ -214,14 +220,14 @@ angular.module('symptoms', [])
         disappearDate: new Date($scope.disappearDate),
         dischargeSymptoms: $scope.dischargeSymptoms
       });
-      for (var i = 0; i < count; i++) {
+      for (var i = 1; i <= count; i++) {
         mlSymptoms.medicineLiverSymptomsOtherDTOs.push({
           // id: ($scope.detailIdObj[i + 1]),
-          name: $scope.nameObj[i + 1],
-          description: $scope.descriptionObj[i + 1],
-          beginDate: new Date($scope.beginDateObj[i + 1]),
-          disappearDate: new Date($scope.disappearDateObj[i + 1]),
-          dischargeSymptoms: $scope.dischargeSymptomsObj[i + 1]
+          name: $scope.nameObj[i],
+          description: $scope.descriptionObj[i],
+          beginDate: new Date($scope.beginDateObj[i]),
+          disappearDate: new Date($scope.disappearDateObj[i]),
+          dischargeSymptoms: $scope.dischargeSymptomsObj[i]
         });
       }
       $http({

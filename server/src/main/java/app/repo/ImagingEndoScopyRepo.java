@@ -12,9 +12,9 @@ public interface ImagingEndoScopyRepo extends CrudRepository<MedicineLiverImagin
 
     @Query(value = "select * from medicine_liver_imaging_endoscopy where patient_id = ?1" +
             " order by id desc limit 1;", nativeQuery = true)
-    public MedicineLiverImagingEndoscopyDO getByPid(Long pId);
+    MedicineLiverImagingEndoscopyDO getByPid(Long pId);
 
     @Query(value = "select complete from medicine_liver_imaging_endoscopy where patient_id = ?1 order by id limit 1",nativeQuery = true)
-    public Boolean getCompleteByPatientId(int mlPatientId);
+    Boolean getCompleteByPatientId(int mlPatientId);
 
 }

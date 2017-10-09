@@ -37,6 +37,49 @@ public class MlPatientServiceImpl implements MlPatientService {
     @Autowired
     private DischargeDiagnosisRepo dischargeDiagnosisRepo;
 
+    @Autowired
+    private MlDiseaseHistoryRepo mlDiseaseHistoryRepo;
+
+    @Autowired
+    private MlAllergyHistoryRepo mlAllergyHistoryRepo;
+
+    @Autowired
+    private MlDrinkRepo mlDrinkRepo;
+
+    @Autowired
+    private MlDrugHistoryRepo mlDrugHistoryRepo;
+
+    @Autowired
+    private MlSymptomsRepo mlSymptomsRepo;
+
+    @Autowired
+    private FirstAbnormalExaminationRepo firstAbnormalExaminationRepo;
+
+    @Autowired
+    private ExcludeOtherRepo excludeOtherRepo;
+
+    @Autowired
+    private MlRoutineBooldRepo mlRoutineBooldRepo;
+
+    @Autowired
+    private ImagingEndoScopyRepo imagingEndoScopyRepo;
+
+    @Autowired
+    private MlLiverHistologicalRepo mlLiverHistologicalRepo;
+
+    @Autowired
+    private MlLiverInjuryRepo mlLiverInjuryRepo;
+
+    @Autowired
+    private MlTreatmentRepo mlTreatmentRepo;
+
+    @Autowired
+    private MlDiseaseOutcomeRepo mlDiseaseOutcomeRepo;
+
+    @Autowired
+    private MlBiologicalSamplesRepo mlBiologicalSamplesRepo;
+
+
     @Transactional
     public int saveMlPatientGeneralInformation(MlPatientDTO mlPatientDTO) {
         return mlpatientRepo.save(convertToMlPatientDO(mlPatientDTO)).getId();
@@ -213,6 +256,10 @@ public class MlPatientServiceImpl implements MlPatientService {
         }
         mlPatientDTO.setAdmissionDiagnosisDTOS(admissionDiagnosisDTOS);
         mlPatientDTO.setDischargeDiagnosisDTOS(dischargeDiagnosisDTOS);
+
+        int tempId = mlPatientDO.getId();
+//        Boolean com = mlDiseaseHistoryRepo.getCompleteByPatientId(tempId) && mlAllergyHistoryRepo.getCompleteByPatientId(tempId) && mlDrinkRepo.getCompleteByPatientId(tempId) && mlDrugHistoryRepo.getCompleteByPatientId(tempId) && mlSymptomsRepo.getCompleteByPatientId(tempId) && firstAbnormalExaminationRepo.getCompleteByPatientId(tempId) && firstAbnormalExaminationRepo.getHosCompleteByPatientId(tempId) && excludeOtherRepo.getCompleteByPatientId(tempId) && mlRoutineBooldRepo.getCompleteByPatientId(tempId) && imagingEndoScopyRepo.getCompleteByPatientId(tempId) && mlLiverHistologicalRepo.getCompleteByPatientId(tempId) && mlLiverInjuryRepo.getCompleteByPatientId(tempId) && mlTreatmentRepo.getCompleteByPatientId(tempId) && mlDiseaseOutcomeRepo.getCompleteByPatientId(tempId) && mlBiologicalSamplesRepo.getCompleteByPatientId(tempId);
+        mlPatientDTO.setComplete(true);
         mlPatientDTO.setHospitalId(mlPatientDO.getHospitalId());
         mlPatientDTO.setProjectId(mlPatientDO.getProjectId());
         return mlPatientDTO;

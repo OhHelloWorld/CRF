@@ -55,6 +55,7 @@ angular.module('routineBlood', [])
       allData.plt = $scope.plt;
       allData.neutrophil = $scope.neutrophil;
       allData.eosinophil = $scope.eosinophil;
+      allData.complete = true;
 
       $http({
         method: 'POST',

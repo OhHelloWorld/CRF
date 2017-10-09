@@ -144,8 +144,6 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
     }
 
     $scope.save = function() {
-      console.log('into:' + intoHosCount);
-      console.log('out:' + outHosCount);
       patient.admissionDiagnosisDTOS = [];
       patient.dischargeDiagnosisDTOS = [];
       patient.name = $scope.name;

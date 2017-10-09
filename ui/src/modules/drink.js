@@ -28,16 +28,22 @@ angular.module('drink', [])
         url: '/api/mlDrink/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
-        count = data.medicineLiverDrinkDetailDTOS.length - 1;
         $scope.drinkHistory = data.drinkHistory;
         $scope.complete = data.complete;
 
         if (data.medicineLiverDrinkDetailDTOS.length != 0) {
+          if(data.medicineLiverDrinkDetailDTOS.length == 1){
+            count = 0;
+          }else{
+            count = data.medicineLiverDrinkDetailDTOS.length - 1;
+          }
           $scope.drinkType = data.medicineLiverDrinkDetailDTOS[0].drinkType;
           $scope.drinkQuantity = data.medicineLiverDrinkDetailDTOS[0].drinkQuantity;
           $scope.drinkLife = data.medicineLiverDrinkDetailDTOS[0].drinkLife;
           $scope.proof = data.medicineLiverDrinkDetailDTOS[0].proof;
           // $scope.detailId = data.medicineLiverDrinkDetailDTOS[0].id;
+        }else{
+          count = 0;
         }
 
         for (var i = 1; i < data.medicineLiverDrinkDetailDTOS.length; i++) {
@@ -67,13 +73,13 @@ angular.module('drink', [])
         proof: $scope.proof
           // id: $scope.detailId,
       });
-      for (var i = 0; i < count; i++) {
+      for (var i = 1; i <= count; i++) {
         drink.medicineLiverDrinkDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),
-          drinkType: ($scope.drinkTypeObj[i + 1]),
-          drinkQuantity: ($scope.drinkQuantityObj[i + 1]),
-          drinkLife: ($scope.drinkLifeObj[i + 1]),
-          proof: ($scope.proofObj[i + 1])
+          drinkType: ($scope.drinkTypeObj[i]),
+          drinkQuantity: ($scope.drinkQuantityObj[i]),
+          drinkLife: ($scope.drinkLifeObj[i]),
+          proof: ($scope.proofObj[i])
         });
       }
       $http({

@@ -109,14 +109,14 @@ public class PatientServiceImpl implements PatientService {
     }
 
     public Boolean getCompleteById(int id) {
-        return patientRepo.getCompleteById(id)?patientRepo.getCompleteById(id):null;
+        return patientRepo.getCompleteById(id) ? patientRepo.getCompleteById(id) : null;
     }
 
     @Override
     public PageDTO<PatientDTO> getAllPatient(int projectId, Pageable pageable) {
         List<PatientDTO> patientDTOs = new ArrayList<>();
-        Page<PatientDO> patientDOs = patientRepo.getAll(projectId,new UserMsgTool().getCurrentUser().getHospital().getId(),pageable);
-        if(patientDOs.hasContent() && patientDOs != null) {
+        Page<PatientDO> patientDOs = patientRepo.getAll(projectId, new UserMsgTool().getCurrentUser().getHospital().getId(), pageable);
+        if (patientDOs.hasContent() && patientDOs != null) {
             for (PatientDO patientDO : patientDOs) {
                 patientDTOs.add(convertToPatientDTO(patientDO));
             }
@@ -214,23 +214,19 @@ public class PatientServiceImpl implements PatientService {
         patientDTO.setConcurrentAutoDate(patientDO.getConcurrentAutoDate());
         patientDTO.setConcurrentAutoDisease(patientDO.getConcurrentAutoDisease());
         patientDTO.setConAutoDisFirstOrNot(patientDO.isConAutoDisFirstOrNot());
-        if (patientDO.getProjectId() == 1) {
-            patientDTO.setComplete(
-                    patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
-                            && tonguePulseService.getCompleteByPatientId(patientDO.getId())
-                            && physicalService.getCompleteByPatientId(patientDO.getId())
-                            && boneDensityService.getCompleteByPatientId(patientDO.getId())
-                            && complexAIHBeforeTreatmentService
-                            .getCompleteByPatientId(patientDO.getId())
-                            && complexAIHAfterTreatmentService.getCompleteByPatientId(patientDO.getId())
-                            && finalDiaSpeCirService.getCompleteByPatientId(patientDO.getId())
-                            && liverPathologyService.getCompleteByPatientId(patientDO.getId())
-                            && medicinePrescriptionService.getCompleteByPatientId(patientDO.getId())
-                            && simpleAIHService.getCompleteByPatientId(patientDO.getId())
-                            && treatmentService.getCompleteByPatientId(patientDO.getId()));
-        } else {
-            patientDTO.setComplete(true);
-        }
+        patientDTO.setComplete(
+                patientDO.isComplete() && fourDiaService.getCompleteByPatientId(patientDO.getId())
+                        && tonguePulseService.getCompleteByPatientId(patientDO.getId())
+                        && physicalService.getCompleteByPatientId(patientDO.getId())
+                        && boneDensityService.getCompleteByPatientId(patientDO.getId())
+                        && complexAIHBeforeTreatmentService
+                        .getCompleteByPatientId(patientDO.getId())
+                        && complexAIHAfterTreatmentService.getCompleteByPatientId(patientDO.getId())
+                        && finalDiaSpeCirService.getCompleteByPatientId(patientDO.getId())
+                        && liverPathologyService.getCompleteByPatientId(patientDO.getId())
+                        && medicinePrescriptionService.getCompleteByPatientId(patientDO.getId())
+                        && simpleAIHService.getCompleteByPatientId(patientDO.getId())
+                        && treatmentService.getCompleteByPatientId(patientDO.getId()));
         patientDTO.setHospitalId(patientDO.getHospitalId());
         patientDTO.setProjectId(patientDO.getProjectId());
 

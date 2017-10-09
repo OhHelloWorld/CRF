@@ -100,6 +100,8 @@ angular.module('imagingEndoscopy', [])
       allDate.gastroscopeDate = checkDate($scope.gastroscopeDate);
       allDate.gastroscopeBiliaryTract = $scope.gastroscopeBiliaryTract;
       allDate.gastroscopeEsophagealGastricVarices = $scope.gastroscopeEsophagealGastricVarices;
+      
+      allDate.complete = true;
       $http({
         method: 'POST',
         url: '/api/iesc/',
