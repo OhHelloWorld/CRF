@@ -174,16 +174,20 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
       patient.hospitalizedNumber = $scope.hospitalizedNumber;
       patient.hospitalizedDepartment = $scope.hospitalizedDepartment;
 
-      patient.admissionDiagnosisDTOS.push({
-        id: $scope.admissId,
-        diagnosis: $scope.intoDiagnosis,
-        diagnosisDate: new Date($scope.intoDiagnosisDate)
-      });
-      patient.dischargeDiagnosisDTOS.push({
-        id: $scope.dischargeId,
-        diagnosis: $scope.outDiagnosis,
-        diagnosisDate: new Date($scope.outDiagnosisDate)
-      });
+      if ($scope.intoDiagnosis != undefined) {
+        patient.admissionDiagnosisDTOS.push({
+          id: $scope.admissId,
+          diagnosis: $scope.intoDiagnosis,
+          diagnosisDate: new Date($scope.intoDiagnosisDate)
+        });
+      }
+      if ($scope.outDiagnosis != undefined) {
+        patient.dischargeDiagnosisDTOS.push({
+          id: $scope.dischargeId,
+          diagnosis: $scope.outDiagnosis,
+          diagnosisDate: new Date($scope.outDiagnosisDate)
+        });
+      }
       patient.projectId = 2;
       for (var i = 1; i <= intoHosCount; i++) {
         patient.admissionDiagnosisDTOS.push({

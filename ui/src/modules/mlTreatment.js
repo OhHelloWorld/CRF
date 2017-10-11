@@ -75,9 +75,9 @@ angular.module('mlTreatment', [])
         $scope.complete = data.complete;
 
         if (data.medicineLiverTreatmentDetailDTOS.length != 0) {
-          if(data.medicineLiverTreatmentDetailDTOS.length == 1){
+          if (data.medicineLiverTreatmentDetailDTOS.length == 1) {
             detailCount = 1;
-          }else{
+          } else {
             detailCount = data.medicineLiverTreatmentDetailDTOS.length - 1;
           }
           $scope.genericName = data.medicineLiverTreatmentDetailDTOS[0].genericName;
@@ -90,14 +90,14 @@ angular.module('mlTreatment', [])
             $scope.detailStartDate = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
             $scope.detailEndDate = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
           })(data);
-        }else{
+        } else {
           detailCount = 0;
         }
 
         if (data.medicineLiverTreatmentOtherDTOS.length != 0) {
-          if(data.medicineLiverTreatmentOtherDTOS == 1){
+          if (data.medicineLiverTreatmentOtherDTOS == 1) {
             otherCount = 0;
-          }else{
+          } else {
             otherCount = data.medicineLiverTreatmentOtherDTOS.length - 1;
           }
           $scope.method = data.medicineLiverTreatmentOtherDTOS[0].method;
@@ -108,7 +108,7 @@ angular.module('mlTreatment', [])
             $scope.otherStartDate = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
             $scope.otherEndDate = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
           })(data);
-        }else{
+        } else {
           otherCount = 0;
         }
 
@@ -165,22 +165,26 @@ angular.module('mlTreatment', [])
       mlTreatment.patientId = sessionStorage.getItem('mlPatientId');
       mlTreatment.complete = true;
 
-      mlTreatment.medicineLiverTreatmentDetailDTOS.push({
-        genericName: $scope.genericName,
-        tradeName: $scope.tradeName,
-        detailMethod: $scope.detailMethod,
-        dose: $scope.dose,
-        detailStartDate: new Date($scope.detailStartDate),
-        detailEndDate: new Date($scope.detailEndDate)
-          // id: $scope.detailId,
-      });
+      if ($scope.genericName != undefined) {
+        mlTreatment.medicineLiverTreatmentDetailDTOS.push({
+          genericName: $scope.genericName,
+          tradeName: $scope.tradeName,
+          detailMethod: $scope.detailMethod,
+          dose: $scope.dose,
+          detailStartDate: new Date($scope.detailStartDate),
+          detailEndDate: new Date($scope.detailEndDate)
+            // id: $scope.detailId,
+        });
+      }
 
-      mlTreatment.medicineLiverTreatmentOtherDTOS.push({
-        method: $scope.method,
-        methodDetail: $scope.methodDetail,
-        otherStartDate: new Date($scope.otherStartDate),
-        otherEndDate: new Date($scope.otherEndDate)
-      });
+      if ($scope.method != undefined) {
+        mlTreatment.medicineLiverTreatmentOtherDTOS.push({
+          method: $scope.method,
+          methodDetail: $scope.methodDetail,
+          otherStartDate: new Date($scope.otherStartDate),
+          otherEndDate: new Date($scope.otherEndDate)
+        });
+      }
 
       for (var i = 1; i <= detailCount; i++) {
         mlTreatment.medicineLiverTreatmentDetailDTOS.push({

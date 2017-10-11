@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by 52400 on 2017/6/20.
+ * 自定义异常管理
  */
 @ControllerAdvice
 public class ExceptionController {

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by 52400 on 2017/6/30.
+ * 病例
  */
 @RestController
 @RequestMapping(path = "/api/case")

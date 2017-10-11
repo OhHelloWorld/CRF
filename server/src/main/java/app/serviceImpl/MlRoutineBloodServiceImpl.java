@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * Created by 10210 on 2017/9/14.
  */
 @Service
-public class MlRoutineBloodServiceImpl implements MlRoutineBloodService,MlCompleteService{
+public class MlRoutineBloodServiceImpl implements MlRoutineBloodService, MlCompleteService {
 
     @Autowired
     private MlRoutineBooldRepo mlRoutineBooldRepo;
@@ -27,11 +27,15 @@ public class MlRoutineBloodServiceImpl implements MlRoutineBloodService,MlComple
 
     @Override
     public MedicineLiverRoutineBloodDTO getRoutineByPid(Long pId) {
-        return convertUtil.routineConverToDTO(mlRoutineBooldRepo.getRoutineByPid(pId));
+        if (mlRoutineBooldRepo.getRoutineByPid(pId) != null) {
+            return convertUtil.routineConverToDTO(mlRoutineBooldRepo.getRoutineByPid(pId));
+        } else {
+            return null;
+        }
     }
 
     @Override
     public Boolean getCompleteByPatient(int mlPatientId) {
-        return mlRoutineBooldRepo.getCompleteByPatientId(mlPatientId)!=null?mlRoutineBooldRepo.getCompleteByPatientId(mlPatientId):false;
+        return mlRoutineBooldRepo.getCompleteByPatientId(mlPatientId) != null ? mlRoutineBooldRepo.getCompleteByPatientId(mlPatientId) : false;
     }
 }

@@ -33,7 +33,11 @@ public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExamina
 
     @Override
     public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId) {
-        return convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getMsgByPID(pId));
+        if(firstAbnormalExaminationRepo.getMsgByPID(pId)!=null) {
+            return convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getMsgByPID(pId));
+        }else{
+            return null;
+        }
     }
 
     @Override
@@ -49,6 +53,11 @@ public class FirstAbnormalExaminationServiceImpl implements FirstAbnormalExamina
     @Override
     public MedicineLiverFirstAbnormalExaminationDTO getHosData(int mlpatientId) {
         return firstAbnormalExaminationRepo.getHosData(mlpatientId)!=null?convertUtil.mlfaeConvertoDTO(firstAbnormalExaminationRepo.getHosData(mlpatientId)):null;
+    }
+
+    @Override
+    public Boolean getNoFirstCompleteByPatient(int mlPatientId) {
+        return firstAbnormalExaminationRepo.getNoFirstCompleteByPatientId(mlPatientId);
     }
 
     @Override

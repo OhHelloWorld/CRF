@@ -97,7 +97,7 @@ angular.module('mlPatientOverview', [])
         $scope.allergyHistory = '无';
       } else if (allergy.allergyHistory == 2) {
         $scope.allergyHistory = '有';
-      } else {
+      } else if(allergy.allergyHistory == 3){
         $scope.allergyHistory = '不详';
       }
       $scope.allergen = allergy.allergen;
@@ -881,6 +881,7 @@ angular.module('mlPatientOverview', [])
       var endos = response.data;
       $scope.liverBultrasoundDate = endos.liverBultrasoundDate;
       $scope.image = '/api/image/' + endos.image + '.jpg';
+      $scope.imageDescribe = endos.imageDescribe;
       if (endos.liverBultrasound == '1') {
         $scope.liverBultrasound = '肝表面光滑，边缘锐，血管走向清晰';
       } else if (endos.liverBultrasound == '2') {

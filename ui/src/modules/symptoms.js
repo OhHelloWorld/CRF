@@ -18,11 +18,11 @@ angular.module('symptoms', [])
     }
 
     $('#beginDate').datepicker({
-      autoclose:true
+      autoclose: true
     });
 
     $('#disappearDate').datepicker({
-      autoclose:true
+      autoclose: true
     });
 
     var count = 0;
@@ -112,17 +112,17 @@ angular.module('symptoms', [])
         $scope.complete = data.complete;
 
         if (data.medicineLiverSymptomsOtherDTOs.length != 0) {
-          if(data.medicineLiverSymptomsOtherDTOs.length == 1){
+          if (data.medicineLiverSymptomsOtherDTOs.length == 1) {
             count = 0;
-          }else{
-            count = data.medicineLiverSymptomsOtherDTOs.length - 1; 
+          } else {
+            count = data.medicineLiverSymptomsOtherDTOs.length - 1;
           }
           $scope.name = data.medicineLiverSymptomsOtherDTOs[0].name;
           $scope.description = data.medicineLiverSymptomsOtherDTOs[0].description;
           $scope.beginDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).beginDate));
           $scope.disappearDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).disappearDate));
           $scope.dischargeSymptoms = data.medicineLiverSymptomsOtherDTOs[0].dischargeSymptoms;
-        }else{
+        } else {
           count = 0;
         }
 
@@ -213,13 +213,15 @@ angular.module('symptoms', [])
       mlSymptoms.skinItchDischarge = $scope.skinItchDischarge;
       mlSymptoms.complete = true;
 
-      mlSymptoms.medicineLiverSymptomsOtherDTOs.push({
-        name: $scope.name,
-        description: $scope.description,
-        beginDate: new Date($scope.beginDate),
-        disappearDate: new Date($scope.disappearDate),
-        dischargeSymptoms: $scope.dischargeSymptoms
-      });
+      if ($scope.name != undefined) {
+        mlSymptoms.medicineLiverSymptomsOtherDTOs.push({
+          name: $scope.name,
+          description: $scope.description,
+          beginDate: new Date($scope.beginDate),
+          disappearDate: new Date($scope.disappearDate),
+          dischargeSymptoms: $scope.dischargeSymptoms
+        });
+      }
       for (var i = 1; i <= count; i++) {
         mlSymptoms.medicineLiverSymptomsOtherDTOs.push({
           // id: ($scope.detailIdObj[i + 1]),
@@ -240,7 +242,11 @@ angular.module('symptoms', [])
     };
 
     function showDate(date) {
-      return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+      if (date.toString() != 'Invalid Date') {
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+      } else {
+        return undefined;
+      }
     }
 
     function getMlPatient() {

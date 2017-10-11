@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 angular.module('firstAbnormalExamination', [])
-  .controller('firstAbnormalExaminationController', ['$scope', '$http', function($scope, $http) {
+  .controller('firstAbnormalExaminationController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     getPatientInfo();
     getFirstData();
     $('#datepicker1').datepicker({
@@ -86,6 +86,10 @@ angular.module('firstAbnormalExamination', [])
       });
     };
 
+    $scope.layout = function() {
+      $state.go('mlHome');
+    };
+
     function getFirstData() {
       if (sessionStorage.getItem('mlPatientId')) {
         $http({
@@ -98,11 +102,21 @@ angular.module('firstAbnormalExamination', [])
           var tab3CheckDate = new Date(data.tab3CheckDate);
           var tab4CheckDate = new Date(data.tab4CheckDate);
           var tab5CheckDate = new Date(data.tab5CheckDate);
-          $scope.tab1CheckDate = tab1CheckDate.getFullYear()+'-'+(tab1CheckDate.getMonth()+1)+'-'+tab1CheckDate.getDate();
-          $scope.tab2CheckDate = tab2CheckDate.getFullYear()+'-'+(tab2CheckDate.getMonth()+1)+'-'+tab2CheckDate.getDate();
-          $scope.tab3CheckDate = tab3CheckDate.getFullYear()+'-'+(tab3CheckDate.getMonth()+1)+'-'+tab3CheckDate.getDate();
-          $scope.tab4CheckDate = tab4CheckDate.getFullYear()+'-'+(tab4CheckDate.getMonth()+1)+'-'+tab4CheckDate.getDate();
-          $scope.tab5CheckDate = tab5CheckDate.getFullYear()+'-'+(tab5CheckDate.getMonth()+1)+'-'+tab5CheckDate.getDate();
+          if (tab1CheckDate.toString() != 'Invalid Date') {
+            $scope.tab1CheckDate = tab1CheckDate.getFullYear() + '-' + (tab1CheckDate.getMonth() + 1) + '-' + tab1CheckDate.getDate();
+          }
+          if (tab2CheckDate.toString() != 'Invalid Date') {
+            $scope.tab2CheckDate = tab2CheckDate.getFullYear() + '-' + (tab2CheckDate.getMonth() + 1) + '-' + tab2CheckDate.getDate();
+          }
+          if (tab3CheckDate.toString() != 'Invalid Date') {
+            $scope.tab3CheckDate = tab3CheckDate.getFullYear() + '-' + (tab3CheckDate.getMonth() + 1) + '-' + tab3CheckDate.getDate();
+          }
+          if (tab4CheckDate.toString() != 'Invalid Date') {
+            $scope.tab4CheckDate = tab4CheckDate.getFullYear() + '-' + (tab4CheckDate.getMonth() + 1) + '-' + tab4CheckDate.getDate();
+          }
+          if (tab5CheckDate.toString() != 'Invalid Date') {
+            $scope.tab5CheckDate = tab5CheckDate.getFullYear() + '-' + (tab5CheckDate.getMonth() + 1) + '-' + tab5CheckDate.getDate();
+          }
           $scope.alt = data.alt;
           $scope.ast = data.ast;
           $scope.ggt = data.ggt;

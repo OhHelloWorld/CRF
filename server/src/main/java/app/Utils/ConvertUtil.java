@@ -834,6 +834,7 @@ public class ConvertUtil {
         mDO.setGastroscopeBiliaryTract(mDTO.getGastroscopeBiliaryTract());
         mDO.setGastroscopeEsophagealGastricVarices(mDTO.getGastroscopeEsophagealGastricVarices());
         mDO.setComplete(mDTO.isComplete());
+        mDO.setImageDescribe(mDTO.getImageDescribe());
         return mDO;
     }
 
@@ -870,6 +871,7 @@ public class ConvertUtil {
         mDTO.setGastroscopeDate(mDO.getGastroscopeDate());
         mDTO.setGastroscopeBiliaryTract(mDO.getGastroscopeBiliaryTract());
         mDTO.setGastroscopeEsophagealGastricVarices(mDO.getGastroscopeEsophagealGastricVarices());
+        mDTO.setImageDescribe(mDO.getImageDescribe());
         return mDTO;
     }
 

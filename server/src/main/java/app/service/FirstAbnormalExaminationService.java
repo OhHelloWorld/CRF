@@ -12,11 +12,13 @@ import java.util.List;
  */
 public interface FirstAbnormalExaminationService {
 
-    public void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO);
+    void addMsg(MedicineLiverFirstAbnormalExaminationDTO mlfaeDTO);
 
-    public MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId);
+    MedicineLiverFirstAbnormalExaminationDTO getMsgByPID(Long pId);
 
-    public List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(Long pId);
+    List<MedicineLiverFirstAbnormalExaminationDTO> getAllMlfaeData(Long pId);
 
-    public MedicineLiverFirstAbnormalExaminationDTO getHosData(int mlpatientId);
+    MedicineLiverFirstAbnormalExaminationDTO getHosData(int mlpatientId);
+
+    Boolean getNoFirstCompleteByPatient(int mlPatientId);
 }

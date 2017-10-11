@@ -101,7 +101,10 @@ angular.module('imagingEndoscopy', [ngFileUpload])
       allDate.gastroscopeDate = checkDate($scope.gastroscopeDate);
       allDate.gastroscopeBiliaryTract = $scope.gastroscopeBiliaryTract;
       allDate.gastroscopeEsophagealGastricVarices = $scope.gastroscopeEsophagealGastricVarices;
+      
+      allDate.imageDescribe = $scope.imageDescribe;
       allDate.complete = true;
+
       if ($scope.image == $scope.imageName) {
         allDate.image = $scope.tempImage;
         $http({
@@ -135,6 +138,8 @@ angular.module('imagingEndoscopy', [ngFileUpload])
       } else {
         $scope.image = undefined;
       }
+
+      $scope.imageDescribe = allData.imageDescribe;
 
       $scope.liverBultrasound = allData.liverBultrasound;
       $scope.liverBultrasoundDate = checkToPre(allData.liverBultrasoundDate);

@@ -122,6 +122,15 @@ angular.module('hospitalAbnormalExamination', [])
       }
     }
 
+    function formatDate(date) {
+      var time = new Date(date);
+      if (time.toString() != 'Invalid Date') {
+        return time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
+      } else {
+        return undefined;
+      }
+    }
+
     //切换模式数据清空
     // function cleanData() {
     //   $scope.tab1CheckDate = undefined;
@@ -192,11 +201,11 @@ angular.module('hospitalAbnormalExamination', [])
           method: 'GET'
         }).then(function success(response) {
           var data = response.data;
-          $scope.tab1CheckDate = data.tab1CheckDate;
-          $scope.tab2CheckDate = data.tab2CheckDate ;
-          $scope.tab3CheckDate = data.tab3CheckDate ;
-          $scope.tab4CheckDate = data.tab4CheckDate ;
-          $scope.tab5CheckDate = data.tab5CheckDate ;
+          $scope.tab1CheckDate = formatDate(data.tab1CheckDate);
+          $scope.tab2CheckDate = formatDate(data.tab2CheckDate);
+          $scope.tab3CheckDate = formatDate(data.tab3CheckDate);
+          $scope.tab4CheckDate = formatDate(data.tab4CheckDate);
+          $scope.tab5CheckDate = formatDate(data.tab5CheckDate);
           $scope.alt = data.alt;
           $scope.ast = data.ast;
           $scope.ggt = data.ggt;

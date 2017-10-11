@@ -427,29 +427,25 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
       }).then(function success(response) {
         if (response.data) {
           $('#firstAbnormalExaminationMenuYes').removeClass('hide');
-          $('#hospitalAbnormalExaminationMenuYes').removeClass('hide');
           $('#firstAbnormalExaminationMenuNo').addClass('hide');
-          $('#hospitalAbnormalExaminationMenuNo').addClass('hide');
         } else {
           $('#firstAbnormalExaminationMenuNo').removeClass('hide');
-          $('#hospitalAbnormalExaminationMenuNo').removeClass('hide');
           $('#firstAbnormalExaminationMenuYes').addClass('hide');
-          $('#hospitalAbnormalExaminationMenuYes').addClass('hide');
         }
       }).catch(function err() {});
 
-      // $http({
-      //   method: 'GET',
-      //   url: '/api/hospitalAbnormalExamination/complete/' + sessionStorage.getItem('mlPatientId')
-      // }).then(function success(response) {
-      //   if (response.data) {
-      //     $('#hospitalAbnormalExaminationMenuYes').removeClass('hide');
-      //     $('#hospitalAbnormalExaminationMenuNo').addClass('hide');
-      //   } else {
-      //     $('#hospitalAbnormalExaminationMenuNo').removeClass('hide');
-      //     $('#hospitalAbnormalExaminationMenuYes').addClass('hide');
-      //   }
-      // }).catch(function err() {});
+      $http({
+        method: 'GET',
+        url: '/api/mlfae/noFirst/complete/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        if (response.data) {
+          $('#hospitalAbnormalExaminationMenuYes').removeClass('hide');
+          $('#hospitalAbnormalExaminationMenuNo').addClass('hide');
+        } else {
+          $('#hospitalAbnormalExaminationMenuNo').removeClass('hide');
+          $('#hospitalAbnormalExaminationMenuYes').addClass('hide');
+        }
+      }).catch(function err() {});
 
       $http({
         method: 'GET',

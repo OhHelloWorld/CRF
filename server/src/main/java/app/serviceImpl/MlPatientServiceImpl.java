@@ -261,10 +261,15 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDTO.setDischargeDiagnosisDTOS(dischargeDiagnosisDTOS);
 
         int tempId = mlPatientDO.getId();
-//        Boolean com = mlDiseaseHistoryRepo.getCompleteByPatientId(tempId) && mlAllergyHistoryRepo.getCompleteByPatientId(tempId) && mlDrinkRepo.getCompleteByPatientId(tempId) && mlDrugHistoryRepo.getCompleteByPatientId(tempId) && mlSymptomsRepo.getCompleteByPatientId(tempId) && firstAbnormalExaminationRepo.getCompleteByPatientId(tempId) && firstAbnormalExaminationRepo.getHosCompleteByPatientId(tempId) && excludeOtherRepo.getCompleteByPatientId(tempId) && mlRoutineBooldRepo.getCompleteByPatientId(tempId) && imagingEndoScopyRepo.getCompleteByPatientId(tempId) && mlLiverHistologicalRepo.getCompleteByPatientId(tempId) && mlLiverInjuryRepo.getCompleteByPatientId(tempId) && mlTreatmentRepo.getCompleteByPatientId(tempId) && mlDiseaseOutcomeRepo.getCompleteByPatientId(tempId) && mlBiologicalSamplesRepo.getCompleteByPatientId(tempId);
-        mlPatientDTO.setComplete(true);
+        Boolean com = formatBool(mlDiseaseHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlAllergyHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrinkRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrugHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlSymptomsRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getHosCompleteByPatientId(tempId)) && formatBool(excludeOtherRepo.getCompleteByPatientId(tempId)) && formatBool(mlRoutineBooldRepo.getCompleteByPatientId(tempId)) && formatBool(imagingEndoScopyRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverHistologicalRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverInjuryRepo.getCompleteByPatientId(tempId)) && formatBool(mlTreatmentRepo.getCompleteByPatientId(tempId)) && formatBool(mlDiseaseOutcomeRepo.getCompleteByPatientId(tempId)) && formatBool(mlBiologicalSamplesRepo.getCompleteByPatientId(tempId));
+
+        mlPatientDTO.setComplete(com);
         mlPatientDTO.setHospitalId(mlPatientDO.getHospitalId());
         mlPatientDTO.setProjectId(mlPatientDO.getProjectId());
         return mlPatientDTO;
+    }
+
+    private boolean formatBool(Boolean temp){
+        return temp == null?false:temp;
     }
 }

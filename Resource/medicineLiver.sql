@@ -379,6 +379,7 @@ create table medicine_liver_imaging_endoscopy(
 	gastroscope_biliary_tract int,#胃镜排除胆道疾病
 	gastroscope_esophageal_gastric_varices int,#胃镜排除食管胃底静脉曲张
 	image varchar(50),
+    imageDescribe varchar(100),
     complete boolean,
 	primary key(id)
 );

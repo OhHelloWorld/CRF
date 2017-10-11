@@ -56,6 +56,7 @@ public class MedicineLiverImagingEndoscopyDO {
     private int gastroscopeBiliaryTract;//胃镜排除胆道疾病
     private int gastroscopeEsophagealGastricVarices;//胃镜排除食管胃底静脉曲张
     private String image;
+    private String imageDescribe;
     private boolean complete;
 
     public int getId() {
@@ -304,6 +305,14 @@ public class MedicineLiverImagingEndoscopyDO {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getImageDescribe() {
+        return imageDescribe;
+    }
+
+    public void setImageDescribe(String imageDescribe) {
+        this.imageDescribe = imageDescribe;
     }
 
     public boolean isComplete() {

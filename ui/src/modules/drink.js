@@ -32,9 +32,9 @@ angular.module('drink', [])
         $scope.complete = data.complete;
 
         if (data.medicineLiverDrinkDetailDTOS.length != 0) {
-          if(data.medicineLiverDrinkDetailDTOS.length == 1){
+          if (data.medicineLiverDrinkDetailDTOS.length == 1) {
             count = 0;
-          }else{
+          } else {
             count = data.medicineLiverDrinkDetailDTOS.length - 1;
           }
           $scope.drinkType = data.medicineLiverDrinkDetailDTOS[0].drinkType;
@@ -42,7 +42,7 @@ angular.module('drink', [])
           $scope.drinkLife = data.medicineLiverDrinkDetailDTOS[0].drinkLife;
           $scope.proof = data.medicineLiverDrinkDetailDTOS[0].proof;
           // $scope.detailId = data.medicineLiverDrinkDetailDTOS[0].id;
-        }else{
+        } else {
           count = 0;
         }
 
@@ -66,13 +66,15 @@ angular.module('drink', [])
       drink.patientId = sessionStorage.getItem('mlPatientId');
       drink.complete = true;
 
-      drink.medicineLiverDrinkDetailDTOS.push({
-        drinkType: $scope.drinkType,
-        drinkQuantity: $scope.drinkQuantity,
-        drinkLife: $scope.drinkLife,
-        proof: $scope.proof
-          // id: $scope.detailId,
-      });
+      if ($scope.drinkType != undefined) {
+        drink.medicineLiverDrinkDetailDTOS.push({
+          drinkType: $scope.drinkType,
+          drinkQuantity: $scope.drinkQuantity,
+          drinkLife: $scope.drinkLife,
+          proof: $scope.proof
+            // id: $scope.detailId,
+        });
+      }
       for (var i = 1; i <= count; i++) {
         drink.medicineLiverDrinkDetailDTOS.push({
           // id: ($scope.detailIdObj[i + 1]),

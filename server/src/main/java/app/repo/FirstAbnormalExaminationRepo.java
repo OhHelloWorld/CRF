@@ -30,4 +30,6 @@ public interface FirstAbnormalExaminationRepo extends CrudRepository<MedicineLiv
     @Query(value = "select complete from medicine_liver_first_abnormal_examination where patient_id = ?1 and first = 0 order by id desc limit 1",nativeQuery = true)
     Boolean getHosCompleteByPatientId(int mlPatientId);
 
+    @Query(value = "select complete from medicine_liver_first_abnormal_examination where patient_id = ?1 and first = 0 order by id desc limit 1",nativeQuery = true)
+    Boolean getNoFirstCompleteByPatientId(int mlPatientId);
 }

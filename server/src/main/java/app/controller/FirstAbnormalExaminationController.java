@@ -63,6 +63,16 @@ public class FirstAbnormalExaminationController {
     }
 
     /**
+     * 根据患者ID得到该表完成情况（非首次）
+     * @param mlPatientId
+     * @return
+     */
+    @GetMapping(value = "/noFirst/complete/{mlPatientId}")
+    public Boolean getNoFirstCompleteByPatientId(@PathVariable int mlPatientId){
+        return firstAbnormalExaminationService.getNoFirstCompleteByPatient(mlPatientId);
+    }
+
+    /**
      * 根据患者ID得到 所有异常检查 数据
      * @param mlPatientId
      * @return

@@ -128,7 +128,7 @@
                 <tr ng-repeat = "diseaseHistory in diseaseHistorys">
                   <td>{{diseaseHistory.diseaseType}}</td>
                   <td>{{diseaseHistory.diseaseName}}</td>
-                  <td>{{diseaseHistory.existence==1?"是":"否"}}</td>
+                  <td>{{diseaseHistory.existence==1?"是":(diseaseHistory.existence==2?"否":"")}}</td>
                   <td>{{diseaseHistory.preMedicine}}</td>
                 </tr>
                 </tbody>
@@ -911,6 +911,7 @@
               </div> -->
               <div class="box-body no-padding">
               <div style="text-align: center;"><img src="{{image}}"></div>
+              <div style="text-align: center;"><span class="h4">{{imageDescribe}}</span></div>
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">

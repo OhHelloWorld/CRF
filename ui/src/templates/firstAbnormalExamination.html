@@ -26,7 +26,7 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style=" text-align: -webkit-center;"  width="10%">检查日期</th>
+                  <th style=" text-align: -webkit-center;"  width="15%">检查日期</th>
                   <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
                   <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
                   <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
@@ -89,21 +89,21 @@
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="30%">检查日期</th>
                       <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
                       <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">
+                      <td style=" text-align: -webkit-center;">
                         <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
                           id="datepicker2" ng-model="tab2CheckDate">
                       </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
+                      <td style=" text-align: -webkit-center; ">
                         <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="scr">
                       </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
+                      <td style=" text-align: -webkit-center; ">
                         <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="bun">
                       </td>
                     </tr>
@@ -123,7 +123,7 @@
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="30%">检查日期</th>
                       <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
                     </tr>
                   </thead>
@@ -155,7 +155,7 @@
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="30%">检查日期</th>
                       <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
                       <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
                     </tr>
@@ -190,7 +190,7 @@
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th style=" text-align: -webkit-center;"  width="20%">检查日期</th>
+                      <th style=" text-align: -webkit-center;"  width="30%">检查日期</th>
                       <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
                     </tr>
                   </thead>
@@ -210,7 +210,8 @@
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary col-md-offset-10" ng-click="showSaveModal()">整体保存</button>       
+        <button type="button" class="btn btn-primary col-md-offset-10" ng-click="showSaveModal()">保存</button>   
+        <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">    
 
         
         <!-- 模态框 -->

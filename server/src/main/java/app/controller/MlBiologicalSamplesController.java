@@ -41,6 +41,11 @@ public class MlBiologicalSamplesController {
         return mlCompleteService.getCompleteByPatient(mlPatientId);
     }
 
+    /**
+     * 根据患者ID得到数据
+     * @param mlPatientId
+     * @return
+     */
     @GetMapping(path = "/{mlPatientId}")
     public MedicineLiverBiologicalSamplesDTO getBiologicalSamplesByPatientId(@PathVariable int mlPatientId){
         return mlBiologicalSamplesService.getSamplesByPatientId(mlPatientId);

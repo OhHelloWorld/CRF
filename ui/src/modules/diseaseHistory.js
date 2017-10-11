@@ -84,12 +84,14 @@ angular.module('diseaseHistory', [])
       diseaseHistory.patientId = sessionStorage.getItem('mlPatientId');
       diseaseHistory.complete = true;
 
-      diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
-        diseaseName: $scope.diseaseName,
-        existence: $scope.existence,
-        diseaseType: $scope.diseaseType,
-        preMedicine: $scope.preMedicine
-      });
+      if ($scope.diseaseType != undefined) {
+        diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
+          diseaseName: $scope.diseaseName,
+          existence: $scope.existence,
+          diseaseType: $scope.diseaseType,
+          preMedicine: $scope.preMedicine
+        });
+      }
       for (var i = 1; i <= count; i++) {
         diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
           diseaseName: ($scope.diseaseNameObj[i]),

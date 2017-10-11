@@ -6,4 +6,5 @@ package app.service;
 public interface MlCompleteService {
 
     Boolean getCompleteByPatient(int mlPatientId);
+
 }
