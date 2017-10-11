@@ -329,13 +329,13 @@ public class MlCreateAllExcel{
             if(mlDiseaseDO != null){
                 row.createCell(17).setCellValue(mlDiseaseDO.getOtherHistory() == 1?"否":(mlDiseaseDO.getOtherHistory() == 2?"是":""));
                 row.createCell(18).setCellValue(mlDiseaseDO.getPastDisease() == 1?"否":(mlDiseaseDO.getPastDisease() == 2?"是":(mlDiseaseDO.getPastDisease() == 3?"不详 ":"")));
-                StringBuilder mlDiseaseHistoryDetail = new StringBuilder();
-                if(!mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS().isEmpty() && mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS()!=null) {
-                    for (MedicineLiverDiseaseHistoryDetailDO medicineLiverDiseaseHistoryDetailDO : mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS()) {
-                        mlDiseaseHistoryDetail.append(medicineLiverDiseaseHistoryDetailDO.getDiseaseName() + "-" + medicineLiverDiseaseHistoryDetailDO.getDiagnosisDate() + "-" + medicineLiverDiseaseHistoryDetailDO.getCrueDate() + "-" + medicineLiverDiseaseHistoryDetailDO.getExistence() + ";");
-                    }
-                }
-                row.createCell(19).setCellValue(mlDiseaseHistoryDetail.toString());
+//                StringBuilder mlDiseaseHistoryDetail = new StringBuilder();
+//                if(!mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS().isEmpty() && mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS()!=null) {
+//                    for (MedicineLiverDiseaseHistoryDetailDO medicineLiverDiseaseHistoryDetailDO : mlDiseaseDO.getMedicineLiverDiseaseHistoryDetailDOS()) {
+//                        mlDiseaseHistoryDetail.append(medicineLiverDiseaseHistoryDetailDO.getDiseaseName() + "-" + medicineLiverDiseaseHistoryDetailDO.getDiagnosisDate() + "-" + medicineLiverDiseaseHistoryDetailDO.getCrueDate() + "-" + medicineLiverDiseaseHistoryDetailDO.getExistence() + ";");
+//                    }
+//                }
+//                row.createCell(19).setCellValue(mlDiseaseHistoryDetail.toString());
             }
 
             //既往过敏史

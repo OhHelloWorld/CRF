@@ -10,6 +10,8 @@ public class MedicineLiverDiseaseHistoryDTO {
     private int patientId;
     private int otherHistory;//是否存在因本次入院的其他疾病史
     private int pastDisease;//既往病史
+    private int epidemicTourism;
+    private String epidemicText;
     private boolean complete;
     private List<MedicineLiverDiseaseHistoryDetailDTO> medicineLiverDiseaseHistoryDetailDTOS;
 
@@ -43,6 +45,22 @@ public class MedicineLiverDiseaseHistoryDTO {
 
     public void setPastDisease(int pastDisease) {
         this.pastDisease = pastDisease;
+    }
+
+    public int getEpidemicTourism() {
+        return epidemicTourism;
+    }
+
+    public void setEpidemicTourism(int epidemicTourism) {
+        this.epidemicTourism = epidemicTourism;
+    }
+
+    public String getEpidemicText() {
+        return epidemicText;
+    }
+
+    public void setEpidemicText(String epidemicText) {
+        this.epidemicText = epidemicText;
     }
 
     public boolean isComplete() {

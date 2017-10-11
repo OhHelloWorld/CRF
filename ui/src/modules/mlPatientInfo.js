@@ -29,6 +29,17 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
       autoclose: true
     });
 
+    $scope.$watch('height', function() {
+      if ($scope.weight && $scope.height) {
+        $scope.bmi = ($scope.weight) / ($scope.height / 100 * $scope.height / 100);
+      }
+    });
+    $scope.$watch('weight', function() {
+      if ($scope.weight && $scope.height) {
+        $scope.bmi = ($scope.weight) / ($scope.height / 100 * $scope.height / 100);
+      }
+    });
+
     var intoHosCount = 0;
     var outHosCount = 0;
 

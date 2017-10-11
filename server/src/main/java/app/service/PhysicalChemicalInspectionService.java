@@ -32,7 +32,7 @@ public interface PhysicalChemicalInspectionService {
      */
     boolean getCompleteByPatientId(int patientId);
 
-    void savePhysicalImage(MultipartFile file) throws IOException;
+//    void savePhysicalImage(MultipartFile file) throws IOException;
 
     List<PhysicalChemicalInspectionDTO> getFollowPhy(int patientId);
 

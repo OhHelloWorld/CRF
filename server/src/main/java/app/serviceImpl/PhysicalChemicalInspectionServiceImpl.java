@@ -50,19 +50,19 @@ public class PhysicalChemicalInspectionServiceImpl implements PhysicalChemicalIn
         return pRepo.getCompleteByPatientId(patientId)!=null?pRepo.getCompleteByPatientId(patientId):false;
     }
 
-    @Override
-    public void savePhysicalImage(MultipartFile file) throws IOException {
-        if (!new File(localImagePath).exists()) {
-            new File(localImagePath).mkdir();
-        }
-        File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
-        try (FileOutputStream fos = new FileOutputStream(saveFile)) {
-            fos.write(file.getBytes());
-            fos.flush();
-        } catch (IOException e) {
-            throw new IOException("保存图片失败");
-        }
-    }
+//    @Override
+//    public void savePhysicalImage(MultipartFile file) throws IOException {
+//        if (!new File(localImagePath).exists()) {
+//            new File(localImagePath).mkdir();
+//        }
+//        File saveFile = new File(localImagePath, file.hashCode() + ".jpg");
+//        try (FileOutputStream fos = new FileOutputStream(saveFile)) {
+//            fos.write(file.getBytes());
+//            fos.flush();
+//        } catch (IOException e) {
+//            throw new IOException("保存图片失败");
+//        }
+//    }
 
     private PhysicalChemicalInspectionDO convertToPhysicalChemicalInspectionDO(
             PhysicalChemicalInspectionDTO pDto, PhysicalChemicalInspectionDO pDo) {

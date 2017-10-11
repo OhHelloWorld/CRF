@@ -15,10 +15,10 @@ public class MedicineLiverDiseaseHistoryDetailDO {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.MERGE})
     @JoinColumn(name = "disease_history_id")
     private MedicineLiverDiseaseHistoryDO medicineLiverDiseaseHistoryDO;
+    private String diseaseType;//疾病种类
     private String diseaseName; //疾病名称
-    private Date diagnosisDate;//发作/诊断日期
-    private Date crueDate;//治愈日期
     private String existence;//是否仍然存在
+    private String preMedicine;//曾用药
 
     public int getId() {
         return id;
@@ -44,20 +44,20 @@ public class MedicineLiverDiseaseHistoryDetailDO {
         this.diseaseName = diseaseName;
     }
 
-    public Date getDiagnosisDate() {
-        return diagnosisDate;
+    public String getDiseaseType() {
+        return diseaseType;
     }
 
-    public void setDiagnosisDate(Date diagnosisDate) {
-        this.diagnosisDate = diagnosisDate;
+    public void setDiseaseType(String diseaseType) {
+        this.diseaseType = diseaseType;
     }
 
-    public Date getCrueDate() {
-        return crueDate;
+    public String getPreMedicine() {
+        return preMedicine;
     }
 
-    public void setCrueDate(Date crueDate) {
-        this.crueDate = crueDate;
+    public void setPreMedicine(String preMedicine) {
+        this.preMedicine = preMedicine;
     }
 
     public String getExistence() {

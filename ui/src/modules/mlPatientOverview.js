@@ -133,6 +133,12 @@ angular.module('mlPatientOverview', [])
       } else if (diseaseHistory.pastDisease == 3) {
         $scope.pastDisease = '不详';
       }
+      if (diseaseHistory.epidemicTourism == 1) {
+        $scope.epidemicTourism = '无';
+      } else if (diseaseHistory.epidemicTourism == 2) {
+        $scope.epidemicTourism = '有';
+      }
+      $scope.epidemicText = diseaseHistory.epidemicText;
       $scope.diseaseHistorys = diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS;
     }
 
@@ -874,6 +880,7 @@ angular.module('mlPatientOverview', [])
     function displayEndos(response) {
       var endos = response.data;
       $scope.liverBultrasoundDate = endos.liverBultrasoundDate;
+      $scope.image = '/api/image/' + endos.image + '.jpg';
       if (endos.liverBultrasound == '1') {
         $scope.liverBultrasound = '肝表面光滑，边缘锐，血管走向清晰';
       } else if (endos.liverBultrasound == '2') {

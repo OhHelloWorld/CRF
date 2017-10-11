@@ -32,6 +32,8 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         MedicineLiverDiseaseHistoryDO medicineLiverDiseaseHistoryDO = new MedicineLiverDiseaseHistoryDO();
         medicineLiverDiseaseHistoryDO.setPatientId(medicineLiverDiseaseHistoryDTO.getPatientId());
         medicineLiverDiseaseHistoryDO.setComplete(medicineLiverDiseaseHistoryDTO.isComplete());
+        medicineLiverDiseaseHistoryDO.setEpidemicTourism(medicineLiverDiseaseHistoryDTO.getEpidemicTourism());
+        medicineLiverDiseaseHistoryDO.setEpidemicText(medicineLiverDiseaseHistoryDTO.getEpidemicText());
         medicineLiverDiseaseHistoryDO.setOtherHistory(medicineLiverDiseaseHistoryDTO.getOtherHistory());
         medicineLiverDiseaseHistoryDO.setPastDisease(medicineLiverDiseaseHistoryDTO.getPastDisease());
         mlDiseaseHistoryDetailRepo.deleteDiseaseHistoryDetailByDId(medicineLiverDiseaseHistoryDTO.getId());
@@ -40,8 +42,8 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         if (medicineLiverDiseaseHistoryDetailDTOS != null) {
             for (MedicineLiverDiseaseHistoryDetailDTO medicineLiverDiseaseHistoryDetailDTO : medicineLiverDiseaseHistoryDetailDTOS) {
                 MedicineLiverDiseaseHistoryDetailDO medicineLiverDiseaseHistoryDetailDO = new MedicineLiverDiseaseHistoryDetailDO();
-                medicineLiverDiseaseHistoryDetailDO.setDiagnosisDate(medicineLiverDiseaseHistoryDetailDTO.getDiagnosisDate());
-                medicineLiverDiseaseHistoryDetailDO.setCrueDate(medicineLiverDiseaseHistoryDetailDTO.getCrueDate());
+                medicineLiverDiseaseHistoryDetailDO.setDiseaseType(medicineLiverDiseaseHistoryDetailDTO.getDiseaseType());
+                medicineLiverDiseaseHistoryDetailDO.setPreMedicine(medicineLiverDiseaseHistoryDetailDTO.getPreMedicine());
                 medicineLiverDiseaseHistoryDetailDO.setDiseaseName(medicineLiverDiseaseHistoryDetailDTO.getDiseaseName());
                 medicineLiverDiseaseHistoryDetailDO.setExistence(medicineLiverDiseaseHistoryDetailDTO.getExistence());
                 medicineLiverDiseaseHistoryDetailDO.setMedicineLiverDiseaseHistoryDO(medicineLiverDiseaseHistoryDO);
@@ -58,6 +60,8 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         medicineLiverDiseaseHistoryDTO.setComplete(medicineLiverDiseaseHistoryDO.isComplete());
         medicineLiverDiseaseHistoryDTO.setOtherHistory(medicineLiverDiseaseHistoryDO.getOtherHistory());
         medicineLiverDiseaseHistoryDTO.setPastDisease(medicineLiverDiseaseHistoryDO.getPastDisease());
+        medicineLiverDiseaseHistoryDTO.setEpidemicTourism(medicineLiverDiseaseHistoryDO.getEpidemicTourism());
+        medicineLiverDiseaseHistoryDTO.setEpidemicText(medicineLiverDiseaseHistoryDO.getEpidemicText());
         medicineLiverDiseaseHistoryDTO.setPatientId(medicineLiverDiseaseHistoryDO.getPatientId());
         medicineLiverDiseaseHistoryDTO.setId(medicineLiverDiseaseHistoryDO.getId());
         List<MedicineLiverDiseaseHistoryDetailDTO> medicineLiverDiseaseHistoryDetailDTOS = new ArrayList<>();
@@ -65,8 +69,8 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         if (!medicineLiverDiseaseHistoryDetailDOS.isEmpty() && medicineLiverDiseaseHistoryDetailDOS != null) {
             for (MedicineLiverDiseaseHistoryDetailDO medicineLiverDiseaseHistoryDetailDO : medicineLiverDiseaseHistoryDetailDOS) {
                 MedicineLiverDiseaseHistoryDetailDTO medicineLiverDiseaseHistoryDetailDTO = new MedicineLiverDiseaseHistoryDetailDTO();
-                medicineLiverDiseaseHistoryDetailDTO.setCrueDate(medicineLiverDiseaseHistoryDetailDO.getCrueDate());
-                medicineLiverDiseaseHistoryDetailDTO.setDiagnosisDate(medicineLiverDiseaseHistoryDetailDO.getDiagnosisDate());
+                medicineLiverDiseaseHistoryDetailDTO.setPreMedicine(medicineLiverDiseaseHistoryDetailDO.getPreMedicine());
+                medicineLiverDiseaseHistoryDetailDTO.setDiseaseType(medicineLiverDiseaseHistoryDetailDO.getDiseaseType());
                 medicineLiverDiseaseHistoryDetailDTO.setDiseaseName(medicineLiverDiseaseHistoryDetailDO.getDiseaseName());
                 medicineLiverDiseaseHistoryDetailDTO.setExistence(medicineLiverDiseaseHistoryDetailDO.getExistence());
                 medicineLiverDiseaseHistoryDetailDTO.setMedicineLiverDiseaseHistoryId(medicineLiverDiseaseHistoryDetailDO.getMedicineLiverDiseaseHistoryDO().getId());

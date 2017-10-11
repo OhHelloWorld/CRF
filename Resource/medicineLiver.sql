@@ -7,6 +7,7 @@ create table medicine_liver_patient(
     gender varchar(5),
     height float(5,2),
     weight float(5,2),
+    bmi float(4,2),
     department varchar(50),#科室
     admission_date Date,#入院日期
     discharge_date Date,#出院日期
@@ -47,6 +48,8 @@ create table medicine_liver_disease_history(
 	patient_id int,
 	other_history int,#是否存在因本次入院的其他疾病史
 	past_disease int,#既往病史
+    epidemic_tourism int,#疫区旅游史
+    epidemic_text varchar(50),#疫区旅游史详情
 	complete boolean default false,
     primary key(id)
 );
@@ -55,10 +58,10 @@ create table medicine_liver_disease_history(
 create table medicine_liver_disease_history_detail(
 	id int not null auto_increment,
 	disease_history_id int,
-	disease_name varchar(50),#疾病名称
-	diagnosis_date Date,#发作/诊断日期
-	crue_date Date,#治愈日期
+	disease_type varchar(50),#疾病种类
+    disease_name varchar(50),#疾病名称
 	existence varchar(10),#是否仍然存在
+    pre_medicine varchar(50),#曾用药
 	primary key(id)
 );
 
@@ -375,7 +378,8 @@ create table medicine_liver_imaging_endoscopy(
 	gastroscope_date Date,#胃镜检查日期
 	gastroscope_biliary_tract int,#胃镜排除胆道疾病
 	gastroscope_esophageal_gastric_varices int,#胃镜排除食管胃底静脉曲张
-	complete boolean,
+	image varchar(50),
+    complete boolean,
 	primary key(id)
 );
 

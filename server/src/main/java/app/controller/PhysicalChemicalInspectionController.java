@@ -3,6 +3,7 @@ package app.controller;
 import java.io.IOException;
 import java.util.List;
 
+import app.Utils.SaveImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,6 +21,9 @@ public class PhysicalChemicalInspectionController {
 
     @Autowired
     private PhysicalChemicalInspectionService physicalChemicalInspectionService;
+
+    @Autowired
+    private SaveImage saveImage;
 
     /**
      * 存储理化检查结果
@@ -64,7 +68,7 @@ public class PhysicalChemicalInspectionController {
      */
     @PostMapping(path = "/upload")
     public String savePhysicalImage(@RequestParam("file") MultipartFile file) throws IOException {
-        physicalChemicalInspectionService.savePhysicalImage(file);
+        saveImage.saveImage(file);
         return "" + file.hashCode();
     }
 

@@ -102,6 +102,16 @@
                   <td>既往病史</td>
                   <td>{{pastDisease}}</td>
                 </tr>
+                <tr>
+                  <td>3</td>
+                  <td>疫区旅游史</td>
+                  <td>{{epidemicTourism}}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>疫区旅游史详情</td>
+                  <td>{{epidemicText}}</td>
+                </tr>
                 </tbody>
               </table>
             </div>
@@ -110,16 +120,16 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-3">疾病名称</th>
-                  <th class="col-sm-3">发作/诊断日期</th>
-                  <th class="col-sm-3">治愈日期</th>
-                  <th class="col-sm-3">目前是否仍然存在</th>
+                  <th class="col-md-3">疾病种类</th>
+                  <th class="col-sm-3">疾病名称</th>
+                  <th class="col-sm-3">是否痊愈</th>
+                  <th class="col-sm-3">曾用药（药名）</th>
                 </tr>
                 <tr ng-repeat = "diseaseHistory in diseaseHistorys">
+                  <td>{{diseaseHistory.diseaseType}}</td>
                   <td>{{diseaseHistory.diseaseName}}</td>
-                  <td>{{diseaseHistory.diagnosisDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{diseaseHistory.crueDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{diseaseHistory.existence}}</td>
+                  <td>{{diseaseHistory.existence==1?"是":"否"}}</td>
+                  <td>{{diseaseHistory.preMedicine}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -900,6 +910,7 @@
                 <button ng-repeat="medicineFollow in medicineFollowList" class="btn btn-primary btn-sm" ng-click="medicineClick(medicineFollow)">随访表{{medicineFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
               <div class="box-body no-padding">
+              <div style="text-align: center;"><img src="{{image}}"></div>
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">

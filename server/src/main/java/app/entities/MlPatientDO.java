@@ -24,6 +24,7 @@ public class MlPatientDO {
     private String nation;
     private float height;
     private float weight;
+    private float bmi;
     private String department;//科室
     private Date admissionDate;//入院日期
     private Date dischargeDate;//出院日期
@@ -183,6 +184,14 @@ public class MlPatientDO {
 
     public void setWeight(float weight) {
         this.weight = weight;
+    }
+
+    public float getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(float bmi) {
+        this.bmi = bmi;
     }
 
     public Date getBirthday() {

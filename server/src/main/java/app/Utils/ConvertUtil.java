@@ -806,6 +806,7 @@ public class ConvertUtil {
         mDO.setPatientId(mDTO.getPatientId());
         mDO.setErcp(mDTO.getErcp());
         mDO.setErcpDate(mDTO.getErcpDate());
+        mDO.setImage(mDTO.getImage());
         mDO.setErcpBiliaryTract(mDTO.getErcpBiliaryTract());
         mDO.setErcpEsophagealGastricVarices(mDTO.getErcpEsophagealGastricVarices());
         mDO.setMrcp(mDTO.getMrcp());
@@ -841,6 +842,7 @@ public class ConvertUtil {
         mDTO.setId(mDO.getId());
         mDTO.setPatientId(mDO.getPatientId());
         mDTO.setErcp(mDO.getErcp());
+        mDTO.setImage(mDO.getImage());
         mDTO.setErcpDate(mDO.getErcpDate());
         mDTO.setErcpBiliaryTract(mDO.getErcpBiliaryTract());
         mDTO.setErcpEsophagealGastricVarices(mDO.getErcpEsophagealGastricVarices());

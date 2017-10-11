@@ -25,6 +25,14 @@
             <h3 class="box-title col-md-4">影像学和内窥镜检查</h3>
           </div>
           <div class="box-body">
+            <section class="box-body">
+            <button class="btn btn-info" ngf-select="" ng-model="image" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-min-height="100"
+            ngf-resize="{width: 500, height: 500}">上传图片资料</button>
+            <div class="col-md-12">&nbsp</div>
+            <section>
+            <img ngf-src="image" id="blah2" width="500" height="200" class="img-box">
+            </section>
+            </section>
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>

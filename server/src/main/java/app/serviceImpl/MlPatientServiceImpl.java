@@ -127,6 +127,7 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDO.setIdentifier(mlPatientDTO.getIdentifier());
         mlPatientDO.setHospital(mlPatientDTO.getHospital());
         mlPatientDO.setNation(mlPatientDTO.getNation());
+        mlPatientDO.setBmi(mlPatientDTO.getBmi());
         mlPatientDO.setGender(mlPatientDTO.getGender());
         mlPatientDO.setHeight(mlPatientDTO.getHeight());
         mlPatientDO.setName(mlPatientDTO.getName());
@@ -175,6 +176,7 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDO.setAbbreviation(mlPatientDTO.getAbbreviation());
         mlPatientDO.setAdmissionDate(mlPatientDTO.getAdmissionDate());
         mlPatientDO.setHospital(mlPatientDTO.getHospital());
+        mlPatientDO.setBmi(mlPatientDTO.getBmi());
         List<AdmissionDiagnosisDO> admissionDiagnosisDOS = new ArrayList<>();
         List<DischargeDiagnosisDO> dischargeDiagnosisDOS = new ArrayList<>();
         if (mlPatientDTO.getAdmissionDiagnosisDTOS() != null) {
@@ -221,6 +223,7 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDTO.setIdentifier(mlPatientDO.getIdentifier());
         mlPatientDTO.setHospital(mlPatientDO.getHospital());
         mlPatientDTO.setNation(mlPatientDO.getNation());
+        mlPatientDTO.setBmi(mlPatientDO.getBmi());
         mlPatientDTO.setGender(mlPatientDO.getGender());
         mlPatientDTO.setHeight(mlPatientDO.getHeight());
         mlPatientDTO.setName(mlPatientDO.getName());

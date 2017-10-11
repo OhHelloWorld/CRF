@@ -1,7 +1,8 @@
 import angular from 'angular';
+import ngFileUpload from 'ng-file-upload';
 
-angular.module('imagingEndoscopy', [])
-  .controller('imagingEndoscopyController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+angular.module('imagingEndoscopy', [ngFileUpload])
+  .controller('imagingEndoscopyController', ['$scope', '$http', '$state', 'localStorageService', 'Upload', function($scope, $http, $state, localStorageService, Upload) {
     getPatientInfo();
     $('#datepicker1').datepicker({
       autoclose: true
@@ -100,29 +101,40 @@ angular.module('imagingEndoscopy', [])
       allDate.gastroscopeDate = checkDate($scope.gastroscopeDate);
       allDate.gastroscopeBiliaryTract = $scope.gastroscopeBiliaryTract;
       allDate.gastroscopeEsophagealGastricVarices = $scope.gastroscopeEsophagealGastricVarices;
-      
       allDate.complete = true;
-      $http({
-        method: 'POST',
-        url: '/api/iesc/',
-        data: allDate
-      }).then(function() {
-        $scope.justModalContent = '操作成功';
-        $('#justModal').modal('show');
-      }, function() {
-        $scope.justModalContent = '操作失败';
-        $('#justModal').modal('show');
-      });
-
+      if ($scope.image == $scope.imageName) {
+        allDate.image = $scope.tempImage;
+        $http({
+          method: 'POST',
+          url: '/api/iesc/',
+          data: allDate
+        }).then(function() {
+          $scope.justModalContent = '操作成功';
+          $('#justModal').modal('show');
+        }, function() {
+          $scope.justModalContent = '操作失败';
+          $('#justModal').modal('show');
+        });
+      } else {
+        saveImg(allDate);
+      }
     };
 
 
 
     $http({
       method: 'GET',
-      url: 'api/iesc/' + sessionStorage.getItem('mlPatientId')
+      url: '/api/iesc/' + sessionStorage.getItem('mlPatientId')
     }).then(function(response) {
       var allData = response.data;
+
+      if (allData.image) {
+        $scope.image = '/api/image/' + allData.image + '.jpg';
+        $scope.imageName = '/api/image/' + allData.image + '.jpg';
+        $scope.tempImage = allData.image;
+      } else {
+        $scope.image = undefined;
+      }
 
       $scope.liverBultrasound = allData.liverBultrasound;
       $scope.liverBultrasoundDate = checkToPre(allData.liverBultrasoundDate);
@@ -222,6 +234,28 @@ angular.module('imagingEndoscopy', [])
       }).then(function success(response) {
         $scope.patientName = response.data.name;
         $scope.patientNumber = response.data.identifier;
+      });
+    }
+
+    function saveImg(allDate) {
+      Upload.upload({
+        url: '/api/iesc/upload',
+        data: {
+          file: $scope.image
+        }
+      }).then(function success(response) {
+        allDate.image = response.data;
+        $http({
+          method: 'POST',
+          url: '/api/iesc/',
+          data: allDate
+        }).then(function() {
+          $scope.justModalContent = '操作成功';
+          $('#justModal').modal('show');
+        }, function() {
+          $scope.justModalContent = '操作失败';
+          $('#justModal').modal('show');
+        });
       });
     }
 

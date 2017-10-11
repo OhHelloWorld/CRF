@@ -3,18 +3,11 @@ import angular from 'angular';
 angular.module('diseaseHistory', [])
   .controller('diseaseHistoryController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
 
-    $('#diagnosisDate').datepicker({
-      autoclose: true
-    });
-    $('#crueDate').datepicker({
-      autoclose: true
-    });
     var diseaseHistory = {};
     $scope.diseaseNameObj = {};
-    $scope.diagnosisDateObj = {};
-    $scope.crueDateObj = {};
+    $scope.diseaseTypeObj = {};
     $scope.existenceObj = {};
-    $scope.detailIdObj = {};
+    $scope.preMedicineObj = {};
     $scope.medicineLiverDiseaseHistoryDetailDTOS = [];
 
     getMlPatient();
@@ -27,20 +20,22 @@ angular.module('diseaseHistory', [])
       }
     });
 
+    $scope.$watch('epidemicTourism', function() {
+      if ($scope.epidemicTourism == 1) {
+        $scope.epi = false;
+      } else if ($scope.epidemicTourism == 2) {
+        $scope.epi = true;
+      }
+    });
+
     var count = 0;
 
     $scope.addDisease = function() {
       count += 1;
-      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病名称</i></div><input class="form-control" ng-model="diseaseNameObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 发作/诊断日期</i></div><input class="form-control" id="diagnosisDate' + count + '" ng-model="diagnosisDateObj[' + count + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治愈日期</i></div><input class="form-control" id="crueDate' + count + '" ng-model="crueDateObj[' + count + ']"></div></div><div class="col-md-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否仍然存在</i></div><select ng-model="existenceObj['+count+']" class="form-control"><option value="1">是</option><option value="2">否</option></select></div></div>';
+      var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病种类</i></div><select class="form-control" ng-model="diseaseTypeObj[' + count + ']"><option value="呼吸系统疾病">呼吸系统疾病</option><option value="消化系统疾病">消化系统疾病</option><option value="循环系统疾病">循环系统疾病</option><option value="泌尿系统疾病">泌尿系统疾病</option><option value="血液系统疾病">血液系统疾病</option><option value="内分泌系统疾病">内分泌系统疾病</option><option value="新成代谢疾病">新成代谢疾病</option><option value="淋巴系统疾病">淋巴系统疾病</option><option value="神经精神系统疾病">神经精神系统疾病</option><option value="结缔组织疾病">结缔组织疾病</option><option value="妇产科疾病">妇产科疾病</option><option value="儿科疾病">儿科疾病</option><option value="耳鼻喉科疾病">耳鼻喉科疾病</option><option value="眼科疾病">眼科疾病</option><option value="口腔科疾病">口腔科疾病</option><option value="伤骨科疾病">伤骨科疾病</option><option value="皮肤科疾病">皮肤科疾病</option><option value="肿瘤科疾病">肿瘤科疾病</option><option value="传染病与性病">传染病与性病</option><option value="寄生虫疾病">寄生虫疾病</option><option value="男性不育性疾病">男性不育性疾病</option><option value="女性不孕性疾病">女性不孕性疾病</option><option value="男性生殖系统疾病">男性生殖系统疾病</option><option value="疑难杂症">疑难杂症</option></select></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病名称</i></div><input class="form-control" ng-model="diseaseNameObj[' + count + ']"></div></div><div class="col-md-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否痊愈</i></div><select ng-model="existenceObj[' + count + ']" class="form-control"><option value="1">是</option><option value="2">否</option></select></div></div><div class="col-md-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 曾用药（药名）</i></div><input class="form-control" ng-model="preMedicineObj[' + count + ']"></div></div>';
       var compileFn = $compile(template);
       var dom = compileFn($scope);
       dom.appendTo('#disease');
-      $('#diagnosisDate' + count).datepicker({
-        autoclose: true
-      });
-      $('#crueDate' + count).datepicker({
-        autoclose: true
-      });
     };
 
     if (sessionStorage.getItem('mlPatientId')) {
@@ -51,50 +46,31 @@ angular.module('diseaseHistory', [])
         var data = response.data;
         $scope.otherHistory = data.otherHistory;
         $scope.pastDisease = data.pastDisease;
-        (function(data) {
-          if (data.medicineLiverDiseaseHistoryDetailDTOS.length != 0) {
-            if(data.medicineLiverDiseaseHistoryDetailDTOS.length == 1){
-              count = 0;
-            }else{
-              count = data.medicineLiverDiseaseHistoryDetailDTOS.length - 1;
-            }
-            if (data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate != null) {
-              var diagnosisDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].diagnosisDate);
-              $scope.diagnosisDate = diagnosisDate.getFullYear() + '-' + (diagnosisDate.getMonth() + 1) + '-' + diagnosisDate.getDate();
-            }
-            if (data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate != null) {
-              var crueDate = new Date(data.medicineLiverDiseaseHistoryDetailDTOS[0].crueDate);
-              $scope.crueDate = crueDate.getFullYear() + '-' + (crueDate.getMonth() + 1) + '-' + crueDate.getDate();
-            }
-          }else{
-            count = 0;
-          }
-        })(data);
+        $scope.epidemicTourism = data.epidemicTourism;
+        $scope.epidemicText = data.epidemicText;
+
+        if (data.medicineLiverDiseaseHistoryDetailDTOS.length == 0 || data.medicineLiverDiseaseHistoryDetailDTOS.length == 1) {
+          count = 0;
+        } else {
+          count = data.medicineLiverDiseaseHistoryDetailDTOS.length - 1;
+        }
 
         if (data.medicineLiverDiseaseHistoryDetailDTOS.length != 0) {
           $scope.diseaseName = data.medicineLiverDiseaseHistoryDetailDTOS[0].diseaseName;
           $scope.existence = data.medicineLiverDiseaseHistoryDetailDTOS[0].existence;
-          $scope.detailId = data.medicineLiverDiseaseHistoryDetailDTOS[0].id;
+          $scope.diseaseType = data.medicineLiverDiseaseHistoryDetailDTOS[0].diseaseType;
+          $scope.preMedicine = data.medicineLiverDiseaseHistoryDetailDTOS[0].preMedicine;
         }
 
         for (var i = 1; i < data.medicineLiverDiseaseHistoryDetailDTOS.length; i++) {
-          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病名称</i></div><input class="form-control" ng-model="diseaseNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 发作/诊断日期</i></div><input class="form-control" id="diagnosisDate' + i + '" ng-model="diagnosisDateObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 治愈日期</i></div><input class="form-control" id="crueDate' + i + '" ng-model="crueDateObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否仍然存在</i></div><select ng-model="existenceObj['+i+']" class="form-control"><option value="1">是</option><option value="2">否</option></select></div></div>';
+          var template = '<div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病种类</i></div><select class="form-control" ng-model="diseaseTypeObj[' + count + ']"><option value="呼吸系统疾病">呼吸系统疾病</option><option value="消化系统疾病">消化系统疾病</option><option value="循环系统疾病">循环系统疾病</option><option value="泌尿系统疾病">泌尿系统疾病</option><option value="血液系统疾病">血液系统疾病</option><option value="内分泌系统疾病">内分泌系统疾病</option><option value="新成代谢疾病">新成代谢疾病</option><option value="淋巴系统疾病">淋巴系统疾病</option><option value="神经精神系统疾病">神经精神系统疾病</option><option value="结缔组织疾病">结缔组织疾病</option><option value="妇产科疾病">妇产科疾病</option><option value="儿科疾病">儿科疾病</option><option value="耳鼻喉科疾病">耳鼻喉科疾病</option><option value="眼科疾病">眼科疾病</option><option value="口腔科疾病">口腔科疾病</option><option value="伤骨科疾病">伤骨科疾病</option><option value="皮肤科疾病">皮肤科疾病</option><option value="肿瘤科疾病">肿瘤科疾病</option><option value="传染病与性病">传染病与性病</option><option value="寄生虫疾病">寄生虫疾病</option><option value="男性不育性疾病">男性不育性疾病</option><option value="女性不孕性疾病">女性不孕性疾病</option><option value="男性生殖系统疾病">男性生殖系统疾病</option><option value="疑难杂症">疑难杂症</option></select></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 疾病名称</i></div><input class="form-control" ng-model="diseaseNameObj[' + i + ']"></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 是否痊愈</i></div><select ng-model="existenceObj[' + i + ']" class="form-control"><option value="1">是</option><option value="2">否</option></select></div></div><div class="col-sm-3"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 曾用药（药名）</i></div><input class="form-control" ng-model="preMedicineObj[' + i + ']"></div></div>';
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#disease');
-          $('#diagnosisDate' + i).datepicker({
-            autoclose: true
-          });
-          $('#crueDate' + i).datepicker({
-            autoclose: true
-          });
-          $scope.diseaseNameObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).diseaseName;
-          $scope.existenceObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).existence;
-          $scope.detailIdObj[i] = ((data.medicineLiverDiseaseHistoryDetailDTOS[i])).id;
-          var diagnosisDate = new Date(((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).diagnosisDate);
-          var crueDate = new Date(((data.medicineLiverDiseaseHistoryDetailDTOS)[i]).crueDate);
-          $scope.diagnosisDateObj[i] = diagnosisDate.getFullYear() + '-' + (diagnosisDate.getMonth() + 1) + '-' + diagnosisDate.getDate();
-          $scope.crueDateObj[i] = crueDate.getFullYear() + '-' + (crueDate.getMonth() + 1) + '-' + crueDate.getDate();
+          $scope.diseaseNameObj[i] = data.medicineLiverDiseaseHistoryDetailDTOS[i].diseaseName;
+          $scope.existenceObj[i] = data.medicineLiverDiseaseHistoryDetailDTOS[i].existence;
+          $scope.diseaseTypeObj[i] = data.medicineLiverDiseaseHistoryDetailDTOS[i].diseaseType;
+          $scope.preMedicineObj[i] = data.medicineLiverDiseaseHistoryDetailDTOS[i].preMedicine;
         }
       });
     }
@@ -103,23 +79,23 @@ angular.module('diseaseHistory', [])
       diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS = [];
       diseaseHistory.otherHistory = $scope.otherHistory;
       diseaseHistory.pastDisease = $scope.pastDisease;
+      diseaseHistory.epidemicTourism = $scope.epidemicTourism;
+      diseaseHistory.epidemicText = $scope.epidemicText;
       diseaseHistory.patientId = sessionStorage.getItem('mlPatientId');
       diseaseHistory.complete = true;
 
       diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
         diseaseName: $scope.diseaseName,
         existence: $scope.existence,
-        id: $scope.detailId,
-        diagnosisDate: new Date($scope.diagnosisDate),
-        crueDate: new Date($scope.crueDate)
+        diseaseType: $scope.diseaseType,
+        preMedicine: $scope.preMedicine
       });
       for (var i = 1; i <= count; i++) {
         diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
-          id: ($scope.detailIdObj[i]),
           diseaseName: ($scope.diseaseNameObj[i]),
           existence: ($scope.existenceObj[i]),
-          diagnosisDate: new Date($scope.diagnosisDateObj[i]),
-          crueDate: new Date($scope.crueDateObj[i])
+          diseaseType: ($scope.diseaseTypeObj[i]),
+          preMedicine: ($scope.preMedicineObj[i])
         });
       }
       $http({

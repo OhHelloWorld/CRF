@@ -38,6 +38,7 @@ public class MedicineLiverImagingEndoscopyDTO {
     private Date gastroscopeDate;//胃镜检查日期
     private int gastroscopeBiliaryTract;//胃镜排除胆道疾病
     private int gastroscopeEsophagealGastricVarices;//胃镜排除食管胃底静脉曲张
+    private String image;
     private boolean complete;
 
     public int getId() {
@@ -278,6 +279,14 @@ public class MedicineLiverImagingEndoscopyDTO {
 
     public void setGastroscopeEsophagealGastricVarices(int gastroscopeEsophagealGastricVarices) {
         this.gastroscopeEsophagealGastricVarices = gastroscopeEsophagealGastricVarices;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public boolean isComplete() {
