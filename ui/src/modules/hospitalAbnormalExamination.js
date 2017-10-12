@@ -1,7 +1,7 @@
 ﻿import angular from 'angular';
 
 angular.module('hospitalAbnormalExamination', [])
-  .controller('hospitalAbnormalExaminationController', ['$scope', '$http', function($scope, $http) {
+  .controller('hospitalAbnormalExaminationController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     getPatientInfo();
     getHosData();
     $('#datepicker1').datepicker({
@@ -234,5 +234,9 @@ angular.module('hospitalAbnormalExamination', [])
         $scope.patientNumber = response.data.identifier;
       });
     }
+
+    $scope.layout = function() {
+      $state.go('mlHome');
+    };
 
   }]);

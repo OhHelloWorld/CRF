@@ -48,7 +48,7 @@ public class MlDrugHistoryServiceImpl implements MlDrugHistoryService ,MlComplet
                 medicineLiverSuspectedDrugDetailDTO.setGenericName(medicineLiverSuspectedDrugDetailDO.getGenericName());
                 medicineLiverSuspectedDrugDetailDTO.setTradeName(medicineLiverSuspectedDrugDetailDO.getTradeName());
                 medicineLiverSuspectedDrugDetailDTO.setTreatComplaint(medicineLiverSuspectedDrugDetailDO.getTreatComplaint());
-
+                medicineLiverSuspectedDrugDetailDTO.setManufactor(medicineLiverSuspectedDrugDetailDO.getManufactor());
                 medicineLiverSuspectedDrugDetailDTO.setMedicineLiverSuspectedDrugId(medicineLiverSuspectedDrugDetailDO.getMedicineLiverSuspectedDrugDO().getId());
                 medicineLiverSuspectedDrugDetailDTOS.add(medicineLiverSuspectedDrugDetailDTO);
             }
@@ -81,6 +81,7 @@ public class MlDrugHistoryServiceImpl implements MlDrugHistoryService ,MlComplet
                 medicineLiverSuspectedDrugDetailDO.setTradeName(medicineLiverSuspectedDrugDetailDTO.getTradeName());
                 medicineLiverSuspectedDrugDetailDO.setTreatComplaint(medicineLiverSuspectedDrugDetailDTO.getTreatComplaint());
                 medicineLiverSuspectedDrugDetailDO.setMedicineLiverSuspectedDrugDO(medicineLiverSuspectedDrugDO);
+                medicineLiverSuspectedDrugDetailDO.setManufactor(medicineLiverSuspectedDrugDetailDTO.getManufactor());
                 medicineLiverSuspectedDrugDetailDOS.add(medicineLiverSuspectedDrugDetailDO);
             }
         }

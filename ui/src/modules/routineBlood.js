@@ -95,5 +95,9 @@ angular.module('routineBlood', [])
       });
     }
 
+    $scope.layout = function(){
+      $state.go('mlHome');
+    };
+
 
   }]);

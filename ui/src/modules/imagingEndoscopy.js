@@ -264,6 +264,8 @@ angular.module('imagingEndoscopy', [ngFileUpload])
       });
     }
 
-
+    $scope.layout = function(){
+      $state.go('mlHome');
+    };
 
   }]);

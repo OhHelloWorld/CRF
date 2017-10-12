@@ -118,6 +118,7 @@ create table medicine_liver_suspected_drug_detail(
 	decrement varchar(50),#是否减量
 	drug_exposure varchar(50),#既往该药暴露史
 	exposure_liver_damage varchar(50),#既往暴露引起肝损
+    manufactor varchar(50),#厂家及批号
 	primary key(id)
 );
 
@@ -379,7 +380,7 @@ create table medicine_liver_imaging_endoscopy(
 	gastroscope_biliary_tract int,#胃镜排除胆道疾病
 	gastroscope_esophageal_gastric_varices int,#胃镜排除食管胃底静脉曲张
 	image varchar(50),
-    imageDescribe varchar(100),
+    image_describe varchar(100),
     complete boolean,
 	primary key(id)
 );

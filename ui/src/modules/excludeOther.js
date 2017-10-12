@@ -252,4 +252,8 @@ angular.module('excludeOther', [])
       });
     }
 
+    $scope.layout = function() {
+      $state.go('mlHome');
+    };
+
   }]);

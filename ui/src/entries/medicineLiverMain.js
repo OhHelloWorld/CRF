@@ -142,7 +142,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
 
   $scope.mlPatientMenuClick1 = function() {
     $('li').removeClass('active');
-    $('#li12').addClass('active');
+    $('#li18').addClass('active');
     changeStatus();
   };
 

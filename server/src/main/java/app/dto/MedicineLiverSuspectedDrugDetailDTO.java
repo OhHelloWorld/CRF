@@ -19,6 +19,7 @@ public class MedicineLiverSuspectedDrugDetailDTO {
     private String decrement;//是否减量
     private String drugExposure;//既往该药暴露史
     private String exposureLiverDamage;//既往暴露引起肝损
+    private String manufactor;//厂家及批号
 
     public int getId() {
         return id;
@@ -130,5 +131,13 @@ public class MedicineLiverSuspectedDrugDetailDTO {
 
     public void setExposureLiverDamage(String exposureLiverDamage) {
         this.exposureLiverDamage = exposureLiverDamage;
+    }
+
+    public String getManufactor() {
+        return manufactor;
+    }
+
+    public void setManufactor(String manufactor) {
+        this.manufactor = manufactor;
     }
 }

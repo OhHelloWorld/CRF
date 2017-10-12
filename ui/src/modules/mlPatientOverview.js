@@ -97,7 +97,7 @@ angular.module('mlPatientOverview', [])
         $scope.allergyHistory = '无';
       } else if (allergy.allergyHistory == 2) {
         $scope.allergyHistory = '有';
-      } else if(allergy.allergyHistory == 3){
+      } else if (allergy.allergyHistory == 3) {
         $scope.allergyHistory = '不详';
       }
       $scope.allergen = allergy.allergen;
@@ -625,6 +625,8 @@ angular.module('mlPatientOverview', [])
           $scope.antiHav = '未做';
         } else if (exclude.antiHav == '4') {
           $scope.antiHav = '不详';
+        } else if (exclude.antiHav == '5') {
+          $scope.antiHav = '其他';
         }
 
         if (exclude.hbvdna == '1') {
@@ -635,6 +637,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbvdna = '未做';
         } else if (exclude.hbvdna == '4') {
           $scope.hbvdna = '不详';
+        } else if (exclude.hbvdna == '5') {
+          $scope.hbvdna = '其他';
         }
 
         if (exclude.antihcv == '1') {
@@ -645,6 +649,8 @@ angular.module('mlPatientOverview', [])
           $scope.antihcv = '未做';
         } else if (exclude.antihcv == '4') {
           $scope.antihcv = '不详';
+        } else if (exclude.antihcv == '5') {
+          $scope.antihcv = '其他';
         }
 
         if (exclude.hcvrna == '1') {
@@ -655,6 +661,8 @@ angular.module('mlPatientOverview', [])
           $scope.hcvrna = '未做';
         } else if (exclude.hcvrna == '4') {
           $scope.hcvrna = '不详';
+        } else if (exclude.hcvrna == '5') {
+          $scope.hcvrna = '其他';
         }
 
         if (exclude.mononucleosis == '1') {
@@ -665,6 +673,8 @@ angular.module('mlPatientOverview', [])
           $scope.mononucleosis = '未做';
         } else if (exclude.mononucleosis == '4') {
           $scope.mononucleosis = '不详';
+        } else if (exclude.mononucleosis == '5') {
+          $scope.mononucleosis = '其他';
         }
 
         if (exclude.rheumatoid == '1') {
@@ -675,6 +685,8 @@ angular.module('mlPatientOverview', [])
           $scope.rheumatoid = '未做';
         } else if (exclude.rheumatoid == '4') {
           $scope.rheumatoid = '不详';
+        } else if (exclude.rheumatoid == '5') {
+          $scope.rheumatoid = '其他';
         }
 
         if (exclude.ceruloplasmin == '1') {
@@ -685,6 +697,8 @@ angular.module('mlPatientOverview', [])
           $scope.ceruloplasmin = '未做';
         } else if (exclude.ceruloplasmin == '4') {
           $scope.ceruloplasmin = '不详';
+        } else if (exclude.ceruloplasmin == '5') {
+          $scope.ceruloplasmin = '其他';
         }
 
         $scope.antiHavDate = exclude.antiHavDate;
@@ -703,6 +717,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbsag = '未做';
         } else if (exclude.hbsag == '4') {
           $scope.hbsag = '不详';
+        } else if (exclude.hbsag == '5') {
+          $scope.hbsag = '其他';
         }
 
         if (exclude.hbsab == '1') {
@@ -713,6 +729,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbsab = '未做';
         } else if (exclude.hbsab == '4') {
           $scope.hbsab = '不详';
+        } else if (exclude.hbsab == '5') {
+          $scope.hbsab = '其他';
         }
 
         if (exclude.hbcab == '1') {
@@ -723,6 +741,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbcab = '未做';
         } else if (exclude.hbcab == '4') {
           $scope.hbcab = '不详';
+        } else if (exclude.hbcab == '5') {
+          $scope.hbcab = '其他';
         }
 
         if (exclude.hbeag == '1') {
@@ -733,6 +753,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbeag = '未做';
         } else if (exclude.hbeag == '4') {
           $scope.hbeag = '不详';
+        } else if (exclude.hbeag == '5') {
+          $scope.hbeag = '其他';
         }
 
         if (exclude.hbeab == '1') {
@@ -743,6 +765,8 @@ angular.module('mlPatientOverview', [])
           $scope.hbeab = '未做';
         } else if (exclude.hbeab == '4') {
           $scope.hbeab = '不详';
+        } else if (exclude.hbeab == '5') {
+          $scope.hbeab = '其他';
         }
 
         $scope.hepatitisBFiveDate = exclude.hepatitisBFiveDate;
@@ -755,6 +779,8 @@ angular.module('mlPatientOverview', [])
           $scope.ana = '未做';
         } else if (exclude.ana == '4') {
           $scope.ana = '不详';
+        } else if (exclude.ana == '5') {
+          $scope.ana = '其他';
         }
 
         if (exclude.ama == '1') {
@@ -765,6 +791,8 @@ angular.module('mlPatientOverview', [])
           $scope.ama = '未做';
         } else if (exclude.ama == '4') {
           $scope.ama = '不详';
+        } else if (exclude.ama == '5') {
+          $scope.ama = '其他';
         }
 
         if (exclude.amam2 == '1') {
@@ -775,6 +803,8 @@ angular.module('mlPatientOverview', [])
           $scope.amam2 = '未做';
         } else if (exclude.amam2 == '4') {
           $scope.amam2 = '不详';
+        } else if (exclude.amam2 == '5') {
+          $scope.amam2 = '其他';
         }
 
         if (exclude.sma == '1') {
@@ -785,6 +815,8 @@ angular.module('mlPatientOverview', [])
           $scope.sma = '未做';
         } else if (exclude.sma == '4') {
           $scope.sma = '不详';
+        } else if (exclude.sma == '5') {
+          $scope.sma = '其他';
         }
 
         if (exclude.lkm == '1') {
@@ -795,6 +827,8 @@ angular.module('mlPatientOverview', [])
           $scope.lkm = '未做';
         } else if (exclude.lkm == '4') {
           $scope.lkm = '不详';
+        } else if (exclude.lkm == '5') {
+          $scope.lkm = '其他';
         }
 
         if (exclude.cytomegalovirus == '1') {
@@ -805,6 +839,8 @@ angular.module('mlPatientOverview', [])
           $scope.cytomegalovirus = '未做';
         } else if (exclude.cytomegalovirus == '4') {
           $scope.cytomegalovirus = '不详';
+        } else if (exclude.cytomegalovirus == '5') {
+          $scope.cytomegalovirus = '其他';
         }
 
         if (exclude.ebviruses == '1') {
@@ -815,6 +851,8 @@ angular.module('mlPatientOverview', [])
           $scope.ebviruses = '未做';
         } else if (exclude.ebviruses == '4') {
           $scope.ebviruses = '不详';
+        } else if (exclude.ebviruses == '5') {
+          $scope.ebviruses = '其他';
         }
 
         if (exclude.herpesSimplex == '1') {
@@ -825,6 +863,8 @@ angular.module('mlPatientOverview', [])
           $scope.herpesSimplex = '未做';
         } else if (exclude.herpesSimplex == '4') {
           $scope.herpesSimplex = '不详';
+        } else if (exclude.herpesSimplex == '5') {
+          $scope.herpesSimplex = '其他';
         }
 
         $scope.autoimmuneAntibodyDate = exclude.autoimmuneAntibodyDate;
@@ -900,6 +940,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverBultrasoundBiliaryTract = '否';
       } else if (endos.liverBultrasoundBiliaryTract == '3') {
         $scope.liverBultrasoundBiliaryTract = '不适用';
+      } else if (endos.liverBultrasoundBiliaryTract == '4') {
+        $scope.liverBultrasoundBiliaryTract = '其他';
       }
 
       if (endos.liverBultrasoundEsophagealGastricVarices == '1') {
@@ -908,6 +950,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverBultrasoundEsophagealGastricVarices = '否';
       } else if (endos.liverBultrasoundEsophagealGastricVarices == '3') {
         $scope.liverBultrasoundEsophagealGastricVarices = '不适用';
+      } else if (endos.liverBultrasoundEsophagealGastricVarices == '4') {
+        $scope.liverBultrasoundEsophagealGastricVarices = '其他';
       }
 
       if (endos.liverCtBiliaryTract == '1') {
@@ -916,6 +960,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverCtBiliaryTract = '否';
       } else if (endos.liverCtBiliaryTract == '3') {
         $scope.liverCtBiliaryTract = '不适用';
+      } else if (endos.liverCtBiliaryTract == '4') {
+        $scope.liverCtBiliaryTract = '其他';
       }
 
       if (endos.liverCtEsophagealGastricVarices == '1') {
@@ -924,6 +970,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverCtEsophagealGastricVarices = '否';
       } else if (endos.liverCtEsophagealGastricVarices == '3') {
         $scope.liverCtEsophagealGastricVarices = '不适用';
+      } else if (endos.liverCtEsophagealGastricVarices == '4') {
+        $scope.liverCtEsophagealGastricVarices = '其他';
       }
 
       if (endos.liverMriBiliaryTract == '1') {
@@ -932,6 +980,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverMriBiliaryTract = '否';
       } else if (endos.liverMriBiliaryTract == '3') {
         $scope.liverMriBiliaryTract = '不适用';
+      } else if (endos.liverMriBiliaryTract == '4') {
+        $scope.liverMriBiliaryTract = '其他';
       }
 
       if (endos.liverMriEsophagealGastricVarices == '1') {
@@ -940,6 +990,8 @@ angular.module('mlPatientOverview', [])
         $scope.liverMriEsophagealGastricVarices = '否';
       } else if (endos.liverMriEsophagealGastricVarices == '3') {
         $scope.liverMriEsophagealGastricVarices = '不适用';
+      } else if (endos.liverMriEsophagealGastricVarices == '4') {
+        $scope.liverMriEsophagealGastricVarices = '其他';
       }
 
       if (endos.fibroscanBiliaryTract == '1') {
@@ -948,6 +1000,8 @@ angular.module('mlPatientOverview', [])
         $scope.fibroscanBiliaryTract = '否';
       } else if (endos.fibroscanBiliaryTract == '3') {
         $scope.fibroscanBiliaryTract = '不适用';
+      } else if (endos.fibroscanBiliaryTract == '4') {
+        $scope.fibroscanBiliaryTract = '其他';
       }
 
       if (endos.fibroscanEsophagealGastricVarices == '1') {
@@ -956,6 +1010,8 @@ angular.module('mlPatientOverview', [])
         $scope.fibroscanEsophagealGastricVarices = '否';
       } else if (endos.fibroscanEsophagealGastricVarices == '3') {
         $scope.fibroscanEsophagealGastricVarices = '不适用';
+      } else if (endos.fibroscanEsophagealGastricVarices == '4') {
+        $scope.fibroscanEsophagealGastricVarices = '其他';
       }
 
       if (endos.ercpBiliaryTract == '1') {
@@ -964,6 +1020,8 @@ angular.module('mlPatientOverview', [])
         $scope.ercpBiliaryTract = '否';
       } else if (endos.ercpBiliaryTract == '3') {
         $scope.ercpBiliaryTract = '不适用';
+      } else if (endos.ercpBiliaryTract == '4') {
+        $scope.ercpBiliaryTract = '其他';
       }
 
       if (endos.ercpEsophagealGastricVarices == '1') {
@@ -972,6 +1030,8 @@ angular.module('mlPatientOverview', [])
         $scope.ercpEsophagealGastricVarices = '否';
       } else if (endos.ercpEsophagealGastricVarices == '3') {
         $scope.ercpEsophagealGastricVarices = '不适用';
+      } else if (endos.ercpEsophagealGastricVarices == '4') {
+        $scope.ercpEsophagealGastricVarices = '其他';
       }
 
       if (endos.mrcpBiliaryTract == '1') {
@@ -980,6 +1040,8 @@ angular.module('mlPatientOverview', [])
         $scope.mrcpBiliaryTract = '否';
       } else if (endos.mrcpBiliaryTract == '3') {
         $scope.mrcpBiliaryTract = '不适用';
+      } else if (endos.mrcpEsophagealGastricVarices == '4') {
+        $scope.mrcpEsophagealGastricVarices = '其他';
       }
 
       if (endos.mrcpEsophagealGastricVarices == '1') {
@@ -988,6 +1050,8 @@ angular.module('mlPatientOverview', [])
         $scope.mrcpEsophagealGastricVarices = '否';
       } else if (endos.mrcpEsophagealGastricVarices == '3') {
         $scope.mrcpEsophagealGastricVarices = '不适用';
+      } else if (endos.mrcpEsophagealGastricVarices == '4') {
+        $scope.mrcpEsophagealGastricVarices = '其他';
       }
 
       if (endos.gastroscopeBiliaryTract == '1') {
@@ -996,6 +1060,8 @@ angular.module('mlPatientOverview', [])
         $scope.gastroscopeBiliaryTract = '否';
       } else if (endos.gastroscopeBiliaryTract == '3') {
         $scope.gastroscopeBiliaryTract = '不适用';
+      } else if (endos.gastroscopeBiliaryTract == '4') {
+        $scope.gastroscopeBiliaryTract = '其他';
       }
 
       if (endos.gastroscopeEsophagealGastricVarices == '1') {
@@ -1004,6 +1070,8 @@ angular.module('mlPatientOverview', [])
         $scope.gastroscopeEsophagealGastricVarices = '否';
       } else if (endos.gastroscopeEsophagealGastricVarices == '3') {
         $scope.gastroscopeEsophagealGastricVarices = '不适用';
+      } else if (endos.gastroscopeEsophagealGastricVarices == '4') {
+        $scope.gastroscopeEsophagealGastricVarices = '其他';
       }
 
       $scope.liverBultrasoundDate = endos.liverBultrasoundDate;

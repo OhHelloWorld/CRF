@@ -67,19 +67,19 @@
                       <i style="font-style: inherit;"> &ensp; 用药方法</i>
                     </div>
                     <select class="form-control" ng-model="medicationMethod">
-                      <option value="1">口服</option>
-                      <option value="2">皮下注射</option>
-                      <option value="3">直肠给药</option>
-                      <option value="4">滴注</option>
-                      <option value="5">鼻腔给药</option>
-                      <option value="6">吸入给药</option>
-                      <option value="7">静脉注射</option>
-                      <option value="8">局部给药</option>
-                      <option value="9">肌肉注射</option>
-                      <option value="10">静脉滴注</option>
-                      <option value="11">雾化吸入</option>
-                      <option value="12">其他</option>
-                      <option value="13">不详</option>
+                      <option value="口服">口服</option>
+                      <option value="皮下注射">皮下注射</option>
+                      <option value="直肠给药">直肠给药</option>
+                      <option value="滴注">滴注</option>
+                      <option value="鼻腔给药">鼻腔给药</option>
+                      <option value="吸入给药">吸入给药</option>
+                      <option value="静脉注射">静脉注射</option>
+                      <option value="局部给药">局部给药</option>
+                      <option value="肌肉注射">肌肉注射</option>
+                      <option value="静脉滴注">静脉滴注</option>
+                      <option value="雾化吸入">雾化吸入</option>
+                      <option value="其他">其他</option>
+                      <option value="不详">不详</option>
                     </select>
                   </div>
                 </div>
@@ -106,9 +106,9 @@
                       <i style="font-style: inherit;"> &ensp; 是否停药</i>
                     </div>
                     <select class="form-control" ng-model="drugWithDrawal">
-                      <option value="1">是</option>
-                      <option value="2">否</option>
-                      <option value="3">不详</option>
+                      <option value="是">是</option>
+                      <option value="否">否</option>
+                      <option value="不详">不详</option>
                     </select>
                   </div>
                 </div>
@@ -118,7 +118,7 @@
                     <div class="input-group-addon">
                       <i style="font-style: inherit;"> &ensp; 停药日期</i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="drugWithdrawalDate" ng-model="drugWithDrawalDate" >
+                    <input type="text" class="form-control pull-right" id="drugWithdrawalDate" ng-model="drugWithDrawalDate" placeholder="没有停药则不填">
                   </div>
                 </div>
 
@@ -128,9 +128,9 @@
                       <i style="font-style: inherit;"> &ensp; 是否减量</i>
                     </div>
                     <select class="form-control" ng-model="decrement">
-                      <option value="1">是</option>
-                      <option value="2">否</option>
-                      <option value="3">不详</option>
+                      <option value="1是">是</option>
+                      <option value="否">否</option>
+                      <option value="不详">不详</option>
                     </select>
                   </div>
                 </div>
@@ -141,9 +141,9 @@
                       <i style="font-style: inherit;"> &ensp; 既往该药暴露史</i>
                     </div>
                     <select class="form-control" ng-model="drugExposure">
-                      <option value="1">是</option>
-                      <option value="2">否</option>
-                      <option value="3">不详</option>
+                      <option value="是">是</option>
+                      <option value="否">否</option>
+                      <option value="不详">不详</option>
                     </select>
                   </div>
                 </div>
@@ -154,12 +154,23 @@
                       <i style="font-style: inherit;"> &ensp; 既往暴露引起肝损</i>
                     </div>
                     <select class="form-control" ng-model="exposureLiverDamage">
-                      <option value="1">是</option>
-                      <option value="2">否</option>
-                      <option value="3">未知</option>
+                      <option value="是">是</option>
+                      <option value="否">否</option>
+                      <option value="未知">未知</option>
                     </select>
                   </div>
                 </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 厂家及批号</i>
+                    </div>
+                    <input type="text" ng-model="manufactor" class="form-control">
+                  </div>
+                </div>
+
+
               </div>
               <button class="btn btn-success col-md-offset-5" ng-click="addDrug()">
               增加

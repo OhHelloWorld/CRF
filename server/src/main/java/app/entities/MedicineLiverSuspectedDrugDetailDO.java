@@ -29,6 +29,7 @@ public class MedicineLiverSuspectedDrugDetailDO {
     private String drugExposure;//既往该药暴露史
     @Column(name = "exposure_liver_damage")
     private String exposureLiverDamage;//既往暴露引起肝损
+    private String manufactor;//厂家及批号
 
     public int getId() {
         return id;
@@ -140,5 +141,13 @@ public class MedicineLiverSuspectedDrugDetailDO {
 
     public void setExposureLiverDamage(String exposureLiverDamage) {
         this.exposureLiverDamage = exposureLiverDamage;
+    }
+
+    public String getManufactor() {
+        return manufactor;
+    }
+
+    public void setManufactor(String manufactor) {
+        this.manufactor = manufactor;
     }
 }
