@@ -33,7 +33,7 @@
       <br>
       <div class="box box-info">
       <div class="box-header with-border">
-              <h3 class="box-title">是否有腹水</h3>
+              <h3 class="box-title">【 是否有腹水 】</h3>
       </div>
       
       <div class="box-body">
@@ -47,7 +47,7 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">是否有肝性脑病</h3>
+              <h3 class="box-title">【 是否有肝性脑病 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="hepaticEncephalopathy" ng-model="hepaticEncephalopathy" ng-value=1><span class="h4">是</span>
@@ -60,7 +60,7 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">是否有延长INR（>1.5）或者凝血时间（>3秒正常时间以上）</h3>
+              <h3 class="box-title">【 是否有延长INR（>1.5）或者凝血时间（>3秒正常时间以上） 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="extendInr" ng-model="extendInr" ng-value=1><span class="h4">是</span>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等</h3>
+              <h3 class="box-title">【 是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="failure" ng-model="failure" ng-value=1><span class="h4">是</span>
@@ -86,7 +86,7 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">由于肝损伤的原因，患者住院时间是否延长</h3>
+              <h3 class="box-title">【 由于肝损伤的原因，患者住院时间是否延长 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="extendHospitalStay" ng-model="extendHospitalStay" ng-value=1><span class="h4">是</span>
@@ -99,14 +99,15 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">使用Hepatox网站上的RUCAM评分</h3>
+              <h3 class="box-title">【 使用Hepatox网站上的RUCAM评分 】</h3>
       </div>
       <div class="box-body">
         <input type="text" class="form-control" ng-model="rucam">
       </div>
       </div>
       <div class="col-md-offset-9">
-      <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
-      <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
-      </div>
+      <button class="btn btn-primary " ng-click="save()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
 </div>

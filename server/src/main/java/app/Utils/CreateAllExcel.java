@@ -41,6 +41,9 @@ import app.repo.SimpleAIHRepo;
 import app.repo.TonguePulseRepo;
 import app.repo.TreatmentRepo;
 
+/**
+ * 创建所有自免肝用户的Excel表
+ */
 @Component
 public class CreateAllExcel{
 

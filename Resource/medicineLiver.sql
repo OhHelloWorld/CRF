@@ -50,6 +50,7 @@ create table medicine_liver_disease_history(
 	past_disease int,#既往病史
     epidemic_tourism int,#疫区旅游史
     epidemic_text varchar(50),#疫区旅游史详情
+    personHistory varchar(30),#个人史
 	complete boolean default false,
     primary key(id)
 );

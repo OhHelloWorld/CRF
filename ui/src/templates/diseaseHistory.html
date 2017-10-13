@@ -33,7 +33,7 @@
       <br>
       <div class="box box-info">
       <div class="box-header with-border">
-        <h3 class="box-title">除药物性肝病以外，病例是否存在因本次入院的其他疾病史？</h3>
+        <h3 class="box-title">【 除药物性肝病以外，病例是否存在因本次入院的其他疾病史？ 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=1><span class="h4">无</span>
@@ -41,9 +41,28 @@
           <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=2><span class="h4">有</span>
         </span>
       </div>
-<div class="box-body" ng-show="diseaseShow">
+
+<div>
       <div class="box-header with-border">
-              <h3 class="box-title">既往病史</h3>
+              <h3 class="box-title">【 个人史 】</h3>
+      </div>
+      <div class="box-body">
+        <checkbox ng-model="oneDrink" name="oneDrink"></checkbox><span class="h4">饮酒</span>
+        <span class="col-md-offset-1">
+        <checkbox ng-model="oneSmoke" name="oneSmoke"></checkbox><span class="h4">吸烟</span>
+        <span class="col-md-offset-1">
+        <checkbox ng-model="oneAllergy" name="oneAllergy"></checkbox><span class="h4">过敏</span>
+        <span class="col-md-offset-1">
+        <checkbox ng-model="oneInfect" name="oneInfect"></checkbox><span class="h4">感染</span>
+        <span class="col-md-offset-1">
+        <checkbox ng-model="oneOpera" name="oneOpera"></checkbox><span class="h4">手术</span>
+        <span class="col-md-offset-1">
+      </div>
+</div>
+
+<div ng-show="diseaseShow">
+      <div class="box-header with-border">
+              <h3 class="box-title">【 既往病史 】</h3>
       </div>
       <div class="box-body">
         <input type="radio" name="history" ng-model="pastDisease" ng-value=1><span class="h4">无</span>
@@ -55,7 +74,7 @@
         </span>
       </div>
               <div class="box-header with-border">
-                <h3 class="box-title">详情</h3>
+                <h3 class="box-title">【 详情 】</h3>
               </div>
               <div class="box-body" id="disease">
                 <div class="col-sm-3">
@@ -131,10 +150,11 @@
               增加
               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
               </button>
+              
 </div>
-<div class="box-body">
+
   <div class="box-header with-border">
-              <h3 class="box-title">疫区旅游史</h3>
+              <h3 class="box-title">【 疫区旅游史 】</h3>
   </div>
       <div class="box-body">
         <input type="radio" name="epidemicTourism" ng-model="epidemicTourism" ng-value=1><span class="h4">无</span>
@@ -144,8 +164,9 @@
         <input type="text" ng-model="epidemicText" ng-show="epi">
       </div>
 </div>
-</div>
 		  <span class="col-md-offset-10">&nbsp</span>
-          <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
-          <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
+          <button class="btn btn-primary " ng-click="save()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
 </div>

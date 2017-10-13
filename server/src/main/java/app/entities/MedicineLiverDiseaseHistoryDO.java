@@ -16,6 +16,7 @@ public class MedicineLiverDiseaseHistoryDO{
     private int pastDisease;//既往病史
     private int epidemicTourism;
     private String epidemicText;
+    private String personHistory;
     private boolean complete;
     @OneToMany(mappedBy = "medicineLiverDiseaseHistoryDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MedicineLiverDiseaseHistoryDetailDO> medicineLiverDiseaseHistoryDetailDOS;
@@ -66,6 +67,14 @@ public class MedicineLiverDiseaseHistoryDO{
 
     public void setEpidemicText(String epidemicText) {
         this.epidemicText = epidemicText;
+    }
+
+    public String getPersonHistory() {
+        return personHistory;
+    }
+
+    public void setPersonHistory(String personHistory) {
+        this.personHistory = personHistory;
     }
 
     public boolean isComplete() {

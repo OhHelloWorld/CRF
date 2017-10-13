@@ -33,7 +33,7 @@
       <br>
       <div class="box box-info">
       <div class="box-header with-border">
-              <h3 class="box-title">疾病转归</h3>
+              <h3 class="box-title">【 疾病转归 】</h3>
       </div>
       <div class="box-body">
         <checkbox ng-model="outcome1"></checkbox><span class="h4">痊愈</span>
@@ -62,7 +62,9 @@
       </div>
       </div>
       <div class="col-md-offset-9">
-      <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
-      <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
+      <button class="btn btn-primary " ng-click="save()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
       </div>
 </div>

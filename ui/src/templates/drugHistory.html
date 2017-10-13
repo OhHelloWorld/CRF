@@ -34,7 +34,7 @@
       <div class="box box-info">
       <div class="box-body">
               <div class="box-header with-border">
-                <h3 class="box-title">详情<sub style="color: green">（日剂量：mg、g、ug、ml、L、片、粒、包、IU、其他、不详）</sub></h3>
+                <h3 class="box-title">【 详情 】<sub style="color: green">（日剂量：mg、g、ug、ml、L、片、粒、包、IU、其他、不详）</sub></h3>
               </div>
               <div class="box-body" id="drug">
                 <div class="col-sm-3">
@@ -179,6 +179,8 @@
 </div>
 </div>
 		  <span class="col-md-offset-10">&nbsp</span>
-          <input type="button" class="btn btn-primary " ng-click="save()" value="保存">&nbsp
-          <input type="button" class="btn btn-primary " ng-click="layout()" value="退出">
+          <button class="btn btn-primary " ng-click="save()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
 </div>

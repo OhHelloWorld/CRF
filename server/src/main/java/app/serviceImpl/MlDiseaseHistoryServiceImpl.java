@@ -36,6 +36,7 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         medicineLiverDiseaseHistoryDO.setEpidemicText(medicineLiverDiseaseHistoryDTO.getEpidemicText());
         medicineLiverDiseaseHistoryDO.setOtherHistory(medicineLiverDiseaseHistoryDTO.getOtherHistory());
         medicineLiverDiseaseHistoryDO.setPastDisease(medicineLiverDiseaseHistoryDTO.getPastDisease());
+        medicineLiverDiseaseHistoryDO.setPersonHistory(medicineLiverDiseaseHistoryDTO.getPersonHistory());
         mlDiseaseHistoryDetailRepo.deleteDiseaseHistoryDetailByDId(medicineLiverDiseaseHistoryDTO.getId());
         List<MedicineLiverDiseaseHistoryDetailDO> medicineLiverDiseaseHistoryDetailDOS = new ArrayList<>();
         List<MedicineLiverDiseaseHistoryDetailDTO> medicineLiverDiseaseHistoryDetailDTOS = medicineLiverDiseaseHistoryDTO.getMedicineLiverDiseaseHistoryDetailDTOS();
@@ -64,6 +65,7 @@ public class MlDiseaseHistoryServiceImpl implements MlDiseaseHistoryService ,MlC
         medicineLiverDiseaseHistoryDTO.setEpidemicText(medicineLiverDiseaseHistoryDO.getEpidemicText());
         medicineLiverDiseaseHistoryDTO.setPatientId(medicineLiverDiseaseHistoryDO.getPatientId());
         medicineLiverDiseaseHistoryDTO.setId(medicineLiverDiseaseHistoryDO.getId());
+        medicineLiverDiseaseHistoryDTO.setPersonHistory(medicineLiverDiseaseHistoryDO.getPersonHistory());
         List<MedicineLiverDiseaseHistoryDetailDTO> medicineLiverDiseaseHistoryDetailDTOS = new ArrayList<>();
         List<MedicineLiverDiseaseHistoryDetailDO> medicineLiverDiseaseHistoryDetailDOS = medicineLiverDiseaseHistoryDO.getMedicineLiverDiseaseHistoryDetailDOS();
         if (!medicineLiverDiseaseHistoryDetailDOS.isEmpty() && medicineLiverDiseaseHistoryDetailDOS != null) {

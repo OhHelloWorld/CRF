@@ -33,21 +33,23 @@
       <br>
       <div class="box box-info">
       <div class="box-header with-border">
-              <h3 class="box-title">检查日期</h3>
+              <h3 class="box-title">【 检查日期 】</h3>
       </div>
       <div class="box-body">
         	<input type="text" id="liverHistologicalDate" ng-model="liverHistologicalDate" class="form-control">
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">检查结果（结论参见“肝脏组织学检查结果参考”）</h3>
+              <h3 class="box-title">【 检查结果（结论参见“肝脏组织学检查结果参考”） 】</h3>
       </div>
       <div class="box-body">
         	<input type="textarea" ng-model="liverHistologicalResult" class="form-control">
       </div>
       </div>
       <div class="col-md-offset-9 ">
-      <input type="button" class="btn btn-primary" ng-click="save()" value="保存">&nbsp
-      <input type="button" class="btn btn-primary" ng-click="layout()" value="退出">
+      <button class="btn btn-primary " ng-click="save()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
       </div>
 </div>

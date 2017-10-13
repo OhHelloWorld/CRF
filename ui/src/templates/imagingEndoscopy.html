@@ -22,12 +22,12 @@
 
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title col-md-4">影像学和内窥镜检查</h3>
+            <h3 class="box-title col-md-4">【 影像学和内窥镜检查 】</h3>
           </div>
           <div class="box-body">
             <section class="box-body">
             <button class="btn btn-info" ngf-select="" ng-model="image" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-min-height="100"
-            ngf-resize="{width: 500, height: 500}">上传图片资料</button>
+            ngf-resize="{width: 500, height: 500}">上传图片资料<span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span></button>
             <div class="col-md-12">&nbsp</div>
             <section>
             <img ngf-src="image" id="blah2" width="500" height="200" class=" img-responsive img-thumbnail" alt="正在加载">
@@ -42,7 +42,7 @@
                 <tr>
                   <th style="text-align: -webkit-center;">检查项目</th>
                   <th style="width: 12%;text-align: -webkit-center;">检查日期</th>                  
-                  <th style="width: 23%;text-align: -webkit-center;">检查结果：</th>
+                  <th style="width: 24%;text-align: -webkit-center;">检查结果：</th>
                   <th style="text-align: -webkit-center;">排除胆道疾病</th>
                   <th style="text-align: -webkit-center;">排除食管胃底静脉曲张</th>
                 </tr>
@@ -78,7 +78,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverBultrasoundBiliaryTract" ng-model="liverBultrasoundBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -98,7 +97,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverBultrasoundEsophagealGastricVarices" ng-model="liverBultrasoundEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -128,7 +126,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverCtBiliaryTract" ng-model="liverCtBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -148,7 +145,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverCtEsophagealGastricVarices" ng-model="liverCtEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -179,7 +175,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverMriBiliaryTract" ng-model="liverMriBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -199,7 +194,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="liverMriEsophagealGastricVarices" ng-model="liverMriEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -229,7 +223,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="fibroscanBiliaryTract" ng-model="fibroscanBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -249,7 +242,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="fibroscanEsophagealGastricVarices" ng-model="fibroscanEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -279,7 +271,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="ercpBiliaryTract" ng-model="ercpBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -299,7 +290,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="ercpEsophagealGastricVarices" ng-model="ercpEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -329,7 +319,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="mrcpBiliaryTract" ng-model="mrcpBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -349,7 +338,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="mrcpEsophagealGastricVarices" ng-model="mrcpEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -379,7 +367,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="gastroscopeBiliaryTract" ng-model="gastroscopeBiliaryTract" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -399,7 +386,6 @@
                   </td>
                   <td height="38px" style=" text-align: -webkit-center; ">
                     <div class="box-body" style=" height: 25px; ">
-                      <span class="col-md-offset-1">
                       <input type="radio" name="gastroscopeEsophagealGastricVarices" ng-model="gastroscopeEsophagealGastricVarices" ng-value=1>
                       <span class="h5">是</span>
                       </span>
@@ -422,8 +408,10 @@
               </tbody>
             </table>
             <div class="box-footer col-md-offset-9">
-              <button type="submit" class="btn btn-primary" ng-click="test()">保存</button>
-              <button class="btn btn-primary" ng-click="layout()">退出</button>
+              <button class="btn btn-primary " ng-click="test()">保存
+          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+          </button>&nbsp
+          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
             </div>
           </div>
         </div>

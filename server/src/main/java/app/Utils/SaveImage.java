@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Created by Administrator on 2017/10/10 0010.
+ * 存储图片
  */
 @Component
 public class SaveImage {

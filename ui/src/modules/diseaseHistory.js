@@ -48,6 +48,22 @@ angular.module('diseaseHistory', [])
         $scope.pastDisease = data.pastDisease;
         $scope.epidemicTourism = data.epidemicTourism;
         $scope.epidemicText = data.epidemicText;
+        var personHistory = data.personHistory.split(' ');
+        if(personHistory.indexOf('饮酒')!=-1){
+          $scope.oneDrink = true;
+        }
+        if(personHistory.indexOf('吸烟')!=-1){
+          $scope.oneSmoke = true;
+        }
+        if(personHistory.indexOf('过敏')!=-1){
+          $scope.oneAllergy = true;
+        }
+        if(personHistory.indexOf('感染')!=-1){
+          $scope.oneInfect = true;
+        }
+        if(personHistory.indexOf('手术')!=-1){
+          $scope.oneOpera = true;
+        }
 
         if (data.medicineLiverDiseaseHistoryDetailDTOS.length == 0 || data.medicineLiverDiseaseHistoryDetailDTOS.length == 1) {
           count = 0;
@@ -83,6 +99,22 @@ angular.module('diseaseHistory', [])
       diseaseHistory.epidemicText = $scope.epidemicText;
       diseaseHistory.patientId = sessionStorage.getItem('mlPatientId');
       diseaseHistory.complete = true;
+      diseaseHistory.personHistory = '';
+      if($scope.oneDrink){
+        diseaseHistory.personHistory += ' 饮酒';
+      }
+      if($scope.oneSmoke){
+        diseaseHistory.personHistory += ' 吸烟';
+      }
+      if($scope.oneAllergy){
+        diseaseHistory.personHistory += ' 过敏';
+      }
+      if($scope.oneInfect){
+        diseaseHistory.personHistory += ' 感染';
+      }
+      if($scope.oneOpera){
+        diseaseHistory.personHistory += ' 手术';
+      }
 
       if ($scope.diseaseType != undefined) {
         diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS.push({
