@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.dto.MlPatientDTO;
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import app.service.CaseService;
@@ -26,7 +27,7 @@ public class CaseController {
     @GetMapping(value = "/{projectId}/{hospitalId}")
     @ApiOperation(value = "得到一个项目下医院下的病例")
     public PageDTO<PatientDTO> getCaseByProjectId(@PathVariable Long projectId,
-            @PathVariable Long hospitalId, @PageableDefault(value = 5) Pageable pageable) {
+                                                  @PathVariable Long hospitalId, @PageableDefault(value = 5) Pageable pageable) {
         return caseService.getCaseByProjectId(projectId, hospitalId, pageable);
     }
 
@@ -34,15 +35,22 @@ public class CaseController {
     @GetMapping(value = "/search/{projectId}/{caseName}")
     @ApiOperation(value = "通过项目id和病例名字项目下医院下的病例")
     public PageDTO<PatientDTO> getCaseByProjectId(@PathVariable Long projectId,
-            @PathVariable String caseName, @PageableDefault(value = 5) Pageable pageable) {
+                                                  @PathVariable String caseName, @PageableDefault(value = 5) Pageable pageable) {
         return caseService.getCaseByProjectIdAndCaseName(projectId, caseName, pageable);
+    }
+
+    @GetMapping(value = "/mlSearch/{projectId}/{caseName}")
+    @ApiOperation(value = "通过项目id和病例名字项目下医院下的病例")
+    public PageDTO<MlPatientDTO> getMlCaseByCaseName(@PathVariable Long projectId,
+                                                     @PathVariable String caseName, @PageableDefault(value = 5) Pageable pageable) {
+        return caseService.getMlCaseByCaseName(caseName, pageable);
     }
 
 
     @GetMapping(value = "/{projectId}")
     @ApiOperation(value = "通过项目id得到的病例")
     public PageDTO<PatientDTO> getCaseByProjectId(@PathVariable Long projectId,
-            @PageableDefault(value = 5) Pageable pageable) {
+                                                  @PageableDefault(value = 5) Pageable pageable) {
         return caseService.getCaseByProjectId(projectId, pageable);
     }
 

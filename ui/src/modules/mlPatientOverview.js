@@ -101,6 +101,7 @@ angular.module('mlPatientOverview', [])
         $scope.allergyHistory = '不详';
       }
       $scope.allergen = allergy.allergen;
+      $scope.description = allergy.description;
     }
 
     function getDiseaseHistory() {
@@ -140,6 +141,22 @@ angular.module('mlPatientOverview', [])
       }
       $scope.epidemicText = diseaseHistory.epidemicText;
       $scope.diseaseHistorys = diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS;
+      $scope.personHistory = '';
+      if(diseaseHistory.personHistory.indexOf('饮酒')!=-1){
+        $scope.personHistory += '饮酒 ';
+      }
+      if(diseaseHistory.personHistory.indexOf('吸烟')!=-1){
+        $scope.personHistory += '吸烟 ';
+      }
+      if(diseaseHistory.personHistory.indexOf('过敏')!=-1){
+        $scope.personHistory += '过敏 ';
+      }
+      if(diseaseHistory.personHistory.indexOf('感染')!=-1){
+        $scope.personHistory += '感染 ';
+      }
+      if(diseaseHistory.personHistory.indexOf('手术')!=-1){
+        $scope.personHistory += '手术 ';
+      }
     }
 
     function getDrink() {
@@ -868,7 +885,7 @@ angular.module('mlPatientOverview', [])
         }
 
         $scope.autoimmuneAntibodyDate = exclude.autoimmuneAntibodyDate;
-
+        $scope.otherVirusCheckDate = exclude.otherVirusCheckDate;
 
       });
     }
@@ -940,8 +957,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverBultrasoundBiliaryTract = '否';
       } else if (endos.liverBultrasoundBiliaryTract == '3') {
         $scope.liverBultrasoundBiliaryTract = '不适用';
-      } else if (endos.liverBultrasoundBiliaryTract == '4') {
-        $scope.liverBultrasoundBiliaryTract = '其他';
       }
 
       if (endos.liverBultrasoundEsophagealGastricVarices == '1') {
@@ -950,8 +965,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverBultrasoundEsophagealGastricVarices = '否';
       } else if (endos.liverBultrasoundEsophagealGastricVarices == '3') {
         $scope.liverBultrasoundEsophagealGastricVarices = '不适用';
-      } else if (endos.liverBultrasoundEsophagealGastricVarices == '4') {
-        $scope.liverBultrasoundEsophagealGastricVarices = '其他';
       }
 
       if (endos.liverCtBiliaryTract == '1') {
@@ -960,8 +973,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverCtBiliaryTract = '否';
       } else if (endos.liverCtBiliaryTract == '3') {
         $scope.liverCtBiliaryTract = '不适用';
-      } else if (endos.liverCtBiliaryTract == '4') {
-        $scope.liverCtBiliaryTract = '其他';
       }
 
       if (endos.liverCtEsophagealGastricVarices == '1') {
@@ -970,8 +981,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverCtEsophagealGastricVarices = '否';
       } else if (endos.liverCtEsophagealGastricVarices == '3') {
         $scope.liverCtEsophagealGastricVarices = '不适用';
-      } else if (endos.liverCtEsophagealGastricVarices == '4') {
-        $scope.liverCtEsophagealGastricVarices = '其他';
       }
 
       if (endos.liverMriBiliaryTract == '1') {
@@ -980,8 +989,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverMriBiliaryTract = '否';
       } else if (endos.liverMriBiliaryTract == '3') {
         $scope.liverMriBiliaryTract = '不适用';
-      } else if (endos.liverMriBiliaryTract == '4') {
-        $scope.liverMriBiliaryTract = '其他';
       }
 
       if (endos.liverMriEsophagealGastricVarices == '1') {
@@ -990,8 +997,6 @@ angular.module('mlPatientOverview', [])
         $scope.liverMriEsophagealGastricVarices = '否';
       } else if (endos.liverMriEsophagealGastricVarices == '3') {
         $scope.liverMriEsophagealGastricVarices = '不适用';
-      } else if (endos.liverMriEsophagealGastricVarices == '4') {
-        $scope.liverMriEsophagealGastricVarices = '其他';
       }
 
       if (endos.fibroscanBiliaryTract == '1') {
@@ -1000,8 +1005,6 @@ angular.module('mlPatientOverview', [])
         $scope.fibroscanBiliaryTract = '否';
       } else if (endos.fibroscanBiliaryTract == '3') {
         $scope.fibroscanBiliaryTract = '不适用';
-      } else if (endos.fibroscanBiliaryTract == '4') {
-        $scope.fibroscanBiliaryTract = '其他';
       }
 
       if (endos.fibroscanEsophagealGastricVarices == '1') {
@@ -1010,8 +1013,6 @@ angular.module('mlPatientOverview', [])
         $scope.fibroscanEsophagealGastricVarices = '否';
       } else if (endos.fibroscanEsophagealGastricVarices == '3') {
         $scope.fibroscanEsophagealGastricVarices = '不适用';
-      } else if (endos.fibroscanEsophagealGastricVarices == '4') {
-        $scope.fibroscanEsophagealGastricVarices = '其他';
       }
 
       if (endos.ercpBiliaryTract == '1') {
@@ -1020,8 +1021,6 @@ angular.module('mlPatientOverview', [])
         $scope.ercpBiliaryTract = '否';
       } else if (endos.ercpBiliaryTract == '3') {
         $scope.ercpBiliaryTract = '不适用';
-      } else if (endos.ercpBiliaryTract == '4') {
-        $scope.ercpBiliaryTract = '其他';
       }
 
       if (endos.ercpEsophagealGastricVarices == '1') {
@@ -1030,8 +1029,6 @@ angular.module('mlPatientOverview', [])
         $scope.ercpEsophagealGastricVarices = '否';
       } else if (endos.ercpEsophagealGastricVarices == '3') {
         $scope.ercpEsophagealGastricVarices = '不适用';
-      } else if (endos.ercpEsophagealGastricVarices == '4') {
-        $scope.ercpEsophagealGastricVarices = '其他';
       }
 
       if (endos.mrcpBiliaryTract == '1') {
@@ -1040,8 +1037,6 @@ angular.module('mlPatientOverview', [])
         $scope.mrcpBiliaryTract = '否';
       } else if (endos.mrcpBiliaryTract == '3') {
         $scope.mrcpBiliaryTract = '不适用';
-      } else if (endos.mrcpEsophagealGastricVarices == '4') {
-        $scope.mrcpEsophagealGastricVarices = '其他';
       }
 
       if (endos.mrcpEsophagealGastricVarices == '1') {
@@ -1050,8 +1045,6 @@ angular.module('mlPatientOverview', [])
         $scope.mrcpEsophagealGastricVarices = '否';
       } else if (endos.mrcpEsophagealGastricVarices == '3') {
         $scope.mrcpEsophagealGastricVarices = '不适用';
-      } else if (endos.mrcpEsophagealGastricVarices == '4') {
-        $scope.mrcpEsophagealGastricVarices = '其他';
       }
 
       if (endos.gastroscopeBiliaryTract == '1') {
@@ -1060,8 +1053,6 @@ angular.module('mlPatientOverview', [])
         $scope.gastroscopeBiliaryTract = '否';
       } else if (endos.gastroscopeBiliaryTract == '3') {
         $scope.gastroscopeBiliaryTract = '不适用';
-      } else if (endos.gastroscopeBiliaryTract == '4') {
-        $scope.gastroscopeBiliaryTract = '其他';
       }
 
       if (endos.gastroscopeEsophagealGastricVarices == '1') {
@@ -1070,8 +1061,6 @@ angular.module('mlPatientOverview', [])
         $scope.gastroscopeEsophagealGastricVarices = '否';
       } else if (endos.gastroscopeEsophagealGastricVarices == '3') {
         $scope.gastroscopeEsophagealGastricVarices = '不适用';
-      } else if (endos.gastroscopeEsophagealGastricVarices == '4') {
-        $scope.gastroscopeEsophagealGastricVarices = '其他';
       }
 
       $scope.liverBultrasoundDate = endos.liverBultrasoundDate;
@@ -1087,6 +1076,7 @@ angular.module('mlPatientOverview', [])
       $scope.mrcp = endos.mrcp;
       $scope.gastroscopeDate = endos.gastroscopeDate;
       $scope.gastroscope = endos.gastroscope;
+      $scope.otherImagingEndoscopyDTOS = endos.otherImagingEndoscopyDTOS;
 
     }
 

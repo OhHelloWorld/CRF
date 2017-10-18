@@ -63,6 +63,13 @@
                     {{allergen}}
                   </td>
                 </tr>
+                <tr>
+                  <td>3</td>
+                  <td>补充说明</td>
+                  <td>
+                    {{description}}
+                  </td>
+                </tr>
               </tbody>
               </table>
             </div>
@@ -112,6 +119,11 @@
                   <td>疫区旅游史详情</td>
                   <td>{{epidemicText}}</td>
                 </tr>
+                <tr>
+                  <td>5</td>
+                  <td>个人史</td>
+                  <td>{{personHistory}}</td>
+                </tr>
                 </tbody>
               </table>
             </div>
@@ -120,12 +132,14 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-3">疾病种类</th>
+                  <th class="col-md-1">序号</th>
+                  <th class="col-md-2">疾病种类</th>
                   <th class="col-sm-3">疾病名称</th>
                   <th class="col-sm-3">是否痊愈</th>
                   <th class="col-sm-3">曾用药（药名）</th>
                 </tr>
                 <tr ng-repeat = "diseaseHistory in diseaseHistorys">
+                  <td>{{$index+1}}</td>
                   <td>{{diseaseHistory.diseaseType}}</td>
                   <td>{{diseaseHistory.diseaseName}}</td>
                   <td>{{diseaseHistory.existence==1?"是":(diseaseHistory.existence==2?"否":"")}}</td>
@@ -173,12 +187,14 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-3">饮酒种类</th>
+                  <th class="col-md-1">序号</th>
+                  <th class="col-md-2">饮酒种类</th>
                   <th class="col-md-3">饮酒数量（毫升/天）</th>
                   <th class="col-md-3">饮酒年限（年）</th>
                   <th class="col-md-3">酒精度数（度）</th>
                 </tr>
                 <tr ng-repeat = "drink in drinks">
+                  <td>{{$index + 1}}</td>
                   <td>{{drink.drinkType}}</td>
                   <td>{{drink.drinkQuantity}}</td>
                   <td>{{drink.drinkLife}}</td>
@@ -215,6 +231,7 @@
                   <th>是否减量</th>
                   <th>既往该药暴露史</th>
                   <th>既往暴露引起肝损</th>
+                  <th>厂家及批号</th>
                 </tr>
                 <tr ng-repeat = "drug in drugs">
                   <td>{{drug.genericName}}</td>
@@ -228,6 +245,7 @@
                   <td>{{drug.decrement}}</td>
                   <td>{{drug.drugExposure}}</td>
                   <td>{{drug.exposureLiverDamage}}</td>
+                  <td>{{drug.manufactor}}</td>
                 </tr>
               </tbody>
               </table>
@@ -271,6 +289,7 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-1">序号</th>
                   <th class="col-md-2">症状体征</th>
                   <th class="col-md-2">描述</th>
                   <th class="col-md-2">出现的时间</th>
@@ -278,6 +297,7 @@
                   <th class="col-md-2">出院时症状体征状态</th>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>乏力</td>
                   <td>{{weak}}</td>
                   <td>{{weakBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -285,6 +305,7 @@
                   <td>{{weakDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>2</td>
                   <td>纳差</td>
                   <td>{{anorexia}}</td>
                   <td>{{anorexiaBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -292,6 +313,7 @@
                   <td>{{anorexiaDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>3</td>
                   <td>膨胀</td>
                   <td>{{abdominalDistention}}</td>
                   <td>{{abdominalDistentionBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -299,6 +321,7 @@
                   <td>{{abdominalDistentionDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>黄疸</td>
                   <td>{{jaundice}}</td>
                   <td>{{jaundiceBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -306,6 +329,7 @@
                   <td>{{jaundiceDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>4</td>
                   <td>恶心</td>
                   <td>{{nausea}}</td>
                   <td>{{nauseaBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -313,6 +337,7 @@
                   <td>{{nauseaDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>5</td>
                   <td>呕吐</td>
                   <td>{{vomit}}</td>
                   <td>{{vomitBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -320,6 +345,7 @@
                   <td>{{vomitDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>齿龈出血</td>
                   <td>{{gingivalBleeding}}</td>
                   <td>{{gingivalBleedingBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -327,6 +353,7 @@
                   <td>{{gingivalBleedingDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>6</td>
                   <td>鼻衄</td>
                   <td>{{epistaxis}}</td>
                   <td>{{epistaxisBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -334,6 +361,7 @@
                   <td>{{epistaxisDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>7</td>
                   <td>肝区疼痛</td>
                   <td>{{liverPain}}</td>
                   <td>{{liverPainBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -341,6 +369,7 @@
                   <td>{{liverPainDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>8</td>
                   <td>肝肿大</td>
                   <td>{{hepatomegaly}}</td>
                   <td>{{hepatomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -348,6 +377,7 @@
                   <td>{{hepatomegalyDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>脾肿大</td>
                   <td>{{splenomegaly}}</td>
                   <td>{{splenomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -355,6 +385,7 @@
                   <td>{{splenomegalyDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>9</td>
                   <td>发热</td>
                   <td>{{fever}}</td>
                   <td>{{feverBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -362,6 +393,7 @@
                   <td>{{feverDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>10</td>
                   <td>皮疹</td>
                   <td>{{rash}}</td>
                   <td>{{rashBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -369,6 +401,7 @@
                   <td>{{rashDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>11</td>
                   <td>关节痛</td>
                   <td>{{arthralgia}}</td>
                   <td>{{arthralgiaBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -376,6 +409,7 @@
                   <td>{{arthralgiaDischarge}}</td>
                 </tr>
                 <tr>
+                  <td>12</td>
                   <td>皮肤瘙痒</td>
                   <td>{{skinItch}}</td>
                   <td>{{skinItchBeginDate | date:"yyyy-MM-dd"}}</td>
@@ -390,6 +424,7 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-1">序号</th>
                   <th class="col-md-2">症状体征</th>
                   <th class="col-md-2">描述</th>
                   <th class="col-md-2">出现的时间</th>
@@ -397,6 +432,7 @@
                   <th class="col-md-2">出院时症状体征状态</th>
                 </tr>
                 <tr ng-repeat = "symptom in symptoms">
+                  <td>{{$index + 1}}</td>
                   <td>{{symptom.name}}</td>
                   <td>{{symptom.description}}</td>
                   <td>{{symptom.beginDate | date:"yyyy-MM-dd"}}</td>
@@ -728,31 +764,37 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-3">检查内容</th>
-                  <th class="col-sm-3">检查日期</th>
+                  <th class="col-md-2">序号</th>
+                  <th class="col-md-2">检查内容</th>
+                  <th class="col-sm-2">检查日期</th>
                   <th>结果</th>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>HBsAg</td>
                   <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{hbsag}}</td>
                 </tr>
                 <tr>
+                  <td>2</td>
                   <td>HBsAb</td>
                   <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{hbsab}}</td>
                 </tr>
                 <tr>
+                  <td>3</td>
                   <td>HBcAb</td>
                   <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{hbcab}}</td>
                 </tr>
                 <tr>
+                  <td>4</td>
                   <td>HBeAg</td>
                   <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{hbeag}}</td>
                 </tr>
                 <tr>
+                  <td>5</td>
                   <td>HBeAb</td>
                   <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{hbeab}}</td>
@@ -765,31 +807,37 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-2">序号</th>
                   <th class="col-md-3">检查内容</th>
                   <th class="col-md-3">检查日期</th>
                   <th>结果</th>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>抗核抗体(ANA)</td>
                   <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{ana}}</td>
                 </tr>
                 <tr>
+                  <td>2</td>
                   <td>抗线粒体抗体(AMA)</td>
                   <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{ama}}</td>
                 </tr>
                 <tr>
+                  <td>3</td>
                   <td>抗线粒体抗体M2型(AMA-M2)</td>
                   <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{amam2}}</td>
                 </tr>
                 <tr>
+                  <td>4</td>
                   <td>抗平滑肌抗体(SMA)</td>
                   <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{sma}}</td>
                 </tr>
                 <tr>
+                  <td>5</td>
                   <td>肝肾线粒体抗体(LKM)</td>
                   <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{lkm}}</td>
@@ -802,21 +850,25 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-2">序号</th>
                   <th class="col-md-3">检查内容</th>
                   <th class="col-md-3">检查日期</th>
                   <th>结果</th>
                 </tr>
                 <tr>
+                  <td>1</td>
                   <td>巨细胞病毒</td>
                   <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{cytomegalovirus}}</td>
                 </tr>
                 <tr>
+                  <td>2</td>
                   <td>EB病毒</td>
                   <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{ebviruses}}</td>
                 </tr>
                 <tr>
+                  <td>3</td>
                   <td>单纯疱疹病毒</td>
                   <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
                   <td>{{herpesSimplex}}</td>
@@ -981,6 +1033,29 @@
                 </tbody>
               </table>
               </div>
+
+              <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                <tr class="info">
+                  <th>序号</th>
+                  <th>检查项目</th>
+                  <th>检查日期</th>
+                  <th>检查结果</th>
+                  <th>排除胆道疾病</th>
+                  <th>排除食管胃底静脉曲张</th>
+                </tr>
+                <tr ng-repeat = "otherImaging in otherImagingEndoscopyDTOS">
+                  <td>{{$index+1}}</td>
+                  <td>{{otherImaging.item}}</td>
+                  <td>{{otherImaging.itemDate | date:"yyyy-MM-dd"}}</td>
+                  <td>{{otherImaging.result}}</td>
+                  <td>{{otherImaging.biliaryTract == 1?"是":(otherImaging.biliaryTract == 2?"否":(otherImaging.biliaryTract == 3?"不适用":""))}}</td>
+                  <td>{{otherImaging.esophagealGastricVarices == 1?"是":(otherImaging.esophagealGastricVarices == 2?"否":(otherImaging.esophagealGastricVarices == 3?"不适用":""))}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
             </div>
     </div>
 
@@ -1029,7 +1104,7 @@
                 <tbody>
                 <tr class="info">
                   <th class="col-md-2">序号</th>
-                  <th class="col-md-3">检查项目</th>
+                  <th class="col-md-5">检查项目</th>
                   <th>检查结果</th>
                 </tr>
                 <tr>
@@ -1102,6 +1177,7 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-1">序号</th>
                   <th class="col-md-2">通用名</th>
                   <th class="col-md-2">商品名</th>
                   <th class="col-md-2">用药方法</th>
@@ -1110,6 +1186,7 @@
                   <th class="col-md-2">结束日期</th>
                 </tr>
                 <tr ng-repeat = "treatmentDetail in treatmentDetails">
+                  <td>{{$index+1}}</td>
                   <td>{{treatmentDetail.genericName}}</td>
                   <td>{{treatmentDetail.tradeName}}</td>
                   <td>{{treatmentDetail.detailMethod}}</td>
@@ -1126,12 +1203,14 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
+                  <th class="col-md-1">序号</th>
                   <th class="col-md-2">治疗措施</th>
                   <th class="col-md-2">治疗措施详述</th>
                   <th class="col-md-2">开始日期</th>
                   <th class="col-md-2">结束日期</th>
                 </tr>
                 <tr ng-repeat = "treatmentOther in treatmentOthers">
+                  <td>{{$index+1}}</td>
                   <td>{{treatmentOther.method}}</td>
                   <td>{{treatmentOther.methodDetail}}</td>
                   <td>{{treatmentOther.otherStartDate | date:"yyyy-MM-dd"}}</td>

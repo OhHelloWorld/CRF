@@ -8,25 +8,22 @@ angular.module('biologicalSamples', [])
       mlBiologicalSamples.patientId = sessionStorage.getItem('mlPatientId');
       mlBiologicalSamples.biologicalSamples = '';
       if ($scope.biologicalSamples1) {
-        mlBiologicalSamples.biologicalSamples += ' 否';
-      }
-      if ($scope.biologicalSamples2) {
-        mlBiologicalSamples.biologicalSamples += ' 是';
-      }
-      if ($scope.biologicalSamples3) {
         mlBiologicalSamples.biologicalSamples += ' 血清';
       }
-      if ($scope.biologicalSamples4) {
+      if ($scope.biologicalSamples2) {
         mlBiologicalSamples.biologicalSamples += ' 血浆';
       }
-      if ($scope.biologicalSamples5) {
-        mlBiologicalSamples.biologicalSamples += ' 组织学';
+      if ($scope.biologicalSamples3) {
+        mlBiologicalSamples.biologicalSamples += ' 组织';
       }
-      if ($scope.biologicalSamples6) {
+      if ($scope.biologicalSamples4) {
         mlBiologicalSamples.biologicalSamples += ' 尿液';
       }
-      if ($scope.biologicalSamples7) {
-        mlBiologicalSamples.biologicalSamples += ' 不详';
+      if ($scope.biologicalSamples5) {
+        mlBiologicalSamples.biologicalSamples += ' 药物';
+      }
+      if ($scope.biologicalSamples6) {
+        mlBiologicalSamples.biologicalSamples += ' 其他';
       }
       mlBiologicalSamples.complete = true;
 
@@ -45,26 +42,23 @@ angular.module('biologicalSamples', [])
         url: '/api/mlBiologicalSamples/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var responseBio = response.data.biologicalSamples.split(' ');
-        if (responseBio.indexOf('否') != -1) {
-          $scope.biologicalSamples1 = true;
-        }
-        if (responseBio.indexOf('是') != -1) {
-          $scope.biologicalSamples2 = true;
-        }
         if (responseBio.indexOf('血清') != -1) {
-          $scope.biologicalSamples3 = true;
+          $scope.biologicalSample1s = true;
         }
         if (responseBio.indexOf('血浆') != -1) {
-          $scope.biologicalSamples4 = true;
+          $scope.biologicalSamples2 = true;
         }
-        if (responseBio.indexOf('组织学') != -1) {
-          $scope.biologicalSamples5 = true;
+        if (responseBio.indexOf('组织') != -1) {
+          $scope.biologicalSamples3 = true;
         }
         if (responseBio.indexOf('尿液') != -1) {
-          $scope.biologicalSamples6 = true;
+          $scope.biologicalSamples4 = true;
         }
-        if (responseBio.indexOf('不详') != -1) {
-          $scope.biologicalSamples7 = true;
+        if (responseBio.indexOf('药物') != -1) {
+          $scope.biologicalSamples5 = true;
+        }
+        if (responseBio.indexOf('其他') != -1) {
+          $scope.biologicalSamples6 = true;
         }
       });
     }

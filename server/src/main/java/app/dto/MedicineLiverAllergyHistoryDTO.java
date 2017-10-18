@@ -9,6 +9,7 @@ public class MedicineLiverAllergyHistoryDTO {
     private int patientId;
     private int allergyHistory;//既往过敏史
     private String allergen;//过敏原
+    private String description;
     private boolean complete;
 
     public int getId() {
@@ -41,6 +42,14 @@ public class MedicineLiverAllergyHistoryDTO {
 
     public void setAllergen(String allergen) {
         this.allergen = allergen;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isComplete() {

@@ -50,7 +50,7 @@ create table medicine_liver_disease_history(
 	past_disease int,#既往病史
     epidemic_tourism int,#疫区旅游史
     epidemic_text varchar(50),#疫区旅游史详情
-    personHistory varchar(30),#个人史
+    person_history varchar(30),#个人史
 	complete boolean default false,
     primary key(id)
 );
@@ -71,7 +71,8 @@ create table medicine_liver_allergy_history(
 	id int not null auto_increment,
 	patient_id int,
 	allergy_history int,#既往过敏史
-	allergen text,#过敏原
+	allergen varchar(50),#过敏原
+    description text,#补充说明
 	complete boolean,
     primary key(id)
 );
@@ -384,6 +385,18 @@ create table medicine_liver_imaging_endoscopy(
     image_describe varchar(100),
     complete boolean,
 	primary key(id)
+);
+
+#与影像学和内窥镜检查关联表
+create table medicine_liver_other_imaging_endoscopy(
+	id int auto_increment not null,
+    imaging_endoscopy_id int,
+    item varchar(50),
+    item_date Date,
+    result text,
+    biliary_tract int,
+    esophageal_gastric_varices int,
+    primary key(id)
 );
 
 #肝脏组织学检查

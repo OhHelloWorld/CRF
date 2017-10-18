@@ -2,7 +2,15 @@ import angular from 'angular';
 import ngFileUpload from 'ng-file-upload';
 
 angular.module('imagingEndoscopy', [ngFileUpload])
-  .controller('imagingEndoscopyController', ['$scope', '$http', '$state', 'localStorageService', 'Upload', function($scope, $http, $state, localStorageService, Upload) {
+  .controller('imagingEndoscopyController', ['$scope', '$http', '$state', 'localStorageService', 'Upload','$compile', function($scope, $http, $state, localStorageService, Upload,$compile) {
+
+    $scope.itemObj = {};
+    $scope.itemDateObj = {};
+    $scope.resultObj = {};
+    $scope.biliaryTractObj = {};
+    $scope.esophagealGastricVaricesObj = {};
+    $scope.otherImagingEndoscopyDTOS = [];
+
     getPatientInfo();
     $('#datepicker1').datepicker({
       autoclose: true
@@ -25,6 +33,23 @@ angular.module('imagingEndoscopy', [ngFileUpload])
     $('#datepicker7').datepicker({
       autoclose: true
     });
+    $('#itemDate').datepicker({
+      autoclose: true
+    });
+
+
+    var count = 0;
+
+    $scope.addItem = function() {
+      count += 1;
+      var template = '<tr><td><input type="text" ng-model="itemObj[' + count + ']" class="form-control" placeholder="检查项目"></td><td><input type="text" id="itemDate' + count + '" ng-model="itemDateObj[' + count + ']" class="form-control" placeholder="检查日期"></td><td><textarea class="form-control" ng-model="resultObj[' + count + ']" placeholder="检查结果" rows="4"></textarea></td><td><div class="box-body"><input type="radio" name="biliaryTract' + count + '" ng-model="biliaryTractObj[' + count + ']" ng-value=1><span class="h5">是</span></span><br/><input type="radio" name="biliaryTract' + count + '" ng-model="biliaryTractObj[' + count + ']" ng-value=2><span class="h5">否</span></span><br/><input type="radio" name="biliaryTract' + count + '" ng-model="biliaryTractObj[' + count + ']" ng-value=3><span class="h5">不适用</span></span></div></td><td><div class="box-body"><input type="radio" name="esophagealGastricVarices' + count + '" ng-model="esophagealGastricVaricesObj[' + count + ']" ng-value=1><span class="h5">是</span></span><br/><input type="radio" name="esophagealGastricVarices' + count + '" ng-model="esophagealGastricVaricesObj[' + count + ']" ng-value=2><span class="h5">否</span></span><br/><input type="radio" name="esophagealGastricVarices' + count + '" ng-model="esophagealGastricVaricesObj[' + count + ']" ng-value=3><span class="h5">不适用</span></span></div></td></tr>';
+      var compileFn = $compile(template);
+      var dom = compileFn($scope);
+      dom.appendTo('.tbody');
+      $('#itemDate' + count).datepicker({
+        autoclose: true
+      });
+    };
 
     // 06/14/2017 ==> 2017-06-14
     function formatDateFromBack(date) {
@@ -101,9 +126,29 @@ angular.module('imagingEndoscopy', [ngFileUpload])
       allDate.gastroscopeDate = checkDate($scope.gastroscopeDate);
       allDate.gastroscopeBiliaryTract = $scope.gastroscopeBiliaryTract;
       allDate.gastroscopeEsophagealGastricVarices = $scope.gastroscopeEsophagealGastricVarices;
-      
+
       allDate.imageDescribe = $scope.imageDescribe;
       allDate.complete = true;
+      allDate.otherImagingEndoscopyDTOS = [];
+      if ($scope.item != undefined) {
+        allDate.otherImagingEndoscopyDTOS.push({
+          item: $scope.item,
+          result: $scope.result,
+          itemDate: new Date($scope.itemDate),
+          biliaryTract: $scope.biliaryTract,
+          esophagealGastricVarices: $scope.esophagealGastricVarices
+        });
+      }
+      for (var i = 1; i <= count; i++) {
+        allDate.otherImagingEndoscopyDTOS.push({
+          // id: ($scope.detailIdObj[i + 1]),
+          item: $scope.itemObj[i],
+          result: $scope.resultObj[i],
+          itemDate: new Date($scope.itemDateObj[i]),
+          biliaryTract: $scope.biliaryTractObj[i],
+          esophagealGastricVarices: $scope.esophagealGastricVaricesObj[i]
+        });
+      }
 
       if ($scope.image == $scope.imageName) {
         allDate.image = $scope.tempImage;
@@ -229,6 +274,38 @@ angular.module('imagingEndoscopy', [ngFileUpload])
         $scope.gastroscopeEsophagealGastricVarices = 1;
       }
 
+
+      if (allData.otherImagingEndoscopyDTOS.length != 0) {
+        if (allData.otherImagingEndoscopyDTOS.length == 1) {
+          count = 0;
+        } else {
+          count = allData.otherImagingEndoscopyDTOS.length - 1;
+        }
+        $scope.item = allData.otherImagingEndoscopyDTOS[0].item;
+        $scope.result = allData.otherImagingEndoscopyDTOS[0].result;
+        $scope.itemDate = showDate(new Date((allData.otherImagingEndoscopyDTOS[0]).itemDate));
+        $scope.biliaryTract = allData.otherImagingEndoscopyDTOS[0].biliaryTract;
+        $scope.esophagealGastricVarices = allData.otherImagingEndoscopyDTOS[0].esophagealGastricVarices;
+      } else {
+        count = 0;
+      }
+
+      for (var i = 1; i < allData.otherImagingEndoscopyDTOS.length; i++) {
+        var template = '<tr><td><input type="text" ng-model="itemObj[' + i + ']" class="form-control" placeholder="检查项目"></td><td><input type="text" id="itemDate' + i + '" ng-model="itemDateObj[' + i + ']" class="form-control" placeholder="检查日期"></td><td><textarea class="form-control" ng-model="resultObj[' + i + ']" placeholder="检查结果" rows="4"></textarea></td><td><div class="box-body"><input type="radio" name="biliaryTract' + i + '" ng-model="biliaryTractObj[' + i + ']" ng-value=1><span class="h5">是</span></span><br/><input type="radio" name="biliaryTract' + i + '" ng-model="biliaryTractObj[' + i + ']" ng-value=2><span class="h5">否</span></span><br/><input type="radio" name="biliaryTract' + i + '" ng-model="biliaryTractObj[' + i + ']" ng-value=3><span class="h5">不适用</span></span></div></td><td><div class="box-body"><input type="radio" name="esophagealGastricVarices' + i + '" ng-model="esophagealGastricVaricesObj[' + i + ']" ng-value=1><span class="h5">是</span></span><br/><input type="radio" name="esophagealGastricVarices' + i + '" ng-model="esophagealGastricVaricesObj[' + i + ']" ng-value=2><span class="h5">否</span></span><br/><input type="radio" name="esophagealGastricVarices' + i + '" ng-model="esophagealGastricVaricesObj[' + i + ']" ng-value=3><span class="h5">不适用</span></span></div></td></tr>';
+        var compileFn = $compile(template);
+        var dom = compileFn($scope);
+        dom.appendTo('.tbody');
+        $('#itemDate' + i).datepicker({
+          autoclose: true
+        });
+        console.log(allData.otherImagingEndoscopyDTOS[i]);
+        $scope.itemObj[i] = allData.otherImagingEndoscopyDTOS[i].item;
+        $scope.resultObj[i] = allData.otherImagingEndoscopyDTOS[i].result;
+        $scope.biliaryTractObj[i] = allData.otherImagingEndoscopyDTOS[i].biliaryTract;
+        $scope.esophagealGastricVaricesObj[i] = allData.otherImagingEndoscopyDTOS[i].esophagealGastricVarices;
+        $scope.itemDateObj[i] = showDate(new Date((allData.otherImagingEndoscopyDTOS[i]).itemDate));
+      }
+
     });
 
 
@@ -264,8 +341,16 @@ angular.module('imagingEndoscopy', [ngFileUpload])
       });
     }
 
-    $scope.layout = function(){
+    $scope.layout = function() {
       $state.go('mlHome');
     };
+
+    function showDate(date) {
+      if (date.toString() != 'Invalid Date') {
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+      } else {
+        return undefined;
+      }
+    }
 
   }]);

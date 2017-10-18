@@ -1,6 +1,7 @@
 package app.service;
 
 import app.dto.MlPatientDTO;
+import app.entities.MlPatientDO;
 import org.springframework.data.domain.Pageable;
 
 import app.dto.PageDTO;
@@ -12,7 +13,7 @@ public interface MlPatientService {
      *
      * @param MlpatientDTO
      */
-    public int saveMlPatientGeneralInformation(MlPatientDTO MlpatientDTO);
+    int saveMlPatientGeneralInformation(MlPatientDTO MlpatientDTO);
 
     /**
      * 根据id得到患者一般资料
@@ -20,7 +21,7 @@ public interface MlPatientService {
      * @param id
      * @return
      */
-    public MlPatientDTO getMlPatientGeneralInformation(int id);
+    MlPatientDTO getMlPatientGeneralInformation(int id);
 
     /**
      * 得到患者的一般资料的填写状态
@@ -28,21 +29,21 @@ public interface MlPatientService {
      * @param id
      * @return
      */
-    public Boolean getCompleteById(int id);
+    Boolean getCompleteById(int id);
 
     /**
      * 得到所有患者的一般资料
      *
      * @return
      */
-    public PageDTO<MlPatientDTO> getAllPatient(int projectId, Pageable pageable);
+    PageDTO<MlPatientDTO> getAllPatient(int projectId, Pageable pageable);
 
     /**
      * 编辑患者的一般资料
      *
      * @param mlPatientDTO
      */
-    public void editMlPatient(MlPatientDTO mlPatientDTO);
+    void editMlPatient(MlPatientDTO mlPatientDTO);
 
     /**
      * 通过字符串进行查询
@@ -51,6 +52,8 @@ public interface MlPatientService {
      * @param pageable
      * @return
      */
-    public PageDTO<MlPatientDTO> getMlPatientByQueryStr(int projectId ,String queryStr, Pageable pageable);
+    PageDTO<MlPatientDTO> getMlPatientByQueryStr(int projectId ,String queryStr, Pageable pageable);
 
+
+    MlPatientDTO convertToMlPatientDTO(MlPatientDO mlPatientDO);
 }

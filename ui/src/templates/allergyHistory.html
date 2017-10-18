@@ -48,12 +48,22 @@
           <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=3><span class="h4">不详</span>
         </span>
       </div>
-      <div class="box-body">
-      <div class="input-group col-md-5">
+
+      <form class="form-inline">
+      <div class="box-body form-group">
+      <div class="input-group">
                 <span class="input-group-addon">过敏原（过敏物质）</span>
                 <input type="text" class="form-control" ng-model="allergen">
       </div>
       </div>
+      <div class="box-body form-group">
+      <div class="input-group">
+                <span class="input-group-addon">补充说明</span>
+                <input type="text" class="form-control" ng-model="description">
+      </div>
+      </div>
+      
+      </form>
       </div>
       </div>
       <div class="col-md-offset-9">

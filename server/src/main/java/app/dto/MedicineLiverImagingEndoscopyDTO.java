@@ -1,6 +1,7 @@
 package app.dto;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/8/24 0024.
@@ -41,6 +42,7 @@ public class MedicineLiverImagingEndoscopyDTO {
     private String image;
     private String imageDescribe;
     private boolean complete;
+    private List<OtherImagingEndoscopyDTO> otherImagingEndoscopyDTOS;
 
     public int getId() {
         return id;
@@ -304,5 +306,13 @@ public class MedicineLiverImagingEndoscopyDTO {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public List<OtherImagingEndoscopyDTO> getOtherImagingEndoscopyDTOS() {
+        return otherImagingEndoscopyDTOS;
+    }
+
+    public void setOtherImagingEndoscopyDTOS(List<OtherImagingEndoscopyDTO> otherImagingEndoscopyDTOS) {
+        this.otherImagingEndoscopyDTOS = otherImagingEndoscopyDTOS;
     }
 }

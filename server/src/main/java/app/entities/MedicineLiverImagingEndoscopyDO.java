@@ -2,6 +2,7 @@ package app.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/8/24 0024.
@@ -58,6 +59,8 @@ public class MedicineLiverImagingEndoscopyDO {
     private String image;
     private String imageDescribe;
     private boolean complete;
+    @OneToMany(mappedBy = "medicineLiverImagingEndoscopyDO",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    private List<OtherImagingEndoscopyDO> otherImagingEndoscopyDOS;
 
     public int getId() {
         return id;
@@ -321,5 +324,13 @@ public class MedicineLiverImagingEndoscopyDO {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public List<OtherImagingEndoscopyDO> getOtherImagingEndoscopyDOS() {
+        return otherImagingEndoscopyDOS;
+    }
+
+    public void setOtherImagingEndoscopyDOS(List<OtherImagingEndoscopyDO> otherImagingEndoscopyDOS) {
+        this.otherImagingEndoscopyDOS = otherImagingEndoscopyDOS;
     }
 }

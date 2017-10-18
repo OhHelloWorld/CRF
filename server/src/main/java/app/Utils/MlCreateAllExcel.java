@@ -309,7 +309,6 @@ public class MlCreateAllExcel{
             row.createCell(11).setCellValue(mlPatientDOs.get(i).getHospitalizedAge());
             row.createCell(12).setCellValue(mlPatientDOs.get(i).getDischargeDate());
             row.createCell(13).setCellValue(mlPatientDOs.get(i).getHospitalizedNumber());
-            row.createCell(14).setCellValue(mlPatientDOs.get(i).getHospitalizedDepartment());
 
             StringBuilder admissionDiagnosis = new StringBuilder();
             StringBuilder dischargeDiagnosis = new StringBuilder();

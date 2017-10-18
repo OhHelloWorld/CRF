@@ -138,7 +138,6 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDO.setAdmissionDate(mlPatientDTO.getAdmissionDate());
         mlPatientDO.setDischargeDate(mlPatientDTO.getDischargeDate());
         mlPatientDO.setHospitalizedNumber(mlPatientDTO.getHospitalizedNumber());
-        mlPatientDO.setHospitalizedDepartment(mlPatientDTO.getHospitalizedDepartment());
         mlPatientDO.setHospitalizedAge(mlPatientDTO.getHospitalizedAge());
         mlPatientDO.setCareer(mlPatientDTO.getCareer());
         List<AdmissionDiagnosisDO> admissionDiagnosisDOS = new ArrayList<>();
@@ -203,7 +202,6 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDO.setDepartment(mlPatientDTO.getDepartment());
         mlPatientDO.setDischargeDate(mlPatientDTO.getDischargeDate());
         mlPatientDO.setHospitalizedNumber(mlPatientDTO.getHospitalizedNumber());
-        mlPatientDO.setHospitalizedDepartment(mlPatientDTO.getHospitalizedDepartment());
         mlPatientDO.setHospitalizedAge(mlPatientDTO.getHospitalizedAge());
         mlPatientDO.setNation(mlPatientDTO.getNation());
         mlPatientDO.setGender(mlPatientDTO.getGender());
@@ -217,6 +215,7 @@ public class MlPatientServiceImpl implements MlPatientService {
         return mlPatientDO;
     }
 
+    @Override
     public MlPatientDTO convertToMlPatientDTO(MlPatientDO mlPatientDO) {
         MlPatientDTO mlPatientDTO = new MlPatientDTO();
         mlPatientDTO.setId(mlPatientDO.getId());
@@ -234,7 +233,6 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDTO.setAdmissionDate(mlPatientDO.getAdmissionDate());
         mlPatientDTO.setDischargeDate(mlPatientDO.getDischargeDate());
         mlPatientDTO.setHospitalizedNumber(mlPatientDO.getHospitalizedNumber());
-        mlPatientDTO.setHospitalizedDepartment(mlPatientDO.getHospitalizedDepartment());
         mlPatientDTO.setHospitalizedAge(mlPatientDO.getHospitalizedAge());
         mlPatientDTO.setCareer(mlPatientDO.getCareer());
         List<AdmissionDiagnosisDTO> admissionDiagnosisDTOS = new ArrayList<>();

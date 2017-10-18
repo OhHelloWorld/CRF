@@ -23,6 +23,7 @@ public class MlAllergyHistoryServiceImpl implements MlAllergyHistoryService,MlCo
         medicineLiverAllergyHistoryDO.setComplete(medicineLiverAllergyHistoryDTO.isComplete());
         medicineLiverAllergyHistoryDO.setAllergen(medicineLiverAllergyHistoryDTO.getAllergen());
         medicineLiverAllergyHistoryDO.setAllergyHistory(medicineLiverAllergyHistoryDTO.getAllergyHistory());
+        medicineLiverAllergyHistoryDO.setDescription(medicineLiverAllergyHistoryDTO.getDescription());
         return medicineLiverAllergyHistoryDO;
     }
 
@@ -32,6 +33,7 @@ public class MlAllergyHistoryServiceImpl implements MlAllergyHistoryService,MlCo
         medicineLiverAllergyHistoryDTO.setAllergen(medicineLiverAllergyHistoryDO.getAllergen());
         medicineLiverAllergyHistoryDTO.setComplete(medicineLiverAllergyHistoryDO.isComplete());
         medicineLiverAllergyHistoryDTO.setId(medicineLiverAllergyHistoryDO.getId());
+        medicineLiverAllergyHistoryDTO.setDescription(medicineLiverAllergyHistoryDO.getDescription());
         return medicineLiverAllergyHistoryDTO;
     }
 

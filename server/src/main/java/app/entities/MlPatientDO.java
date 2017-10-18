@@ -29,7 +29,6 @@ public class MlPatientDO {
     private Date admissionDate;//入院日期
     private Date dischargeDate;//出院日期
     private String hospitalizedNumber;//住院号
-    private String hospitalizedDepartment;//住院科室
     private int hospitalizedAge;//住院年龄
     private String career;//职业
     private String hospital;
@@ -112,14 +111,6 @@ public class MlPatientDO {
 
     public void setDischargeDate(Date dischargeDate) {
         this.dischargeDate = dischargeDate;
-    }
-
-    public String getHospitalizedDepartment() {
-        return hospitalizedDepartment;
-    }
-
-    public void setHospitalizedDepartment(String hospitalizedDepartment) {
-        this.hospitalizedDepartment = hospitalizedDepartment;
     }
 
     public int getHospitalizedAge() {

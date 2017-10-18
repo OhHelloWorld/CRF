@@ -115,7 +115,6 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
         $scope.department = data.department;
         $scope.hospitalizedAge = data.hospitalizedAge;
         $scope.hospitalizedNumber = data.hospitalizedNumber;
-        $scope.hospitalizedDepartment = data.hospitalizedDepartment;
         if (data.admissionDiagnosisDTOS.length != 0) {
           $scope.intoDiagnosis = data.admissionDiagnosisDTOS[0].diagnosis;
           $scope.admissId = data.admissionDiagnosisDTOS[0].id;
@@ -172,7 +171,6 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
       patient.hospitalizedAge = $scope.hospitalizedAge;
       patient.dischargeDate = new Date($scope.dischargeDate);
       patient.hospitalizedNumber = $scope.hospitalizedNumber;
-      patient.hospitalizedDepartment = $scope.hospitalizedDepartment;
 
       if ($scope.intoDiagnosis != undefined) {
         patient.admissionDiagnosisDTOS.push({

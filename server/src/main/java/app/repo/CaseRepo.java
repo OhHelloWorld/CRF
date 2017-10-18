@@ -1,5 +1,6 @@
 package app.repo;
 
+import app.entities.MlPatientDO;
 import app.entities.PatientDO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,11 +16,11 @@ public interface CaseRepo extends PagingAndSortingRepository<PatientDO, Long> {
     @Query(value = "select * from patient c where c.project_id = ?1 and hospital_id = ?2 order by ?#{#pageable}",
             nativeQuery = true)
     Page<PatientDO> findByProjectIdAndHospitalId(Long projectId, Long hospitalId,
-            Pageable pageable);
+                                                 Pageable pageable);
 
-    @Query(value = "select * from patient c where c.project_id = ?1 and name like %?2% order by ?#{#pageable}",
+    @Query(value = "select * from patient where name like %?1% order by ?#{#pageable}",
             nativeQuery = true)
-    Page<PatientDO> findByProjectIdAndCaseName(Long projectId, String caseName, Pageable pageable);
+    Page<PatientDO> findByProjectIdAndCaseName(String caseName, Pageable pageable);
 
     @Query(value = "select * from patient c where c.project_id = ?1 order by ?#{#pageable}",
             nativeQuery = true)

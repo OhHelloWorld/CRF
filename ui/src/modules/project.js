@@ -69,8 +69,10 @@ angular.module('project', [uiRouter, 'chart.js', 'page'])
   function searchIllness() {
     if (!$stateParams.project_searchInput) {
       $scope.url = '/api/case/' + localStorageService.get('project').id;
-    } else {
+    } else if(localStorageService.get('project').id == 1){
       $scope.url = '/api/case/search/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
+    } else if(localStorageService.get('project').id == 2){
+      $scope.url = '/api/case/mlSearch/' + localStorageService.get('project').id + '/' + $stateParams.project_searchInput;
     }
   }
 

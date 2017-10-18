@@ -10,6 +10,7 @@ angular.module('allergyHistory', [])
       mlAllergyHistory.patientId = sessionStorage.getItem('mlPatientId');
       mlAllergyHistory.allergyHistory = $scope.allergyHistory;
       mlAllergyHistory.allergen = $scope.allergen;
+      mlAllergyHistory.description = $scope.description;
       mlAllergyHistory.complete = true;
       $http({
         method:'POST',
@@ -32,6 +33,7 @@ angular.module('allergyHistory', [])
         var data1 = response.data;
         $scope.allergyHistory = data1.allergyHistory;
         $scope.allergen = data1.allergen;
+        $scope.description = data1.description;
       });
     }
 

@@ -1,5 +1,6 @@
 package app.service;
 
+import app.dto.MlPatientDTO;
 import app.dto.PageDTO;
 import app.dto.PatientDTO;
 import org.springframework.data.domain.Pageable;
@@ -15,4 +16,6 @@ public interface CaseService {
                                                       Pageable pageable);
 
     PageDTO<PatientDTO> getCaseByProjectId(Long projectId, Pageable pageable);
+
+    PageDTO<MlPatientDTO>getMlCaseByCaseName(String caseName, Pageable pageable);
 }

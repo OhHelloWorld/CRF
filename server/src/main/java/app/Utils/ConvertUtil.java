@@ -2,6 +2,8 @@ package app.Utils;
 
 import app.dto.*;
 import app.entities.*;
+import app.repo.ImagingEndoScopyRepo;
+import app.repo.OtherImagingEndoscopyRepo;
 import app.repo.ProjectRoleRepo;
 import app.repo.UserProjectRoleRepo;
 import app.service.BoneDensityService;
@@ -72,6 +74,9 @@ public class ConvertUtil {
 
     @Autowired
     private TreatmentService treatmentService;
+
+    @Autowired
+    private OtherImagingEndoscopyRepo otherImagingEndoscopyRepo;
 
     public PatientDTO convertToPatientDTO(PatientDO patientDO) {
         PatientDTO patientDTO = new PatientDTO();
@@ -835,6 +840,27 @@ public class ConvertUtil {
         mDO.setGastroscopeEsophagealGastricVarices(mDTO.getGastroscopeEsophagealGastricVarices());
         mDO.setComplete(mDTO.isComplete());
         mDO.setImageDescribe(mDTO.getImageDescribe());
+
+        List<OtherImagingEndoscopyDO> otherImagingEndoscopyDOS = new ArrayList<>();
+        List<OtherImagingEndoscopyDTO> otherImagingEndoscopyDTOS = mDTO.getOtherImagingEndoscopyDTOS();
+
+        if(mDTO.getId() != 0){
+            otherImagingEndoscopyRepo.deleteOtherByEId(mDTO.getId());
+        }
+
+        if (!otherImagingEndoscopyDTOS.isEmpty() && otherImagingEndoscopyDTOS != null) {
+            for (OtherImagingEndoscopyDTO otherImagingEndoscopyDTO : otherImagingEndoscopyDTOS) {
+                OtherImagingEndoscopyDO otherImagingEndoscopyDO = new OtherImagingEndoscopyDO();
+                otherImagingEndoscopyDO.setBiliaryTract(otherImagingEndoscopyDTO.getBiliaryTract());
+                otherImagingEndoscopyDO.setEsophagealGastricVarices(otherImagingEndoscopyDTO.getEsophagealGastricVarices());
+                otherImagingEndoscopyDO.setItem(otherImagingEndoscopyDTO.getItem());
+                otherImagingEndoscopyDO.setItemDate(otherImagingEndoscopyDTO.getItemDate());
+                otherImagingEndoscopyDO.setResult(otherImagingEndoscopyDTO.getResult());
+                otherImagingEndoscopyDO.setMedicineLiverImagingEndoscopyDO(mDO);
+                otherImagingEndoscopyDOS.add(otherImagingEndoscopyDO);
+            }
+        }
+        mDO.setOtherImagingEndoscopyDOS(otherImagingEndoscopyDOS);
         return mDO;
     }
 
@@ -872,6 +898,23 @@ public class ConvertUtil {
         mDTO.setGastroscopeBiliaryTract(mDO.getGastroscopeBiliaryTract());
         mDTO.setGastroscopeEsophagealGastricVarices(mDO.getGastroscopeEsophagealGastricVarices());
         mDTO.setImageDescribe(mDO.getImageDescribe());
+
+        List<OtherImagingEndoscopyDTO> otherImagingEndoscopyDTOS = new ArrayList<>();
+        List<OtherImagingEndoscopyDO> otherImagingEndoscopyDOS = mDO.getOtherImagingEndoscopyDOS();
+        if(!otherImagingEndoscopyDOS.isEmpty() && otherImagingEndoscopyDOS != null) {
+            for (OtherImagingEndoscopyDO otherImagingEndoscopyDO : otherImagingEndoscopyDOS) {
+                OtherImagingEndoscopyDTO otherImagingEndoscopyDTO = new OtherImagingEndoscopyDTO();
+                otherImagingEndoscopyDTO.setResult(otherImagingEndoscopyDO.getResult());
+                otherImagingEndoscopyDTO.setItemDate(otherImagingEndoscopyDO.getItemDate());
+                otherImagingEndoscopyDTO.setItem(otherImagingEndoscopyDO.getItem());
+                otherImagingEndoscopyDTO.setBiliaryTract(otherImagingEndoscopyDO.getBiliaryTract());
+                otherImagingEndoscopyDTO.setEsophagealGastricVarices(otherImagingEndoscopyDO.getEsophagealGastricVarices());
+                otherImagingEndoscopyDTO.setId(otherImagingEndoscopyDO.getId());
+                otherImagingEndoscopyDTO.setImagingEndoscopyId(otherImagingEndoscopyDO.getMedicineLiverImagingEndoscopyDO().getId());
+                otherImagingEndoscopyDTOS.add(otherImagingEndoscopyDTO);
+            }
+        }
+        mDTO.setOtherImagingEndoscopyDTOS(otherImagingEndoscopyDTOS);
         return mDTO;
     }
 
