@@ -66,9 +66,13 @@ home.controller('homeController', ['$scope', '$http', '$rootScope', '$state', 'l
       $('#infoModal').modal({
         keyboard: true
       });
-      // var excelUrl = 'http://sggb.navyblue.cn/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
-      var excelUrl = 'localhost:8080/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
-      console.log(excelUrl);
+      var excelUrl = '';
+      if (localStorageService.get('user').realName == '上海市解放军第八五医院') {
+        excelUrl = 'http://sggb.navyblue.cn/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      } else if (localStorageService.get('user'.realName == '曙光医院')) {
+        excelUrl = 'http://85hos.navyblue.cn/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
+      }
+      // var excelUrl = 'localhost:8080/excelDown/' + localStorageService.get('user').realName + 'patientInformation.xlsx';
       window.open(excelUrl);
     }, function fail() {
       $('#infoModal').modal('hide');
