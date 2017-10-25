@@ -361,7 +361,7 @@ public class MlCreateAllExcel{
                 StringBuilder drug = new StringBuilder();
                 if(!mlDrugDO.getMedicineLiverSuspectedDrugDetailDOS().isEmpty() && mlDrugDO.getMedicineLiverSuspectedDrugDetailDOS()!=null) {
                     for (MedicineLiverSuspectedDrugDetailDO medicineLiverSuspectedDrugDetailDO : mlDrugDO.getMedicineLiverSuspectedDrugDetailDOS()) {
-                        drug.append(medicineLiverSuspectedDrugDetailDO.getGenericName() + "-" + medicineLiverSuspectedDrugDetailDO.getTradeName() + "-" + medicineLiverSuspectedDrugDetailDO.getTreatComplaint() + "-" + medicineLiverSuspectedDrugDetailDO.getMedicationMethod() + "-" + medicineLiverSuspectedDrugDetailDO.getDose() + "-" + medicineLiverSuspectedDrugDetailDO.getBeginDate() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugWithDrawal() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugWithDrawalDate() + medicineLiverSuspectedDrugDetailDO.getDecrement() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugExposure() + "-" + medicineLiverSuspectedDrugDetailDO.getExposureLiverDamage() + ";");
+//                        drug.append(medicineLiverSuspectedDrugDetailDO.getGenericName() + "-" + medicineLiverSuspectedDrugDetailDO.getTradeName() + "-" + medicineLiverSuspectedDrugDetailDO.getTreatComplaint() + "-" + medicineLiverSuspectedDrugDetailDO.getMedicationMethod() + "-" + medicineLiverSuspectedDrugDetailDO.getDose() + "-" + medicineLiverSuspectedDrugDetailDO.getBeginDate() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugWithDrawal() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugWithDrawalDate() + medicineLiverSuspectedDrugDetailDO.getDecrement() + "-" + medicineLiverSuspectedDrugDetailDO.getDrugExposure() + "-" + medicineLiverSuspectedDrugDetailDO.getExposureLiverDamage() + ";");
                     }
                 }
                 row.createCell(24).setCellValue(drug.toString());
@@ -564,7 +564,7 @@ public class MlCreateAllExcel{
             }
 
             if(mlHistologicalDO != null){
-                row.createCell(164).setCellValue(mlHistologicalDO.getLiverHistologicalResult());
+//                row.createCell(164).setCellValue(mlHistologicalDO.getLiverHistologicalResult());
             }
 
             if(mlInjuryDO != null){

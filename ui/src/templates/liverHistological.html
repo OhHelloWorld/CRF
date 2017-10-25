@@ -31,21 +31,172 @@
   <br>
   <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
       <br>
+
       <div class="box box-info">
-      <div class="box-header with-border">
-              <h3 class="box-title">【 检查日期 】</h3>
-      </div>
-      <div class="box-body">
-        	<input type="text" id="liverHistologicalDate" ng-model="liverHistologicalDate" class="form-control">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 门管区周围或周围间隔区交界面肝炎（碎片状坏死） 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <input type="radio" name="interfaceHepatitis" ng-model="interfaceHepatitis" ng-value=1>
+          <span class="h5">无</span>
+          <br/>
+          <input type="radio" name="interfaceHepatitis" ng-model="interfaceHepatitis" ng-value=2>
+          <span class="h5">轻微（局灶性，少数门管区）</span>
+          <br/>
+          <input type="radio" name="interfaceHepatitis" ng-model="interfaceHepatitis" ng-value=3>
+          <span class="h5">轻微/中等（局灶性，大多数门管区）</span>
+          <br/>
+          <input type="radio" name="interfaceHepatitis" ng-model="interfaceHepatitis" ng-value=4>
+          <span class="h5">中等（连续性，< 50%的门管区及间隔区）</span>
+          <br/>
+          <input type="radio" name="interfaceHepatitis" ng-model="interfaceHepatitis" ng-value=5>
+          <span class="h5">严重（连续性，> 50%的门管区及间隔区）</span>
+        </div>
       </div>
 
-      <div class="box-header with-border">
-              <h3 class="box-title">【 检查结果（结论参见“肝脏组织学检查结果参考”） 】</h3>
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 融合性坏死 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=1>
+          <span class="h5">无</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=2>
+          <span class="h5">局灶性融合性坏死</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=3>
+          <span class="h5">部分区域3区坏死</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=4>
+          <span class="h5">大多数区域三区坏死</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=5>
+          <span class="h5">三区坏死 + 偶见门管区 - 中心静脉（P-C）桥接</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=6>
+          <span class="h5">三区坏死 + 多发性门管区 - 中心静脉（P-C）桥接</span>
+          <br/>
+          <input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value=7>
+          <span class="h5">全小叶或多发性小叶坏死</span>
+          <br/>
+        </div>
       </div>
-      <div class="box-body">
-        	<input type="textarea" ng-model="liverHistologicalResult" class="form-control">
+
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+            <h3 class="box-title">【 局灶性（斑状）溶解性坏死，凋亡及局灶性炎症 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <input type="radio" name="focal" ng-model="focal" ng-value=1>
+          <span class="h5">无</span>
+          <br/>
+          <input type="radio" name="focal" ng-model="focal" ng-value=2>
+          <span class="h5">每 *10 倍视野区下有 1 个坏死区或更少</span>
+          <br/>
+          <input type="radio" name="focal" ng-model="focal" ng-value=3>
+          <span class="h5">每 *10 倍视野区下有 2-4 个坏死区</span>
+          <br/>
+          <input type="radio" name="focal" ng-model="focal" ng-value=4>
+          <span class="h5">每 *10 倍视野区下有 5-10 个坏死区</span>
+          <br/>
+          <input type="radio" name="focal" ng-model="focal" ng-value=5>
+          <span class="h5">每 *10 倍视野区下有 10 个以上坏死区或更少</span>
+        </div>
       </div>
+
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+            <h3 class="box-title">【 门管区炎症 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <input type="radio" name="portalInflammation" ng-model="portalInflammation" ng-value=1>
+          <span class="h5">无</span>
+          <br/>
+          <input type="radio" name="portalInflammation" ng-model="portalInflammation" ng-value=2>
+          <span class="h5">轻度，部分或所有门管区</span>
+          <br/>
+          <input type="radio" name="portalInflammation" ng-model="portalInflammation" ng-value=3>
+          <span class="h5">中度，部分或所有门管区</span>
+          <br/>
+          <input type="radio" name="portalInflammation" ng-model="portalInflammation" ng-value=4>
+          <span class="h5">中度/严重，所有门管区</span>
+          <br/>
+          <input type="radio" name="portalInflammation" ng-model="portalInflammation" ng-value=5>
+          <span class="h5">严重，所有门管区</span>
+        </div>
       </div>
+
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 纤维化评分 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=1>
+          <span class="h5">无纤维</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=2>
+          <span class="h5">部分门管区有纤维增生，有或无短的纤维隔膜</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=3>
+          <span class="h5">大多数门管区有纤维增生，有或无短的纤维隔膜</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=4>
+          <span class="h5">大多数门管区有纤维增生，偶见门管区以纤维桥连</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=5>
+          <span class="h5">门管区纤维增生，同时伴有明显的纤维桥连（门馆与门馆之间及门馆与中心静脉之间）</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=6>
+          <span class="h5">三区坏死 + 多发性门管区 - 中心静脉（P-C）桥接</span>
+          <br/>
+          <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=7>
+          <span class="h5">全小叶或多发性小叶坏死</span>
+          <br/>
+        </div>
+      </div>
+
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 DILI严重程度分级 】</h3>
+                <a id="dili" tabindex="0" class="btn btn-default" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="DILI严重程度分级" data-content="  目前国际上通常将急性 DILI 的严重程度分为1- 5级级。
+                美国 DILIN 前瞻性研究对其进一步数据化。结合我国
+                肝衰竭指南，对分级略作修正
+                0 级（无肝损伤）:患者对暴露药物可耐受，无肝毒性反应。
+                1级（轻度肝损伤） ;血清ALT和/或AIP呈可恢复
+                性升高，TBil < 2.5 X ULN （2.5mg/d或42.75 μmal/L），
+                且INR < 1.5。多数患者可适应。可有或无乏力，虚弱，恶心、
+                厌食、右上腹痛、黄疸、癌痒，皮疹或体质盘减轻等症状”。
+                2级（中度肝损伤）；血清ALT和/或ALP升高，
+                TBil ≥ 2.5 x ULN,或虽无TBil升高但INR ≥ 1.5。上述
+                症状可有加重
+                3级（重度肝损伤）。血清A1T和广或ALP升高，
+                TBil ≥ 5 x ULN i5 mg/dl 或85.5 umol/L）.伴或不伴
+                INR ≥ 1.5。患者立状进一步加重，需要住院治疗，或住院
+                时间延长。
+                4级（ALF）：血清ALT和（或）ALP水平升高，TBil ≥ 10x ULN （10mg/dl 或171 μ mol/L） 或每日上升 ≥1.0mg/dl（17.1μ mol/L），INR ≥ 2.0或PTA < 40%。可
+                同时出现（1）腹水或肝性脑病，或（2）与DILI相关的其他
+                器官功能衰竭
+                5级（致命）因DILI死亡，或需接受肝移植才能存话。" 
+                ng-click="diliClick()"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+        </div>
+        
+        <div class="box-body">
+          <input type="text" class="form-control" ng-model="severity">
+        </div>
+      </div>
+      
       <div class="col-md-offset-9 ">
       <button class="btn btn-primary " ng-click="save()">保存
           <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>

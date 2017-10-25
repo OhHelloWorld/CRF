@@ -10,6 +10,9 @@ public class MedicineLiverSuspectedDrugDTO {
     private int patientId;
     private boolean complete;
     private List<MedicineLiverSuspectedDrugDetailDTO> medicineLiverSuspectedDrugDetailDTOS;
+    private List<MlProprietaryChineseMedicineDTO> mlProprietaryChineseMedicineDTOS;
+    private List<MlChineseHerbalMedicineDTO> mlChineseHerbalMedicineDTOS;
+    private List<MlSuspendChineseMedicineDTO> mlSuspendChineseMedicineDTOS;
 
     public int getId() {
         return id;
@@ -41,5 +44,29 @@ public class MedicineLiverSuspectedDrugDTO {
 
     public void setMedicineLiverSuspectedDrugDetailDTOS(List<MedicineLiverSuspectedDrugDetailDTO> medicineLiverSuspectedDrugDetailDTOS) {
         this.medicineLiverSuspectedDrugDetailDTOS = medicineLiverSuspectedDrugDetailDTOS;
+    }
+
+    public List<MlProprietaryChineseMedicineDTO> getMlProprietaryChineseMedicineDTOS() {
+        return mlProprietaryChineseMedicineDTOS;
+    }
+
+    public void setMlProprietaryChineseMedicineDTOS(List<MlProprietaryChineseMedicineDTO> mlProprietaryChineseMedicineDTOS) {
+        this.mlProprietaryChineseMedicineDTOS = mlProprietaryChineseMedicineDTOS;
+    }
+
+    public List<MlChineseHerbalMedicineDTO> getMlChineseHerbalMedicineDTOS() {
+        return mlChineseHerbalMedicineDTOS;
+    }
+
+    public void setMlChineseHerbalMedicineDTOS(List<MlChineseHerbalMedicineDTO> mlChineseHerbalMedicineDTOS) {
+        this.mlChineseHerbalMedicineDTOS = mlChineseHerbalMedicineDTOS;
+    }
+
+    public List<MlSuspendChineseMedicineDTO> getMlSuspendChineseMedicineDTOS() {
+        return mlSuspendChineseMedicineDTOS;
+    }
+
+    public void setMlSuspendChineseMedicineDTOS(List<MlSuspendChineseMedicineDTO> mlSuspendChineseMedicineDTOS) {
+        this.mlSuspendChineseMedicineDTOS = mlSuspendChineseMedicineDTOS;
     }
 }

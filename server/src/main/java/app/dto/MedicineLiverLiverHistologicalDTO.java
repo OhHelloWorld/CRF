@@ -9,8 +9,13 @@ public class MedicineLiverLiverHistologicalDTO {
 
     private int id;
     private int patientId;
-    private String liverHistologicalResult;//检查结果
-    private Date liverHistologicalDate;//检查日期
+    private int interfaceHepatitis;
+    private int confluentNecrosis;
+    private int focal;
+    private int portalInflammation;
+    private int fibrosis;
+    private String severity;
+
     private boolean complete;
 
     public int getId() {
@@ -29,20 +34,52 @@ public class MedicineLiverLiverHistologicalDTO {
         this.patientId = patientId;
     }
 
-    public String getLiverHistologicalResult() {
-        return liverHistologicalResult;
+    public int getInterfaceHepatitis() {
+        return interfaceHepatitis;
     }
 
-    public void setLiverHistologicalResult(String liverHistologicalResult) {
-        this.liverHistologicalResult = liverHistologicalResult;
+    public void setInterfaceHepatitis(int interfaceHepatitis) {
+        this.interfaceHepatitis = interfaceHepatitis;
     }
 
-    public Date getLiverHistologicalDate() {
-        return liverHistologicalDate;
+    public int getConfluentNecrosis() {
+        return confluentNecrosis;
     }
 
-    public void setLiverHistologicalDate(Date liverHistologicalDate) {
-        this.liverHistologicalDate = liverHistologicalDate;
+    public void setConfluentNecrosis(int confluentNecrosis) {
+        this.confluentNecrosis = confluentNecrosis;
+    }
+
+    public int getFocal() {
+        return focal;
+    }
+
+    public void setFocal(int focal) {
+        this.focal = focal;
+    }
+
+    public int getPortalInflammation() {
+        return portalInflammation;
+    }
+
+    public void setPortalInflammation(int portalInflammation) {
+        this.portalInflammation = portalInflammation;
+    }
+
+    public int getFibrosis() {
+        return fibrosis;
+    }
+
+    public void setFibrosis(int fibrosis) {
+        this.fibrosis = fibrosis;
+    }
+
+    public String getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
     }
 
     public boolean isComplete() {

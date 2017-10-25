@@ -15,6 +15,12 @@ public class MedicineLiverSuspectedDrugDO {
     private boolean complete;
     @OneToMany(mappedBy = "medicineLiverSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MedicineLiverSuspectedDrugDetailDO> medicineLiverSuspectedDrugDetailDOS;
+    @OneToMany(mappedBy = "mlSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<MlProprietaryChineseMedicineDO> mlProprietaryChineseMedicineDOS;
+    @OneToMany(mappedBy = "mlSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<MlChineseHerbalMedicineDO> mlChineseHerbalMedicineDOS;
+    @OneToMany(mappedBy = "mlSuspectedDrugDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<MlSuspendChineseMedicineDO> mlSuspendChineseMedicineDOS;
 
     public int getId() {
         return id;
@@ -46,5 +52,29 @@ public class MedicineLiverSuspectedDrugDO {
 
     public void setMedicineLiverSuspectedDrugDetailDOS(List<MedicineLiverSuspectedDrugDetailDO> medicineLiverSuspectedDrugDetailDOS) {
         this.medicineLiverSuspectedDrugDetailDOS = medicineLiverSuspectedDrugDetailDOS;
+    }
+
+    public List<MlProprietaryChineseMedicineDO> getMlProprietaryChineseMedicineDOS() {
+        return mlProprietaryChineseMedicineDOS;
+    }
+
+    public void setMlProprietaryChineseMedicineDOS(List<MlProprietaryChineseMedicineDO> mlProprietaryChineseMedicineDOS) {
+        this.mlProprietaryChineseMedicineDOS = mlProprietaryChineseMedicineDOS;
+    }
+
+    public List<MlChineseHerbalMedicineDO> getMlChineseHerbalMedicineDOS() {
+        return mlChineseHerbalMedicineDOS;
+    }
+
+    public void setMlChineseHerbalMedicineDOS(List<MlChineseHerbalMedicineDO> mlChineseHerbalMedicineDOS) {
+        this.mlChineseHerbalMedicineDOS = mlChineseHerbalMedicineDOS;
+    }
+
+    public List<MlSuspendChineseMedicineDO> getMlSuspendChineseMedicineDOS() {
+        return mlSuspendChineseMedicineDOS;
+    }
+
+    public void setMlSuspendChineseMedicineDOS(List<MlSuspendChineseMedicineDO> mlSuspendChineseMedicineDOS) {
+        this.mlSuspendChineseMedicineDOS = mlSuspendChineseMedicineDOS;
     }
 }

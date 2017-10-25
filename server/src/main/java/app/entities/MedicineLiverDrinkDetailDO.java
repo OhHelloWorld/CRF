@@ -17,7 +17,7 @@ public class MedicineLiverDrinkDetailDO {
     private String drinkType;//饮酒种类
     private String drinkQuantity;//饮酒数量
     private String drinkLife;//饮酒年限
-        private String proof;//酒精精度
+    private String proof;//酒精精度
 
     public int getId() {
         return id;

@@ -1,22 +1,25 @@
 import angular from 'angular';
 
 angular.module('liverHistological', [])
-  .controller('liverHistologicalController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+  .controller('liverHistologicalController', ['$scope', '$http', '$state', 'localStorageService',function($scope, $http, $state,localStorageService) {
     getLiverHistological();
     getMlPatient();
 
     var mlLiverHistological = {};
 
-    $('#liverHistologicalDate').datepicker({
-      autoclose: true
-    });
+    $scope.diliClick = function() {
+      $('#dili').popover('toggle');
+    };
 
     $scope.save = function() {
       mlLiverHistological.patientId = sessionStorage.getItem('mlPatientId');
-      mlLiverHistological.liverHistologicalResult = $scope.liverHistologicalResult;
-      mlLiverHistological.liverHistologicalDate = new Date($scope.liverHistologicalDate);
+      mlLiverHistological.interfaceHepatitis = $scope.interfaceHepatitis;
+      mlLiverHistological.confluentNecrosis = $scope.confluentNecrosis;
+      mlLiverHistological.focal = $scope.focal;
+      mlLiverHistological.portalInflammation = $scope.portalInflammation;
+      mlLiverHistological.fibrosis = $scope.fibrosis;
+      mlLiverHistological.severity = $scope.severity;
       mlLiverHistological.complete = true;
-
       $http({
         method: 'POST',
         url: '/api/mlLiverHistological',
@@ -32,12 +35,12 @@ angular.module('liverHistological', [])
         url: '/api/mlLiverHistological/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         var data = response.data;
-        $scope.liverHistologicalResult = data.liverHistologicalResult;
-        if (data.liverHistologicalDate) {
-          var date = new Date(data.liverHistologicalDate);
-          $scope.liverHistologicalDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-        }
-        $scope.complete = data.complete;
+        $scope.interfaceHepatitis = data.interfaceHepatitis;
+        $scope.confluentNecrosis = data.confluentNecrosis;
+        $scope.focal = data.focal;
+        $scope.portalInflammation = data.portalInflammation;
+        $scope.fibrosis = data.fibrosis;
+        $scope.severity = data.severity;
       });
     }
 

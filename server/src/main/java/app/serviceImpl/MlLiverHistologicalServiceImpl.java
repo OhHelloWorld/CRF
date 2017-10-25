@@ -21,17 +21,25 @@ public class MlLiverHistologicalServiceImpl implements MlLiverHistologicalServic
         MedicineLiverLiverHistologicalDTO medicineLiverLiverHistologicalDTO = new MedicineLiverLiverHistologicalDTO();
         medicineLiverLiverHistologicalDTO.setComplete(medicineLiverLiverHistologicalDO.isComplete());
         medicineLiverLiverHistologicalDTO.setId(medicineLiverLiverHistologicalDO.getId());
-        medicineLiverLiverHistologicalDTO.setLiverHistologicalDate(medicineLiverLiverHistologicalDO.getLiverHistologicalDate());
-        medicineLiverLiverHistologicalDTO.setLiverHistologicalResult(medicineLiverLiverHistologicalDO.getLiverHistologicalResult());
+        medicineLiverLiverHistologicalDTO.setConfluentNecrosis(medicineLiverLiverHistologicalDO.getConfluentNecrosis());
+        medicineLiverLiverHistologicalDTO.setFibrosis(medicineLiverLiverHistologicalDO.getFibrosis());
+        medicineLiverLiverHistologicalDTO.setFocal(medicineLiverLiverHistologicalDO.getFocal());
+        medicineLiverLiverHistologicalDTO.setInterfaceHepatitis(medicineLiverLiverHistologicalDO.getInterfaceHepatitis());
+        medicineLiverLiverHistologicalDTO.setPortalInflammation(medicineLiverLiverHistologicalDO.getPortalInflammation());
+        medicineLiverLiverHistologicalDTO.setSeverity(medicineLiverLiverHistologicalDO.getSeverity());
         return medicineLiverLiverHistologicalDTO;
     }
 
     private MedicineLiverLiverHistologicalDO convertToEntity(MedicineLiverLiverHistologicalDTO medicineLiverLiverHistologicalDTO){
         MedicineLiverLiverHistologicalDO medicineLiverLiverHistologicalDO = new MedicineLiverLiverHistologicalDO();
-        medicineLiverLiverHistologicalDO.setLiverHistologicalResult(medicineLiverLiverHistologicalDTO.getLiverHistologicalResult());
-        medicineLiverLiverHistologicalDO.setLiverHistologicalDate(medicineLiverLiverHistologicalDTO.getLiverHistologicalDate());
         medicineLiverLiverHistologicalDO.setComplete(medicineLiverLiverHistologicalDTO.isComplete());
         medicineLiverLiverHistologicalDO.setPatientId(medicineLiverLiverHistologicalDTO.getPatientId());
+        medicineLiverLiverHistologicalDO.setSeverity(medicineLiverLiverHistologicalDTO.getSeverity());
+        medicineLiverLiverHistologicalDO.setInterfaceHepatitis(medicineLiverLiverHistologicalDTO.getInterfaceHepatitis());
+        medicineLiverLiverHistologicalDO.setFocal(medicineLiverLiverHistologicalDTO.getFocal());
+        medicineLiverLiverHistologicalDO.setConfluentNecrosis(medicineLiverLiverHistologicalDTO.getConfluentNecrosis());
+        medicineLiverLiverHistologicalDO.setFibrosis(medicineLiverLiverHistologicalDTO.getFibrosis());
+        medicineLiverLiverHistologicalDO.setPortalInflammation(medicineLiverLiverHistologicalDTO.getPortalInflammation());
         return medicineLiverLiverHistologicalDO;
     }
 

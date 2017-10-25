@@ -3,6 +3,7 @@ import angular from 'angular';
 angular.module('diseaseHistory', [])
   .controller('diseaseHistoryController', ['$scope', '$http', '$state', 'localStorageService', '$compile', function($scope, $http, $state, localStorageService, $compile) {
 
+    
     var diseaseHistory = {};
     $scope.diseaseNameObj = {};
     $scope.diseaseTypeObj = {};

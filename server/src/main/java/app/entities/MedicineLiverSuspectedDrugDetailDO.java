@@ -17,7 +17,7 @@ public class MedicineLiverSuspectedDrugDetailDO {
     private MedicineLiverSuspectedDrugDO medicineLiverSuspectedDrugDO;
     private String genericName;//通用名
     private String tradeName;//商品名
-    private String treatComplaint;//治疗疾病
+    private String drugClassification;//药物种类
     private String medicationMethod;//用药方法
     private String dose;//日剂量
     private Date beginDate;//开始日期
@@ -63,12 +63,12 @@ public class MedicineLiverSuspectedDrugDetailDO {
         this.tradeName = tradeName;
     }
 
-    public String getTreatComplaint() {
-        return treatComplaint;
+    public String getDrugClassification() {
+        return drugClassification;
     }
 
-    public void setTreatComplaint(String treatComplaint) {
-        this.treatComplaint = treatComplaint;
+    public void setDrugClassification(String drugClassification) {
+        this.drugClassification = drugClassification;
     }
 
     public String getMedicationMethod() {

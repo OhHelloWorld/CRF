@@ -111,7 +111,7 @@ create table medicine_liver_suspected_drug_detail(
 	medicine_liver_suspected_drug_id int,
 	generic_name varchar(50),#通用名
 	trade_name varchar(50),#商品名
-	treat_complaint varchar(50),#治疗疾病
+	drug_classification varchar(50),#治疗疾病
 	medication_method varchar(50),#用药方法
 	dose varchar(10),#日剂量
 	begin_date Date,#开始日期
@@ -403,8 +403,12 @@ create table medicine_liver_other_imaging_endoscopy(
 create table medicine_liver_liver_histological(
 	id int not null auto_increment,
 	patient_id int,
-	liver_histological_result varchar(200),#检查结果
-	liver_histological_date Date,#检查日期
+	interface_hepatitis int,#门管区交界面肝炎
+    confluent_necrosis int,#融合性坏死
+	focal int,#局灶性
+    portal_inflammation int,#门管区炎症
+    fibrosis int,#纤维化评分
+    severity text,#肝病严重程度
 	complete boolean,
 	primary key(id)
 );
@@ -472,6 +476,42 @@ create table medicine_liver_biological_samples(
 	biological_samples varchar(50),#是否留置
 	complete boolean,
 	primary key(id)
+);
+
+create table ml_proprietary_chinese_medicine(
+	id int not null auto_increment,
+    ml_drug_id int not null,
+    pro_name varchar(50),
+    manufactor varchar(50),
+    constitute varchar(100),
+    suspend_constitute varchar(50),
+    pro_dose varchar(50),
+    pro_begin_time Date,
+    pro_end_time Date,
+    pro_category varchar(10),
+    primary key(id)
+);
+
+create table ml_chinese_herbal_medicine(
+	id int not null auto_increment,
+    ml_drug_id int not null,
+    herbal_name varchar(50),
+    herbal_dose varchar(50),
+    herbal_begin_time Date,
+    herbal_end_time Date,
+    buy_from varchar(50),
+    herbal_category varchar(10),
+    primary key(id)
+);
+
+create table ml_suspend_chinese_medicine(
+	id int not null auto_increment,
+    ml_drug_id int not null,
+    sus_name varchar(50),
+    sample varchar(5),
+    number varchar(50),
+    sus_category varchar(10),
+    primary key(id)
 );
 
 

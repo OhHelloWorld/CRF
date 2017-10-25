@@ -34,7 +34,7 @@
       <div class="box box-info">
       <div class="box-body">
               <div class="box-header with-border">
-                <h3 class="box-title">【 详情 】<sub style="color: green">（日剂量：mg、g、ug、ml、L、片、粒、包、IU、其他、不详）</sub></h3>
+                <h3 class="box-title">【 西药 】<sub style="color: green">（日剂量：mg、g、ug、ml、L、片、粒、包、IU、其他、不详）</sub></h3>
               </div>
               <div class="box-body" id="drug">
                 <div class="col-sm-3">
@@ -53,12 +53,35 @@
                     <input class="form-control" ng-model="tradeName">
                   </div>
                 </div>
+
                 <div class="col-sm-3">
                   <div class="input-group">
                     <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 治疗疾病</i>
+                      <i style="font-style: inherit;"> &ensp; 厂家及批号</i>
                     </div>
-                    <input class="form-control" ng-model="treatComplaint">
+                    <input type="text" ng-model="manufactor" class="form-control">
+                  </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 药物分类</i>
+                    </div>
+                    <select class="form-control" ng-model="drugClassification">
+                      <option value="非甾体类抗炎药">非甾体类抗炎药</option>
+                      <option value="抗感染药物（包括抗结核药物）">抗感染药物（包括抗结核药物）</option>
+                      <option value="抗肿瘤药物">抗肿瘤药物</option>
+                      <option value="中枢神经系统用药">中枢神经系统用药</option>
+                      <option value="心血管系统用药">心血管系统用药</option>
+                      <option value="代谢性疾病用药">代谢性疾病用药</option>
+                      <option value="激素类药物">激素类药物</option>
+                      <option value="生物制剂">生物制剂</option>
+                      <option value="中药">中药</option>
+                      <option value="保健品">保健品</option>
+                      <option value="其他">其他</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-sm-3">
@@ -161,22 +184,280 @@
                   </div>
                 </div>
 
-                <div class="col-sm-3">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 厂家及批号</i>
-                    </div>
-                    <input type="text" ng-model="manufactor" class="form-control">
-                  </div>
-                </div>
-
-
               </div>
               <button class="btn btn-success col-md-offset-5" ng-click="addDrug()">
               增加
               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
               </button>
 </div>
+
+<div class="box-body">
+              <div class="box-header with-border">
+                <h3 class="box-title">【 中成药 】</sub></h3>
+              </div>
+              <div class="box-body" id="proprietary">
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 名称</i>
+                    </div>
+                    <input class="form-control" ng-model="proName">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 厂家</i>
+                    </div>
+                    <input class="form-control" ng-model="proManufactor">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 中药类别</i>
+                    </div>
+                    <select class="form-control" ng-model="proCategory">
+                      <option value="解表药">解表药</option>
+                      <option value="清热药">清热药</option>
+                      <option value="泻下药">泻下药</option>
+                      <option value="祛风湿药">祛风湿药</option>
+                      <option value="化湿药">化湿药</option>
+                      <option value="利湿药">利湿药</option>
+                      <option value="温里药">温里药</option>
+                      <option value="行气药">行气药</option>
+                      <option value="消食药">消食药</option>
+                      <option value="驱虫药">驱虫药</option>
+                      <option value="止血药">止血药</option>
+                      <option value="活血药">活血药</option>
+                      <option value="化痰药">化痰药</option>
+                      <option value="止咳平喘药">止咳平喘药</option>
+                      <option value="安神药">安神药</option>
+                      <option value="平肝熄风药">平肝熄风药</option>
+                      <option value="开窍药">开窍药</option>
+                      <option value="补虚药">补虚药</option>
+                      <option value="收涩药">收涩药</option>
+                      <option value="外用药">外用药</option>
+                      <option value="其他">其他</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 成分</i>
+                    </div>
+                    <input class="form-control" ng-model="constitute">
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 可疑成分</i>
+                    </div>
+                    <input class="form-control" ng-model="suspendConstitute">
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 日剂量</i>
+                    </div>
+                    <input class="form-control" ng-model="proDose">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 始服时间</i>
+                    </div>
+                    <input id="proBeginTime" class="form-control" ng-model="proBeginTime">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 停服时间</i>
+                    </div>
+                    <input id="proEndTime" class="form-control" ng-model="proEndTime">
+                  </div>
+                </div>
+
+              </div>
+              <button class="btn btn-success col-md-offset-5" ng-click="addPro()">
+              增加
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+</div>
+
+<div class="box-body">
+              <div class="box-header with-border">
+                <h3 class="box-title">【 中草药 】</h3>
+              </div>
+              <div class="box-body" id="herbal">
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 组方</i>
+                    </div>
+                    <input class="form-control" ng-model="herbalName">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 用量（g）</i>
+                    </div>
+                    <input class="form-control" ng-model="herbalDose">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 中药类别</i>
+                    </div>
+                    <select class="form-control" ng-model="herbalCategory">
+                      <option value="解表药">解表药</option>
+                      <option value="清热药">清热药</option>
+                      <option value="泻下药">泻下药</option>
+                      <option value="祛风湿药">祛风湿药</option>
+                      <option value="化湿药">化湿药</option>
+                      <option value="利湿药">利湿药</option>
+                      <option value="温里药">温里药</option>
+                      <option value="行气药">行气药</option>
+                      <option value="消食药">消食药</option>
+                      <option value="驱虫药">驱虫药</option>
+                      <option value="止血药">止血药</option>
+                      <option value="活血药">活血药</option>
+                      <option value="化痰药">化痰药</option>
+                      <option value="止咳平喘药">止咳平喘药</option>
+                      <option value="安神药">安神药</option>
+                      <option value="平肝熄风药">平肝熄风药</option>
+                      <option value="开窍药">开窍药</option>
+                      <option value="补虚药">补虚药</option>
+                      <option value="收涩药">收涩药</option>
+                      <option value="外用药">外用药</option>
+                      <option value="其他">其他</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 草药购自</i>
+                    </div>
+                    <input class="form-control" ng-model="buyFrom">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 始服时间</i>
+                    </div>
+                    <input id="herbalBeginTime" class="form-control" ng-model="herbalBeginTime">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 停服时间</i>
+                    </div>
+                    <input id="herbalEndTime" class="form-control" ng-model="herbalEndTime">
+                  </div>
+                </div>
+
+              </div>
+              <button class="btn btn-success col-md-offset-5" ng-click="addHerbal()">
+              增加
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+</div>
+
+<div class="box-body">
+              <div class="box-header with-border">
+                <h3 class="box-title">【 可疑中药 】</sub></h3>
+              </div>
+              <div class="box-body" id="suspend">
+
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 可疑药名</i>
+                    </div>
+                    <input class="form-control" ng-model="susName">
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 中药类别</i>
+                    </div>
+                    <select class="form-control" ng-model="susCategory">
+                      <option value="解表药">解表药</option>
+                      <option value="清热药">清热药</option>
+                      <option value="泻下药">泻下药</option>
+                      <option value="祛风湿药">祛风湿药</option>
+                      <option value="化湿药">化湿药</option>
+                      <option value="利湿药">利湿药</option>
+                      <option value="温里药">温里药</option>
+                      <option value="行气药">行气药</option>
+                      <option value="消食药">消食药</option>
+                      <option value="驱虫药">驱虫药</option>
+                      <option value="止血药">止血药</option>
+                      <option value="活血药">活血药</option>
+                      <option value="化痰药">化痰药</option>
+                      <option value="止咳平喘药">止咳平喘药</option>
+                      <option value="安神药">安神药</option>
+                      <option value="平肝熄风药">平肝熄风药</option>
+                      <option value="开窍药">开窍药</option>
+                      <option value="补虚药">补虚药</option>
+                      <option value="收涩药">收涩药</option>
+                      <option value="外用药">外用药</option>
+                      <option value="其他">其他</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 样本</i>
+                    </div>
+                    <select class="form-control" ng-model="sample">
+                      <option value="√留样">√留样</option>
+                      <option value="×未留样">×未留样</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 编号</i>
+                    </div>
+                    <input class="form-control" ng-model="number">
+                  </div>
+                </div>
+
+              </div>
+              <button class="btn btn-success col-md-offset-5" ng-click="addSus()">
+              增加
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+</div>
+
 </div>
 		  <span class="col-md-offset-10">&nbsp</span>
           <button class="btn btn-primary " ng-click="save()">保存
