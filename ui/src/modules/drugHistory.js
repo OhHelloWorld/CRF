@@ -1083,7 +1083,7 @@ angular.module('drugHistory', [])
           constitute: $scope.constituteObj[j],
           suspendConstitute: $scope.suspendConstituteObj[j],
           proDose: $scope.proDoseObj[j],
-          proCategory:$scope.proCategoryObj[j],
+          proCategory: $scope.proCategoryObj[j],
           proBeginTime: new Date($scope.proBeginTimeObj[j]),
           proEndTime: new Date($scope.proEndTimeObj[j])
         });
@@ -1094,7 +1094,7 @@ angular.module('drugHistory', [])
           herbalName: $scope.herbalNameObj[k],
           herbalDose: $scope.herbalDoseObj[k],
           buyFrom: $scope.buyFromObj[k],
-          herbalCategory:$scope.herbalCategoryObj[k],
+          herbalCategory: $scope.herbalCategoryObj[k],
           herbalBeginTime: new Date($scope.herbalBeginTimeObj[k]),
           herbalEndTime: new Date($scope.herbalEndTimeObj[k])
         });
@@ -1105,7 +1105,7 @@ angular.module('drugHistory', [])
           susName: $scope.susNameObj[m],
           sample: $scope.sampleObj[m],
           number: $scope.numberObj[m],
-          susCategory:$scope.susCategoryObj[m]
+          susCategory: $scope.susCategoryObj[m]
         });
       }
 
