@@ -217,12 +217,13 @@
             <div class="box-body" style="display: none;">
               <!-- 显示数据 -->
               <div class="box-body no-padding">
-              <table class="table table-striped">
+              <table class="table table-striped table-bordered">
                 <tbody>
                 <tr class="info">
                   <th>通用名</th>
                   <th>商品名</th>
-                  <th>治疗疾病</th>
+                  <th>厂家及批号</th>
+                  <th>药物分类</th>
                   <th>用药方法</th>
                   <th>日剂量</th>
                   <th>开始日期</th>
@@ -231,12 +232,12 @@
                   <th>是否减量</th>
                   <th>既往该药暴露史</th>
                   <th>既往暴露引起肝损</th>
-                  <th>厂家及批号</th>
                 </tr>
                 <tr ng-repeat = "drug in drugs">
                   <td>{{drug.genericName}}</td>
                   <td>{{drug.tradeName}}</td>
-                  <td>{{drug.treatComplaint}}</td>
+                  <td>{{drug.manufactor}}</td>
+                  <td>{{drug.drugClassification}}</td>
                   <td>{{drug.medicationMethod}}</td>
                   <td>{{drug.dose}}</td>
                   <td>{{drug.beginDate | date:"yyyy-MM-dd"}}</td>
@@ -245,11 +246,80 @@
                   <td>{{drug.decrement}}</td>
                   <td>{{drug.drugExposure}}</td>
                   <td>{{drug.exposureLiverDamage}}</td>
-                  <td>{{drug.manufactor}}</td>
                 </tr>
               </tbody>
               </table>
               </div>
+
+              <div class="box-body no-padding">
+              <table class="table table-striped table-bordered">
+                <tbody>
+                <tr class="info">
+                  <th>名称</th>
+                  <th>厂家</th>
+                  <th>中药类别</th>
+                  <th>成分</th>
+                  <th>可疑成分</th>
+                  <th>日剂量</th>
+                  <th>始服时间</th>
+                  <th>停服时间</th>
+                </tr>
+                <tr ng-repeat = "pro in proMedicines">
+                  <td>{{pro.proName}}</td>
+                  <td>{{pro.proManufactor}}</td>
+                  <td>{{pro.proCategory}}</td>
+                  <td>{{pro.constitute}}</td>
+                  <td>{{pro.suspendConstitute}}</td>
+                  <td>{{pro.proDose}}</td>
+                  <td>{{pro.proBeginTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{pro.proEndTime | date:"yyyy-MM-dd"}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+
+              <div class="box-body no-padding">
+              <table class="table table-striped table-bordered">
+                <tbody>
+                <tr class="info">
+                  <th>组方</th>
+                  <th>用量</th>
+                  <th>中药类别</th>
+                  <th>草药购自</th>
+                  <th>始服时间</th>
+                  <th>停服时间</th>
+                </tr>
+                <tr ng-repeat = "herbal in herbalMedicines">
+                  <td>{{herbal.herbalName}}</td>
+                  <td>{{herbal.herbalDose}}</td>
+                  <td>{{herbal.herbalCategory}}</td>
+                  <td>{{herbal.buyFrom}}</td>
+                  <td>{{herbal.herbalBeginTime | date:"yyyy-MM-dd"}}</td>
+                  <td>{{herbal.herbalEndTime | date:"yyyy-MM-dd"}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+
+              <div class="box-body no-padding">
+              <table class="table table-striped table-bordered">
+                <tbody>
+                <tr class="info">
+                  <th>可疑药名</th>
+                  <th>中药类别</th>
+                  <th>样本</th>
+                  <th>编号</th>
+                </tr>
+                <tr ng-repeat = "sus in susMedicines">
+                  <td>{{sus.susName}}</td>
+                  <td>{{sus.susCategory}}</td>
+                  <td>{{sus.sample}}</td>
+                  <td>{{sus.number}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+
             </div>
     </div>
 
@@ -1073,14 +1143,39 @@
               <table class="table table-striped">
                 <tbody>
                 <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-3">检查日期</th>
+                  <th>序号</th>
+                  <th>检查项</th>
                   <th>检查结果</th>
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>{{liverHistologicalDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverHistologicalResult}}</td>
+                  <td>门管区周围或周围间隔区交界面肝炎（碎片状坏死）</td>
+                  <td>{{interfaceHepatitis}}</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>融合性坏死</td>
+                  <td>{{confluentNecrosis}}</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>局灶性（斑状）溶解性坏死，凋亡及局灶性炎症</td>
+                  <td>{{focal}}</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>门管区炎症</td>
+                  <td>{{portalInflammation}}</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>纤维化评分</td>
+                  <td>{{fibrosis}}</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> DILI严重程度分级</td>
+                  <td>{{severity}}</td>
                 </tr>
                 </tbody>
               </table>

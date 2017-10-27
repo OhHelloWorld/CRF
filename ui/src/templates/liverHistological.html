@@ -158,10 +158,10 @@
           <span class="h5">门管区纤维增生，同时伴有明显的纤维桥连（门馆与门馆之间及门馆与中心静脉之间）</span>
           <br/>
           <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=6>
-          <span class="h5">三区坏死 + 多发性门管区 - 中心静脉（P-C）桥接</span>
+          <span class="h5">明显的桥连（门管与门管和/或门管与中心静脉），偶见结节（不完全硬化）</span>
           <br/>
           <input type="radio" name="fibrosis" ng-model="fibrosis" ng-value=7>
-          <span class="h5">全小叶或多发性小叶坏死</span>
+          <span class="h5">可能或明确的肝硬化</span>
           <br/>
         </div>
       </div>
@@ -170,26 +170,39 @@
       
         <div class="box-header with-border">
                 <h3 class="box-title">【 DILI严重程度分级 】</h3>
-                <a id="dili" tabindex="0" class="btn btn-default" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="DILI严重程度分级" data-content="  目前国际上通常将急性 DILI 的严重程度分为1- 5级级。
-                美国 DILIN 前瞻性研究对其进一步数据化。结合我国
-                肝衰竭指南，对分级略作修正
-                0 级（无肝损伤）:患者对暴露药物可耐受，无肝毒性反应。
-                1级（轻度肝损伤） ;血清ALT和/或AIP呈可恢复
+                <span class="h5" style="color: green">选填：</span>
+                <a id="dili0" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
+                0 级（无肝损伤）：患者对暴露药物可耐受，无肝毒性反应。" 
+                ng-click="diliClick(0)">0级<span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="cursor: pointer;"></span></a>
+                &nbsp&nbsp&nbsp
+                <a id="dili1" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
+                1级（轻度肝损伤）：血清ALT和/或AIP呈可恢复
                 性升高，TBil < 2.5 X ULN （2.5mg/d或42.75 μmal/L），
                 且INR < 1.5。多数患者可适应。可有或无乏力，虚弱，恶心、
-                厌食、右上腹痛、黄疸、癌痒，皮疹或体质盘减轻等症状”。
-                2级（中度肝损伤）；血清ALT和/或ALP升高，
+                厌食、右上腹痛、黄疸、癌痒，皮疹或体质盘减轻等症状”。" 
+                ng-click="diliClick(1)" style="cursor: pointer;">1级<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                &nbsp&nbsp&nbsp
+                <a id="dili2" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
+                2级（中度肝损伤）：血清ALT和/或ALP升高，
                 TBil ≥ 2.5 x ULN,或虽无TBil升高但INR ≥ 1.5。上述
-                症状可有加重
-                3级（重度肝损伤）。血清A1T和广或ALP升高，
+                症状可有加重" 
+                ng-click="diliClick(2)" style="cursor: pointer;">2级<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                &nbsp&nbsp&nbsp
+                <a id="dili3" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
+                3级（重度肝损伤）：血清A1T和广或ALP升高，
                 TBil ≥ 5 x ULN i5 mg/dl 或85.5 umol/L）.伴或不伴
                 INR ≥ 1.5。患者立状进一步加重，需要住院治疗，或住院
-                时间延长。
+                时间延长。" 
+                ng-click="diliClick(3)" style="cursor: pointer;">3级<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                &nbsp&nbsp&nbsp
+                <a id="dili4" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
                 4级（ALF）：血清ALT和（或）ALP水平升高，TBil ≥ 10x ULN （10mg/dl 或171 μ mol/L） 或每日上升 ≥1.0mg/dl（17.1μ mol/L），INR ≥ 2.0或PTA < 40%。可
                 同时出现（1）腹水或肝性脑病，或（2）与DILI相关的其他
-                器官功能衰竭
-                5级（致命）因DILI死亡，或需接受肝移植才能存话。" 
-                ng-click="diliClick()"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                器官功能衰竭" ng-click="diliClick(4)" style="cursor: pointer;">4级<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                &nbsp&nbsp&nbsp
+                <a id="dili5" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="DILI严重程度分级" data-content="
+                5级（致命）：因DILI死亡，或需接受肝移植才能存话。" 
+                ng-click="diliClick(5)" style="cursor: pointer;">5级<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
         </div>
         
         <div class="box-body">

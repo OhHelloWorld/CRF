@@ -1,14 +1,14 @@
 import angular from 'angular';
 
 angular.module('liverHistological', [])
-  .controller('liverHistologicalController', ['$scope', '$http', '$state', 'localStorageService',function($scope, $http, $state,localStorageService) {
+  .controller('liverHistologicalController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
     getLiverHistological();
     getMlPatient();
 
     var mlLiverHistological = {};
 
-    $scope.diliClick = function() {
-      $('#dili').popover('toggle');
+    $scope.diliClick = function(num) {
+      $('#dili'+num).popover('toggle');
     };
 
     $scope.save = function() {

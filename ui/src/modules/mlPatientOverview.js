@@ -142,19 +142,19 @@ angular.module('mlPatientOverview', [])
       $scope.epidemicText = diseaseHistory.epidemicText;
       $scope.diseaseHistorys = diseaseHistory.medicineLiverDiseaseHistoryDetailDTOS;
       $scope.personHistory = '';
-      if(diseaseHistory.personHistory.indexOf('饮酒')!=-1){
+      if (diseaseHistory.personHistory.indexOf('饮酒') != -1) {
         $scope.personHistory += '饮酒 ';
       }
-      if(diseaseHistory.personHistory.indexOf('吸烟')!=-1){
+      if (diseaseHistory.personHistory.indexOf('吸烟') != -1) {
         $scope.personHistory += '吸烟 ';
       }
-      if(diseaseHistory.personHistory.indexOf('过敏')!=-1){
+      if (diseaseHistory.personHistory.indexOf('过敏') != -1) {
         $scope.personHistory += '过敏 ';
       }
-      if(diseaseHistory.personHistory.indexOf('感染')!=-1){
+      if (diseaseHistory.personHistory.indexOf('感染') != -1) {
         $scope.personHistory += '感染 ';
       }
-      if(diseaseHistory.personHistory.indexOf('手术')!=-1){
+      if (diseaseHistory.personHistory.indexOf('手术') != -1) {
         $scope.personHistory += '手术 ';
       }
     }
@@ -205,6 +205,9 @@ angular.module('mlPatientOverview', [])
         url: '/api/mlDrug/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
         $scope.drugs = response.data.medicineLiverSuspectedDrugDetailDTOS;
+        $scope.proMedicines = response.data.mlProprietaryChineseMedicineDTOS;
+        $scope.herbalMedicines = response.data.mlChineseHerbalMedicineDTOS;
+        $scope.susMedicines = response.data.mlSuspendChineseMedicineDTOS;
       });
     }
 
@@ -1091,8 +1094,87 @@ angular.module('mlPatientOverview', [])
 
     function displayHistological(response) {
       var histological = response.data;
-      $scope.liverHistologicalDate = histological.liverHistologicalDate;
-      $scope.liverHistologicalResult = histological.liverHistologicalResult;
+
+      if (histological.interfaceHepatitis == 1) {
+        $scope.interfaceHepatitis = '无';
+      } else if (histological.interfaceHepatitis == 2) {
+        $scope.interfaceHepatitis = '轻微（局灶性，少数门管区）';
+      } else if (histological.interfaceHepatitis == 3) {
+        $scope.interfaceHepatitis = '轻微/中等（局灶性，大多数门管区）';
+      } else if (histological.interfaceHepatitis == 4) {
+        $scope.interfaceHepatitis = ' 中等（连续性，< 50%的门管区及间隔区）';
+      } else if (histological.interfaceHepatitis == 5) {
+        $scope.interfaceHepatitis = '严重（连续性，> 50%的门管区及间隔区）';
+      } else {
+        $scope.interfaceHepatitis = '';
+      }
+
+      if (histological.confluentNecrosis == 1) {
+        $scope.confluentNecrosis = '无';
+      } else if (histological.confluentNecrosis == 2) {
+        $scope.confluentNecrosis = '局灶性融合性坏死';
+      } else if (histological.confluentNecrosis == 3) {
+        $scope.confluentNecrosis = '部分区域3区坏死';
+      } else if (histological.confluentNecrosis == 4) {
+        $scope.confluentNecrosis = '大多数区域三区坏死';
+      } else if (histological.confluentNecrosis == 5) {
+        $scope.confluentNecrosis = '三区坏死 + 偶见门管区 - 中心静脉（P-C）桥接';
+      } else if (histological.confluentNecrosis == 6) {
+        $scope.confluentNecrosis = '三区坏死 + 多发性门管区 - 中心静脉（P-C）桥接';
+      } else if (histological.confluentNecrosis == 7) {
+        $scope.confluentNecrosis = '全小叶或多发性小叶坏死';
+      } else {
+        $scope.confluentNecrosis = '';
+      }
+
+      if (histological.focal == 1) {
+        $scope.focal = '无';
+      } else if (histological.focal == 2) {
+        $scope.focal = '每 *10 倍视野区下有 1 个坏死区或更少';
+      } else if (histological.focal == 3) {
+        $scope.focal = '每 *10 倍视野区下有 2-4 个坏死区';
+      } else if (histological.focal == 4) {
+        $scope.focal = '每 *10 倍视野区下有 5-10 个坏死区';
+      } else if (histological.focal == 5) {
+        $scope.focal = '每 *10 倍视野区下有 10 个以上坏死区或更少';
+      } else {
+        $scope.focal = '';
+      }
+
+      if (histological.portalInflammation == 1) {
+        $scope.portalInflammation = '无';
+      } else if (histological.portalInflammation == 2) {
+        $scope.portalInflammation = '轻度，部分或所有门管区';
+      } else if (histological.portalInflammation == 3) {
+        $scope.portalInflammation = '中度，部分或所有门管区';
+      } else if (histological.portalInflammation == 4) {
+        $scope.portalInflammation = '中度/严重，所有门管区';
+      } else if (histological.portalInflammation == 5) {
+        $scope.portalInflammation = '严重，所有门管区';
+      } else {
+        $scope.portalInflammation = '';
+      }
+
+      if (histological.fibrosis == 1) {
+        $scope.fibrosis = '无';
+      } else if (histological.fibrosis == 2) {
+        $scope.fibrosis = '部分门管区有纤维增生，有或无短的纤维隔膜';
+      } else if (histological.fibrosis == 3) {
+        $scope.fibrosis = '大多数门管区有纤维增生，有或无短的纤维隔膜';
+      } else if (histological.fibrosis == 4) {
+        $scope.fibrosis = '大多数门管区有纤维增生，偶见门管区以纤维桥连';
+      } else if (histological.fibrosis == 5) {
+        $scope.fibrosis = '门管区纤维增生，同时伴有明显的纤维桥连（门馆与门馆之间及门馆与中心静脉之间）';
+      } else if (histological.fibrosis == 6) {
+        $scope.fibrosis = '明显的桥连（门管与门管和/或门管与中心静脉），偶见结节（不完全硬化）';
+      } else if (histological.fibrosis == 7) {
+        $scope.fibrosis = '可能或明确的肝硬化';
+      } else {
+        $scope.fibrosis = '';
+      }
+
+      $scope.severity = histological.severity;
+
     }
 
     function getLiverInjury() {

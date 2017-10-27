@@ -36,29 +36,51 @@
               <h3 class="box-title">【 疾病转归 】</h3>
       </div>
       <div class="box-body">
-        <checkbox ng-model="outcome1"></checkbox><span class="h4">痊愈</span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome2"></checkbox><span class="h4">好转</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome3"></checkbox><span class="h4">恶化</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome4"></checkbox><span class="h4">进展为肝衰竭</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome5"></checkbox><span class="h4">接受肝移植</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome6"></checkbox><span class="h4">死亡</span>
-        </span>
-        <br/>
-        <span>
-          <checkbox ng-model="outcome7"></checkbox><span class="h4">无变化</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="outcome8"></checkbox><span class="h4">不详</span>
-        </span>
+
+        <table>
+          <tbody>
+            <tr>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome1"></checkbox>
+                <span class="h5">痊愈</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome2"></checkbox>
+                <span class="h5">好转</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome2"></checkbox>
+                <span class="h5">好转</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome3"></checkbox>
+                <span class="h5">恶化</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome4"></checkbox>
+                <span class="h5">进展为肝衰竭</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome5"></checkbox>
+                <span class="h5">接受肝移植</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome6"></checkbox>
+                <span class="h5">死亡</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome7"></checkbox>
+                <span class="h5">无变化</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="outcome8"></checkbox>
+                <span class="h5">不详</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       </div>
       <div class="col-md-offset-9">
