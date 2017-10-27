@@ -87,6 +87,28 @@
                     </select>
                   </div>
                 </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 用药种类</i>
+                    </div>
+                    <select class="form-control" ng-model="category">
+                      <option value="非甾体类抗炎药">非甾体类抗炎药</option>
+                      <option value="抗感染药物（包括抗结核药物）">抗感染药物（包括抗结核药物）</option>
+                      <option value="抗肿瘤药物">抗肿瘤药物</option>
+                      <option value="中枢神经系统用药">中枢神经系统用药</option>
+                      <option value="心血管系统用药">心血管系统用药</option>
+                      <option value="代谢性疾病用药">代谢性疾病用药</option>
+                      <option value="激素类药物">激素类药物</option>
+                      <option value="生物制剂">生物制剂</option>
+                      <option value="中药">中药</option>
+                      <option value="保健品">保健品</option>
+                      <option value="其他">其他</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div class="col-sm-3">
                   <div class="input-group">
                     <div class="input-group-addon">
@@ -95,6 +117,7 @@
                     <input class="form-control" ng-model="dose">
                   </div>
                 </div>
+
                 <div class="col-sm-3">
                   <div class="input-group date">
                     <div class="input-group-addon">
@@ -103,6 +126,7 @@
                     <input class="form-control" id="detailStartDate" ng-model="detailStartDate">
                   </div>
                 </div>
+                
                 <div class="col-sm-3">
                   <div class="input-group date">
                     <div class="input-group-addon">
@@ -111,6 +135,7 @@
                     <input class="form-control" id="detailEndDate" ng-model="detailEndDate">
                   </div>
                 </div>
+              
               </div>
               <button class="btn btn-success col-md-offset-5" ng-click="addDetail()">增加
               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>

@@ -25,6 +25,21 @@ angular.module('biologicalSamples', [])
       if ($scope.biologicalSamples6) {
         mlBiologicalSamples.biologicalSamples += ' 其他';
       }
+
+      mlBiologicalSamples.num1 = $scope.num1;
+      mlBiologicalSamples.num2 = $scope.num2;
+      mlBiologicalSamples.num3 = $scope.num3;
+      mlBiologicalSamples.num4 = $scope.num4;
+      mlBiologicalSamples.num5 = $scope.num5;
+      mlBiologicalSamples.num6 = $scope.num6;
+
+      mlBiologicalSamples.remark1 = $scope.remark1;
+      mlBiologicalSamples.remark2 = $scope.remark2;
+      mlBiologicalSamples.remark3 = $scope.remark3;
+      mlBiologicalSamples.remark4 = $scope.remark4;
+      mlBiologicalSamples.remark5 = $scope.remark5;
+      mlBiologicalSamples.remark6 = $scope.remark6;      
+
       mlBiologicalSamples.complete = true;
 
       $http({
@@ -41,9 +56,10 @@ angular.module('biologicalSamples', [])
         method: 'GET',
         url: '/api/mlBiologicalSamples/' + sessionStorage.getItem('mlPatientId')
       }).then(function success(response) {
-        var responseBio = response.data.biologicalSamples.split(' ');
+        var data = response.data;
+        var responseBio = data.biologicalSamples.split(' ');
         if (responseBio.indexOf('血清') != -1) {
-          $scope.biologicalSample1s = true;
+          $scope.biologicalSamples1 = true;
         }
         if (responseBio.indexOf('血浆') != -1) {
           $scope.biologicalSamples2 = true;
@@ -60,6 +76,20 @@ angular.module('biologicalSamples', [])
         if (responseBio.indexOf('其他') != -1) {
           $scope.biologicalSamples6 = true;
         }
+
+        $scope.num1 = data.num1;
+        $scope.num2 = data.num2;
+        $scope.num3 = data.num3;
+        $scope.num4 = data.num4;
+        $scope.num5 = data.num5;
+        $scope.num6 = data.num6;
+      
+        $scope.remark1 = data.remark1;
+        $scope.remark2 = data.remark2;
+        $scope.remark3 = data.remark3;
+        $scope.remark4 = data.remark4;
+        $scope.remark5 = data.remark5;
+        $scope.remark6 = data.remark6;
       });
     }
 

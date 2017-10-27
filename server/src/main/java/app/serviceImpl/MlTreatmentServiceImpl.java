@@ -47,6 +47,7 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
                 medicineLiverTreatmentDetailDTO.setDetailEndDate(medicineLiverTreatmentDetailDO.getDetailEndDate());
                 medicineLiverTreatmentDetailDTO.setDetailMethod(medicineLiverTreatmentDetailDO.getDetailMethod());
                 medicineLiverTreatmentDetailDTO.setDetailStartDate(medicineLiverTreatmentDetailDO.getDetailStartDate());
+                medicineLiverTreatmentDetailDTO.setCategory(medicineLiverTreatmentDetailDO.getCategory());
                 medicineLiverTreatmentDetailDTO.setDose(medicineLiverTreatmentDetailDO.getDose());
                 medicineLiverTreatmentDetailDTO.setGenericName(medicineLiverTreatmentDetailDO.getGenericName());
                 medicineLiverTreatmentDetailDTO.setMedicineLiverTreatmentId(medicineLiverTreatmentDetailDO.getMedicineLiverTreatmentDO().getId());
@@ -89,12 +90,13 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
         }
 
         List<MedicineLiverTreatmentDetailDTO> medicineLiverTreatmentDetailDTOS = medicineLiverTreatmentDTO.getMedicineLiverTreatmentDetailDTOS();
-        if(!medicineLiverTreatmentDetailDTOS.isEmpty() && medicineLiverTreatmentDetailDTOS != null){
+        if(medicineLiverTreatmentDetailDTOS != null && !medicineLiverTreatmentDetailDTOS.isEmpty() ){
             for(MedicineLiverTreatmentDetailDTO medicineLiverTreatmentDetailDTO : medicineLiverTreatmentDetailDTOS) {
                 MedicineLiverTreatmentDetailDO medicineLiverTreatmentDetailDO = new MedicineLiverTreatmentDetailDO();
                 medicineLiverTreatmentDetailDO.setDetailEndDate(medicineLiverTreatmentDetailDTO.getDetailEndDate());
                 medicineLiverTreatmentDetailDO.setDetailMethod(medicineLiverTreatmentDetailDTO.getDetailMethod());
                 medicineLiverTreatmentDetailDO.setDetailStartDate(medicineLiverTreatmentDetailDTO.getDetailStartDate());
+                medicineLiverTreatmentDetailDO.setCategory(medicineLiverTreatmentDetailDTO.getCategory());
                 medicineLiverTreatmentDetailDO.setDose(medicineLiverTreatmentDetailDTO.getDose());
                 medicineLiverTreatmentDetailDO.setGenericName(medicineLiverTreatmentDetailDTO.getGenericName());
                 medicineLiverTreatmentDetailDO.setTradeName(medicineLiverTreatmentDetailDTO.getTradeName());

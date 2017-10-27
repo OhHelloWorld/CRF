@@ -1271,7 +1271,52 @@ angular.module('mlPatientOverview', [])
     }
 
     function displaySample(response) {
-      $scope.biologicalSamples = response.data.biologicalSamples;
+      var data = response.data;
+      var biologicalSamples = data.biologicalSamples.split(' ');
+      if(biologicalSamples.indexOf('血清')){
+        $scope.biologicalSamples1 = '是';
+      }else{
+        $scope.biologicalSamples1 = '否';
+      }
+      if(biologicalSamples.indexOf('血浆')){
+        $scope.biologicalSamples2 = '是';
+      }else{
+        $scope.biologicalSamples2 = '否';
+      }
+      if(biologicalSamples.indexOf('组织')){
+        $scope.biologicalSamples3 = '是';
+      }else{
+        $scope.biologicalSamples3 = '否';
+      }
+      if(biologicalSamples.indexOf('尿液')){
+        $scope.biologicalSamples4 = '是';
+      }else{
+        $scope.biologicalSamples4 = '否';
+      }
+      if(biologicalSamples.indexOf('药物')){
+        $scope.biologicalSamples5 = '是';
+      }else{
+        $scope.biologicalSamples5 = '否';
+      }
+      if(biologicalSamples.indexOf('其他')){
+        $scope.biologicalSamples6 = '是';
+      }else{
+        $scope.biologicalSamples6 = '否';
+      }
+
+      $scope.num1 = data.num1;
+      $scope.num2 = data.num2;
+      $scope.num3 = data.num3;
+      $scope.num4 = data.num4;
+      $scope.num5 = data.num5;
+      $scope.num6 = data.num6;
+
+      $scope.remark1 = data.remark1;
+      $scope.remark2 = data.remark2;
+      $scope.remark3 = data.remark3;
+      $scope.remark4 = data.remark4;
+      $scope.remark5 = data.remark5;
+      $scope.remark6 = data.remark6;
     }
 
 

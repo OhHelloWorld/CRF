@@ -12,6 +12,7 @@ public class MedicineLiverTreatmentDetailDTO {
     private String genericName;//通用名
     private String tradeName;//商品名
     private String detailMethod;//用药方法
+    private String category;
     private String dose;//日剂量
     private Date detailStartDate;//开始日期
     private Date detailEndDate;//结束日期
@@ -54,6 +55,14 @@ public class MedicineLiverTreatmentDetailDTO {
 
     public void setDetailMethod(String detailMethod) {
         this.detailMethod = detailMethod;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDose() {

@@ -55,6 +55,85 @@
           <checkbox ng-model="biologicalSamples6"></checkbox><span class="h5">其他</span>
         </span>
       </div>
+
+      <div class="box-body" ng-show="biologicalSamples1">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">血清留置编号：</span>
+            <input type="text" class="form-control" placeholder="请输入血清留置编号" ng-model="num1">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark1">
+          </div>
+        </form>
+      </div>
+
+      <div class="box-body" ng-show="biologicalSamples2">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">血浆留置编号：</span>
+            <input type="text" class="form-control" placeholder="请输入血浆留置编号" ng-model="num2">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark2">
+          </div>
+        </form>
+      </div>
+
+      <div class="box-body" ng-show="biologicalSamples3">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">组织留置编号：</span>
+            <input type="text" class="form-control" placeholder="请输入组织留置编号" ng-model="num3">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark3">
+          </div>
+        </form>
+      </div>
+
+      <div class="box-body" ng-show="biologicalSamples4">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">尿液留置编号：</span>
+            <input type="text" class="form-control" placeholder="请输入尿液留置编号" ng-model="num4">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark4">
+          </div>
+        </form>
+      </div>
+
+      <div class="box-body" ng-show="biologicalSamples5">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">药物留置编号：</span>
+            <input type="text" class="form-control" placeholder="请输入药物留置编号" ng-model="num5">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark5">
+          </div>
+        </form>
+      </div>
+
+      <div class="box-body" ng-show="biologicalSamples6">
+        <form class="form-inline">
+          <div class="form-group">
+            <span class="h5">其他留置编号：</span>
+            <input type="text" class="form-control" placeholder="请说明其他留置编号" ng-model="num6">
+          </div>
+          <div class="form-group">
+            <span class="h5">备注：</span>
+            <input type="text" class="form-control" placeholder="备注" ng-model="remark6">
+          </div>
+        </form>
+      </div>
+      
       </div>
       <div class="col-md-offset-9">
       <button class="btn btn-primary " ng-click="save()">保存

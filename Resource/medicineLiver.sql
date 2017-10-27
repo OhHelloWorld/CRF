@@ -444,6 +444,7 @@ create table medicine_liver_treatment_detail(
 	trade_name varchar(50),#商品名
 	detail_method varchar(50),#用药方法
 	dose varchar(50),#日剂量
+    category varchar(20),
 	detail_start_date Date,#开始日期
 	detail_end_date Date,#结束日期
 	primary key(id)
@@ -474,6 +475,18 @@ create table medicine_liver_biological_samples(
 	id int not null auto_increment,
 	patient_id int,
 	biological_samples varchar(50),#是否留置
+    num1 varchar(50),
+    num2 varchar(50),
+    num3 varchar(50),
+    num4 varchar(50),
+    num5 varchar(50),
+    num6 varchar(50),
+    remark1 text,
+    remark2 text,
+    remark3 text,
+    remark4 text,
+    remark5 text,
+    remark6 text,
 	complete boolean,
 	primary key(id)
 );
