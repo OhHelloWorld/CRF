@@ -36,12 +36,12 @@
         <h3 class="box-title">【 是否有治疗措施 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="treatment" ng-model="treatment" ng-value=1><span class="h4">是</span>
+        <input type="radio" name="treatment" ng-model="treatment" ng-value=1><span class="h5">是</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="treatment" ng-model="treatment" ng-value=2><span class="h4">否</span>
+          <input type="radio" name="treatment" ng-model="treatment" ng-value=2><span class="h5">否</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="treatment" ng-model="treatment" ng-value=3><span class="h4">不详</span>
+          <input type="radio" name="treatment" ng-model="treatment" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
 <div class="box-body">
@@ -137,9 +137,9 @@
                 </div>
               
               </div>
-              <button class="btn btn-success col-md-offset-5" ng-click="addDetail()">增加
-              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-              </button>
+              <a class="btn btn-success col-md-offset-5" ng-click="addDetail()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
 </div>
 
 <div class="box-body">
@@ -180,15 +180,16 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-success col-md-offset-5" ng-click="addOther()">
-              增加
-              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-              </button>
+              <a class="btn btn-success col-md-offset-5" ng-click="addOther()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
 </div>
 </div>
 		  <span class="col-md-offset-10">&nbsp</span>
-          <button class="btn btn-primary " ng-click="save()">保存
-          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-          </button>&nbsp
-          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+          <a class="btn btn-primary" ng-click="save()">
+          <i class="fa  fa-save"></i> 保存
+        </a>
+        <a class="btn btn-primary" ng-click="layout()">
+          <i class="fa  fa-sign-out"></i> 退出
+        </a>
 </div>

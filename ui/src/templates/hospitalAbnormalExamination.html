@@ -211,10 +211,12 @@
           </div>
         </div>
         <span class="col-md-offset-9"></span>
-        <button class="btn btn-primary " ng-click="showSaveModal()">保存
-        <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-        </button>&nbsp
-        <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+        <a class="btn btn-primary" ng-click="showSaveModal()">
+          <i class="fa  fa-save"></i> 保存
+        </a>
+        <a class="btn btn-primary" ng-click="layout()">
+          <i class="fa  fa-sign-out"></i> 退出
+        </a>
         
         <!-- 模态框 -->
         <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

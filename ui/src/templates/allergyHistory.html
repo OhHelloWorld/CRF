@@ -40,12 +40,12 @@
               <h3 class="box-title">【 既往过敏史 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=1><span class="h5">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=2><span class="h5">有</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=3><span class="h4">不详</span>
+          <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
 
@@ -67,9 +67,11 @@
       </div>
       </div>
       <div class="col-md-offset-9">
-        <button class="btn btn-primary " ng-click="save()">保存
-          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-          </button>&nbsp
-          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+        <a class="btn btn-primary" ng-click="save()">
+          <i class="fa  fa-save"></i> 保存
+        </a>
+        <a class="btn btn-primary" ng-click="layout()">
+          <i class="fa  fa-sign-out"></i> 退出
+        </a>
       </div>
 </div>

@@ -38,12 +38,12 @@
               <h3 class="box-title">【 肝损伤伴随的症状体征 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=1><span class="h5">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=2><span class="h5">有</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=3><span class="h4">不详</span>
+          <input type="radio" name="liverInjury" ng-model="liverInjury" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
       </div>
@@ -313,14 +313,15 @@
       		</td>
       	</tr>
       </table>
-      <button class="btn btn-success col-md-offset-5" ng-click="addSymptoms()">
-      增加
-      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-      </button>
+      <a class="btn btn-success col-md-offset-5" ng-click="addSymptoms()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
       </div>
       <span class="col-md-offset-10">&nbsp</span>
-      <button class="btn btn-primary " ng-click="save()">保存
-          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-          </button>&nbsp
-          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+      <a class="btn btn-primary" ng-click="save()">
+          <i class="fa  fa-save"></i> 保存
+        </a>
+        <a class="btn btn-primary" ng-click="layout()">
+          <i class="fa  fa-sign-out"></i> 退出
+        </a>
 </div>

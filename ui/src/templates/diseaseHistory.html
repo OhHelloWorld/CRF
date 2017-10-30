@@ -36,9 +36,9 @@
         <h3 class="box-title">【 除药物性肝病以外，病例是否存在因本次入院的其他疾病史？ 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=1><span class="h5">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=2><span class="h5">有</span>
         </span>
       </div>
 
@@ -47,12 +47,12 @@
               <h3 class="box-title">【 既往病史 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="history" ng-model="pastDisease" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="history" ng-model="pastDisease" ng-value=1><span class="h5">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="history" ng-model="pastDisease" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="history" ng-model="pastDisease" ng-value=2><span class="h5">有</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="history" ng-model="pastDisease" ng-value=3><span class="h4">不详</span>
+          <input type="radio" name="history" ng-model="pastDisease" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
               <div class="box-header with-border">
@@ -128,10 +128,9 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-success col-md-offset-5" ng-click="addDisease()">
-              增加
-              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-              </button>
+              <a class="btn btn-success col-md-offset-5" ng-click="addDisease()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
               
 </div>
 
@@ -140,15 +139,15 @@
               <h3 class="box-title">【 个人史 】</h3>
       </div>
       <div class="box-body">
-        <checkbox ng-model="oneDrink" name="oneDrink"></checkbox><span class="h4">饮酒</span>
+        <checkbox ng-model="oneDrink" name="oneDrink"></checkbox><span class="h5">饮酒</span>
         <span class="col-md-offset-1">
-        <checkbox ng-model="oneSmoke" name="oneSmoke"></checkbox><span class="h4">吸烟</span>
+        <checkbox ng-model="oneSmoke" name="oneSmoke"></checkbox><span class="h5">吸烟</span>
         <span class="col-md-offset-1">
-        <checkbox ng-model="oneAllergy" name="oneAllergy"></checkbox><span class="h4">过敏</span>
+        <checkbox ng-model="oneAllergy" name="oneAllergy"></checkbox><span class="h5">过敏</span>
         <span class="col-md-offset-1">
-        <checkbox ng-model="oneInfect" name="oneInfect"></checkbox><span class="h4">感染</span>
+        <checkbox ng-model="oneInfect" name="oneInfect"></checkbox><span class="h5">感染</span>
         <span class="col-md-offset-1">
-        <checkbox ng-model="oneOpera" name="oneOpera"></checkbox><span class="h4">手术</span>
+        <checkbox ng-model="oneOpera" name="oneOpera"></checkbox><span class="h5">手术</span>
         <span class="col-md-offset-1">
       </div>
 </div>
@@ -157,16 +156,18 @@
               <h3 class="box-title">【 疫区旅游史 】</h3>
   </div>
       <div class="box-body">
-        <input type="radio" name="epidemicTourism" ng-model="epidemicTourism" ng-value=1><span class="h4">无</span>
+        <input type="radio" name="epidemicTourism" ng-model="epidemicTourism" ng-value=1><span class="h5">无</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="epidemicTourism" ng-model="epidemicTourism" ng-value=2><span class="h4">有</span>
+          <input type="radio" name="epidemicTourism" ng-model="epidemicTourism" ng-value=2><span class="h5">有</span>
         </span>
         <input type="text" ng-model="epidemicText" ng-show="epi">
       </div>
 </div>
 		  <span class="col-md-offset-10">&nbsp</span>
-          <button class="btn btn-primary " ng-click="save()">保存
-          <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-          </button>&nbsp
-          <button class="btn btn-primary " ng-click="layout()">退出<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+      <a class="btn btn-primary" ng-click="save()">
+        <i class="fa  fa-save"></i> 保存
+      </a>
+      <a class="btn btn-primary" ng-click="layout()">
+        <i class="fa  fa-sign-out"></i> 退出
+      </a>
 </div>
