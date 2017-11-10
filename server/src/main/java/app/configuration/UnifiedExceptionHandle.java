@@ -6,7 +6,6 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -14,15 +13,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Administrator on 2017/9/29 0029.
- */
-@Component
-@Aspect
-
-/**
  * 切面统一异常管理与请求方法URL显示
  *
  */
+@Component
+@Aspect
 public class UnifiedExceptionHandle {
 
     private Logger logger = LoggerFactory.getLogger(UnifiedExceptionHandle.class);
