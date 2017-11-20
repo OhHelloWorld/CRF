@@ -44,6 +44,7 @@ public class UnifiedExceptionHandle {
      */
     @AfterThrowing("point()")
     public void exceptionHandle(){
+
         logger.info("error");
     }
 }

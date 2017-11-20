@@ -111,7 +111,7 @@ create table medicine_liver_suspected_drug_detail(
 	medicine_liver_suspected_drug_id int,
 	generic_name varchar(50),#通用名
 	trade_name varchar(50),#商品名
-	drug_classification varchar(50),#治疗疾病
+	drug_classification varchar(50),#药物种类
 	medication_method varchar(50),#用药方法
 	dose varchar(10),#日剂量
 	begin_date Date,#开始日期
