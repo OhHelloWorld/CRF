@@ -206,7 +206,8 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           method: 'POST',
           url: '/api/mlPatient',
           data: patient
-        }).then(function success() {
+        }).then(function success(res) {
+          sessionStorage.setItem('mlPatientId',res.data);
           $('#myModal').modal();
         });
       } else {

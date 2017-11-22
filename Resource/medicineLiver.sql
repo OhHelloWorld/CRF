@@ -422,6 +422,21 @@ create table medicine_liver_liver_injury(
 	extend_inr int,#延长INR或者凝血时间
 	failure int,#器官衰竭
 	extend_hospital_stay int,#住院时间延长
+    medicine varchar(50),#药名
+    alt varchar(20),
+    alp varchar(20),
+    r varchar(20),#alt/alp
+    liver_injury_type varchar(10),#肝损伤类型
+    medicine_start int,#从用药开始
+    withdrawal_start int,#从停药开始
+    stop_medicine int,#停药后
+    continue_medicine int,#继续用药
+    drink_pregnancy int,#饮酒或妊娠
+    age int,#年龄
+    with_medicine int,#伴随用药
+    other_liver_injury_reason int,#其他肝损伤原因
+    past_liver_injury_information int,#既往肝损伤信息
+    re_medicine_response int,#再用药反应
 	rucam varchar(20),#rucam评分
 	complete boolean,
 	primary key(id)

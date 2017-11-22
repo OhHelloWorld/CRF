@@ -12,6 +12,21 @@ public class MedicineLiverLiverInjuryDTO {
     private int extendInr;//延长INR或者凝血时间
     private int failure;//器官衰竭
     private int extendHospitalStay;//住院时间延长
+    private String medicine;
+    private String alt;
+    private String alp;
+    private String r;
+    private String liverInjuryType;
+    private int medicineStart;
+    private int withdrawalStart;
+    private int stopMedicine;
+    private int continueMedicine;
+    private int drinkPregnancy;
+    private int age;
+    private int withMedicine;
+    private int otherLiverInjuryReason;
+    private int pastLiverInjuryInformation;
+    private int reMedicineResponse;
     private String rucam;//rucam评分
     private boolean complete;
 
@@ -69,6 +84,126 @@ public class MedicineLiverLiverInjuryDTO {
 
     public void setExtendHospitalStay(int extendHospitalStay) {
         this.extendHospitalStay = extendHospitalStay;
+    }
+
+    public String getMedicine() {
+        return medicine;
+    }
+
+    public void setMedicine(String medicine) {
+        this.medicine = medicine;
+    }
+
+    public String getAlt() {
+        return alt;
+    }
+
+    public void setAlt(String alt) {
+        this.alt = alt;
+    }
+
+    public String getAlp() {
+        return alp;
+    }
+
+    public void setAlp(String alp) {
+        this.alp = alp;
+    }
+
+    public String getR() {
+        return r;
+    }
+
+    public void setR(String r) {
+        this.r = r;
+    }
+
+    public String getLiverInjuryType() {
+        return liverInjuryType;
+    }
+
+    public void setLiverInjuryType(String liverInjuryType) {
+        this.liverInjuryType = liverInjuryType;
+    }
+
+    public int getMedicineStart() {
+        return medicineStart;
+    }
+
+    public void setMedicineStart(int medicineStart) {
+        this.medicineStart = medicineStart;
+    }
+
+    public int getWithdrawalStart() {
+        return withdrawalStart;
+    }
+
+    public void setWithdrawalStart(int withdrawalStart) {
+        this.withdrawalStart = withdrawalStart;
+    }
+
+    public int getStopMedicine() {
+        return stopMedicine;
+    }
+
+    public void setStopMedicine(int stopMedicine) {
+        this.stopMedicine = stopMedicine;
+    }
+
+    public int getContinueMedicine() {
+        return continueMedicine;
+    }
+
+    public void setContinueMedicine(int continueMedicine) {
+        this.continueMedicine = continueMedicine;
+    }
+
+    public int getDrinkPregnancy() {
+        return drinkPregnancy;
+    }
+
+    public void setDrinkPregnancy(int drinkPregnancy) {
+        this.drinkPregnancy = drinkPregnancy;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getWithMedicine() {
+        return withMedicine;
+    }
+
+    public void setWithMedicine(int withMedicine) {
+        this.withMedicine = withMedicine;
+    }
+
+    public int getOtherLiverInjuryReason() {
+        return otherLiverInjuryReason;
+    }
+
+    public void setOtherLiverInjuryReason(int otherLiverInjuryReason) {
+        this.otherLiverInjuryReason = otherLiverInjuryReason;
+    }
+
+    public int getPastLiverInjuryInformation() {
+        return pastLiverInjuryInformation;
+    }
+
+    public void setPastLiverInjuryInformation(int pastLiverInjuryInformation) {
+        this.pastLiverInjuryInformation = pastLiverInjuryInformation;
+    }
+
+    public int getReMedicineResponse() {
+        return reMedicineResponse;
+    }
+
+    public void setReMedicineResponse(int reMedicineResponse) {
+        this.reMedicineResponse = reMedicineResponse;
     }
 
     public String getRucam() {

@@ -26,6 +26,22 @@ public class MlLiverInjuryServiceImpl implements MlLiverInjuryService,MlComplete
         medicineLiverLiverInjuryDTO.setFailure(medicineLiverLiverInjuryDO.getFailure());
         medicineLiverLiverInjuryDTO.setHepaticEncephalopathy(medicineLiverLiverInjuryDO.getHepaticEncephalopathy());
         medicineLiverLiverInjuryDTO.setId(medicineLiverLiverInjuryDO.getId());
+        medicineLiverLiverInjuryDTO.setR(medicineLiverLiverInjuryDO.getR());
+        medicineLiverLiverInjuryDTO.setAge(medicineLiverLiverInjuryDO.getAge());
+        medicineLiverLiverInjuryDTO.setAlp(medicineLiverLiverInjuryDO.getAlp());
+        medicineLiverLiverInjuryDTO.setAlt(medicineLiverLiverInjuryDO.getAlt());
+        medicineLiverLiverInjuryDTO.setContinueMedicine(medicineLiverLiverInjuryDO.getContinueMedicine());
+        medicineLiverLiverInjuryDTO.setDrinkPregnancy(medicineLiverLiverInjuryDO.getDrinkPregnancy());
+        medicineLiverLiverInjuryDTO.setLiverInjuryType(medicineLiverLiverInjuryDO.getLiverInjuryType());
+        medicineLiverLiverInjuryDTO.setMedicine(medicineLiverLiverInjuryDO.getMedicine());
+        medicineLiverLiverInjuryDTO.setMedicineStart(medicineLiverLiverInjuryDO.getMedicineStart());
+        medicineLiverLiverInjuryDTO.setOtherLiverInjuryReason(medicineLiverLiverInjuryDO.getOtherLiverInjuryReason());
+        medicineLiverLiverInjuryDTO.setPastLiverInjuryInformation(medicineLiverLiverInjuryDO.getPastLiverInjuryInformation());
+        medicineLiverLiverInjuryDTO.setR(medicineLiverLiverInjuryDO.getR());
+        medicineLiverLiverInjuryDTO.setReMedicineResponse(medicineLiverLiverInjuryDO.getReMedicineResponse());
+        medicineLiverLiverInjuryDTO.setStopMedicine(medicineLiverLiverInjuryDO.getStopMedicine());
+        medicineLiverLiverInjuryDTO.setWithdrawalStart(medicineLiverLiverInjuryDO.getWithdrawalStart());
+        medicineLiverLiverInjuryDTO.setWithMedicine(medicineLiverLiverInjuryDO.getWithMedicine());
         medicineLiverLiverInjuryDTO.setRucam(medicineLiverLiverInjuryDO.getRucam());
         return medicineLiverLiverInjuryDTO;
     }
@@ -40,6 +56,22 @@ public class MlLiverInjuryServiceImpl implements MlLiverInjuryService,MlComplete
         medicineLiverLiverInjuryDO.setExtendHospitalStay(medicineLiverLiverInjuryDTO.getExtendHospitalStay());
         medicineLiverLiverInjuryDO.setExtendInr(medicineLiverLiverInjuryDTO.getExtendInr());
         medicineLiverLiverInjuryDO.setPatientId(medicineLiverLiverInjuryDTO.getPatientId());
+        medicineLiverLiverInjuryDO.setR(medicineLiverLiverInjuryDTO.getR());
+        medicineLiverLiverInjuryDO.setAge(medicineLiverLiverInjuryDTO.getAge());
+        medicineLiverLiverInjuryDO.setAlp(medicineLiverLiverInjuryDTO.getAlp());
+        medicineLiverLiverInjuryDO.setAlt(medicineLiverLiverInjuryDTO.getAlt());
+        medicineLiverLiverInjuryDO.setContinueMedicine(medicineLiverLiverInjuryDTO.getContinueMedicine());
+        medicineLiverLiverInjuryDO.setDrinkPregnancy(medicineLiverLiverInjuryDTO.getDrinkPregnancy());
+        medicineLiverLiverInjuryDO.setLiverInjuryType(medicineLiverLiverInjuryDTO.getLiverInjuryType());
+        medicineLiverLiverInjuryDO.setMedicine(medicineLiverLiverInjuryDTO.getMedicine());
+        medicineLiverLiverInjuryDO.setMedicineStart(medicineLiverLiverInjuryDTO.getMedicineStart());
+        medicineLiverLiverInjuryDO.setOtherLiverInjuryReason(medicineLiverLiverInjuryDTO.getOtherLiverInjuryReason());
+        medicineLiverLiverInjuryDO.setPastLiverInjuryInformation(medicineLiverLiverInjuryDTO.getPastLiverInjuryInformation());
+        medicineLiverLiverInjuryDO.setR(medicineLiverLiverInjuryDTO.getR());
+        medicineLiverLiverInjuryDO.setReMedicineResponse(medicineLiverLiverInjuryDTO.getReMedicineResponse());
+        medicineLiverLiverInjuryDO.setStopMedicine(medicineLiverLiverInjuryDTO.getStopMedicine());
+        medicineLiverLiverInjuryDO.setWithdrawalStart(medicineLiverLiverInjuryDTO.getWithdrawalStart());
+        medicineLiverLiverInjuryDO.setWithMedicine(medicineLiverLiverInjuryDTO.getWithMedicine());
         return medicineLiverLiverInjuryDO;
     }
 

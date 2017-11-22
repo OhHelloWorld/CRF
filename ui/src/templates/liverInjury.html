@@ -99,10 +99,305 @@
       </div>
 
       <div class="box-header with-border">
-              <h3 class="box-title">【 使用Hepatox网站上的RUCAM评分 】</h3>
+              <h3 class="box-title">【 RUCAM因果关系评估量表 】</h3>
       </div>
       <div class="box-body">
-        <input type="text" class="form-control" ng-model="rucam">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td colspan="1">
+                药物<br/><input type="text" ng-model="medicine">
+              </td>
+              <td colspan="1">
+                初始ALT<br/><input type="text" ng-model="alt">
+              </td>
+              <td colspan="1">
+                初始ALP<br/><input type="text" ng-model="alp">
+              </td>
+              <td colspan="3">
+                R值[ALT/ULN]÷[ALP/ULN]<br/><input type="text" ng-model="r">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                肝损伤类型：<span style="color: red">{{liverInjuryType}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1.用药至发病的时间
+              </td>
+              <td colspan="2">
+                肝细胞损伤型
+              </td>
+              <td colspan="2">
+                胆汁淤积型或混合型
+              </td>
+              <td>
+                评价
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>初次用药</td>
+              <td>再次用药</td>
+              <td>初次用药</td>
+              <td>再次用药</td>
+              <td>计分</td>
+            </tr>
+            <tr>
+              <td>★从用药开始</td>
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="medicineStart" ng-model="medicineStart" ng-value=1>提示
+              </td>
+              <td>5~90d</td>
+              <td>1~15d</td>
+              <td>5~90d</td>
+              <td>1~15d</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="medicineStart" ng-model="medicineStart" ng-value=2>可疑
+              </td>
+              <td><5d或>90d</td>
+              <td>>15d</td>
+              <td><5d或>90d</td>
+              <td>>90d</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td>★从停药开始</td>
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="withdrawalStart" ng-model="withdrawalStart" ng-value=1>可疑
+              </td>
+              <td>≤15d</td>
+              <td>≤15d</td>
+              <td>≤30d</td>
+              <td>≤30d</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td colspan="6" style="color: red">注：若肝损伤反应出现在开始服药前，或停药后>15d（肝细胞损伤型）或>30d（胆汁淤积型），则应考虑肝损伤与药物无关，不应继续进行RUCAM评分</td>
+            </tr>
+            <tr>
+              <td>
+                2.病程
+              </td>
+              <td colspan="2">
+                ALT在峰值和ULN之间的变化
+              </td>
+              <td colspan="2">
+                ALP（或TBil）在峰值和ULN之间的变化
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="6">★停药后</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=1>高度提示
+              </td>
+              <td colspan="2">8d内下降≥50％</td>
+              <td colspan="2">不适用</td>
+              <td>+3</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=2>
+              提示
+              </td>
+              <td colspan="2">30d内下降≥50％</td>
+              <td colspan="2">180d内下降≥50％</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=3>
+              可疑
+              </td>
+              <td colspan="2">不适用</td>
+              <td colspan="2">180d内下降<50％</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=4>
+              无结论
+              </td>
+              <td colspan="2">无资料或30d后下降≥50％</td>
+              <td colspan="2">不变上升或无资料</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=5>
+              与药物作用相反
+              </td>
+              <td colspan="2">30d后下降＜50％或再次升高</td>
+              <td colspan="2">不适用</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <td colspan="6">★若继续用药</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="continueMedicine" ng-model="continueMedicine" ng-value=1>无结论</td>
+              <td colspan="2">所有情况</td>
+              <td colspan="2">所有情况</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>3.危险因素</td>
+              <td colspan="2">乙醇</td>
+              <td colspan="2">乙醇或妊娠（任意一种）</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="drinkPregnancy" ng-model="drinkPregnancy" ng-value=1>饮酒或妊娠</td>
+              <td colspan="2">有</td>
+              <td colspan="2">有</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="drinkPregnancy" ng-model="drinkPregnancy" ng-value=2>饮酒或妊娠</td>
+              <td colspan="2">无</td>
+              <td colspan="2">无</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="age" ng-model="age" ng-value=1>年龄</td>
+              <td colspan="2">≥55岁</td>
+              <td colspan="2">≥55岁</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="age" ng-model="age" ng-value=2>年龄</td>
+              <td colspan="2"><55岁</td>
+              <td colspan="2"><55岁</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="6">4.伴随用药</td>
+            </tr>
+            <tr>
+              <td colspan="5"><input type="radio" name="withMedicine" ng-model="withMedicine" ng-value=1>无伴随用药，或无资料，或伴随用药至发病时间不相合</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="5"><input type="radio" name="withMedicine" ng-model="withMedicine" ng-value=2>伴随用药至发病时间相符合</td>
+              <td>-1</td>
+            </tr>
+            <tr>
+              <td colspan="5"><input type="radio" name="withMedicine" ng-model="withMedicine" ng-value=3>伴随用药已知有肝毒性，且至发病时间提示或相合</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <td colspan="5"><input type="radio" name="withMedicine" ng-model="withMedicine" ng-value=4>伴随用药的肝损伤证据明确（再刺激反应呈阳性，或与肝损伤明确相关并有典型的警示标志）</td>
+              <td>-3</td>
+            </tr>
+            <tr>
+              <td colspan="6">5.除外其他肝损伤原因</td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=1>排除组Ⅰ和组Ⅱ中的所有病因</td>
+              <td colspan="3" rowspan="5">
+                第Ⅰ组（6种病因）
+                <ul>
+                  <li>急性甲型肝炎（抗-HAV-IgM+）或HBV感染[HBsAg和（或）抗-HBc-IgM+]<br/>或HCV感染[抗-HCV+和（或）HCV RNA+,伴有相应的临床病史]</li>
+                  <li>胆道梗阻（影像检查证实）</li>
+                  <li>酒精中毒（有过量饮酒史且AST/ALT≥2）</li>
+                  <li>近期有低血压，休克或肝脏缺血史（发作两周以内）</li>
+                </ul>
+                第Ⅱ组（2类病因）
+                <ul>
+                  <li>
+                    合并AIH，脓毒症，慢性乙型或丙型肝炎，PBC或PSC等基础疾病，<br/>或临床特征及血清学和病毒学检测提示急性CMV，EBV或单纯疱疹病毒感染
+                  </li>
+                </ul>
+              </td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=2>排除组Ⅰ中的所有病因</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=3>排除组Ⅰ中5或4种病因</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=4>排除组Ⅰ中至少4种病因</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=5>非药物性因素高度可能</td>
+              <td>-3</td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                6.药物既往肝损伤信息
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <input type="radio" name="pastLiverInjuryInformation" ng-model="pastLiverInjuryInformation" ng-value=1>肝损伤反应已在产品介绍中标明
+              </td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <input type="radio" name="pastLiverInjuryInformation" ng-model="pastLiverInjuryInformation" ng-value=2>肝损伤反应未在产品介绍中标明，但曾有报道
+              </td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <input type="radio" name="pastLiverInjuryInformation" ng-model="pastLiverInjuryInformation" ng-value=3>肝损伤反应未知
+              </td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="6">7.再用药反应</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="reMedicineResponse" ng-model="reMedicineResponse" ng-value=1>阳性</td>
+              <td colspan="2">再次单用该药后ALT升高2倍</td>
+              <td colspan="2">再次单用该药后ALP（或TBil）升高2倍</td>
+              <td>+3</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="reMedicineResponse" ng-model="reMedicineResponse" ng-value=2>可疑</td>
+              <td colspan="2">再次联用该药和曾同时应用的其他药物</td>
+              <td colspan="2">再次联用该药和曾同时应用的其他药物后，<br/>ALP（或TBil）升高2倍</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="reMedicineResponse" ng-model="reMedicineResponse" ng-value=3>阴性</td>
+              <td colspan="2">再次单用该药后，ALT升高，但低于ULN</td>
+              <td colspan="2">再次单用该药后ALP（或TBil）升高，但低于ULN</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="reMedicineResponse" ng-model="reMedicineResponse" ng-value=4>未做或无法判断</td>
+              <td colspan="2">其他情况</td>
+              <td colspan="2">其他情况</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="1"><span class="h4" style="color: blue">总分：{{rucam}}</span></td>
+              <td colspan="5"><span class="h4" style="color: blue">判定：{{result}}</span></td>
+            </tr>
+            <tr>
+              <td colspan="6" style="color: red">
+                注：<ol>
+                  <li>总分意义判定：>8：极可能；6~8：很可能；3~5：可能；1~2：不太可能；≤0：可排除</li>
+                  <li>在我国也应特别注意排除急性戊型肝炎，因此本项计分标准尚待日后完善</li>
+                  <li>也应注意排除IgG4胆管炎</li>
+                </ol>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       </div>
       <div class="col-md-offset-9">
