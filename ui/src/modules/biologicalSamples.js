@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 angular.module('biologicalSamples', [])
-  .controller('biologicalSamplesController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
+  .controller('biologicalSamplesController', ['$scope', '$http', '$state', function($scope, $http, $state) {
     var mlBiologicalSamples = {};
     getMlPatient();
     $scope.save = function() {
@@ -38,15 +38,15 @@ angular.module('biologicalSamples', [])
       mlBiologicalSamples.remark3 = $scope.remark3;
       mlBiologicalSamples.remark4 = $scope.remark4;
       mlBiologicalSamples.remark5 = $scope.remark5;
-      mlBiologicalSamples.remark6 = $scope.remark6;      
+      mlBiologicalSamples.remark6 = $scope.remark6;
 
       mlBiologicalSamples.complete = true;
 
       $http({
-        method:'POST',
-        url:'/api/mlBiologicalSamples',
-        data:mlBiologicalSamples
-      }).then(function success(){
+        method: 'POST',
+        url: '/api/mlBiologicalSamples',
+        data: mlBiologicalSamples
+      }).then(function success() {
         $('#myModal').modal();
       });
     };
@@ -83,7 +83,7 @@ angular.module('biologicalSamples', [])
         $scope.num4 = data.num4;
         $scope.num5 = data.num5;
         $scope.num6 = data.num6;
-      
+
         $scope.remark1 = data.remark1;
         $scope.remark2 = data.remark2;
         $scope.remark3 = data.remark3;
