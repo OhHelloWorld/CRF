@@ -19,18 +19,18 @@
         <span class="h3 box-title">【 PBC临床分期 】</span>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="临床前期"><span class="h4">临床前期</span>
+        <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="临床前期"><span class="h5">临床前期</span>
         <span class="col-md-offset-1">
           <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="无症状期">
-          <span class="h4">无症状期</span>
+          <span class="h5">无症状期</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="症状期"><span class="h4">
+          <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="症状期"><span class="h5">
           症状期</span>
         </span>
         <span class="col-md-offset-1">
           <input type="radio" name="ans1" ng-model="pbcClinicalStage" value="肝功能不全期">
-          <span class="h4">肝功能不全期</span>
+          <span class="h5">肝功能不全期</span>
         </span>
       </div>
   </div>
@@ -41,30 +41,30 @@
         <span class="h3 box-title">【 AIH临床分期 】</span>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans2" ng-model="aihClinicalStage" value="无症状期"><span class="h4">无症状期
+        <input type="radio" name="ans2" ng-model="aihClinicalStage" value="无症状期"><span class="h5">无症状期
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="症状期"><span class="h4">症状期</span>
+          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="症状期"><span class="h5">症状期</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="缓解期"><span class="h4">缓解期
+          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="缓解期"><span class="h5">缓解期
           </span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="复发"><span class="h4">复发
+          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="复发"><span class="h5">复发
           </span>
         </span>
         <span class="col-md-offset-1">
           <input type="radio" name="ans2" ng-model="aihClinicalStage" value="肝硬化代偿期">
-          <span class="h4">肝硬化代偿期</span>
+          <span class="h5">肝硬化代偿期</span>
         </span>
         <span class="col-md-offset-1">
           <input type="radio" name="ans2" ng-model="aihClinicalStage" value="肝硬化失代偿期">
-          <span class="h4">肝硬化失代偿期</span>
+          <span class="h5">肝硬化失代偿期</span>
         </span>
         <br/>
         <span>
-          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="急性肝功能衰竭"><span class="h4">急性肝功能衰竭</span>
+          <input type="radio" name="ans2" ng-model="aihClinicalStage" value="急性肝功能衰竭"><span class="h5">急性肝功能衰竭</span>
         </span>
       </div>
   </div>
@@ -75,42 +75,45 @@
         <span class="h3 box-title">【 特殊情况 】</span>
       </div>
       <div class="box-body">
-        <checkbox ng-model="children" ng-true-value="true"></checkbox><span class="h4">儿童
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="gestationPeriod" ng-true-value="true"></checkbox><span class="h4">妊娠期
-          </span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="repeatedRelapse" ng-true-value="true"></checkbox><span class="h4">多次复发
-          </span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="resistantToSteroidTreatment" ng-true-value="true"></checkbox>
-          <span class="h4">对激素耐药</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="patientsWithChronicHepatitisB" ng-true-value="true"></checkbox>
-          <span class="h4">合并慢性乙型肝炎</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="patientsWithChronicHepatitisC" ng-true-value="true"></checkbox>
-          <span class="h4">合并慢性丙型肝炎</span>
-        </span>
-        <br/>
-        <span>
-          <checkbox ng-model="overlappingAIHPBC" ng-true-value="true"></checkbox><span class="h4">AIH-PBC重叠</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="overlappingAIHPSC" ng-true-value="true"></checkbox><span class="h4">AIH-PSC重叠</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="autoimmuneCholangitis" ng-true-value="true"></checkbox><span class="h4">自身免疫性胆管炎</span>
-        </span>
-        <span class="col-md-offset-1">
-          <checkbox ng-model="finalDiagnosisOther" ng-true-value="true"></checkbox>
-          <span class="h4">其他</span>
-        </span>
+        <table>
+          <tbody>
+            <tr>
+              <td class="col-md-2">
+                <checkbox ng-model="children" ng-true-value="true"></checkbox><span class="h5">儿童</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="gestationPeriod" ng-true-value="true"></checkbox><span class="h5">妊娠期</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="repeatedRelapse" ng-true-value="true"></checkbox><span class="h5">多次复发</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="resistantToSteroidTreatment" ng-true-value="true"></checkbox><span class="h5">对激素耐药</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="patientsWithChronicHepatitisB" ng-true-value="true"></checkbox><span class="h5">合并慢性乙型肝炎</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-2">
+                <checkbox ng-model="patientsWithChronicHepatitisC" ng-true-value="true"></checkbox><span class="h5">合并慢性丙型肝炎</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="overlappingAIHPBC" ng-true-value="true"></checkbox><span class="h5">AIH-PBC重叠</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="overlappingAIHPSC" ng-true-value="true"></checkbox><span class="h5">AIH-PSC重叠</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="autoimmuneCholangitis" ng-true-value="true"></checkbox><span class="h5">自身免疫性胆管炎</span>
+              </td>
+              <td class="col-md-2">
+                <checkbox ng-model="finalDiagnosisOther" ng-true-value="true"></checkbox>
+              <span class="h5">其他</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
   </div>
 

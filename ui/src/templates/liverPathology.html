@@ -50,235 +50,263 @@
 			</select>
 		</div>
 	</form>
-		<br/>
-	<div class="box box-primary">
-    <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
-		<br>
-		<ul ng-show="gs">
-			<li>
-				<sapn class="h4">【 小叶内炎症 】</sapn>
-				<div>
-				<input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="4"><span class="h3">3</span></span>
+	<br>
+		
+		<div ng-show="gs">
+				<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 小叶内炎症 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationLeaflets" ng-model="leaf" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 界面性肝炎 】</sapn>
-				<div>
-				<input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 界面性肝炎 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfacialInflammation" ng-model="interfacial" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 汇管区炎症 】</sapn>
-				<div>
-				<input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 汇管区炎症 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portal" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 淋巴细胞浆细胞浸润 】</sapn>
-				<div>
-				<input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 淋巴细胞浆细胞浸润 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lymphocytePlasmaCellInfiltration" ng-model="lymphocyte" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 纤维组织增生 】</sapn>
-				<div>
-				<input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 纤维组织增生 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrousTissueHyperplasia" ng-model="fibrous" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 胆管炎症/损伤 】</sapn>
-				<div>
-				<input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 胆管炎症/损伤 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="inflammationBileDuct" ng-model="inflammation" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 肝细胞脂肪变性 】</sapn>
-				<div>
-				<input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="4"><span class="h3">3</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 肝细胞脂肪变性 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="hepatocellularSteatosis" ng-model="hepatocellular" ng-value="4"><span class="h4">3</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 玫瑰花结样改变 】</sapn>
-				<div>
-				<input type="radio" name="roseSample" ng-model="rose" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="roseSample" ng-model="rose" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 HBsAg染色 】</sapn>
-				<div>
-				<input type="radio" name="hbsAg" ng-model="hbs" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="hbsAg" ng-model="hbs" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" /><li>
-				<sapn class="h4">【 HBcAg染色 】</sapn>
-				<div>
-				<input type="radio" name="hbcAg" ng-model="hbc" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="hbcAg" ng-model="hbc" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" /><li>
-				<sapn class="h4">【 HCV染色 】</sapn>
-				<div>
-				<input type="radio" name="hcv" ng-model="hcv" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="hcv" ng-model="hcv" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" /><li>
-				<sapn class="h4">【 其他 】</sapn>
-				<div>
-				<input type="radio" name="other" ng-model="other" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="other" ng-model="other" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" /><li>
-				<sapn class="h4">【 诊断（分期分级） 】</sapn>
-				<div>
-				<input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="1"><span class="h4">阴性</span>
-				<span class="col-md-offset-1"><input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="2"><span class="h4">阳性</span></span>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<span class="h4">【 备注 】</span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 玫瑰花结样改变 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="roseSample" ng-model="rose" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="roseSample" ng-model="rose" ng-value="2"><span class="h5">阳性</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 HBsAg染色 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="hbsAg" ng-model="hbs" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hbsAg" ng-model="hbs" ng-value="2"><span class="h5">阳性</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 HBcAg染色 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="hbcAg" ng-model="hbc" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hbcAg" ng-model="hbc" ng-value="2"><span class="h5">阳性</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 HCV染色 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="hcv" ng-model="hcv" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="hcv" ng-model="hcv" ng-value="2"><span class="h5">阳性</span></span>
+			</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 其他 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="other" ng-model="other" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="other" ng-model="other" ng-value="2"><span class="h5">阳性</span></span>
+			</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 诊断（分期分级） 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="1"><span class="h5">阴性</span>
+				<span class="col-md-offset-1"><input type="radio" name="diagnosis" ng-model="diagnosis" ng-value="2"><span class="h5">阳性</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 备注 】</h3>
+		        </div>
+        		<div class="box-body">
 				<div class="form-group">
                   <textarea class="form-control" rows="3" placeholder="请输入备注..." ng-model="mark"></textarea>
                 </div>
-			</li>
-		</ul>
+            </div>
+			</div>
+		</div>
 
-		<ul ng-show = "ishak">
-			<li>
-				<sapn class="h4">【 门脉区炎症 】</sapn>
-				<div>
-				<input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="5"><span class="h3">4</span></span>
+		<div ng-show = "ishak">
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 门脉区炎症 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation" ng-model="portalAreaInflammation" ng-value="5"><span class="h4">4</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			
-			<li>
-				<sapn class="h4">【 小叶内活动度 】</sapn>
-				<div>
-				<input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="5"><span class="h3">4</span></span>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 小叶内活动度 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility" ng-model="lobularMobility" ng-value="5"><span class="h4">4</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 界面炎 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="5"><span class="h4">4</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 融合性坏死 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="5"><span class="h4">4</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="6"><span class="h4">5</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="7"><span class="h4">6</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 纤维化评分 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="5"><span class="h4">4</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="6"><span class="h4">5</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="7"><span class="h4">6</span></span>
+				</div>
+			</div>
+		</div>
 
-			<li>
-				<sapn class="h4">【 界面炎 】</sapn>
-				<div>
-				<input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation" ng-model="interfaceInflammation" ng-value="5"><span class="h3">4</span></span>
+		<div ng-show = "hai">
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 门脉区炎症 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="3"><span class="h4">2</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="4"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="5"><span class="h4">4</span></span>
 				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 小叶内活动度 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="3"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="4"><span class="h4">4</span></span>
+				</div>
+			</div>
+			<div class="box box-info">
+		        <div class="box-header with-border">
+		                <h3 class="box-title">【 界面炎 】</h3>
+		        </div>
+        		<div class="box-body">
+				<input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="1"><span class="h4">0</span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="2"><span class="h4">1</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="3"><span class="h4">3</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="4"><span class="h4">4</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="5"><span class="h4">5</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="6"><span class="h4">6</span></span>
+				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="7"><span class="h4">10</span></span>
+				</div>
+			</div>
 
-			<li>
-				<sapn class="h4">【 融合性坏死 】</sapn>
-				<div>
-				<input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="5"><span class="h3">4</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="6"><span class="h3">5</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="confluentNecrosis" ng-model="confluentNecrosis" ng-value="7"><span class="h3">6</span></span>
-				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
+		</div>
 
-			<li>
-				<sapn class="h4">【 纤维化评分 】</sapn>
-				<div>
-				<input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="5"><span class="h3">4</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="6"><span class="h3">5</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="fibrosis" ng-model="fibrosis" ng-value="7"><span class="h3">6</span></span>
-				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-		</ul>
-
-		<ul ng-show = "hai">
-			<li>
-				<sapn class="h4">【 门脉区炎症 】</sapn>
-				<div>
-				<input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="3"><span class="h3">2</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="4"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="portalAreaInflammation1" ng-model="portalAreaInflammation" ng-value="5"><span class="h3">4</span></span>
-				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-
-			<li>
-				<sapn class="h4">【 小叶内活动度 】</sapn>
-				<div>
-				<input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="3"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="lobularMobility1" ng-model="lobularMobility" ng-value="4"><span class="h3">4</span></span>
-				</div>
-			</li>
-			<hr style="border : 1px dashed #3C8DBC;" />
-			<li>
-				<sapn class="h4">【 界面炎 】</sapn>
-				<div>
-				<input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="1"><span class="h3">0</span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="2"><span class="h3">1</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="3"><span class="h3">3</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="4"><span class="h3">4</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="5"><span class="h3">5</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="6"><span class="h3">6</span></span>
-				<span class="col-md-offset-1"><input type="radio" name="interfaceInflammation1" ng-model="interfaceInflammation" ng-value="7"><span class="h3">10</span></span>
-				</div>
-			</li>
-
-		</ul>
-    </div>
-    <br>
     <div class="col-md-offset-9">
     <input type="button" class="btn btn-primary" value="保存" ng-click="save()">&nbsp
     <input type="button" class="btn btn-primary" value="退出" ng-click="layout()">
     </div>
-</div>
+
 </div>

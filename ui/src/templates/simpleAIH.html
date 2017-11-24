@@ -50,9 +50,9 @@
               <h3 class="box-title">T值</h3>
       </div> -->
       <div class="box-body">
-        <input type="radio" name="ans1" ng-model="anasma1" ng-value=1><span class="h4">阴性</span>
+        <input type="radio" name="ans1" ng-model="anasma1" ng-value=1><span class="h5">阴性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans1" ng-model="anasma1" ng-value=2><span class="h4">阳性</span>
+          <input type="radio" name="ans1" ng-model="anasma1" ng-value=2><span class="h5">阳性</span>
         </span>
       </div>
       </div>
@@ -64,12 +64,12 @@
       </div>
       <div class="box-body">
       <div class="box-body">
-        <input type="radio" name="ans2" ng-model="anasma2" ng-value=1><span class="h4"><1:100</span>
+        <input type="radio" name="ans2" ng-model="anasma2" ng-value=1><span class="h5"><1:100</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="anasma2" ng-value=2><span class="h4">=1:100</span>
+          <input type="radio" name="ans2" ng-model="anasma2" ng-value=2><span class="h5">=1:100</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="anasma2" ng-value=3><span class="h4">>1:100</span>
+          <input type="radio" name="ans2" ng-model="anasma2" ng-value=3><span class="h5">>1:100</span>
         </span>
       </div>
       </div>
@@ -82,9 +82,9 @@
       </div>
       <div class="box-body">
       <div class="box-body">
-        <input type="radio" name="ans3" ng-model="antiLkm" ng-value=1><span class="h4">阴性</span>
+        <input type="radio" name="ans3" ng-model="antiLkm" ng-value=1><span class="h5">阴性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans3" ng-model="antiLkm" ng-value=2><span class="h4">阳性</span>
+          <input type="radio" name="ans3" ng-model="antiLkm" ng-value=2><span class="h5">阳性</span>
         </span>
       </div>
       </div>
@@ -96,9 +96,9 @@
       </div>
       <div class="box-body">
       <div class="box-body">
-        <input type="radio" name="ans7" ng-model="antiSla" ng-value=1><span class="h4">阴性</span>
+        <input type="radio" name="ans7" ng-model="antiSla" ng-value=1><span class="h5">阴性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans7" ng-model="antiSla" ng-value=2><span class="h4">阳性</span>
+          <input type="radio" name="ans7" ng-model="antiSla" ng-value=2><span class="h5">阳性</span>
         </span>
       </div>
       </div>
@@ -110,9 +110,9 @@
       </div>
       <div class="box-body">
       <div class="box-body">
-        <input type="radio" name="ans4" ng-model="igG" ng-value=1><span class="h4">≥正常值上限</span>
+        <input type="radio" name="ans4" ng-model="igG" ng-value=1><span class="h5">≥正常值上限</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans4" ng-model="igG" ng-value=2><span class="h4">≥1.10倍正常上限</span>
+          <input type="radio" name="ans4" ng-model="igG" ng-value=2><span class="h5">≥1.10倍正常上限</span>
         </span>
       </div>
       </div>
@@ -125,9 +125,9 @@
       </div>
       <div class="box-body">
       <div class="box-body">
-        <input type="radio" name="ans5" ng-model="liver" ng-value=1><span class="h4">符合AIH</span>
+        <input type="radio" name="ans5" ng-model="liver" ng-value=1><span class="h5">符合AIH</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans5" ng-model="liver" ng-value=2><span class="h4">典型AIH表现</span>
+          <input type="radio" name="ans5" ng-model="liver" ng-value=2><span class="h5">典型AIH表现</span>
         </span>
       </div>
       </div>
@@ -139,18 +139,16 @@
               <a ng-mouseover="liver1rover()" ng-mouseleave="liver1leave()"><h3 class="box-title">【 排除病毒性肝炎 】</h3></a><span class="col-md-offset-1" ng-show="liver1_show" ng-init="liver1_show=false" style="color: green">“是”2分，“否”0分</span>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans6" ng-model="eliminateViralHepatitis" ng-value=1><span class="h4">否</span>
+        <input type="radio" name="ans6" ng-model="eliminateViralHepatitis" ng-value=1><span class="h5">否</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans6" ng-model="eliminateViralHepatitis" ng-value=2><span class="h4">是</span>
+          <input type="radio" name="ans6" ng-model="eliminateViralHepatitis" ng-value=2><span class="h5">是</span>
         </span>
       </div>
       </div>
 
       <div>
-        <a ng-mouseover="resultover()" ng-mouseleave="resultleave()"><span class="h3">结果：</span></a><span class="h3" ng-show="resultShow" ng-init="resultShow=false" style="color: green">“>=6”分：AIH可能；“≥7”分：确诊AIH</span> 
-        <div>
-          <span class="h3">{{result}}</span>
-        </div>
+        <a ng-mouseover="resultover()" ng-mouseleave="resultleave()"><span class="h3">得分：</span></a><span class="h3" ng-show="resultShow" ng-init="resultShow=false" style="color: green">“>=6”分：AIH可能；“≥7”分：确诊AIH</span> 
+          <span class="h3" style="color: green">{{result}}</span>
       </div>
   </div>
   <br/>

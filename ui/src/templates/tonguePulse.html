@@ -102,37 +102,45 @@
           </div>
     </form>
     <br/>
-    <div class="box box-primary">
-        <div style="border: 5px;border-style: outset;border-color: #3C8DBC">
-          <ol>
-            <li>
-              <h4>【 舌质 】</h4>
-              <checkbox ng-model="cb1"></checkbox><span class="h5">淡红</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb2"></checkbox><span class="h5">淡白</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb3"></checkbox><span class="h5">淡紫</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb4"></checkbox><span class="h5">红</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb5"></checkbox><span class="h5">绛</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb6"></checkbox><span class="h5">青</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb7"></checkbox><span class="h5">紫暗</span>
-              &nbsp&nbsp&nbsp&nbsp
-              <checkbox ng-model="cb8"></checkbox><span class="h5">瘀点瘀斑</span>
-              <h4>【 部位 】</h4>
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 舌质 】</h3>
+                </div>
+                <div class="box-body">
+                <checkbox ng-model="cb1"></checkbox><span class="h5">淡红</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb2"></checkbox><span class="h5">淡白</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb3"></checkbox><span class="h5">淡紫</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb4"></checkbox><span class="h5">红</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb5"></checkbox><span class="h5">绛</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb6"></checkbox><span class="h5">青</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb7"></checkbox><span class="h5">紫暗</span>
+                &nbsp&nbsp&nbsp&nbsp
+                <checkbox ng-model="cb8"></checkbox><span class="h5">瘀点瘀斑</span>
+                </div>
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 部位 】</h3>
+                </div>
+                <div class="box-body">
               <form class="form-inline">
               <input type="checkbox" ng-model="cb9"><span class="h5">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb10" ng-click="tongueShowClick()"><span class="h5">局部</span>
               <input ng-show="tongueShow" ng-init="tongueShow=false" ng-model="tongueDescription" type="text" class="form-control" placeholder="请注明..">
               </form>
-            </li>
-            <hr style="border : 1px dashed #3C8DBC;" />
-            <li>
-              <h4>【 舌体 】</h4>
+              </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 舌体 】</h3>
+                </div>
+                <div class="box-body">
               <checkbox ng-model="cb11"></checkbox><span class="h5">荣</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb12"></checkbox><span class="h5">枯</span>
@@ -148,10 +156,13 @@
               <checkbox ng-model="cb17"></checkbox><span class="h5">裂纹</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb18"></checkbox><span class="h5">舌体瘀斑</span>
-            </li>
-            <hr style="border : 1px dashed #3C8DBC;" />
-            <li>
-              <h4>【 苔质 】</h4>
+              </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 苔质 】</h3>
+                </div>
+                <div class="box-body">
               <checkbox ng-model="cb19"></checkbox><span class="h5">薄</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb20"></checkbox><span class="h5">厚</span>
@@ -177,17 +188,24 @@
               <checkbox ng-model="cb30"></checkbox><span class="h5">类剥</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb31"></checkbox><span class="h5">无苔</span>
-              <h4>【 部位 】</h4>
+              </div>
+              <div class="box-header with-border">
+                  <h3 class="box-title">【 部位 】</h3>
+                </div>
+                <div class="box-body">
               <form class="form-inline">
               <input type="checkbox" ng-model="cb32"><span class="h5">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb33" ng-click="mossyShowClick()"><span class="h5">局部</span>
               <input type="text" ng-show="mossyShow" ng-init="mossyShow=false" ng-model="mossyDes" class="form-control" placeholder="请注明..">
               </form>
-            </li>
-            <hr style="border : 1px dashed #3C8DBC;" />
-            <li>
-              <h4>【 舌苔色 】</h4>
+              </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 舌苔色 】</h3>
+                </div>
+                <div class="box-body">
               <checkbox ng-model="cb34"></checkbox><span class="h5">白</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb35"></checkbox><span class="h5">略黄</span>
@@ -197,26 +215,36 @@
               <checkbox ng-model="cb37"></checkbox><span class="h5">灰</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb38"></checkbox><span class="h5">黑</span>
-              <h4>【 部位 】</h4>
+              </div>
+              <div class="box-header with-border">
+                  <h3 class="box-title">【 部位 】</h3>
+                </div>
+                <div class="box-body">
               <form class="form-inline">
               <input type="checkbox" ng-model="cb39"><span class="h5">全舌</span>
               &nbsp&nbsp&nbsp&nbsp
               <input type="checkbox" ng-model="cb40" ng-click="tongueColorShowClick()"></checkbox><span class="h5">局部</span>
               <input type="text" ng-show="tongueColorShow" ng-init="tongueColorShow=false" ng-model="tongueColorDes" class="form-control" placeholder="请注明..">
               </form>
-            </li>
-            <hr style="border : 1px dashed #3C8DBC;" />
-            <li>
-              <h4>【 舌下静脉曲张 】</h4>
+              </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 舌下静脉曲张 】</h3>
+                </div>
+                <div class="box-body">
               <checkbox ng-model="cb41"></checkbox><span class="h5">正常</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb42"></checkbox><span class="h5">轻微</span>
               &nbsp&nbsp&nbsp&nbsp
               <checkbox ng-model="cb43"></checkbox><span class="h5">明显</span>
-            </li>
-            <hr style="border : 1px dashed #3C8DBC;"/>
-            <li>
-              <h4>【 脉象 】</h4>
+              </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">【 脉象 】</h3>
+                </div>
+                <div class="box-body">
               <ul>
                 <li>
                   <h4>【 左 】</h4>
@@ -283,13 +311,12 @@
                   <checkbox ng-model="cb73"></checkbox><span class="h5">结代</span>
                 </li>
               </ul>
-            </li>
-          </ol>
-        <br>
+            </div>
+            </div>
+
         <span class="col-md-offset-9">&nbsp</span>
         <input type="button" class="btn btn-primary" ng-click="save()" value="保存">&nbsp
         <input type="button" class="btn btn-primary" ng-click="out()" value="退出">
-      </div>
-    </div>
+
   </div>
 </div>

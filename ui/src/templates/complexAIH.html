@@ -40,6 +40,7 @@
       <li role="presentation" class="active" id="tab1"><a style="cursor: pointer;" ng-click="before()"><span class="h4">治疗前</span></a></li>
       <li role="presentation" id="tab2"><a style="cursor: pointer;" ng-click="after()"><span class="h4">治疗后</span></a></li>
     </ul>
+    
     <div ng-show="beforeShow">
       
       <div class="box box-info">
@@ -48,301 +49,337 @@
               <h3 class="box-title">【 性别 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans1" ng-model="beforeSex" ng-value=1><span class="h4">男</span>
+        <input type="radio" name="ans1" ng-model="beforeSex" ng-value=1><span class="h5">男</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans1" ng-model="beforeSex" ng-value=2><span class="h4">女</span>
+          <input type="radio" name="ans1" ng-model="beforeSex" ng-value=2><span class="h5">女</span>
         </span>
       </div>
+      </div>
       
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 药物史 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans2" ng-model="beforeHistoryDrugs" ng-value=1><span class="h4">阳性</span>
+        <input type="radio" name="ans2" ng-model="beforeHistoryDrugs" ng-value=1><span class="h5">阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans2" ng-model="beforeHistoryDrugs" ng-value=2><span class="h4">阴性</span>
+          <input type="radio" name="ans2" ng-model="beforeHistoryDrugs" ng-value=2><span class="h5">阴性</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
-              <h3 class="box-title">【 ALP（正常上限的倍数):AST（或ALT）（正常上限的倍数） 】</h3>
+              <h3 class="box-title">【 ALP（正常上限的倍数）:AST（或ALT）（正常上限的倍数） 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=1><span class="h4"><1.5</span>
+        <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=1><span class="h5"><1.5</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=2><span class="h4">1.5~3.0</span>
+          <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=2><span class="h5">1.5~3.0</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=3><span class="h4">>3.0</span>
+          <input type="radio" name="ans3" ng-model="beforeAlpAst" ng-value=3><span class="h5">>3.0</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 平均酒精摄入量 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans4" ng-model="beforeAlcoholIntake" ng-value=1><span class="h4"><25g/天</span>
+        <input type="radio" name="ans4" ng-model="beforeAlcoholIntake" ng-value=1><span class="h5"><25g/天</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans4" ng-model="beforeAlcoholIntake" ng-value=2><span class="h4">>60g/天</span>
+          <input type="radio" name="ans4" ng-model="beforeAlcoholIntake" ng-value=2><span class="h5">>60g/天</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 血清球蛋白或IgG与正常值的比值 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=1><span class="h4">>2.0</span>
+        <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=1><span class="h5">>2.0</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=2><span class="h4">1.5~2.0</span>
+          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=2><span class="h5">1.5~2.0</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=3><span class="h4">1.0~1.5</span>
+          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=3><span class="h5">1.0~1.5</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=4><span class="h4"><1.0</span>
+          <input type="radio" name="ans5" ng-model="beforeSerumGlobulinNormal" ng-value=4><span class="h5"><1.0</span>
         </span> 
       </div>
+    </div>
 
-
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 肝脏组织学检查 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=1><span class="h4">界面型肝炎</span>
+        <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=1><span class="h5">界面型肝炎</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=2><span class="h4">主要为淋巴浆细胞浸润</span>
+          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=2><span class="h5">主要为淋巴浆细胞浸润</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=3><span class="h4">肝细胞呈玫瑰花结样改变</span>
+          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=3><span class="h5">肝细胞呈玫瑰花结样改变</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=4><span class="h4">无上述表现</span>
+          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=4><span class="h5">无上述表现</span>
         </span> 
         <span class="col-md-offset-1">
-          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=5><span class="h4">胆管改变</span>
+          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=5><span class="h5">胆管改变</span>
         </span> 
         <br/>
         <span>
-          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=6><span class="h4">其它改变</span>
+          <input type="radio" name="ans6" ng-model="beforeLiverCheck" ng-value=6><span class="h5">其它改变</span>
         </span>
       </div>
+    </div>
 
-
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 其他免疫疾病 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans7" ng-model="beforeOtherImmune" ng-value=1><span class="h4">存在</span>
+        <input type="radio" name="ans7" ng-model="beforeOtherImmune" ng-value=1><span class="h5">存在</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans7" ng-model="beforeOtherImmune" ng-value=2><span class="h4">不存在</span>
+          <input type="radio" name="ans7" ng-model="beforeOtherImmune" ng-value=2><span class="h5">不存在</span>
         </span>
       </div>
+    </div>
 
-
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 ANA,SMA或LKM-l 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans8" ng-model="beforeAna" ng-value=1><span class="h4">>1:80</span>
+        <input type="radio" name="ans8" ng-model="beforeAna" ng-value=1><span class="h5">>1:80</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=2><span class="h4">1:80</span>
+          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=2><span class="h5">1:80</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=3><span class="h4">1:40</span>
+          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=3><span class="h5">1:40</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=4><span class="h4"><1:40</span>
+          <input type="radio" name="ans8" ng-model="beforeAna" ng-value=4><span class="h5">< 1:40</span>
         </span> 
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 AMA阳性 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans9" ng-model="beforeAma" ng-value=1><span class="h4">是</span>
+        <input type="radio" name="ans9" ng-model="beforeAma" ng-value=1><span class="h5">是</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans9" ng-model="beforeAma" ng-value=2><span class="h4">否</span>
+          <input type="radio" name="ans9" ng-model="beforeAma" ng-value=2><span class="h5">否</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 肝炎病毒标志物 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans10" ng-model="beforeHepatitis" ng-value=1><span class="h4">阳性</span>
+        <input type="radio" name="ans10" ng-model="beforeHepatitis" ng-value=1><span class="h5">阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans10" ng-model="beforeHepatitis" ng-value=2><span class="h4">阴性</span>
+          <input type="radio" name="ans10" ng-model="beforeHepatitis" ng-value=2><span class="h5">阴性</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 其他可用的参数 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans11" ng-model="beforeOtherAvailable" ng-value=1><span class="h4">其他特异性自身抗体阳性</span>
+        <input type="radio" name="ans11" ng-model="beforeOtherAvailable" ng-value=1><span class="h5">其他特异性自身抗体阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans11" ng-model="beforeOtherAvailable" ng-value=2><span class="h4">HLA DR3或DR4</span>
+          <input type="radio" name="ans11" ng-model="beforeOtherAvailable" ng-value=2><span class="h5">HLA DR3或DR4</span>
         </span>
       </div>
-
-
     </div>
     </div>
 
 
     <div ng-show="afterShow" ng-init="afterShow = false">
       <div class="box box-info">
-      
       <div class="box-header with-border">
               <h3 class="box-title">【 性别 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans12" ng-model="afterSex" ng-value=1><span class="h4">男</span>
+        <input type="radio" name="ans12" ng-model="afterSex" ng-value=1><span class="h5">男</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans12" ng-model="afterSex" ng-value=2><span class="h4">女</span>
+          <input type="radio" name="ans12" ng-model="afterSex" ng-value=2><span class="h5">女</span>
         </span>
       </div>
+    </div>
       
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 药物史 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans13" ng-model="afterHistoryDrugs" ng-value=1><span class="h4">阳性</span>
+        <input type="radio" name="ans13" ng-model="afterHistoryDrugs" ng-value=1><span class="h5">阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans13" ng-model="afterHistoryDrugs" ng-value=2><span class="h4">阴性</span>
+          <input type="radio" name="ans13" ng-model="afterHistoryDrugs" ng-value=2><span class="h5">阴性</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 ALP（正常上限的倍数）:AST（或ALT）（正常上限的倍数） 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=1><span class="h4"><1.5</span>
+        <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=1><span class="h5"><1.5</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=2><span class="h4">1.5~3.0</span>
+          <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=2><span class="h5">1.5~3.0</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=3><span class="h4">>3.0</span>
+          <input type="radio" name="ans14" ng-model="afterAlpAst" ng-value=3><span class="h5">>3.0</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 平均酒精摄入量 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans15" ng-model="afterAlcoholIntake" ng-value=1><span class="h4"><25g/天</span>
+        <input type="radio" name="ans15" ng-model="afterAlcoholIntake" ng-value=1><span class="h5"><25g/天</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans15" ng-model="afterAlcoholIntake" ng-value=2><span class="h4">>60g/天</span>
+          <input type="radio" name="ans15" ng-model="afterAlcoholIntake" ng-value=2><span class="h5">>60g/天</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 血清球蛋白或IgG与正常值的比值 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=1><span class="h4">>2.0</span>
+        <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=1><span class="h5">>2.0</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=2><span class="h4">1.5~2.0</span>
+          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=2><span class="h5">1.5~2.0</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=3><span class="h4">1.0~1.5</span>
+          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=3><span class="h5">1.0~1.5</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=4><span class="h4"><1.0</span>
+          <input type="radio" name="ans16" ng-model="afterSerumGlobulinNormal" ng-value=4><span class="h5"><1.0</span>
         </span> 
       </div>
+    </div>
 
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 肝脏组织学检查 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=1><span class="h4">界面型肝炎</span>
+        <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=1><span class="h5">界面型肝炎</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=2><span class="h4">主要为淋巴浆细胞浸润</span>
+          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=2><span class="h5">主要为淋巴浆细胞浸润</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=3><span class="h4">肝细胞呈玫瑰花结样改变</span>
+          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=3><span class="h5">肝细胞呈玫瑰花结样改变</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=4><span class="h4">无上述表现</span>
+          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=4><span class="h5">无上述表现</span>
         </span> 
         <span class="col-md-offset-1">
-          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=5><span class="h4">胆管改变</span>
+          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=5><span class="h5">胆管改变</span>
         </span> 
         <br/>
         <span>
-          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=6><span class="h4">其它改变</span>
+          <input type="radio" name="ans17" ng-model="afterLiverCheck" ng-value=6><span class="h5">其它改变</span>
         </span>
       </div>
+    </div>
 
-
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 其他免疫疾病 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans18" ng-model="afterOtherImmune" ng-value=1><span class="h4">存在</span>
+        <input type="radio" name="ans18" ng-model="afterOtherImmune" ng-value=1><span class="h5">存在</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans18" ng-model="afterOtherImmune" ng-value=2><span class="h4">不存在</span>
+          <input type="radio" name="ans18" ng-model="afterOtherImmune" ng-value=2><span class="h5">不存在</span>
         </span>
       </div>
+    </div>
 
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 ANA,SMA或LKM-l 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans19" ng-model="afterAna" ng-value=1><span class="h4">>1:80</span>
+        <input type="radio" name="ans19" ng-model="afterAna" ng-value=1><span class="h5">>1:80</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans19" ng-model="afterAna" ng-value=2><span class="h4">1:80</span>
+          <input type="radio" name="ans19" ng-model="afterAna" ng-value=2><span class="h5">1:80</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans19" ng-model="afterAna" ng-value=3><span class="h4">1:40</span>
+          <input type="radio" name="ans19" ng-model="afterAna" ng-value=3><span class="h5">1:40</span>
         </span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans19" ng-model="afterAna" ng-value=4><span class="h4"><1:40</span>
+          <input type="radio" name="ans19" ng-model="afterAna" ng-value=4><span class="h5">< 1:40</span>
         </span> 
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 AMA阳性 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans20" ng-model="afterAma" ng-value=1><span class="h4">是</span>
+        <input type="radio" name="ans20" ng-model="afterAma" ng-value=1><span class="h5">是</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans20" ng-model="afterAma" ng-value=2><span class="h4">否</span>
+          <input type="radio" name="ans20" ng-model="afterAma" ng-value=2><span class="h5">否</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 肝炎病毒标志物 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans21" ng-model="afterHepatitis" ng-value=1><span class="h4">阳性</span>
+        <input type="radio" name="ans21" ng-model="afterHepatitis" ng-value=1><span class="h5">阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans21" ng-model="afterHepatitis" ng-value=2><span class="h4">阴性</span>
+          <input type="radio" name="ans21" ng-model="afterHepatitis" ng-value=2><span class="h5">阴性</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 其他可用的参数 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans22" ng-model="afterOtherAvailable" ng-value=1><span class="h4">其他特异性自身抗体阳性</span>
+        <input type="radio" name="ans22" ng-model="afterOtherAvailable" ng-value=1><span class="h5">其他特异性自身抗体阳性</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans22" ng-model="afterOtherAvailable" ng-value=2><span class="h4">HLA DR3或DR4</span>
+          <input type="radio" name="ans22" ng-model="afterOtherAvailable" ng-value=2><span class="h5">HLA DR3或DR4</span>
         </span>
       </div>
+    </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 对治疗的反应 】</h3>
       </div>
       <div class="box-body">
-        <input type="radio" name="ans23" ng-model="response" ng-value=1><span class="h4">完全</span>
+        <input type="radio" name="ans23" ng-model="response" ng-value=1><span class="h5">完全</span>
         <span class="col-md-offset-1">
-          <input type="radio" name="ans23" ng-model="response" ng-value=2><span class="h4">复发</span>
+          <input type="radio" name="ans23" ng-model="response" ng-value=2><span class="h5">复发</span>
         </span>
       </div>
+    </div>
 
 
     </div>
