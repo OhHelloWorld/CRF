@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import app.entities.PatientDO;
+import java.util.List;
 
 @Repository
 public interface MlPatientRepo extends CrudRepository<MlPatientDO, Integer> {
@@ -24,5 +24,8 @@ public interface MlPatientRepo extends CrudRepository<MlPatientDO, Integer> {
     @Query(value = "select * from medicine_liver_patient where (name like %?2% or identifier like %?2%) and project_id = ?1 order by ?#{#pageable}",
             nativeQuery = true)
     Page<MlPatientDO> getMlPatientByQueryStr(int projectId,String queryStr, Pageable pageable);
+
+    @Query(value = "select * from medicine_liver_patient where gender = ?1",nativeQuery = true)
+    List<MlPatientDO> getMlPatientByGender(String gender);
 
 }

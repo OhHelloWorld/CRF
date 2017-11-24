@@ -3,7 +3,7 @@ import uiBootstrap from 'angular-ui-bootstrap';
 import '../commons/page.js';
 import '../entries/medicineLiverMain.js';
 
-angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
+angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain', 'chart.js'])
   .controller('mlHomeController', ['$scope', '$http', '$state', 'localStorageService', function($scope, $http, $state, localStorageService) {
     loginStatus();
     $scope.url = '/api/mlPatient/project/2';
@@ -92,4 +92,17 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain'])
         window.location.href = '/login.html';
       }
     }
+
+
+    $scope.labels = ['0~10', '10~20', '20~30', '30~40', '40~50', '50~60', '60~70', '70~80'];
+    $scope.series = ['男', '女'];
+    $scope.data = [];
+    $http({
+      method: 'GET',
+      url: '/api/mlPatient/ageData'
+    }).then(function success(res) {
+      var ageData = res.data;
+
+      $scope.data.push(ageData[0], ageData[1]);
+    });
   }]);

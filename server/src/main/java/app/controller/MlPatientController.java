@@ -2,15 +2,14 @@ package app.controller;
 
 
 import app.dto.MlPatientDTO;
+import app.dto.PageDTO;
 import app.service.MlPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
-import app.dto.PageDTO;
-import app.dto.PatientDTO;
-import app.service.PatientService;
+import java.util.List;
 
 /**
  * @author Administrator
@@ -85,6 +84,15 @@ public class MlPatientController {
     public PageDTO<MlPatientDTO> getPatientByQueryStr(@PathVariable int projectId,@RequestParam("queryStr") String queryStr,
                                                     @PageableDefault(value = 15) Pageable pageable) {
         return mlPatientService.getMlPatientByQueryStr(projectId,queryStr, pageable);
+    }
+
+    /**
+     * 返回年龄层次数据
+     * @return
+     */
+    @GetMapping(path = "/ageData")
+    public List<int[]> getMlPatientAgeData(){
+        return mlPatientService.getMlPatientAgeData();
     }
 
 }

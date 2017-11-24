@@ -44,7 +44,9 @@
           <input type="radio" name="treatment" ng-model="treatment" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
-<div class="box-body">
+    </div>
+
+    <div class="box box-info">
               <div class="box-header with-border">
                 <h3 class="box-title">【 药物治疗 】<sub style="color: green">（日剂量单位：mg、g、ug、ml、L、片、粒、包、IU、其他、不详）</sub></h3>
               </div>
@@ -135,14 +137,14 @@
                     <input class="form-control" id="detailEndDate" ng-model="detailEndDate">
                   </div>
                 </div>
-              
               </div>
               <a class="btn btn-success col-md-offset-5" ng-click="addDetail()">
                 <i class="fa  fa-chevron-circle-down"></i> 增加
               </a>
-</div>
-
-<div class="box-body">
+              <br/><br/>
+        </div>
+        
+        <div class="box box-info">
               <div class="box-header with-border">
                 <h3 class="box-title">【 其他治疗方案 】</h3>
               </div>
@@ -183,8 +185,9 @@
               <a class="btn btn-success col-md-offset-5" ng-click="addOther()">
                 <i class="fa  fa-chevron-circle-down"></i> 增加
               </a>
-</div>
-</div>
+              <br/><br/>
+            </div>
+
 		  <span class="col-md-offset-10">&nbsp</span>
           <a class="btn btn-primary" ng-click="save()">
           <i class="fa  fa-save"></i> 保存

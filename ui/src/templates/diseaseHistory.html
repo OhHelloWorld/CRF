@@ -41,8 +41,11 @@
           <input type="radio" name="otherHistory" ng-model="otherHistory" ng-value=2><span class="h5">有</span>
         </span>
       </div>
+    </div>
 
 <div ng-show="diseaseShow">
+    
+    <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 既往病史 】</h3>
       </div>
@@ -55,6 +58,9 @@
           <input type="radio" name="history" ng-model="pastDisease" ng-value=3><span class="h5">不详</span>
         </span>
       </div>
+    </div>
+
+    <div class="box box-info">
               <div class="box-header with-border">
                 <h3 class="box-title">【 详情 】</h3>
               </div>
@@ -131,10 +137,11 @@
               <a class="btn btn-success col-md-offset-5" ng-click="addDisease()">
                 <i class="fa  fa-chevron-circle-down"></i> 增加
               </a>
-              
+              <br/><br/>
+            </div>
 </div>
 
-<div>
+<div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 个人史 】</h3>
       </div>
@@ -152,6 +159,7 @@
       </div>
 </div>
 
+<div class="box box-info">
   <div class="box-header with-border">
               <h3 class="box-title">【 疫区旅游史 】</h3>
   </div>
@@ -163,6 +171,7 @@
         <input type="text" ng-model="epidemicText" ng-show="epi">
       </div>
 </div>
+
 		  <span class="col-md-offset-10">&nbsp</span>
       <a class="btn btn-primary" ng-click="save()">
         <i class="fa  fa-save"></i> 保存

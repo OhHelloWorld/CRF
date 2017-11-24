@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 
 import app.dto.PageDTO;
 
+import java.util.List;
+
 public interface MlPatientService {
 
     /**
@@ -56,4 +58,10 @@ public interface MlPatientService {
 
 
     MlPatientDTO convertToMlPatientDTO(MlPatientDO mlPatientDO);
+
+    /**
+     * 得到各个年龄段数据，返回值为包含男女两个年龄段数据数组的数组
+     * @return
+     */
+    List<int[]> getMlPatientAgeData();
 }

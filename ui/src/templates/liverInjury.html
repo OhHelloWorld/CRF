@@ -45,7 +45,9 @@
           <input type="radio" name="ascites" ng-model="ascites" ng-value=3><span class="h5">未知</span>
         </span>
       </div>
+      </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 是否有肝性脑病 】</h3>
       </div>
@@ -58,7 +60,9 @@
           <input type="radio" name="hepaticEncephalopathy" ng-model="hepaticEncephalopathy" ng-value=3><span class="h5">未知</span>
         </span>
       </div>
+      </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 是否有延长INR（>1.5）或者凝血时间（>3秒正常时间以上） 】</h3>
       </div>
@@ -71,7 +75,9 @@
           <input type="radio" name="extendInr" ng-model="extendInr" ng-value=3><span class="h5">未知</span>
         </span>
       </div>
+      </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等 】</h3>
       </div>
@@ -84,7 +90,9 @@
           <input type="radio" name="failure" ng-model="failure" ng-value=3><span class="h5">未知</span>
         </span>
       </div>
+      </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 由于肝损伤的原因，患者住院时间是否延长 】</h3>
       </div>
@@ -97,7 +105,9 @@
           <input type="radio" name="extendHospitalStay" ng-model="extendHospitalStay" ng-value=3><span class="h5">未知</span>
         </span>
       </div>
+      </div>
 
+      <div class="box box-info">
       <div class="box-header with-border">
               <h3 class="box-title">【 RUCAM因果关系评估量表 】</h3>
       </div>
@@ -119,23 +129,23 @@
               </td>
             </tr>
             <tr>
-              <td colspan="6">
+              <th colspan="6">
                 肝损伤类型：<span style="color: red">{{liverInjuryType}}</span>
-              </td>
+              </th>
             </tr>
             <tr>
-              <td>
+              <th>
                 1.用药至发病的时间
-              </td>
-              <td colspan="2">
+              </th>
+              <th colspan="2">
                 肝细胞损伤型
-              </td>
-              <td colspan="2">
+              </th>
+              <th colspan="2">
                 胆汁淤积型或混合型
-              </td>
-              <td>
+              </th>
+              <th>
                 评价
-              </td>
+              </th>
             </tr>
             <tr>
               <td></td>
@@ -146,7 +156,7 @@
               <td>计分</td>
             </tr>
             <tr>
-              <td>★从用药开始</td>
+              <th>★从用药开始</th>
               <td colspan="5"></td>
             </tr>
             <tr>
@@ -168,7 +178,7 @@
               <td>+1</td>
             </tr>
             <tr>
-              <td>★从停药开始</td>
+              <th>★从停药开始</th>
               <td colspan="5"></td>
             </tr>
             <tr>
@@ -184,19 +194,19 @@
               <td colspan="6" style="color: red">注：若肝损伤反应出现在开始服药前，或停药后>15d（肝细胞损伤型）或>30d（胆汁淤积型），则应考虑肝损伤与药物无关，不应继续进行RUCAM评分</td>
             </tr>
             <tr>
-              <td>
+              <th>
                 2.病程
-              </td>
-              <td colspan="2">
+              </th>
+              <th colspan="2">
                 ALT在峰值和ULN之间的变化
-              </td>
-              <td colspan="2">
+              </th>
+              <th colspan="2">
                 ALP（或TBil）在峰值和ULN之间的变化
-              </td>
+              </th>
               <td></td>
             </tr>
             <tr>
-              <td colspan="6">★停药后</td>
+              <th colspan="6">★停药后</th>
             </tr>
             <tr>
               <td><input type="radio" name="stopMedicine" ng-model="stopMedicine" ng-value=1>高度提示
@@ -238,7 +248,7 @@
               <td>-2</td>
             </tr>
             <tr>
-              <td colspan="6">★若继续用药</td>
+              <th colspan="6">★若继续用药</th>
             </tr>
             <tr>
               <td><input type="radio" name="continueMedicine" ng-model="continueMedicine" ng-value=1>无结论</td>
@@ -247,9 +257,9 @@
               <td>0</td>
             </tr>
             <tr>
-              <td>3.危险因素</td>
-              <td colspan="2">乙醇</td>
-              <td colspan="2">乙醇或妊娠（任意一种）</td>
+              <th>3.危险因素</th>
+              <th colspan="2">乙醇</th>
+              <th colspan="2">乙醇或妊娠（任意一种）</th>
               <td></td>
             </tr>
             <tr>
@@ -277,7 +287,7 @@
               <td>0</td>
             </tr>
             <tr>
-              <td colspan="6">4.伴随用药</td>
+              <th colspan="6">4.伴随用药</th>
             </tr>
             <tr>
               <td colspan="5"><input type="radio" name="withMedicine" ng-model="withMedicine" ng-value=1>无伴随用药，或无资料，或伴随用药至发病时间不相合</td>
@@ -296,7 +306,7 @@
               <td>-3</td>
             </tr>
             <tr>
-              <td colspan="6">5.除外其他肝损伤原因</td>
+              <th colspan="6">5.除外其他肝损伤原因</th>
             </tr>
             <tr>
               <td colspan="2"><input type="radio" name="otherLiverInjuryReason" ng-model="otherLiverInjuryReason" ng-value=1>排除组Ⅰ和组Ⅱ中的所有病因</td>
@@ -334,9 +344,9 @@
               <td>-3</td>
             </tr>
             <tr>
-              <td colspan="6">
+              <th colspan="6">
                 6.药物既往肝损伤信息
-              </td>
+              </th>
             </tr>
             <tr>
               <td colspan="5">
@@ -357,7 +367,7 @@
               <td>0</td>
             </tr>
             <tr>
-              <td colspan="6">7.再用药反应</td>
+              <th colspan="6">7.再用药反应</th>
             </tr>
             <tr>
               <td><input type="radio" name="reMedicineResponse" ng-model="reMedicineResponse" ng-value=1>阳性</td>

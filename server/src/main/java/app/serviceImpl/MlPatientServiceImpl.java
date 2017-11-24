@@ -1,23 +1,25 @@
 package app.serviceImpl;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import app.dto.*;
+import app.Utils.UserMsgTool;
+import app.dto.AdmissionDiagnosisDTO;
+import app.dto.DischargeDiagnosisDTO;
+import app.dto.MlPatientDTO;
+import app.dto.PageDTO;
 import app.entities.AdmissionDiagnosisDO;
 import app.entities.DischargeDiagnosisDO;
 import app.entities.MlPatientDO;
 import app.repo.*;
-import app.service.*;
+import app.service.MlPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import app.Utils.UserMsgTool;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author Administrator PatientServiceImpl
@@ -267,7 +269,50 @@ public class MlPatientServiceImpl implements MlPatientService {
         return mlPatientDTO;
     }
 
+    @Override
+    public List<int[]> getMlPatientAgeData() {
+        List<int[]> data = new ArrayList<>();
+        int[] man = new int[8];
+        int[] woman = new int[8];
+        List<MlPatientDO> manPatients = mlpatientRepo.getMlPatientByGender("男");
+        List<MlPatientDO> womanPatients = mlpatientRepo.getMlPatientByGender("女");
+
+        for(MlPatientDO mlPatientDO : manPatients){
+            man[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+        }
+
+        for(MlPatientDO mlPatientDO : womanPatients){
+            woman[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+        }
+
+        data.add(man);
+        data.add(woman);
+        return data;
+    }
+
     private boolean formatBool(Boolean temp){
         return temp == null?false:temp;
+    }
+
+    private int judgeAge(int age){
+        if(age >=0 && age <10){
+            return 0;
+        }else if(age >=10 && age < 20) {
+            return 1;
+        }else if(age >=20 && age < 30){
+            return 2;
+        }else if(age >=30 && age < 40){
+            return 3;
+        }else if(age >=40 && age < 50){
+            return 4;
+        }else if(age >=50 && age <60){
+            return 5;
+        }else if(age >= 60 && age <70){
+            return 6;
+        }else if(age >=70 && age <80){
+            return 7;
+        }else{
+            return -1;
+        }
     }
 }
