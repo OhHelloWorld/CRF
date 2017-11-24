@@ -277,12 +277,20 @@ public class MlPatientServiceImpl implements MlPatientService {
         List<MlPatientDO> manPatients = mlpatientRepo.getMlPatientByGender("男");
         List<MlPatientDO> womanPatients = mlpatientRepo.getMlPatientByGender("女");
 
-        for(MlPatientDO mlPatientDO : manPatients){
-            man[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+        if(manPatients != null && !manPatients.isEmpty()) {
+            for (MlPatientDO mlPatientDO : manPatients) {
+                if(mlPatientDO.getHospitalizedAge()!=0) {
+                    man[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+                }
+            }
         }
 
-        for(MlPatientDO mlPatientDO : womanPatients){
-            woman[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+        if(womanPatients != null && !womanPatients.isEmpty()) {
+            for (MlPatientDO mlPatientDO : womanPatients) {
+                if(mlPatientDO.getHospitalizedAge() != 0) {
+                    woman[judgeAge(mlPatientDO.getHospitalizedAge())]++;
+                }
+            }
         }
 
         data.add(man);
@@ -295,7 +303,7 @@ public class MlPatientServiceImpl implements MlPatientService {
     }
 
     private int judgeAge(int age){
-        if(age >=0 && age <10){
+        if(age >0 && age <10){
             return 0;
         }else if(age >=10 && age < 20) {
             return 1;

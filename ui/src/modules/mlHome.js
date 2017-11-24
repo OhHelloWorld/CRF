@@ -102,7 +102,6 @@ angular.module('mlHome', [uiBootstrap, 'page', 'medicineLiverMain', 'chart.js'])
       url: '/api/mlPatient/ageData'
     }).then(function success(res) {
       var ageData = res.data;
-
       $scope.data.push(ageData[0], ageData[1]);
     });
   }]);
