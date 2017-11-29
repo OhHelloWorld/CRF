@@ -13,6 +13,7 @@ public class MedicineLiverTreatmentDTO {
     private boolean complete;
     private List<MedicineLiverTreatmentDetailDTO> medicineLiverTreatmentDetailDTOS;
     private List<MedicineLiverTreatmentOtherDTO> medicineLiverTreatmentOtherDTOS;
+    private List<MedicineLiverTreatmentCnDTO> medicineLiverTreatmentCnDTOS;
 
     public int getId() {
         return id;
@@ -60,5 +61,13 @@ public class MedicineLiverTreatmentDTO {
 
     public void setMedicineLiverTreatmentOtherDTOS(List<MedicineLiverTreatmentOtherDTO> medicineLiverTreatmentOtherDTOS) {
         this.medicineLiverTreatmentOtherDTOS = medicineLiverTreatmentOtherDTOS;
+    }
+
+    public List<MedicineLiverTreatmentCnDTO> getMedicineLiverTreatmentCnDTOS() {
+        return medicineLiverTreatmentCnDTOS;
+    }
+
+    public void setMedicineLiverTreatmentCnDTOS(List<MedicineLiverTreatmentCnDTO> medicineLiverTreatmentCnDTOS) {
+        this.medicineLiverTreatmentCnDTOS = medicineLiverTreatmentCnDTOS;
     }
 }

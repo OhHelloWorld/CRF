@@ -465,6 +465,17 @@ create table medicine_liver_treatment_detail(
 	primary key(id)
 );
 
+create table medicine_liver_treatment_cn(
+	id int not null auto_increment,
+    medicine_liver_treatment_id int,
+    cn_trade_name varchar(50),
+    cn_method varchar(50),
+    cn_dose varchar(50),
+    cn_start_date Date,
+    cn_end_date Date,
+    primary key(id)
+);
+
 #与治疗相关联的其他治疗方案表
 create table medicine_liver_treatment_other(
 	id int not null auto_increment,
@@ -539,6 +550,60 @@ create table ml_suspend_chinese_medicine(
     sample varchar(5),
     number varchar(50),
     sus_category varchar(10),
+    primary key(id)
+);
+
+create table ml_four(
+	id int not null auto_increment,
+    patient_id int,
+	tongue_gloss int,#舌面光泽
+    tongue_color int,#舌面颜色
+    tongue_nature int,#舌质
+    tongue_nature_part int,#舌质部分
+    tongue_body int,#舌体
+    moss_nature int,#苔质
+    moss_nature_part int,#苔质部分
+    moss_color int,#苔色
+    moss_color_part int,#苔色部分
+    sublingual_vein int,#舌下静脉
+    left_vein int,#左脉
+    right_vein int,#右脉
+    fatigue int,#乏力
+    skin_itching int,#皮肤瘙痒
+    two_eyes_dry int,#两目干涩
+    blurred_vision int,#视物模糊
+    depression int,#抑郁
+    irritability int,#烦躁易怒
+    insomnia int,#失眠
+    easy_wake_up int,#易醒
+    tinnitus int,#耳鸣
+    dry_mouth int,#口干
+    mouth_pain int,#口苦
+    bad_breath int,#口臭
+    nausea int,#恶心
+    belching int,#嗳气
+    abdominal_distention int,#脘腹胀满
+    flank_pain int,#胁肋痛
+    flank_pain_persist int,#胁肋痛 持续时间
+    anorexia int,#纳差
+    aphrodisiac_cold int,#畏寒肢冷
+    limb int,#肢体困重
+    backache_foot_soft int,#腰痠脚软
+    hand_foot_fan_hot int,#手足烦热
+    urine_yellow int,#尿黄
+    constipation int,#便秘
+    loose_stools int,#便溏
+    sweat int,#汗出
+    sweat_persist int,#汗出 持续时间
+    lower_extremity_edema int,#下肢水肿
+    face_dull int,#面晦暗
+    eye_yellow int,#目黄
+    body_yellow int,#身黄
+    spider_nevus int,#蜘蛛痣数量
+    liver_palm int,#肝掌
+    abdominal_veins int,#腹壁脉络曲张
+    yellow_tumor int,#黄色瘤
+    complete boolean,
     primary key(id)
 );
 

@@ -81,6 +81,9 @@ public class MlPatientServiceImpl implements MlPatientService {
     @Autowired
     private MlBiologicalSamplesRepo mlBiologicalSamplesRepo;
 
+    @Autowired
+    private MlFourRepo mlFourRepo;
+
 
     @Transactional
     public int saveMlPatientGeneralInformation(MlPatientDTO mlPatientDTO) {
@@ -261,7 +264,7 @@ public class MlPatientServiceImpl implements MlPatientService {
         mlPatientDTO.setDischargeDiagnosisDTOS(dischargeDiagnosisDTOS);
 
         int tempId = mlPatientDO.getId();
-        Boolean com = formatBool(mlDiseaseHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlAllergyHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrinkRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrugHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlSymptomsRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getHosCompleteByPatientId(tempId)) && formatBool(excludeOtherRepo.getCompleteByPatientId(tempId)) && formatBool(mlRoutineBooldRepo.getCompleteByPatientId(tempId)) && formatBool(imagingEndoScopyRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverHistologicalRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverInjuryRepo.getCompleteByPatientId(tempId)) && formatBool(mlTreatmentRepo.getCompleteByPatientId(tempId)) && formatBool(mlDiseaseOutcomeRepo.getCompleteByPatientId(tempId)) && formatBool(mlBiologicalSamplesRepo.getCompleteByPatientId(tempId));
+        Boolean com = formatBool(mlDiseaseHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlAllergyHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrinkRepo.getCompleteByPatientId(tempId)) && formatBool(mlDrugHistoryRepo.getCompleteByPatientId(tempId)) && formatBool(mlSymptomsRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getCompleteByPatientId(tempId)) && formatBool(firstAbnormalExaminationRepo.getHosCompleteByPatientId(tempId)) && formatBool(excludeOtherRepo.getCompleteByPatientId(tempId)) && formatBool(mlRoutineBooldRepo.getCompleteByPatientId(tempId)) && formatBool(imagingEndoScopyRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverHistologicalRepo.getCompleteByPatientId(tempId)) && formatBool(mlLiverInjuryRepo.getCompleteByPatientId(tempId)) && formatBool(mlTreatmentRepo.getCompleteByPatientId(tempId)) && formatBool(mlDiseaseOutcomeRepo.getCompleteByPatientId(tempId)) && formatBool(mlBiologicalSamplesRepo.getCompleteByPatientId(tempId)) && formatBool(mlFourRepo.getCompleteByPatientId(tempId));
 
         mlPatientDTO.setComplete(com);
         mlPatientDTO.setHospitalId(mlPatientDO.getHospitalId());

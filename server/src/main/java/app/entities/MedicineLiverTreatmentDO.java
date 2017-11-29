@@ -19,6 +19,8 @@ public class MedicineLiverTreatmentDO {
     private List<MedicineLiverTreatmentDetailDO> medicineLiverTreatmentDetailDOS;
     @OneToMany(mappedBy = "medicineLiverTreatmentDO",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     private List<MedicineLiverTreatmentOtherDO> medicineLiverTreatmentOtherDOS;
+    @OneToMany(mappedBy = "medicineLiverTreatmentDO",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    private List<MedicineLiverTreatmentCnDO> medicineLiverTreatmentCnDOS;
 
     public int getId() {
         return id;
@@ -66,5 +68,13 @@ public class MedicineLiverTreatmentDO {
 
     public void setMedicineLiverTreatmentOtherDOS(List<MedicineLiverTreatmentOtherDO> medicineLiverTreatmentOtherDOS) {
         this.medicineLiverTreatmentOtherDOS = medicineLiverTreatmentOtherDOS;
+    }
+
+    public List<MedicineLiverTreatmentCnDO> getMedicineLiverTreatmentCnDOS() {
+        return medicineLiverTreatmentCnDOS;
+    }
+
+    public void setMedicineLiverTreatmentCnDOS(List<MedicineLiverTreatmentCnDO> medicineLiverTreatmentCnDOS) {
+        this.medicineLiverTreatmentCnDOS = medicineLiverTreatmentCnDOS;
     }
 }

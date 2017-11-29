@@ -35,95 +35,100 @@ import '../modules/liverInjury.js';
 import '../modules/mlTreatment.js';
 import '../modules/diseaseOutcome.js';
 import '../modules/biologicalSamples.js';
+import '../modules/mlFour.js';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import LocalStorageModule from 'angular-local-storage';
 
-var medicineLiverMain = angular.module('medicineLiverMain', [uiRouter, LocalStorageModule,'mlHome','mlPatientInfo','diseaseHistory','allergyHistory','drink','drugHistory','symptoms','firstAbnormalExamination','hospitalAbnormalExamination','excludeOther','routineBlood','imagingEndoscopy','liverHistological','liverInjury','mlTreatment','diseaseOutcome','biologicalSamples','mlPatientOverview']);
+var medicineLiverMain = angular.module('medicineLiverMain', [uiRouter, LocalStorageModule, 'mlHome', 'mlPatientInfo', 'diseaseHistory', 'allergyHistory', 'drink', 'drugHistory', 'symptoms', 'firstAbnormalExamination', 'hospitalAbnormalExamination', 'excludeOther', 'routineBlood', 'imagingEndoscopy', 'liverHistological', 'liverInjury', 'mlTreatment', 'diseaseOutcome', 'biologicalSamples', 'mlPatientOverview','mlFour']);
 
 medicineLiverMain.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
   $urlRouterProvider.when('', '/mlHome');
 
   $stateProvider.state('mlPatientInfo', {
-    url: '/mlPatientInfo',
-    template: require('../templates/mlPatientInfo.html'),
-  })
-  .state('mlHome', {
-    url: '/mlHome',
-    template: require('../templates/mlHome.html')
-  })
-  .state('diseaseHistory', {
-    url: '/diseaseHistory',
-    template: require('../templates/diseaseHistory.html')
-  })
-  .state('allergyHistory', {
-    url: '/allergyHistory',
-    template: require('../templates/allergyHistory.html')
-  })
-  .state('drink', {
-    url: '/drink',
-    template: require('../templates/drink.html')
-  })
-  .state('drugHistory', {
-    url: '/drugHistory',
-    template: require('../templates/drugHistory.html')
-  })
-  .state('symptoms', {
-    url: '/symptoms',
-    template: require('../templates/symptoms.html')
-  })
-  .state('firstAbnormalExamination', {
-    url: '/firstAbnormalExamination',
-    template: require('../templates/firstAbnormalExamination.html')
-  })
-  .state('hospitalAbnormalExamination', {
-    url: '/hospitalAbnormalExamination',
-    template: require('../templates/hospitalAbnormalExamination.html')
-  })
-  .state('excludeOther', {
-    url: '/excludeOther',
-    template: require('../templates/excludeOther.html')
-  })
-  .state('routineBlood', {
-    url: '/routineBlood',
-    template: require('../templates/routineBlood.html')
-  })
-  .state('mlPatientOverview', {
-    url: '/mlPatientOverview',
-    template: require('../templates/mlPatientOverview.html')
-  })
-  .state('imagingEndoscopy', {
-    url: '/imagingEndoscopy',
-    template: require('../templates/imagingEndoscopy.html')
-  })
-  .state('liverHistological', {
-    url: '/liverHistological',
-    template: require('../templates/liverHistological.html')
-  })
-  .state('liverInjury', {
-    url: '/liverInjury',
-    template: require('../templates/liverInjury.html')
-  })
-  .state('mlTreatment', {
-    url: '/mlTreatment',
-    template: require('../templates/mlTreatment.html')
-  })
-  .state('diseaseOutcome', {
-    url: '/diseaseOutcome',
-    template: require('../templates/diseaseOutcome.html')
-  })
-  .state('biologicalSamples', {
-    url: '/biologicalSamples',
-    template: require('../templates/biologicalSamples.html')
-  });
+      url: '/mlPatientInfo',
+      template: require('../templates/mlPatientInfo.html'),
+    })
+    .state('mlHome', {
+      url: '/mlHome',
+      template: require('../templates/mlHome.html')
+    })
+    .state('diseaseHistory', {
+      url: '/diseaseHistory',
+      template: require('../templates/diseaseHistory.html')
+    })
+    .state('allergyHistory', {
+      url: '/allergyHistory',
+      template: require('../templates/allergyHistory.html')
+    })
+    .state('drink', {
+      url: '/drink',
+      template: require('../templates/drink.html')
+    })
+    .state('drugHistory', {
+      url: '/drugHistory',
+      template: require('../templates/drugHistory.html')
+    })
+    .state('mlFour', {
+      url: '/mlFour',
+      template: require('../templates/mlFour.html')
+    })
+    .state('symptoms', {
+      url: '/symptoms',
+      template: require('../templates/symptoms.html')
+    })
+    .state('firstAbnormalExamination', {
+      url: '/firstAbnormalExamination',
+      template: require('../templates/firstAbnormalExamination.html')
+    })
+    .state('hospitalAbnormalExamination', {
+      url: '/hospitalAbnormalExamination',
+      template: require('../templates/hospitalAbnormalExamination.html')
+    })
+    .state('excludeOther', {
+      url: '/excludeOther',
+      template: require('../templates/excludeOther.html')
+    })
+    .state('routineBlood', {
+      url: '/routineBlood',
+      template: require('../templates/routineBlood.html')
+    })
+    .state('mlPatientOverview', {
+      url: '/mlPatientOverview',
+      template: require('../templates/mlPatientOverview.html')
+    })
+    .state('imagingEndoscopy', {
+      url: '/imagingEndoscopy',
+      template: require('../templates/imagingEndoscopy.html')
+    })
+    .state('liverHistological', {
+      url: '/liverHistological',
+      template: require('../templates/liverHistological.html')
+    })
+    .state('liverInjury', {
+      url: '/liverInjury',
+      template: require('../templates/liverInjury.html')
+    })
+    .state('mlTreatment', {
+      url: '/mlTreatment',
+      template: require('../templates/mlTreatment.html')
+    })
+    .state('diseaseOutcome', {
+      url: '/diseaseOutcome',
+      template: require('../templates/diseaseOutcome.html')
+    })
+    .state('biologicalSamples', {
+      url: '/biologicalSamples',
+      template: require('../templates/biologicalSamples.html')
+    });
 
   localStorageServiceProvider
-  .setPrefix('login')
-  .setStorageType('sessionStorage')
-  .setNotify(true, true);
+    .setPrefix('login')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true);
 
 }]);
 
@@ -199,6 +204,19 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
       $('li').removeClass('active');
       $('#li6').addClass('active');
       $state.go('drugHistory');
+    }
+  };
+
+  $scope.fourClick = function() {
+    if (!sessionStorage.getItem('mlPatientId')) {
+      $('#a_four').popover('toggle');
+      setTimeout(function() {
+        $('#a_four').popover('hide');
+      }, 1500);
+    } else {
+      $('li').removeClass('active');
+      $('#li19').addClass('active');
+      $state.go('mlFour');
     }
   };
 
@@ -344,7 +362,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
       $state.go('biologicalSamples');
     }
   };
-  
+
 
   $scope.judgeGoHome = function() {
     if (!sessionStorage.getItem('mlPatientId')) {
@@ -403,6 +421,19 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
         } else {
           $('#drugHistoryMenuNo').removeClass('hide');
           $('#drugHistoryMenuYes').addClass('hide');
+        }
+      }).catch(function err() {});
+
+      $http({
+        method: 'GET',
+        url: '/api/mlFour/complete/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(response) {
+        if (response.data) {
+          $('#fourMenuYes').removeClass('hide');
+          $('#fourMenuNo').addClass('hide');
+        } else {
+          $('#fourMenuNo').removeClass('hide');
+          $('#fourMenuYes').addClass('hide');
         }
       }).catch(function err() {});
 
@@ -524,7 +555,7 @@ medicineLiverMain.controller('medicineLiverMainController', ['$scope', '$http', 
           $('#diseaseOutcomeMenuYes').addClass('hide');
         }
       }).catch(function err() {});
-      
+
       $http({
         method: 'GET',
         url: '/api/mlBiologicalSamples/complete/' + sessionStorage.getItem('mlPatientId')

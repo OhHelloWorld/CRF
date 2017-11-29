@@ -1,11 +1,14 @@
 package app.serviceImpl;
 
+import app.dto.MedicineLiverTreatmentCnDTO;
 import app.dto.MedicineLiverTreatmentDTO;
 import app.dto.MedicineLiverTreatmentDetailDTO;
 import app.dto.MedicineLiverTreatmentOtherDTO;
+import app.entities.MedicineLiverTreatmentCnDO;
 import app.entities.MedicineLiverTreatmentDO;
 import app.entities.MedicineLiverTreatmentDetailDO;
 import app.entities.MedicineLiverTreatmentOtherDO;
+import app.repo.MlTreatmentCnRepo;
 import app.repo.MlTreatmentDetailRepo;
 import app.repo.MlTreatmentOtherRepo;
 import app.repo.MlTreatmentRepo;
@@ -32,6 +35,9 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
     @Autowired
     private MlTreatmentDetailRepo mlTreatmentDetailRepo;
 
+    @Autowired
+    private MlTreatmentCnRepo mlTreatmentCnRepo;
+
     private MedicineLiverTreatmentDTO convertToDTO(MedicineLiverTreatmentDO medicineLiverTreatmentDO){
         MedicineLiverTreatmentDTO medicineLiverTreatmentDTO = new MedicineLiverTreatmentDTO();
         medicineLiverTreatmentDTO.setId(medicineLiverTreatmentDO.getId());
@@ -56,6 +62,20 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
             }
         }
 
+        List<MedicineLiverTreatmentCnDTO> medicineLiverTreatmentCnDTOS = new ArrayList<>();
+        List<MedicineLiverTreatmentCnDO> medicineLiverTreatmentCnDOS = medicineLiverTreatmentDO.getMedicineLiverTreatmentCnDOS();
+        if(!medicineLiverTreatmentCnDOS.isEmpty() && medicineLiverTreatmentCnDOS != null){
+            for(MedicineLiverTreatmentCnDO medicineLiverTreatmentCnDO : medicineLiverTreatmentCnDOS){
+                MedicineLiverTreatmentCnDTO medicineLiverTreatmentCnDTO = new MedicineLiverTreatmentCnDTO();
+                medicineLiverTreatmentCnDTO.setCnDose(medicineLiverTreatmentCnDO.getCnDose());
+                medicineLiverTreatmentCnDTO.setCnEndDate(medicineLiverTreatmentCnDO.getCnEndDate());
+                medicineLiverTreatmentCnDTO.setCnMethod(medicineLiverTreatmentCnDO.getCnMethod());
+                medicineLiverTreatmentCnDTO.setCnStartDate(medicineLiverTreatmentCnDO.getCnStartDate());
+                medicineLiverTreatmentCnDTO.setCnTradeName(medicineLiverTreatmentCnDO.getCnTradeName());
+                medicineLiverTreatmentCnDTOS.add(medicineLiverTreatmentCnDTO);
+            }
+        }
+
         List<MedicineLiverTreatmentOtherDTO> medicineLiverTreatmentOtherDTOS = new ArrayList<>();
         List<MedicineLiverTreatmentOtherDO> medicineLiverTreatmentOtherDOS = medicineLiverTreatmentDO.getMedicineLiverTreatmentOtherDOS();
         if(!medicineLiverTreatmentOtherDOS.isEmpty() && medicineLiverTreatmentOtherDOS != null){
@@ -73,6 +93,7 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
 
         medicineLiverTreatmentDTO.setMedicineLiverTreatmentDetailDTOS(medicineLiverTreatmentDetailDTOS);
         medicineLiverTreatmentDTO.setMedicineLiverTreatmentOtherDTOS(medicineLiverTreatmentOtherDTOS);
+        medicineLiverTreatmentDTO.setMedicineLiverTreatmentCnDTOS(medicineLiverTreatmentCnDTOS);
         return medicineLiverTreatmentDTO;
     }
 
@@ -83,10 +104,12 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
         medicineLiverTreatmentDO.setTreatment(medicineLiverTreatmentDTO.getTreatment());
         List<MedicineLiverTreatmentDetailDO> medicineLiverTreatmentDetailDOS = new ArrayList<>();
         List<MedicineLiverTreatmentOtherDO> medicineLiverTreatmentOtherDOS = new ArrayList<>();
+        List<MedicineLiverTreatmentCnDO> medicineLiverTreatmentCnDOS = new ArrayList<>();
 
         if(medicineLiverTreatmentDTO.getId()!=0){
             mlTreatmentDetailRepo.deleteTreatmentDetailByTId(medicineLiverTreatmentDTO.getId());
             mlTreatmentOtherRepo.deleteTreatmentOtherByTId(medicineLiverTreatmentDTO.getId());
+            mlTreatmentCnRepo.deleteTreatmentCnByTId(medicineLiverTreatmentDTO.getId());
         }
 
         List<MedicineLiverTreatmentDetailDTO> medicineLiverTreatmentDetailDTOS = medicineLiverTreatmentDTO.getMedicineLiverTreatmentDetailDTOS();
@@ -105,8 +128,22 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
             }
         }
 
+        List<MedicineLiverTreatmentCnDTO> medicineLiverTreatmentCnDTOS = medicineLiverTreatmentDTO.getMedicineLiverTreatmentCnDTOS();
+        if(medicineLiverTreatmentCnDTOS != null && !medicineLiverTreatmentCnDTOS.isEmpty() ){
+            for(MedicineLiverTreatmentCnDTO medicineLiverTreatmentCnDTO : medicineLiverTreatmentCnDTOS) {
+                MedicineLiverTreatmentCnDO medicineLiverTreatmentCnDO = new MedicineLiverTreatmentCnDO();
+                medicineLiverTreatmentCnDO.setCnTradeName(medicineLiverTreatmentCnDTO.getCnTradeName());
+                medicineLiverTreatmentCnDO.setCnStartDate(medicineLiverTreatmentCnDTO.getCnStartDate());
+                medicineLiverTreatmentCnDO.setCnMethod(medicineLiverTreatmentCnDTO.getCnMethod());
+                medicineLiverTreatmentCnDO.setCnEndDate(medicineLiverTreatmentCnDTO.getCnEndDate());
+                medicineLiverTreatmentCnDO.setCnDose(medicineLiverTreatmentCnDTO.getCnDose());
+                medicineLiverTreatmentCnDO.setMedicineLiverTreatmentDO(medicineLiverTreatmentDO);
+                medicineLiverTreatmentCnDOS.add(medicineLiverTreatmentCnDO);
+            }
+        }
+
         List<MedicineLiverTreatmentOtherDTO> medicineLiverTreatmentOtherDTOS = medicineLiverTreatmentDTO.getMedicineLiverTreatmentOtherDTOS();
-        if(!medicineLiverTreatmentOtherDTOS.isEmpty() && medicineLiverTreatmentOtherDTOS != null){
+        if(medicineLiverTreatmentOtherDTOS != null && !medicineLiverTreatmentOtherDTOS.isEmpty()){
             for(MedicineLiverTreatmentOtherDTO medicineLiverTreatmentOtherDTO : medicineLiverTreatmentOtherDTOS) {
                 MedicineLiverTreatmentOtherDO medicineLiverTreatmentOtherDO = new MedicineLiverTreatmentOtherDO();
                 medicineLiverTreatmentOtherDO.setMethod(medicineLiverTreatmentOtherDTO.getMethod());
@@ -119,6 +156,7 @@ public class MlTreatmentServiceImpl implements MlTreatmentService,MlCompleteServ
         }
 
         medicineLiverTreatmentDO.setMedicineLiverTreatmentDetailDOS(medicineLiverTreatmentDetailDOS);
+        medicineLiverTreatmentDO.setMedicineLiverTreatmentCnDOS(medicineLiverTreatmentCnDOS);
         medicineLiverTreatmentDO.setMedicineLiverTreatmentOtherDOS(medicineLiverTreatmentOtherDOS);
         return medicineLiverTreatmentDO;
     }

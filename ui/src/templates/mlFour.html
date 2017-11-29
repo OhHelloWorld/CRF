@@ -1,0 +1,1266 @@
+<section class="content-header">
+  <h1 class=" text-center">
+     四诊信息（望，切）
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+    <li class="active">四诊信息</li>
+  </ol>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                  <p class="h3">保存成功</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+              </div>
+            </div>
+</div>
+
+<div ng-model="mlFour" ng-controller="mlFourController">
+	<u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+  <br>
+  <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+      <br>
+
+      <span class="label label-success"> ☆ 舌，面</span>
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 面光泽 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="tongueGloss" ng-model="tongueGloss" ng-value=1>
+            <span class="h5">光泽</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueGloss" ng-model="tongueGloss" ng-value=2>
+            <span class="h5">少泽</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueGloss" ng-model="tongueGloss" ng-value=3>
+            <span class="h5">晦暗</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueGloss" ng-model="tongueGloss" ng-value=4>
+            <span class="h5">无光</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 面颜色 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="tongueColor" ng-model="tongueColor" ng-value=1>
+            <span class="h5">青</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueColor" ng-model="tongueColor" ng-value=2>
+            <span class="h5">赤</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueColor" ng-model="tongueColor" ng-value=3>
+            <span class="h5">黄</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueColor" ng-model="tongueColor" ng-value=4>
+            <span class="h5">白</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueColor" ng-model="tongueColor" ng-value=5>
+            <span class="h5">黑</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 舌质 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=1>
+            <span class="h5">淡红</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=2>
+            <span class="h5">淡白</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=3>
+            <span class="h5">淡紫</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=4>
+            <span class="h5">红</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=5>
+            <span class="h5">绛</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=6>
+            <span class="h5">青</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=7>
+            <span class="h5">紫暗</span>
+          </div>
+          <div class="col-md-2">
+            <input type="radio" name="tongueNature" ng-model="tongueNature" ng-value=8>
+            <span class="h5">瘀点瘀斑</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 舌质部位 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="tongueNaturePart" ng-model="tongueNaturePart" ng-value=1>
+            <span class="h5">全舌</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueNaturePart" ng-model="tongueNaturePart" ng-value=2>
+            <span class="h5">局部</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 舌体 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=1>
+            <span class="h5">荣</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=2>
+            <span class="h5">枯</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=3>
+            <span class="h5">瘦</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=4>
+            <span class="h5">胖</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=5>
+            <span class="h5">齿痕</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=6>
+            <span class="h5">点刺</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=7>
+            <span class="h5">裂纹</span>
+          </div>
+          <div class="col-md-2">
+            <input type="radio" name="tongueBody" ng-model="tongueBody" ng-value=8>
+            <span class="h5">舌体瘀斑</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 苔质 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=1>
+            <span class="h5">薄</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=2>
+            <span class="h5">厚</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=3>
+            <span class="h5">润</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=4>
+            <span class="h5">少</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=5>
+            <span class="h5">津</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=6>
+            <span class="h5">燥</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=7>
+            <span class="h5">糙</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=8>
+            <span class="h5">焦</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=9>
+            <span class="h5">枯</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=10>
+            <span class="h5">腻</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=11>
+            <span class="h5">腐</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=12>
+            <span class="h5">剥</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=13>
+            <span class="h5">类剥</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNature" ng-model="mossNature" ng-value=14>
+            <span class="h5">无苔</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 苔质部位 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="mossNaturePart" ng-model="mossNaturePart" ng-value=1>
+            <span class="h5">全舌</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossNaturePart" ng-model="mossNaturePart" ng-value=2>
+            <span class="h5">局部</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 苔色 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="mossColor" ng-model="mossColor" ng-value=1>
+            <span class="h5">白</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossColor" ng-model="mossColor" ng-value=2>
+            <span class="h5">略黄</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossColor" ng-model="mossColor" ng-value=3>
+            <span class="h5">黄</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossColor" ng-model="mossColor" ng-value=4>
+            <span class="h5">灰</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossColor" ng-model="mossColor" ng-value=5>
+            <span class="h5">黑</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 苔色部位 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="mossColorPart" ng-model="mossColorPart" ng-value=1>
+            <span class="h5">全舌</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="mossColorPart" ng-model="mossColorPart" ng-value=2>
+            <span class="h5">局部</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 舌下静脉 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="sublingualVein" ng-model="sublingualVein" ng-value=1>
+            <span class="h5">正常</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="sublingualVein" ng-model="sublingualVein" ng-value=2>
+            <span class="h5">轻微</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="sublingualVein" ng-model="sublingualVein" ng-value=3>
+            <span class="h5">明显</span>
+          </div>
+        </div>
+      </div>
+
+
+      <span class="label label-success"> ☆ 脉象</span>
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+                <h3 class="box-title">【 左脉 】</h3>
+        </div>
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=1>
+            <span class="h5">浮</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=2>
+            <span class="h5">沉</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=3>
+            <span class="h5">弦</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=4>
+            <span class="h5">滑</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=5>
+            <span class="h5">细</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=6>
+            <span class="h5">数</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=7>
+            <span class="h5">濡</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=8>
+            <span class="h5">缓</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=9>
+            <span class="h5">涩</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=10>
+            <span class="h5">迟</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=11>
+            <span class="h5">长</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=12>
+            <span class="h5">短</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=13>
+            <span class="h5">虚</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=14>
+            <span class="h5">弱</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="leftVein" ng-model="leftVein" ng-value=15>
+            <span class="h5">结代</span>
+          </div>
+        </div>
+
+        <div class="box-header with-border">
+                <h3 class="box-title">【 右脉 】</h3>
+        </div>
+        <div class="box-body">
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=1>
+            <span class="h5">浮</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=2>
+            <span class="h5">沉</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=3>
+            <span class="h5">弦</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=4>
+            <span class="h5">滑</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=5>
+            <span class="h5">细</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=6>
+            <span class="h5">数</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=7>
+            <span class="h5">濡</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=8>
+            <span class="h5">缓</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=9>
+            <span class="h5">涩</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=10>
+            <span class="h5">迟</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=11>
+            <span class="h5">长</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=12>
+            <span class="h5">短</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=13>
+            <span class="h5">虚</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=14>
+            <span class="h5">弱</span>
+          </div>
+          <div class="col-md-1">
+            <input type="radio" name="rightVein" ng-model="rightVein" ng-value=15>
+            <span class="h5">结代</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="label label-success"> ☆ 其他</span>
+      <div class="box box-info">
+      
+        <div class="box-header with-border">
+            <h3 class="box-title">【 乏力 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="fatigue" ng-model="fatigue" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="fatigue" ng-model="fatigue" ng-value=2>
+              <span class="h5">肢体乏力，勉强维持日常生活</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="fatigue" ng-model="fatigue" ng-value=3>
+              <span class="h5">肢体稍倦，可坚持轻体力工作</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="fatigue" ng-model="fatigue" ng-value=4>
+              <span class="h5">全身无力，终日不愿活动</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 皮肤瘙痒 】</h3>
+          </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="skinItching" ng-model="skinItching" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="skinItching" ng-model="skinItching" ng-value=2>
+              <span class="h5">偶有，不影响日常生活</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="skinItching" ng-model="skinItching" ng-value=3>
+              <span class="h5">时常有，轻度影响日常生活</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="skinItching" ng-model="skinItching" ng-value=4>
+              <span class="h5">整日瘙痒，影响日常生活</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 两目干涩 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="twoEyesDry" ng-model="twoEyesDry" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="twoEyesDry" ng-model="twoEyesDry" ng-value=2>
+              <span class="h5">自觉有时目干</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="twoEyesDry" ng-model="twoEyesDry" ng-value=3>
+              <span class="h5">经常两目干涩</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="twoEyesDry" ng-model="twoEyesDry" ng-value=4>
+              <span class="h5">整日两目干涩</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 视物模糊 】</h3>
+        </div>
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="blurredVision" ng-model="blurredVision" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="blurredVision" ng-model="blurredVision" ng-value=2>
+              <span class="h5">久视后视物不清</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="blurredVision" ng-model="blurredVision" ng-value=3>
+              <span class="h5">视物不清</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="blurredVision" ng-model="blurredVision" ng-value=4>
+              <span class="h5">视物困难</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 抑郁 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="depression" ng-model="depression" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="depression" ng-model="depression" ng-value=2>
+              <span class="h5">有时情绪低落</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="depression" ng-model="depression" ng-value=3>
+              <span class="h5">经常情绪低落</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="depression" ng-model="depression" ng-value=4>
+              <span class="h5">有厌世倾向</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 烦躁易怒 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="irritability" ng-model="irritability" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="irritability" ng-model="irritability" ng-value=2>
+              <span class="h5">偶见烦躁</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="irritability" ng-model="irritability" ng-value=3>
+              <span class="h5">经常烦躁不安</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="irritability" ng-model="irritability" ng-value=4>
+              <span class="h5">一触即怒</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 失眠 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="insomnia" ng-model="insomnia" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="insomnia" ng-model="insomnia" ng-value=2>
+              <span class="h5">睡眠不足6小时</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="insomnia" ng-model="insomnia" ng-value=3>
+              <span class="h5">睡眠不足4小时</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="insomnia" ng-model="insomnia" ng-value=4>
+              <span class="h5">彻夜难眠</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 易醒 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="easyWakeUp" ng-model="easyWakeUp" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="easyWakeUp" ng-model="easyWakeUp" ng-value=2>
+              <span class="h5">每夜眠后醒1-2次</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="easyWakeUp" ng-model="easyWakeUp" ng-value=3>
+              <span class="h5">每夜眠后醒3-4次</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="easyWakeUp" ng-model="easyWakeUp" ng-value=4>
+              <span class="h5">每夜醒5次以上</span>
+          </div>
+        </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">【 耳鸣 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="tinnitus" ng-model="tinnitus" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="tinnitus" ng-model="tinnitus" ng-value=2>
+              <span class="h5">偶见轻微耳鸣</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="tinnitus" ng-model="tinnitus" ng-value=3>
+              <span class="h5">阵发耳鸣，休息后缓解</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="tinnitus" ng-model="tinnitus" ng-value=4>
+              <span class="h5">耳鸣持续不解</span>
+          </div>
+        </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">【 口干 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="dryMouth" ng-model="dryMouth" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="dryMouth" ng-model="dryMouth" ng-value=2>
+              <span class="h5">偶有或晨起口干</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="dryMouth" ng-model="dryMouth" ng-value=3>
+              <span class="h5">时感口干</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="dryMouth" ng-model="dryMouth" ng-value=4>
+              <span class="h5">整日口干</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 口苦 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="mouthPain" ng-model="mouthPain" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="mouthPain" ng-model="mouthPain" ng-value=2>
+              <span class="h5">偶有或晨起口苦</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="mouthPain" ng-model="mouthPain" ng-value=3>
+              <span class="h5">时有口苦</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="mouthPain" ng-model="mouthPain" ng-value=4>
+              <span class="h5">整日口苦</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 口臭 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="badBreath" ng-model="badBreath" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="badBreath" ng-model="badBreath" ng-value=2>
+              <span class="h5">偶有或晨起口臭</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="badBreath" ng-model="badBreath" ng-value=3>
+              <span class="h5">时有口臭</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="badBreath" ng-model="badBreath" ng-value=4>
+              <span class="h5">整日口臭</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 恶心 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="nausea" ng-model="nausea" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="nausea" ng-model="nausea" ng-value=2>
+              <span class="h5">偶有恶心</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="nausea" ng-model="nausea" ng-value=3>
+              <span class="h5">每日恶心</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="nausea" ng-model="nausea" ng-value=4>
+              <span class="h5">恶心频作</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 嗳气 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="belching" ng-model="belching" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="belching" ng-model="belching" ng-value=2>
+              <span class="h5">偶有嗳气</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="belching" ng-model="belching" ng-value=3>
+              <span class="h5">食后嗳气频频</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="belching" ng-model="belching" ng-value=4>
+              <span class="h5">整日嗳气</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 脘腹胀满 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="abdominalDistention" ng-model="abdominalDistention" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="abdominalDistention" ng-model="abdominalDistention" ng-value=2>
+              <span class="h5">进食后脘腹胀满</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="abdominalDistention" ng-model="abdominalDistention" ng-value=3>
+              <span class="h5">少量进食后即脘腹胀满</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="abdominalDistention" ng-model="abdominalDistention" ng-value=4>
+              <span class="h5">整日脘腹胀满</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 胁肋痛 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="flankPain" ng-model="flankPain" ng-value=1>
+              <span class="h5">刺痛</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="flankPain" ng-model="flankPain" ng-value=2>
+              <span class="h5">胀痛</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="flankPain" ng-model="flankPain" ng-value=3>
+              <span class="h5">隐痛</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="flankPain" ng-model="flankPain" ng-value=4>
+              <span class="h5">不适</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 胁肋痛频率 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="flankPainPersist" ng-model="flankPainPersist" ng-value=1>
+              <span class="h5">偶有</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="flankPainPersist" ng-model="flankPainPersist" ng-value=2>
+              <span class="h5">常有</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="flankPainPersist" ng-model="flankPainPersist" ng-value=3>
+              <span class="h5">持续</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 纳差 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="anorexia" ng-model="anorexia" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="anorexia" ng-model="anorexia" ng-value=2>
+              <span class="h5">胃纳轻度减少</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="anorexia" ng-model="anorexia" ng-value=3>
+              <span class="h5">胃纳明显减少</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="anorexia" ng-model="anorexia" ng-value=4>
+              <span class="h5">不欲食</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 畏寒肢冷 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="aphrodisiacCold" ng-model="aphrodisiacCold" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="aphrodisiacCold" ng-model="aphrodisiacCold" ng-value=2>
+              <span class="h5">手足不温</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="aphrodisiacCold" ng-model="aphrodisiacCold" ng-value=3>
+              <span class="h5">加衣被方可缓解</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="aphrodisiacCold" ng-model="aphrodisiacCold" ng-value=4>
+              <span class="h5">加衣被不缓解</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 肢体困重 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="limb" ng-model="limb" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="limb" ng-model="limb" ng-value=2>
+              <span class="h5">下肢偶有沉重感</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="limb" ng-model="limb" ng-value=3>
+              <span class="h5">肢体沉重</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="limb" ng-model="limb" ng-value=4>
+              <span class="h5">肢体沉重，懒动</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 腰痠脚软 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="backacheFootSoft" ng-model="backacheFootSoft" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="backacheFootSoft" ng-model="backacheFootSoft" ng-value=2>
+              <span class="h5">偶有腰痠脚软</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="backacheFootSoft" ng-model="backacheFootSoft" ng-value=3>
+              <span class="h5">经常腰痠脚软</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="backacheFootSoft" ng-model="backacheFootSoft" ng-value=4>
+              <span class="h5">整日腰痠脚软</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 手足烦热 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="handFootFanHot" ng-model="handFootFanHot" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="handFootFanHot" ng-model="handFootFanHot" ng-value=2>
+              <span class="h5">轻度手足烦热</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="handFootFanHot" ng-model="handFootFanHot" ng-value=3>
+              <span class="h5">热甚，但能忍受</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="handFootFanHot" ng-model="handFootFanHot" ng-value=4>
+              <span class="h5">热甚，情绪烦躁</span>
+          </div>
+        </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">【 尿黄 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="urineYellow" ng-model="urineYellow" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="urineYellow" ng-model="urineYellow" ng-value=2>
+              <span class="h5">色黄</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="urineYellow" ng-model="urineYellow" ng-value=3>
+              <span class="h5">色深黄</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="urineYellow" ng-model="urineYellow" ng-value=4>
+              <span class="h5">色黄赤</span>
+          </div>
+        </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">【 便秘 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="constipation" ng-model="constipation" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="constipation" ng-model="constipation" ng-value=2>
+              <span class="h5">2日一行，便之不爽</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="constipation" ng-model="constipation" ng-value=3>
+              <span class="h5">3日一行</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="constipation" ng-model="constipation" ng-value=4>
+              <span class="h5">>3日一行</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 便溏 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="looseStools" ng-model="looseStools" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="looseStools" ng-model="looseStools" ng-value=2>
+              <span class="h5">大便不成形</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="looseStools" ng-model="looseStools" ng-value=3>
+              <span class="h5">稀便，每日两到三次</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="looseStools" ng-model="looseStools" ng-value=4>
+              <span class="h5">稀便，四次以上</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 汗出 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="sweat" ng-model="sweat" ng-value=1>
+              <span class="h5">盗汗</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="sweat" ng-model="sweat" ng-value=2>
+              <span class="h5">自汗</span>
+          </div>
+        </div>
+          
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 汗出频率 】</h3>
+          </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="sweatPersist" ng-model="sweatPersist" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="sweatPersist" ng-model="sweatPersist" ng-value=2>
+              <span class="h5">偶有</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="sweatPersist" ng-model="sweatPersist" ng-value=3>
+              <span class="h5">经常</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="sweatPersist" ng-model="sweatPersist" ng-value=4>
+              <span class="h5">动辄汗出</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="sweatPersist" ng-model="sweatPersist" ng-value=4>
+              <span class="h5">每晚盗汗</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 下肢水肿 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="lowerExtremityEdema" ng-model="lowerExtremityEdema" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="lowerExtremityEdema" ng-model="lowerExtremityEdema" ng-value=2>
+              <span class="h5">踝关节以下</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="lowerExtremityEdema" ng-model="lowerExtremityEdema" ng-value=3>
+              <span class="h5">膝关节以下</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="lowerExtremityEdema" ng-model="lowerExtremityEdema" ng-value=4>
+              <span class="h5">膝关节以上</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 面晦暗 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="faceDull" ng-model="faceDull" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="faceDull" ng-model="faceDull" ng-value=2>
+              <span class="h5">色暗少光泽</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="faceDull" ng-model="faceDull" ng-value=3>
+              <span class="h5">色晦暗</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="faceDull" ng-model="faceDull" ng-value=4>
+              <span class="h5">色深褐无光</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 目黄 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="eyeYellow" ng-model="eyeYellow" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="eyeYellow" ng-model="eyeYellow" ng-value=2>
+              <span class="h5">色淡黄</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="eyeYellow" ng-model="eyeYellow" ng-value=3>
+              <span class="h5">色黄</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="eyeYellow" ng-model="eyeYellow" ng-value=4>
+              <span class="h5">色深黄</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 身黄 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="bodyYellow" ng-model="bodyYellow" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="bodyYellow" ng-model="bodyYellow" ng-value=2>
+              <span class="h5">色淡黄</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="bodyYellow" ng-model="bodyYellow" ng-value=3>
+              <span class="h5">色黄</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="bodyYellow" ng-model="bodyYellow" ng-value=4>
+              <span class="h5">色深黄</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 蜘蛛痣数量 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="spiderNevus" ng-model="spiderNevus" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="spiderNevus" ng-model="spiderNevus" ng-value=2>
+              <span class="h5">偶见蜘蛛痣</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="spiderNevus" ng-model="spiderNevus" ng-value=3>
+              <span class="h5">有2-4个蜘蛛痣</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="spiderNevus" ng-model="spiderNevus" ng-value=4>
+              <span class="h5">5个以上蜘蛛痣</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 肝掌 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="liverPalm" ng-model="liverPalm" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="liverPalm" ng-model="liverPalm" ng-value=2>
+              <span class="h5">可疑肝掌</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="liverPalm" ng-model="liverPalm" ng-value=3>
+              <span class="h5">肝掌</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="liverPalm" ng-model="liverPalm" ng-value=4>
+              <span class="h5">明显肝掌</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 腹壁脉络曲张 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="abdominalVeins" ng-model="abdominalVeins" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="abdominalVeins" ng-model="abdominalVeins" ng-value=2>
+              <span class="h5">隐约可见</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="abdominalVeins" ng-model="abdominalVeins" ng-value=3>
+              <span class="h5">清晰可见</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="abdominalVeins" ng-model="abdominalVeins" ng-value=4>
+              <span class="h5">满腹脉络曲张</span>
+          </div>
+        </div>
+
+          <div class="box-header with-border">
+            <h3 class="box-title">【 黄色瘤 】</h3>
+        </div>
+        
+        <div class="box-body">
+          <div class="col-md-2">
+              <input type="radio" name="yellowTumor" ng-model="yellowTumor" ng-value=1>
+              <span class="h5">无</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="yellowTumor" ng-model="yellowTumor" ng-value=2>
+              <span class="h5">隐约可见</span>
+          </div>
+          <div class="col-md-2">
+              <input type="radio" name="yellowTumor" ng-model="yellowTumor" ng-value=3>
+              <span class="h5">清晰可见</span>
+          </div>
+          <div class="col-md-3">
+              <input type="radio" name="yellowTumor" ng-model="yellowTumor" ng-value=4>
+              <span class="h5">明显突出皮肤</span>
+          </div>
+
+
+          
+        </div>
+      </div>
+
+      <div class="col-md-offset-9 ">
+      <a class="btn btn-primary" ng-click="save()">
+          <i class="fa  fa-save"></i> 保存
+        </a>
+        <a class="btn btn-primary" ng-click="layout()">
+          <i class="fa  fa-sign-out"></i> 退出
+        </a>
+      </div>
+</div>

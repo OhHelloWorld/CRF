@@ -13,18 +13,31 @@ angular.module('mlTreatment', [])
     $scope.detailEndDateObj = {};
     $scope.categoryObj = {};
 
+    $scope.cnTradeNameObj = {};
+    $scope.cnMethodObj = {};
+    $scope.cnDoseObj = {};
+    $scope.cnStartDateObj = {};
+    $scope.cnEndDateObj = {};
+
     $scope.methodObj = {};
     $scope.methodDetailObj = {};
     $scope.otherStartDateObj = {};
     $scope.otherEndDateObj = {};
 
     $scope.medicineLiverTreatmentDetailDTOS = [];
+    $scope.medicineLiverTreatmentCnDTOS = [];
     $scope.medicineLiverTreatmentOtherDTOS = [];
 
     $('#detailStartDate').datepicker({
       autoclose: true
     });
     $('#detailEndDate').datepicker({
+      autoclose: true
+    });
+    $('#cnStartDate').datepicker({
+      autoclose: true
+    });
+    $('#cnEndDate').datepicker({
       autoclose: true
     });
     $('#otherStartDate').datepicker({
@@ -35,6 +48,7 @@ angular.module('mlTreatment', [])
     });
 
     var detailCount = 0;
+    var cnCount = 0;
     var otherCount = 0;
 
     $scope.addDetail = function() {
@@ -118,6 +132,71 @@ angular.module('mlTreatment', [])
       });
     };
 
+    $scope.addCn = function() {
+      cnCount += 1;
+      var template = `<div class="col-md-12">&nbsp</div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 组成成分（g）商品名</i>
+                    </div>
+                    <input class="form-control" ng-model="cnTradeNameObj[` + cnCount + `]">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 给药途径</i>
+                    </div>
+                    <select ng-model="cnMethodObj[` + cnCount + `]" class="form-control">
+                      <option value="1">口服</option>
+                      <option value="2">皮下注射</option>
+                      <option value="9">肌肉注射</option>
+                      <option value="10">静脉滴注</option>
+                      <option value="12">其他</option>
+                      <option value="13">不详</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 日剂量</i>
+                    </div>
+                    <input class="form-control" ng-model="cnDoseObj[` + cnCount + `]">
+                  </div>
+                </div>
+
+                <div class="col-sm-3 col-md-offset-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 开始日期</i>
+                    </div>
+                    <input class="form-control" id="cnStartDate` + cnCount + `" ng-model="cnStartDateObj[` + cnCount + `]">
+                  </div>
+                </div>
+                
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 结束日期</i>
+                    </div>
+                    <input class="form-control" id="cnEndDate` + cnCount + `" ng-model="cnEndDateObj[` + cnCount + `]">
+                  </div>
+                </div>`;
+
+      var compileFn = $compile(template);
+      var dom = compileFn($scope);
+      dom.appendTo('#cnMedicine');
+      $('#cnStartDate' + cnCount).datepicker({
+        autoclose: true
+      });
+      $('#cnEndDate' + cnCount).datepicker({
+        autoclose: true
+      });
+    };
+
     $scope.addOther = function() {
       otherCount += 1;
       var template = `<div class="col-md-12">&nbsp</div>
@@ -185,6 +264,25 @@ angular.module('mlTreatment', [])
           })(data);
         } else {
           detailCount = 0;
+        }
+
+        if (data.medicineLiverTreatmentCnDTOS.length != 0) {
+          if (data.medicineLiverTreatmentCnDTOS == 1) {
+            cnCount = 0;
+          } else {
+            cnCount = data.medicineLiverTreatmentCnDTOS.length - 1;
+          }
+          $scope.cnTradeName = data.medicineLiverTreatmentCnDTOS[0].cnTradeName;
+          $scope.cnMethod = data.medicineLiverTreatmentCnDTOS[0].cnMethod;
+          $scope.cnDose = data.medicineLiverTreatmentCnDTOS[0].cnDose;
+          (function(data) {
+            var cnStartDate = new Date(data.medicineLiverTreatmentCnDTOS[0].cnStartDate);
+            var cnEndDate = new Date(data.medicineLiverTreatmentCnDTOS[0].cnEndDate);
+            $scope.cnStartDate = cnStartDate.getFullYear() + '-' + (cnStartDate.getMonth() + 1) + '-' + cnStartDate.getDate();
+            $scope.cnEndDate = cnEndDate.getFullYear() + '-' + (cnEndDate.getMonth() + 1) + '-' + cnEndDate.getDate();
+          })(data);
+        } else {
+          cnCount = 0;
         }
 
         if (data.medicineLiverTreatmentOtherDTOS.length != 0) {
@@ -277,10 +375,10 @@ angular.module('mlTreatment', [])
           var compileFn = $compile(template);
           var dom = compileFn($scope);
           dom.appendTo('#treatmentDetail');
-          $('#detailStartDate' + detailCount).datepicker({
+          $('#detailStartDate' + i).datepicker({
             autoclose: true
           });
-          $('#detailEndDate' + detailCount).datepicker({
+          $('#detailEndDate' + i).datepicker({
             autoclose: true
           });
           $scope.genericNameObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).genericName;
@@ -293,6 +391,79 @@ angular.module('mlTreatment', [])
             var detailEndDate = new Date(((data.medicineLiverTreatmentDetailDTOS[i])).detailEndDate);
             $scope.detailStartDateObj[i] = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
             $scope.detailEndDateObj[i] = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
+          })(data);
+        }
+
+
+        for (var k = 1; k < data.medicineLiverTreatmentCnDTOS.length; k++) {
+          var template2 = `<div class="col-md-12">&nbsp</div>
+          <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 组成成分（g）商品名</i>
+                    </div>
+                    <input class="form-control" ng-model="cnTradeNameObj[` + k + `]">
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 给药途径</i>
+                    </div>
+                    <select ng-model="cnMethodObj[` + k + `]" class="form-control">
+                      <option value="1">口服</option>
+                      <option value="2">皮下注射</option>
+                      <option value="9">肌肉注射</option>
+                      <option value="10">静脉滴注</option>
+                      <option value="12">其他</option>
+                      <option value="13">不详</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 日剂量</i>
+                    </div>
+                    <input class="form-control" ng-model="cnDoseObj[` + k + `]">
+                  </div>
+                </div>
+
+                <div class="col-sm-3 col-md-offset-6">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 开始日期</i>
+                    </div>
+                    <input class="form-control" id="cnStartDate` + k + `" ng-model="cnStartDateObj[` + k + `]">
+                  </div>
+                </div>
+                
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i style="font-style: inherit;"> &ensp; 结束日期</i>
+                    </div>
+                    <input class="form-control" id="cnEndDate` + k + `" ng-model="cnEndDateObj[` + k + `]">
+                  </div>
+                </div>`;
+          var compileFn2 = $compile(template2);
+          var dom2 = compileFn2($scope);
+          dom2.appendTo('#cnMedicine');
+          $('#cnStartDate' + k).datepicker({
+            autoclose: true
+          });
+          $('#cnEndDate' + k).datepicker({
+            autoclose: true
+          });
+          $scope.cnTradeNameObj[k] = data.medicineLiverTreatmentCnDTOS[k].cnTradeName;
+          $scope.cnMethodObj[k] = data.medicineLiverTreatmentCnDTOS[k].cnMethod;
+          $scope.cnDoseObj[k] = data.medicineLiverTreatmentCnDTOS[k].cnDose;
+          (function(data) {
+            var cnStartDate = new Date(((data.medicineLiverTreatmentCnDTOS)[k]).cnStartDate);
+            var cnEndDate = new Date(((data.medicineLiverTreatmentCnDTOS)[k]).cnEndDate);
+            $scope.cnStartDateObj[k] = cnStartDate.getFullYear() + '-' + (cnStartDate.getMonth() + 1) + '-' + cnStartDate.getDate();
+            $scope.cnEndDateObj[k] = cnEndDate.getFullYear() + '-' + (cnEndDate.getMonth() + 1) + '-' + cnEndDate.getDate();
           })(data);
         }
 
@@ -324,10 +495,10 @@ angular.module('mlTreatment', [])
           var compileFn1 = $compile(template1);
           var dom1 = compileFn1($scope);
           dom1.appendTo('#treatmentOther');
-          $('#otherStartDate' + otherCount).datepicker({
+          $('#otherStartDate' + j).datepicker({
             autoclose: true
           });
-          $('#otherEndDate' + otherCount).datepicker({
+          $('#otherEndDate' + j).datepicker({
             autoclose: true
           });
           $scope.methodObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).method;
@@ -344,6 +515,7 @@ angular.module('mlTreatment', [])
 
     $scope.save = function() {
       mlTreatment.medicineLiverTreatmentDetailDTOS = [];
+      mlTreatment.medicineLiverTreatmentCnDTOS = [];
       mlTreatment.medicineLiverTreatmentOtherDTOS = [];
       mlTreatment.treatment = $scope.treatment;
       mlTreatment.patientId = sessionStorage.getItem('mlPatientId');
@@ -355,12 +527,23 @@ angular.module('mlTreatment', [])
           tradeName: $scope.tradeName,
           detailMethod: $scope.detailMethod,
           dose: $scope.dose,
-          category:$scope.category,
+          category: $scope.category,
           detailStartDate: new Date($scope.detailStartDate),
           detailEndDate: new Date($scope.detailEndDate)
             // id: $scope.detailId,
         });
       }
+
+      if ($scope.cnTradeName != undefined) {
+        mlTreatment.medicineLiverTreatmentCnDTOS.push({
+          cnTradeName: $scope.cnTradeName,
+          cnMethod: $scope.cnMethod,
+          cnDose: $scope.cnDose,
+          cnStartDate: new Date($scope.cnStartDate),
+          cnEndDate: new Date($scope.cnEndDate)
+        });
+      }
+
 
       if ($scope.method != undefined) {
         mlTreatment.medicineLiverTreatmentOtherDTOS.push({
@@ -378,9 +561,19 @@ angular.module('mlTreatment', [])
           tradeName: $scope.tradeNameObj[i],
           detailMethod: $scope.detailMethodObj[i],
           dose: $scope.doseObj[i],
-          category:$scope.categoryObj[i],
+          category: $scope.categoryObj[i],
           detailStartDate: new Date($scope.detailStartDateObj[i]),
           detailEndDate: new Date($scope.detailEndDateObj[i])
+        });
+      }
+
+      for (var k = 1; k <= cnCount; k++) {
+        mlTreatment.medicineLiverTreatmentCnDTOS.push({
+          cnTradeName: $scope.cnTradeNameObj[k],
+          cnMethod: $scope.cnMethodObj[k],
+          cnDose: $scope.cnDoseObj[k],
+          cnStartDate: new Date($scope.cnStartDateObj[k]),
+          cnEndDate: new Date($scope.cnEndDateObj[k])
         });
       }
 

@@ -9,6 +9,7 @@ angular.module('mlPatientOverview', [])
       getDiseaseHistory();
       getDrink();
       getDrug();
+      getFour();
       getSymptoms();
       getFirst();
       getHosData();
@@ -209,6 +210,1456 @@ angular.module('mlPatientOverview', [])
         $scope.herbalMedicines = response.data.mlChineseHerbalMedicineDTOS;
         $scope.susMedicines = response.data.mlSuspendChineseMedicineDTOS;
       });
+    }
+
+    function getFour() {
+      $http({
+        method: 'GET',
+        url: '/api/mlFour/' + sessionStorage.getItem('mlPatientId')
+      }).then(function success(res) {
+        displayFour(res);
+      });
+
+    }
+
+    function displayFour(res) {
+      var data = res.data;
+      console.log(data);
+      console.log(typeof data.tongueGloss);
+      switch (data.tongueGloss) {
+        case 1:
+          {
+            $scope.tongueGloss = '光泽';
+            break;
+          }
+        case 2:
+          {
+            $scope.tongueGloss = '少泽';
+            break;
+          }
+        case 3:
+          {
+            $scope.tongueGloss = '晦暗';
+            break;
+          }
+        case 4:
+          {
+            $scope.tongueGloss = '无光';
+            break;
+          }
+        default:
+          {
+            $scope.tongueGloss = '';
+          }
+      }
+
+      switch (data.tongueColor) {
+        case 1:
+          {
+            $scope.tongueColor = '青';
+            break;
+          }
+        case 2:
+          {
+            $scope.tongueColor = '赤';
+            break;
+          }
+        case 3:
+          {
+            $scope.tongueColor = '黄';
+            break;
+          }
+        case 4:
+          {
+            $scope.tongueColor = '白';
+            break;
+          }
+        case 5:
+          {
+            $scope.tongueColor = '黑';
+            break;
+          }
+        default:
+          {
+            $scope.tongueColor = '';
+          }
+      }
+
+      switch (data.tongueNature) {
+        case 1:
+          {
+            $scope.tongueNature = '淡红';
+            break;
+          }
+        case 2:
+          {
+            $scope.tongueNature = '淡白';
+            break;
+          }
+        case 3:
+          {
+            $scope.tongueNature = '淡紫';
+            break;
+          }
+        case 4:
+          {
+            $scope.tongueNature = '红';
+            break;
+          }
+        case 5:
+          {
+            $scope.tongueNature = '绛';
+            break;
+          }
+        case 6:
+          {
+            $scope.tongueNature = '青';
+            break;
+          }
+        case 7:
+          {
+            $scope.tongueNature = '紫暗';
+            break;
+          }
+        case 8:
+          {
+            $scope.tongueNature = '瘀点瘀斑';
+            break;
+          }
+        default:
+          {
+            $scope.tongueNature = '';
+          }
+      }
+
+      switch (data.tongueNaturePart) {
+        case 1:
+          {
+            $scope.tongueNaturePart = '全舌';
+            break;
+          }
+        case 2:
+          {
+            $scope.tongueNaturePart = '局部';
+            break;
+          }
+        default:
+          {
+            $scope.tongueNaturePart = '';
+          }
+      }
+
+      switch (data.tongueBody) {
+        case 1:
+          {
+            $scope.tongueBody = '荣';
+            break;
+          }
+        case 2:
+          {
+            $scope.tongueBody = '枯';
+            break;
+          }
+        case 3:
+          {
+            $scope.tongueBody = '瘦';
+            break;
+          }
+        case 4:
+          {
+            $scope.tongueBody = '胖';
+            break;
+          }
+        case 5:
+          {
+            $scope.tongueBody = '齿痕';
+            break;
+          }
+        case 6:
+          {
+            $scope.tongueBody = '点刺';
+            break;
+          }
+        case 7:
+          {
+            $scope.tongueBody = '裂纹';
+            break;
+          }
+        case 8:
+          {
+            $scope.tongueBody = '舌体瘀斑';
+            break;
+          }
+        default:
+          {
+            $scope.tongueBody = '';
+          }
+      }
+
+      switch (data.mossNature) {
+        case 1:
+          {
+            $scope.mossNature = '薄';
+            break;
+          }
+        case 2:
+          {
+            $scope.mossNature = '厚';
+            break;
+          }
+        case 3:
+          {
+            $scope.mossNature = '润';
+            break;
+          }
+        case 4:
+          {
+            $scope.mossNature = '少';
+            break;
+          }
+        case 5:
+          {
+            $scope.mossNature = '津';
+            break;
+          }
+        case 6:
+          {
+            $scope.mossNature = '燥';
+            break;
+          }
+        case 7:
+          {
+            $scope.mossNature = '糙';
+            break;
+          }
+        case 8:
+          {
+            $scope.mossNature = '焦';
+            break;
+          }
+        case 9:
+          {
+            $scope.mossNature = '枯';
+            break;
+          }
+        case 10:
+          {
+            $scope.mossNature = '腻';
+            break;
+          }
+        case 11:
+          {
+            $scope.mossNature = '腐';
+            break;
+          }
+        case 12:
+          {
+            $scope.mossNature = '剥';
+            break;
+          }
+        case 13:
+          {
+            $scope.mossNature = '类剥';
+            break;
+          }
+        case 14:
+          {
+            $scope.mossNature = '无苔';
+            break;
+          }
+        default:
+          {
+            $scope.mossNature = '';
+          }
+      }
+
+      switch (data.mossNaturePart) {
+        case 1:
+          {
+            $scope.mossNaturePart = '全舌';
+            break;
+          }
+        case 2:
+          {
+            $scope.mossNaturePart = '局部';
+            break;
+          }
+        default:
+          {
+            $scope.mossNaturePart = '';
+          }
+      }
+
+      switch (data.mossColor) {
+        case 1:
+          {
+            $scope.mossColor = '白';
+            break;
+          }
+        case 2:
+          {
+            $scope.mossColor = '略黄';
+            break;
+          }
+        case 3:
+          {
+            $scope.mossColor = '黄';
+            break;
+          }
+        case 4:
+          {
+            $scope.mossColor = '灰';
+            break;
+          }
+        case 5:
+          {
+            $scope.mossColor = '黑';
+            break;
+          }
+        default:
+          {
+            $scope.mossColor = '';
+          }
+      }
+
+      switch (data.mossColorPart) {
+        case 1:
+          {
+            $scope.mossColorPart = '全舌';
+            break;
+          }
+        case 2:
+          {
+            $scope.mossColorPart = '局部';
+            break;
+          }
+        default:
+          {
+            $scope.mossColorPart = '';
+          }
+      }
+
+      switch (data.sublingualVein) {
+        case 1:
+          {
+            $scope.sublingualVein = '正常';
+            break;
+          }
+        case 2:
+          {
+            $scope.sublingualVein = '轻微';
+            break;
+          }
+        case 3:
+          {
+            $scope.sublingualVein = '明显';
+            break;
+          }
+        default:
+          {
+            $scope.sublingualVein = '';
+          }
+      }
+
+      switch (data.leftVein) {
+        case 1:
+          {
+            $scope.leftVein = '浮';
+            break;
+          }
+        case 2:
+          {
+            $scope.leftVein = '沉';
+            break;
+          }
+        case 3:
+          {
+            $scope.leftVein = '弦';
+            break;
+          }
+        case 4:
+          {
+            $scope.leftVein = '滑';
+            break;
+          }
+        case 5:
+          {
+            $scope.leftVein = '细';
+            break;
+          }
+        case 6:
+          {
+            $scope.leftVein = '数';
+            break;
+          }
+        case 7:
+          {
+            $scope.leftVein = '濡';
+            break;
+          }
+        case 8:
+          {
+            $scope.leftVein = '缓';
+            break;
+          }
+        case 9:
+          {
+            $scope.leftVein = '涩';
+            break;
+          }
+        case 10:
+          {
+            $scope.leftVein = '迟';
+            break;
+          }
+        case 11:
+          {
+            $scope.leftVein = '长';
+            break;
+          }
+        case 12:
+          {
+            $scope.leftVein = '短';
+            break;
+          }
+        case 13:
+          {
+            $scope.leftVein = '虚';
+            break;
+          }
+        case 14:
+          {
+            $scope.leftVein = '弱';
+            break;
+          }
+        case 15:
+          {
+            $scope.leftVein = '结代';
+            break;
+          }
+        default:
+          {
+            $scope.leftVein = '';
+          }
+      }
+
+      switch (data.rightVein) {
+        case 1:
+          {
+            $scope.rightVein = '浮';
+            break;
+          }
+        case 2:
+          {
+            $scope.rightVein = '沉';
+            break;
+          }
+        case 3:
+          {
+            $scope.rightVein = '弦';
+            break;
+          }
+        case 4:
+          {
+            $scope.rightVein = '滑';
+            break;
+          }
+        case 5:
+          {
+            $scope.rightVein = '细';
+            break;
+          }
+        case 6:
+          {
+            $scope.rightVein = '数';
+            break;
+          }
+        case 7:
+          {
+            $scope.rightVein = '濡';
+            break;
+          }
+        case 8:
+          {
+            $scope.rightVein = '缓';
+            break;
+          }
+        case 9:
+          {
+            $scope.rightVein = '涩';
+            break;
+          }
+        case 10:
+          {
+            $scope.rightVein = '迟';
+            break;
+          }
+        case 11:
+          {
+            $scope.rightVein = '长';
+            break;
+          }
+        case 12:
+          {
+            $scope.rightVein = '短';
+            break;
+          }
+        case 13:
+          {
+            $scope.rightVein = '虚';
+            break;
+          }
+        case 14:
+          {
+            $scope.rightVein = '弱';
+            break;
+          }
+        case 15:
+          {
+            $scope.rightVein = '结代';
+            break;
+          }
+        default:
+          {
+            $scope.rightVein = '';
+          }
+      }
+
+      switch (data.fatigue) {
+        case 1:
+          {
+            $scope.mlfatigue = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlfatigue = '肢体乏力，勉强维持日常生活';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlfatigue = '肢体稍倦，可坚持轻体力工作';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlfatigue = '全身无力，终日不愿活动';
+            break;
+          }
+        default:
+          {
+            $scope.mlfatigue = '';
+          }
+      }
+
+      switch (data.skinItching) {
+        case 1:
+          {
+            $scope.mlskinItching = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlskinItching = '偶有，不影响日常生活';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlskinItching = '时常有，轻度影响日常生活';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlskinItching = '整日瘙痒，影响日常生活';
+            break;
+          }
+        default:
+          {
+            $scope.mlskinItching = '';
+          }
+      }
+
+      switch (data.twoEyesDry) {
+        case 1:
+          {
+            $scope.mltwoEyesDry = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mltwoEyesDry = ' 自觉有时目干';
+            break;
+          }
+        case 3:
+          {
+            $scope.mltwoEyesDry = '经常两目干涩';
+            break;
+          }
+        case 4:
+          {
+            $scope.mltwoEyesDry = '整日两目干涩';
+            break;
+          }
+        default:
+          {
+            $scope.mltwoEyesDry = '';
+          }
+      }
+
+      switch (data.blurredVision) {
+        case 1:
+          {
+            $scope.mlblurredVision = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlblurredVision = '久视后视物不清';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlblurredVision = '视物不清';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlblurredVision = '视物困难';
+            break;
+          }
+        default:
+          {
+            $scope.mlblurredVision = '';
+          }
+      }
+
+      switch (data.depression) {
+        case 1:
+          {
+            $scope.mldepression = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mldepression = '有时情绪低落';
+            break;
+          }
+        case 3:
+          {
+            $scope.mldepression = '经常情绪低落';
+            break;
+          }
+        case 4:
+          {
+            $scope.mldepression = '有厌世倾向';
+            break;
+          }
+        default:
+          {
+            $scope.mldepression = '';
+          }
+      }
+
+      switch (data.irritability) {
+        case 1:
+          {
+            $scope.mlirritability = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlirritability = '偶见烦躁';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlirritability = '经常烦躁不安';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlirritability = '一触即怒';
+            break;
+          }
+        default:
+          {
+            $scope.mlirritability = '';
+          }
+      }
+
+      switch (data.insomnia) {
+        case 1:
+          {
+            $scope.mlinsomnia = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlinsomnia = '睡眠不足6小时';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlinsomnia = '睡眠不足4小时';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlinsomnia = '彻夜难眠';
+            break;
+          }
+        default:
+          {
+            $scope.mlinsomnia = '';
+          }
+      }
+
+      switch (data.easyWakeUp) {
+        case 1:
+          {
+            $scope.mleasyWakeUp = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mleasyWakeUp = '每夜眠后醒1-2次';
+            break;
+          }
+        case 3:
+          {
+            $scope.mleasyWakeUp = '每夜眠后醒3-4次';
+            break;
+          }
+        case 4:
+          {
+            $scope.mleasyWakeUp = '每夜醒5次以上';
+            break;
+          }
+        default:
+          {
+            $scope.mleasyWakeUp = '';
+          }
+      }
+
+      switch (data.tinnitus) {
+        case 1:
+          {
+            $scope.mltinnitus = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mltinnitus = '偶见轻微耳鸣';
+            break;
+          }
+        case 3:
+          {
+            $scope.mltinnitus = '阵发耳鸣，休息后缓解';
+            break;
+          }
+        case 4:
+          {
+            $scope.mltinnitus = '耳鸣持续不解';
+            break;
+          }
+        default:
+          {
+            $scope.mltinnitus = '';
+          }
+      }
+
+      switch (data.dryMouth) {
+        case 1:
+          {
+            $scope.mldryMouth = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mldryMouth = '偶有或晨起口干';
+            break;
+          }
+        case 3:
+          {
+            $scope.mldryMouth = '时感口干';
+            break;
+          }
+        case 4:
+          {
+            $scope.mldryMouth = '整日口干';
+            break;
+          }
+        default:
+          {
+            $scope.mldryMouth = '';
+          }
+      }
+
+      switch (data.mouthPain) {
+        case 1:
+          {
+            $scope.mlmouthPain = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlmouthPain = '偶有或晨起口苦';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlmouthPain = '时有口苦';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlmouthPain = '整日口苦';
+            break;
+          }
+        default:
+          {
+            $scope.mlmouthPain = '';
+          }
+      }
+
+      switch (data.badBreath) {
+        case 1:
+          {
+            $scope.mlbadBreath = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlbadBreath = '偶有或晨起口臭';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlbadBreath = '时有口臭';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlbadBreath = '整日口臭';
+            break;
+          }
+        default:
+          {
+            $scope.mlbadBreath = '';
+          }
+      }
+
+      switch (data.nausea) {
+        case 1:
+          {
+            $scope.mlnausea = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlnausea = '偶有恶心';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlnausea = '每日恶心';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlnausea = '恶心频作';
+            break;
+          }
+        default:
+          {
+            $scope.mlnausea = '';
+          }
+      }
+
+      switch (data.belching) {
+        case 1:
+          {
+            $scope.mlbelching = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlbelching = '偶有嗳气';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlbelching = '食后嗳气频频';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlbelching = '整日嗳气';
+            break;
+          }
+        default:
+          {
+            $scope.mlbelching = '';
+          }
+      }
+
+      switch (data.abdominalDistention) {
+        case 1:
+          {
+            $scope.mlabdominalDistention = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlabdominalDistention = '进食后脘腹胀满';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlabdominalDistention = '少量进食后即脘腹胀满';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlabdominalDistention = '整日脘腹胀满';
+            break;
+          }
+        default:
+          {
+            $scope.mlabdominalDistention = '';
+          }
+      }
+
+      switch (data.flankPain) {
+        case 1:
+          {
+            $scope.mlflankPain = ' 刺痛';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlflankPain = '胀痛';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlflankPain = '隐痛';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlflankPain = '不适';
+            break;
+          }
+        default:
+          {
+            $scope.mlflankPain = '';
+          }
+      }
+
+      switch (data.flankPainPersist) {
+        case 1:
+          {
+            $scope.mlflankPainPersist = '偶有';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlflankPainPersist = '常有';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlflankPainPersist = '持续';
+            break;
+          }
+        default:
+          {
+            $scope.mlflankPainPersist = '';
+          }
+      }
+
+      switch (data.anorexia) {
+        case 1:
+          {
+            $scope.mlanorexia = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlanorexia = '胃纳轻度减少';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlanorexia = '胃纳明显减少';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlanorexia = '不欲食';
+            break;
+          }
+        default:
+          {
+            $scope.mlanorexia = '';
+          }
+      }
+
+      switch (data.aphrodisiacCold) {
+        case 1:
+          {
+            $scope.mlaphrodisiacCold = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlaphrodisiacCold = '手足不温';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlaphrodisiacCold = '加衣被方可缓解';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlaphrodisiacCold = '加衣被不缓解';
+            break;
+          }
+        default:
+          {
+            $scope.mlaphrodisiacCold = '';
+          }
+      }
+
+      switch (data.limb) {
+        case 1:
+          {
+            $scope.mllimb = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mllimb = '下肢偶有沉重感';
+            break;
+          }
+        case 3:
+          {
+            $scope.mllimb = '肢体沉重';
+            break;
+          }
+        case 4:
+          {
+            $scope.mllimb = '肢体沉重，懒动';
+            break;
+          }
+        default:
+          {
+            $scope.mllimb = '';
+          }
+      }
+
+      switch (data.backacheFootSoft) {
+        case 1:
+          {
+            $scope.mlbackacheFootSoft = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlbackacheFootSoft = '偶有腰痠脚软';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlbackacheFootSoft = '经常腰痠脚软';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlbackacheFootSoft = '整日腰痠脚软';
+            break;
+          }
+        default:
+          {
+            $scope.mlbackacheFootSoft = '';
+          }
+      }
+
+      switch (data.handFootFanHot) {
+        case 1:
+          {
+            $scope.mlhandFootFanHot = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlhandFootFanHot = '轻度手足烦热';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlhandFootFanHot = '热甚，但能忍受';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlhandFootFanHot = '热甚，情绪烦躁';
+            break;
+          }
+        default:
+          {
+            $scope.mlhandFootFanHot = '';
+          }
+      }
+
+      switch (data.urineYellow) {
+        case 1:
+          {
+            $scope.mlurineYellow = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlurineYellow = '色黄';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlurineYellow = '色深黄';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlurineYellow = '色黄赤';
+            break;
+          }
+        default:
+          {
+            $scope.mlurineYellow = '';
+          }
+      }
+
+      switch (data.constipation) {
+        case 1:
+          {
+            $scope.mlconstipation = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlconstipation = '2日一行，便之不爽';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlconstipation = '3日一行';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlconstipation = '>3日一行';
+            break;
+          }
+        default:
+          {
+            $scope.mlconstipation = '';
+          }
+      }
+
+      switch (data.looseStools) {
+        case 1:
+          {
+            $scope.mllooseStools = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mllooseStools = '大便不成形';
+            break;
+          }
+        case 3:
+          {
+            $scope.mllooseStools = '稀便，每日两到三次';
+            break;
+          }
+        case 4:
+          {
+            $scope.mllooseStools = '稀便，四次以上';
+            break;
+          }
+        default:
+          {
+            $scope.mllooseStools = '';
+          }
+      }
+
+      switch (data.sweat) {
+        case 1:
+          {
+            $scope.mlsweat = '盗汗';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlsweat = '自汗';
+            break;
+          }
+        default:
+          {
+            $scope.mlsweat = '';
+          }
+      }
+
+      switch (data.sweatPersist) {
+        case 1:
+          {
+            $scope.mlsweatPersist = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlsweatPersist = '偶有';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlsweatPersist = '经常';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlsweatPersist = '动辄汗出';
+            break;
+          }
+        case 5:
+          {
+            $scope.mlsweatPersist = '每晚盗汗';
+            break;
+          }
+        default:
+          {
+            $scope.mlsweatPersist = '';
+          }
+      }
+
+      switch (data.lowerExtremityEdema) {
+        case 1:
+          {
+            $scope.mllowerExtremityEdema = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mllowerExtremityEdema = '踝关节以下';
+            break;
+          }
+        case 3:
+          {
+            $scope.mllowerExtremityEdema = '膝关节以下';
+            break;
+          }
+        case 4:
+          {
+            $scope.mllowerExtremityEdema = '膝关节以上';
+            break;
+          }
+        default:
+          {
+            $scope.mllowerExtremityEdema = '';
+          }
+      }
+
+      switch (data.faceDull) {
+        case 1:
+          {
+            $scope.mlfaceDull = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlfaceDull = '色暗少光泽';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlfaceDull = '色晦暗';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlfaceDull = '色深褐无光';
+            break;
+          }
+        default:
+          {
+            $scope.mlfaceDull = '';
+          }
+      }
+
+      switch (data.eyeYellow) {
+        case 1:
+          {
+            $scope.mleyeYellow = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mleyeYellow = '色淡黄';
+            break;
+          }
+        case 3:
+          {
+            $scope.mleyeYellow = '色黄';
+            break;
+          }
+        case 4:
+          {
+            $scope.mleyeYellow = '色深黄';
+            break;
+          }
+        default:
+          {
+            $scope.mleyeYellow = '';
+          }
+      }
+
+      switch (data.bodyYellow) {
+        case 1:
+          {
+            $scope.mlbodyYellow = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlbodyYellow = '色淡黄';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlbodyYellow = '色黄';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlbodyYellow = '色深黄';
+            break;
+          }
+        default:
+          {
+            $scope.mlbodyYellow = '';
+          }
+      }
+
+      switch (data.spiderNevus) {
+        case 1:
+          {
+            $scope.mlspiderNevus = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlspiderNevus = '偶见蜘蛛痣';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlspiderNevus = '有2-4个蜘蛛痣';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlspiderNevus = '5个以上蜘蛛痣';
+            break;
+          }
+        default:
+          {
+            $scope.mlspiderNevus = '';
+          }
+      }
+
+      switch (data.liverPalm) {
+        case 1:
+          {
+            $scope.mlliverPalm = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlliverPalm = '可疑肝掌';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlliverPalm = '肝掌';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlliverPalm = '明显肝掌';
+            break;
+          }
+        default:
+          {
+            $scope.mlliverPalm = '';
+          }
+      }
+
+      switch (data.abdominalVeins) {
+        case 1:
+          {
+            $scope.mlabdominalVeins = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlabdominalVeins = '隐约可见';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlabdominalVeins = '清晰可见';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlabdominalVeins = '满腹脉络曲张';
+            break;
+          }
+        default:
+          {
+            $scope.mlabdominalVeins = '';
+          }
+      }
+
+      switch (data.yellowTumor) {
+        case 1:
+          {
+            $scope.mlyellowTumor = '无';
+            break;
+          }
+        case 2:
+          {
+            $scope.mlyellowTumor = '隐约可见';
+            break;
+          }
+        case 3:
+          {
+            $scope.mlyellowTumor = '清晰可见';
+            break;
+          }
+        case 4:
+          {
+            $scope.mlyellowTumor = '明显突出皮肤';
+            break;
+          }
+        default:
+          {
+            $scope.mlyellowTumor = '';
+          }
+      }
+
     }
 
 
@@ -1272,51 +2723,53 @@ angular.module('mlPatientOverview', [])
 
     function displaySample(response) {
       var data = response.data;
-      var biologicalSamples = data.biologicalSamples.split(' ');
-      if(biologicalSamples.indexOf('血清')){
-        $scope.biologicalSamples1 = '是';
-      }else{
-        $scope.biologicalSamples1 = '否';
-      }
-      if(biologicalSamples.indexOf('血浆')){
-        $scope.biologicalSamples2 = '是';
-      }else{
-        $scope.biologicalSamples2 = '否';
-      }
-      if(biologicalSamples.indexOf('组织')){
-        $scope.biologicalSamples3 = '是';
-      }else{
-        $scope.biologicalSamples3 = '否';
-      }
-      if(biologicalSamples.indexOf('尿液')){
-        $scope.biologicalSamples4 = '是';
-      }else{
-        $scope.biologicalSamples4 = '否';
-      }
-      if(biologicalSamples.indexOf('药物')){
-        $scope.biologicalSamples5 = '是';
-      }else{
-        $scope.biologicalSamples5 = '否';
-      }
-      if(biologicalSamples.indexOf('其他')){
-        $scope.biologicalSamples6 = '是';
-      }else{
-        $scope.biologicalSamples6 = '否';
-      }
+      if(data.biologicalSamples){
+        var biologicalSamples = data.biologicalSamples.split(' ');
+        if (biologicalSamples.indexOf('血清')) {
+          $scope.biologicalSamples1 = '是';
+        } else {
+          $scope.biologicalSamples1 = '否';
+        }
+        if (biologicalSamples.indexOf('血浆')) {
+          $scope.biologicalSamples2 = '是';
+        } else {
+          $scope.biologicalSamples2 = '否';
+        }
+        if (biologicalSamples.indexOf('组织')) {
+          $scope.biologicalSamples3 = '是';
+        } else {
+          $scope.biologicalSamples3 = '否';
+        }
+        if (biologicalSamples.indexOf('尿液')) {
+          $scope.biologicalSamples4 = '是';
+        } else {
+          $scope.biologicalSamples4 = '否';
+        }
+        if (biologicalSamples.indexOf('药物')) {
+          $scope.biologicalSamples5 = '是';
+        } else {
+          $scope.biologicalSamples5 = '否';
+        }
+        if (biologicalSamples.indexOf('其他')) {
+          $scope.biologicalSamples6 = '是';
+        } else {
+          $scope.biologicalSamples6 = '否';
+        }
 
-      $scope.num1 = data.num1;
-      $scope.num2 = data.num2;
-      $scope.num3 = data.num3;
-      $scope.num4 = data.num4;
-      $scope.num5 = data.num5;
-      $scope.num6 = data.num6;
+        $scope.num1 = data.num1;
+        $scope.num2 = data.num2;
+        $scope.num3 = data.num3;
+        $scope.num4 = data.num4;
+        $scope.num5 = data.num5;
+        $scope.num6 = data.num6;
 
-      $scope.remark1 = data.remark1;
-      $scope.remark2 = data.remark2;
-      $scope.remark3 = data.remark3;
-      $scope.remark4 = data.remark4;
-      $scope.remark5 = data.remark5;
-      $scope.remark6 = data.remark6;
+        $scope.remark1 = data.remark1;
+        $scope.remark2 = data.remark2;
+        $scope.remark3 = data.remark3;
+        $scope.remark4 = data.remark4;
+        $scope.remark5 = data.remark5;
+        $scope.remark6 = data.remark6;
+      }
     }
 
 
