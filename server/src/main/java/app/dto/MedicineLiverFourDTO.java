@@ -6,6 +6,7 @@ package app.dto;
 public class MedicineLiverFourDTO {
 
     private int id;
+    private int patientId;
     private int tongueGloss;//舌面光泽
     private int tongueColor;//舌面颜色
     private int tongueNature;//舌质
@@ -60,6 +61,14 @@ public class MedicineLiverFourDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
     }
 
     public int getTongueGloss() {

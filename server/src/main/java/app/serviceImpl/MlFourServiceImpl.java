@@ -72,6 +72,7 @@ public class MlFourServiceImpl implements MlFourService,MlCompleteService{
 
     private MedicineLiverFourDO convertToEntity(MedicineLiverFourDTO fourDTO){
         MedicineLiverFourDO fourDO = new MedicineLiverFourDO();
+        fourDO.setPatientId(fourDTO.getPatientId());
         fourDO.setAbdominalDistention(fourDTO.getAbdominalDistention());
         fourDO.setAbdominalVeins(fourDTO.getAbdominalVeins());
         fourDO.setAnorexia(fourDTO.getAnorexia());

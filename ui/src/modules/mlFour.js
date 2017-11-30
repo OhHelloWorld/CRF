@@ -6,6 +6,7 @@ angular.module('mlFour', [])
     getMlFour();
     var mlFour = {};
     $scope.save = function() {
+      mlFour.patientId = sessionStorage.getItem('mlPatientId');
       mlFour.tongueGloss = $scope.tongueGloss;
       mlFour.tongueColor = $scope.tongueColor;
       mlFour.tongueNature = $scope.tongueNature;
