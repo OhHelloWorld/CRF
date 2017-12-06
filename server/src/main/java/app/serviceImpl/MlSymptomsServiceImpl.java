@@ -68,7 +68,7 @@ public class MlSymptomsServiceImpl implements MlSymptomsService ,MlCompleteServi
         medicineLiverSymptomsDTO.setEpistaxisDischarge(medicineLiverSymptomsDO.getEpistaxisDischarge());
         medicineLiverSymptomsDTO.setLiverInjury(medicineLiverSymptomsDO.getLiverInjury());
         medicineLiverSymptomsDTO.setLiverPain(medicineLiverSymptomsDO.getLiverPain());
-        medicineLiverSymptomsDTO.setLiverPainBeginDate(medicineLiverSymptomsDO.getAnorexiaBeginDate());
+        medicineLiverSymptomsDTO.setLiverPainBeginDate(medicineLiverSymptomsDO.getLiverPainBeginDate());
         medicineLiverSymptomsDTO.setLiverPainDisappearDate(medicineLiverSymptomsDO.getLiverPainDisappearDate());
         medicineLiverSymptomsDTO.setLiverPainDischarge(medicineLiverSymptomsDO.getLiverPainDischarge());
         medicineLiverSymptomsDTO.setHepatomegaly(medicineLiverSymptomsDO.getHepatomegaly());
@@ -147,12 +147,12 @@ public class MlSymptomsServiceImpl implements MlSymptomsService ,MlCompleteServi
         medicineLiverSymptomsDO.setGingivalBleedingDisappearDate(medicineLiverSymptomsDTO.getGingivalBleedingDisappearDate());
         medicineLiverSymptomsDO.setGingivalBleedingDischarge(medicineLiverSymptomsDTO.getGingivalBleedingDischarge());
         medicineLiverSymptomsDO.setEpistaxis(medicineLiverSymptomsDTO.getEpistaxis());
-        medicineLiverSymptomsDO.setEpistaxisBeginDate(medicineLiverSymptomsDTO.getAnorexiaBeginDate());
+        medicineLiverSymptomsDO.setEpistaxisBeginDate(medicineLiverSymptomsDTO.getEpistaxisBeginDate());
         medicineLiverSymptomsDO.setEpistaxisDisappearDate(medicineLiverSymptomsDTO.getEpistaxisDisappearDate());
         medicineLiverSymptomsDO.setEpistaxisDischarge(medicineLiverSymptomsDTO.getEpistaxisDischarge());
         medicineLiverSymptomsDO.setLiverInjury(medicineLiverSymptomsDTO.getLiverInjury());
         medicineLiverSymptomsDO.setLiverPain(medicineLiverSymptomsDTO.getLiverPain());
-        medicineLiverSymptomsDO.setLiverPainBeginDate(medicineLiverSymptomsDTO.getAnorexiaBeginDate());
+        medicineLiverSymptomsDO.setLiverPainBeginDate(medicineLiverSymptomsDTO.getLiverPainBeginDate());
         medicineLiverSymptomsDO.setLiverPainDisappearDate(medicineLiverSymptomsDTO.getLiverPainDisappearDate());
         medicineLiverSymptomsDO.setLiverPainDischarge(medicineLiverSymptomsDTO.getLiverPainDischarge());
         medicineLiverSymptomsDO.setHepatomegaly(medicineLiverSymptomsDTO.getHepatomegaly());

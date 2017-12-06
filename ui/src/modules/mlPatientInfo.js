@@ -76,17 +76,13 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
         $scope.abbreviation = data.abbreviation;
         $scope.identifier = data.identifier;
         (function(data) {
-          var birthday = new Date(data.birthday);
-          var admissionDate = new Date(data.admissionDate);
-          var dischargeDate = new Date(data.dischargeDate);
           if (data.admissionDiagnosisDTOS.length != 0) {
             if (data.admissionDiagnosisDTOS.length == 1) {
               intoHosCount = 0;
             } else {
               intoHosCount = data.admissionDiagnosisDTOS.length - 1;
             }
-            var intoDiagnosisDate = new Date(data.admissionDiagnosisDTOS[0].diagnosisDate);
-            $scope.intoDiagnosisDate = intoDiagnosisDate.getFullYear() + '-' + (intoDiagnosisDate.getMonth() + 1) + '-' + intoDiagnosisDate.getDate();
+            $scope.intoDiagnosisDate = showDate(data.admissionDiagnosisDTOS[0].diagnosisDate);
           } else {
             intoHosCount = 0;
           }
@@ -96,24 +92,29 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
             } else {
               outHosCount = data.dischargeDiagnosisDTOS.length - 1;
             }
-            var outDiagnosisDate = new Date(data.dischargeDiagnosisDTOS[0].diagnosisDate);
-            $scope.outDiagnosisDate = outDiagnosisDate.getFullYear() + '-' + (outDiagnosisDate.getMonth() + 1) + '-' + outDiagnosisDate.getDate();
+            $scope.outDiagnosisDate = showDate(data.dischargeDiagnosisDTOS[0].diagnosisDate);
           } else {
             outHosCount = 0;
           }
-          $scope.birthday = birthday.getFullYear() + '-' + (birthday.getMonth() + 1) + '-' + birthday.getDate();
-          $scope.admissionDate = admissionDate.getFullYear() + '-' + (admissionDate.getMonth() + 1) + '-' + admissionDate.getDate();
-          $scope.dischargeDate = dischargeDate.getFullYear() + '-' + (dischargeDate.getMonth() + 1) + '-' + dischargeDate.getDate();
+          $scope.birthday = showDate(data.birthday);
+          $scope.admissionDate = showDate(data.admissionDate);
+          $scope.dischargeDate = showDate(data.dischargeDate);
         })(data);
 
         $scope.nation = data.nation;
-        $scope.weight = data.weight;
-        $scope.height = data.height;
+        if (data.weight != 0) {
+          $scope.weight = data.weight;
+        }
+        if (data.height != 0) {
+          $scope.height = data.height;
+        }
         $scope.gender = data.gender;
         $scope.career = data.career;
         $scope.hospital = data.hospital;
         $scope.department = data.department;
-        $scope.hospitalizedAge = data.hospitalizedAge;
+        if (data.hospitalizedAge != 0) {
+          $scope.hospitalizedAge = data.hospitalizedAge;
+        }
         $scope.hospitalizedNumber = data.hospitalizedNumber;
         if (data.admissionDiagnosisDTOS.length != 0) {
           $scope.intoDiagnosis = data.admissionDiagnosisDTOS[0].diagnosis;
@@ -134,8 +135,7 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           });
           $scope.intoDiagnosisObj[i] = ((data.admissionDiagnosisDTOS)[i]).diagnosis;
           $scope.admissIdObj[i] = ((data.admissionDiagnosisDTOS)[i]).id;
-          var dynamicDate1 = new Date(((data.admissionDiagnosisDTOS)[i]).diagnosisDate);
-          $scope.intoDiagnosisDateObj[i] = dynamicDate1.getFullYear() + '-' + (dynamicDate1.getMonth() + 1) + '-' + dynamicDate1.getDate();
+          $scope.intoDiagnosisDateObj[i] = showDate(data.admissionDiagnosisDTOS[i].diagnosisDate);
         }
         for (var j = 1; j < data.dischargeDiagnosisDTOS.length; j++) {
           var template2 = '<div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 出院诊断</i></div><input class="form-control" type="text" ng-model="outDiagnosisObj[' + j + ']"></div></div><div class="col-sm-6"><div class="input-group date"><div class="input-group-addon"><i style="font-style: inherit;"> &ensp; 诊断时间</i></div><input id="outDiagnosisDate' + j + '" class="form-control" ng-model="outDiagnosisDateObj[' + j + ']"></div></div>';
@@ -145,10 +145,9 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           $('#outDiagnosisDate' + j).datepicker({
             autoclose: true
           });
-          var dynamicDate2 = new Date(((data.dischargeDiagnosisDTOS)[j]).diagnosisDate);
           $scope.outDiagnosisObj[j] = ((data.dischargeDiagnosisDTOS)[j]).diagnosis;
           $scope.dischargeIdObj[j] = ((data.dischargeDiagnosisDTOS)[j]).id;
-          $scope.outDiagnosisDateObj[j] = dynamicDate2.getFullYear() + '-' + (dynamicDate2.getMonth() + 1) + '-' + dynamicDate2.getDate();
+          $scope.outDiagnosisDateObj[j] = showDate(data.dischargeDiagnosisDTOS[j].diagnosisDate);
         }
       });
     }
@@ -207,7 +206,7 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
           url: '/api/mlPatient',
           data: patient
         }).then(function success(res) {
-          sessionStorage.setItem('mlPatientId',res.data);
+          sessionStorage.setItem('mlPatientId', res.data);
           $('#myModal').modal();
         });
       } else {
@@ -229,6 +228,13 @@ angular.module('mlPatientInfo', ['medicineLiverMain'])
     function judge(number) {
       if (number == undefined) {
         return 0;
+      }
+    }
+
+    function showDate(date) {
+      if (date > 0) {
+        var showDate = new Date(date);
+        return showDate.getFullYear() + '-' + (showDate.getMonth() + 1) + '-' + showDate.getDate();
       }
     }
   }]);

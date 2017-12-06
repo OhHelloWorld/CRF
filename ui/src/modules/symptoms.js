@@ -50,64 +50,64 @@ angular.module('symptoms', [])
 
         $scope.liverInjury = data.liverInjury;
         $scope.weak = data.weak;
+        $scope.weakBeginDate = showDate(data.weakBeginDate);
+        $scope.weakDisappearDate = showDate(data.weakDisappearDate);
         $scope.weakDischarge = data.weakDischarge;
         $scope.anorexia = data.anorexia;
+        $scope.anorexiaBeginDate = showDate(data.anorexiaBeginDate);
+        $scope.anorexiaDisappearDate = showDate(data.anorexiaDisappearDate);
         $scope.anorexiaDischarge = data.anorexiaDischarge;
         $scope.abdominalDistention = data.abdominalDistention;
-        $scope.abdominalDistentionBeginDate = showDate(new Date(data.abdominalDistentionBeginDate));
-        $scope.abdominalDistentionDisappearDate = showDate(new Date(data.abdominalDistentionDisappearDate));
+        $scope.abdominalDistentionBeginDate = showDate(data.abdominalDistentionBeginDate);
+        $scope.abdominalDistentionDisappearDate = showDate(data.abdominalDistentionDisappearDate);
         $scope.abdominalDistentionDischarge = data.abdominalDistentionDischarge;
         $scope.jaundice = data.jaundice;
-        $scope.jaundiceBeginDate = showDate(new Date(data.jaundiceBeginDate));
-        $scope.jaundiceDisappearDate = showDate(new Date(data.jaundiceDisappearDate));
+        $scope.jaundiceBeginDate = showDate(data.jaundiceBeginDate);
+        $scope.jaundiceDisappearDate = showDate(data.jaundiceDisappearDate);
         $scope.jaundiceDischarge = data.jaundiceDischarge;
         $scope.nausea = data.nausea;
-        $scope.nauseaBeginDate = showDate(new Date(data.nauseaBeginDate));
-        $scope.nauseaDisappearDate = showDate(new Date(data.nauseaDisappearDate));
+        $scope.nauseaBeginDate = showDate(data.nauseaBeginDate);
+        $scope.nauseaDisappearDate = showDate(data.nauseaDisappearDate);
         $scope.nauseaDischarge = data.nauseaDischarge;
-        $scope.weakBeginDate = showDate(new Date(data.weakBeginDate));
-        $scope.weakDisappearDate = showDate(new Date(data.weakDisappearDate));
-        $scope.anorexiaBeginDate = showDate(new Date(data.anorexiaBeginDate));
-        $scope.anorexiaDisappearDate = showDate(new Date(data.anorexiaDisappearDate));
         $scope.vomit = data.vomit;
-        $scope.vomitBeginDate = showDate(new Date(data.vomitBeginDate));
-        $scope.vomitDisappearDate = showDate(new Date(data.vomitDisappearDate));
+        $scope.vomitBeginDate = showDate(data.vomitBeginDate);
+        $scope.vomitDisappearDate = showDate(data.vomitDisappearDate);
         $scope.vomitDischarge = data.vomitDischarge;
         $scope.gingivalBleeding = data.gingivalBleeding;
-        $scope.gingivalBleedingBeginDate = showDate(new Date(data.gingivalBleedingBeginDate));
-        $scope.gingivalBleedingDisappearDate = showDate(new Date(data.gingivalBleedingDisappearDate));
+        $scope.gingivalBleedingBeginDate = showDate(data.gingivalBleedingBeginDate);
+        $scope.gingivalBleedingDisappearDate = showDate(data.gingivalBleedingDisappearDate);
         $scope.gingivalBleedingDischarge = data.gingivalBleedingDischarge;
         $scope.epistaxis = data.epistaxis;
-        $scope.epistaxisBeginDate = showDate(new Date(data.epistaxisBeginDate));
-        $scope.epistaxisDisappearDate = showDate(new Date(data.epistaxisDisappearDate));
+        $scope.epistaxisBeginDate = showDate(data.epistaxisBeginDate);
+        $scope.epistaxisDisappearDate = showDate(data.epistaxisDisappearDate);
         $scope.epistaxisDischarge = data.epistaxisDischarge;
         $scope.liverPain = data.liverPain;
-        $scope.liverPainBeginDate = showDate(new Date(data.liverPainBeginDate));
-        $scope.liverPainDisappearDate = showDate(new Date(data.liverPainDisappearDate));
+        $scope.liverPainBeginDate = showDate(data.liverPainBeginDate);
+        $scope.liverPainDisappearDate = showDate(data.liverPainDisappearDate);
         $scope.liverPainDischarge = data.liverPainDischarge;
         $scope.hepatomegaly = data.hepatomegaly;
-        $scope.hepatomegalyBeginDate = showDate(new Date(data.hepatomegalyBeginDate));
-        $scope.hepatomegalyDisappearDate = showDate(new Date(data.hepatomegalyDisappearDate));
+        $scope.hepatomegalyBeginDate = showDate(data.hepatomegalyBeginDate);
+        $scope.hepatomegalyDisappearDate = showDate(data.hepatomegalyDisappearDate);
         $scope.hepatomegalyDischarge = data.hepatomegalyDischarge;
         $scope.splenomegaly = data.splenomegaly;
-        $scope.splenomegalyBeginDate = showDate(new Date(data.splenomegalyBeginDate));
-        $scope.splenomegalyDisappearDate = showDate(new Date(data.splenomegalyDisappearDate));
+        $scope.splenomegalyBeginDate = showDate(data.splenomegalyBeginDate);
+        $scope.splenomegalyDisappearDate = showDate(data.splenomegalyDisappearDate);
         $scope.splenomegalyDischarge = data.splenomegalyDischarge;
         $scope.fever = data.fever;
-        $scope.feverBeginDate = showDate(new Date(data.feverBeginDate));
-        $scope.feverDisappearDate = showDate(new Date(data.feverDisappearDate));
+        $scope.feverBeginDate = showDate(data.feverBeginDate);
+        $scope.feverDisappearDate = showDate(data.feverDisappearDate);
         $scope.feverDischarge = data.feverDischarge;
         $scope.rash = data.rash;
-        $scope.rashBeginDate = showDate(new Date(data.rashBeginDate));
-        $scope.rashDisappearDate = showDate(new Date(data.rashDisappearDate));
+        $scope.rashBeginDate = showDate(data.rashBeginDate);
+        $scope.rashDisappearDate = showDate(data.rashDisappearDate);
         $scope.rashDischarge = data.rashDischarge;
         $scope.arthralgia = data.arthralgia;
-        $scope.arthralgiaBeginDate = showDate(new Date(data.arthralgiaBeginDate));
-        $scope.arthralgiaDisappearDate = showDate(new Date(data.arthralgiaDisappearDate));
+        $scope.arthralgiaBeginDate = showDate(data.arthralgiaBeginDate);
+        $scope.arthralgiaDisappearDate = showDate(data.arthralgiaDisappearDate);
         $scope.arthralgiaDischarge = data.arthralgiaDischarge;
         $scope.skinItch = data.skinItch;
-        $scope.skinItchBeginDate = showDate(new Date(data.skinItchBeginDate));
-        $scope.skinItchDisappearDate = showDate(new Date(data.skinItchDisappearDate));
+        $scope.skinItchBeginDate = showDate(data.skinItchBeginDate);
+        $scope.skinItchDisappearDate = showDate(data.skinItchDisappearDate);
         $scope.skinItchDischarge = data.skinItchDischarge;
         $scope.complete = data.complete;
 
@@ -119,8 +119,8 @@ angular.module('symptoms', [])
           }
           $scope.name = data.medicineLiverSymptomsOtherDTOs[0].name;
           $scope.description = data.medicineLiverSymptomsOtherDTOs[0].description;
-          $scope.beginDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).beginDate));
-          $scope.disappearDate = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[0]).disappearDate));
+          $scope.beginDate = showDate((data.medicineLiverSymptomsOtherDTOs[0]).beginDate);
+          $scope.disappearDate = showDate((data.medicineLiverSymptomsOtherDTOs[0]).disappearDate);
           $scope.dischargeSymptoms = data.medicineLiverSymptomsOtherDTOs[0].dischargeSymptoms;
         } else {
           count = 0;
@@ -141,8 +141,8 @@ angular.module('symptoms', [])
           $scope.descriptionObj[i] = data.medicineLiverSymptomsOtherDTOs[i].description;
           $scope.dischargeSymptomsObj[i] = data.medicineLiverSymptomsOtherDTOs[i].dischargeSymptoms;
 
-          $scope.beginDateObj[i] = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).beginDate));
-          $scope.disappearDateObj[i] = showDate(new Date((data.medicineLiverSymptomsOtherDTOs[i]).disappearDate));
+          $scope.beginDateObj[i] = showDate((data.medicineLiverSymptomsOtherDTOs[i]).beginDate);
+          $scope.disappearDateObj[i] = showDate((data.medicineLiverSymptomsOtherDTOs[i]).disappearDate);
         }
       });
     }
@@ -152,8 +152,12 @@ angular.module('symptoms', [])
       mlSymptoms.patientId = sessionStorage.getItem('mlPatientId');
       mlSymptoms.liverInjury = $scope.liverInjury;
       mlSymptoms.weak = $scope.weak;
+      mlSymptoms.weakBeginDate = new Date($scope.weakBeginDate);
+      mlSymptoms.weakDisappearDate = new Date($scope.weakDisappearDate);
       mlSymptoms.weakDischarge = $scope.weakDischarge;
       mlSymptoms.anorexia = $scope.anorexia;
+      mlSymptoms.anorexiaBeginDate = new Date($scope.anorexiaBeginDate);
+      mlSymptoms.anorexiaDisappearDate = new Date($scope.anorexiaDisappearDate);
       mlSymptoms.anorexiaDischarge = $scope.anorexiaDischarge;
       mlSymptoms.abdominalDistention = $scope.abdominalDistention;
       mlSymptoms.abdominalDistentionBeginDate = new Date($scope.abdominalDistentionBeginDate);
@@ -167,10 +171,6 @@ angular.module('symptoms', [])
       mlSymptoms.nauseaBeginDate = new Date($scope.nauseaBeginDate);
       mlSymptoms.nauseaDisappearDate = new Date($scope.nauseaDisappearDate);
       mlSymptoms.nauseaDischarge = $scope.nauseaDischarge;
-      mlSymptoms.weakBeginDate = new Date($scope.weakBeginDate);
-      mlSymptoms.weakDisappearDate = new Date($scope.weakDisappearDate);
-      mlSymptoms.anorexiaBeginDate = new Date($scope.anorexiaBeginDate);
-      mlSymptoms.anorexiaDisappearDate = new Date($scope.anorexiaDisappearDate);
       mlSymptoms.vomit = $scope.vomit;
       mlSymptoms.vomitBeginDate = new Date($scope.vomitBeginDate);
       mlSymptoms.vomitDisappearDate = new Date($scope.vomitDisappearDate);
@@ -242,10 +242,9 @@ angular.module('symptoms', [])
     };
 
     function showDate(date) {
-      if (date.toString() != 'Invalid Date') {
-        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-      } else {
-        return undefined;
+      if (date > 0) {
+        var showDate = new Date(date);
+        return showDate.getFullYear() + '-' + (showDate.getMonth() + 1) + '-' + showDate.getDate();
       }
     }
 

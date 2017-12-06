@@ -494,10 +494,8 @@ angular.module('drugHistory', [])
           $scope.exposureLiverDamage = data.medicineLiverSuspectedDrugDetailDTOS[0].exposureLiverDamage;
           $scope.manufactor = data.medicineLiverSuspectedDrugDetailDTOS[0].manufactor;
           (function(data) {
-            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].beginDate);
-            $scope.beginDate = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
-            var drugWithDrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithDrawalDate);
-            $scope.drugWithDrawalDate = drugWithDrawalDate.getFullYear() + '-' + (drugWithDrawalDate.getMonth() + 1) + '-' + drugWithDrawalDate.getDate();
+            $scope.beginDate = showDate(data.medicineLiverSuspectedDrugDetailDTOS[0].beginDate);
+            $scope.drugWithDrawalDate = showDate(data.medicineLiverSuspectedDrugDetailDTOS[0].drugWithDrawalDate);
           })(data);
         } else {
           count = 0;
@@ -516,10 +514,8 @@ angular.module('drugHistory', [])
           $scope.proDose = data.mlProprietaryChineseMedicineDTOS[0].proDose;
           $scope.proCategory = data.mlProprietaryChineseMedicineDTOS[0].proCategory;
           (function(data) {
-            var beginTime = new Date(data.mlProprietaryChineseMedicineDTOS[0].proBeginTime);
-            var endTime = new Date(data.mlProprietaryChineseMedicineDTOS[0].proEndTime);
-            $scope.proBeginTime = beginTime.getFullYear() + '-' + (beginTime.getMonth() + 1) + '-' + beginTime.getDate();
-            $scope.proEndTime = endTime.getFullYear() + '-' + (endTime.getMonth() + 1) + '-' + endTime.getDate();
+            $scope.proBeginTime = showDate(data.mlProprietaryChineseMedicineDTOS[0].proBeginTime);
+            $scope.proEndTime = showDate(data.mlProprietaryChineseMedicineDTOS[0].proEndTime);
           })(data);
         } else {
           count == 0;
@@ -536,10 +532,8 @@ angular.module('drugHistory', [])
           $scope.buyFrom = data.mlChineseHerbalMedicineDTOS[0].buyFrom;
           $scope.herbalCategory = data.mlChineseHerbalMedicineDTOS[0].herbalCategory;
           (function(data) {
-            var beginTime = new Date(data.mlChineseHerbalMedicineDTOS[0].herbalBeginTime);
-            var endTime = new Date(data.mlChineseHerbalMedicineDTOS[0].herbalEndTime);
-            $scope.herbalBeginTime = beginTime.getFullYear() + '-' + (beginTime.getMonth() + 1) + '-' + beginTime.getDate();
-            $scope.herbalEndTime = endTime.getFullYear() + '-' + (endTime.getMonth() + 1) + '-' + endTime.getDate();
+            $scope.herbalBeginTime = showDate(data.mlChineseHerbalMedicineDTOS[0].herbalBeginTime);
+            $scope.herbalEndTime = showDate(data.mlChineseHerbalMedicineDTOS[0].herbalEndTime);
           })(data);
         } else {
           herbalCount = 0;
@@ -705,10 +699,8 @@ angular.module('drugHistory', [])
           $scope.exposureLiverDamageObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].exposureLiverDamage;
           $scope.manufactorObj[i] = data.medicineLiverSuspectedDrugDetailDTOS[i].manufactor;
           (function(data) {
-            var beginDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].beginDate);
-            $scope.beginDateObj[i] = beginDate.getFullYear() + '-' + (beginDate.getMonth() + 1) + '-' + beginDate.getDate();
-            var drugWithDrawalDate = new Date(data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithDrawalDate);
-            $scope.drugWithdrawalDateObj[i] = drugWithDrawalDate.getFullYear() + '-' + (drugWithDrawalDate.getMonth() + 1) + '-' + drugWithDrawalDate.getDate();
+            $scope.beginDateObj[i] = showDate(data.medicineLiverSuspectedDrugDetailDTOS[i].beginDate);
+            $scope.drugWithdrawalDateObj[i] = showDate(data.medicineLiverSuspectedDrugDetailDTOS[i].drugWithDrawalDate);
           })(data);
         }
 
@@ -822,10 +814,8 @@ angular.module('drugHistory', [])
           $scope.proDoseObj[j] = data.mlProprietaryChineseMedicineDTOS[j].proDose;
           $scope.proCategoryObj[j] = data.mlProprietaryChineseMedicineDTOS[j].proCategory;
           (function(data) {
-            var beginTime = new Date(data.mlProprietaryChineseMedicineDTOS[j].proBeginTime);
-            var endTime = new Date(data.mlProprietaryChineseMedicineDTOS[j].proEndTime);
-            $scope.proBeginTimeObj[j] = beginTime.getFullYear() + '-' + (beginTime.getMonth() + 1) + '-' + beginTime.getDate();
-            $scope.proEndTimeObj[j] = endTime.getFullYear() + '-' + (endTime.getMonth() + 1) + '-' + endTime.getDate();
+            $scope.proBeginTimeObj[j] = showDate(data.mlProprietaryChineseMedicineDTOS[j].proBeginTime);
+            $scope.proEndTimeObj[j] = showDate(data.mlProprietaryChineseMedicineDTOS[j].proEndTime);
           })(data);
         }
 
@@ -919,10 +909,8 @@ angular.module('drugHistory', [])
           $scope.buyFromObj[k] = data.mlChineseHerbalMedicineDTOS[k].buyFrom;
           $scope.herbalCategoryObj[k] = data.mlChineseHerbalMedicineDTOS[k].herbalCategory;
           (function(data) {
-            var beginTime = new Date(data.mlChineseHerbalMedicineDTOS[k].herbalBeginTime);
-            var endTime = new Date(data.mlChineseHerbalMedicineDTOS[k].herbalEndTime);
-            $scope.herbalBeginTimeObj[k] = beginTime.getFullYear() + '-' + (beginTime.getMonth() + 1) + '-' + beginTime.getDate();
-            $scope.herbalEndTimeObj[k] = endTime.getFullYear() + '-' + (endTime.getMonth() + 1) + '-' + endTime.getDate();
+            $scope.herbalBeginTimeObj[k] = showDate(data.mlChineseHerbalMedicineDTOS[k].herbalBeginTime);
+            $scope.herbalEndTimeObj[k] = showDate(data.mlChineseHerbalMedicineDTOS[k].herbalEndTime);
           })(data);
         }
 
@@ -1000,6 +988,10 @@ angular.module('drugHistory', [])
       });
     }
 
+    $scope.layout = function() {
+      $state.go('mlHome');
+    };
+
     $scope.save = function() {
       drugHistory.medicineLiverSuspectedDrugDetailDTOS = [];
       drugHistory.mlProprietaryChineseMedicineDTOS = [];
@@ -1008,6 +1000,7 @@ angular.module('drugHistory', [])
       drugHistory.patientId = sessionStorage.getItem('mlPatientId');
       drugHistory.complete = true;
 
+      console.log('into save');
       if ($scope.genericName) {
         drugHistory.medicineLiverSuspectedDrugDetailDTOS.push({
           genericName: $scope.genericName,
@@ -1128,4 +1121,12 @@ angular.module('drugHistory', [])
         $scope.patientNumber = data2.identifier;
       });
     }
+
+    function showDate(date) {
+      if (date > 0) {
+        var showDate = new Date(date);
+        return showDate.getFullYear() + '-' + (showDate.getMonth() + 1) + '-' + showDate.getDate();
+      }
+    }
+
   }]);

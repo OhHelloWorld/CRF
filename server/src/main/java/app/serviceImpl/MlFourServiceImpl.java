@@ -136,6 +136,7 @@ public class MlFourServiceImpl implements MlFourService,MlCompleteService{
 
     @Override
     public Boolean getCompleteByPatient(int mlPatientId) {
-        return mlFourRepo.getCompleteByPatientId(mlPatientId);
+        Boolean com = mlFourRepo.getCompleteByPatientId(mlPatientId);
+        return com!=null?com:false;
     }
 }

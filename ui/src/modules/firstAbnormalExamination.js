@@ -71,7 +71,7 @@ angular.module('firstAbnormalExamination', [])
       allDatc.pt = $scope.pt;
       allDatc.inr = $scope.inr;
       allDatc.afp = $scope.afp;
-      allDatc.first = false;
+      allDatc.first = true;
       allDatc.complete = true;
       $http({
         method: 'POST',

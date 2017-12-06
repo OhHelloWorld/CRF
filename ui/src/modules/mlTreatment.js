@@ -257,10 +257,8 @@ angular.module('mlTreatment', [])
           $scope.dose = data.medicineLiverTreatmentDetailDTOS[0].dose;
           $scope.category = data.medicineLiverTreatmentDetailDTOS[0].category;
           (function(data) {
-            var detailStartDate = new Date(data.medicineLiverTreatmentDetailDTOS[0].detailStartDate);
-            var detailEndDate = new Date(data.medicineLiverTreatmentDetailDTOS[0].detailEndDate);
-            $scope.detailStartDate = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
-            $scope.detailEndDate = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
+            $scope.detailStartDate = showDate(data.medicineLiverTreatmentDetailDTOS[0].detailStartDate);
+            $scope.detailEndDate = showDate(data.medicineLiverTreatmentDetailDTOS[0].detailEndDate);
           })(data);
         } else {
           detailCount = 0;
@@ -276,10 +274,8 @@ angular.module('mlTreatment', [])
           $scope.cnMethod = data.medicineLiverTreatmentCnDTOS[0].cnMethod;
           $scope.cnDose = data.medicineLiverTreatmentCnDTOS[0].cnDose;
           (function(data) {
-            var cnStartDate = new Date(data.medicineLiverTreatmentCnDTOS[0].cnStartDate);
-            var cnEndDate = new Date(data.medicineLiverTreatmentCnDTOS[0].cnEndDate);
-            $scope.cnStartDate = cnStartDate.getFullYear() + '-' + (cnStartDate.getMonth() + 1) + '-' + cnStartDate.getDate();
-            $scope.cnEndDate = cnEndDate.getFullYear() + '-' + (cnEndDate.getMonth() + 1) + '-' + cnEndDate.getDate();
+            $scope.cnStartDate = showDate(data.medicineLiverTreatmentCnDTOS[0].cnStartDate);
+            $scope.cnEndDate = showDate(data.medicineLiverTreatmentCnDTOS[0].cnEndDate);
           })(data);
         } else {
           cnCount = 0;
@@ -294,10 +290,8 @@ angular.module('mlTreatment', [])
           $scope.method = data.medicineLiverTreatmentOtherDTOS[0].method;
           $scope.methodDetail = data.medicineLiverTreatmentOtherDTOS[0].methodDetail;
           (function(data) {
-            var otherStartDate = new Date(data.medicineLiverTreatmentOtherDTOS[0].otherStartDate);
-            var otherEndDate = new Date(data.medicineLiverTreatmentOtherDTOS[0].otherEndDate);
-            $scope.otherStartDate = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
-            $scope.otherEndDate = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
+            $scope.otherStartDate = showDate(data.medicineLiverTreatmentOtherDTOS[0].otherStartDate);
+            $scope.otherEndDate = showDate(data.medicineLiverTreatmentOtherDTOS[0].otherEndDate);
           })(data);
         } else {
           otherCount = 0;
@@ -387,10 +381,8 @@ angular.module('mlTreatment', [])
           $scope.doseObj[i] = ((data.medicineLiverTreatmentDetailDTOS)[i]).dose;
           $scope.categoryObj[i] = data.medicineLiverTreatmentDetailDTOS[i].category;
           (function(data) {
-            var detailStartDate = new Date(((data.medicineLiverTreatmentDetailDTOS[i])).detailStartDate);
-            var detailEndDate = new Date(((data.medicineLiverTreatmentDetailDTOS[i])).detailEndDate);
-            $scope.detailStartDateObj[i] = detailStartDate.getFullYear() + '-' + (detailStartDate.getMonth() + 1) + '-' + detailStartDate.getDate();
-            $scope.detailEndDateObj[i] = detailEndDate.getFullYear() + '-' + (detailEndDate.getMonth() + 1) + '-' + detailEndDate.getDate();
+            $scope.detailStartDateObj[i] = showDate(data.medicineLiverTreatmentDetailDTOS[i].detailStartDate);
+            $scope.detailEndDateObj[i] = showDate(data.medicineLiverTreatmentDetailDTOS[i].detailEndDate);
           })(data);
         }
 
@@ -460,10 +452,8 @@ angular.module('mlTreatment', [])
           $scope.cnMethodObj[k] = data.medicineLiverTreatmentCnDTOS[k].cnMethod;
           $scope.cnDoseObj[k] = data.medicineLiverTreatmentCnDTOS[k].cnDose;
           (function(data) {
-            var cnStartDate = new Date(((data.medicineLiverTreatmentCnDTOS)[k]).cnStartDate);
-            var cnEndDate = new Date(((data.medicineLiverTreatmentCnDTOS)[k]).cnEndDate);
-            $scope.cnStartDateObj[k] = cnStartDate.getFullYear() + '-' + (cnStartDate.getMonth() + 1) + '-' + cnStartDate.getDate();
-            $scope.cnEndDateObj[k] = cnEndDate.getFullYear() + '-' + (cnEndDate.getMonth() + 1) + '-' + cnEndDate.getDate();
+            $scope.cnStartDateObj[k] = showDate(data.medicineLiverTreatmentCnDTOS[k].cnStartDate);
+            $scope.cnEndDateObj[k] = showDate(data.medicineLiverTreatmentCnDTOS[k].cnEndDate);
           })(data);
         }
 
@@ -504,10 +494,8 @@ angular.module('mlTreatment', [])
           $scope.methodObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).method;
           $scope.methodDetailObj[j] = ((data.medicineLiverTreatmentOtherDTOS)[j]).methodDetail;
           (function(data) {
-            var otherStartDate = new Date(((data.medicineLiverTreatmentOtherDTOS[j])).otherStartDate);
-            var otherEndDate = new Date(((data.medicineLiverTreatmentOtherDTOS[j])).otherEndDate);
-            $scope.otherStartDateObj[j] = otherStartDate.getFullYear() + '-' + (otherStartDate.getMonth() + 1) + '-' + otherStartDate.getDate();
-            $scope.otherEndDateObj[j] = otherEndDate.getFullYear() + '-' + (otherEndDate.getMonth() + 1) + '-' + otherEndDate.getDate();
+            $scope.otherStartDateObj[j] = showDate(data.medicineLiverTreatmentOtherDTOS[j].otherStartDate);
+            $scope.otherEndDateObj[j] = showDate(data.medicineLiverTreatmentOtherDTOS[j].otherEndDate);
           })(data);
         }
       });
@@ -604,5 +592,12 @@ angular.module('mlTreatment', [])
         $scope.patientName = data2.name;
         $scope.patientNumber = data2.identifier;
       });
+    }
+
+    function showDate(date) {
+      if (date > 0) {
+        var showDate = new Date(date);
+        return showDate.getFullYear() + '-' + (showDate.getMonth() + 1) + '-' + showDate.getDate();
+      }
     }
   }]);

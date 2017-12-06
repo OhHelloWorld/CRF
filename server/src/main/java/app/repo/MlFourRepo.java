@@ -13,6 +13,6 @@ public interface MlFourRepo extends CrudRepository<MedicineLiverFourDO,Integer>{
     MedicineLiverFourDO findByPatientId(int patientId);
 
     @Query(value = "select complete from ml_four where patient_id=?1 order by id desc limit 1",nativeQuery = true)
-    boolean getCompleteByPatientId(int mlPatientId);
+    Boolean getCompleteByPatientId(int mlPatientId);
 
 }
