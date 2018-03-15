@@ -1,5 +1,7 @@
 package app.dto;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/8/23 0023.
  */
@@ -8,9 +10,9 @@ public class MedicineLiverAllergyHistoryDTO {
     private int id;
     private int patientId;
     private int allergyHistory;//既往过敏史
-    private String allergen;//过敏原
-    private String description;
+    private List<MedicineLiverAllergyHistoryDetailDTO> medicineLiverAllergyHistoryDetailDTOS;
     private boolean complete;
+
 
     public int getId() {
         return id;
@@ -36,20 +38,12 @@ public class MedicineLiverAllergyHistoryDTO {
         this.allergyHistory = allergyHistory;
     }
 
-    public String getAllergen() {
-        return allergen;
+    public List<MedicineLiverAllergyHistoryDetailDTO> getMedicineLiverAllergyHistoryDetailDTOS() {
+        return medicineLiverAllergyHistoryDetailDTOS;
     }
 
-    public void setAllergen(String allergen) {
-        this.allergen = allergen;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMedicineLiverAllergyHistoryDetailDTOS(List<MedicineLiverAllergyHistoryDetailDTO> medicineLiverAllergyHistoryDetailDTOS) {
+        this.medicineLiverAllergyHistoryDetailDTOS = medicineLiverAllergyHistoryDetailDTOS;
     }
 
     public boolean isComplete() {

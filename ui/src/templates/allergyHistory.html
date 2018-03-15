@@ -1,77 +1,76 @@
 <section class="content-header">
-  <h1 class=" text-center">
+    <h1 class=" text-center">
      既往过敏史
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
-    <li class="active">既往过敏史</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+        <li class="active">既往过敏史</li>
+    </ol>
 </section>
 <div ng-app="allergyHistory" ng-controller="allergyHistoryController">
-	
-
-  <!--模态框-->
-  <div id="myModal" class="modal" tabindex="-1" role="dialog">
-               <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                         <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"
-                                   aria-label="Close">
-                                   <span aria-hidden="true">&times;</span>
-                              </button>
-                         </div>
-                         <div class="modal-body">
-                              <p class="h3">保存成功</p>
-                         </div>
-                         <div class="modal-footer">
-                              <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
-                         </div>
-                    </div>
-               </div>
-     </div>
-
-  <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
-  <br>
-  <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
-      <br>
-      <div>
-      <div class="box box-info">
-      <div class="box-header with-border">
-              <h3 class="box-title">【 既往过敏史 】</h3>
-      </div>
-      <div class="box-body">
-        <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=1><span class="h5">无</span>
-        <span class="col-md-offset-1">
+    <!--模态框-->
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="h3">保存成功</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+    <br>
+    <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
+    <br>
+    <div>
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">【 既往过敏史 】</h3>
+            </div>
+            <div class="box-body">
+                <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=1><span class="h5">无</span>
+                <span class="col-md-offset-1">
           <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=2><span class="h5">有</span>
-        </span>
-        <span class="col-md-offset-1">
+                </span>
+                <span class="col-md-offset-1">
           <input type="radio" name="allergyHistory" ng-model="allergyHistory" ng-value=3><span class="h5">不详</span>
-        </span>
-      </div>
-
-      <form class="form-inline">
-      <div class="box-body form-group">
-      <div class="input-group">
-                <span class="input-group-addon">过敏原（过敏物质）</span>
-                <input type="text" class="form-control" ng-model="allergen">
-      </div>
-      </div>
-      <div class="box-body form-group">
-      <div class="input-group">
-                <span class="input-group-addon">补充说明</span>
-                <input type="text" class="form-control" ng-model="description">
-      </div>
-      </div>
-      
-      </form>
-      </div>
-      </div>
-      <div class="col-md-offset-9">
+                </span>
+            </div>
+            <form class="form-inline" id="allergy">
+                <div class="box-body form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">过敏原（过敏物质）</span>
+                        <input type="text" class="form-control" ng-model="allergen">
+                    </div>
+                </div>
+                <div class="box-body form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">补充说明</span>
+                        <input type="text" class="form-control" ng-model="description">
+                    </div>
+                </div>
+            </form>
+            <a class="btn btn-success col-md-offset-5" ng-click="addAllergy()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
+            <br/>
+            <br/>
+        </div>
+    </div>
+    <div class="col-md-offset-9">
         <a class="btn btn-primary" ng-click="save()">
           <i class="fa  fa-save"></i> 保存
         </a>
         <a class="btn btn-primary" ng-click="layout()">
           <i class="fa  fa-sign-out"></i> 退出
         </a>
-      </div>
+    </div>
 </div>

@@ -14,6 +14,12 @@ public class MedicineLiverBiologicalSamplesDTO {
     private String num4;
     private String num5;
     private String num6;
+    private String num1quantity;
+    private String num2quantity;
+    private String num3quantity;
+    private String num4quantity;
+    private String num5quantity;
+    private String num6quantity;
     private String remark1;
     private String remark2;
     private String remark3;
@@ -140,6 +146,54 @@ public class MedicineLiverBiologicalSamplesDTO {
 
     public void setRemark6(String remark6) {
         this.remark6 = remark6;
+    }
+
+    public String getNum1quantity() {
+        return num1quantity;
+    }
+
+    public void setNum1quantity(String num1quantity) {
+        this.num1quantity = num1quantity;
+    }
+
+    public String getNum2quantity() {
+        return num2quantity;
+    }
+
+    public void setNum2quantity(String num2quantity) {
+        this.num2quantity = num2quantity;
+    }
+
+    public String getNum3quantity() {
+        return num3quantity;
+    }
+
+    public void setNum3quantity(String num3quantity) {
+        this.num3quantity = num3quantity;
+    }
+
+    public String getNum4quantity() {
+        return num4quantity;
+    }
+
+    public void setNum4quantity(String num4quantity) {
+        this.num4quantity = num4quantity;
+    }
+
+    public String getNum5quantity() {
+        return num5quantity;
+    }
+
+    public void setNum5quantity(String num5quantity) {
+        this.num5quantity = num5quantity;
+    }
+
+    public String getNum6quantity() {
+        return num6quantity;
+    }
+
+    public void setNum6quantity(String num6quantity) {
+        this.num6quantity = num6quantity;
     }
 
     public boolean isComplete() {

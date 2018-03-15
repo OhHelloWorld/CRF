@@ -1,7 +1,9 @@
 package app.entities;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by Administrator on 2017/8/24 0024.
@@ -18,6 +20,7 @@ public class MedicineLiverLiverHistologicalDO {
     private int portalInflammation;
     private int fibrosis;
     private String severity;
+    private int done;
     private boolean complete;
 
     public int getId() {
@@ -90,5 +93,13 @@ public class MedicineLiverLiverHistologicalDO {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public int getDone() {
+        return done;
+    }
+
+    public void setDone(int done) {
+        this.done = done;
     }
 }

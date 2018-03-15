@@ -1,1788 +1,1742 @@
 <section class="content-header">
-  <h1 class=" text-center">
+    <h1 class=" text-center">
      患者病例总览  
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
-    <li class="active">患者病例总览</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+        <li class="active">患者病例总览</li>
+    </ol>
 </section>
 <div ng-app="mlPatientOverview" ng-controller="mlPatientOverviewController">
-  <div>
-  <div class="col-sm-3">
-      <div class="input-group date">
-          <div class="input-group-addon">
-              <i style="font-style: inherit;">查看方式</i>
-          </div>
-          <select ng-model="see" class="form-control" ng-init="see='项目'">
-              <option value="项目">按检查项目</option>
-              <option value="时间">按检查时间</option>
-          </select>
-      </div>
-  </div>
-  <u class="h4 col-md-offset-9">患者：{{mlPatientName}}</u>
-  	<br>
-  <u class="h4 col-md-offset-9">病理号：{{mlPatientNumber}}</u>
-  <br/>
-  <div ng-if = "show1">
-  <div> 
-    
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">既往过敏史</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
+    <div>
+        <div class="col-sm-3">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i style="font-style: inherit;">查看方式</i>
+                </div>
+                <select ng-model="see" class="form-control" ng-init="see='项目'">
+                    <option value="项目">按检查项目</option>
+                    <option value="时间">按检查时间</option>
+                </select>
             </div>
-            <div class="box-body" style="display: none;">
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
-                <button ng-click="allergyDefault()" class="btn btn-primary btn-sm">医院录入表</button>
-                <br/>
-                <button ng-repeat="fourDiaFollow in fourDiaFollowList" class="btn btn-primary btn-sm" ng-click="fourDiaClick(fourDiaFollow)">随访表{{fourDiaFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
-              </div> -->
-            <div class="box-body no-padding">
-              <table class="table table-striped table-bordered table-hover">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-3">序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th>结果<!-- <a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateFourDia()" ng-show="isFourDiaFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>既往过敏史</td>
-                  <td>
-                  {{allergyHistory}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>过敏原（过敏物质）</td>
-                  <td>
-                    {{allergen}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>补充说明</td>
-                  <td>
-                    {{description}}
-                  </td>
-                </tr>
-              </tbody>
-              </table>
-            </div>
-            </div>
-    </div>
-    
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">既往疾病史</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
+        </div>
+        <u class="h4 col-md-offset-9">患者：{{mlPatientName}}</u>
+        <br>
+        <u class="h4 col-md-offset-9">病理号：{{mlPatientNumber}}</u>
+        <br/>
+        <div ng-if="show1">
+            <div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">既往过敏史</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered table-hover">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-3">序号</th>
+                                        <th class="col-md-3">调查项</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>既往过敏史</td>
+                                        <td>
+                                            {{allergyHistory}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>过敏原</th>
+                                        <th>补充说明</th>
+                                    </tr>
+                                    <tr ng-repeat="allergyDetail in allergyDetails">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{allergyDetail.allergen}}</td>
+                                        <td>{{allergyDetail.description}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">既往疾病史</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <!-- <div class="btn-group-vertical col-md-2" role="group">
                 <button ng-click="diseaseHisDefault()" class="btn btn-primary btn-sm">医院录入表</button>
                 <br/>
                 <button ng-repeat="tongueFollow in tongueFollowList" class="btn btn-primary btn-sm" ng-click="tongueClick(tongueFollow)">随访表{{tongueFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-3">序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th>结果<!-- <a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateTongue()" ng-show="isTongueFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>除药肝以外，是否存在因本次入院的其他疾病史？</td>
-                  <td>{{otherHistory}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>既往病史</td>
-                  <td>{{pastDisease}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>疫区旅游史</td>
-                  <td>{{epidemicTourism}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>疫区旅游史详情</td>
-                  <td>{{epidemicText}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>个人史</td>
-                  <td>{{personHistory}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">疾病种类</th>
-                  <th class="col-sm-3">疾病名称</th>
-                  <th class="col-sm-3">是否痊愈</th>
-                  <th class="col-sm-3">曾用药（药名）</th>
-                </tr>
-                <tr ng-repeat = "diseaseHistory in diseaseHistorys">
-                  <td>{{$index+1}}</td>
-                  <td>{{diseaseHistory.diseaseType}}</td>
-                  <td>{{diseaseHistory.diseaseName}}</td>
-                  <td>{{diseaseHistory.existence==1?"是":(diseaseHistory.existence==2?"否":"")}}</td>
-                  <td>{{diseaseHistory.preMedicine}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-            </div>
-    </div>
-  
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">饮酒状况</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-3">序号</th>
+                                        <th class="col-md-3">调查项</th>
+                                        <th>结果
+                                            <!-- <a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateTongue()" ng-show="isTongueFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>除药肝以外，是否存在因本次入院的其他疾病史？</td>
+                                        <td>{{otherHistory}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>既往病史</td>
+                                        <td>{{pastDisease}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>疫区旅游史</td>
+                                        <td>{{epidemicTourism}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>疫区旅游史详情</td>
+                                        <td>{{epidemicText}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>个人史</td>
+                                        <td>{{personHistory}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">疾病种类</th>
+                                        <th class="col-sm-3">疾病名称</th>
+                                        <th class="col-sm-3">是否痊愈</th>
+                                        <th class="col-sm-3">曾用药（药名）</th>
+                                    </tr>
+                                    <tr ng-repeat="diseaseHistory in diseaseHistorys">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{diseaseHistory.diseaseType}}</td>
+                                        <td>{{diseaseHistory.diseaseName}}</td>
+                                        <td>{{diseaseHistory.existence==1?"是":(diseaseHistory.existence==2?"否":"")}}</td>
+                                        <td>{{diseaseHistory.preMedicine}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">饮酒状况</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <!-- <div class="btn-group-vertical col-md-2" role="group">
                 <button ng-click="drinkDefault()" class="btn btn-primary btn-sm">医院录入表</button>
                 <br/>
                 <button ng-repeat="phyFollow in phyFollowList" class="btn btn-primary btn-sm" ng-click="phyClick(phyFollow)">随访表{{phyFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-3">序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th>结果<!-- <a style="cursor: pointer;" class="col-md-offset-5" ng-click="updatePhy()" ng-show="isPhyFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>饮酒史</td>
-                  <td>{{drinkHistory}}</td>
-                </tr>
-              </tbody>
-              </table>
-            </div>
-
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">饮酒种类</th>
-                  <th class="col-md-3">饮酒数量（毫升/天）</th>
-                  <th class="col-md-3">饮酒年限（年）</th>
-                  <th class="col-md-3">酒精度数（度）</th>
-                </tr>
-                <tr ng-repeat = "drink in drinks">
-                  <td>{{$index + 1}}</td>
-                  <td>{{drink.drinkType}}</td>
-                  <td>{{drink.drinkQuantity}}</td>
-                  <td>{{drink.drinkLife}}</td>
-                  <td>{{drink.proof}}</td>
-                </tr>
-              </tbody>
-              </table>
-            </div>
-            </div>
-    </div>
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">可疑药物用药史</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped table-bordered">
-                <tbody>
-                <tr class="info">
-                  <th>通用名</th>
-                  <th>商品名</th>
-                  <th>厂家及批号</th>
-                  <th>药物分类</th>
-                  <th>用药方法</th>
-                  <th>日剂量</th>
-                  <th>开始日期</th>
-                  <th>是否停药</th>
-                  <th>停药日期</th>
-                  <th>是否减量</th>
-                  <th>既往该药暴露史</th>
-                  <th>既往暴露引起肝损</th>
-                </tr>
-                <tr ng-repeat = "drug in drugs">
-                  <td>{{drug.genericName}}</td>
-                  <td>{{drug.tradeName}}</td>
-                  <td>{{drug.manufactor}}</td>
-                  <td>{{drug.drugClassification}}</td>
-                  <td>{{drug.medicationMethod}}</td>
-                  <td>{{drug.dose}}</td>
-                  <td>{{drug.beginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{drug.drugWithDrawal}}</td>
-                  <td>{{drug.drugWithDrawalDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{drug.decrement}}</td>
-                  <td>{{drug.drugExposure}}</td>
-                  <td>{{drug.exposureLiverDamage}}</td>
-                </tr>
-              </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped table-bordered">
-                <tbody>
-                <tr class="info">
-                  <th>名称</th>
-                  <th>厂家</th>
-                  <th>中药类别</th>
-                  <th>成分</th>
-                  <th>可疑成分</th>
-                  <th>日剂量</th>
-                  <th>始服时间</th>
-                  <th>停服时间</th>
-                </tr>
-                <tr ng-repeat = "pro in proMedicines">
-                  <td>{{pro.proName}}</td>
-                  <td>{{pro.proManufactor}}</td>
-                  <td>{{pro.proCategory}}</td>
-                  <td>{{pro.constitute}}</td>
-                  <td>{{pro.suspendConstitute}}</td>
-                  <td>{{pro.proDose}}</td>
-                  <td>{{pro.proBeginTime | date:"yyyy-MM-dd"}}</td>
-                  <td>{{pro.proEndTime | date:"yyyy-MM-dd"}}</td>
-                </tr>
-              </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped table-bordered">
-                <tbody>
-                <tr class="info">
-                  <th>组方</th>
-                  <th>用量</th>
-                  <th>中药类别</th>
-                  <th>草药购自</th>
-                  <th>始服时间</th>
-                  <th>停服时间</th>
-                </tr>
-                <tr ng-repeat = "herbal in herbalMedicines">
-                  <td>{{herbal.herbalName}}</td>
-                  <td>{{herbal.herbalDose}}</td>
-                  <td>{{herbal.herbalCategory}}</td>
-                  <td>{{herbal.buyFrom}}</td>
-                  <td>{{herbal.herbalBeginTime | date:"yyyy-MM-dd"}}</td>
-                  <td>{{herbal.herbalEndTime | date:"yyyy-MM-dd"}}</td>
-                </tr>
-              </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped table-bordered">
-                <tbody>
-                <tr class="info">
-                  <th>可疑药名</th>
-                  <th>中药类别</th>
-                  <th>样本</th>
-                  <th>编号</th>
-                </tr>
-                <tr ng-repeat = "sus in susMedicines">
-                  <td>{{sus.susName}}</td>
-                  <td>{{sus.susCategory}}</td>
-                  <td>{{sus.sample}}</td>
-                  <td>{{sus.number}}</td>
-                </tr>
-              </tbody>
-              </table>
-              </div>
-
-            </div>
-    </div>
-
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">四诊信息</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-            <div class="box-body no-padding">
-              <table class="table table-striped table-bordered table-hover">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-3">序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>舌面光泽</td>
-                  <td>
-                  {{tongueGloss}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>舌面颜色</td>
-                  <td>
-                    {{tongueColor}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>舌质</td>
-                  <td>
-                    {{tongueNature}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>舌质部分</td>
-                  <td>
-                    {{tongueNaturePart}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>舌体</td>
-                  <td>
-                    {{tongueBody}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>苔质</td>
-                  <td>
-                    {{mossNature}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>苔质部分</td>
-                  <td>
-                    {{mossNaturePart}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>苔色</td>
-                  <td>
-                    {{mossColor}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>苔色部分</td>
-                  <td>
-                    {{mossColorPart}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>舌下静脉</td>
-                  <td>
-                    {{sublingualVein}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>左脉</td>
-                  <td>
-                    {{leftVein}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>右脉</td>
-                  <td>
-                    {{rightVein}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>乏力</td>
-                  <td>
-                    {{mlfatigue}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>14</td>
-                  <td>皮肤瘙痒</td>
-                  <td>
-                    {{mlskinItching}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td>两目干涩</td>
-                  <td>
-                    {{mltwoEyesDry}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>16</td>
-                  <td>视物模糊</td>
-                  <td>
-                    {{mlblurredVision}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>17</td>
-                  <td>抑郁</td>
-                  <td>
-                    {{mldepression}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>18</td>
-                  <td>烦躁易怒</td>
-                  <td>
-                    {{mlirritability}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>19</td>
-                  <td>失眠</td>
-                  <td>
-                    {{mlinsomnia}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>20</td>
-                  <td>易醒</td>
-                  <td>
-                    {{mleasyWakeUp}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>21</td>
-                  <td>耳鸣</td>
-                  <td>
-                    {{mltinnitus}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>22</td>
-                  <td>口干</td>
-                  <td>
-                    {{mldryMouth}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>23</td>
-                  <td>口苦</td>
-                  <td>
-                    {{mlmouthPain}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>24</td>
-                  <td>口臭</td>
-                  <td>
-                    {{mlbadBreath}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>25</td>
-                  <td>恶心</td>
-                  <td>
-                    {{mlnausea}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>26</td>
-                  <td>嗳气</td>
-                  <td>
-                    {{mlbelching}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>27</td>
-                  <td>脘腹胀满</td>
-                  <td>
-                    {{mlabdominalDistention}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>28</td>
-                  <td>胁肋痛</td>
-                  <td>
-                    {{mlflankPain}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>29</td>
-                  <td>胁肋痛频率</td>
-                  <td>
-                    {{mlflankPainPersist}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>30</td>
-                  <td>纳差</td>
-                  <td>
-                    {{mlanorexia}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>31</td>
-                  <td>畏寒肢冷</td>
-                  <td>
-                    {{mlaphrodisiacCold}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>32</td>
-                  <td>肢体困重</td>
-                  <td>
-                    {{mllimb}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>33</td>
-                  <td>腰痠脚软</td>
-                  <td>
-                    {{mlbackacheFootSoft}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>34</td>
-                  <td>手足烦热</td>
-                  <td>
-                    {{mlhandFootFanHot}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>35</td>
-                  <td>尿黄</td>
-                  <td>
-                    {{mlurineYellow}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>36</td>
-                  <td>便秘</td>
-                  <td>
-                    {{mlconstipation}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>37</td>
-                  <td>便溏</td>
-                  <td>
-                    {{mllooseStools}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>38</td>
-                  <td>汗出</td>
-                  <td>
-                    {{mlsweat}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>39</td>
-                  <td>汗出频率</td>
-                  <td>
-                    {{mlsweatPersist}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>40</td>
-                  <td>下肢水肿</td>
-                  <td>
-                    {{mllowerExtremityEdema}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>41</td>
-                  <td>面晦暗</td>
-                  <td>
-                    {{mlfaceDull}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>42</td>
-                  <td>目黄</td>
-                  <td>
-                    {{mleyeYellow}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>43</td>
-                  <td>身黄</td>
-                  <td>
-                    {{mlbodyYellow}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>44</td>
-                  <td>蜘蛛痣数量</td>
-                  <td>
-                    {{mlspiderNevus}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>45</td>
-                  <td>肝掌</td>
-                  <td>
-                    {{mlliverPalm}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>46</td>
-                  <td>腹壁脉络曲张</td>
-                  <td>
-                    {{mlabdominalVeins}}
-                  </td>
-                </tr>
-                <tr>
-                  <td>47</td>
-                  <td>黄色瘤</td>
-                  <td>
-                    {{mlyellowTumor}}
-                  </td>
-                </tr>
-              </tbody>
-              </table>
-            </div>
-            </div>
-    </div>
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">症状体征</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-3">序号</th>
+                                        <th class="col-md-3">调查项</th>
+                                        <th>结果
+                                            <!-- <a style="cursor: pointer;" class="col-md-offset-5" ng-click="updatePhy()" ng-show="isPhyFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>饮酒史</td>
+                                        <td>{{drinkHistory}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">饮酒种类</th>
+                                        <th class="col-md-3">饮酒数量（毫升/天）</th>
+                                        <th class="col-md-3">饮酒年限（年）</th>
+                                        <th class="col-md-3">酒精度数（度）</th>
+                                    </tr>
+                                    <tr ng-repeat="drink in drinks">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{drink.drinkType}}</td>
+                                        <td>{{drink.drinkQuantity}}</td>
+                                        <td>{{drink.drinkLife}}</td>
+                                        <td>{{drink.proof}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">可疑药物用药史</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>通用名</th>
+                                        <th>商品名</th>
+                                        <th>厂家及批号</th>
+                                        <th>药物分类</th>
+                                        <th>用药方法</th>
+                                        <th>日剂量</th>
+                                        <th>开始日期</th>
+                                        <th>是否停药</th>
+                                        <th>停药日期</th>
+                                        <th>是否减量</th>
+                                        <th>既往该药暴露史</th>
+                                        <th>既往暴露引起肝损</th>
+                                    </tr>
+                                    <tr ng-repeat="drug in drugs">
+                                        <td>{{drug.genericName}}</td>
+                                        <td>{{drug.tradeName}}</td>
+                                        <td>{{drug.manufactor}}</td>
+                                        <td>{{drug.drugClassification}}</td>
+                                        <td>{{drug.medicationMethod}}</td>
+                                        <td>{{drug.dose}}</td>
+                                        <td>{{drug.beginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{drug.drugWithDrawal}}</td>
+                                        <td>{{drug.drugWithDrawalDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{drug.decrement}}</td>
+                                        <td>{{drug.drugExposure}}</td>
+                                        <td>{{drug.exposureLiverDamage}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>名称</th>
+                                        <th>厂家</th>
+                                        <th>中药类别</th>
+                                        <th>成分</th>
+                                        <th>可疑成分</th>
+                                        <th>日剂量</th>
+                                        <th>始服时间</th>
+                                        <th>停服时间</th>
+                                    </tr>
+                                    <tr ng-repeat="pro in proMedicines">
+                                        <td>{{pro.proName}}</td>
+                                        <td>{{pro.proManufactor}}</td>
+                                        <td>{{pro.proCategory}}</td>
+                                        <td>{{pro.constitute}}</td>
+                                        <td>{{pro.suspendConstitute}}</td>
+                                        <td>{{pro.proDose}}</td>
+                                        <td>{{pro.proBeginTime | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{pro.proEndTime | date:"yyyy-MM-dd"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>组方</th>
+                                        <th>用量</th>
+                                        <th>中药类别</th>
+                                        <th>草药购自</th>
+                                        <th>始服时间</th>
+                                        <th>停服时间</th>
+                                    </tr>
+                                    <tr ng-repeat="herbal in herbalMedicines">
+                                        <td>{{herbal.herbalName}}</td>
+                                        <td>{{herbal.herbalDose}}</td>
+                                        <td>{{herbal.herbalCategory}}</td>
+                                        <td>{{herbal.buyFrom}}</td>
+                                        <td>{{herbal.herbalBeginTime | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{herbal.herbalEndTime | date:"yyyy-MM-dd"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>可疑药名</th>
+                                        <th>中药类别</th>
+                                        <th>样本</th>
+                                        <th>编号</th>
+                                    </tr>
+                                    <tr ng-repeat="sus in susMedicines">
+                                        <td>{{sus.susName}}</td>
+                                        <td>{{sus.susCategory}}</td>
+                                        <td>{{sus.sample}}</td>
+                                        <td>{{sus.number}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">四诊信息</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped table-bordered table-hover">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-3">序号</th>
+                                        <th class="col-md-3">调查项</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>舌面光泽</td>
+                                        <td>
+                                            {{tongueGloss}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>舌面颜色</td>
+                                        <td>
+                                            {{tongueColor}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>舌质</td>
+                                        <td>
+                                            {{tongueNature}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>舌质部分</td>
+                                        <td>
+                                            {{tongueNaturePart}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>舌体</td>
+                                        <td>
+                                            {{tongueBody}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>苔质</td>
+                                        <td>
+                                            {{mossNature}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>苔质部分</td>
+                                        <td>
+                                            {{mossNaturePart}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>苔色</td>
+                                        <td>
+                                            {{mossColor}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>苔色部分</td>
+                                        <td>
+                                            {{mossColorPart}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>舌下静脉</td>
+                                        <td>
+                                            {{sublingualVein}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>左脉</td>
+                                        <td>
+                                            {{leftVein}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>右脉</td>
+                                        <td>
+                                            {{rightVein}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>乏力</td>
+                                        <td>
+                                            {{mlfatigue}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>皮肤瘙痒</td>
+                                        <td>
+                                            {{mlskinItching}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>两目干涩</td>
+                                        <td>
+                                            {{mltwoEyesDry}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>视物模糊</td>
+                                        <td>
+                                            {{mlblurredVision}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>抑郁</td>
+                                        <td>
+                                            {{mldepression}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>烦躁易怒</td>
+                                        <td>
+                                            {{mlirritability}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>失眠</td>
+                                        <td>
+                                            {{mlinsomnia}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>易醒</td>
+                                        <td>
+                                            {{mleasyWakeUp}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td>耳鸣</td>
+                                        <td>
+                                            {{mltinnitus}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>口干</td>
+                                        <td>
+                                            {{mldryMouth}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>口苦</td>
+                                        <td>
+                                            {{mlmouthPain}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td>口臭</td>
+                                        <td>
+                                            {{mlbadBreath}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td>
+                                        <td>恶心</td>
+                                        <td>
+                                            {{mlnausea}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>26</td>
+                                        <td>嗳气</td>
+                                        <td>
+                                            {{mlbelching}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>27</td>
+                                        <td>脘腹胀满</td>
+                                        <td>
+                                            {{mlabdominalDistention}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>28</td>
+                                        <td>胁肋痛</td>
+                                        <td>
+                                            {{mlflankPain}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>29</td>
+                                        <td>胁肋痛频率</td>
+                                        <td>
+                                            {{mlflankPainPersist}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td>纳差</td>
+                                        <td>
+                                            {{mlanorexia}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>31</td>
+                                        <td>畏寒肢冷</td>
+                                        <td>
+                                            {{mlaphrodisiacCold}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>32</td>
+                                        <td>肢体困重</td>
+                                        <td>
+                                            {{mllimb}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>33</td>
+                                        <td>腰痠脚软</td>
+                                        <td>
+                                            {{mlbackacheFootSoft}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>34</td>
+                                        <td>手足烦热</td>
+                                        <td>
+                                            {{mlhandFootFanHot}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>35</td>
+                                        <td>尿黄</td>
+                                        <td>
+                                            {{mlurineYellow}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>36</td>
+                                        <td>便秘</td>
+                                        <td>
+                                            {{mlconstipation}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>37</td>
+                                        <td>便溏</td>
+                                        <td>
+                                            {{mllooseStools}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>38</td>
+                                        <td>汗出</td>
+                                        <td>
+                                            {{mlsweat}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>39</td>
+                                        <td>汗出频率</td>
+                                        <td>
+                                            {{mlsweatPersist}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>40</td>
+                                        <td>下肢水肿</td>
+                                        <td>
+                                            {{mllowerExtremityEdema}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>41</td>
+                                        <td>面晦暗</td>
+                                        <td>
+                                            {{mlfaceDull}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>42</td>
+                                        <td>目黄</td>
+                                        <td>
+                                            {{mleyeYellow}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>43</td>
+                                        <td>身黄</td>
+                                        <td>
+                                            {{mlbodyYellow}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>44</td>
+                                        <td>蜘蛛痣数量</td>
+                                        <td>
+                                            {{mlspiderNevus}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>45</td>
+                                        <td>肝掌</td>
+                                        <td>
+                                            {{mlliverPalm}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>46</td>
+                                        <td>腹壁脉络曲张</td>
+                                        <td>
+                                            {{mlabdominalVeins}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>47</td>
+                                        <td>黄色瘤</td>
+                                        <td>
+                                            {{mlyellowTumor}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">症状体征</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <!-- <div class="btn-group-vertical col-md-2" role="group">
                 <button ng-click="boneDefault()" class="btn btn-primary btn-sm">医院录入表</button>
                 <br/>
                 <button ng-repeat="boneFollow in boneFollowList" class="btn btn-primary btn-sm" ng-click="boneClick(boneFollow)">随访表{{boneFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-2">调查项</th>
-                  <th class="col-md-2">结果<!-- <a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateBone()" ng-show="isBoneFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>肝损伤伴随的症状体征</td>
-                  <td>{{liverInjury}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">症状体征</th>
-                  <th class="col-md-2">描述</th>
-                  <th class="col-md-2">出现的时间</th>
-                  <th class="col-md-2">消失的时间</th>
-                  <th class="col-md-2">出院时症状体征状态</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>乏力</td>
-                  <td>{{weak}}</td>
-                  <td>{{weakBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{weakDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{weakDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>纳差</td>
-                  <td>{{anorexia}}</td>
-                  <td>{{anorexiaBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{anorexiaDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{anorexiaDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>膨胀</td>
-                  <td>{{abdominalDistention}}</td>
-                  <td>{{abdominalDistentionBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{abdominalDistentionDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{abdominalDistentionDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>黄疸</td>
-                  <td>{{jaundice}}</td>
-                  <td>{{jaundiceBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{jaundiceDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{jaundiceDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>恶心</td>
-                  <td>{{nausea}}</td>
-                  <td>{{nauseaBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{nauseaDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{nauseaDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>呕吐</td>
-                  <td>{{vomit}}</td>
-                  <td>{{vomitBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{vomitDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{vomitDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>齿龈出血</td>
-                  <td>{{gingivalBleeding}}</td>
-                  <td>{{gingivalBleedingBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{gingivalBleedingDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{gingivalBleedingDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>鼻衄</td>
-                  <td>{{epistaxis}}</td>
-                  <td>{{epistaxisBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{epistaxisDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{epistaxisDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>肝区疼痛</td>
-                  <td>{{liverPain}}</td>
-                  <td>{{liverPainBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverPainDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverPainDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>肝肿大</td>
-                  <td>{{hepatomegaly}}</td>
-                  <td>{{hepatomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hepatomegalyDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hepatomegalyDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>脾肿大</td>
-                  <td>{{splenomegaly}}</td>
-                  <td>{{splenomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{splenomegalyDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{splenomegalyDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>发热</td>
-                  <td>{{fever}}</td>
-                  <td>{{feverBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{feverDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{feverDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>皮疹</td>
-                  <td>{{rash}}</td>
-                  <td>{{rashBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{rashDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{rashDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>关节痛</td>
-                  <td>{{arthralgia}}</td>
-                  <td>{{arthralgiaBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{arthralgiaDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{arthralgiaDischarge}}</td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>皮肤瘙痒</td>
-                  <td>{{skinItch}}</td>
-                  <td>{{skinItchBeginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{skinItchDisappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{skinItchDischarge}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">症状体征</th>
-                  <th class="col-md-2">描述</th>
-                  <th class="col-md-2">出现的时间</th>
-                  <th class="col-md-2">消失的时间</th>
-                  <th class="col-md-2">出院时症状体征状态</th>
-                </tr>
-                <tr ng-repeat = "symptom in symptoms">
-                  <td>{{$index + 1}}</td>
-                  <td>{{symptom.name}}</td>
-                  <td>{{symptom.description}}</td>
-                  <td>{{symptom.beginDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{symptom.disappearDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{symptom.dischargeSymptoms}}</td>
-                </tr>
-            	</tbody>
-               </table>
-           	   </div>
-
-
-
-            </div>
-    </div>
-
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">首次异常的生化检查</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th>序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th class="col-md-offset-3">检查时间</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>谷丙转氨酶（ALT）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{alt}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>谷草转氨酶（AST）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ast}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>谷氨酰转肽酶（GGT）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ggt}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>碱性磷酸酶（ALP或AKP）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{alp}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>胆汁酸</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{bileAcid}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>总胆红素（TBIL）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{tbil}}</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>直接胆红素（结合胆红素，DBIL）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{dbil}}</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>总蛋白（TP）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{tp}}</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>白蛋白（ALB）</td>
-                  <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{alb}}</td>
-                </tr>
-
-				<tr>
-                  <td>10</td>
-                  <td>血清肌酐（Scr）</td>
-                  <td>{{tab2CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{scr}}</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>血清尿素氮（BUN）</td>
-                  <td>{{tab2CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{bun}}</td>
-                </tr>
-
-				        <tr>
-                  <td>12</td>
-                  <td>空腹血糖</td>
-                  <td>{{tab3CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{plasmaGlucose}}</td>
-                </tr>       
-
-                <tr>
-                  <td>13</td>
-                  <td>凝血酶原时间（PT）</td>
-                  <td>{{tab4CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{pt}}</td>
-                </tr>    
-                <tr>
-                  <td>14</td>
-                  <td>凝血酶原标准化比值（INR）</td>
-                  <td>{{tab4CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{inr}}</td>
-                </tr> 
-
-                <tr>
-                  <td>15</td>
-                  <td>甲胎蛋白（AFP）</td>
-                  <td>{{tab5CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{afp}}</td>
-                </tr>                                     
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">所有住院生化检查</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th>序号</th>
-                  <th class="col-md-3">调查项</th>
-                  <th class="col-md-offset-3">检查时间</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>谷丙转氨酶（ALT）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_alt}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>谷草转氨酶（AST）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_ast}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>谷氨酰转肽酶（GGT）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_ggt}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>碱性磷酸酶（ALP或AKP）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_alp}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>胆汁酸</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_bileAcid}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>总胆红素（TBIL）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_tbil}}</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>直接胆红素（结合胆红素，DBIL）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_dbil}}</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>总蛋白（TP）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_tp}}</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>白蛋白（ALB）</td>
-                  <td>{{_tab1CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_alb}}</td>
-                </tr>
-
-				        <tr>
-                  <td>10</td>
-                  <td>血清肌酐（Scr）</td>
-                  <td>{{_tab2CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_scr}}</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>血清尿素氮（BUN）</td>
-                  <td>{{_tab2CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_bun}}</td>
-                </tr>
-
-				        <tr>
-                  <td>12</td>
-                  <td>空腹血糖</td>
-                  <td>{{_tab3CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_plasmaGlucose}}</td>
-                </tr>       
-
-                <tr>
-                  <td>13</td>
-                  <td>凝血酶原时间（PT）</td>
-                  <td>{{_tab4CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_pt}}</td>
-                </tr>    
-                <tr>
-                  <td>14</td>
-                  <td>凝血酶原标准化比值（INR）</td>
-                  <td>{{_tab4CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_inr}}</td>
-                </tr> 
-
-                <tr>
-                  <td>15</td>
-                  <td>甲胎蛋白（AFP）</td>
-                  <td>{{_tab5CheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{_afp}}</td>
-                </tr>                                     
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-    <div class="box box-success direct-chat direct-chat-success">
-          <div class="box-header with-border">
-              <h3 class="box-title">排除其他肝脏疾病</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-          </div>
-          <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-2">项目名称</th>
-                  <th class="col-md-2">检查内容</th>
-                  <th class="col-md-2">检查日期</th>
-                  <th class="col-md-2">结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>甲肝抗体</td>
-                  <td>Anti-HAV</td>
-                  <td>{{antiHavDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{antiHav}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>乙肝病毒DNA</td>
-                  <td>HBV-DNA</td>
-                  <td>{{hbvdnaDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbvdna}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>丙肝抗体</td>
-                  <td>Anti-HCV</td>
-                  <td>{{antihcvDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{antihcv}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>丙肝病毒RNA</td>
-                  <td>HCV-RNA</td>
-                  <td>{{hcvrnaDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hcvrna}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>单核细胞增多症</td>
-                  <td>单核细胞增多症的检测</td>
-                  <td>{{mononucleosisDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{mononucleosis}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>类风湿因子</td>
-                  <td>类风湿因子</td>
-                  <td>{{rheumatoidDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{rheumatoid}}</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>铜蓝蛋白</td>
-                  <td>铜蓝蛋白</td>
-                  <td>{{ceruloplasminDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ceruloplasmin}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-2">检查内容</th>
-                  <th class="col-sm-2">检查日期</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>HBsAg</td>
-                  <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbsag}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>HBsAb</td>
-                  <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbsab}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>HBcAb</td>
-                  <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbcab}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>HBeAg</td>
-                  <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbeag}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>HBeAb</td>
-                  <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hbeab}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-3">检查内容</th>
-                  <th class="col-md-3">检查日期</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>抗核抗体(ANA)</td>
-                  <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ana}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>抗线粒体抗体(AMA)</td>
-                  <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ama}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>抗线粒体抗体M2型(AMA-M2)</td>
-                  <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{amam2}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>抗平滑肌抗体(SMA)</td>
-                  <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{sma}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>肝肾线粒体抗体(LKM)</td>
-                  <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{lkm}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-3">检查内容</th>
-                  <th class="col-md-3">检查日期</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>巨细胞病毒</td>
-                  <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{cytomegalovirus}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>EB病毒</td>
-                  <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ebviruses}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>单纯疱疹病毒</td>
-                  <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{herpesSimplex}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-    </div>
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">血常规</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-2">调查项</th>
+                                        <th class="col-md-2">结果
+                                            <!-- <a style="cursor: pointer;" class="col-md-offset-8" ng-click="updateBone()" ng-show="isBoneFollow"><span class="h5" style="color: red">有疑问？我要修改</span></a> --></th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>肝损伤伴随的症状体征</td>
+                                        <td>{{liverInjury}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">症状体征</th>
+                                        <th class="col-md-2">描述</th>
+                                        <th class="col-md-2">出现的时间</th>
+                                        <th class="col-md-2">消失的时间</th>
+                                        <th class="col-md-2">出院时症状体征状态</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>乏力</td>
+                                        <td>{{weak}}</td>
+                                        <td>{{weakBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{weakDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{weakDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>纳差</td>
+                                        <td>{{anorexia}}</td>
+                                        <td>{{anorexiaBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{anorexiaDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{anorexiaDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>膨胀</td>
+                                        <td>{{abdominalDistention}}</td>
+                                        <td>{{abdominalDistentionBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{abdominalDistentionDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{abdominalDistentionDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>黄疸</td>
+                                        <td>{{jaundice}}</td>
+                                        <td>{{jaundiceBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{jaundiceDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{jaundiceDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>恶心</td>
+                                        <td>{{nausea}}</td>
+                                        <td>{{nauseaBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{nauseaDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{nauseaDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>呕吐</td>
+                                        <td>{{vomit}}</td>
+                                        <td>{{vomitBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{vomitDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{vomitDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>齿龈出血</td>
+                                        <td>{{gingivalBleeding}}</td>
+                                        <td>{{gingivalBleedingBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{gingivalBleedingDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{gingivalBleedingDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>鼻衄</td>
+                                        <td>{{epistaxis}}</td>
+                                        <td>{{epistaxisBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{epistaxisDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{epistaxisDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>肝区疼痛</td>
+                                        <td>{{liverPain}}</td>
+                                        <td>{{liverPainBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liverPainDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liverPainDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>肝肿大</td>
+                                        <td>{{hepatomegaly}}</td>
+                                        <td>{{hepatomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hepatomegalyDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hepatomegalyDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>脾肿大</td>
+                                        <td>{{splenomegaly}}</td>
+                                        <td>{{splenomegalyBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{splenomegalyDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{splenomegalyDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>发热</td>
+                                        <td>{{fever}}</td>
+                                        <td>{{feverBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{feverDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{feverDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>皮疹</td>
+                                        <td>{{rash}}</td>
+                                        <td>{{rashBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{rashDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{rashDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>关节痛</td>
+                                        <td>{{arthralgia}}</td>
+                                        <td>{{arthralgiaBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{arthralgiaDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{arthralgiaDischarge}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>皮肤瘙痒</td>
+                                        <td>{{skinItch}}</td>
+                                        <td>{{skinItchBeginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{skinItchDisappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{skinItchDischarge}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">症状体征</th>
+                                        <th class="col-md-2">描述</th>
+                                        <th class="col-md-2">出现的时间</th>
+                                        <th class="col-md-2">消失的时间</th>
+                                        <th class="col-md-2">出院时症状体征状态</th>
+                                    </tr>
+                                    <tr ng-repeat="symptom in symptoms">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{symptom.name}}</td>
+                                        <td>{{symptom.description}}</td>
+                                        <td>{{symptom.beginDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{symptom.disappearDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{symptom.dischargeSymptoms}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">首次异常的生化检查</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th class="col-md-3">调查项</th>
+                                        <th class="col-md-offset-3">检查时间</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>谷丙转氨酶（ALT）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{alt}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>谷草转氨酶（AST）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ast}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>谷氨酰转肽酶（GGT）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ggt}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>碱性磷酸酶（ALP或AKP）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{alp}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>胆汁酸</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{bileAcid}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>总胆红素（TBIL）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{tbil}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>直接胆红素（结合胆红素，DBIL）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{dbil}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>总蛋白（TP）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{tp}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>白蛋白（ALB）</td>
+                                        <td>{{tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{alb}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>血清肌酐（Scr）</td>
+                                        <td>{{tab2CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{scr}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>血清尿素氮（BUN）</td>
+                                        <td>{{tab2CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{bun}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>空腹血糖</td>
+                                        <td>{{tab3CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{plasmaGlucose}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>凝血酶原时间（PT）</td>
+                                        <td>{{tab4CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{pt}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>凝血酶原标准化比值（INR）</td>
+                                        <td>{{tab4CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{inr}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>甲胎蛋白（AFP）</td>
+                                        <td>{{tab5CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{afp}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">所有住院生化检查</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查日期</th>
+                                        <th>谷丙转氨酶(ALT)(IU/L)</th>
+                                        <th>谷草转氨酶(AST)(IU/L)</th>
+                                        <th>谷氨酰转肽酶(GGT)(IU/L)</th>
+                                        <th>碱性磷酸酶(ALP)(IU/L)</th>
+                                        <th>胆汁酸(umol/L)</th>
+                                        <th>总胆红素(TBIL)(umol/L)</th>
+                                        <th>直接胆红素(结合，DBIL)(umol/L)</th>
+                                        <th>总蛋白(TP)(g/L)</th>
+                                        <th>白蛋白(ALB)(g/L)</th>
+                                    </tr>
+                                    <tr ng-repeat="liver in livers">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{liver.tab1CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liver.alt}}</td>
+                                        <td>{{liver.ast}}</td>
+                                        <td>{{liver.ggt}}</td>
+                                        <td>{{liver.alp}}</td>
+                                        <td>{{liver.bileAcid}}</td>
+                                        <td>{{liver.tbil}}</td>
+                                        <td>{{liver.dbil}}</td>
+                                        <td>{{liver.tp}}</td>
+                                        <td>{{liver.alb}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查日期</th>
+                                        <th>肌酐(Scr)(umol/L)</th>
+                                        <th>尿素氮(mmol/L)</th>
+                                    </tr>
+                                    <tr ng-repeat="kidney in kidneys">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{kidney.tab2CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{kidney.scr}}</td>
+                                        <td>{{kidney.ureaNitrogen}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查日期</th>
+                                        <th>空腹血糖(mmol/L)</th>
+                                    </tr>
+                                    <tr ng-repeat="bs in bss">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{bs.tab3CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{bs.plasmaGlucose}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查日期</th>
+                                        <th>凝血酶原时间(PT)(秒)</th>
+                                        <th>凝血酶原标准化比值(INR)</th>
+                                    </tr>
+                                    <tr ng-repeat="cruor in cruors">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{cruor.tab4CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{cruor.pt}}</td>
+                                        <td>{{cruor.inr}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查日期</th>
+                                        <th>甲胎蛋白(AFP)(ug/L)</th>
+                                    </tr>
+                                    <tr ng-repeat="tumour in tumours">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{tumour.tab5CheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{tumour.afp}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">排除其他肝脏疾病</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-2">项目名称</th>
+                                        <th class="col-md-2">检查内容</th>
+                                        <th class="col-md-2">检查日期</th>
+                                        <th class="col-md-2">结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>甲肝抗体</td>
+                                        <td>Anti-HAV</td>
+                                        <td>{{antiHavDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{antiHav}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>乙肝病毒DNA</td>
+                                        <td>HBV-DNA</td>
+                                        <td>{{hbvdnaDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbvdna}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>丙肝抗体</td>
+                                        <td>Anti-HCV</td>
+                                        <td>{{antihcvDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{antihcv}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>丙肝病毒RNA</td>
+                                        <td>HCV-RNA</td>
+                                        <td>{{hcvrnaDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hcvrna}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>单核细胞增多症</td>
+                                        <td>单核细胞增多症的检测</td>
+                                        <td>{{mononucleosisDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{mononucleosis}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>类风湿因子</td>
+                                        <td>类风湿因子</td>
+                                        <td>{{rheumatoidDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{rheumatoid}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>铜蓝蛋白</td>
+                                        <td>铜蓝蛋白</td>
+                                        <td>{{ceruloplasminDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ceruloplasmin}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-2">检查内容</th>
+                                        <th class="col-sm-2">检查日期</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>HBsAg</td>
+                                        <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbsag}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>HBsAb</td>
+                                        <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbsab}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>HBcAb</td>
+                                        <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbcab}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>HBeAg</td>
+                                        <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbeag}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>HBeAb</td>
+                                        <td>{{hepatitisBFiveDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hbeab}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-3">检查内容</th>
+                                        <th class="col-md-3">检查日期</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>抗核抗体(ANA)</td>
+                                        <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ana}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>抗线粒体抗体(AMA)</td>
+                                        <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ama}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>抗线粒体抗体M2型(AMA-M2)</td>
+                                        <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{amam2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>抗平滑肌抗体(SMA)</td>
+                                        <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{sma}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>肝肾线粒体抗体(LKM)</td>
+                                        <td>{{autoimmuneAntibodyDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{lkm}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-3">检查内容</th>
+                                        <th class="col-md-3">检查日期</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>巨细胞病毒</td>
+                                        <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{cytomegalovirus}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>EB病毒</td>
+                                        <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ebviruses}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>单纯疱疹病毒</td>
+                                        <td>{{otherVirusCheckDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{herpesSimplex}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">血常规</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <!-- <div class="btn-group-vertical col-md-2" role="group">
                 <button ng-click="treatDefault()" class="btn btn-primary btn-sm">医院录入表</button>
                 <br/>
                 <button ng-repeat="treatFollow in treatFollowList" class="btn btn-primary btn-sm" ng-click="treatClick(treatFollow)">随访表{{treatFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th>序号</th>
-                  <th class="col-md-3">项目</th>
-                  <th class="col-sm-3">检查时间</th>
-                  <th>结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>白细胞总数（WBC）</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{wbc}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>血红蛋白（Hb）</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{hb}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>总血红蛋白浓度</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{totalHemoglobin}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>血小板（PLT）</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{plt}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>中性粒细胞计数（N）</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{neutrophil}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>嗜酸性粒细胞计数（E）</td>
-                  <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{eosinophil}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">影像学和内窥镜检查</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <!-- <div class="btn-group-vertical col-md-2" role="group">
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th class="col-md-3">项目</th>
+                                        <th class="col-sm-3">检查时间</th>
+                                        <th>结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>白细胞总数（WBC）</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{wbc}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>血红蛋白（Hb）</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{hb}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>总血红蛋白浓度</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{totalHemoglobin}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>血小板（PLT）</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{plt}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>中性粒细胞计数（N）</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{neutrophil}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>嗜酸性粒细胞计数（E）</td>
+                                        <td>{{routineBloodDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{eosinophil}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">影像学和内窥镜检查</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <!-- <div class="btn-group-vertical col-md-2" role="group">
                 <button ng-click="medicineDefault()" class="btn btn-primary btn-sm">医院录入表</button>
                 <br/>
                 <button ng-repeat="medicineFollow in medicineFollowList" class="btn btn-primary btn-sm" ng-click="medicineClick(medicineFollow)">随访表{{medicineFollow.followUpDate | date:"yyyy-MM-dd"}}</button>
               </div> -->
-              <div class="box-body no-padding">
-              <img src="{{image}}" class="img-responsive center-block img-thumbnail">
-              <div style="text-align: center;"><span class="h4">{{imageDescribe}}</span></div>
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-2">检查项目</th>
-                  <th class="col-md-2">检查日期</th>
-                  <th class="col-md-2">检查结果</th>
-                  <th class="col-md-2">排除胆道疾病</th>
-                  <th class="col-md-2">排除食管胃底静脉曲张</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>肝脏B超</td>
-                  <td>{{liverBultrasoundDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverBultrasound}}</td>
-                  <td>{{liverBultrasoundBiliaryTract}}</td>
-                  <td>{{liverBultrasoundEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>肝脏CT</td>
-                  <td>{{liverCtDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverCt}}</td>
-                  <td>{{liverCtBiliaryTract}}</td>
-                  <td>{{liverCtEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>肝脏MRI</td>
-                  <td>{{liverMriDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{liverMri}}</td>
-                  <td>{{liverMriBiliaryTract}}</td>
-                  <td>{{liverMriEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Fibroscan</td>
-                  <td>{{fibroscanDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{fibroscan}}</td>
-                  <td>{{fibroscanBiliaryTract}}</td>
-                  <td>{{fibroscanEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>ERCP</td>
-                  <td>{{ercpDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{ercp}}</td>
-                  <td>{{ercpBiliaryTract}}</td>
-                  <td>{{ercpEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>MRCP</td>
-                  <td>{{mrcpDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{mrcp}}</td>
-                  <td>{{mrcpBiliaryTract}}</td>
-                  <td>{{mrcpEsophagealGastricVarices}}</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>胃镜</td>
-                  <td>{{gastroscopeDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{gastroscope}}</td>
-                  <td>{{gastroscopeBiliaryTract}}</td>
-                  <td>{{gastroscopeEsophagealGastricVarices}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th>序号</th>
-                  <th>检查项目</th>
-                  <th>检查日期</th>
-                  <th>检查结果</th>
-                  <th>排除胆道疾病</th>
-                  <th>排除食管胃底静脉曲张</th>
-                </tr>
-                <tr ng-repeat = "otherImaging in otherImagingEndoscopyDTOS">
-                  <td>{{$index+1}}</td>
-                  <td>{{otherImaging.item}}</td>
-                  <td>{{otherImaging.itemDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{otherImaging.result}}</td>
-                  <td>{{otherImaging.biliaryTract == 1?"是":(otherImaging.biliaryTract == 2?"否":(otherImaging.biliaryTract == 3?"不适用":""))}}</td>
-                  <td>{{otherImaging.esophagealGastricVarices == 1?"是":(otherImaging.esophagealGastricVarices == 2?"否":(otherImaging.esophagealGastricVarices == 3?"不适用":""))}}</td>
-                </tr>
-              </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">肝脏组织学检查</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th>序号</th>
-                  <th>检查项</th>
-                  <th>检查结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>门管区周围或周围间隔区交界面肝炎（碎片状坏死）</td>
-                  <td>{{interfaceHepatitis}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>融合性坏死</td>
-                  <td>{{confluentNecrosis}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>局灶性（斑状）溶解性坏死，凋亡及局灶性炎症</td>
-                  <td>{{focal}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>门管区炎症</td>
-                  <td>{{portalInflammation}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>纤维化评分</td>
-                  <td>{{fibrosis}}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td> DILI严重程度分级</td>
-                  <td>{{severity}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">药物性肝损伤严重程度</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-5">检查项目</th>
-                  <th>检查结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>是否有腹水</td>
-                  <td>{{ascites}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>是否有肝性脑病</td>
-                  <td>{{hepaticEncephalopathy}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>是否有延长INR（>1.5）或者凝血时间（>3秒正常时间以上）</td>
-                  <td>{{extendInr}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等</td>
-                  <td>{{failure}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>由于肝损伤的原因，患者住院时间是否延长</td>
-                  <td>{{extendHospitalStay}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>RUCAM评分</td>
-                  <td>{{rucam}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-	
-
-	<div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">治疗措施</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-3">检查项目</th>
-                  <th>检查结果</th>
-                </tr>
-                <tr>
-                  <td class="col-md-3">1</td>
-                  <td class="col-md-3">是否有治疗措施</td>
-                  <td class="col-md-3">{{treatment}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">通用名</th>
-                  <th class="col-md-2">商品名</th>
-                  <th class="col-md-2">用药方法</th>
-                  <th class="col-md-2">日剂量</th>
-                  <th class="col-md-2">开始日期</th>
-                  <th class="col-md-2">结束日期</th>
-                </tr>
-                <tr ng-repeat = "treatmentDetail in treatmentDetails">
-                  <td>{{$index+1}}</td>
-                  <td>{{treatmentDetail.genericName}}</td>
-                  <td>{{treatmentDetail.tradeName}}</td>
-                  <td>{{treatmentDetail.detailMethod}}</td>
-                  <td>{{treatmentDetail.dose}}</td>
-                  <td>{{treatmentDetail.detailStartDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{treatmentDetail.detailEndDate | date:"yyyy-MM-dd"}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-1">序号</th>
-                  <th class="col-md-2">治疗措施</th>
-                  <th class="col-md-2">治疗措施详述</th>
-                  <th class="col-md-2">开始日期</th>
-                  <th class="col-md-2">结束日期</th>
-                </tr>
-                <tr ng-repeat = "treatmentOther in treatmentOthers">
-                  <td>{{$index+1}}</td>
-                  <td>{{treatmentOther.method}}</td>
-                  <td>{{treatmentOther.methodDetail}}</td>
-                  <td>{{treatmentOther.otherStartDate | date:"yyyy-MM-dd"}}</td>
-                  <td>{{treatmentOther.otherEndDate | date:"yyyy-MM-dd"}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-
-            </div>
-    </div> 
-
-
-    <div class="box box-success direct-chat direct-chat-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">疾病转归</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-3">序号</th>
-                  <th class="col-md-3">检查项</th>
-                  <th class="col-md-3">检查结果</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>疾病转归</td>
-                  <td>{{outcome}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>
-
-
-    <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">生物样本</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
-                </button>
-              </div>
-            </div>
-            <div class="box-body" style="display: none;">
-              <!-- 显示数据 -->
-              <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody>
-                <tr class="info">
-                  <th class="col-md-2">序号</th>
-                  <th class="col-md-2">项目</th>
-                  <th class="col-md-2">是否留置</th>
-                  <th class="col-md-2">留置编号</th>
-                  <th class="col-md-2">备注</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>血清</td>
-                  <td>{{biologicalSamples1}}</td>
-                  <td>{{num1}}</td>
-                  <td>{{remark1}}</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>血浆</td>
-                  <td>{{biologicalSamples2}}</td>
-                  <td>{{num2}}</td>
-                  <td>{{remark2}}</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>组织</td>
-                  <td>{{biologicalSamples3}}</td>
-                  <td>{{num3}}</td>
-                  <td>{{remark3}}</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>尿液</td>
-                  <td>{{biologicalSamples4}}</td>
-                  <td>{{num4}}</td>
-                  <td>{{remark4}}</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>药物</td>
-                  <td>{{biologicalSamples5}}</td>
-                  <td>{{num5}}</td>
-                  <td>{{remark5}}</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>其他</td>
-                  <td>{{biologicalSamples6}}</td>
-                  <td>{{num6}}</td>
-                  <td>{{remark6}}</td>
-                </tr>
-                </tbody>
-              </table>
-              </div>
-            </div>
-    </div>   
-
-
-  </div>
-  </div>
-
-  <div ng-if="show2">
-    <div class="btn-group-vertical col-md-2" role="group">
-                <div class="list-group" >
-                <button ng-repeat="followDate in followDateList" class="list-group-item" ng-click="followClick(followDate)">随访表{{followDate | date:"yyyy-MM-dd"}}</button>
+                        <div class="box-body no-padding">
+                            <img src="{{image}}" class="img-responsive center-block img-thumbnail">
+                            <div style="text-align: center;"><span class="h4">{{imageDescribe}}</span></div>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-2">检查项目</th>
+                                        <th class="col-md-2">检查日期</th>
+                                        <th class="col-md-2">检查结果</th>
+                                        <th class="col-md-2">排除胆道疾病</th>
+                                        <th class="col-md-2">排除食管胃底静脉曲张</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>肝脏B超</td>
+                                        <td>{{liverBultrasoundDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liverBultrasound}}</td>
+                                        <td>{{liverBultrasoundBiliaryTract}}</td>
+                                        <td>{{liverBultrasoundEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>肝脏CT</td>
+                                        <td>{{liverCtDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liverCt}}</td>
+                                        <td>{{liverCtBiliaryTract}}</td>
+                                        <td>{{liverCtEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>肝脏MRI</td>
+                                        <td>{{liverMriDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{liverMri}}</td>
+                                        <td>{{liverMriBiliaryTract}}</td>
+                                        <td>{{liverMriEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Fibroscan</td>
+                                        <td>{{fibroscanDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{fibroscan}}</td>
+                                        <td>{{fibroscanBiliaryTract}}</td>
+                                        <td>{{fibroscanEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>ERCP</td>
+                                        <td>{{ercpDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{ercp}}</td>
+                                        <td>{{ercpBiliaryTract}}</td>
+                                        <td>{{ercpEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>MRCP</td>
+                                        <td>{{mrcpDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{mrcp}}</td>
+                                        <td>{{mrcpBiliaryTract}}</td>
+                                        <td>{{mrcpEsophagealGastricVarices}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>胃镜</td>
+                                        <td>{{gastroscopeDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{gastroscope}}</td>
+                                        <td>{{gastroscopeBiliaryTract}}</td>
+                                        <td>{{gastroscopeEsophagealGastricVarices}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查项目</th>
+                                        <th>检查日期</th>
+                                        <th>检查结果</th>
+                                        <th>排除胆道疾病</th>
+                                        <th>排除食管胃底静脉曲张</th>
+                                    </tr>
+                                    <tr ng-repeat="otherImaging in otherImagingEndoscopyDTOS">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{otherImaging.item}}</td>
+                                        <td>{{otherImaging.itemDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{otherImaging.result}}</td>
+                                        <td>{{otherImaging.biliaryTract == 1?"是":(otherImaging.biliaryTract == 2?"否":(otherImaging.biliaryTract == 3?"不适用":""))}}</td>
+                                        <td>{{otherImaging.esophagealGastricVarices == 1?"是":(otherImaging.esophagealGastricVarices == 2?"否":(otherImaging.esophagealGastricVarices == 3?"不适用":""))}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">肝脏组织学检查</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th>序号</th>
+                                        <th>检查项</th>
+                                        <th>检查结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>是否做过此项检查</td>
+                                        <td>{{done}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>门管区周围或周围间隔区交界面肝炎（碎片状坏死）</td>
+                                        <td>{{interfaceHepatitis}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>融合性坏死</td>
+                                        <td>{{confluentNecrosis}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>局灶性（斑状）溶解性坏死，凋亡及局灶性炎症</td>
+                                        <td>{{focal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>门管区炎症</td>
+                                        <td>{{portalInflammation}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>纤维化评分</td>
+                                        <td>{{fibrosis}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td> DILI严重程度分级</td>
+                                        <td>{{severity}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">药物性肝损伤严重程度</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-5">检查项目</th>
+                                        <th>检查结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>是否有腹水</td>
+                                        <td>{{ascites}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>是否有肝性脑病</td>
+                                        <td>{{hepaticEncephalopathy}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>是否有延长INR（>1.5）或者凝血时间（>3秒正常时间以上）</td>
+                                        <td>{{extendInr}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>是否存在药物引发的除肝脏以外的其他器官的衰竭：肺、肾、心脏、骨髓等</td>
+                                        <td>{{failure}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>由于肝损伤的原因，患者住院时间是否延长</td>
+                                        <td>{{extendHospitalStay}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>RUCAM评分</td>
+                                        <td>{{rucam}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">治疗措施</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-3">检查项目</th>
+                                        <th>检查结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-3">1</td>
+                                        <td class="col-md-3">是否有治疗措施</td>
+                                        <td class="col-md-3">{{treatment}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">通用名</th>
+                                        <th class="col-md-2">商品名</th>
+                                        <th class="col-md-2">用药方法</th>
+                                        <th class="col-md-2">日剂量</th>
+                                        <th class="col-md-2">开始日期</th>
+                                        <th class="col-md-2">结束日期</th>
+                                    </tr>
+                                    <tr ng-repeat="treatmentDetail in treatmentDetails">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{treatmentDetail.genericName}}</td>
+                                        <td>{{treatmentDetail.tradeName}}</td>
+                                        <td>{{treatmentDetail.detailMethod}}</td>
+                                        <td>{{treatmentDetail.dose}}</td>
+                                        <td>{{treatmentDetail.detailStartDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{treatmentDetail.detailEndDate | date:"yyyy-MM-dd"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-1">序号</th>
+                                        <th class="col-md-2">治疗措施</th>
+                                        <th class="col-md-2">治疗措施详述</th>
+                                        <th class="col-md-2">开始日期</th>
+                                        <th class="col-md-2">结束日期</th>
+                                    </tr>
+                                    <tr ng-repeat="treatmentOther in treatmentOthers">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{treatmentOther.method}}</td>
+                                        <td>{{treatmentOther.methodDetail}}</td>
+                                        <td>{{treatmentOther.otherStartDate | date:"yyyy-MM-dd"}}</td>
+                                        <td>{{treatmentOther.otherEndDate | date:"yyyy-MM-dd"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-success direct-chat direct-chat-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">疾病转归</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-3">序号</th>
+                                        <th class="col-md-3">检查项</th>
+                                        <th class="col-md-3">检查结果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>疾病转归</td>
+                                        <td>{{outcome}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-primary direct-chat direct-chat-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">生物样本</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i><span class="h4">查看</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="display: none;">
+                        <!-- 显示数据 -->
+                        <div class="box-body no-padding">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="info">
+                                        <th class="col-md-2">序号</th>
+                                        <th class="col-md-2">项目</th>
+                                        <th class="col-md-2">是否留置</th>
+                                        <th class="col-md-2">留置编号</th>
+                                        <th class="col-md-2">留取的量</th>
+                                        <th class="col-md-2">备注</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>血清</td>
+                                        <td>{{biologicalSamples1}}</td>
+                                        <td>{{num1}}</td>
+                                        <td>{{num1quantity}}</td>
+                                        <td>{{remark1}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>血浆</td>
+                                        <td>{{biologicalSamples2}}</td>
+                                        <td>{{num2}}</td>
+                                        <td>{{num2quantity}}</td>
+                                        <td>{{remark2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>组织</td>
+                                        <td>{{biologicalSamples3}}</td>
+                                        <td>{{num3}}</td>
+                                        <td>{{num3quantity}}</td>
+                                        <td>{{remark3}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>尿液</td>
+                                        <td>{{biologicalSamples4}}</td>
+                                        <td>{{num4}}</td>
+                                        <td>{{num4quantity}}</td>
+                                        <td>{{remark4}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>药物</td>
+                                        <td>{{biologicalSamples5}}</td>
+                                        <td>{{num5}}</td>
+                                        <td>{{num5quantity}}</td>
+                                        <td>{{remark5}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>其他</td>
+                                        <td>{{biologicalSamples6}}</td>
+                                        <td>{{num6}}</td>
+                                        <td>{{num6quantity}}</td>
+                                        <td>{{remark6}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="show2">
+            <div class="btn-group-vertical col-md-2" role="group">
+                <div class="list-group">
+                    <button ng-repeat="followDate in followDateList" class="list-group-item" ng-click="followClick(followDate)">随访表{{followDate | date:"yyyy-MM-dd"}}</button>
+                </div>
+            </div>
+            <div class="box-body no-padding">
+            </div>
+        </div>
     </div>
-    <div class="box-body no-padding">
-            
-    </div>
-  </div>
-  </div>
-
 </div>

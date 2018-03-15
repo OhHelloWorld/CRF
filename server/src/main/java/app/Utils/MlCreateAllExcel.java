@@ -341,7 +341,7 @@ public class MlCreateAllExcel{
             //既往过敏史
             if(mlAllergyDO != null){
                 row.createCell(20).setCellValue(mlAllergyDO.getAllergyHistory()==1?"无":(mlAllergyDO.getAllergyHistory()==2?"有":(mlAllergyDO.getAllergyHistory()==3?"不详":"")));
-                row.createCell(21).setCellValue(mlAllergyDO.getAllergen());
+//                row.createCell(21).setCellValue(mlAllergyDO.getAllergen());
             }
 
             //饮酒状况

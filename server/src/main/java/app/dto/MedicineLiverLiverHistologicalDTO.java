@@ -1,7 +1,5 @@
 package app.dto;
 
-import java.util.Date;
-
 /**
  * Created by Administrator on 2017/8/24 0024.
  */
@@ -14,6 +12,7 @@ public class MedicineLiverLiverHistologicalDTO {
     private int focal;
     private int portalInflammation;
     private int fibrosis;
+    private int done;
     private String severity;
 
     private boolean complete;
@@ -88,5 +87,13 @@ public class MedicineLiverLiverHistologicalDTO {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public int getDone() {
+        return done;
+    }
+
+    public void setDone(int done) {
+        this.done = done;
     }
 }

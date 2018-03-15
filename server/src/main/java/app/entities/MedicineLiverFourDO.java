@@ -68,6 +68,7 @@ public class MedicineLiverFourDO {
     private int liverPalm;//肝掌
     private int abdominalVeins;//腹壁脉络曲张
     private int yellowTumor;//黄色瘤
+    private Boolean complete;
 
     public int getId() {
         return id;
@@ -459,5 +460,13 @@ public class MedicineLiverFourDO {
 
     public void setYellowTumor(int yellowTumor) {
         this.yellowTumor = yellowTumor;
+    }
+
+    public Boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
     }
 }

@@ -1,235 +1,230 @@
 <section class="content-header">
-  <h1 class="text-center">
+    <h1 class="text-center">
     实验室检查--所有住院生化检查（首次异常除外）
-  </h1><br>
-  <ol class="breadcrumb">
-  </ol>
+  </h1>
+    <br>
+    <ol class="breadcrumb">
+    </ol>
 </section>
-
 <div ng-app="hospitalAbnormalExamination" ng-controller="hospitalAbnormalExaminationController">
-  <div class="container-fluid">
-    <div class="row-fluid">
-
-      <div ng-model="emptyObject"></div>
-        <div class="span12">
-          <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
-          <br>
-          <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
-        </div>
-
-        <div class="box box-info">
-          <div class="box-header">
-            <h3 class="box-title">【 肝脏生化检查 】</h3>
-          </div>
-          <div class="box-body">
-            <table class="table table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th style=" text-align: -webkit-center;"  width="15%">检查日期</th>
-                  <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
-                  <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
-                  <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
-                  <th style=" text-align: -webkit-center;">碱性磷酸酶(ALP)(IU/L)</th>
-                  <th style=" text-align: -webkit-center;">胆汁酸(umol/L)</th>
-                  <th style=" text-align: -webkit-center;">总胆红素(TBIL)(umol/L)</th>
-                  <th style=" text-align: -webkit-center;">直接胆红素(结合，DBIL)(umol/L)</th>
-                  <th style=" text-align: -webkit-center;">总蛋白(TP)(g/L)</th>
-                  <th style=" text-align: -webkit-center;">白蛋白(ALB)(g/L)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: -webkit-center;">
-                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
-                     id="datepicker1" ng-model="tab1CheckDate">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alt">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ast">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ggt">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alp">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="bileAcid">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tbil">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="dbil">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tp">
-                  </td>
-                  <td style=" text-align: -webkit-center; ">
-                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alb">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-            <div class="box box-info">
-              <div class="box-header">
-                <h3 class="box-title">【 肾功能检查 】</h3>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th style=" text-align: -webkit-center;"  width="25%">检查日期</th>
-                      <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
-                      <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style=" text-align: -webkit-center;">
-                        <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
-                          id="datepicker2" ng-model="tab2CheckDate">
-                      </td>
-                      <td style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="scr">
-                      </td>
-                      <td style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="bun">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div ng-model="emptyObject"></div>
+            <div class="span12">
+                <u class="h4 col-md-offset-9">患者：{{patientName}}</u>
+                <br>
+                <u class="h4 col-md-offset-9">病理号：{{patientNumber}}</u>
             </div>
-
-
             <div class="box box-info">
-              <div class="box-header">
-                <h3 class="box-title">【 血糖检查 】</h3>
-              </div>
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th style=" text-align: -webkit-center;"  width="25%">检查日期</th>
-                      <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">
-                        <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
-                         id="datepicker3" ng-model="tab3CheckDate">
-                      </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="plasmaGlucose">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <div class="box-header">
+                    <h3 class="box-title">【 肝脏生化检查 】</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style=" text-align: -webkit-center;" width="15%">检查日期</th>
+                                <th style=" text-align: -webkit-center;">谷丙转氨酶(ALT)(IU/L)</th>
+                                <th style=" text-align: -webkit-center;">谷草转氨酶(AST)(IU/L)</th>
+                                <th style=" text-align: -webkit-center;">谷氨酰转肽酶(GGT)(IU/L)</th>
+                                <th style=" text-align: -webkit-center;">碱性磷酸酶(ALP)(IU/L)</th>
+                                <th style=" text-align: -webkit-center;">胆汁酸(umol/L)</th>
+                                <th style=" text-align: -webkit-center;">总胆红素(TBIL)(umol/L)</th>
+                                <th style=" text-align: -webkit-center;">直接胆红素(结合，DBIL)(umol/L)</th>
+                                <th style=" text-align: -webkit-center;">总蛋白(TP)(g/L)</th>
+                                <th style=" text-align: -webkit-center;">白蛋白(ALB)(g/L)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="liver">
+                            <tr>
+                                <td style="text-align: -webkit-center;">
+                                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" id="datepicker1" ng-model="tab1CheckDate">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alt">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ast">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ggt">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alp">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="bileAcid">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tbil">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="dbil">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="tp">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="alb">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <a class="btn btn-success col-md-offset-5" ng-click="addLiver()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+              </a>
+                </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">【 肾功能检查 】</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style=" text-align: -webkit-center;" width="25%">检查日期</th>
+                                <th style=" text-align: -webkit-center;">肌酐(Scr)(umol/L)</th>
+                                <th style=" text-align: -webkit-center;">尿素氮(mmol/L)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="kidney">
+                            <tr>
+                                <td style=" text-align: -webkit-center;">
+                                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" id="datepicker2" ng-model="tab2CheckDate">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="scr">
+                                </td>
+                                <td style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="ureaNitrogen">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <a class="btn btn-success col-md-offset-5" ng-click="addKidney()">
+                      <i class="fa  fa-chevron-circle-down"></i> 增加
+                    </a>
+                </div>
+            </div>
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">【 血糖检查 】</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style=" text-align: -webkit-center;" width="25%">检查日期</th>
+                                <th style=" text-align: -webkit-center;">空腹血糖(mmol/L)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bs">
+                            <tr>
+                                <td height="38px" style=" text-align: -webkit-center;">
+                                    <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" id="datepicker3" ng-model="tab3CheckDate">
+                                </td>
+                                <td height="38px" style=" text-align: -webkit-center; ">
+                                    <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="plasmaGlucose">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <a class="btn btn-success col-md-offset-5" ng-click="addBs()">
+                      <i class="fa  fa-chevron-circle-down"></i> 增加
+                    </a>
+                </div>
             </div>
         </div>
-        
-
         <div class="box box-info">
-              <div class="box-header">
+            <div class="box-header">
                 <h3 class="box-title">【 凝血功能检查 】</h3>
-              </div>
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th style=" text-align: -webkit-center;"  width="25%">检查日期</th>
-                      <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
-                      <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">
-                        <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
-                         id="datepicker4" ng-model="tab4CheckDate">
-                      </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="pt">
-                      </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="inr">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
-
-
-            <div class="box box-info">
-              <div class="box-header">
+            <div class="box-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th style=" text-align: -webkit-center;" width="25%">检查日期</th>
+                            <th style=" text-align: -webkit-center;">凝血酶原时间(PT)(秒)</th>
+                            <th style=" text-align: -webkit-center;">凝血酶原标准化比值(INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cruor">
+                        <tr>
+                            <td height="38px" style=" text-align: -webkit-center;">
+                                <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" id="datepicker4" ng-model="tab4CheckDate">
+                            </td>
+                            <td height="38px" style=" text-align: -webkit-center; ">
+                                <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="pt">
+                            </td>
+                            <td height="38px" style=" text-align: -webkit-center; ">
+                                <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="inr">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <a class="btn btn-success col-md-offset-5" ng-click="addCruor()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+                </a>
+            </div>
+        </div>
+        <div class="box box-info">
+            <div class="box-header">
                 <h3 class="box-title">【 肿瘤标志物 】</h3>
-              </div>
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th style=" text-align: -webkit-center;"  width="25%">检查日期</th>
-                      <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td height="38px" style=" text-align: -webkit-center;">
-                        <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;"
-                         id="datepicker5" ng-model="tab5CheckDate">
-                      </td>
-                      <td height="38px" style=" text-align: -webkit-center; ">
-                        <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="afp">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
-          </div>
-        <span class="col-md-offset-9"></span>
-        <a class="btn btn-primary" ng-click="showSaveModal()">
+            <div class="box-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th style=" text-align: -webkit-center;" width="25%">检查日期</th>
+                            <th style=" text-align: -webkit-center;">甲胎蛋白(AFP)(ug/L)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tumour">
+                        <tr>
+                            <td height="38px" style=" text-align: -webkit-center;">
+                                <input type="text" class="form-control pull-right" style="height: 30px;text-align: -webkit-center;" id="datepicker5" ng-model="tab5CheckDate">
+                            </td>
+                            <td height="38px" style=" text-align: -webkit-center; ">
+                                <input type="text" style="text-align: -webkit-center;width: 100%;" ng-model="afp">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <a class="btn btn-success col-md-offset-5" ng-click="addTumour()">
+                <i class="fa  fa-chevron-circle-down"></i> 增加
+                </a>
+            </div>
+        </div>
+    </div>
+    <span class="col-md-offset-9"></span>
+    <a class="btn btn-primary" ng-click="showSaveModal()">
           <i class="fa  fa-save"></i> 保存
         </a>
-        <a class="btn btn-primary" ng-click="layout()">
+    <a class="btn btn-primary" ng-click="layout()">
           <i class="fa  fa-sign-out"></i> 退出
         </a>
-        
-        <!-- 模态框 -->
-        <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
+    <!-- 模态框 -->
+    <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"></h4>
-              </div>
-              <div class="modal-body">
-                <p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
-              </div>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="justModalContent" class="h4" style="text-align: -webkit-center;">&hellip;</p>
+                </div>
             </div>
-          </div>
         </div>
-
-
     </div>
-  </div>
 </div>
-
-
-
-
-
-
-
+</div>
+</div>

@@ -1,375 +1,361 @@
 <section class="content-header">
-  <h1 class="text-center">
+    <h1 class="text-center">
     患者一般资料
-  </h1><br>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
-    <li class="active">患者资料</li>
-  </ol>
+  </h1>
+    <br>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+        <li class="active">患者资料</li>
+    </ol>
 </section>
-  <div  ng-app="mlPatientInfo" ng-controller="mlPatientInfoController">
+<div ng-app="mlPatientInfo" ng-controller="mlPatientInfoController">
     <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span12">
-          <div class="col-md-12">
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">【 基本信息 】</h3>
-              </div>
-                <div class="box-body">
-                  <form role="form">
-                <!-- 姓名字段 -->
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">姓名</i>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">【 基本信息 】</h3>
+                        </div>
+                        <div class="box-body">
+                            <form role="form">
+                                <!-- 姓名字段 -->
+                                <div class="col-sm-3">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;">姓名</i>
+                                        </div>
+                                        <input class="form-control" ng-model="name" data-toggle="popover" data-placement="top">
+                                    </div>
+                                </div>
+                                <!-- 性别字段 -->
+                                <div class="col-sm-3">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;">姓名拼音缩写</i>
+                                        </div>
+                                        <input class="form-control" tabindex="0" data-toggle="popover" data-placement="top" ng-model="abbreviation">
+                                    </div>
+                                </div>
+                                <!-- 出生年月 -->
+                                <div class="col-sm-3">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;">出生日期</i>
+                                        </div>
+                                        <input class="form-control pull-right" id="birthday" ng-model="birthday" ng-blur="birthdayBlur()">
+                                    </div>
+                                </div>
+                                <!-- 民族字段 -->
+                                <div class="col-sm-3">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;"> &ensp; 民族 &ensp; &#8197; </i>
+                                        </div>
+                                        <!-- <input class="form-control" ng-model="nation"> -->
+                                        <select ng-model="nation" class="form-control">
+                                            <option value="汉族">汉族</option>
+                                            <option value="蒙古族">蒙古族</option>
+                                            <option value="回族">回族</option>
+                                            <option value="藏族">藏族</option>
+                                            <option value="维吾尔族">维吾尔族</option>
+                                            <option value="苗族">苗族</option>
+                                            <option value="彝族">彝族</option>
+                                            <option value="壮族">壮族</option>
+                                            <option value="布依族">布依族</option>
+                                            <option value="朝鲜族">朝鲜族</option>
+                                            <option value="满族">满族</option>
+                                            <option value="侗族">侗族</option>
+                                            <option value="瑶族">瑶族</option>
+                                            <option value="白族">白族</option>
+                                            <option value="土家族">土家族</option>
+                                            <option value="哈尼族">哈尼族</option>
+                                            <option value="哈萨克族">哈萨克族</option>
+                                            <option value="傣族">傣族</option>
+                                            <option value="黎族">黎族</option>
+                                            <option value="傈僳族">傈僳族</option>
+                                            <option value="佤族">佤族</option>
+                                            <option value="畲族">畲族</option>
+                                            <option value="高山族">高山族</option>
+                                            <option value="拉祜族">拉祜族</option>
+                                            <option value="水族">水族</option>
+                                            <option value="东乡族">东乡族</option>
+                                            <option value="纳西族">纳西族</option>
+                                            <option value="景颇族">景颇族</option>
+                                            <option value="柯尔克孜族">柯尔克孜族</option>
+                                            <option value="土族">土族</option>
+                                            <option value="达斡尔族">达斡尔族</option>
+                                            <option value="仫佬族">仫佬族</option>
+                                            <option value="羌族">羌族</option>
+                                            <option value="布朗族">布朗族</option>
+                                            <option value="撒拉族">撒拉族</option>
+                                            <option value="毛南族">毛南族</option>
+                                            <option value="仡佬族">仡佬族</option>
+                                            <option value="锡伯族">锡伯族</option>
+                                            <option value="阿昌族">阿昌族</option>
+                                            <option value="普米族">普米族</option>
+                                            <option value="塔吉克族">塔吉克族</option>
+                                            <option value="怒族">怒族</option>
+                                            <option value="乌孜别克族">乌孜别克族</option>
+                                            <option value="俄罗斯族">俄罗斯族</option>
+                                            <option value="鄂温克族">鄂温克族</option>
+                                            <option value="德昂族">德昂族</option>
+                                            <option value="保安族">保安族</option>
+                                            <option value="裕固族">裕固族</option>
+                                            <option value="京族">京族</option>
+                                            <option value="塔塔尔族">塔塔尔族</option>
+                                            <option value="独龙族">独龙族</option>
+                                            <option value="鄂伦春族">鄂伦春族</option>
+                                            <option value="赫哲族">赫哲族</option>
+                                            <option value="门巴族">门巴族</option>
+                                            <option value="珞巴族">珞巴族</option>
+                                            <option value="基诺族">基诺族</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="box-header with-border">
+                            <!-- 体重字段 -->
+                            <div class="col-sm-2">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">体重(kg)</i>
+                                    </div>
+                                    <input class="form-control" ng-model="weight" data-toggle="popover" data-placement="top">
+                                </div>
+                            </div>
+                            <!-- 身高字段 -->
+                            <div class="col-sm-2">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">身高(cm)</i>
+                                    </div>
+                                    <input class="form-control" ng-model="height" tabindex="0" data-toggle="popover" data-placement="top">
+                                </div>
+                            </div>
+                            <!-- BMI -->
+                            <div class="col-sm-2">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">BMI</i>
+                                    </div>
+                                    <input class="form-control" ng-model="bmi" tabindex="0" data-toggle="popover" data-placement="top">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;"> &emsp; 性别 &emsp; </i>
+                                    </div>
+                                    <select ng-model="gender" class="form-control">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">职业</i>
+                                    </div>
+                                    <!-- <input class="form-control" ng-model = "career"> -->
+                                    <select ng-model="career" class="form-control">
+                                        <option value="国家机关,党群组织,企业,事业单位负责人">国家机关,党群组织,企业,事业单位负责人</option>
+                                        <option value="专业技术人员">专业技术人员</option>
+                                        <option value="国家机关,党群组织,企业,事业单位负责人">国家机关,党群组织,企业,事业单位负责人</option>
+                                        <option value="办事人员和有关人员">办事人员和有关人员</option>
+                                        <option value="商业服务业人员">商业服务业人员</option>
+                                        <option value="农林牧渔水利业生产人员">农林牧渔水利业生产人员</option>
+                                        <option value="生产运输设备操作人员及有关人员">生产运输设备操作人员及有关人员</option>
+                                        <option value="军人">军人</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-header with-border">
+                            <!-- 医院 -->
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">医院</i>
+                                    </div>
+                                    <input class="form-control" ng-model="hospital">
+                                </div>
+                            </div>
+                            <!-- 科室 -->
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;"> &emsp; 病例来源（包括医院及科室） &emsp; </i>
+                                    </div>
+                                    <input class="form-control" ng-model="department">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-header with-border">
+                            <!-- 联系电话字段 -->
+                            <div class="col-sm-3">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">  &ensp; &ensp; 入院日期 &ensp; </i>
+                                    </div>
+                                    <input class="form-control" id="admissionDate" ng-model="admissionDate">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">  &ensp; &ensp; 入院时年龄 &ensp; </i>
+                                    </div>
+                                    <input class="form-control" ng-model="hospitalizedAge">
+                                </div>
+                            </div>
+                            <!-- 就诊时病程医院 -->
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">&#8197; &#8197; 出院日期&#8197; &#8197; </i>
+                                    </div>
+                                    <input class="form-control" id="dischargeDate" ng-model="dischargeDate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-header with-border">
+                            <!-- 初次诊断年龄字段 -->
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;">住院号</i>
+                                    </div>
+                                    <input class="form-control" ng-model="hospitalizedNumber">
+                                </div>
+                            </div>
+                        </div>
+                        </form>
                     </div>
-                    <input class="form-control" ng-model="name" data-toggle="popover" data-placement="top">
-                  </div>
                 </div>
-                <!-- 性别字段 -->
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">姓名拼音缩写</i>
-                    </div>
-                    <input class="form-control" tabindex="0" data-toggle="popover" data-placement="top" ng-model="abbreviation">
-                  </div>
-                </div>
-                <!-- 出生年月 -->
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">出生日期</i>
-                    </div>
-                    <input class="form-control pull-right" id="birthday" ng-model="birthday">
-                  </div>
-                </div>
-                <!-- 民族字段 -->
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 民族 &ensp; &#8197; </i>
-                    </div>
-                    <!-- <input class="form-control" ng-model="nation"> -->
-                    <select ng-model="nation" class="form-control">
-                        <option value="汉族">汉族</option>  
-                        <option value="蒙古族">蒙古族</option>  
-                        <option value="回族">回族</option>  
-                        <option value="藏族">藏族</option>  
-                        <option value="维吾尔族">维吾尔族</option>  
-                        <option value="苗族">苗族</option>  
-                        <option value="彝族">彝族</option>  
-                        <option value="壮族">壮族</option>  
-                        <option value="布依族">布依族</option>  
-                        <option value="朝鲜族">朝鲜族</option>  
-                        <option value="满族">满族</option>  
-                        <option value="侗族">侗族</option>  
-                        <option value="瑶族">瑶族</option>  
-                        <option value="白族">白族</option>  
-                        <option value="土家族">土家族</option>  
-                        <option value="哈尼族">哈尼族</option>  
-                        <option value="哈萨克族">哈萨克族</option>  
-                        <option value="傣族">傣族</option>  
-                        <option value="黎族">黎族</option>  
-                        <option value="傈僳族">傈僳族</option>  
-                        <option value="佤族">佤族</option>  
-                        <option value="畲族">畲族</option>  
-                        <option value="高山族">高山族</option>  
-                        <option value="拉祜族">拉祜族</option>  
-                        <option value="水族">水族</option>  
-                        <option value="东乡族">东乡族</option>  
-                        <option value="纳西族">纳西族</option>  
-                        <option value="景颇族">景颇族</option>  
-                        <option value="柯尔克孜族">柯尔克孜族</option>  
-                        <option value="土族">土族</option>  
-                        <option value="达斡尔族">达斡尔族</option>  
-                        <option value="仫佬族">仫佬族</option>  
-                        <option value="羌族">羌族</option>  
-                        <option value="布朗族">布朗族</option>  
-                        <option value="撒拉族">撒拉族</option>  
-                        <option value="毛南族">毛南族</option>  
-                        <option value="仡佬族">仡佬族</option>  
-                        <option value="锡伯族">锡伯族</option>  
-                        <option value="阿昌族">阿昌族</option>  
-                        <option value="普米族">普米族</option>  
-                        <option value="塔吉克族">塔吉克族</option>  
-                        <option value="怒族">怒族</option>  
-                        <option value="乌孜别克族">乌孜别克族</option>  
-                        <option value="俄罗斯族">俄罗斯族</option>  
-                        <option value="鄂温克族">鄂温克族</option>  
-                        <option value="德昂族">德昂族</option>  
-                        <option value="保安族">保安族</option>  
-                        <option value="裕固族">裕固族</option>  
-                        <option value="京族">京族</option>  
-                        <option value="塔塔尔族">塔塔尔族</option>  
-                        <option value="独龙族">独龙族</option>  
-                        <option value="鄂伦春族">鄂伦春族</option>  
-                        <option value="赫哲族">赫哲族</option>  
-                        <option value="门巴族">门巴族</option>  
-                        <option value="珞巴族">珞巴族</option>  
-                        <option value="基诺族">基诺族</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="box-header with-border">
-                <!-- 体重字段 -->
-                <div class="col-sm-2">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">体重(kg)</i>
-                    </div>
-                    <input class="form-control" ng-model="weight" data-toggle="popover" data-placement="top">
-                  </div>
-                </div>
-                <!-- 身高字段 -->
-                <div class="col-sm-2">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">身高(cm)</i>
-                    </div>
-                    <input class="form-control" ng-model="height" tabindex="0" data-toggle="popover" data-placement="top">
-                  </div>
-                </div>
-
-                <!-- BMI -->
-                <div class="col-sm-2">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">BMI</i>
-                    </div>
-                    <input class="form-control" ng-model="bmi" tabindex="0" data-toggle="popover" data-placement="top">
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &emsp; 性别 &emsp; </i>
-                    </div>
-                    <select ng-model="gender" class="form-control">
-                      <option value="男">男</option>
-                      <option value="女">女</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">职业</i>
-                    </div>
-                    <!-- <input class="form-control" ng-model = "career"> -->
-                    <select ng-model="career" class="form-control">
-                      <option value="国家机关,党群组织,企业,事业单位负责人">国家机关,党群组织,企业,事业单位负责人</option>
-                      <option value="专业技术人员">专业技术人员</option>
-                      <option value="国家机关,党群组织,企业,事业单位负责人">国家机关,党群组织,企业,事业单位负责人</option>
-                      <option value="办事人员和有关人员">办事人员和有关人员</option>
-                      <option value="商业服务业人员">商业服务业人员</option>
-                      <option value="农林牧渔水利业生产人员">农林牧渔水利业生产人员</option>
-                      <option value="生产运输设备操作人员及有关人员">生产运输设备操作人员及有关人员</option>
-                      <option value="军人">军人</option>
-                      <option value="其他">其他</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-header with-border">
-                <!-- 医院 -->
-                <div class="col-sm-6">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">医院</i>
-                    </div>
-                    <input class="form-control" ng-model="hospital">
-                  </div>
-                </div>
-                <!-- 科室 -->
-                <div class="col-sm-6">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &emsp; 病例来源（包括医院及科室） &emsp; </i>
-                    </div>
-                    <input class="form-control" ng-model="department">
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-header with-border">
-                <!-- 联系电话字段 -->
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">  &ensp; &ensp; 入院日期 &ensp; </i>
-                    </div>
-                    <input class="form-control" id="admissionDate" ng-model="admissionDate">
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">  &ensp; &ensp; 入院时年龄 &ensp; </i>
-                    </div>
-                    <input class="form-control" ng-model="hospitalizedAge">
-                  </div>
-                </div>
-                <!-- 就诊时病程医院 -->
-                <div class="col-sm-6">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">&#8197; &#8197; 出院日期&#8197; &#8197; </i>
-                    </div>
-                    <input class="form-control" id="dischargeDate" ng-model="dischargeDate">
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-header with-border">
-                <!-- 初次诊断年龄字段 -->
-                <div class="col-sm-6">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;">住院号</i>
-                    </div>
-                    <input class="form-control" ng-model="hospitalizedNumber">
-                  </div>
-                </div>
-              </div>
-              </form>
-            </div>
-          </div>
-
-
-          <div class="col-md-12">
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">【 入院诊断 】</h3>
-              </div>
-              <div class="box-body" id="intoHos">
-                <div class="col-sm-6">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 入院诊断</i>
-                    </div>
-                    <input class="form-control" ng-model="intoDiagnosis">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 诊断时间</i>
-                    </div>
-                    <input class="form-control" id="intoDiagnosisDate" ng-model="intoDiagnosisDate">
-                  </div>
-                </div>
-              </div>
-              <a class="btn btn-success col-md-offset-5" ng-click="addIntoHos()">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">【 入院诊断 】</h3>
+                        </div>
+                        <div class="box-body" id="intoHos">
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;"> &ensp; 入院诊断</i>
+                                    </div>
+                                    <input class="form-control" ng-model="intoDiagnosis">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-style: inherit;"> &ensp; 诊断时间</i>
+                                    </div>
+                                    <input class="form-control" id="intoDiagnosisDate" ng-model="intoDiagnosisDate">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-success col-md-offset-5" ng-click="addIntoHos()">
                 <i class="fa  fa-chevron-circle-down"></i> 增加
               </a>
-              <br/><br/>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">【 出院诊断 】</h3>
-              </div>
-              <div class="box-body">
-                <div class="box-body" id="outHos">
-                <div class="col-sm-6">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 出院诊断</i>
+                        <br/>
+                        <br/>
                     </div>
-                    <input class="form-control" type="text" ng-model="outDiagnosis">
-                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i style="font-style: inherit;"> &ensp; 诊断时间</i>
-                    </div>
-                    <input class="form-control" id="outDiagnosisDate" ng-model="outDiagnosisDate">
-                  </div>
-                </div>
-              </div>
-              <a class="btn btn-success col-md-offset-5" ng-click="addOutHos()">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">【 出院诊断 】</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="box-body" id="outHos">
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;"> &ensp; 出院诊断</i>
+                                        </div>
+                                        <input class="form-control" type="text" ng-model="outDiagnosis">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i style="font-style: inherit;"> &ensp; 诊断时间</i>
+                                        </div>
+                                        <input class="form-control" id="outDiagnosisDate" ng-model="outDiagnosisDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn btn-success col-md-offset-5" ng-click="addOutHos()">
                 <i class="fa  fa-chevron-circle-down"></i> 增加
               </a>
-              </div>
-            </div>
-          </div>
-
-
-        <span class="col-md-offset-10">&nbsp</span>
-        <a class="btn btn-primary" ng-click="save()">
+                        </div>
+                    </div>
+                </div>
+                <span class="col-md-offset-10">&nbsp</span>
+                <a class="btn btn-primary" ng-click="save()">
           <i class="fa  fa-save"></i> 保存
         </a>
-        <a class="btn btn-primary" ng-click="layout()">
+                <a class="btn btn-primary" ng-click="layout()">
           <i class="fa  fa-sign-out"></i> 退出
         </a>
-          <!-- 下一步按钮模态框 -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"></h4>
+                <!-- 下一步按钮模态框 -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p class="h3">保存成功</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  <p class="h3">保存成功</p>
+                <div class="modal fade" id="existModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>您确定要放弃编辑退出吗？&hellip;</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" ng-click="exsitEdit()">退出编辑</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p ng-bind="justModalContent">&hellip;</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-
-          <div class="modal fade" id="existModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"></h4>
-                </div>
-              <div class="modal-body">
-                <p>您确定要放弃编辑退出吗？&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" ng-click="exsitEdit()">退出编辑</button>
-              </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="justModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"></h4>
-                </div>
-              <div class="modal-body">
-                <p ng-bind="justModalContent">&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
-              </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
     </div>
-  </div>
+</div>

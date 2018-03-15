@@ -67,6 +67,7 @@ public class MlFourServiceImpl implements MlFourService,MlCompleteService{
         fourDTO.setTwoEyesDry(fourDO.getTwoEyesDry());
         fourDTO.setUrineYellow(fourDO.getUrineYellow());
         fourDTO.setYellowTumor(fourDO.getYellowTumor());
+        fourDTO.setComplete(fourDO.isComplete());
         return fourDTO;
     }
 
@@ -121,6 +122,7 @@ public class MlFourServiceImpl implements MlFourService,MlCompleteService{
         fourDO.setTwoEyesDry(fourDTO.getTwoEyesDry());
         fourDO.setUrineYellow(fourDTO.getUrineYellow());
         fourDO.setYellowTumor(fourDTO.getYellowTumor());
+        fourDO.setComplete(fourDTO.isComplete());
         return fourDO;
     }
 

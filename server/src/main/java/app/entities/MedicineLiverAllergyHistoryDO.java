@@ -1,9 +1,7 @@
 package app.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/8/23 0023.
@@ -16,8 +14,8 @@ public class MedicineLiverAllergyHistoryDO {
     private int id;
     private int patientId;
     private int allergyHistory;//既往过敏史
-    private String allergen;//过敏原
-    private String description;
+    @OneToMany(mappedBy = "medicineLiverAllergyHistoryDO",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<MedicineLiverAllergyHistoryDetailDO> medicineLiverAllergyHistoryDetailDOS;
     private boolean complete;
 
     public int getId() {
@@ -44,20 +42,12 @@ public class MedicineLiverAllergyHistoryDO {
         this.allergyHistory = allergyHistory;
     }
 
-    public String getAllergen() {
-        return allergen;
+    public List<MedicineLiverAllergyHistoryDetailDO> getMedicineLiverAllergyHistoryDetailDOS() {
+        return medicineLiverAllergyHistoryDetailDOS;
     }
 
-    public void setAllergen(String allergen) {
-        this.allergen = allergen;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMedicineLiverAllergyHistoryDetailDOS(List<MedicineLiverAllergyHistoryDetailDO> medicineLiverAllergyHistoryDetailDOS) {
+        this.medicineLiverAllergyHistoryDetailDOS = medicineLiverAllergyHistoryDetailDOS;
     }
 
     public boolean isComplete() {

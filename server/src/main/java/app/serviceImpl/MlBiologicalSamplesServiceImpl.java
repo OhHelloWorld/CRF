@@ -35,6 +35,12 @@ public class MlBiologicalSamplesServiceImpl implements MlBiologicalSamplesServic
         medicineLiverBiologicalSamplesDTO.setRemark4(medicineLiverBiologicalSamplesDO.getRemark4());
         medicineLiverBiologicalSamplesDTO.setRemark5(medicineLiverBiologicalSamplesDO.getRemark5());
         medicineLiverBiologicalSamplesDTO.setRemark6(medicineLiverBiologicalSamplesDO.getRemark6());
+        medicineLiverBiologicalSamplesDTO.setNum1quantity(medicineLiverBiologicalSamplesDO.getNum1quantity());
+        medicineLiverBiologicalSamplesDTO.setNum2quantity(medicineLiverBiologicalSamplesDO.getNum2quantity());
+        medicineLiverBiologicalSamplesDTO.setNum3quantity(medicineLiverBiologicalSamplesDO.getNum3quantity());
+        medicineLiverBiologicalSamplesDTO.setNum4quantity(medicineLiverBiologicalSamplesDO.getNum4quantity());
+        medicineLiverBiologicalSamplesDTO.setNum5quantity(medicineLiverBiologicalSamplesDO.getNum5quantity());
+        medicineLiverBiologicalSamplesDTO.setNum6quantity(medicineLiverBiologicalSamplesDO.getNum6quantity());
         return medicineLiverBiologicalSamplesDTO;
     }
 
@@ -54,6 +60,12 @@ public class MlBiologicalSamplesServiceImpl implements MlBiologicalSamplesServic
         medicineLiverBiologicalSamplesDO.setRemark4(medicineLiverBiologicalSamplesDTO.getRemark4());
         medicineLiverBiologicalSamplesDO.setRemark5(medicineLiverBiologicalSamplesDTO.getRemark5());
         medicineLiverBiologicalSamplesDO.setRemark6(medicineLiverBiologicalSamplesDTO.getRemark6());
+        medicineLiverBiologicalSamplesDO.setNum1quantity(medicineLiverBiologicalSamplesDTO.getNum1quantity());
+        medicineLiverBiologicalSamplesDO.setNum2quantity(medicineLiverBiologicalSamplesDTO.getNum2quantity());
+        medicineLiverBiologicalSamplesDO.setNum3quantity(medicineLiverBiologicalSamplesDTO.getNum3quantity());
+        medicineLiverBiologicalSamplesDO.setNum4quantity(medicineLiverBiologicalSamplesDTO.getNum4quantity());
+        medicineLiverBiologicalSamplesDO.setNum5quantity(medicineLiverBiologicalSamplesDTO.getNum5quantity());
+        medicineLiverBiologicalSamplesDO.setNum6quantity(medicineLiverBiologicalSamplesDTO.getNum6quantity());
         medicineLiverBiologicalSamplesDO.setPatientId(medicineLiverBiologicalSamplesDTO.getPatientId());
         return medicineLiverBiologicalSamplesDO;
     }

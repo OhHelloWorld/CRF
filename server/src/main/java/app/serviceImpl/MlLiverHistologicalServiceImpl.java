@@ -27,6 +27,7 @@ public class MlLiverHistologicalServiceImpl implements MlLiverHistologicalServic
         medicineLiverLiverHistologicalDTO.setInterfaceHepatitis(medicineLiverLiverHistologicalDO.getInterfaceHepatitis());
         medicineLiverLiverHistologicalDTO.setPortalInflammation(medicineLiverLiverHistologicalDO.getPortalInflammation());
         medicineLiverLiverHistologicalDTO.setSeverity(medicineLiverLiverHistologicalDO.getSeverity());
+        medicineLiverLiverHistologicalDTO.setDone(medicineLiverLiverHistologicalDO.getDone());
         return medicineLiverLiverHistologicalDTO;
     }
 
@@ -40,6 +41,7 @@ public class MlLiverHistologicalServiceImpl implements MlLiverHistologicalServic
         medicineLiverLiverHistologicalDO.setConfluentNecrosis(medicineLiverLiverHistologicalDTO.getConfluentNecrosis());
         medicineLiverLiverHistologicalDO.setFibrosis(medicineLiverLiverHistologicalDTO.getFibrosis());
         medicineLiverLiverHistologicalDO.setPortalInflammation(medicineLiverLiverHistologicalDTO.getPortalInflammation());
+        medicineLiverLiverHistologicalDO.setDone(medicineLiverLiverHistologicalDTO.getDone());
         return medicineLiverLiverHistologicalDO;
     }
 
