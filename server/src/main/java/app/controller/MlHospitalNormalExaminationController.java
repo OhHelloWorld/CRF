@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Administrator on 2018/3/14 0014.
  */
 @RestController
-    @RequestMapping(path = "/api/mlHospitalExam")
+@RequestMapping(path = "/api/mlHospitalExam")
 public class MlHospitalNormalExaminationController {
 
     @Autowired
